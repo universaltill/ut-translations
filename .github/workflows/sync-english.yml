@@ -1,0 +1,70 @@
+# Sync universal-till's English + key metadata into the area files that back
+# the Weblate components (ADR-0160 §2, §5; ut-docs#4365).
+#
+# Triggers:
+#   - repository_dispatch `universal-till-main`: a nudge from universal-till
+#     after a push to main. The payload is ignored: the job always reads
+#     universal-till's public main and release tags itself, so a forged or
+#     replayed dispatch can only cause a no-op sync.
+#   - schedule (hourly; free on a public repo): the no-secret baseline —
+#     catches anything a missed or absent dispatch left behind, and a new
+#     release tag on a supported line.
+#   - workflow_dispatch: by hand.
+#
+# Least privilege: `contents: write` on this repo only (the job pushes its
+# own commit with the built-in GITHUB_TOKEN). It reads universal-till over
+# its public https clone URL with no credential, and has no way to write to
+# it. No secrets. GitHub-hosted runner (public repo).
+
+name: sync-english
+
+on:
+  repository_dispatch:
+    types: [universal-till-main]
+  schedule:
+    - cron: "23 * * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: sync-english
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+
+      - name: Commit identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Sync English from universal-till
+        id: sync
+        run: python3 tools/sync_english.py
+
+      - name: Push
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          # Weblate pushes translations to main too; rebase over them (the two
+          # never touch the same files: sync writes en.json + meta/, Weblate
+          # writes <area>/<code>.json).
+          for attempt in 1 2 3; do
+            git pull --rebase --quiet origin main
+            if git push --quiet origin HEAD:main; then
+              exit 0
+            fi
+            echo "push rejected (attempt ${attempt}), retrying"
+            sleep $((attempt * 5))
+          done
+          echo "::error::could not push the sync commit after 3 attempts"
+          exit 1

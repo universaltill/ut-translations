@@ -1,0 +1,2261 @@
+{
+  "audit.col.action": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.col.actor": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.col.details": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.col.entity": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.col.when": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.empty": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.error.server": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.export_btn": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.filter.action": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.filter.all_actors": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.filter.all_types": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.filter.apply": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.filter.clear": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.link": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.next": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.prev": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.system_actor": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "audit.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "eod.err.archive_export_failed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "eod.err.check_failed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "eod.err.list_failed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "eod.err.range_failed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "eod.err.retention_save_failed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.col.receipt": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.col.sync": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.col.tender": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.col.till": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.col.time": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.col.total": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.change": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.discount": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.item": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.offline": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.online": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.payments": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.price": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.qty": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.service_charge": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.sku": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.subtotal": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.sync": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.tax": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.terminal_id": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.total": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.totals": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.detail.trace_id": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.empty": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.error.server": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.filter.all_tills": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.filter.day": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.filter.till": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.replica_no_cross_till": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.reprint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.reprinted": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.tender.split": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.tender.unknown": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.till_last_synced": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.till_unknown": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "journal.truncated": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.avg_sale": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.business_day_start.help": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.business_day_start.label": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.busy_days": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.busy_hours": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.by_cash_adjustment_reason": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.by_day": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.by_department": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.by_method": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.by_till": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.day": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.days": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.dead_stock": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.dead_stock_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.discounts": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.article_print.help": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.article_print.label": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.article_print_cap.label": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.article_print_mode.all": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.article_print_mode.capped": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.article_print_mode.off": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.auto": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.by_article": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.by_article_group": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.by_operator": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.by_order_type": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.done": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.exists": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.failed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.bilgi_fisi": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.iade_fisi": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.maker": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.mali_fis": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.match": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.mismatch": {
+    "explanation": "",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.none": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.other": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.serial": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.till_tenders": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.z_multiple": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.z_no": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.gross": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.net": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.operator": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.period_range": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.qty": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.range_downloaded": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.range_from": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.range_loading": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.range_pick_dates": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.range_run": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.range_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.range_to": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.run": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.tips": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.unattributed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.eod.variance_flag": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.margins": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.margins_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.margins_none": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.net": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.none": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.period.anchor": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.period.custom": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.period.day": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.period.month": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.period.rolling": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.period.week": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.period.year": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.preset.label": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.preset.this_month": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.preset.this_week": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.preset.today": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.preset.yesterday": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.refunds": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.revenue": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.sales": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.seasonal": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.seasonal_by_category": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.seasonal_expected": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.seasonal_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.seasonal_lunar_badge": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.seasonal_lunar_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.seasonal_suggest": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.seasonal_uncategorized": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.shrinkage_count": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.shrinkage_reason": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.shrinkage_summary": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.shrinkage_summary_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.shrinkage_top_items": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.shrinkage_total": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.shrinkage_value": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.slow_items": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tab.eod": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tab.forecast": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tab.items": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tab.payments": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tab.sales_trend": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tab.shrinkage": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tab.tax": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tab.tips": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tab.yuzde_usulu": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tax": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tax_collected": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tax_net": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tax_rate": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tax_summary": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tax_summary_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.this_till": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.allocated": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.col_amount": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.col_date": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.col_note": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.col_type": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.col_worker": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.detail_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.error.export": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.error.save": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.export_btn": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.filter_all_workers": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.filter_worker": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.form_amount": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.form_date": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.form_note": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.form_note_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.form_submit": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.form_type": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.form_worker": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.form_worker_pick": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.place_of_business": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.record_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.service_charge_received": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.tip_received": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.type_service_charge": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.tips.type_tip": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.today": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.top_items": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.uncategorized": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.wd_fri": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.wd_mon": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.wd_sat": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.wd_sun": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.wd_thu": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.wd_tue": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.wd_wed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yoy": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.col_amount": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.col_basis": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.col_date": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.col_note": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.col_recorded_by": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.col_worker": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.collected": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.collected_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.collections_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.distributed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.distributed_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.distributions_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.error.save": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.export_btn": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.filter_all_workers": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.filter_worker": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.form_amount": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.form_basis": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.form_basis_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.form_collection_submit": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.form_date": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.form_distribution_submit": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.form_note": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.form_note_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.form_pool": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.form_pool_pick": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.form_worker": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.form_worker_pick": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.place_of_business": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.record_collection_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.record_collection_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.record_distribution_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.yuzde_usulu.record_distribution_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.zpaper.by_method_vat_rate": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.zpaper.by_vat_rate": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.zpaper.generated": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.zpaper.net": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.zpaper.refunds": {
+    "explanation": "",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.zpaper.sales": {
+    "explanation": "",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.zpaper.tax_net": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "reports.zpaper.tips": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  }
+}

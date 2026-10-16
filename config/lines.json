@@ -1,0 +1,6 @@
+{
+  "source": "https://github.com/universaltill/universal-till.git",
+  "branch": "main",
+  "supported_lines": ["0.34"],
+  "note": "Till release lines (MAJOR.MINOR) whose keys stay translatable: the newest final tag vMAJOR.MINOR.N of each line is read, plus main. No support-window policy exists yet (ut-docs#4365 follow-up): until one does, this list is maintained by hand — add a line when it ships, remove it when it is no longer supported. Removing a line drops keys only it used from the next sync and bundle (ADR-0160 §5)."
+}

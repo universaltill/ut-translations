@@ -1,0 +1,1019 @@
+{
+  "demo.not_available": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.auto_register.hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.auto_register.label": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.back": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.base_plugins.dismiss_btn": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.base_plugins.not_published_tax": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.base_plugins.pending": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.base_plugins.pending_tax": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.base_plugins.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.ae": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.de": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.es": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.fr": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.gb": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.in": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.ir": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.it": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.nl": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.other": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.pk": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.pt": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.sa": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.show_all": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.tr": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.country.us": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.done.hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.done.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.error.save_failed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.error.store_name_required": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.error.tse_identity_incomplete": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.error.tse_identity_too_long": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.error.tse_tax_number": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.finish": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.join.discover_help": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.join.help": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.join.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.language.detected_coming_soon": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.language.downloads_on_select": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.language.install_pending": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.language.installing": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.language.more_when_connected": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.language.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.next": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.shop_type.cafe": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.shop_type.hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.shop_type.hospitality": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.shop_type.market_stall": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.shop_type.other": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.shop_type.retail": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.shop_type.service": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.shop_type.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.store.placeholder": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.store.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tax_plugin.description": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tax_plugin.install_btn": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tax_plugin.install_pending": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tax_plugin.install_when_online_btn": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tax_plugin.not_published": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tax_plugin.offline_note": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tax_plugin.queued_offline": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tax_plugin.skip_warning": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tax_plugin.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.till_name.default": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.till_name.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tse.address": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tse.custody_note": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tse.hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tse.legal_name": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tse.owner_name": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tse.skip": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tse.tax_number": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tse.tax_number_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.tse.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.update.apply_failed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.update.prompt": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.update.restart_timeout": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.update.restarting": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "shop_name_notice.cta": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "shop_name_notice.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.back": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.basket.body": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.basket.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.counter": {
+    "explanation": "",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.done": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.end.body": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.end.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.error.signed_out": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.help.body": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.help.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.intro.body": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.intro.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.nav.body": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.nav.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.next": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.parked.body": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.parked.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.pay.body": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.pay.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.products.body": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.products.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.restart.button": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.restart.description": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.restart.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.search.body": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.search.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.session.body": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.session.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.skip": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.status.body": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "tour.status.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  }
+}

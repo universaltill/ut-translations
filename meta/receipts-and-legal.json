@@ -1,0 +1,2169 @@
+{
+  "fiscal.banner.override_active": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscal.chip_degraded": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscal.chip_degraded_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscal.chip_ok": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscal.chip_ok_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscal.chip_unsigned_count": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.actions.confirm": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.actions.confirm_help": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.actions.unavailable": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.actions.unpair": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.actions.unpair_help": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.device.driver": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.device.host": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.device.maker": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.device.port": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.driver.note": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.error.not_found": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.error.owner_required": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.error.owner_required_country_change": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.error.server": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.intro": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.last.issued_at": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.last.kind": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.last.none": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.last.receipt_no": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.last.serial": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.last.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.last.z_no": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.msg.confirmed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.msg.unpaired": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.plugin.active": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.plugin.missing": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.plugin.settings_link": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.plugin.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.state.confirmed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.state.not_confirmed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.state.shadow": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.state.system_of_record": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.state.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscaldevice.today.count": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.address.city": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.address.error": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.address.postcode": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.address.street": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.address.submit": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.banner.due": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.banner.due_decommission": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.col.acquired": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.col.commissioned": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.col.decommissioned": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.col.eas_serial": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.col.eas_software": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.col.eas_type": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.col.register": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.col.status": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.col.tse_cert_id": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.col.tse_serial": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.col.tse_type": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.decommission": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.decommission.confirm_label": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.decommission_confirm": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.empty": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.error.create": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.error.decommission": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.error.invalid_date": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.error.replica_use_primary": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.error.required": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.intro": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.new": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.new.submit": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.new.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.no_location": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.search_placeholder": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.status.active": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.status.decommissioned": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.view.note": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "fiscalregister.view.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.after_discount": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.already_issued": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.bill_to": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.credit_note": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.credits": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.customer_address": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.customer_name": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.customer_required": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.customer_vat_no": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.doc_credit_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.doc_tax_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.doc_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.error.issue_failed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.error.server": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.export_btn": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.filter": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.for_sale": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.from": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.gross": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.issue_btn": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.issue_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.issued": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.issued_col": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.list_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.net": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.none": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.not_invoiceable": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.print": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.range_total": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.sum_note": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.tax": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.tax_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.time_of_supply": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.to": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.total": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.unit_price": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.vat": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "invoice.vat_no": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.ask.none": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.ask.paper": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.ask.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.auth_code": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.auto_reset": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.change": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.device.issued_at": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.device.receipt_no": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.device.serial": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.device.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.device.z_no": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.tse.log_time": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.tse.serial_number": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.tse.signature": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.tse.signature_algorithm": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.tse.signature_counter": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.tse.start_time": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.tse.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.tse.transaction_number": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.unsigned_cannot_sign": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.unsigned_override": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.fiscal.unsigned_signing": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.legal.plugin_label": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.new_customer": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.device.issued_at": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.device.receipt_no": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.device.serial": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.device.z_no": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.for_receipt": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.line_dine_in": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.line_takeaway": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.mixed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.order_no": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.receipt_no": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.refund": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.total": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.tse.algorithm": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.tse.end": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.tse.serial": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.tse.signature": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.tse.signature_counter": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.tse.start": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.tse.transaction_no": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.paper.vat_no": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.payments": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.print": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.printer.retry": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.printer.unavailable": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.return_for": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.tip": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.total_incl_vat": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.tracking.caption": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.vouchers.issued": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.vouchers.new_balance": {
+    "explanation": "",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.vouchers.top_up": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.vouchers.top_up_void": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "receipt.vouchers.void": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "shadow_documents.banner": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "shadow_documents.refused": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "shadow_documents.sale_recorded": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.col.active": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.col.name": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.col.rate": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.col.takeaway_rate": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.deactivate": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.err.duplicate_name": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.err.invalid_form": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.err.invalid_rate": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.err.list_failed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.err.name_required": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.err.not_found": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.err.rate_not_de_fiscal": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.err.save_failed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.manage_overrides_link": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.new": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.reactivate": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.save": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "taxcodes.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  }
+}

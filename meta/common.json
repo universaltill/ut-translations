@@ -1,0 +1,254 @@
+{
+  "app.name": {
+    "explanation": "The product name, shown in the window title, the header and the about page. A brand name: never translate it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.back": {
+    "explanation": "Button that returns to the previous screen or step.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.cancel": {
+    "explanation": "Button that closes a dialog or form without saving anything.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.clear": {
+    "explanation": "Button that empties a field, search or selection.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.close": {
+    "explanation": "Button that closes a panel or dialog.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.discard_confirm": {
+    "explanation": "Confirmation question shown when the user leaves a form that has unsaved changes.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.done": {
+    "explanation": "Button that finishes a step or closes an editing mode after the work is saved.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.edit": {
+    "explanation": "Button or link that opens a record for editing.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.error.invalid_upload": {
+    "explanation": "Error shown when an uploaded file can't be read or is the wrong type.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.error.manager_or_admin_required": {
+    "explanation": "Error shown when a cashier tries an action only a manager or an admin may do.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.error.network": {
+    "explanation": "Error shown when a request fails because the till can't reach the server or another till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.error.server": {
+    "explanation": "Generic error shown when an action fails for an unexpected reason.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.loading": {
+    "explanation": "Short status text shown while a list or panel is loading.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.money.invalid": {
+    "explanation": "Validation message under an amount field when the input is not a valid amount. Keep both example amounts and both separators (dot and comma).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.money.invalid_whole": {
+    "explanation": "Validation message under an amount field that accepts whole numbers only.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.no_results": {
+    "explanation": "Empty-state text when a search finds nothing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.percent.invalid": {
+    "explanation": "Validation message under a percentage field. Keep both examples and both separators (dot and comma).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.save": {
+    "explanation": "Button that saves a form.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.show_less": {
+    "explanation": "Toggle that collapses an expanded list or text.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.show_more": {
+    "explanation": "Toggle that expands a shortened list or text.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.submit": {
+    "explanation": "Button that sends a form.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "common.view": {
+    "explanation": "Button or link that opens a record read-only.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "confirm.make_satellite_body": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "confirm.make_satellite_confirm": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "confirm.make_satellite_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "error.page.forbidden_title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "error.page.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "notice.dismiss": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  }
+}

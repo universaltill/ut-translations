@@ -1,0 +1,25 @@
+# Unit tests for the sync job and the Weblate provisioning script. Public
+# repo: GitHub-hosted runner, read-only token, no secrets (the provisioning
+# tests run against a fake Weblate on 127.0.0.1).
+
+name: test
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  unit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Unit tests
+        run: python3 -W error::ResourceWarning -m unittest discover -s tests -v

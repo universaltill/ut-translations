@@ -1,0 +1,36 @@
+# Every commit on a PR must be authored by the human who did the work
+# (ut-docs#732, #1373; copied from universal-till). Public repo: GitHub-hosted
+# runner only — a fork PR must never run inside the homelab.
+#
+# Commits Weblate pushes to main (author = the translator, from their Zitadel
+# identity) and the sync job's github-actions[bot] commits don't go through a
+# PR, so this only gates human changes to the tooling.
+
+name: commit-attribution
+
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  authors:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Run guard-commit-attribution regression tests
+        run: bash scripts/ci/guard-commit-attribution_test.sh
+
+      - name: Reject AI-tool, unattributable, or wrong-ID noreply commit authors
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          set -euo pipefail
+          git log --format='%H|%ae|%an' "$BASE_SHA..$HEAD_SHA" | bash scripts/ci/guard-commit-attribution.sh

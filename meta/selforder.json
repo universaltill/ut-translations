@@ -1,0 +1,380 @@
+{
+  "kiosk.checkout_start": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "kiosk.inventory": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "kiosk.offline": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.all_categories": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.back": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.cart_empty": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.checkout": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.checkout.declined": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.checkout.failed": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.checkout.fiscal_blocked": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.checkout.fiscal_cannot_sign": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.checkout.fiscal_device_no_receipt": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.checkout.invalid_method": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.checkout.no_methods": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.checkout.tax_unavailable": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.checkout.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.confirm.counter_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.confirm.counter_pay_first_hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.confirm.done": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.confirm.hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.confirm.qr_caption": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.confirm.receipt": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.confirm.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.counter.hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.counter.place_order": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.counter.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.decrease": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.exit": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.increase": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.no_items": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.order_type.dine_in": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.order_type.label": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.order_type.takeaway": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.remove": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.table_busy.hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.table_busy.retry": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.table_busy.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.tap_to_start": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.till_busy.hint": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.till_busy.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.title": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "selforder.welcome": {
+    "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  }
+}

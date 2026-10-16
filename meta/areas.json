@@ -1,0 +1,67 @@
+{
+  "sale": {
+    "name": "Sale",
+    "description": "The sale screen: basket, scanning, payment, holds, refunds and the quick-button grid.",
+    "keys": 255
+  },
+  "catalog": {
+    "name": "Catalog",
+    "description": "Items, categories, modifiers, stock, promotions, vouchers, imports and the menu designer.",
+    "keys": 828
+  },
+  "orders": {
+    "name": "Orders",
+    "description": "Orders, tables, kitchen stations and displays, and order tracking.",
+    "keys": 133
+  },
+  "reports": {
+    "name": "Reports",
+    "description": "Reports, the journal, end of day and the audit trail.",
+    "keys": 251
+  },
+  "staff": {
+    "name": "Staff",
+    "description": "Users, permissions, sign-in, PIN elevation and shifts.",
+    "keys": 265
+  },
+  "settings": {
+    "name": "Settings",
+    "description": "Settings, admin menus, locations, registers, country settings, translations and the subscription.",
+    "keys": 685
+  },
+  "tills": {
+    "name": "Tills",
+    "description": "Tills and devices: sync, pairing, Bluetooth devices, status chips, diagnostics, recovery and uninstall.",
+    "keys": 322
+  },
+  "setup": {
+    "name": "Setup",
+    "description": "First-run setup, the guided tour, demo data and onboarding notices.",
+    "keys": 113
+  },
+  "selforder": {
+    "name": "Self-order",
+    "description": "The self-order kiosk's customer pages.",
+    "keys": 42
+  },
+  "receipts-and-legal": {
+    "name": "Receipts and legal",
+    "description": "Receipts, invoices, fiscal devices and registers, tax codes and other legally relevant wording. Every key here needs a human approval (ADR-0160 §4).",
+    "keys": 197
+  },
+  "plugins": {
+    "name": "Plugins",
+    "description": "The plugin marketplace, plugin pages and the assistant.",
+    "keys": 274
+  },
+  "support": {
+    "name": "Support",
+    "description": "Help, the user manual links and issue reports.",
+    "keys": 76
+  },
+  "common": {
+    "name": "Common",
+    "description": "Shared words and messages used across many screens.",
+    "keys": 28
+  }
+}
