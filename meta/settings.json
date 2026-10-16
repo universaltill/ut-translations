@@ -5138,6 +5138,14 @@
       "0.34"
     ]
   },
+  "settings.tills.main_till_addr": {
+    "explanation": "Line on a joined till's Settings Tills card giving the network address of the main till it follows.\n\nPlaceholders:\n- %s: network address of the main till, e.g. 192.168.1.10:8080",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.tills.name_label": {
     "explanation": "",
     "flags": "",
@@ -5181,6 +5189,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.tills.role_label": {
+    "explanation": "Label in front of this till's role on the Settings Tills card (This till: Main till).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.tills.role_main": {
+    "explanation": "This till's role when it is the shop's main till (the one other tills join), shown after the 'This till' label.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.title": {

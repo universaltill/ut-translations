@@ -101,7 +101,7 @@
   "plugins.install.error.page_route_conflict": "This plugin's page route conflicts with an existing one. Pick a different route and try again.",
   "plugins.install.error.payment_conflict": "This plugin's payment key or label conflicts with an existing one. Pick a different key or label and try again.",
   "plugins.install.error.registered_required": "This plugin requires a claimed store account — sign in and claim your store to install it.",
-  "plugins.install.error.replica_use_primary": "This till follows a primary till — install plugins on the primary; they arrive on every till automatically within about half a minute.",
+  "plugins.install.error.replica_use_primary": "This till follows a main till — install plugins on the main till; they arrive on every till automatically within about half a minute.",
   "plugins.install.error.retryable": "Install failed. You can retry.",
   "plugins.install.error.version_mismatch": "The marketplace did not return the requested plugin version. Install failed.",
   "plugins.install.modal.cancel": "Cancel",
@@ -132,7 +132,7 @@
   "plugins.manage.disabled": "Disabled",
   "plugins.manage.empty": "No plugins installed. Get some from the Plugin Store.",
   "plugins.manage.enabled": "Enabled",
-  "plugins.manage.error.replica_use_primary": "This till follows a primary till — manage plugins on the primary till.",
+  "plugins.manage.error.replica_use_primary": "This till follows a main till — manage plugins on the main till.",
   "plugins.manage.import_btn": "Import",
   "plugins.manage.import_help": "Side-load a plugin bundle (.tar.gz) — for offline provisioning or development.",
   "plugins.manage.import_title": "Import from file",
@@ -272,5 +272,5 @@
   "plugins.type.tax": "Tax",
   "plugins.type.theme": "Theme",
   "plugins.type_label": "Type:",
-  "plugins.uninstall.error.replica_use_primary": "This till follows a primary till — remove plugins on the primary; the change reaches every till automatically within about half a minute."
+  "plugins.uninstall.error.replica_use_primary": "This till follows a main till — remove plugins on the main till; the change reaches every till automatically within about half a minute."
 }

@@ -109,7 +109,7 @@
   "elevation.summary.store_save": "Save changes to the store's currency, country, region or tax rate.",
   "elevation.summary.subscription_check_now": "Ask Universal Till now whether this shop's subscription was renewed.",
   "elevation.summary.subscription_panel": "Renew or change this shop's plan.",
-  "elevation.summary.sync_promote": "Promote this till to a standalone primary, ending sync with its current primary.",
+  "elevation.summary.sync_promote": "Promote this till to a standalone main till, ending sync with its current main till.",
   "elevation.summary.telemetry_off": "Turn off plugin telemetry sharing.",
   "elevation.summary.telemetry_on": "Turn on plugin telemetry sharing.",
   "elevation.summary.till_name": "Rename this till to \"%s\".",

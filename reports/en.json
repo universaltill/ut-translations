@@ -51,7 +51,7 @@
   "journal.filter.all_tills": "All tills",
   "journal.filter.day": "Day",
   "journal.filter.till": "Till",
-  "journal.replica_no_cross_till": "Cross-till sales are only available on this shop's primary till.",
+  "journal.replica_no_cross_till": "Cross-till sales are only available on this shop's main till.",
   "journal.reprint": "Print receipt",
   "journal.reprinted": "Receipt sent to the printer",
   "journal.tender.split": "Split",
