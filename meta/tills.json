@@ -1588,7 +1588,8 @@
     "flags": "max-length:60",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "tills.discovery.ambient.has_sales_warning": {
@@ -1596,7 +1597,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "tills.discovery.ambient.link": {

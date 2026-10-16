@@ -5359,7 +5359,8 @@
     "flags": "max-length:70",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.update.android.installing": {
@@ -6107,6 +6108,246 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "translations.mode.area": {
+    "explanation": "Label for the part of the till the text belongs to (sale, catalog, settings...), which is also its group in the translation service.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.current": {
+    "explanation": "Label for the text as the till shows it now, in the current language (the language code follows in brackets).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.description": {
+    "explanation": "Label for the note that tells translators where and how the text is used.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.empty": {
+    "explanation": "Error when Save is pressed with an empty override field.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.english": {
+    "explanation": "Label for the English source text, shown under the current language's text when they differ.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.hint": {
+    "explanation": "Short reminder in the status bar while translate mode is on: how to open a text's panel. 'Alt' is the keyboard key; keep it as on the keyboard.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.intro": {
+    "explanation": "Explanation on the translation editor's Translate mode card: what the mode does and how to open a text's panel.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.key": {
+    "explanation": "Label for the text's translation key (its technical identifier) in the translate-mode panel.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.max_length": {
+    "explanation": "Label for the most characters a translation of this text may have; the number follows it.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.no_description": {
+    "explanation": "Shown in the translate-mode panel when the text has no translator note yet.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.open_weblate": {
+    "explanation": "Link that opens this text in the Weblate translation service in a new tab. Weblate is a product name: never translate it.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.other_keys": {
+    "explanation": "Lead-in above a list of text keys, when the pressed element shows several texts (for example a label and its tooltip).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.override_help": {
+    "explanation": "Explanation under the Shop override heading. 'Reset' refers to the Reset button (translations.reset).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.override_title": {
+    "explanation": "Heading of the panel section where a manager changes the wording on this till only (the same overrides as the translation editor).",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.page_areas": {
+    "explanation": "Heading of the list of areas (groups in the translation service) that the texts on the current page belong to.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.page_areas_help": {
+    "explanation": "Explanation under 'Areas on this page': these are the translation-service groups to invite a translator to.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.panel_title": {
+    "explanation": "Title of the side panel that opens when a manager Alt+clicks or long-presses a text in translate mode.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.placeholders": {
+    "explanation": "Label for the list of values the till fills into the text (a name, an amount...).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.plugin_key": {
+    "explanation": "Shown instead of the Weblate link when the text belongs to an installed plugin rather than the till itself.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.qr_alt": {
+    "explanation": "Screen-reader description of the QR code image. Weblate is a product name: never translate it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.qr_hint": {
+    "explanation": "Hint under the QR code: scanning it opens the same link on a phone or another computer.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.refused_kiosk": {
+    "explanation": "Error when someone tries to turn on translate mode on a till set up as a customer self-order kiosk.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.reload": {
+    "explanation": "Button that reloads the page so a saved override shows.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.reset_done": {
+    "explanation": "Confirmation after a shop override is removed from the translate-mode panel.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.saved": {
+    "explanation": "Confirmation after a shop override is saved from the translate-mode panel.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.title": {
+    "explanation": "Name of the manager-only view mode that shows each on-screen text's translation key. Card title on the translation editor and label in the status bar.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.turn_off": {
+    "explanation": "Button that turns translate mode off (status bar and translation editor).",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.turn_on": {
+    "explanation": "Button on the translation editor that turns translate mode on for this browser.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.unknown_key": {
+    "explanation": "Message in the translate-mode panel when the pressed text's key is not known to the till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "translations.mode.weblate_title": {
+    "explanation": "Heading of the panel section that links the text to the shared translation service (Weblate).",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "translations.reset": {
