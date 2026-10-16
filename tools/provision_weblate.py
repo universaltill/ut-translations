@@ -209,14 +209,10 @@ class Provisioner:
 
     def component_body(self, area, name):
         owner = area == REPO_OWNER
-        return {
+        body = {
             "name": name,
             "slug": area,
-            "vcs": "git",
             "repo": self.repo_url if owner else f"weblate://{self.project}/{REPO_OWNER}",
-            "push": self.push_url if owner else "",
-            "branch": "main",
-            "push_branch": "",
             "file_format": "json",
             "filemask": f"{area}/*.json",
             "template": f"{area}/en.json",
@@ -224,10 +220,21 @@ class Provisioner:
             "new_lang": "add",
             "edit_template": False,
             "manage_units": False,
-            "merge_style": "rebase",
-            "push_on_commit": True,
             "enforced_checks": ENFORCED_CHECKS,
         }
+        if owner:
+            # Only the component that owns the clone has VCS settings; a
+            # weblate:// linked one takes them from it, and Weblate refuses
+            # them on it ("not available for linked repositories").
+            body.update({
+                "vcs": "git",
+                "push": self.push_url,
+                "branch": "main",
+                "push_branch": "",
+                "merge_style": "rebase",
+                "push_on_commit": True,
+            })
+        return body
 
     def ensure_component(self, area, name):
         want = self.component_body(area, name)
@@ -240,6 +247,13 @@ class Provisioner:
         diff = {}
         for k, v in want.items():
             have = cur.get(k)
+            if k == "repo" and v.startswith("weblate://"):
+                # Weblate reads a link back resolved: the owner's clone URL in
+                # `repo`, the link in `linked_component`.
+                lp, lc = v[len("weblate://"):].split("/")
+                linked = cur.get("linked_component") or ""
+                if linked.rstrip("/").endswith(f"/api/components/{lp}/{lc}"):
+                    continue
             if isinstance(v, list):
                 same = sorted(have or []) == sorted(v)
             else:
@@ -255,10 +269,18 @@ class Provisioner:
         return False
 
     def ensure_addon(self, area):
-        path = f"/api/components/{self.project}/{area}/addons/"
-        have = self.c.list(path) or []
-        if not any(a.get("name") == CLEANUP_ADDON for a in have):
-            self.write("POST", path, {"name": CLEANUP_ADDON, "configuration": {}},
+        # Weblate (2026.10) lists a component's add-ons only as URLs on the
+        # component itself; GET on .../addons/ is not allowed (POST only).
+        # A component that doesn't exist yet (a dry run) has none.
+        comp = self.c.get(f"/api/components/{self.project}/{area}/") or {}
+        names = set()
+        for url in comp.get("addons") or []:
+            addon = self.c.get(self.c.next_url(url))
+            if addon:
+                names.add(addon.get("name"))
+        if CLEANUP_ADDON not in names:
+            self.write("POST", f"/api/components/{self.project}/{area}/addons/",
+                       {"name": CLEANUP_ADDON, "configuration": {}},
                        f"install {CLEANUP_ADDON} on {area}")
 
     # --- units -------------------------------------------------------------

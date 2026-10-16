@@ -19,6 +19,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "tools"))
 import provision_weblate as p  # noqa: E402
 
 TOKEN = "wlu_test_token"
+LINKED_FORBIDDEN = ("branch", "push", "push_branch", "merge_style", "push_on_commit", "vcs")
 
 
 class FakeWeblate:
@@ -88,6 +89,13 @@ class FakeWeblate:
             return self.page(self.labels.get(pr, []), q, path)
         if (m := re.fullmatch(r"/api/projects/([^/]+)/components/", path)) and method == "POST":
             pr = m.group(1)
+            # As the real API: a weblate:// linked component takes its VCS
+            # settings from the linked one and refuses its own.
+            if body.get("repo", "").startswith("weblate://"):
+                for opt in LINKED_FORBIDDEN:
+                    if opt in body:
+                        return 400, {"type": "validation_error", "errors": [{"code": "invalid", "attr": opt,
+                                     "detail": "Option is not available for linked repositories."}]}
             comp = dict(body)
             comp["source_language"] = {"code": body["source_language"]["code"], "name": "English"}
             self.components[(pr, body["slug"])] = comp
@@ -100,13 +108,30 @@ class FakeWeblate:
                 return 404, {"detail": "Not found."}
             if method == "PATCH":
                 self.components[key].update(body)
-            return 200, self.components[key]
+            # Weblate 2026.10 lists a component's add-ons only as URLs here.
+            out = dict(self.components[key])
+            # A weblate:// link reads back resolved: the owner's clone URL in
+            # `repo`, the link itself in `linked_component`.
+            if out.get("repo", "").startswith("weblate://"):
+                lp, lc = out["repo"][len("weblate://"):].split("/")
+                out["linked_component"] = f"{self.base()}/api/components/{lp}/{lc}/"
+                out["repo"] = self.components[(lp, lc)]["repo"]
+            out["addons"] = [f"{self.base()}/api/addons/{a['id']}/" for a in self.addons.get(key, [])]
+            return 200, out
         if (m := re.fullmatch(r"/api/components/([^/]+)/([^/]+)/addons/", path)):
             key = (m.group(1), m.group(2))
             if method == "POST":
                 self.addons.setdefault(key, []).append({"id": self.nid(), **body})
                 return 201, body
-            return self.page(self.addons.get(key, []), q, path)
+            # As the real API: this endpoint is POST-only.
+            return 405, {"type": "client_error", "errors": [{"code": "method_not_allowed"}]}
+        if (m := re.fullmatch(r"/api/addons/(\d+)/", path)):
+            aid = int(m.group(1))
+            for addons in self.addons.values():
+                for a in addons:
+                    if a["id"] == aid:
+                        return 200, a
+            return 404, {"detail": "Not found."}
         if (m := re.fullmatch(r"/api/translations/([^/]+)/([^/]+)/en/units/", path)):
             key = (m.group(1), m.group(2))
             if key not in self.units:
@@ -272,11 +297,20 @@ class Provision(unittest.TestCase):
         names = sorted(lab["name"] for lab in legal_unit["labels"])
         self.assertEqual(names, ["legal", "needs-screenshot"])
 
+    def test_linked_components_read_back_resolved_are_not_rewritten(self):
+        self.run_it()
+        self.fake.writes.clear()
+        self.run_it()
+        self.assertEqual([w for w in self.fake.writes if w[1].startswith("/api/components/")], [])
+
     def test_dry_run_writes_nothing_but_reports_the_plan(self):
         report = self.run_it(dry_run=True)
         self.assertEqual(self.fake.writes, [])
         self.assertTrue(any("create project universal-till" in a for a in report.actions))
         self.assertTrue(any("create component sale" in a for a in report.actions))
+        # A component that doesn't exist yet has no add-ons to read (the
+        # real API's GET .../addons/ is 405): the plan still lists the install.
+        self.assertTrue(any("install weblate.cleanup.generic on sale" in a for a in report.actions))
 
     def test_units_not_parsed_yet_is_reported_not_fatal(self):
         self.fake.parse_on_create = False
