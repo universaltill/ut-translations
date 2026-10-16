@@ -1,0 +1,14 @@
+{
+  "note": "Language bundles the publish workflow may build (ADR-0160 §5; ut-docs#4367). Each locale: the till locale code (also the plugin id suffix and locales/<code>.json), its Weblate language code, display name, script (ISO 15924; the per-string script check), human_spot_check (en/de/tr publish through the bundle-publish-human environment, ADR-0160 §4) and min_coverage (share of the union's keys the bundle must hold before it may publish: set for de/es/pt, whose 2.x bundle replaces an installed ut-plugin-language-* pack of ~3,470 strings under the same id — a thinner bundle would take German/Spanish/Portuguese away from every till until #4371 has imported the packs). The workflow's locale choice list must equal this list (tests/test_workflow.py).",
+  "project": "universal-till",
+  "human_reviewers_team": "human-reviewers",
+  "locales": {
+    "en": {"weblate": "en", "name": "English", "script": "Latn", "human_spot_check": true, "source": true},
+    "de": {"weblate": "de", "name": "German (Deutsch)", "script": "Latn", "human_spot_check": true, "min_coverage": 0.95},
+    "tr": {"weblate": "tr", "name": "Turkish (Türkçe)", "script": "Latn", "human_spot_check": true},
+    "es": {"weblate": "es", "name": "Spanish (Español)", "script": "Latn", "min_coverage": 0.95},
+    "pt": {"weblate": "pt", "name": "Portuguese (Português)", "script": "Latn", "min_coverage": 0.95},
+    "ar": {"weblate": "ar", "name": "Arabic (العربية)", "script": "Arab"},
+    "fa": {"weblate": "fa", "name": "Persian (فارسی)", "script": "Arab"}
+  }
+}
