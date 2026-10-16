@@ -1,0 +1,241 @@
+# Build, verify and publish one language bundle,
+# com.universaltill.language-<locale> (ADR-0160 §4, §5; ut-docs#4367).
+#
+# By hand only (workflow_dispatch), one locale per run, on main only.
+#
+#   build    reads approved translations from Weblate (tools/build_bundle.py:
+#            review gate, per-string checks; for en, this repo's English is
+#            compared with universal-till's at source_commit) and uploads the
+#            bundle, report.json and review.md as a run artifact straight
+#            away. Holds the Weblate read token, in the build step only, and
+#            runs no universal-till code: no Go, no guard scripts
+#            (--no-scans). review.md is the job summary the spot-checker
+#            reads. Outputs the sha256 of the bundle and of report.json.
+#   verify   no environment, no secret. Checks the artifact against those
+#            sha256 outputs, then runs universal-till's compliance and naming
+#            guards over the bundle (build_bundle.py --scan-bundle) and the
+#            till's own installer + locale loader, with tampered copies
+#            refused (tools/till_verify.py).
+#   publish  only with `publish` ticked, after build and verify: uploads that
+#            exact artifact (bundle and report.json sha256 re-checked against
+#            the build job's outputs, since verify ran the till's code in
+#            between) with the scoped language-publisher token and approves
+#            it (the marketplace signs on approval). Runs in
+#              bundle-publish-human  for en, de, tr — a required reviewer
+#                                    approves the deployment: that approval
+#                                    is the human spot-check (ADR-0160 §4);
+#              bundle-publish        for every other locale.
+#            Both environments are limited to main. The token is an
+#            environment secret, passed to the one step that needs it, never
+#            echoed.
+#
+# source_commit (meta/source.json) must be on universal-till main or be a
+# vX.Y.Z tag's commit: GitHub serves a fork's commit by sha through the
+# parent repository. Checked here after the checkout and again in Python
+# before any till code runs (till_verify.require_released_commit).
+#
+# Least privilege: no workflow-level permissions; each job gets contents:
+# read only. GitHub-hosted runners only (public repo).
+
+name: publish-bundle
+
+on:
+  workflow_dispatch:
+    inputs:
+      locale:
+        description: "Locale to build (config/bundles.json)"
+        type: choice
+        options: [en, de, tr, es, pt, ar, fa]
+      channel:
+        description: "Marketplace channel"
+        type: choice
+        options: [stable, beta, alpha]
+        default: stable
+      publish:
+        description: "Upload + approve (untick for a dry run: build and verify only)"
+        type: boolean
+        default: false
+
+permissions: {}
+
+concurrency:
+  group: publish-bundle-${{ inputs.locale }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: bundle-build
+    permissions:
+      contents: read
+    outputs:
+      bundle: ${{ steps.build.outputs.bundle }}
+      sha256: ${{ steps.build.outputs.sha256 }}
+      report_sha256: ${{ steps.build.outputs.report_sha256 }}
+      version: ${{ steps.build.outputs.version }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Source commit
+        id: src
+        run: |
+          set -euo pipefail
+          commit=$(python3 -c 'import json; print(json.load(open("meta/source.json"))["main"]["commit"])')
+          [[ "$commit" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::meta/source.json main.commit is not a sha"; exit 1; }
+          echo "commit=${commit}" >> "$GITHUB_OUTPUT"
+
+      - name: universal-till at source_commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: universaltill/universal-till
+          ref: ${{ steps.src.outputs.commit }}
+          path: till
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: source_commit is on universal-till main (a fork's commit is fetchable by sha)
+        env:
+          COMMIT: ${{ steps.src.outputs.commit }}
+        run: |
+          set -euo pipefail
+          commit="$COMMIT"
+          git -C till fetch --quiet --tags origin +refs/heads/main:refs/remotes/origin/main
+          if git -C till merge-base --is-ancestor "$commit" refs/remotes/origin/main; then exit 0; fi
+          if git -C till tag --points-at "$commit" | grep -Eqx 'v[0-9]+\.[0-9]+\.[0-9]+'; then exit 0; fi
+          echo "::error::source_commit $commit is not on universal-till main and no vX.Y.Z tag points at it"
+          exit 1
+
+      - name: Build bundle
+        id: build
+        env:
+          WEBLATE_URL: ${{ vars.WEBLATE_URL }}
+          WEBLATE_TOKEN: ${{ secrets.WEBLATE_BUNDLE_TOKEN }}
+          LOCALE: ${{ inputs.locale }}
+          PUBLISH: ${{ inputs.publish }}
+        run: |
+          set -euo pipefail
+          # --no-scans: universal-till's guards are its code; they run in
+          # the verify job, which holds no secret.
+          args=(--locale "$LOCALE" --till-source till --out dist --no-scans)
+          # A publish run fails here, before any upload, when the bundle is
+          # empty or below the locale's min_coverage.
+          if [ "$PUBLISH" = "true" ]; then args+=(--require-publishable); fi
+          python3 tools/build_bundle.py "${args[@]}"
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: bundle-${{ inputs.locale }}
+          path: dist/
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Spot-check summary
+        run: cat dist/review.md >> "$GITHUB_STEP_SUMMARY"
+
+  verify:
+    needs: build
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Source commit
+        id: src
+        run: |
+          set -euo pipefail
+          commit=$(python3 -c 'import json; print(json.load(open("meta/source.json"))["main"]["commit"])')
+          [[ "$commit" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::meta/source.json main.commit is not a sha"; exit 1; }
+          echo "commit=${commit}" >> "$GITHUB_OUTPUT"
+
+      - name: universal-till at source_commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: universaltill/universal-till
+          ref: ${{ steps.src.outputs.commit }}
+          path: till
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: source_commit is on universal-till main (a fork's commit is fetchable by sha)
+        env:
+          COMMIT: ${{ steps.src.outputs.commit }}
+        run: |
+          set -euo pipefail
+          commit="$COMMIT"
+          git -C till fetch --quiet --tags origin +refs/heads/main:refs/remotes/origin/main
+          if git -C till merge-base --is-ancestor "$commit" refs/remotes/origin/main; then exit 0; fi
+          if git -C till tag --points-at "$commit" | grep -Eqx 'v[0-9]+\.[0-9]+\.[0-9]+'; then exit 0; fi
+          echo "::error::source_commit $commit is not on universal-till main and no vX.Y.Z tag points at it"
+          exit 1
+
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: till/go.mod
+          cache-dependency-path: till/go.sum
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: bundle-${{ inputs.locale }}
+          path: dist/
+
+      - name: The artifact is what the build job made
+        env:
+          BUNDLE: ${{ needs.build.outputs.bundle }}
+          SHA256: ${{ needs.build.outputs.sha256 }}
+          REPORT_SHA256: ${{ needs.build.outputs.report_sha256 }}
+        run: |
+          set -euo pipefail
+          printf '%s  %s\n%s  %s\n' "$SHA256" "$BUNDLE" "$REPORT_SHA256" dist/report.json | sha256sum -c
+
+      - name: Compliance and naming scans (universal-till's guards at source_commit)
+        env:
+          LOCALE: ${{ inputs.locale }}
+          BUNDLE: ${{ needs.build.outputs.bundle }}
+        run: python3 tools/build_bundle.py --locale "$LOCALE" --till-source till --scan-bundle "$BUNDLE"
+
+      - name: Till verifier (real installer + loader; tampered copies refused)
+        env:
+          LOCALE: ${{ inputs.locale }}
+          BUNDLE: ${{ needs.build.outputs.bundle }}
+          COMMIT: ${{ steps.src.outputs.commit }}
+        run: python3 tools/till_verify.py --till till --commit "$COMMIT" --bundle "$BUNDLE" --locale "$LOCALE"
+
+  publish:
+    needs: [build, verify]
+    if: inputs.publish && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: ${{ contains(fromJSON('["en","de","tr"]'), inputs.locale) && 'bundle-publish-human' || 'bundle-publish' }}
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: bundle-${{ inputs.locale }}
+          path: dist/
+
+      - name: Upload and approve
+        env:
+          MARKETPLACE_BASE_URL: ${{ vars.MARKETPLACE_BASE_URL }}
+          MARKETPLACE_LANGUAGE_UPLOAD_TOKEN: ${{ secrets.MARKETPLACE_LANGUAGE_UPLOAD_TOKEN }}
+          LOCALE: ${{ inputs.locale }}
+          CHANNEL: ${{ inputs.channel }}
+          BUNDLE: ${{ needs.build.outputs.bundle }}
+          SHA256: ${{ needs.build.outputs.sha256 }}
+          REPORT_SHA256: ${{ needs.build.outputs.report_sha256 }}
+        run: >-
+          python3 tools/publish_bundle.py --bundle "$BUNDLE" --report dist/report.json
+          --sha256 "$SHA256" --report-sha256 "$REPORT_SHA256" --locale "$LOCALE" --channel "$CHANNEL"

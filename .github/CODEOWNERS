@@ -1,0 +1,23 @@
+# The language-bundle publish path (ADR-0160 §5, ut-docs#4367): what decides
+# which strings ship to every till, and the one workflow that holds the
+# scoped marketplace token. The owner reviews every change.
+/.github/CODEOWNERS @farshidmirza
+/.github/workflows/publish-bundle.yml @farshidmirza
+/.github/workflows/test.yml @farshidmirza
+/tools/build_bundle.py @farshidmirza
+/tools/bundle_checks.py @farshidmirza
+/tools/publish_bundle.py @farshidmirza
+/tools/till_verify.py @farshidmirza
+/tools/till_harness/ @farshidmirza
+/tools/i18n_map.py @farshidmirza
+/tools/provision_weblate.py @farshidmirza
+/config/bundles.json @farshidmirza
+/config/ai-accounts.json @farshidmirza
+# What decides the English, its legal labels and the source commit the
+# bundle's guards and the till verifier are taken from (review 2(b)), and the
+# job that writes them.
+/meta/ @farshidmirza
+/*/en.json @farshidmirza
+/config/ @farshidmirza
+/tools/sync_english.py @farshidmirza
+/.github/workflows/sync-english.yml @farshidmirza

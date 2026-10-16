@@ -1,6 +1,12 @@
-# Unit tests for the sync job and the Weblate provisioning script. Public
-# repo: GitHub-hosted runner, read-only token, no secrets (the provisioning
-# tests run against a fake Weblate on 127.0.0.1).
+# Unit tests for the sync job, the Weblate provisioning script and the
+# bundle publish tools. Public repo: GitHub-hosted runner, read-only token,
+# no secrets (Weblate and the marketplace are fakes on 127.0.0.1).
+#
+# The bundle tests run universal-till's real compliance/naming guards and
+# its real plugin installer + locale loader (ut-docs#4367), so the job
+# checks out universal-till (public, no credential) at the commit this
+# repo's English came from, and UTT_REQUIRE_TILL=1 turns a missing checkout
+# into a failure instead of a skip.
 
 name: test
 
@@ -15,11 +21,50 @@ permissions:
 jobs:
   unit:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
 
+      - name: Source commit
+        id: src
+        run: |
+          set -euo pipefail
+          commit=$(python3 -c 'import json; print(json.load(open("meta/source.json"))["main"]["commit"])')
+          [[ "$commit" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::meta/source.json main.commit is not a sha"; exit 1; }
+          echo "commit=${commit}" >> "$GITHUB_OUTPUT"
+
+      - name: universal-till at source_commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: universaltill/universal-till
+          ref: ${{ steps.src.outputs.commit }}
+          path: till
+          fetch-depth: 0
+          persist-credentials: false
+
+      # GitHub serves a fork's commit by sha: the tests run universal-till's
+      # code, so the commit must be on its main or a vX.Y.Z tag's commit.
+      - name: source_commit is on universal-till main
+        env:
+          COMMIT: ${{ steps.src.outputs.commit }}
+        run: |
+          set -euo pipefail
+          commit="$COMMIT"
+          git -C till fetch --quiet --tags origin +refs/heads/main:refs/remotes/origin/main
+          if git -C till merge-base --is-ancestor "$commit" refs/remotes/origin/main; then exit 0; fi
+          if git -C till tag --points-at "$commit" | grep -Eqx 'v[0-9]+\.[0-9]+\.[0-9]+'; then exit 0; fi
+          echo "::error::source_commit $commit is not on universal-till main and no vX.Y.Z tag points at it"
+          exit 1
+
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version-file: till/go.mod
+          cache-dependency-path: till/go.sum
+
       - name: Unit tests
+        env:
+          UTT_TILL_SOURCE: ${{ github.workspace }}/till
+          UTT_REQUIRE_TILL: "1"
         run: python3 -W error::ResourceWarning -m unittest discover -s tests -v
