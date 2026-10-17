@@ -78,6 +78,8 @@
   "status.release_notes_updated": "Updated to %s — see what's new",
   "status.report_archive.hint": "The cloud refused the report upload because the subscription is not active. Reports stay on this till and upload once it is active again.",
   "status.report_archive.refused": "Report upload refused",
+  "status.shop_currency_mismatch.hint": "This till sells in %[1]s; your shop on my. uses %[2]s. Change the till's currency in Settings once it is safe for your records. Selling carries on.",
+  "status.shop_currency_mismatch.label": "Currency differs from shop",
   "status.update_auto_blocked": "can't install it by itself — tap for help",
   "status.update_available": "Update available",
   "status.update_confirm": "Confirm update to v",

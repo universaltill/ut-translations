@@ -710,6 +710,22 @@
       "0.34"
     ]
   },
+  "status.shop_currency_mismatch.hint": {
+    "explanation": "Status-bar chip title (tooltip), shown to a manager when this till's currency differs from the shop's currency on my. (the cloud portal; a product name, keep 'my.' as is) and the till did not switch by itself (it already has sales, or this till version does not know that currency). Explains both currencies and that the manager changes it in Settings.\n\nPlaceholders:\n- %[1]s: the till's currency code, e.g. GBP\n- %[2]s: the shop's currency code on my., e.g. EUR",
+    "flags": "placeholders:\"%[1]s\":\"%[2]s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.shop_currency_mismatch.label": {
+    "explanation": "Status-bar chip label, shown to a manager when this till's currency differs from the shop's currency on my. Short: it sits in the status bar.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "status.update_auto_blocked": {
     "explanation": "",
     "flags": "",
@@ -1584,7 +1600,7 @@
     ]
   },
   "tills.discovery.ambient.has_sales_confirm": {
-    "explanation": "Label of a required tick box in the 'found a main till on this network' notice, shown only when this till already has sales. Ticking it confirms that linking replaces this till's sales, products and settings with the main till's copy.",
+    "explanation": "Label of a required tick box in the 'found a main till on this network' notice and above the join tabs on the Tills page, shown only when this till already has sales. Ticking it confirms that linking (or joining with a pairing code) replaces this till's sales, products and settings with the main till's copy.",
     "flags": "max-length:60",
     "labels": [],
     "lines": [
@@ -1593,7 +1609,7 @@
     ]
   },
   "tills.discovery.ambient.has_sales_warning": {
-    "explanation": "Warning in the 'found a main till on this network' notice, shown only when this till already has sales: linking replaces everything on this till with the main till's copy, and this till's own sales are not sent to the main till (a copy stays in this till's backups folder).",
+    "explanation": "Warning in the 'found a main till on this network' notice and above the join tabs on the Tills page, shown only when this till already has sales: linking (or joining with a pairing code) replaces everything on this till with the main till's copy, and this till's own sales are not sent to the main till (a copy stays in this till's backups folder). Also the error shown when a join is attempted without ticking the confirm box.",
     "flags": "",
     "labels": [],
     "lines": [

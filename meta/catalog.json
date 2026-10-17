@@ -4202,6 +4202,38 @@
       "0.34"
     ]
   },
+  "import.file_plugin.detected": {
+    "explanation": "Shown above an import preview when an installed importer plugin recognised the uploaded export file and read it instead of the standard importer.\n\nPlaceholders:\n- %s: the importer plugin's name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "import.file_plugin.too_large": {
+    "explanation": "Error when an uploaded file is over the 32 MB an importer plugin may read; tells the user to split it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "import.file_plugin.upload_again": {
+    "explanation": "Hint under a failed import of a file an importer plugin read: the file must be chosen and previewed again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "import.file_plugin.use_standard": {
+    "explanation": "Button under an importer plugin's preview that reads the same file with the till's own standard importer instead.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "import.help": {
     "explanation": "",
     "flags": "",

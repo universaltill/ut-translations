@@ -7,7 +7,7 @@
   "catalog": {
     "name": "Catalog",
     "description": "Items, categories, modifiers, stock, promotions, vouchers, imports and the menu designer.",
-    "keys": 828
+    "keys": 832
   },
   "orders": {
     "name": "Orders",
@@ -32,7 +32,7 @@
   "tills": {
     "name": "Tills",
     "description": "Tills and devices: sync, pairing, Bluetooth devices, status chips, diagnostics, recovery and uninstall.",
-    "keys": 324
+    "keys": 326
   },
   "setup": {
     "name": "Setup",
