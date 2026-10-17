@@ -2186,6 +2186,38 @@
       "0.34"
     ]
   },
+  "reports.zpaper.articles_more": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: after the top items when the list is cut short; the full list is on the screen.\n\nPlaceholders:\n- %d: how many more items are not printed (a number)",
+    "flags": "max-length:42, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.by_article": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the sales per item. A section heading, printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.by_article_group": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the sales per item category. A section heading, printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.by_department": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the sales per department (top-level category). A section heading, printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.zpaper.by_method_vat_rate": {
     "explanation": "",
     "flags": "",
@@ -2195,6 +2227,30 @@
       "0.34"
     ]
   },
+  "reports.zpaper.by_operator": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the sales per cashier. A section heading, printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.by_order_type": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the sales split into eat-in and takeaway. A section heading, printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.by_till": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the sales per till (register). A section heading, printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.zpaper.by_vat_rate": {
     "explanation": "",
     "flags": "",
@@ -2202,6 +2258,150 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "reports.zpaper.cash.calculated": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: the cash the drawer should hold. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.cash.cash_sales": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash taken for sales. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.cash.new_float": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash left in the drawer for the next shift. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.cash.opening_float": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash in the drawer when the shift opened. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.cash.pay_ins": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash put into the drawer outside a sale. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.cash.pay_outs": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash taken out of the drawer outside a sale. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.cash.tips_held_out": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash tips kept apart from the shop's takings. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.cash.title": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the cash drawer count against the expected cash. A section heading, printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.end_of_day": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: the period line of an older day-based report.\n\nPlaceholders:\n- %s: the business day, as YYYY-MM-DD",
+    "flags": "max-length:31, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.fiscal_device.match": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: the device's receipt count matches the till's.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.fiscal_device.mismatch": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: the device's receipt count differs from the till's.\n\nPlaceholders:\n- %d: the device's receipt count (a number)\n- %d: the till's payment count on the device (a number)",
+    "flags": "max-length:42, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.fiscal_device.no_activity": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: the fiscal device recorded nothing and the till sent nothing to it in this period.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.fiscal_device.other": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: count of other fiscal device slips. Printed as a row label in a 20-character column before a count; a longer label is cut short on paper.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.fiscal_device.serial": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: the fiscal device's serial number (row label).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.fiscal_device.till_tenders": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: how many payments the till sent to the fiscal device (ÖKC). Printed as a row label in a 20-character column before a count; a longer label is cut short on paper.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.fiscal_device.title": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the Turkish fiscal device (ÖKC) check. Keep 'OKC'/'ÖKC' as it is. A section heading, printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.fiscal_device.z_closed_mid": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: after the device's Z numbers when it closed its own day inside this period. At most 30 characters with the numbers left out, so the Z numbers still fit the 42-column paper.\n\nPlaceholders:\n- %s: the device's Z report numbers, comma-separated",
+    "flags": "max-length:30, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.fiscal_device.z_no": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: the fiscal device's own Z report number(s) (row label). 'Z' stays as it is.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "reports.zpaper.generated": {
@@ -2222,6 +2422,14 @@
       "0.34"
     ]
   },
+  "reports.zpaper.receipts_range": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: the first and last receipt numbers in this period.\n\nPlaceholders:\n- %s: the first receipt number\n- %s: the last receipt number",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.zpaper.refunds": {
     "explanation": "",
     "flags": "placeholders:\"%d\"",
@@ -2240,6 +2448,14 @@
       "0.34"
     ]
   },
+  "reports.zpaper.stornos_note": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: explanation in brackets after the fixed German heading STORNOS. At most 31 characters: the whole line must fit 42.",
+    "flags": "max-length:31",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.zpaper.tax_net": {
     "explanation": "",
     "flags": "",
@@ -2256,6 +2472,46 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "reports.zpaper.voided": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: completed sales cancelled afterwards. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.\n\nPlaceholders:\n- %d: the number of voided receipts",
+    "flags": "max-length:20, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.vouchers_adjusted": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: gift voucher balances corrected by a manager. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.\n\nPlaceholders:\n- %d: the number of corrections",
+    "flags": "max-length:20, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.vouchers_imported": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: gift vouchers brought in from another system (opening balances). Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.\n\nPlaceholders:\n- %d: the number of vouchers",
+    "flags": "max-length:20, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.vouchers_issued": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: gift vouchers sold in this period, under the fixed heading GUTSCHEINE. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.\n\nPlaceholders:\n- %d: the number of vouchers",
+    "flags": "max-length:20, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.vouchers_redeemed": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: gift vouchers used to pay in this period. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.\n\nPlaceholders:\n- %d: the number of redemptions",
+    "flags": "max-length:20, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   }
 }
