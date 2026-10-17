@@ -4040,6 +4040,22 @@
       "0.34"
     ]
   },
+  "settings.language.download_group": {
+    "explanation": "Label of the group in Settings → Language's language list holding languages not installed yet, which download from the plugin catalog when picked.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.language.downloads_on_select": {
+    "explanation": "Note under Settings → Language: a language from the download group installs in the background when applied, and the till switches to it once it has arrived.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.language.help": {
     "explanation": "",
     "flags": "",
@@ -4047,6 +4063,30 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.language.install_unavailable": {
+    "explanation": "Status chip on Settings → Language when a picked language left the download queue without arriving (not in the catalog, or removed under Settings → Data). The till's language is unchanged.\n\nPlaceholders:\n- %s: the language's own name, e.g. Deutsch",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.language.installing": {
+    "explanation": "Status chip on Settings → Language while a picked language downloads in the background.\n\nPlaceholders:\n- %s: the language's own name, e.g. Deutsch",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.language.switching": {
+    "explanation": "Status chip on Settings → Language when the picked language has finished downloading and the till is switching to it.\n\nPlaceholders:\n- %s: the language's own name, e.g. Deutsch",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.language.title": {

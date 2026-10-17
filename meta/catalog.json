@@ -4324,7 +4324,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "import.issue.external_id_duplicate": {
@@ -4377,7 +4378,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "import.issue.price_invalid": {
@@ -4988,7 +4990,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "import.system.change.barcode": {
@@ -5014,7 +5017,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "import.system.change.name": {
@@ -5031,7 +5035,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "import.system.change.price": {
