@@ -5143,7 +5143,8 @@
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.tills.name_label": {
@@ -5196,7 +5197,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.tills.role_main": {
@@ -5204,7 +5206,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.title": {
@@ -6139,7 +6142,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.current": {
@@ -6147,7 +6151,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.description": {
@@ -6155,7 +6160,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.empty": {
@@ -6163,7 +6169,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.english": {
@@ -6171,7 +6178,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.hint": {
@@ -6179,7 +6187,8 @@
     "flags": "max-length:60",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.intro": {
@@ -6187,7 +6196,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.key": {
@@ -6195,7 +6205,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.max_length": {
@@ -6203,7 +6214,8 @@
     "flags": "max-length:32",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.no_description": {
@@ -6211,7 +6223,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.open_weblate": {
@@ -6219,7 +6232,8 @@
     "flags": "max-length:32",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.other_keys": {
@@ -6227,7 +6241,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.override_help": {
@@ -6235,7 +6250,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.override_title": {
@@ -6243,7 +6259,8 @@
     "flags": "max-length:32",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.page_areas": {
@@ -6251,7 +6268,8 @@
     "flags": "max-length:32",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.page_areas_help": {
@@ -6259,7 +6277,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.panel_title": {
@@ -6267,7 +6286,8 @@
     "flags": "max-length:32",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.placeholders": {
@@ -6275,7 +6295,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.plugin_key": {
@@ -6283,7 +6304,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.qr_alt": {
@@ -6291,7 +6313,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.qr_hint": {
@@ -6299,7 +6322,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.refused_kiosk": {
@@ -6307,7 +6331,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.reload": {
@@ -6315,7 +6340,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.reset_done": {
@@ -6323,7 +6349,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.saved": {
@@ -6331,7 +6358,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.title": {
@@ -6339,7 +6367,8 @@
     "flags": "max-length:32",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.turn_off": {
@@ -6347,7 +6376,8 @@
     "flags": "max-length:20",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.turn_on": {
@@ -6355,7 +6385,8 @@
     "flags": "max-length:40",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.unknown_key": {
@@ -6363,7 +6394,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.mode.weblate_title": {
@@ -6371,7 +6403,8 @@
     "flags": "max-length:32",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "translations.reset": {

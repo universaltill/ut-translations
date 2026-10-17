@@ -715,7 +715,8 @@
     "flags": "placeholders:\"%[1]s\":\"%[2]s\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "status.shop_currency_mismatch.label": {
@@ -723,7 +724,8 @@
     "flags": "max-length:40",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "status.update_auto_blocked": {

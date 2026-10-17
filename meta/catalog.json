@@ -4207,7 +4207,8 @@
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "import.file_plugin.too_large": {
@@ -4215,7 +4216,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "import.file_plugin.upload_again": {
@@ -4223,7 +4225,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "import.file_plugin.use_standard": {
@@ -4231,7 +4234,8 @@
     "flags": "max-length:60",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "import.help": {
