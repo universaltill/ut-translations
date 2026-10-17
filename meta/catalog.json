@@ -4319,6 +4319,14 @@
       "0.34"
     ]
   },
+  "import.issue.description_invalid": {
+    "explanation": "Import row detail: the product description sent for this row is longer than 1000 characters or has hidden control or direction-changing characters. Line breaks are fine.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "import.issue.external_id_duplicate": {
     "explanation": "Import row detail: the other system's record ID appears on two or more rows of this import. 'ID' is the product's ID in the previous system.",
     "flags": "",
@@ -4362,6 +4370,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "import.issue.net_quantity_invalid": {
+    "explanation": "Import row detail: the pre-packed product's net quantity (its content: grams, millilitres or a count) is incomplete or not valid. 'g', 'ml' and 'ea' are unit codes: keep them as they are.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "import.issue.price_invalid": {
@@ -4967,6 +4983,14 @@
       "0.34"
     ]
   },
+  "import.system.change.age_restricted": {
+    "explanation": "Name of a changed field in an import preview row: whether the product needs a staff ID (age) check before it is sold. Short, lower case, joined into a list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "import.system.change.barcode": {
     "explanation": "Name of a changed field in an import preview row: the product's barcode. Lower case, joined into a list.",
     "flags": "",
@@ -4985,6 +5009,14 @@
       "0.34"
     ]
   },
+  "import.system.change.description": {
+    "explanation": "Name of a changed field in an import preview row: the product's description text. Lower case, joined into a list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "import.system.change.name": {
     "explanation": "Name of a changed field in an import preview row: the product's name. Lower case, joined into a list.",
     "flags": "",
@@ -4992,6 +5024,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "import.system.change.net_quantity": {
+    "explanation": "Name of a changed field in an import preview row: a pre-packed product's net quantity (its content, e.g. 250 g). Lower case, joined into a list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "import.system.change.price": {

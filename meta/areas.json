@@ -7,7 +7,7 @@
   "catalog": {
     "name": "Catalog",
     "description": "Items, categories, modifiers, stock, promotions, vouchers, imports and the menu designer.",
-    "keys": 832
+    "keys": 837
   },
   "orders": {
     "name": "Orders",
