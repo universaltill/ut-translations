@@ -266,11 +266,16 @@ artifact). `review.md` is for people only; publish never reads it.
 **Checked against the real till.** `tools/till_verify.py` copies
 `tools/till_harness/utt_bundle_harness_test.go` into a throwaway copy of
 universal-till at `source_commit` (Go's `internal/` rule rules out importing
-it) and runs it: the bundle is signed the way the marketplace signs, goes
-through the till's own `MarketplaceInstaller.installBundleFile` and loads
-through `Manager.syncLocales` as a fresh first-party layer; an unsigned copy,
-a changed locale file or `bundle.json`, a changed manifest (even with a
-matching checksum) and another key's signature are all refused.
+it) and runs it: the bundle is signed the way the marketplace signs on
+approval (ut-cloud `SignBundle`: the ADR-0165 `content_digest` over every
+file but `manifest.json`, `content_signature` and `signature` — this repo
+never holds a signing key), goes through the till's own
+`MarketplaceInstaller.installBundleFile` and loads through
+`Manager.syncLocales` as a fresh first-party layer; an unsigned copy, a
+changed locale file or `bundle.json`, a changed manifest (even with a
+matching checksum), a locale file swapped after signing (even with a
+matching checksum: the content digest catches it) and another key's
+signature are all refused.
 
 ```sh
 export WEBLATE_URL=https://translate.universaltill.com
