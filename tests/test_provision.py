@@ -248,9 +248,10 @@ class Provision(unittest.TestCase):
         self.assertEqual(self.fake.addons[("universal-till", "sale")][0]["name"], "weblate.cleanup.generic")
         # Weblate writes JSON the way the sync job and the import do (sorted,
         # 2-space indent), so its first save doesn't reformat every file.
-        fmt = [a for a in self.fake.addons[("universal-till", "sale")] if a["name"] == "weblate.json.customize"]
-        self.assertEqual(len(fmt), 1)
-        self.assertEqual(fmt[0]["configuration"], {"sort_keys": True, "indent": 2, "style": "spaces"})
+        # (Weblate 2026.10: component file_format_params, not an add-on.)
+        self.assertEqual(sale["file_format_params"],
+                         {"json_sort_keys": "case_sensitive", "json_indent": 2, "json_indent_style": "spaces"})
+        self.assertEqual([a["name"] for a in self.fake.addons[("universal-till", "sale")]], ["weblate.cleanup.generic"])
         units = {u["context"]: u for u in self.fake.units[("universal-till", "sale")]}
         self.assertEqual(units["pos.b"]["explanation"], "B row.")
         self.assertEqual(units["pos.b"]["extra_flags"], 'placeholders:"%s"')

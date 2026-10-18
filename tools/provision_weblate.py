@@ -50,12 +50,10 @@ LEGAL_LABEL = "legal"
 CLEANUP_ADDON = "weblate.cleanup.generic"
 # Weblate writes component JSON the same way the sync job and the import
 # do (sorted keys, 2-space indent), so its first save doesn't reformat every
-# file into one huge diff (ut-docs#4371 review).
-JSON_FORMAT_ADDON = "weblate.json.customize"
-ADDONS = {
-    CLEANUP_ADDON: {},
-    JSON_FORMAT_ADDON: {"sort_keys": True, "indent": 2, "style": "spaces"},
-}
+# file into one huge diff (ut-docs#4371 review). Weblate 2026.10 holds this
+# in the component's file_format_params; there is no add-on for it.
+JSON_FORMAT_PARAMS = {"json_sort_keys": "case_sensitive", "json_indent": 2, "json_indent_style": "spaces"}
+ADDONS = {CLEANUP_ADDON: {}}
 ENFORCED_CHECKS = ["icu_message_format", "max-length", "placeholders"]
 LOOPBACK = {"127.0.0.1", "localhost", "::1"}
 
@@ -229,6 +227,7 @@ class Provisioner:
             "edit_template": False,
             "manage_units": False,
             "enforced_checks": ENFORCED_CHECKS,
+            "file_format_params": JSON_FORMAT_PARAMS,
         }
         if owner:
             # Only the component that owns the clone has VCS settings; a
