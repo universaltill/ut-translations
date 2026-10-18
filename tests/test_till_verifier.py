@@ -74,6 +74,7 @@ class TillVerifier(BundleCase, unittest.TestCase):
                     "tampered_locales/tr.json_is_refused",
                     "tampered_bundle.json_is_refused",
                     "tampered_manifest_is_refused_even_with_a_matching_checksum",
+                    "swapped_locale_with_a_matching_checksum_is_refused_by_the_content_digest",
                     "signature_from_another_key_is_refused"):
             self.assertIn(f"--- PASS: TestUTTBundleTillVerifier/{sub}", out)
 

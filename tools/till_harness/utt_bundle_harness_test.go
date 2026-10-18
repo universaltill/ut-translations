@@ -30,10 +30,13 @@ import (
 	"crypto/sha256"
 	"encoding/hex"
 	"encoding/json"
+	"errors"
 	"io"
 	"os"
+	"path"
 	"path/filepath"
 	"reflect"
+	"sort"
 	"strings"
 	"testing"
 	"time"
@@ -120,27 +123,71 @@ func uttSum(b []byte) string {
 	return hex.EncodeToString(s[:])
 }
 
+// uttContentDigest is ADR-0165 §2's digest over the bundle's tar entries,
+// computed the way the marketplace does (ut-cloud internal/signing
+// contentDigest), not with the till's own ComputeContentDigest, so the
+// till's on-disk digest is checked against an independent one: one
+// "<sha256 hex>  <cleaned path>\n" line per regular file except the root
+// manifest.json, sorted by path in byte order, then "sha256:" + hex(SHA-256).
+func uttContentDigest(t *testing.T, raw []byte) string {
+	t.Helper()
+	type file struct{ path, sum string }
+	var files []file
+	seen := map[string]bool{}
+	for _, e := range uttReadTarGz(t, raw) {
+		if e.hdr.Typeflag != tar.TypeReg {
+			continue
+		}
+		clean := path.Clean(e.hdr.Name)
+		if strings.ContainsAny(e.hdr.Name, "\n\\") || path.IsAbs(e.hdr.Name) ||
+			clean == "." || clean == ".." || strings.HasPrefix(clean, "../") || seen[clean] {
+			t.Fatalf("bundle path %q is one the marketplace refuses to sign", e.hdr.Name)
+		}
+		seen[clean] = true
+		if clean == "manifest.json" {
+			continue
+		}
+		files = append(files, file{path: clean, sum: uttSum(e.data)})
+	}
+	sort.Slice(files, func(i, j int) bool { return files[i].path < files[j].path })
+	var listing bytes.Buffer
+	for _, f := range files {
+		listing.WriteString(f.sum + "  " + f.path + "\n")
+	}
+	return "sha256:" + uttSum(listing.Bytes())
+}
+
 // uttSignBundle does what the marketplace's approve step does
-// (ut-cloud internal/signing.SignBundle): sign the canonical manifest —
-// json.Marshal of the manifest struct with an empty signature, the form
-// VerifyManifest checks (pinned against ut-cloud by
-// marketplace_signature_crossrepo_test.go) — and write it back into the
-// archive. Returns the signed bundle, the signature and its sha256.
+// (ut-cloud internal/signing.SignBundle, ADR-0165 §3): set content_digest,
+// sign the content form (manifest with signature and content_signature
+// emptied, content_digest kept) into content_signature, then sign the
+// legacy form (json.Marshal of the manifest struct with signature and both
+// content fields emptied — the form VerifyManifest checks, pinned against
+// ut-cloud by marketplace_signature_crossrepo_test.go) into signature, and
+// write the manifest back into the archive. Returns the signed bundle, the
+// signature and its sha256.
 func uttSignBundle(t *testing.T, raw []byte, priv ed25519.PrivateKey) ([]byte, string, string) {
 	t.Helper()
+	digest := uttContentDigest(t, raw)
 	var sig string
 	signed := uttReplace(t, raw, "manifest.json", func(b []byte) []byte {
 		var m Manifest
 		if err := json.Unmarshal(b, &m); err != nil {
 			t.Fatalf("manifest.json: %v", err)
 		}
-		m.Signature = ""
+		m.Signature, m.ContentDigest, m.ContentSignature = "", digest, ""
+		content, err := json.Marshal(m)
+		if err != nil {
+			t.Fatalf("content manifest: %v", err)
+		}
+		contentSig := hex.EncodeToString(ed25519.Sign(priv, content))
+		m.ContentDigest = ""
 		canonical, err := json.Marshal(m)
 		if err != nil {
 			t.Fatalf("canonical manifest: %v", err)
 		}
 		sig = hex.EncodeToString(ed25519.Sign(priv, canonical))
-		m.Signature = sig
+		m.Signature, m.ContentDigest, m.ContentSignature = sig, digest, contentSig
 		out, err := json.Marshal(m)
 		if err != nil {
 			t.Fatalf("signed manifest: %v", err)
@@ -277,8 +324,8 @@ func TestUTTBundleTillVerifier(t *testing.T) {
 	t.Run("unsigned bundle is refused", func(t *testing.T) {
 		till := uttNewTill(t, pub)
 		err := till.install(t, raw, uttSum(raw), "")
-		if err == nil {
-			t.Fatal("the till installed the unsigned bundle")
+		if !errors.Is(err, ErrManifestUnsigned) {
+			t.Fatalf("want an unsigned-manifest refusal, got %v", err)
 		}
 		t.Logf("refused: %v", err)
 	})
@@ -318,8 +365,21 @@ func TestUTTBundleTillVerifier(t *testing.T) {
 			return bytes.Replace(b, []byte(`"min_pos_version":"`), []byte(`"min_pos_version":"0.`), 1)
 		})
 		err := till.install(t, forged, uttSum(forged), sig)
-		if err == nil || !strings.Contains(err.Error(), "signature") {
+		if err == nil || !strings.Contains(err.Error(), "manifest signature verification failed") {
 			t.Fatalf("want a signature refusal, got %v", err)
+		}
+	})
+
+	// ADR-0165: the signature covers every package file, so a locale file
+	// swapped after signing is refused even when the download checksum was
+	// recomputed for the new bytes (a manual import has no marketplace
+	// checksum to catch it).
+	t.Run("swapped locale with a matching checksum is refused by the content digest", func(t *testing.T) {
+		till := uttNewTill(t, pub)
+		swapped := uttReplace(t, signed, localeFile, tamper[localeFile])
+		err := till.install(t, swapped, uttSum(swapped), sig)
+		if err == nil || !strings.Contains(err.Error(), "content digest") {
+			t.Fatalf("want a content digest refusal, got %v", err)
 		}
 	})
 
