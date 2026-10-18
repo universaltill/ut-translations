@@ -4045,7 +4045,8 @@
     "flags": "max-length:40",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.language.downloads_on_select": {
@@ -4053,7 +4054,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.language.help": {
@@ -4070,7 +4072,8 @@
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.language.installing": {
@@ -4078,7 +4081,8 @@
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.language.switching": {
@@ -4086,7 +4090,8 @@
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.language.title": {

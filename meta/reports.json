@@ -2191,7 +2191,8 @@
     "flags": "max-length:42, placeholders:\"%d\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.by_article": {
@@ -2199,7 +2200,8 @@
     "flags": "max-length:42",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.by_article_group": {
@@ -2207,7 +2209,8 @@
     "flags": "max-length:42",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.by_department": {
@@ -2215,7 +2218,8 @@
     "flags": "max-length:42",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.by_method_vat_rate": {
@@ -2232,7 +2236,8 @@
     "flags": "max-length:42",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.by_order_type": {
@@ -2240,7 +2245,8 @@
     "flags": "max-length:42",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.by_till": {
@@ -2248,7 +2254,8 @@
     "flags": "max-length:42",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.by_vat_rate": {
@@ -2265,7 +2272,8 @@
     "flags": "max-length:20",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.cash.cash_sales": {
@@ -2273,7 +2281,8 @@
     "flags": "max-length:20",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.cash.new_float": {
@@ -2281,7 +2290,8 @@
     "flags": "max-length:20",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.cash.opening_float": {
@@ -2289,7 +2299,8 @@
     "flags": "max-length:20",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.cash.pay_ins": {
@@ -2297,7 +2308,8 @@
     "flags": "max-length:20",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.cash.pay_outs": {
@@ -2305,7 +2317,8 @@
     "flags": "max-length:20",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.cash.tips_held_out": {
@@ -2313,7 +2326,8 @@
     "flags": "max-length:20",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.cash.title": {
@@ -2321,7 +2335,8 @@
     "flags": "max-length:42",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.end_of_day": {
@@ -2329,7 +2344,8 @@
     "flags": "max-length:31, placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.fiscal_device.match": {
@@ -2337,7 +2353,8 @@
     "flags": "max-length:42",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.fiscal_device.mismatch": {
@@ -2345,7 +2362,8 @@
     "flags": "max-length:42, placeholders:\"%d\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.fiscal_device.no_activity": {
@@ -2353,7 +2371,8 @@
     "flags": "max-length:42",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.fiscal_device.other": {
@@ -2361,7 +2380,8 @@
     "flags": "max-length:20",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.fiscal_device.serial": {
@@ -2369,7 +2389,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.fiscal_device.till_tenders": {
@@ -2377,7 +2398,8 @@
     "flags": "max-length:20",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.fiscal_device.title": {
@@ -2385,7 +2407,8 @@
     "flags": "max-length:42",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.fiscal_device.z_closed_mid": {
@@ -2393,7 +2416,8 @@
     "flags": "max-length:30, placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.fiscal_device.z_no": {
@@ -2401,7 +2425,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.generated": {
@@ -2427,7 +2452,8 @@
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.refunds": {
@@ -2453,7 +2479,8 @@
     "flags": "max-length:31",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.tax_net": {
@@ -2479,7 +2506,8 @@
     "flags": "max-length:20, placeholders:\"%d\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.vouchers_adjusted": {
@@ -2487,7 +2515,8 @@
     "flags": "max-length:20, placeholders:\"%d\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.vouchers_imported": {
@@ -2495,7 +2524,8 @@
     "flags": "max-length:20, placeholders:\"%d\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.vouchers_issued": {
@@ -2503,7 +2533,8 @@
     "flags": "max-length:20, placeholders:\"%d\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.vouchers_redeemed": {
@@ -2511,7 +2542,8 @@
     "flags": "max-length:20, placeholders:\"%d\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   }
 }
