@@ -48,6 +48,14 @@ DEFAULT_PUSH_URL = "git@github.com:universaltill/ut-translations.git"
 REPO_OWNER = "common"
 LEGAL_LABEL = "legal"
 CLEANUP_ADDON = "weblate.cleanup.generic"
+# Weblate writes component JSON the same way the sync job and the import
+# do (sorted keys, 2-space indent), so its first save doesn't reformat every
+# file into one huge diff (ut-docs#4371 review).
+JSON_FORMAT_ADDON = "weblate.json.customize"
+ADDONS = {
+    CLEANUP_ADDON: {},
+    JSON_FORMAT_ADDON: {"sort_keys": True, "indent": 2, "style": "spaces"},
+}
 ENFORCED_CHECKS = ["icu_message_format", "max-length", "placeholders"]
 LOOPBACK = {"127.0.0.1", "localhost", "::1"}
 
@@ -278,10 +286,11 @@ class Provisioner:
             addon = self.c.get(self.c.next_url(url))
             if addon:
                 names.add(addon.get("name"))
-        if CLEANUP_ADDON not in names:
-            self.write("POST", f"/api/components/{self.project}/{area}/addons/",
-                       {"name": CLEANUP_ADDON, "configuration": {}},
-                       f"install {CLEANUP_ADDON} on {area}")
+        for name, configuration in ADDONS.items():
+            if name not in names:
+                self.write("POST", f"/api/components/{self.project}/{area}/addons/",
+                           {"name": name, "configuration": configuration},
+                           f"install {name} on {area}")
 
     # --- units -------------------------------------------------------------
 

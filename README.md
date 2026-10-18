@@ -40,7 +40,7 @@ universal-till main ──(sync job, this repo)──▶ <area>/en.json + meta/
 | `config/lines.json` | people | The source repo and the **supported till lines** (below). |
 | `config/bundles.json` | people | Locales a bundle may be built for: Weblate code, name, script, `human_spot_check`, `min_coverage`. |
 | `config/ai-accounts.json` | people | Weblate AI service accounts and the model each is tied to (ut-docs#4366 fills it in). |
-| `tools/` | — | `sync_english.py`, `provision_weblate.py`, `i18n_map.py` (the shared mapping), and the bundle tools `build_bundle.py`, `bundle_checks.py`, `till_verify.py` (+ `till_harness/`), `publish_bundle.py`. Python 3 standard library only. |
+| `tools/` | — | `sync_english.py`, `provision_weblate.py`, `i18n_map.py` (the shared mapping), `import_existing.py` (the one-off import below), and the bundle tools `build_bundle.py`, `bundle_checks.py`, `till_verify.py` (+ `till_harness/`), `publish_bundle.py`. Python 3 standard library only. |
 | `tests/` | — | Unit tests; run in CI by `.github/workflows/test.yml`. |
 
 ### Areas (components)
@@ -145,6 +145,34 @@ see follow-ups).
 
 Optional env: `WEBLATE_REPO_URL` (pull, default the public https clone),
 `WEBLATE_PUSH_URL` (push, default `git@github.com:universaltill/ut-translations.git`).
+
+## Importing the translations we already have (ADR-0160 §9; ut-docs#4371, #4372)
+
+`tools/import_existing.py` pre-fills `<area>/<code>.json` for every
+translated locale in `config/bundles.json` from what already exists —
+`ut-plugin-language-{de,es,pt}` `locales/<code>.json` and universal-till
+`web/locales/{tr,ar,fa}.json` — read with `git show <ref>:` (default
+`origin/main`) from sibling checkouts, never from their working trees. It
+never translates: text is copied byte for byte (placeholders included).
+
+- A key goes to the area whose `<area>/en.json` holds it; keys in no
+  `en.json` are stale and dropped; empty values are skipped.
+- A value identical to English is skipped unless the pack's reviewed
+  `i18n-baseline/<code>.same-as-en.txt` lists the key. Weblate counts any
+  non-empty target as translated, so an English copy would look done;
+  core's tr/ar/fa have no such list and do hold English copies, so those
+  keys stay untranslated in Weblate for a translator.
+- A placeholder set that differs from English is imported as is and listed
+  in the report (Weblate's enforced check and the bundle check catch it).
+- Weblate owns these files afterwards: a file that exists and differs is
+  refused (nothing is written) unless `--force`. Re-running over its own
+  output changes nothing.
+
+```sh
+git -C ../universal-till fetch && git -C ../ut-plugin-language-de fetch   # and es, pt
+python3 tools/import_existing.py --dry-run          # coverage report only
+python3 tools/import_existing.py --report /tmp/import-report.json
+```
 
 ## Language bundles (ADR-0160 §4, §5; ut-docs#4367)
 
