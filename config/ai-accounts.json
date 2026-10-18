@@ -3,7 +3,7 @@
   "accounts": {
     "bot-universal-till-ai-reviewer-codex": {
       "role": "reviewer",
-      "model": "openai/gpt-6"
+      "model": "openai/gpt-6-luna"
     },
     "mt:ollama": {
       "role": "translator",
