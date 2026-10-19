@@ -1637,6 +1637,78 @@
       "0.34"
     ]
   },
+  "plugins.settings.error.choice": {
+    "explanation": "Error under a plugin settings dropdown when the saved choice is not one of its options. Shown in red under the field; nothing was saved.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.error.max": {
+    "explanation": "Error under a plugin settings number, percentage or amount field when the value is above the plugin's allowed maximum. Nothing was saved.\n\nPlaceholders:\n- %s: the largest allowed value, already formatted for the shop (a number, a percentage such as 50.00% or an amount with its currency such as £100.00)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.error.min": {
+    "explanation": "Error under a plugin settings number, percentage or amount field when the value is below the plugin's allowed minimum. Nothing was saved.\n\nPlaceholders:\n- %s: the smallest allowed value, already formatted for the shop (a number, a percentage such as 5.00% or an amount with its currency such as £1.00)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.error.number": {
+    "explanation": "Error under a plugin settings number, percentage or amount field when the typed text is not a number in the accepted format (a whole number, or a decimal with a dot or comma for a percentage or amount). Nothing was saved.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.error.required": {
+    "explanation": "Error under a plugin settings field the plugin marks as required, when it was left empty. Nothing was saved.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.error.stored_invalid": {
+    "explanation": "Note under a plugin settings field whose already-saved value doesn't fit the field (for example the plugin changed the field from text to a number). The value is shown as it is and is not changed unless the user edits it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.error.summary": {
+    "explanation": "Message next to the Save button of a plugin's settings when the save was refused because one or more fields are invalid; each bad field shows its own error.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.error.too_long": {
+    "explanation": "Error under a plugin settings text field when the text is longer than the plugin allows. Nothing was saved.\n\nPlaceholders:\n- %s: the maximum number of characters allowed (a number)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.error.url": {
+    "explanation": "Error under a plugin settings web-address field when the value isn't an http or https address. Keep http://, https:// and the example address unchanged. Nothing was saved.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.settings.invalid_choice": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
