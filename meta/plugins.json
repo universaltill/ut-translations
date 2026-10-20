@@ -1642,7 +1642,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "plugins.settings.error.max": {
@@ -1650,7 +1651,8 @@
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "plugins.settings.error.min": {
@@ -1658,7 +1660,8 @@
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "plugins.settings.error.number": {
@@ -1666,7 +1669,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "plugins.settings.error.required": {
@@ -1674,7 +1678,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "plugins.settings.error.stored_invalid": {
@@ -1682,7 +1687,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "plugins.settings.error.summary": {
@@ -1690,7 +1696,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "plugins.settings.error.too_long": {
@@ -1698,7 +1705,8 @@
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "plugins.settings.error.url": {
@@ -1706,7 +1714,8 @@
     "flags": "",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "plugins.settings.invalid_choice": {

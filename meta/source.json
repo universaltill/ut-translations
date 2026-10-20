@@ -1,12 +1,12 @@
 {
   "lines": {
     "0.34": {
-      "commit": "1ffe62451aa2543d6bca5cedeec753f20fa6bddb",
-      "tag": "v0.34.12"
+      "commit": "3aeeae20f49647f990731c34feef558b6c48ffa1",
+      "tag": "v0.34.13"
     }
   },
   "main": {
     "branch": "main",
-    "commit": "33377bb2c8d6cd6c3ed82785a71d8d0856f9df64"
+    "commit": "3aeeae20f49647f990731c34feef558b6c48ffa1"
   }
 }
