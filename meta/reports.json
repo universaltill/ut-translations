@@ -2339,6 +2339,22 @@
       "0.34"
     ]
   },
+  "reports.zpaper.cleared_baskets": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: shopping baskets the cashier cleared with New sale before taking payment (no sale happened, not in revenue). Printed as a row label in a 20-character column before the baskets' total amount; a longer label is cut short on paper.\n\nPlaceholders:\n- %d: the number of cleared baskets",
+    "flags": "max-length:20, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.cleared_title": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the section counting shopping baskets cleared with New sale before payment (no sale happened, not in revenue). A section heading, printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.zpaper.end_of_day": {
     "explanation": "Printed end-of-day (Z) report on the receipt printer: the period line of an older day-based report.\n\nPlaceholders:\n- %s: the business day, as YYYY-MM-DD",
     "flags": "max-length:31, placeholders:\"%s\"",

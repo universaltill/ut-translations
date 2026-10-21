@@ -17,7 +17,7 @@
   "reports": {
     "name": "Reports",
     "description": "Reports, the journal, end of day and the audit trail.",
-    "keys": 283
+    "keys": 285
   },
   "staff": {
     "name": "Staff",

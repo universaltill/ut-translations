@@ -259,6 +259,8 @@
   "reports.zpaper.cash.pay_outs": "Pay-outs",
   "reports.zpaper.cash.tips_held_out": "Tips held out",
   "reports.zpaper.cash.title": "CASH RECONCILIATION",
+  "reports.zpaper.cleared_baskets": "Cleared baskets (%d)",
+  "reports.zpaper.cleared_title": "CLEARED BEFORE PAYMENT",
   "reports.zpaper.end_of_day": "END OF DAY %s",
   "reports.zpaper.fiscal_device.match": "MATCH",
   "reports.zpaper.fiscal_device.mismatch": "MISMATCH (device %d vs till %d)",
