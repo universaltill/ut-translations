@@ -2344,7 +2344,8 @@
     "flags": "max-length:20, placeholders:\"%d\"",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.cleared_title": {
@@ -2352,7 +2353,8 @@
     "flags": "max-length:42",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "reports.zpaper.end_of_day": {

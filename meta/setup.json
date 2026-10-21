@@ -80,6 +80,177 @@
       "0.34"
     ]
   },
+  "setup.cloud.code_help": {
+    "explanation": "Instruction above the pairing-code field when joining as the main till. Names the my.universaltill.com screens (Tills, Add a till); keep those names consistent with the my. site.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.continue": {
+    "explanation": "Button that accepts the shop details on the 'Your shop' step.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.error.expired": {
+    "explanation": "Wizard error when the held pairing is gone (30 minutes passed or the till restarted) at the final step.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.error.failed": {
+    "explanation": "Inline error: any other pairing failure.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.error.invalid_code": {
+    "explanation": "Inline error: the pairing code was refused (wrong, used or expired).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.error.no_network": {
+    "explanation": "Inline error: pairing needs the internet and none was reachable.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.error.store_has_till": {
+    "explanation": "Inline error: the shop already has a till that has talked to the cloud. 1st placeholder: that till's name; 2nd: the date it was last seen.\n\nPlaceholders:\n- %s: the name of the shop's existing till\n- %s: the date that till was last seen (YYYY-MM-DD)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.error.too_many": {
+    "explanation": "Inline error: the cloud or this till rate-limited the pairing attempts (HTTP 429).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.error.unavailable": {
+    "explanation": "Inline error: no cloud endpoint is configured, or the cloud identity is fixed by the environment.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.error.unnamed_till": {
+    "explanation": "Stands in for the name of the shop's existing till when the cloud has none; used inside the 'shop already has a till' message.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.hint": {
+    "explanation": "Explanation under the shop details after pairing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.not_mine": {
+    "explanation": "Button that drops the pairing and returns to the first step.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.pair_btn": {
+    "explanation": "Button that sends the my.universaltill.com pairing code.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.pair_incomplete": {
+    "explanation": "Note on the welcome page when the wizard could not save the cloud pairing: the code is spent, so the till is not syncing; pair again with a new code in Settings, Tills.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.shop_country": {
+    "explanation": "Label of the country on the 'Your shop' step.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.shop_currency": {
+    "explanation": "Label of the currency on the 'Your shop' step.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.shop_name": {
+    "explanation": "Label of the shop name on the 'Your shop' step.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.syncing": {
+    "explanation": "Status chip on the welcome page right after a till paired with the cloud shop in setup; the first sync runs in the background.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.cloud.title": {
+    "explanation": "Title of the wizard step that shows the shop details taken from my.universaltill.com after pairing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
   "setup.country.ae": {
     "explanation": "",
     "flags": "",
@@ -325,6 +496,24 @@
   },
   "setup.join.help": {
     "explanation": "",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.join.main_help": {
+    "explanation": "Help text under the 'Main till' choice of 'Join as'.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "setup.join.role_main": {
+    "explanation": "Third 'Join as' choice on the wizard's join screen: this till becomes the first, main till of a shop already set up on my.universaltill.com.",
     "flags": "",
     "labels": [],
     "lines": [
