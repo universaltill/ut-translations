@@ -3671,6 +3671,15 @@
       "0.34"
     ]
   },
+  "settings.enrol.pair_identity_pinned": {
+    "explanation": "Error shown under Settings → Pair with a shop when the till's cloud identity is fixed by UT_MARKETPLACE_* environment variables, so the pairing code was not used and a new code will not help.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
   "settings.enrol.pair_placeholder": {
     "explanation": "",
     "flags": "",
