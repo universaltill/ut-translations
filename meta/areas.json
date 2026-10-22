@@ -37,7 +37,7 @@
   "setup": {
     "name": "Setup",
     "description": "First-run setup, the guided tour, demo data and onboarding notices.",
-    "keys": 134
+    "keys": 135
   },
   "selforder": {
     "name": "Self-order",

@@ -233,6 +233,14 @@
       "0.34"
     ]
   },
+  "setup.cloud.shop_type": {
+    "explanation": "Label of the shop type (café, retail, ...) on the 'Your shop' step, shown when the shop type was chosen on my.universaltill.com.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "setup.cloud.syncing": {
     "explanation": "Status chip on the welcome page right after a till paired with the cloud shop in setup; the first sync runs in the background.",
     "flags": "",
