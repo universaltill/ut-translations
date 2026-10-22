@@ -710,6 +710,14 @@
       "0.34"
     ]
   },
+  "elevation.summary.enrol_terms": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier presses Accept terms (or Send to the cloud) under Settings → Till registration for an already registered till: it names the action the approver is allowing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.summary.eod_range_export": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",

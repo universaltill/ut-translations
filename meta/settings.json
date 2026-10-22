@@ -3770,6 +3770,26 @@
       "0.34"
     ]
   },
+  "settings.enrol.terms.accept_btn": {
+    "explanation": "Button under Settings → Till registration (already registered till, cloud terms not yet accepted) that records the ticked acceptance of the cloud service terms and sends it to the cloud.",
+    "flags": "max-length:30",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.enrol.terms.accept_required": {
+    "explanation": "Error shown when the operator presses Accept terms on an already registered till without ticking the cloud service terms checkbox; nothing was recorded or sent.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.enrol.terms.accepted": {
     "explanation": "Muted line in Settings and the setup wizard once the operator has accepted the current cloud service terms. 1st placeholder: the terms version (e.g. v0.1-draft, keep as is); 2nd: the date accepted (YYYY-MM-DD).\n\nPlaceholders:\n- %s: the terms version identifier, e.g. v0.1-draft\n- %s: the date the terms were accepted (YYYY-MM-DD)",
     "flags": "placeholders:\"%s\"",
@@ -3801,6 +3821,34 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.enrol.terms.send_btn": {
+    "explanation": "Button under Settings → Till registration, shown when the cloud service terms are accepted on this till but the acceptance has not reached the cloud yet; it sends it again.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.enrol.terms.send_failed": {
+    "explanation": "Error shown after Accept terms / Send to the cloud when the cloud could not be reached. The acceptance is kept on this till and the operator can try again; nothing else is affected.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.enrol.terms.unsent": {
+    "explanation": "Muted note under Settings → Till registration: the cloud service terms were accepted on this till, but the acceptance has not yet been delivered to the cloud (for example the till was offline).",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
     ]
   },
   "settings.enrol.terms_required": {

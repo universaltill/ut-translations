@@ -78,6 +78,7 @@
   "elevation.summary.enrol_claim_code": "Generate a new store-claim code and QR link.",
   "elevation.summary.enrol_now": "Attempt to register this till with the marketplace now.",
   "elevation.summary.enrol_pair": "Pair this till with a shop in the cloud, replacing its current cloud connection.",
+  "elevation.summary.enrol_terms": "Accept the Universal Till cloud service terms for this shop.",
   "elevation.summary.eod_range_export": "Export a Z-report for %s – %s.",
   "elevation.summary.eod_reprint": "Reprint the %s end-of-day report.",
   "elevation.summary.eod_run": "Run today's end-of-day report now.",
