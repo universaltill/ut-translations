@@ -3770,6 +3770,50 @@
       "0.34"
     ]
   },
+  "settings.enrol.terms.accepted": {
+    "explanation": "Muted line in Settings and the setup wizard once the operator has accepted the current cloud service terms. 1st placeholder: the terms version (e.g. v0.1-draft, keep as is); 2nd: the date accepted (YYYY-MM-DD).\n\nPlaceholders:\n- %s: the terms version identifier, e.g. v0.1-draft\n- %s: the date the terms were accepted (YYYY-MM-DD)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "settings.enrol.terms.label": {
+    "explanation": "Label of the checkbox the operator ticks to accept the Universal Till cloud service terms before the till registers with the cloud (consent wording: translate faithfully, do not soften or add claims).\n\nPlaceholders:\n- %s: the terms version identifier, e.g. v0.1-draft",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "settings.enrol.terms.link": {
+    "explanation": "Link next to the terms checkbox that opens the cloud service terms page in a new tab.",
+    "flags": "max-length:40",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "settings.enrol.terms_required": {
+    "explanation": "Error shown when the operator tries to register the till (or turn on automatic registration) without ticking the cloud service terms checkbox; nothing was sent.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
   "settings.enrol.title": {
     "explanation": "",
     "flags": "",
