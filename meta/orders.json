@@ -1,4 +1,391 @@
 {
+  "channel_orders.col.channel": {
+    "explanation": "Column heading: the sales channel (web shop or marketplace) the order came from.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.col.lines": {
+    "explanation": "Column heading: how many order lines (distinct products) the order has.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.col.number": {
+    "explanation": "Column heading: the shop-facing order number such as #1001.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.col.placed": {
+    "explanation": "Column heading: when the customer placed the order.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.col.status": {
+    "explanation": "Column heading: the order's progress status.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.col.total": {
+    "explanation": "Column heading and label: the amount the customer paid for the order.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.actions_note": {
+    "explanation": "Note under an online order: where status actions are taken. my.universaltill.com is a web address; keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.back": {
+    "explanation": "Link back to the Online orders list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.col.item": {
+    "explanation": "Column heading: product name as sold.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.col.price": {
+    "explanation": "Column heading: price of one unit.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.col.qty": {
+    "explanation": "Column heading: quantity ordered.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.col.refunded": {
+    "explanation": "Column heading: units refunded or cancelled so far.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.col.restocked": {
+    "explanation": "Column heading: refunded units that went back into stock.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.col.sku": {
+    "explanation": "Column heading: stock keeping unit code.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.country": {
+    "explanation": "Label: the customer's country. The till stores only the country, never a name or address.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.currency_mismatch": {
+    "explanation": "Warning on an order whose currency differs from the shop currency; the currency code follows in brackets.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.discount": {
+    "explanation": "Label: discount not tied to a single line.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.payment": {
+    "explanation": "Label: the payment state the channel reports.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.refunded_total": {
+    "explanation": "Label: total amount refunded so far.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.shipping": {
+    "explanation": "Label: shipping charged on the order.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.tax_added": {
+    "explanation": "Label: tax the channel added on top of tax-exclusive prices.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.title": {
+    "explanation": "Heading of one online order; the order number follows it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.total_mismatch": {
+    "explanation": "Warning on an order whose total does not match the sum of its lines; shown as received.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.detail.unmatched_line": {
+    "explanation": "Chip on an order line that matches no item in this till, so stock was not changed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.empty": {
+    "explanation": "Empty state of the Online orders list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.error.load_failed": {
+    "explanation": "Error shown when the Online orders list or an order cannot be read.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.error.not_found": {
+    "explanation": "Error shown when an order id is unknown.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.intro": {
+    "explanation": "Intro line above the Online orders list. Explains these are not till sales. my.universaltill.com is a web address; keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.payment.authorized": {
+    "explanation": "Payment state reported by the channel: authorised, not yet captured.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.payment.paid": {
+    "explanation": "Payment state reported by the channel: paid.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.payment.partially_refunded": {
+    "explanation": "Payment state reported by the channel: part of the payment was refunded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.payment.pending": {
+    "explanation": "Payment state reported by the channel: not paid yet.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.payment.refunded": {
+    "explanation": "Payment state reported by the channel: the payment was refunded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.payment.voided": {
+    "explanation": "Payment state reported by the channel: the payment was voided.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.status.accepted": {
+    "explanation": "Order status: accepted by the shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.status.cancelled": {
+    "explanation": "Order status: cancelled.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.status.new": {
+    "explanation": "Order status: placed, not yet accepted.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.status.packed": {
+    "explanation": "Order status: items packed for dispatch.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.status.partially_refunded": {
+    "explanation": "Order status: part of the order was refunded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.status.picked": {
+    "explanation": "Order status: items picked from the shelves.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.status.refunded": {
+    "explanation": "Order status: fully refunded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.status.shipped": {
+    "explanation": "Order status: handed to the carrier.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
+  "channel_orders.title": {
+    "explanation": "The page and menu title for orders taken on a web shop or marketplace and recorded on this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
   "kitchen.print.done": {
     "explanation": "",
     "flags": "",

@@ -508,7 +508,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.apple": {
@@ -561,7 +562,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.battery": {
@@ -569,7 +571,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.beard": {
@@ -577,7 +580,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.beard-oil": {
@@ -585,7 +589,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.beer": {
@@ -611,7 +616,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.bottle": {
@@ -718,7 +724,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.carrot": {
@@ -744,7 +751,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.cheese": {
@@ -788,7 +796,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.clippers": {
@@ -796,7 +805,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.cocktail": {
@@ -831,7 +841,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.cookie": {
@@ -848,7 +859,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.croissant": {
@@ -883,7 +895,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.donut": {
@@ -990,7 +1003,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.group.cold": {
@@ -1016,7 +1030,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.group.hot": {
@@ -1060,7 +1075,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.hair-dryer": {
@@ -1068,7 +1084,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.hair-spray": {
@@ -1076,7 +1093,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.hairbrush": {
@@ -1084,7 +1102,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.ham": {
@@ -1173,7 +1192,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.meal": {
@@ -1217,7 +1237,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.mushroom": {
@@ -1315,7 +1336,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.popcorn": {
@@ -1332,7 +1354,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.salad": {
@@ -1358,7 +1381,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.seafood": {
@@ -1384,7 +1408,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.shaver": {
@@ -1392,7 +1417,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.shaving-brush": {
@@ -1400,7 +1426,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.shears": {
@@ -1408,7 +1435,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.skin-care": {
@@ -1416,7 +1444,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.smoothie": {
@@ -1442,7 +1471,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.spirits": {
@@ -1459,7 +1489,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.star": {
@@ -1512,7 +1543,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.trimmer": {
@@ -1520,7 +1552,8 @@
     "flags": "max-length:24",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "catalog.builtin_icon.updated": {

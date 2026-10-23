@@ -782,6 +782,15 @@
       "0.34"
     ]
   },
+  "page.title.channel_orders": {
+    "explanation": "Browser tab title of the Online orders page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main",
+      "0.34"
+    ]
+  },
   "page.title.country_settings": {
     "explanation": "",
     "flags": "",
@@ -3777,7 +3786,8 @@
       "legal"
     ],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.enrol.terms.accept_required": {
@@ -3787,7 +3797,8 @@
       "legal"
     ],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.enrol.terms.accepted": {
@@ -3828,7 +3839,8 @@
     "flags": "max-length:30",
     "labels": [],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.enrol.terms.send_failed": {
@@ -3838,7 +3850,8 @@
       "legal"
     ],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.enrol.terms.unsent": {
@@ -3848,7 +3861,8 @@
       "legal"
     ],
     "lines": [
-      "main"
+      "main",
+      "0.34"
     ]
   },
   "settings.enrol.terms_required": {

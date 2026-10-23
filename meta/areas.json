@@ -12,7 +12,7 @@
   "orders": {
     "name": "Orders",
     "description": "Orders, tables, kitchen stations and displays, and order tracking.",
-    "keys": 133
+    "keys": 176
   },
   "reports": {
     "name": "Reports",
@@ -27,7 +27,7 @@
   "settings": {
     "name": "Settings",
     "description": "Settings, admin menus, locations, registers, country settings, translations and the subscription.",
-    "keys": 733
+    "keys": 734
   },
   "tills": {
     "name": "Tills",
