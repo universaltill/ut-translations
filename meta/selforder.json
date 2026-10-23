@@ -225,8 +225,8 @@
     ]
   },
   "selforder.counter.title": {
-    "explanation": "",
-    "flags": "",
+    "explanation": "Heading of the self-order kiosk's checkout dialog when the customer pays at the counter instead of at the kiosk: the pay-at-counter confirm screen, and the payment picker when the basket holds an age-restricted item.",
+    "flags": "max-length:40",
     "labels": [],
     "lines": [
       "main",
