@@ -503,6 +503,14 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.aftershave": {
+    "explanation": "Label of a built-in item/category picture in the image picker: aftershave or cologne.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.apple": {
     "explanation": "",
     "flags": "",
@@ -548,6 +556,38 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.barber-chair": {
+    "explanation": "Label of a built-in item/category picture in the image picker: barber's chair.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.builtin_icon.battery": {
+    "explanation": "Label of a built-in item/category picture in the image picker: rechargeable battery.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.builtin_icon.beard": {
+    "explanation": "Label of a built-in item/category picture in the image picker: beard care products.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.builtin_icon.beard-oil": {
+    "explanation": "Label of a built-in item/category picture in the image picker: beard oil or serum.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.beer": {
     "explanation": "",
     "flags": "",
@@ -564,6 +604,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.blades": {
+    "explanation": "Label of a built-in item/category picture in the image picker: razor blades.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.bottle": {
@@ -665,6 +713,14 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.cape": {
+    "explanation": "Label of a built-in item/category picture in the image picker: barber's cutting cape.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.carrot": {
     "explanation": "",
     "flags": "",
@@ -681,6 +737,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.charger": {
+    "explanation": "Label of a built-in item/category picture in the image picker: charger or charging stand.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.cheese": {
@@ -719,6 +783,22 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.clipper-oil": {
+    "explanation": "Label of a built-in item/category picture in the image picker: oil for clipper blades.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.builtin_icon.clippers": {
+    "explanation": "Label of a built-in item/category picture in the image picker: hair clippers (barber tool).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.cocktail": {
     "explanation": "",
     "flags": "",
@@ -746,6 +826,14 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.comb": {
+    "explanation": "Label of a built-in item/category picture in the image picker: comb.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.cookie": {
     "explanation": "",
     "flags": "",
@@ -753,6 +841,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.cream-tube": {
+    "explanation": "Label of a built-in item/category picture in the image picker: cream or gel in a tube.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.croissant": {
@@ -780,6 +876,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.disinfectant": {
+    "explanation": "Label of a built-in item/category picture in the image picker: disinfectant or sanitiser.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.donut": {
@@ -881,6 +985,14 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.group.barber": {
+    "explanation": "Heading of the image picker section for barber tools (clippers, razors, combs and so on).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.group.cold": {
     "explanation": "",
     "flags": "",
@@ -897,6 +1009,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.group.grooming": {
+    "explanation": "Heading of the image picker section for hair and skin care products.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.group.hot": {
@@ -933,6 +1053,38 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.hair-colour": {
+    "explanation": "Label of a built-in item/category picture in the image picker: hair colour or dye.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.builtin_icon.hair-dryer": {
+    "explanation": "Label of a built-in item/category picture in the image picker: hair dryer.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.builtin_icon.hair-spray": {
+    "explanation": "Label of a built-in item/category picture in the image picker: hair spray.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.builtin_icon.hairbrush": {
+    "explanation": "Label of a built-in item/category picture in the image picker: hair brush.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.ham": {
@@ -1016,6 +1168,14 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.massage": {
+    "explanation": "Label of a built-in item/category picture in the image picker: massage or treatment.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.meal": {
     "explanation": "",
     "flags": "",
@@ -1050,6 +1210,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.mirror": {
+    "explanation": "Label of a built-in item/category picture in the image picker: hand or back mirror.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.mushroom": {
@@ -1142,6 +1310,14 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.pomade": {
+    "explanation": "Label of a built-in item/category picture in the image picker: hair pomade, wax or clay.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.popcorn": {
     "explanation": "",
     "flags": "",
@@ -1149,6 +1325,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.razor": {
+    "explanation": "Label of a built-in item/category picture in the image picker: straight or safety razor.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.salad": {
@@ -1169,6 +1353,14 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.scissors": {
+    "explanation": "Label of a built-in item/category picture in the image picker: hair-cutting scissors.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.seafood": {
     "explanation": "",
     "flags": "",
@@ -1185,6 +1377,46 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.shampoo": {
+    "explanation": "Label of a built-in item/category picture in the image picker: shampoo or conditioner.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.builtin_icon.shaver": {
+    "explanation": "Label of a built-in item/category picture in the image picker: electric foil shaver.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.builtin_icon.shaving-brush": {
+    "explanation": "Label of a built-in item/category picture in the image picker: shaving brush or neck duster.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.builtin_icon.shears": {
+    "explanation": "Label of a built-in item/category picture in the image picker: thinning or texturising scissors.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.builtin_icon.skin-care": {
+    "explanation": "Label of a built-in item/category picture in the image picker: skin care products.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.smoothie": {
@@ -1205,6 +1437,14 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.spare-parts": {
+    "explanation": "Label of a built-in item/category picture in the image picker: spare parts, sharpening and repair.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.spirits": {
     "explanation": "",
     "flags": "",
@@ -1212,6 +1452,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.spray-bottle": {
+    "explanation": "Label of a built-in item/category picture in the image picker: water spray bottle.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.star": {
@@ -1257,6 +1505,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.towel": {
+    "explanation": "Label of a built-in item/category picture in the image picker: towel.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.builtin_icon.trimmer": {
+    "explanation": "Label of a built-in item/category picture in the image picker: T-blade outline trimmer (barber tool).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.updated": {
