@@ -71,7 +71,7 @@
   "elevation.summary.data_catalog_cleanup": "Permanently remove %d inactive product(s) that were never sold.",
   "elevation.summary.data_catalog_cleanup_all": "Permanently remove %d product(s) that were never sold, including active ones.",
   "elevation.summary.data_customer_erase": "Permanently erase this customer's personal data (name, phone, email) — reference %s. Their sales are kept, anonymised.",
-  "elevation.summary.data_reset_transactions": "Archive all sales, shifts and invoices and restart receipt numbering. The catalog, users, settings and archived reports are kept. Restorable from Settings → Data until the till trades again.",
+  "elevation.summary.data_reset_transactions": "Archive all sales, shifts and invoices and restart receipt numbering. The catalog, users, settings and archived reports are kept. Restorable from Settings → Data management until the till trades again.",
   "elevation.summary.dismiss_pending_base_plugin": "Dismiss the pending %s base plugin without installing it.",
   "elevation.summary.display_mode": "Set this till's device profile to %s.",
   "elevation.summary.enrol_check_plan": "Ask the cloud now whether this shop is on a paid plan.",
