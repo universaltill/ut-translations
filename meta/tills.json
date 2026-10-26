@@ -368,6 +368,54 @@
       "0.34"
     ]
   },
+  "desktop.startup_failed.body": {
+    "explanation": "Paragraph under the heading explaining that the till program stopped right after opening.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "desktop.startup_failed.detail": {
+    "explanation": "Label before the technical reason (for example an exit status) shown in small text for support.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "desktop.startup_failed.logs": {
+    "explanation": "Sentence introducing the data folder path, asking the user to send the two log files from it to support. File names desktop.log and till.log stay unchanged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "desktop.startup_failed.step_reinstall": {
+    "explanation": "Second step in the numbered list: reinstall from the latest installer; saved data is kept. Keep the product name unchanged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "desktop.startup_failed.step_retry": {
+    "explanation": "First step in the numbered list: close the window and open the app again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "desktop.startup_failed.title": {
+    "explanation": "Heading of the window the desktop app shows when the till program stopped right after it was opened.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "diagnostics.chip_label": {
     "explanation": "",
     "flags": "",
