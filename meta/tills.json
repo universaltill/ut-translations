@@ -587,6 +587,22 @@
       "0.34"
     ]
   },
+  "status.backup_copy.hint": {
+    "explanation": "Tooltip of the no-backup-copied chip: why and how to copy a backup off the till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.backup_copy.label": {
+    "explanation": "Status-bar chip for managers: no backup was downloaded or saved off this till in the last 7 days. Links to Settings → Backups.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "status.cloud_auth.hint": {
     "explanation": "",
     "flags": "",
@@ -1775,6 +1791,22 @@
       "0.34"
     ]
   },
+  "tills.join.rejoin_note": {
+    "explanation": "Note in a joined till's 'join an existing shop' section: joining another main till sends its unsent sales there first.\n\nPlaceholders:\n- %d: how many unsent sales this till has",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.join.rejoin_sales_warning": {
+    "explanation": "Warning above the join tabs on a till that is already joined to a main till and has sales: joining another main till replaces its data, but its unsent sales are sent there first.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tills.join_address": {
     "explanation": "",
     "flags": "",
@@ -1937,6 +1969,30 @@
       "0.34"
     ]
   },
+  "tills.join_error.unsent_day_closes": {
+    "explanation": "Join error on a joined till: its day closes (Z reports) that the cloud must keep are not uploaded yet; joining would wipe them, so the join waits.\n\nPlaceholders:\n- %s: how many day closes are not in the cloud yet",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.join_error.unsent_day_closes_refused": {
+    "explanation": "Join error on a joined till whose day closes cannot reach the cloud because the cloud refuses uploads (subscription not active).\n\nPlaceholders:\n- %s: how many day closes are not in the cloud yet",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.join_error.unsent_not_sent": {
+    "explanation": "Join error on a joined till re-joining a (new) main till: its sales that never reached a main till could not be sent there first, so the join was refused and nothing on this till changed.\n\nPlaceholders:\n- %s: how many unsent sales this till has",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tills.join_help": {
     "explanation": "",
     "flags": "",
@@ -2037,12 +2093,27 @@
     ]
   },
   "tills.main_unreachable_help": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
+    ]
+  },
+  "tills.main_unreachable_help_offline": {
+    "explanation": "Notice on a joined till's Tills page while the main till is not answering: the till keeps selling, reconnects by itself, what to check.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.main_unreachable_replaced": {
+    "explanation": "Line in the 'main till isn't answering' notice on a joined till's Tills page: what to do when the main till was replaced, and that unsent sales go to the new main till first.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "tills.main_unreachable_title": {

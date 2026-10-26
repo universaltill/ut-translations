@@ -634,6 +634,8 @@
   "import.welcome.file.body": "Moving from another till? Export your products there and upload the file here: CSV, Excel or a .bkp backup. You see a preview before anything is saved.",
   "import.welcome.file.title": "Import a file",
   "import.welcome.intro": "There are four ways to start. You can use more than one, and come back here any time from Catalog → Import.",
+  "import.welcome.restore.action": "Restore a backup",
+  "import.welcome.restore.body": "Replacing a till that broke? Restore its backup file instead of starting again: products, sales, staff and customers come back.",
   "import.welcome.sample.action": "Go to sample data",
   "import.welcome.sample.body": "Try the till with a sample shop: about 50 products, 3 customers and 3 promo codes. All marked SAMPLE, removable any time in Settings → Data management.",
   "import.welcome.sample.title": "Load sample data",

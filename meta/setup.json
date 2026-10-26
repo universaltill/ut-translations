@@ -125,6 +125,14 @@
       "0.34"
     ]
   },
+  "setup.cloud.error.main_till_online": {
+    "explanation": "Inline error after confirming a replacement: the old main till talked to the cloud in the last 15 minutes, so it cannot be replaced yet.\n\nPlaceholders:\n- %s: when the old till was last seen (YYYY-MM-DD HH:MM UTC)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "setup.cloud.error.no_network": {
     "explanation": "Inline error: pairing needs the internet and none was reachable.",
     "flags": "",
@@ -134,12 +142,51 @@
       "0.34"
     ]
   },
+  "setup.cloud.error.replace_main_till_only": {
+    "explanation": "Inline error: a replace code was used anywhere but the setup wizard's Main till choice.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.error.replace_needs_owner": {
+    "explanation": "Inline error: an ordinary 'Add a till' code was used to confirm a replacement; only the owner's replace code can replace the main till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.error.replace_target_changed": {
+    "explanation": "Inline error after confirming a replacement: the cloud's replace code no longer matches the till being replaced.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.error.replace_unsupported": {
+    "explanation": "Inline error: the till confirmed a replacement but the cloud answered as if it had not (a cloud that cannot replace yet). Gives the manual way round: remove the old till on my. and pair with an ordinary 'Add a till' code.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.error.store_has_main_till": {
+    "explanation": "Inline error in the setup wizard (Join an existing shop, Main till): the shop on my.universaltill.com already has a live main till. Says how to replace it (my. Tills page, 'Replace this till', a new code) or join as another till. 'Additional till' and 'Satellite' are the role choices above the field; keep them as the till's own labels for those roles.\n\nPlaceholders:\n- %[1]s: the existing main till's name\n- %[2]s: when it was last seen (YYYY-MM-DD HH:MM UTC)",
+    "flags": "placeholders:\"%[1]s\":\"%[2]s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "setup.cloud.error.store_has_till": {
-    "explanation": "Inline error: the shop already has a till that has talked to the cloud. 1st placeholder: that till's name; 2nd: the date it was last seen.\n\nPlaceholders:\n- %s: the name of the shop's existing till\n- %s: the date that till was last seen (YYYY-MM-DD)",
+    "explanation": "Inline error: the shop already has a till that has talked to the cloud. 1st placeholder: that till's name; 2nd: the date it was last seen.\n\nPlaceholders:\n- %s: the name of the shop's existing till\n- %s: the date that till was last seen (YYYY-MM-DD)\n\nOnly used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -204,6 +251,70 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "setup.cloud.replace.backup": {
+    "explanation": "Replace confirmation hint: the cloud never holds sales, customers or PINs; only a backup file of the old till brings them back (Settings, Backups after setup).\n\nPlaceholders:\n- %s: the name of the main till being replaced",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.replace.body": {
+    "explanation": "Body of the replace confirmation in the setup wizard: what happens to the old main till and this one.\n\nPlaceholders:\n- %[1]s: the name of the main till being replaced\n- %[2]s: when it was last seen (YYYY-MM-DD HH:MM UTC)",
+    "flags": "placeholders:\"%[1]s\":\"%[2]s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.replace.confirm": {
+    "explanation": "Danger button that confirms replacing the shop's main till with this device. Wraps on small screens.\n\nPlaceholders:\n- %s: the name of the main till being replaced",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.replace.copies_cloud": {
+    "explanation": "Replace confirmation, shops whose products are kept in the cloud: what the new main till copies and what must be set up again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.replace.copies_till_master": {
+    "explanation": "Replace confirmation, shops whose plan keeps the products on the till only: the new till starts with sample products.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.replace.loss": {
+    "explanation": "Bold warning in the replace confirmation: the old till's sales after it was last seen never reached the cloud and are lost.\n\nPlaceholders:\n- %[1]s: the name of the main till being replaced\n- %[2]s: when it was last seen (YYYY-MM-DD HH:MM UTC)",
+    "flags": "placeholders:\"%[1]s\":\"%[2]s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.replace.title": {
+    "explanation": "Heading of the setup wizard's confirmation when a replace code is typed: this new device would replace the shop's main till.\n\nPlaceholders:\n- %s: the name of the main till being replaced",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.replaced_note": {
+    "explanation": "Line on the setup wizard's 'Your shop' step after this till replaced the shop's main till; names the old till.\n\nPlaceholders:\n- %s: the name of the main till this one replaced",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "setup.cloud.shop_country": {

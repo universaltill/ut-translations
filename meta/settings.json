@@ -1592,6 +1592,22 @@
       "0.34"
     ]
   },
+  "settings.backup.restore_refused": {
+    "explanation": "Notice in Settings → Backups after the till refused, at restart, a staged restore whose file was not a usable till database. Shown until the next restore is staged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.safety_failed": {
+    "explanation": "Error in Settings → Backups when the till could not snapshot the current data before a restore, so the restore was not staged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.backup.save_failed": {
     "explanation": "",
     "flags": "",
@@ -1635,6 +1651,174 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.backup.upload.action": {
+    "explanation": "Button that uploads the chosen backup file so the till can check it. Nothing is restored yet.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.checking": {
+    "explanation": "Shown while the backup file uploads and is checked (can take a while for a large file).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.error.failed": {
+    "explanation": "Generic error when checking an uploaded backup failed for a reason on the till's side.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.error.newer": {
+    "explanation": "Error when the uploaded backup's database schema is newer than this till's build.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.error.no_file": {
+    "explanation": "Error when the form was sent without a file.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.error.no_space": {
+    "explanation": "Error when the disk is already below the low-disk floor, so no upload is accepted.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.error.not_backup": {
+    "explanation": "Error when the uploaded file is not a till database or fails the integrity check. Product name and file pattern stay unchanged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.error.other_shop": {
+    "explanation": "Error when the uploaded backup names a different my. shop than the one this till is paired with.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.error.too_large": {
+    "explanation": "Error when the uploaded file is over the size cap (a fixed maximum, or less when the disk is fuller).\n\nPlaceholders:\n- %s: the largest file size allowed, for example 1.5 GB",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.error.too_old": {
+    "explanation": "Error when the uploaded backup comes from a version before the database schema reset, which this build cannot open.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.help": {
+    "explanation": "Help line under 'Restore from a file'. The file name pattern unitill-pos-….db stays unchanged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.label": {
+    "explanation": "Label of the file picker for the backup file to restore.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.live_sales": {
+    "explanation": "Extra warning above the Restore button when this till has already rung up sales.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.newest_sale": {
+    "explanation": "Line in the checked-backup summary: the date and time of the newest sale in the backup, the cut-off of what a restore brings back.\n\nPlaceholders:\n- %s: the date and time of the newest sale",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.no_sales": {
+    "explanation": "Line in the checked-backup summary when the backup holds no sales.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.ready": {
+    "explanation": "Shown after an uploaded backup passed every check; the file name follows on the same line. Product name stays unchanged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.replaces": {
+    "explanation": "Warning above the Restore button for an uploaded backup.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.restore": {
+    "explanation": "Button that restores the uploaded, checked backup (asks for the manager PIN next).",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.sales": {
+    "explanation": "Line in the checked-backup summary: how many sales the backup holds.\n\nPlaceholders:\n- %d: the number of sales",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.shop": {
+    "explanation": "Line in the checked-backup summary naming the shop the backup belongs to.\n\nPlaceholders:\n- %s: the shop name stored in the backup",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.upload.title": {
+    "explanation": "Heading of the part of Settings → Backups where a manager uploads a backup file (for example from a USB stick) to restore it.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.barcode.symbologies_help": {

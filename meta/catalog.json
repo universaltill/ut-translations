@@ -5714,6 +5714,22 @@
       "0.34"
     ]
   },
+  "import.welcome.restore.action": {
+    "explanation": "Button on the welcome page that opens Settings → Backups → Restore from a file.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "import.welcome.restore.body": {
+    "explanation": "Line under the ways to start on the welcome page after setup, for a new device replacing a broken till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "import.welcome.sample.action": {
     "explanation": "",
     "flags": "",
