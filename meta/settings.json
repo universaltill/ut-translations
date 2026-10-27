@@ -6085,6 +6085,14 @@
       "0.34"
     ]
   },
+  "subscription.cap.order_tracking": {
+    "explanation": "Name of the paid capability customer order tracking (tracking QR on the kiosk confirmation and receipt), listed on the Subscription card and in the paused-feature banner when the shop's plan no longer includes it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "subscription.check_now_btn": {
     "explanation": "",
     "flags": "",
@@ -6326,6 +6334,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "subscription.plan.local_plus": {
+    "explanation": "Name of the Local Plus subscription plan (the cheapest paid tier), shown as the shop's plan on the Subscription card and status chip. A product name: never translate it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "subscription.plan.pro": {
