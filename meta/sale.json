@@ -1034,6 +1034,14 @@
       "0.34"
     ]
   },
+  "pos.error.void_voucher_additional_till": {
+    "explanation": "Error when a manager voids a sale on an additional till and the sale sold or topped up a gift voucher. The void is refused and nothing changes.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "pos.error.void_voucher_redeemed": {
     "explanation": "",
     "flags": "",

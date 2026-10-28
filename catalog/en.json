@@ -845,7 +845,7 @@
   "vouchers.top_up.intro": "Add value to this voucher as a sale: the amount goes into the current sale on the sale screen, and the voucher is credited when the customer pays.",
   "vouchers.top_up.not_single": "A voucher for a specific item can't be topped up: its value was taxed when it was sold.",
   "vouchers.top_up.not_void": "A voided voucher can't be topped up.",
-  "vouchers.top_up.replica_note": "Top-ups are made on the main till. Open this voucher there to add value to it.",
+  "vouchers.top_up.replica_note": "This till can't top up the voucher right now: the main till isn't reachable, or it needs an update first. Try again, or top up on the main till.",
   "vouchers.top_up.title": "Top up",
   "vouchers_import.busy": "Reading the file — this can take a moment for a large one. Please wait…",
   "vouchers_import.col.code": "Code",
