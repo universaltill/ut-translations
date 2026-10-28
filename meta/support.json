@@ -107,6 +107,14 @@
       "0.34"
     ]
   },
+  "help.support_partner.scan": {
+    "explanation": "Caption above the QR code and link on the Support partner help topic (shown only on a registered till): scanning opens my.universaltill.com Manage shop → Support partner. Also the QR image alt text. Keep the screen names consistent with the my. site.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "help.title": {
     "explanation": "",
     "flags": "",

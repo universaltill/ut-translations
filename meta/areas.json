@@ -37,7 +37,7 @@
   "setup": {
     "name": "Setup",
     "description": "First-run setup, the guided tour, demo data and onboarding notices.",
-    "keys": 149
+    "keys": 151
   },
   "selforder": {
     "name": "Self-order",
@@ -57,7 +57,7 @@
   "support": {
     "name": "Support",
     "description": "Help, the user manual links and issue reports.",
-    "keys": 76
+    "keys": 77
   },
   "common": {
     "name": "Common",

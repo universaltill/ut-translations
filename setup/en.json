@@ -41,6 +41,8 @@
   "setup.cloud.shop_name": "Shop name",
   "setup.cloud.shop_type": "Shop type",
   "setup.cloud.syncing": "Syncing your shop",
+  "setup.cloud.syncing_body": "This till has joined your shop and is receiving its products. This takes a moment; the sale screen opens by itself when they have arrived. You can also start selling now.",
+  "setup.cloud.syncing_title": "Your shop's products are on their way",
   "setup.cloud.title": "Your shop",
   "setup.country.ae": "United Arab Emirates",
   "setup.country.de": "Germany",

@@ -362,6 +362,22 @@
       "0.34"
     ]
   },
+  "setup.cloud.syncing_body": {
+    "explanation": "Body of the syncing state after joining a cloud shop: products are arriving, the sale screen opens by itself, selling can start now.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.syncing_title": {
+    "explanation": "Heading of the syncing state a till shows after joining a cloud shop, while the shop's products are still being received.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "setup.cloud.title": {
     "explanation": "Title of the wizard step that shows the shop details taken from my.universaltill.com after pairing.",
     "flags": "",
