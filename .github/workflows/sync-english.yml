@@ -14,20 +14,37 @@
 # The sync never pushes to main (ut-docs#4367, owner decision Option A): main
 # is protected by a ruleset that wants a PR. The job commits to the bot
 # branch `sync/english`, opens (or updates) a PR and enables auto-merge, but
-# only after the PATH GATE: every changed path must be `<area>/en.json` of an
-# area already on main, or `meta/<name>.json`. Anything else (tools/,
-# .github/, config/, scripts/, a new area, ...) fails the job: a sync must
-# never be able to carry a code change. The gate and the sync code are the
-# ones on main; the PR branch only ever holds their output.
+# only after the PATH GATE: every changed path must be a regular-file
+# add/modify/delete of `<area>/en.json` of an area already on main, or
+# `meta/<name>.json`. Anything else (tools/, .github/, config/, scripts/, a
+# new area, a symlink, ...) fails the job. The gate and the sync code are the
+# ones on main; the PR branch only ever holds their output. The gate is run
+# again, server side, as the required `paths` check (test.yml), because a
+# write user can push to the bot branch between this job's gate and the
+# merge. What this does NOT stop: a write user changing the CONTENT of an
+# allowed file; that is caught at publish time (build_bundle.py checks every
+# locale's English and legal labels against universal-till at source_commit).
+#
+# The ruleset on main (ut-infra) MUST land first: it requires the status
+# checks `unit`, `authors` and `paths`. `gh pr merge --auto` merges at once
+# when no check is required, so this job reads the effective rules for main
+# and refuses to enable auto-merge unless all three are required. Until the
+# ruleset exists the sync fails loudly and leaves the PR open: that is the
+# intended safe state, not a bug.
 #
 # A PR or push made with GITHUB_TOKEN starts no workflow, so the required
-# checks (`unit`, `authors`) would never report. workflow_dispatch is the one
-# event GITHUB_TOKEN may start: the job dispatches test.yml and
-# commit-attribution.yml on the bot branch; their check runs attach to the
-# branch head, which is the PR head, and auto-merge completes when they pass.
+# checks would never report. workflow_dispatch is the one event GITHUB_TOKEN
+# may start: the job dispatches test.yml and commit-attribution.yml on the
+# bot branch; their check runs attach to the branch head, which is the PR
+# head. UNVERIFIED (needs a throwaway branch + temporary ruleset): that a
+# dispatched run satisfies the required context on the PR head sha.
+#
+# Merge method: merge commit, never squash (repo rule #250).
 #
 # Least privilege (job level): contents: write (the bot branch), pull-requests:
-# write (open the PR, enable auto-merge), actions: write (the two dispatches).
+# write (open the PR, enable auto-merge), actions: write (the two dispatches;
+# it also lets the job cancel or re-run runs, accepted: it is scoped to this
+# repo and the job runs only code from main).
 # It reads universal-till over its public https clone URL with no credential.
 # No secrets. GitHub-hosted runner (public repo).
 #
@@ -76,17 +93,27 @@ jobs:
 
       # Fails the job (and so opens nothing) unless the sync touched only
       # the paths it owns. The known areas are read from main, not from the
-      # changed tree. -z / NUL framing keeps odd file names one path each.
+      # changed tree. -z / NUL framing keeps odd file names one path each;
+      # --raw adds the file modes, --no-renames lists every path.
       - name: Path gate
         if: steps.sync.outputs.changed == 'true'
         run: |
           set -euo pipefail
-          git fetch --quiet origin main
+          # Nothing the sync must not touch may differ at all, and the sync
+          # is exactly one commit on top of the checked-out main tip.
+          git diff --quiet origin/main HEAD -- tools .github scripts config || {
+            echo "::error::the sync changed code or config (tools, .github, scripts, config); refusing"
+            exit 1
+          }
+          [ "$(git rev-parse HEAD^)" = "$(git rev-parse origin/main)" ] || {
+            echo "::error::the sync commit is not directly on top of main"
+            exit 1
+          }
           git show origin/main:meta/areas.json > "${RUNNER_TEMP}/areas.json"
-          if ! git diff --name-only -z --no-renames origin/main HEAD \
-              | python3 tools/sync_english.py --check-paths --areas-file "${RUNNER_TEMP}/areas.json"; then
-            echo "::error::the sync changed paths outside <area>/en.json and meta/*.json; refusing to open an auto-merge PR (a sync must not carry a code change)"
-            git diff --name-status --no-renames origin/main HEAD
+          if ! git diff --raw -z --no-renames HEAD^ HEAD \
+              | python3 tools/sync_english.py --check-paths --raw --areas-file "${RUNNER_TEMP}/areas.json"; then
+            echo "::error::the sync changed paths outside <area>/en.json and meta/*.json, or a non-regular file; refusing to open an auto-merge PR"
+            git diff --raw --no-renames HEAD^ HEAD
             exit 1
           fi
 
@@ -94,14 +121,15 @@ jobs:
         if: steps.sync.outputs.changed == 'true'
         run: |
           set -euo pipefail
-          # Weblate pushes to main too; the branch is rebuilt from main's tip
-          # every run, so a force-push of the bot's own branch is safe.
+          # The branch is rebuilt from main's tip every run, so a force-push
+          # of the bot's own branch is safe. (No Weblate push to main exists
+          # yet: there is no deploy key.)
           git push --force --quiet origin HEAD:refs/heads/sync/english
           subject=$(git log -1 --format=%s)
           num=$(gh pr list --head sync/english --base main --state open --json number --jq '.[0].number // empty')
           if [ -z "${num}" ]; then
             gh pr create --base main --head sync/english --title "${subject}" \
-              --body "Automated English sync from universal-till (ut-docs#4367). Only <area>/en.json and meta/*.json changed (checked by tools/sync_english.py --check-paths). Auto-merges when the required checks pass."
+              --body "Automated English sync from universal-till (ut-docs#4367). Only <area>/en.json and meta/*.json changed (checked by tools/sync_english.py --check-paths and the required paths check). Auto-merges when the required checks pass."
             num=$(gh pr list --head sync/english --base main --state open --json number --jq '.[0].number')
           else
             gh pr edit "${num}" --title "${subject}"
@@ -109,7 +137,15 @@ jobs:
           # Required checks never start on a GITHUB_TOKEN PR; run them here.
           gh workflow run test.yml --ref sync/english
           gh workflow run commit-attribution.yml --ref sync/english
-          if ! gh pr merge "${num}" --auto --squash --subject "${subject}"; then
-            echo "::error::could not enable auto-merge on PR #${num} (repo setting 'Allow auto-merge' off, or the squash method disallowed)"
+          # `--auto` merges at once when main requires no check. Refuse
+          # unless the ruleset requires unit, authors and paths (ut-infra).
+          missing=$(gh api "repos/$GITHUB_REPOSITORY/rules/branches/main" \
+            --jq '[.[] | select(.type == "required_status_checks") | .parameters.required_status_checks[].context] as $c | ["unit","authors","paths"] | map(select(. as $n | $c | index($n) | not)) | join(",")')
+          if [ -n "${missing}" ]; then
+            echo "::error::main's ruleset does not require the status check(s): ${missing}. Not enabling auto-merge (it would merge at once). PR #${num} is left open; land the ut-infra ruleset first."
+            exit 1
+          fi
+          if ! gh pr merge "${num}" --auto --merge --match-head-commit "$(git rev-parse HEAD)" --subject "${subject}"; then
+            echo "::error::could not enable auto-merge on PR #${num} (repo setting 'Allow auto-merge' off, merge commits disallowed, or the PR head moved)"
             exit 1
           fi

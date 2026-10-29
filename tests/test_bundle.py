@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "tools"))
 
 import build_bundle as bb  # noqa: E402
 import bundle_checks as bc  # noqa: E402
-from bundle_fixtures import TILL_EN, TOKEN, BundleCase, add_english, side_commit, sync_repo, till_source  # noqa: E402
+from bundle_fixtures import TOKEN, BundleCase, side_commit, till_source  # noqa: E402
 from provision_weblate import WeblateClient  # noqa: E402
 
 NOW = dt.datetime(2026, 10, 16, 12, 30, 5, tzinfo=dt.timezone.utc)
@@ -294,9 +294,9 @@ class Export(BundleCase, unittest.TestCase):
         self.assertEqual({k: manifest[k] for k in ("canonical_type", "runtime", "device_arch", "locales", "permissions")},
                          {"canonical_type": "language", "runtime": "none", "device_arch": "any",
                           "locales": ["de"], "permissions": ["ui.locale"]})
-        self.assertEqual(manifest["min_pos_version"], "0.33.0")
+        self.assertEqual(manifest["min_pos_version"], "0.34.0")
         self.assertEqual(info["locale"], "de")
-        self.assertEqual(info["pos_lines"], ["0.33", "0.34"])
+        self.assertEqual(info["pos_lines"], ["0.34"])
         self.assertEqual(info["source_commit"], self.sha)
         self.assertEqual(info["generated_at"], "2026-10-16T12:30:05Z")
         self.assertEqual(info["key_count"], 7)
@@ -373,16 +373,15 @@ class Export(BundleCase, unittest.TestCase):
         self.assertTrue(rep["omitted"]["pos.short"].startswith("git_mismatch"))
 
     def english(self):
-        """The repo's English synced from a till that holds it (main and
-        line 0.34 at the same commit)."""
-        add_english(self.till)
-        sync_repo(self.repo, self.till)
+        """The fixture repo is already synced from a till that holds its
+        English (main and line 0.34 at the same commit)."""
+        pass  # make() already synced the repo from the till's English
 
     def test_english_bundle_is_the_source_and_needs_no_weblate(self):
         self.english()
         b = bb.Builder(self.repo, "en", None, self.till, now=NOW)
         rep = b.build(self.out)
-        self.assertEqual(rep["bundle_json"]["approved_count"], len(TILL_EN))
+        self.assertEqual(rep["bundle_json"]["approved_count"], 7)
         self.assertEqual(b.strings["pos.total"], "Total")
         self.assertEqual(self.fake.requests, [])
 
@@ -411,11 +410,43 @@ class Export(BundleCase, unittest.TestCase):
         with self.assertRaisesRegex(bb.BundleError, "meta/receipts-and-legal.json"):
             bb.Builder(self.repo, "en", None, self.till, now=NOW).build(self.out)
 
+    def test_translated_build_with_a_dropped_legal_label_fails(self):
+        # Review (Fable) HIGH-1: meta/<area>.json is un-owned so a sync PR
+        # can auto-merge; a write user dropping `legal` there must not ship
+        # an AI-approved legal string. The English equality check runs for
+        # EVERY locale, not only en.
+        p = os.path.join(self.repo, "meta", "receipts-and-legal.json")
+        meta = bb.load_json(p)
+        self.assertEqual(meta["receipt.vat"]["labels"], ["legal"])
+        meta["receipt.vat"]["labels"] = []
+        with open(p, "w", encoding="utf-8") as f:
+            json.dump(meta, f)
+        self.unit("receipt.vat", "MwSt. inbegriffen", [(NEW, "ai-tr-opus", "MwSt. inbegriffen"),
+                                                       (APPROVE, "ai-rv-opus", "MwSt. inbegriffen")],
+                  area="receipts-and-legal")
+        with self.assertRaisesRegex(bb.BundleError, "meta/receipts-and-legal.json"):
+            self.build()
+        self.assertFalse(os.path.exists(self.out) and os.listdir(self.out))
+
+    def test_translated_build_with_tampered_english_fails(self):
+        p = os.path.join(self.repo, "sale", "en.json")
+        en = bb.load_json(p)
+        en["pos.total"] = "Total (GoBD-free)"
+        with open(p, "w", encoding="utf-8") as f:
+            json.dump(en, f)
+        with self.assertRaisesRegex(bb.BundleError, "sale/en.json"):
+            self.build()
+
+    def test_translated_build_with_an_untampered_repo_passes_the_english_check(self):
+        self.reviewed("pos.total", "Summe")
+        _, rep = self.build()
+        self.assertEqual(rep["bundle_json"]["approved_count"], 1)
+
     def test_en_build_refuses_a_line_commit_that_is_not_its_tag(self):
         self.english()
         p = os.path.join(self.repo, "meta", "source.json")
         src = bb.load_json(p)
-        src["lines"]["0.34"]["commit"] = self.sha  # an older commit, not v0.34.7
+        src["lines"]["0.34"]["commit"] = "1" * 40  # not v0.34.7's commit
         with open(p, "w", encoding="utf-8") as f:
             json.dump(src, f)
         with self.assertRaisesRegex(bb.BundleError, "v0.34.7"):
@@ -456,7 +487,7 @@ class Export(BundleCase, unittest.TestCase):
         # guards run later, in the verify job, through --scan-bundle.
         self.reviewed("pos.total", "Kasse GoBD-konform")
         client = WeblateClient(self.fake.base(), TOKEN)
-        rep = bb.Builder(self.repo, "de", client, None, scans=False, now=NOW).build(self.out)
+        rep = bb.Builder(self.repo, "de", client, self.till, scans=False, now=NOW).build(self.out)
         bundle = os.path.join(self.out, rep["bundle"])
         self.assertTrue(os.path.isfile(bundle))
         with self.assertRaisesRegex(bb.BundleError, "guard-compliance-claims"):
@@ -470,7 +501,7 @@ class Export(BundleCase, unittest.TestCase):
     def test_scan_bundle_passes_a_clean_bundle_and_checks_its_identity(self):
         self.reviewed("pos.total", "Summe")
         client = WeblateClient(self.fake.base(), TOKEN)
-        rep = bb.Builder(self.repo, "de", client, None, scans=False, now=NOW).build(self.out)
+        rep = bb.Builder(self.repo, "de", client, self.till, scans=False, now=NOW).build(self.out)
         bundle = os.path.join(self.out, rep["bundle"])
         bb.scan_bundle(self.repo, self.till, bundle, "de")
         with self.assertRaisesRegex(bb.BundleError, "language-tr"):

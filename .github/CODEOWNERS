@@ -1,6 +1,7 @@
 # The language-bundle publish path (ADR-0160 §5, ut-docs#4367): what decides
 # which strings ship to every till, and the one workflow that holds the
 # scoped marketplace token. The owner reviews every change.
+/.github/ @farshidmirza
 /.github/CODEOWNERS @farshidmirza
 /.github/workflows/publish-bundle.yml @farshidmirza
 /.github/workflows/test.yml @farshidmirza
@@ -17,8 +18,10 @@
 # bundle's guards and the till verifier are taken from (review 2(b)), and the
 # job that writes them. /meta/ and /*/en.json are deliberately NOT owned
 # (ut-docs#4367, Option A): the sync's own PR must auto-merge, and a
-# code-owner review on them would stop it. The sync job's path gate and the
-# ruleset on main guard them instead; everything that can carry code is owned.
+# code-owner review on them would stop it. The path gate, the required
+# `paths` check and the ruleset on main guard them, and build_bundle.py
+# re-derives them from universal-till for every locale before anything
+# ships. Everything that can carry code is owned (.github/ wholesale).
 /scripts/ @farshidmirza
 /config/ @farshidmirza
 /tools/sync_english.py @farshidmirza

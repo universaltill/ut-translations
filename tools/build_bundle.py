@@ -343,8 +343,9 @@ class Builder:
     # --- English (the en bundle) -------------------------------------------
 
     def check_english(self, commit):
-        """The en bundle ships <area>/en.json as written here; it must be
-        exactly what sync_english.py renders from universal-till."""
+        """<area>/en.json and meta/<area>.json as written here (the en
+        bundle's text; every locale's English, flags and legal labels) must
+        be exactly what sync_english.py renders from universal-till."""
         till = require_till(self.till)
         require_released(till, commit)
         _, _, src = read_source(self.repo)
@@ -451,8 +452,11 @@ class Builder:
         commit, lines = self.source()
         if self.scans:
             require_till(self.till)
-        if self.spec.get("source"):
-            self.check_english(commit)
+        # Every locale, not only en (review HIGH-1): <area>/en.json and
+        # meta/<area>.json are un-owned so the sync PR can auto-merge, so
+        # the legal labels and English a translated bundle is judged by must
+        # equal what universal-till renders at source_commit.
+        self.check_english(commit)
         self.export()
         manifest = self.manifest(lines)
         info = self.bundle_info(commit, lines)

@@ -1,6 +1,6 @@
 """Which paths the English sync may carry through an auto-merge PR
 (ut-docs#4367, owner decision Option A): only <area>/en.json and meta/*.json.
-Anything else must refuse, so a sync can never carry a code change."""
+Anything else must refuse, so the auto-merge gate lets no code or config through."""
 
 import json
 import os
@@ -99,8 +99,80 @@ class Cli(unittest.TestCase):
         r = self.run_check(b"sale/en.json\nx\0")
         self.assertEqual(r.returncode, 1)
 
+    def test_newline_is_not_a_separator_between_two_good_names(self):
+        # Two allowed names joined by a newline and ended by NUL are ONE path
+        # (not two allowed ones): newline framing would wrongly pass it.
+        r = self.run_check(b"sale/en.json\nmeta/source.json\0")
+        self.assertEqual(r.returncode, 1)
+
     def test_empty_input_refuses(self):
         self.assertEqual(self.run_check(b"").returncode, 1)
+
+    def test_areas_file_must_be_an_object(self):
+        # a list of areas would make `in` checks pass on substrings/odd shapes
+        with tempfile.TemporaryDirectory() as d:
+            f = os.path.join(d, "areas.json")
+            for body in ('["sale"]', '"sale"', "null", "7"):
+                with open(f, "w") as fh:
+                    fh.write(body)
+                r = subprocess.run([sys.executable, os.path.join(ROOT, "tools", "sync_english.py"),
+                                    "--check-paths", "--areas-file", f], input=b"sale/en.json\0",
+                                   capture_output=True)
+                self.assertEqual(r.returncode, 1, body)
+
+
+def raw(*entries):
+    """git diff --raw -z --no-renames framing: ':<src> <dst> <sha> <sha> <S>' NUL path NUL."""
+    out = b""
+    for status, src, dst, path in entries:
+        out += f":{src} {dst} {'a' * 40} {'b' * 40} {status}".encode() + b"\0" + path.encode() + b"\0"
+    return out
+
+
+class RawCli(Cli):
+    """--check-paths --raw: the same gate over `git diff --raw -z`, which also
+    sees the file MODE, so a symlink/typechange/exec bit cannot ride a
+    sync-owned name (review MEDIUM-1 / LOW-1)."""
+
+    def run_raw(self, data, areas=None):
+        with tempfile.TemporaryDirectory() as d:
+            f = os.path.join(d, "areas.json")
+            with open(f, "w") as fh:
+                json.dump({a: {} for a in (AREAS if areas is None else areas)}, fh)
+            return subprocess.run([sys.executable, os.path.join(ROOT, "tools", "sync_english.py"),
+                                   "--check-paths", "--raw", "--areas-file", f], input=data, capture_output=True)
+
+    def test_regular_file_add_modify_delete_pass(self):
+        r = self.run_raw(raw(("M", "100644", "100644", "sale/en.json"),
+                             ("A", "000000", "100644", "meta/new.json"),
+                             ("D", "100644", "000000", "meta/old.json")))
+        self.assertEqual(r.returncode, 0, r.stderr)
+
+    def test_typechange_symlink_exec_and_submodule_refuse(self):
+        for entry in (("T", "100644", "120000", "sale/en.json"),
+                      ("M", "100644", "120000", "sale/en.json"),
+                      ("A", "000000", "120000", "meta/x.json"),
+                      ("M", "100644", "100755", "sale/en.json"),
+                      ("A", "000000", "100755", "meta/x.json"),
+                      ("A", "000000", "160000", "meta/x.json"),
+                      ("M", "120000", "100644", "sale/en.json"),
+                      ("D", "120000", "000000", "sale/en.json")):
+            r = self.run_raw(raw(entry))
+            self.assertEqual(r.returncode, 1, entry)
+
+    def test_rename_copy_unmerged_and_unknown_status_refuse(self):
+        for st in ("R", "C", "U", "X", "T"):
+            self.assertEqual(self.run_raw(raw((st, "100644", "100644", "sale/en.json"))).returncode, 1, st)
+
+    def test_a_good_mode_does_not_excuse_a_bad_path(self):
+        r = self.run_raw(raw(("M", "100644", "100644", "tools/sync_english.py")))
+        self.assertEqual(r.returncode, 1)
+        self.assertIn(b"tools/sync_english.py", r.stderr)
+
+    def test_malformed_and_empty_input_refuse(self):
+        for data in (b"", b"sale/en.json\0", b":100644 100644 a b M\0", b":100644 100644 a b M\0sale/en.json",
+                     b"garbage\0sale/en.json\0", raw(("M", "100644", "100644", "sale/en.json")) + b"x\0"):
+            self.assertEqual(self.run_raw(data).returncode, 1, data)
 
 
 if __name__ == "__main__":

@@ -42,6 +42,12 @@ def guard_text(rel):
     return subprocess.run(["git", "-C", src, "show", f"HEAD:{rel}"], stdout=subprocess.PIPE, check=True).stdout
 
 
+def till_english():
+    """The English the fixture repo ships, as universal-till holds it (the
+    repo's files are synced from it, so the English equality check holds)."""
+    return ({**SALE_EN, **LEGAL_EN}, {"pos.short": {"max_length": 6}}, TILL_AREAS)
+
+
 def make_till(root, edit=None):
     """A git repo with the two guards at commit 1 -> (path, sha1). `edit`
     (bytes -> bytes) is applied to the compliance guard in a second commit
@@ -49,12 +55,17 @@ def make_till(root, edit=None):
     path = os.path.join(root, "till")
     os.makedirs(os.path.join(path, "scripts", "ci"))
     git(path, "init", "-q", "-b", "main")
+    en, meta, areas = till_english()
+    for rel, data in (("web/locales/en.json", en), ("web/i18n-meta/en.meta.json", meta),
+                      ("web/i18n-meta/areas.json", areas)):
+        write(os.path.join(path, rel), data)
     for rel in GUARDS:
         with open(os.path.join(path, rel), "wb") as f:
             f.write(guard_text(rel))
     git(path, "add", ".")
     git(path, "commit", "-q", "-m", "guards")
     sha = git(path, "rev-parse", "HEAD")
+    git(path, "tag", "v0.34.7")
     if edit:
         p = os.path.join(path, GUARDS[0])
         with open(p, "rb") as f:
@@ -142,20 +153,17 @@ LEGAL_META = {k: {"explanation": "", "flags": "", "labels": ["legal"], "lines": 
 def make_repo(root, till_sha, ai_accounts=None):
     r = os.path.join(root, "repo")
     os.makedirs(os.path.join(r, "config"))
+    till = os.path.join(root, "till")
     shutil.copyfile(os.path.join(REPO, "config", "bundles.json"), os.path.join(r, "config", "bundles.json"))
     write(f"{r}/config/ai-accounts.json", {"accounts": ai_accounts or {}})
-    write(f"{r}/meta/areas.json", {
-        "sale": {"name": "Sale", "description": "", "keys": len(SALE_EN)},
-        "receipts-and-legal": {"name": "Receipts and legal", "description": "", "keys": len(LEGAL_EN)},
-    })
-    write(f"{r}/sale/en.json", SALE_EN)
-    write(f"{r}/meta/sale.json", SALE_META)
-    write(f"{r}/receipts-and-legal/en.json", LEGAL_EN)
-    write(f"{r}/meta/receipts-and-legal.json", LEGAL_META)
-    write(f"{r}/meta/source.json", {
-        "lines": {"0.34": {"commit": "1" * 40, "tag": "v0.34.7"}, "0.33": {"commit": "2" * 40, "tag": "v0.33.9"}},
-        "main": {"branch": "main", "commit": till_sha},
-    })
+    # Synced from the till, as the sync job writes them; source.json then
+    # pins main to the guards commit (the till may hold a later commit).
+    sync_repo(r, till)
+    src = os.path.join(r, "meta", "source.json")
+    with open(src, encoding="utf-8") as f:
+        doc = json.load(f)
+    doc["main"]["commit"] = till_sha
+    write(src, doc)
     return r
 
 

@@ -71,3 +71,35 @@ jobs:
           UTT_TILL_SOURCE: ${{ github.workspace }}/till
           UTT_REQUIRE_TILL: "1"
         run: python3 -W error::ResourceWarning -m unittest discover -s tests -v
+
+  # Required check `paths` (ut-docs#4367, review MEDIUM-1): the sync job's
+  # path gate runs once, on the runner, and a write user can push to the bot
+  # branch afterwards. This repeats it server side over the whole PR range.
+  # On every other branch it reports success at once (a required check that
+  # is skipped never reports).
+  paths:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+
+      - name: Sync branch carries only sync-owned paths
+        env:
+          HEAD_REF: ${{ github.head_ref || github.ref_name }}
+        run: |
+          set -euo pipefail
+          if [ "${HEAD_REF}" != "sync/english" ]; then
+            echo "not the sync branch (${HEAD_REF}): nothing to check"
+            exit 0
+          fi
+          git fetch --quiet origin main:refs/remotes/origin/main
+          git show origin/main:meta/areas.json > "${RUNNER_TEMP}/areas.json"
+          base=$(git merge-base origin/main HEAD)
+          git diff --raw -z --no-renames "${base}..HEAD" \
+            | python3 tools/sync_english.py --check-paths --raw --areas-file "${RUNNER_TEMP}/areas.json"

@@ -20,7 +20,7 @@ rewritten together with a real change).
 
 Usage:
   python3 tools/sync_english.py [--repo DIR] [--source URL] [--no-commit]
-  git diff --name-only -z ... | python3 tools/sync_english.py --check-paths
+  git diff --raw -z --no-renames ... | python3 tools/sync_english.py --check-paths --raw --areas-file F
 """
 
 import argparse
@@ -75,6 +75,36 @@ def auto_merge_allowed(paths, areas):
             continue
         offenders.append(p)
     return (bool(paths) and not offenders), offenders
+
+
+# `git diff --raw -z --no-renames` entries the sync may carry: a regular
+# file (100644) added, modified or deleted. A typechange (symlink, exec bit,
+# submodule) under a sync-owned name is not data (review MEDIUM-1, LOW-1).
+_RAW_META_RE = re.compile(r"\A:(\d{6}) (\d{6}) [0-9a-f]+ [0-9a-f]+ ([A-Z])\Z")
+_RAW_OK = {"A": ("000000", "100644"), "M": ("100644", "100644"), "D": ("100644", "000000")}
+
+
+def parse_raw(raw):
+    """-> (paths, problems) from `git diff --raw -z --no-renames` output."""
+    toks = raw.split("\0")
+    if toks and toks[-1] == "":
+        toks.pop()
+    elif toks and toks != [""]:
+        return [], ["input is not NUL-terminated"]
+    paths, problems = [], []
+    if len(toks) % 2:
+        return [], ["input is not <meta> NUL <path> NUL pairs"]
+    for meta, path in zip(toks[0::2], toks[1::2]):
+        m = _RAW_META_RE.match(meta)
+        if not m:
+            problems.append(f"{path!r}: unreadable diff entry {meta!r}")
+            continue
+        src, dst, status = m.groups()
+        if _RAW_OK.get(status) != (src, dst):
+            problems.append(f"{path!r}: status {status} mode {src}->{dst} is not a regular-file add/modify/delete")
+            continue
+        paths.append(path)
+    return paths, problems
 
 
 def _git(args, cwd=None):
@@ -239,6 +269,8 @@ def main(argv=None):
     ap.add_argument("--source", help="override config/lines.json `source` (e.g. a local clone)")
     ap.add_argument("--no-commit", action="store_true", help="write the files, don't commit")
     ap.add_argument("--areas-file", help="with --check-paths: main's meta/areas.json (the known areas)")
+    ap.add_argument("--raw", action="store_true",
+                    help="with --check-paths: stdin is `git diff --raw -z --no-renames` (modes checked too)")
     ap.add_argument("--check-paths", action="store_true",
                     help="read NUL-separated changed paths on stdin; exit 1 unless every one is "
                          "<area>/en.json or meta/*.json (the auto-merge gate)")
@@ -246,12 +278,24 @@ def main(argv=None):
     if args.check_paths:
         try:
             with open(args.areas_file, encoding="utf-8") as f:
-                areas = set(json.load(f))
+                doc = json.load(f)
+            if not isinstance(doc, dict):
+                raise ValueError("not a JSON object")
+            areas = set(doc)
         except (TypeError, OSError, ValueError) as e:
             print(f"refused: cannot read the known areas (--areas-file): {e}", file=sys.stderr)
             return 1
         raw = sys.stdin.buffer.read().decode("utf-8", "surrogateescape")
-        paths = [p for p in raw.split("\0") if p != ""] if raw else []
+        if args.raw:
+            paths, problems = parse_raw(raw)
+            for pr in problems:
+                print(f"refused: {pr}", file=sys.stderr)
+            if problems or not paths:
+                if not paths and not problems:
+                    print("refused: no changed paths", file=sys.stderr)
+                return 1
+        else:
+            paths = [p for p in raw.split("\0") if p != ""] if raw else []
         allowed, bad = auto_merge_allowed(paths, areas)
         if allowed:
             print(f"auto-merge allowed: {len(paths)} sync-owned path(s)")
