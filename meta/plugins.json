@@ -899,6 +899,22 @@
       "0.34"
     ]
   },
+  "plugins.install.error.pair_again": {
+    "explanation": "Error shown when the marketplace rejects this till's credential (expired, replaced or mismatched): tells the owner to pair the till with the shop again. 'Pair with a shop' is the section label under Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.install.error.pair_required": {
+    "explanation": "Error shown when installing a paid plugin from a till that is not paired with its shop: tells the owner to pair the till first. 'Pair with a shop' is the section label under Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.install.error.payment_conflict": {
     "explanation": "",
     "flags": "",
@@ -933,6 +949,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.install.error.till_removed": {
+    "explanation": "Error shown when the shop has removed, replaced or moved this till so it can no longer download plugins: tells the owner to pair it with the shop again. 'Pair with a shop' is the section label under Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "plugins.install.error.version_mismatch": {
