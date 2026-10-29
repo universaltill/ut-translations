@@ -10,6 +10,9 @@ name: commit-attribution
 
 on:
   pull_request:
+  # Dispatched by sync-english on its bot branch (a GITHUB_TOKEN PR starts no
+  # pull_request run, ut-docs#4367). Range = origin/main..HEAD of that branch.
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -33,4 +36,8 @@ jobs:
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
         run: |
           set -euo pipefail
+          if [ -z "${BASE_SHA}" ]; then
+            BASE_SHA=$(git rev-parse origin/main)
+            HEAD_SHA=$(git rev-parse HEAD)
+          fi
           git log --format='%H|%ae|%an' "$BASE_SHA..$HEAD_SHA" | bash scripts/ci/guard-commit-attribution.sh

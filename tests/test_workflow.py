@@ -161,7 +161,7 @@ class Workflow(unittest.TestCase):
                      "/config/ai-accounts.json", "/config/bundles.json", "/.github/CODEOWNERS",
                      # Review finding 2(b): what decides the English, its
                      # labels and the source commit, and the job that writes them.
-                     "/meta/", "/*/en.json", "/config/", "/tools/sync_english.py",
+                     "/scripts/", "/config/", "/tools/sync_english.py",
                      "/.github/workflows/sync-english.yml"):
             self.assertRegex(owners, rf"(?m)^{re.escape(path)} @\w+")
 

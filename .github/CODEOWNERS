@@ -15,9 +15,11 @@
 /config/ai-accounts.json @farshidmirza
 # What decides the English, its legal labels and the source commit the
 # bundle's guards and the till verifier are taken from (review 2(b)), and the
-# job that writes them.
-/meta/ @farshidmirza
-/*/en.json @farshidmirza
+# job that writes them. /meta/ and /*/en.json are deliberately NOT owned
+# (ut-docs#4367, Option A): the sync's own PR must auto-merge, and a
+# code-owner review on them would stop it. The sync job's path gate and the
+# ruleset on main guard them instead; everything that can carry code is owned.
+/scripts/ @farshidmirza
 /config/ @farshidmirza
 /tools/sync_english.py @farshidmirza
 /.github/workflows/sync-english.yml @farshidmirza

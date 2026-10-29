@@ -14,6 +14,9 @@ on:
   push:
     branches: [main]
   pull_request:
+  # The sync PR is opened with GITHUB_TOKEN, which starts no pull_request
+  # run; sync-english dispatches this on its bot branch (ut-docs#4367).
+  workflow_dispatch:
 
 permissions:
   contents: read

@@ -90,6 +90,17 @@ expect_pass "pouria-teimouri's allowlisted plain email address" \
 expect_fail "an unrecognized plain email address (not on ALLOWED_PLAIN_EMAILS)" \
   'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj|contributor@example.com|Somebody'
 
+# ut-docs#4367: the sync job's own bot commits arrive as a PR. Exactly the
+# GitHub Actions bot (numeric ID 41898282) passes; look-alikes do not.
+expect_pass "the GitHub Actions bot (sync PR commits)" \
+  'mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm|41898282+github-actions[bot]@users.noreply.github.com|github-actions[bot]'
+expect_fail "a github-actions[bot] look-alike with another ID" \
+  'nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn|26383381+github-actions[bot]@users.noreply.github.com|github-actions[bot]'
+expect_fail "a github-actions[bot] look-alike with a suffix" \
+  'oooooooooooooooooooooooooooooooooooooooo|41898282+github-actions[bot]x@users.noreply.github.com|github-actions[bot]'
+expect_fail "a bot-named plain address" \
+  'pppppppppppppppppppppppppppppppppppppppp|github-actions[bot]@example.com|github-actions[bot]'
+
 # Multiple good commits in one run.
 expect_pass "multiple good commits together" \
   'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa|4035824+farshidmirza@users.noreply.github.com|Farshid Mirza' \

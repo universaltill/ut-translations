@@ -115,6 +115,7 @@ ALLOWED_PLAIN_EMAILS=(
 BANNED_RE='^(noreply@anthropic\.com|codex@users\.noreply\.github\.com|noreply@universaltill\.com)$'
 ID_PREFIXED_RE='^([0-9]+)\+[a-z0-9-]+@users\.noreply\.github\.com$'
 LEGACY_RE='^([a-z0-9-]+)@users\.noreply\.github\.com$'
+ACTIONS_BOT_EMAIL='41898282+github-actions[bot]@users.noreply.github.com'
 NOREPLY_DOMAIN_RE='@users\.noreply\.github\.com$'
 
 is_allowed_id() {
@@ -145,6 +146,10 @@ while IFS='|' read -r sha email name; do
   if grep -Eq "$BANNED_RE" <<<"$email_lc"; then
     echo "::error::${sha:0:9} is authored by '${name} <${email}>' — AI-tool or unattributable identity"
     bad=1
+  elif [ "$email_lc" = "$ACTIONS_BOT_EMAIL" ]; then
+    # The sync job's commits (ut-docs#4367): the GitHub Actions bot, matched
+    # on the exact address including its real numeric ID, nothing looser.
+    echo "ok  ${sha:0:9}  ${name} <${email}>"
   elif [[ "$email_lc" =~ $ID_PREFIXED_RE ]]; then
     id="${BASH_REMATCH[1]}"
     if is_allowed_id "$id"; then

@@ -20,6 +20,7 @@ rewritten together with a real change).
 
 Usage:
   python3 tools/sync_english.py [--repo DIR] [--source URL] [--no-commit]
+  git diff --name-only -z ... | python3 tools/sync_english.py --check-paths
 """
 
 import argparse
@@ -45,6 +46,35 @@ TAG_RE = re.compile(r"^v(\d+)\.(\d+)\.(\d+)$")  # final releases only, no -rc
 
 class SyncError(Exception):
     pass
+
+
+# The only paths the sync owns, and so the only ones an auto-merge PR may
+# carry (ut-docs#4367, owner decision Option A). Anything else is a code or
+# config change and needs a human review. Deliberately a strict allowlist:
+# one path segment per level, lower-case, no dots at the start, no traversal.
+_AREA_EN_RE = re.compile(r"\A([a-z0-9][a-z0-9_-]*)/en\.json\Z")
+_META_RE = re.compile(r"\Ameta/[a-z0-9][a-z0-9_-]*\.json\Z")
+# Top-level folders that hold code or config, never an area, whatever the
+# areas.json (an area named `tools` must not turn tools/en.json into "data").
+_NOT_AREAS = frozenset({"tools", "config", "scripts", "tests", "docs", "meta"})
+
+
+def auto_merge_allowed(paths, areas):
+    """-> (allowed, offenders). `allowed` only when `paths` is non-empty and
+    every path is `<area>/en.json` for an area ALREADY on main (`areas`, read
+    from main's meta/areas.json, never from the PR) or `meta/<name>.json`.
+    A brand-new area folder needs a human anyway (it needs a Weblate
+    component), so it is refused here."""
+    paths = list(paths)
+    offenders = []
+    for p in paths:
+        m = _AREA_EN_RE.match(p)
+        if m and m.group(1) in areas and m.group(1) not in _NOT_AREAS:
+            continue
+        if _META_RE.match(p):
+            continue
+        offenders.append(p)
+    return (bool(paths) and not offenders), offenders
 
 
 def _git(args, cwd=None):
@@ -208,7 +238,29 @@ def main(argv=None):
     ap.add_argument("--repo", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
     ap.add_argument("--source", help="override config/lines.json `source` (e.g. a local clone)")
     ap.add_argument("--no-commit", action="store_true", help="write the files, don't commit")
+    ap.add_argument("--areas-file", help="with --check-paths: main's meta/areas.json (the known areas)")
+    ap.add_argument("--check-paths", action="store_true",
+                    help="read NUL-separated changed paths on stdin; exit 1 unless every one is "
+                         "<area>/en.json or meta/*.json (the auto-merge gate)")
     args = ap.parse_args(argv)
+    if args.check_paths:
+        try:
+            with open(args.areas_file, encoding="utf-8") as f:
+                areas = set(json.load(f))
+        except (TypeError, OSError, ValueError) as e:
+            print(f"refused: cannot read the known areas (--areas-file): {e}", file=sys.stderr)
+            return 1
+        raw = sys.stdin.buffer.read().decode("utf-8", "surrogateescape")
+        paths = [p for p in raw.split("\0") if p != ""] if raw else []
+        allowed, bad = auto_merge_allowed(paths, areas)
+        if allowed:
+            print(f"auto-merge allowed: {len(paths)} sync-owned path(s)")
+            return 0
+        if not paths:
+            print("refused: no changed paths", file=sys.stderr)
+        for p in bad:
+            print(f"refused: {p!r} is not <area>/en.json or meta/*.json", file=sys.stderr)
+        return 1
     try:
         cfg = load_config(args.repo)
         if args.source:

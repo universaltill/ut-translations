@@ -114,8 +114,17 @@ python3 tools/sync_english.py --source ../universal-till --no-commit
 
 In CI this is `.github/workflows/sync-english.yml`: hourly, by hand, or on a
 `repository_dispatch` of type `universal-till-main`. It commits as
-`github-actions[bot]` and pushes with the job's own `GITHUB_TOKEN`
-(`contents: write` on this repo only).
+`github-actions[bot]`, never pushes to `main`: it pushes the bot branch
+`sync/english`, opens (or updates) a pull request and enables auto-merge
+(squash). First comes the **path gate** (`tools/sync_english.py
+--check-paths`): every changed path must be `<area>/en.json` of an area
+already on `main` or `meta/<name>.json`; anything else (tools, workflows,
+config, a new area, a look-alike or traversal path) fails the job and opens
+nothing. A `GITHUB_TOKEN` PR starts no workflow, so the job dispatches
+`test.yml` and `commit-attribution.yml` on `sync/english` (the one event that
+token may start); their `unit` / `authors` check runs attach to the PR head
+and auto-merge completes when they pass. Token: `contents`, `pull-requests`
+and `actions` write, job level (`actions` only for the two dispatches).
 
 Provision Weblate (idempotent; a second run makes no write call):
 
@@ -304,9 +313,10 @@ python3 tools/till_verify.py --till ../universal-till --commit <source_commit> \
 
 - Public repo: GitHub-hosted runners only, never self-hosted.
 - CODEOWNERS (`.github/CODEOWNERS`) puts the owner on every change to the
-  publish path: the bundle tools and workflows, `config/`, `meta/` (which
-  holds the source commit and the `legal` labels), every `<area>/en.json`,
-  and the sync job that writes them.
+  publish path: the bundle tools and workflows, `config/`, `scripts/` and
+  the sync job and gate. The data the sync owns (`meta/`, which holds the
+  source commit and the `legal` labels, and `<area>/en.json`) is not owned:
+  it merges by the sync's auto-merge PR only (see the ruleset below).
 - No secret in the repo or its workflows. The sync reads universal-till
   without a credential; the dispatch payload is ignored. The
   `repository_dispatch` sender in universal-till stays optional: the hourly
@@ -321,10 +331,17 @@ python3 tools/till_verify.py --till ../universal-till --commit <source_commit> \
   `PRIVATE_COMMIT_EMAIL_TEMPLATE`, and each user's "private commit email"
   left on). This repo is public: without it, every Weblate commit publishes
   the translator's Zitadel e-mail address.
-- **Protect `main` with a ruleset that blocks force-push and deletion.**
-  The sync job and Weblate both push to `main` directly, so `main` can't
-  require pull requests; the ruleset keeps its history from being rewritten
-  or removed.
+- **`main` is protected by a ruleset** requiring a pull request and
+  code-owner review for everything except the sync's own paths
+  (`<area>/en.json`, `meta/*.json`), blocking force-push and deletion. The
+  ruleset is managed in `ut-infra` and applied separately. The sync reaches
+  `main` only through its auto-merge PR (path gate above), so it can never
+  carry a code change; `/meta/` and `/*/en.json` are therefore deliberately
+  not in CODEOWNERS (a code-owner review would stop the auto-merge), while
+  tools, workflows, `config/` and `scripts/` stay owned. Weblate still pushes
+  `<area>/<code>.json` with its deploy key, which the ruleset must allow as
+  a bypass actor. Needs repo settings "Allow auto-merge" and "Allow GitHub
+  Actions to create and approve pull requests".
 - Area ids come from universal-till's `areas.json` and become folders and
   component slugs here, so both tools require `^[a-z0-9-]+$` (words joined
   by single hyphens) and refuse this repo's own folders (`meta`, `tools`,

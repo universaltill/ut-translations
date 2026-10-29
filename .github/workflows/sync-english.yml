@@ -11,10 +11,28 @@
 #     release tag on a supported line.
 #   - workflow_dispatch: by hand.
 #
-# Least privilege: `contents: write` on this repo only (the job pushes its
-# own commit with the built-in GITHUB_TOKEN). It reads universal-till over
-# its public https clone URL with no credential, and has no way to write to
-# it. No secrets. GitHub-hosted runner (public repo).
+# The sync never pushes to main (ut-docs#4367, owner decision Option A): main
+# is protected by a ruleset that wants a PR. The job commits to the bot
+# branch `sync/english`, opens (or updates) a PR and enables auto-merge, but
+# only after the PATH GATE: every changed path must be `<area>/en.json` of an
+# area already on main, or `meta/<name>.json`. Anything else (tools/,
+# .github/, config/, scripts/, a new area, ...) fails the job: a sync must
+# never be able to carry a code change. The gate and the sync code are the
+# ones on main; the PR branch only ever holds their output.
+#
+# A PR or push made with GITHUB_TOKEN starts no workflow, so the required
+# checks (`unit`, `authors`) would never report. workflow_dispatch is the one
+# event GITHUB_TOKEN may start: the job dispatches test.yml and
+# commit-attribution.yml on the bot branch; their check runs attach to the
+# branch head, which is the PR head, and auto-merge completes when they pass.
+#
+# Least privilege (job level): contents: write (the bot branch), pull-requests:
+# write (open the PR, enable auto-merge), actions: write (the two dispatches).
+# It reads universal-till over its public https clone URL with no credential.
+# No secrets. GitHub-hosted runner (public repo).
+#
+# Repo settings this depends on (owner/IaC, not changed here): "Allow
+# auto-merge", "Allow GitHub Actions to create and approve pull requests".
 
 name: sync-english
 
@@ -37,10 +55,15 @@ jobs:
     timeout-minutes: 15
     permissions:
       contents: write
+      pull-requests: write
+      actions: write
+    env:
+      GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           ref: main
+          fetch-depth: 0
 
       - name: Commit identity
         run: |
@@ -51,20 +74,42 @@ jobs:
         id: sync
         run: python3 tools/sync_english.py
 
-      - name: Push
+      # Fails the job (and so opens nothing) unless the sync touched only
+      # the paths it owns. The known areas are read from main, not from the
+      # changed tree. -z / NUL framing keeps odd file names one path each.
+      - name: Path gate
         if: steps.sync.outputs.changed == 'true'
         run: |
           set -euo pipefail
-          # Weblate pushes translations to main too; rebase over them (the two
-          # never touch the same files: sync writes en.json + meta/, Weblate
-          # writes <area>/<code>.json).
-          for attempt in 1 2 3; do
-            git pull --rebase --quiet origin main
-            if git push --quiet origin HEAD:main; then
-              exit 0
-            fi
-            echo "push rejected (attempt ${attempt}), retrying"
-            sleep $((attempt * 5))
-          done
-          echo "::error::could not push the sync commit after 3 attempts"
-          exit 1
+          git fetch --quiet origin main
+          git show origin/main:meta/areas.json > "${RUNNER_TEMP}/areas.json"
+          if ! git diff --name-only -z --no-renames origin/main HEAD \
+              | python3 tools/sync_english.py --check-paths --areas-file "${RUNNER_TEMP}/areas.json"; then
+            echo "::error::the sync changed paths outside <area>/en.json and meta/*.json; refusing to open an auto-merge PR (a sync must not carry a code change)"
+            git diff --name-status --no-renames origin/main HEAD
+            exit 1
+          fi
+
+      - name: Open the PR and enable auto-merge
+        if: steps.sync.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          # Weblate pushes to main too; the branch is rebuilt from main's tip
+          # every run, so a force-push of the bot's own branch is safe.
+          git push --force --quiet origin HEAD:refs/heads/sync/english
+          subject=$(git log -1 --format=%s)
+          num=$(gh pr list --head sync/english --base main --state open --json number --jq '.[0].number // empty')
+          if [ -z "${num}" ]; then
+            gh pr create --base main --head sync/english --title "${subject}" \
+              --body "Automated English sync from universal-till (ut-docs#4367). Only <area>/en.json and meta/*.json changed (checked by tools/sync_english.py --check-paths). Auto-merges when the required checks pass."
+            num=$(gh pr list --head sync/english --base main --state open --json number --jq '.[0].number')
+          else
+            gh pr edit "${num}" --title "${subject}"
+          fi
+          # Required checks never start on a GITHUB_TOKEN PR; run them here.
+          gh workflow run test.yml --ref sync/english
+          gh workflow run commit-attribution.yml --ref sync/english
+          if ! gh pr merge "${num}" --auto --squash --subject "${subject}"; then
+            echo "::error::could not enable auto-merge on PR #${num} (repo setting 'Allow auto-merge' off, or the squash method disallowed)"
+            exit 1
+          fi
