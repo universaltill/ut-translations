@@ -1,4 +1,10 @@
 {
   "note": "Weblate service accounts that are AI translators or reviewers (ADR-0160 §1, §4, §10). Each account is tied to one named model. The bundle export uses this to enforce 'an AI-written string needs a reviewer on a different model, or a human': an approval where author and approver are both AI on the same model, or either is a Weblate bot account not listed here, is omitted. Nothing here grants access; Weblate does. Filled in by ut-docs#4366, under CODEOWNERS.",
-  "accounts": {}
+  "accounts": {
+    "bot-universal-till-ai-reviewer-codex": {
+      "model": "codex",
+      "role": "reviewer",
+      "note": "Weblate bot (user id 12). Reviews and approves; never approves legal keys (a human-reviewers member does). The model label is the family; a future translator account must name a different model (ut-docs#4366)."
+    }
+  }
 }
