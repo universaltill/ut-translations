@@ -5,6 +5,11 @@
       "model": "codex",
       "role": "reviewer",
       "note": "Weblate bot (user id 12). Reviews and approves; never approves legal keys (a human-reviewers member does). The model label is the family; a future translator account must name a different model (ut-docs#4366)."
+    },
+    "bot-universal-till-bootstrap-approver": {
+      "model": "owner-bootstrap",
+      "role": "reviewer",
+      "note": "Weblate bot. NOT an AI review: the owner directed (2026-10-29, ut-docs#4371) that the imported de/es/pt/tr strings are accepted as they are so the bundles can ship, to be re-reviewed later. Approves only strings whose author is a human or the import; never legal keys (a human-reviewers member other than the author does). Retire when the re-review is done."
     }
   }
 }
