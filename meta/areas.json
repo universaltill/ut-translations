@@ -7,7 +7,7 @@
   "catalog": {
     "name": "Catalog",
     "description": "Items, categories, modifiers, stock, promotions, vouchers, imports and the menu designer.",
-    "keys": 872
+    "keys": 874
   },
   "orders": {
     "name": "Orders",
@@ -32,7 +32,7 @@
   "tills": {
     "name": "Tills",
     "description": "Tills and devices: sync, pairing, Bluetooth devices, status chips, diagnostics, recovery and uninstall.",
-    "keys": 348
+    "keys": 350
   },
   "setup": {
     "name": "Setup",
@@ -52,7 +52,7 @@
   "plugins": {
     "name": "Plugins",
     "description": "The plugin marketplace, plugin pages and the assistant.",
-    "keys": 283
+    "keys": 284
   },
   "support": {
     "name": "Support",

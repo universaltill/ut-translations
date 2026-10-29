@@ -210,6 +210,7 @@
   "plugins.settings.secret_remove": "Remove saved key",
   "plugins.settings.secret_saved": "✓ Saved",
   "plugins.settings.secret_set": "•••••••• set — leave blank to keep",
+  "plugins.settings.secret_unreadable": "The saved value can't be read on this till (for example after restoring onto a new device). Enter it again.",
   "plugins.settings.takeaway.deleted_code": "(deleted tax code)",
   "plugins.settings.takeaway.dine_in_rate": "Dine-in rate",
   "plugins.settings.takeaway.help": "When an order is takeaway, items with these tax codes switch to the rate you set here. Leave a field blank to charge the dine-in rate.",

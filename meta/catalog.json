@@ -3662,6 +3662,14 @@
       "0.34"
     ]
   },
+  "categories.item_count_plural": {
+    "explanation": "Count of active catalog items in a category, shown in the category list and the menu designer ({count} is the number; plural forms per language).",
+    "flags": "icu-message-format",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "categories.modifiers.help": {
     "explanation": "",
     "flags": "",
@@ -6700,6 +6708,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "products.category_button_count_plural": {
+    "explanation": "Count of quick buttons on the sale screen for a category, shown in the category tile overflow and the menu designer ({count} is the number; plural forms per language).",
+    "flags": "icu-message-format",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "products.category_no_buttons": {

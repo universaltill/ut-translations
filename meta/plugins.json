@@ -1898,6 +1898,14 @@
       "0.34"
     ]
   },
+  "plugins.settings.secret_unreadable": {
+    "explanation": "Note under a plugin's secret field (API key, password): a value is saved but cannot be read on this till, for example after a restore onto a new device, so the manager enters it again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.settings.takeaway.deleted_code": {
     "explanation": "",
     "flags": "",

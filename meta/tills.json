@@ -646,6 +646,22 @@
       "main"
     ]
   },
+  "status.cloud_auth.restored": {
+    "explanation": "Status-bar chip on a till whose data was restored from a phone or iCloud backup onto a new device: its cloud connection was reset and it must be connected again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_auth.restored_hint": {
+    "explanation": "Tooltip of the 'Restored on a new device' chip: the cloud connection was reset, the old device keeps its own, and the manager can pair again or register as a new store in Settings; selling continues.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "status.cloud_auth.revoked": {
     "explanation": "",
     "flags": "",
