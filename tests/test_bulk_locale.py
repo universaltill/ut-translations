@@ -93,6 +93,79 @@ class Translate(unittest.TestCase):
         self.assertIn("model error", why)
 
 
+class KeepAsIs(unittest.TestCase):
+    def test_codes_and_product_names_are_copied_not_translated(self):
+        for src in ("SKU", "EAN-13", "QR", "Code 128", "Local Plus", "PIN"):
+            self.assertTrue(b.keep_as_is(unit(0, [""], source=src)), src)
+
+    def test_ordinary_text_is_translated(self):
+        for src in ("Total", "Local shop", "Scan", "Sale not completed: %s", "TOTAL", "VAT", "TAX INVOICE",
+                    "CLEARED BEFORE PAYMENT", "020 7946 0000"):
+            self.assertFalse(b.keep_as_is(unit(0, [""], source=src)), src)
+
+    def test_kept_string_is_saved_without_asking_the_model(self):
+        saved = []
+
+        class Fake:
+            def request(self, method, path, body=None):
+                saved.append(body)
+                return 200, {}
+
+        def chat(m):
+            raise AssertionError("the model must not be asked")
+
+        run = b.Run(b.parse(["translate", "--locale", "ar"]), Fake(), None, chat)
+        run.translate_unit(unit(0, [""], source="SKU"))
+        self.assertEqual(saved, [{"target": ["SKU"], "state": 20}])
+        self.assertEqual(run.stats["kept"], 1)
+
+
+class LegalByAHuman(unittest.TestCase):
+    def run_legal(self, u):
+        calls = []
+
+        class Fake:
+            def __init__(self, name):
+                self.name = name
+
+            def request(self, method, path, body=None):
+                calls.append((self.name, body["state"], body["target"]))
+                return 200, {}
+
+        run = b.Run(b.parse(["approve-legal", "--locale", "de"]), Fake("translator"), Fake("human"), None)
+        run.approve_legal_unit(u)
+        return calls, run
+
+    def test_every_legal_string_is_re_authored_by_the_translator_then_approved_by_the_human(self):
+        for state in (20, 30):
+            calls, run = self.run_legal(unit(state, ["Beleg"], labels=["legal"]))
+            self.assertEqual([c[:2] for c in calls],
+                             [("translator", 20), ("translator", 20), ("human", 30)])
+            self.assertNotEqual(calls[0][2], ["Beleg"])
+            self.assertEqual(calls[1][2], ["Beleg"])
+            self.assertEqual(run.stats["legal_approved"], 1)
+
+    def test_non_legal_and_empty_strings_are_left_alone(self):
+        for u in (unit(30, ["x"]), unit(20, [""], labels=["legal"]), unit(20, ["x", "y"], labels=["legal"], plural=True)):
+            calls, _ = self.run_legal(u)
+            self.assertEqual(calls, [])
+
+
+class LegalKeys(unittest.TestCase):
+    def test_keys_marked_legal_in_the_meta_files_are_found(self):
+        keys = b.load_legal_keys()
+        self.assertIn("fiscal.banner.override_active", keys)
+        self.assertGreater(len(keys), 100)
+
+    def test_a_key_in_that_set_counts_as_legal_without_a_label(self):
+        b.LEGAL_KEYS.add("sale.total")
+        try:
+            self.assertTrue(b.is_legal(unit(20, ["x"])))
+            self.assertFalse(b.needs_approval(unit(20, ["x"])))
+        finally:
+            b.LEGAL_KEYS.discard("sale.total")
+
+
 class Reauthor(unittest.TestCase):
     def test_translator_edits_and_restores_then_approver_approves(self):
         calls = []

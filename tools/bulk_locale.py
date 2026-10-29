@@ -17,7 +17,18 @@ An owner-run, build-time tool (ADR-0160 §10: never a runtime dependency).
               imported ones): the translator bot (which needs the Weblate
               Reviewers role for this) edits and restores the text so it
               becomes the recorded author, then the approver approves.
-  all         translate, then approve.
+  approve-legal
+              `review: legal` strings -> approved by a HUMAN account
+              (WEBLATE_HUMAN_TOKEN / Keychain "weblate-farshid": a member of
+              human-reviewers who is not the recorded author). Each string is
+              first re-authored by the translator bot (text edited and put
+              back, as for --include-approved) so the translator is the
+              author and the human a different approver. Owner-directed bulk
+              approval; re-review later.
+  all         translate, then approve (add approve-legal separately).
+
+Strings that are codes or product names (SKU, EAN-13, Code 128, Local Plus)
+are copied as they are, without asking the model.
 
 Tokens are read from the macOS Keychain (services below) or from the
 environment; they are never printed or put on a command line. Weblate's API
@@ -34,6 +45,7 @@ takes a while but finishes.
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 import tempfile
@@ -51,6 +63,7 @@ WEBLATE_URL = "https://translate.universaltill.com"
 TRANSLATED, APPROVED, READONLY = 20, 30, 100
 TRANSLATOR_KEYCHAIN = "weblate-translator"
 APPROVER_KEYCHAIN = "weblate-bootstrap-approver"
+HUMAN_KEYCHAIN = "weblate-farshid"
 SKIP_COMPONENTS = {"glossary"}
 MAX_CONSECUTIVE_FAILURES = 8
 
@@ -99,8 +112,28 @@ def labels(unit):
     return out
 
 
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+def load_legal_keys(repo=REPO):
+    """Keys marked `review: legal` in meta/<area>.json: the same source the
+    bundle build reads (a Weblate label is not set on them)."""
+    out = set()
+    for name in sorted(os.listdir(os.path.join(repo, "meta"))):
+        if not name.endswith(".json"):
+            continue
+        with open(os.path.join(repo, "meta", name), encoding="utf-8") as f:
+            data = json.load(f)
+        if isinstance(data, dict):
+            out.update(k for k, v in data.items() if isinstance(v, dict) and "legal" in (v.get("labels") or []))
+    return out
+
+
+LEGAL_KEYS = set()
+
+
 def is_legal(unit):
-    return "legal" in labels(unit)
+    return "legal" in labels(unit) or (unit.get("context") or "") in LEGAL_KEYS
 
 
 def needs_translation(unit):
@@ -116,6 +149,16 @@ def needs_approval(unit, include_approved=False):
     if state == TRANSLATED:
         return True
     return include_approved and APPROVED <= state < READONLY
+
+
+KEEP_NAMES = {"SKU", "PIN", "QR", "EAN-8", "EAN-13", "UPC-A", "UPC-E", "Code 39", "Code 128", "Local Plus"}
+
+
+def keep_as_is(unit):
+    """An exact code or product name from a fixed list: the same in every
+    language. Deliberately not a pattern: "TOTAL", "VAT", "TAX INVOICE" are
+    legal headings that must be translated."""
+    return not is_plural(unit) and (unit["source"][0] if unit.get("source") else "").strip() in KEEP_NAMES
 
 
 def messages(locale, unit):
@@ -218,7 +261,7 @@ class Run:
         self.a, self.translator, self.approver, self.chat = args, translator, approver, chat
         self.script = args.script or SCRIPTS.get(args.locale, "Latn")
         self.stats = {"translated": 0, "approved": 0, "rejected": 0, "skipped_legal": 0,
-                      "skipped_plural": 0, "failed": 0}
+                      "skipped_plural": 0, "failed": 0, "kept": 0, "legal_approved": 0}
         self.rejected, self.failed, self._streak = [], [], 0
 
     def left(self):
@@ -247,6 +290,19 @@ class Run:
         return (self.write(self.translator, unit, {"target": [target[0] + " x"], "state": TRANSLATED}, "reauthor")
                 and self.write(self.translator, unit, {"target": target, "state": TRANSLATED}, "reauthor"))
 
+    def translate_unit(self, u):
+        if keep_as_is(u):
+            if self.a.dry_run or self.write(self.translator, u, {"target": [u["source"][0]], "state": TRANSLATED}, "keep"):
+                self.stats["kept"] += 1
+            return
+        text, why = translate_one(self.chat, self.a.locale, u, self.script)
+        if text is None:
+            self.stats["rejected"] += 1
+            self.rejected.append({"unit": u["id"], "key": u.get("context"), "why": why})
+            return
+        if self.a.dry_run or self.write(self.translator, u, {"target": [text], "state": TRANSLATED}, "translate"):
+            self.stats["translated"] += 1
+
     def translate(self, client):
         for comp in components(client, self.a.component):
             for u in units_of(client, comp, self.a.locale, "state%3A%3Ctranslated"):
@@ -255,16 +311,33 @@ class Run:
                 if is_plural(u):
                     self.stats["skipped_plural"] += 1
                     continue
-                if not needs_translation(u):
-                    continue
-                text, why = translate_one(self.chat, self.a.locale, u, self.script)
-                if text is None:
-                    self.stats["rejected"] += 1
-                    self.rejected.append({"unit": u["id"], "key": u.get("context"), "why": why})
-                    continue
-                if self.a.dry_run or self.write(self.translator, u, {"target": [text], "state": TRANSLATED}, "translate"):
-                    self.stats["translated"] += 1
-            print(f"translate {comp}: {self.stats['translated']} saved, {self.stats['rejected']} rejected", flush=True)
+                if needs_translation(u):
+                    self.translate_unit(u)
+            print(f"translate {comp}: {self.stats['translated']} saved, {self.stats['kept']} kept, "
+                  f"{self.stats['rejected']} rejected", flush=True)
+
+    def approve_legal_unit(self, u):
+        """self.approver is the human client here."""
+        state = u.get("state") or 0
+        if not is_legal(u) or is_plural(u) or not any(u.get("target") or []) or not TRANSLATED <= state < READONLY:
+            return
+        target = u["target"]
+        if self.a.dry_run:
+            self.stats["legal_approved"] += 1
+            return
+        # always re-author: the recorded author is whoever last changed the
+        # text, which may be the human approving (-> self_approved) or nobody
+        if not self.reauthor(u):
+            return
+        if self.write(self.approver, u, {"target": target, "state": APPROVED}, "legal-approve"):
+            self.stats["legal_approved"] += 1
+
+    def approve_legal(self, client):
+        for comp in components(client, self.a.component):
+            for u in units_of(client, comp, self.a.locale, ""):
+                if self.left():
+                    self.approve_legal_unit(u)
+            print(f"approve-legal {comp}: {self.stats['legal_approved']} approved", flush=True)
 
     def approve(self, client):
         for comp in components(client, self.a.component):
@@ -296,7 +369,7 @@ class Run:
 
 def parse(argv):
     p = argparse.ArgumentParser(description=__doc__.split("\n")[0])
-    p.add_argument("command", choices=["translate", "approve", "all"])
+    p.add_argument("command", choices=["translate", "approve", "approve-legal", "all"])
     p.add_argument("--locale", required=True, help="Weblate language code, e.g. fr, es, zh_Hans")
     p.add_argument("--weblate-url", default=os.environ.get("WEBLATE_URL", WEBLATE_URL))
     p.add_argument("--ollama-url", default=os.environ.get("OLLAMA_URL", "http://192.168.1.118:11434"))
@@ -313,17 +386,22 @@ def parse(argv):
 
 def main(argv=None):
     a = parse(argv)
+    LEGAL_KEYS.update(load_legal_keys())
     doing_translate = a.command in ("translate", "all")
     doing_approve = a.command in ("approve", "all")
+    doing_legal = a.command == "approve-legal"
     reader = WeblateClient(a.weblate_url, secret(APPROVER_KEYCHAIN, "WEBLATE_APPROVER_TOKEN"))
     translator = WeblateClient(a.weblate_url, secret(TRANSLATOR_KEYCHAIN, "WEBLATE_TRANSLATOR_TOKEN")) \
-        if (doing_translate or a.include_approved) else None
+        if (doing_translate or doing_legal or a.include_approved) else None
     chat = Ollama(a.ollama_url, a.ollama_model, os.environ.get("OLLAMA_API_TOKEN")).chat if doing_translate else None
-    run = Run(a, translator, reader, chat)
+    human = WeblateClient(a.weblate_url, secret(HUMAN_KEYCHAIN, "WEBLATE_HUMAN_TOKEN")) if doing_legal else reader
+    run = Run(a, translator, human if doing_legal else reader, chat)
     if doing_translate:
         run.translate(reader)
     if doing_approve:
         run.approve(reader)
+    if doing_legal:
+        run.approve_legal(reader)
     run.finish()
     return 0
 
