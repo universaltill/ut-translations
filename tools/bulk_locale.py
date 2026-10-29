@@ -13,8 +13,10 @@ An owner-run, build-time tool (ADR-0160 §10: never a runtime dependency).
               bundle build requires). `review: legal` strings are never
               approved here: a human-reviewers member does that.
               --include-approved also re-approves strings Weblate already
-              shows as approved but that carry no approval event (the
-              imported ones): reset to translated, then approved.
+              shows as approved but that carry no valid approval (the
+              imported ones): the translator bot (which needs the Weblate
+              Reviewers role for this) edits and restores the text so it
+              becomes the recorded author, then the approver approves.
   all         translate, then approve.
 
 Tokens are read from the macOS Keychain (services below) or from the
@@ -206,9 +208,9 @@ def units_of(client, component, locale, query):
     return client.list(path) or []
 
 
-def components(client):
+def components(client, only=None):
     return [c["slug"] for c in client.list(f"/api/projects/{PROJECT}/components/")
-            if c["slug"] not in SKIP_COMPONENTS]
+            if c["slug"] not in SKIP_COMPONENTS and (not only or c["slug"] in only)]
 
 
 class Run:
@@ -236,8 +238,17 @@ class Run:
                 sys.exit(f"stopping: {MAX_CONSECUTIVE_FAILURES} writes failed in a row, see the report")
             return False
 
+    def reauthor(self, unit):
+        """Make the translator bot the recorded author of an already-approved
+        string, so a different account (the approver) can approve it. The
+        build takes the author from the last time the text changed, so the
+        text is changed to something else and put back, by the translator."""
+        target = unit["target"]
+        return (self.write(self.translator, unit, {"target": [target[0] + " x"], "state": TRANSLATED}, "reauthor")
+                and self.write(self.translator, unit, {"target": target, "state": TRANSLATED}, "reauthor"))
+
     def translate(self, client):
-        for comp in components(client):
+        for comp in components(client, self.a.component):
             for u in units_of(client, comp, self.a.locale, "state%3A%3Ctranslated"):
                 if not self.left():
                     return
@@ -256,7 +267,7 @@ class Run:
             print(f"translate {comp}: {self.stats['translated']} saved, {self.stats['rejected']} rejected", flush=True)
 
     def approve(self, client):
-        for comp in components(client):
+        for comp in components(client, self.a.component):
             for u in units_of(client, comp, self.a.locale, ""):
                 if not self.left():
                     return
@@ -269,8 +280,7 @@ class Run:
                     self.stats["approved"] += 1
                     continue
                 target = u["target"]
-                if (u.get("state") or 0) >= APPROVED and not self.write(
-                        self.approver, u, {"target": target, "state": TRANSLATED}, "reset"):
+                if (u.get("state") or 0) >= APPROVED and not self.reauthor(u):
                     continue
                 if self.write(self.approver, u, {"target": target, "state": APPROVED}, "approve"):
                     self.stats["approved"] += 1
@@ -295,6 +305,7 @@ def parse(argv):
     p.add_argument("--limit", type=int, help="stop after this many strings (a trial run)")
     p.add_argument("--include-approved", action="store_true",
                    help="also re-approve strings shown approved but with no approval event (imports)")
+    p.add_argument("--component", action="append", help="only this component (repeatable), e.g. receipts-and-legal")
     p.add_argument("--dry-run", action="store_true")
     p.add_argument("--report", help="where to write the JSON report")
     return p.parse_args(argv)
@@ -306,7 +317,7 @@ def main(argv=None):
     doing_approve = a.command in ("approve", "all")
     reader = WeblateClient(a.weblate_url, secret(APPROVER_KEYCHAIN, "WEBLATE_APPROVER_TOKEN"))
     translator = WeblateClient(a.weblate_url, secret(TRANSLATOR_KEYCHAIN, "WEBLATE_TRANSLATOR_TOKEN")) \
-        if doing_translate else None
+        if (doing_translate or a.include_approved) else None
     chat = Ollama(a.ollama_url, a.ollama_model, os.environ.get("OLLAMA_API_TOKEN")).chat if doing_translate else None
     run = Run(a, translator, reader, chat)
     if doing_translate:

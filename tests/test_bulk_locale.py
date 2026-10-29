@@ -93,5 +93,27 @@ class Translate(unittest.TestCase):
         self.assertIn("model error", why)
 
 
+class Reauthor(unittest.TestCase):
+    def test_translator_edits_and_restores_then_approver_approves(self):
+        calls = []
+
+        class Fake:
+            def __init__(self, name):
+                self.name = name
+
+            def request(self, method, path, body=None):
+                calls.append((self.name, body["state"], body["target"]))
+                return 200, {}
+
+        args = b.parse(["approve", "--locale", "de", "--include-approved"])
+        run = b.Run(args, Fake("translator"), Fake("approver"), None)
+        u = unit(30, ["Gesamt: %s"])
+        self.assertTrue(run.reauthor(u))
+        self.assertTrue(run.write(run.approver, u, {"target": u["target"], "state": 30}, "approve"))
+        self.assertEqual([c[0] for c in calls], ["translator", "translator", "approver"])
+        self.assertNotEqual(calls[0][2], u["target"])
+        self.assertEqual(calls[1][2], u["target"])
+
+
 if __name__ == "__main__":
     unittest.main()

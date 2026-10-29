@@ -25,3 +25,12 @@ bot is the bootstrap account from PR 9 (owner-directed, not an AI review).
 Verified: 179 unit tests pass; the runner started in Docker and approved a
 real component. Verdict: safe to merge. Deferred: add fr, zh_Hans and ms to
 `config/bundles.json` (and the workflow choice list) before they can publish.
+
+## Addendum: re-authoring imported strings
+The first German build showed 197 `self_approved` strings (the whole
+`receipts-and-legal` component): their history had no text event before the
+approval, so the build read the approver as the author. A reset alone did not
+help; the text itself must change. `--include-approved` now has the
+translator bot (Weblate Reviewers role) save the text with a marker appended
+and then restore it, which makes it the recorded author; the approver then
+approves. Verified on a real unit: verdict None. Added `--component`.
