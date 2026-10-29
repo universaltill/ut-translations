@@ -23,9 +23,13 @@ cd "${ROOT_DIR}"
 GUARD="scripts/ci/guard-commit-attribution.sh"
 FAIL_COUNT=0
 
+# GUARD_ENV: extra "NAME=value" words for one case. The ambient event vars
+# are always cleared, so the result never depends on the runner's own event.
+GUARD_ENV=""
 run_guard() {
   # stdin already set by the caller
-  bash "${GUARD}"
+  # shellcheck disable=SC2086
+  env -u GITHUB_EVENT_NAME -u ALLOW_ACTIONS_BOT ${GUARD_ENV} bash "${GUARD}"
 }
 
 expect_pass() {
@@ -89,6 +93,31 @@ expect_pass "pouria-teimouri's allowlisted plain email address" \
 # ut-docs#2103: this branch used to pass any ordinary address unconditionally.
 expect_fail "an unrecognized plain email address (not on ALLOWED_PLAIN_EMAILS)" \
   'jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj|contributor@example.com|Somebody'
+
+# ut-docs#4367: the sync job's own bot commits are accepted ONLY on a
+# workflow_dispatch run that sets ALLOW_ACTIONS_BOT=true (review MEDIUM-2).
+# On a pull_request run a human could author a commit as the bot address and
+# be credited as it, so there the bot address is rejected like any other
+# unknown one. Exactly the bot's numeric ID 41898282 passes; look-alikes do not.
+BOT='mmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmmm|41898282+github-actions[bot]@users.noreply.github.com|github-actions[bot]'
+expect_fail "the bot address with no event set (a human PR authored as the bot)" "$BOT"
+GUARD_ENV="GITHUB_EVENT_NAME=pull_request ALLOW_ACTIONS_BOT=true"
+expect_fail "the bot address on a pull_request run, even with ALLOW_ACTIONS_BOT=true" "$BOT"
+GUARD_ENV="GITHUB_EVENT_NAME=workflow_dispatch"
+expect_fail "the bot address on workflow_dispatch without ALLOW_ACTIONS_BOT" "$BOT"
+GUARD_ENV="GITHUB_EVENT_NAME=workflow_dispatch ALLOW_ACTIONS_BOT=false"
+expect_fail "the bot address on workflow_dispatch with ALLOW_ACTIONS_BOT=false" "$BOT"
+GUARD_ENV="GITHUB_EVENT_NAME=workflow_dispatch ALLOW_ACTIONS_BOT=true"
+expect_pass "the GitHub Actions bot (sync PR commits) on workflow_dispatch" "$BOT"
+expect_fail "a human address mixed with a bad one on dispatch still fails" "$BOT" \
+  'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq|noreply@anthropic.com|Claude'
+expect_fail "a github-actions[bot] look-alike with another ID" \
+  'nnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn|26383381+github-actions[bot]@users.noreply.github.com|github-actions[bot]'
+expect_fail "a github-actions[bot] look-alike with a suffix" \
+  'oooooooooooooooooooooooooooooooooooooooo|41898282+github-actions[bot]x@users.noreply.github.com|github-actions[bot]'
+expect_fail "a bot-named plain address" \
+  'pppppppppppppppppppppppppppppppppppppppp|github-actions[bot]@example.com|github-actions[bot]'
+GUARD_ENV=""
 
 # Multiple good commits in one run.
 expect_pass "multiple good commits together" \

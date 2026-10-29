@@ -115,6 +115,7 @@ ALLOWED_PLAIN_EMAILS=(
 BANNED_RE='^(noreply@anthropic\.com|codex@users\.noreply\.github\.com|noreply@universaltill\.com)$'
 ID_PREFIXED_RE='^([0-9]+)\+[a-z0-9-]+@users\.noreply\.github\.com$'
 LEGACY_RE='^([a-z0-9-]+)@users\.noreply\.github\.com$'
+ACTIONS_BOT_EMAIL='41898282+github-actions[bot]@users.noreply.github.com'
 NOREPLY_DOMAIN_RE='@users\.noreply\.github\.com$'
 
 is_allowed_id() {
@@ -135,6 +136,16 @@ is_allowed_plain_email() {
   return 1
 }
 
+# The bot address is an allowed author ONLY when the caller says so
+# (ALLOW_ACTIONS_BOT=true, which commit-attribution.yml sets only for
+# workflow_dispatch) AND the run really is a workflow_dispatch. Anywhere else
+# the address is just another unknown noreply ID and is rejected (review
+# MEDIUM-2, ut-docs#4367).
+bot_ok=0
+if [ "${ALLOW_ACTIONS_BOT:-}" = "true" ] && [ "${GITHUB_EVENT_NAME:-}" = "workflow_dispatch" ]; then
+  bot_ok=1
+fi
+
 bad=0
 seen=0
 while IFS='|' read -r sha email name; do
@@ -145,6 +156,12 @@ while IFS='|' read -r sha email name; do
   if grep -Eq "$BANNED_RE" <<<"$email_lc"; then
     echo "::error::${sha:0:9} is authored by '${name} <${email}>' — AI-tool or unattributable identity"
     bad=1
+  elif [ "$bot_ok" = 1 ] && [ "$email_lc" = "$ACTIONS_BOT_EMAIL" ]; then
+    # The sync job's commits (ut-docs#4367): the GitHub Actions bot, matched
+    # on the exact address including its real numeric ID, nothing looser.
+    # Only on a workflow_dispatch run that asked for it (see bot_ok): on a
+    # pull_request a human can author a commit as this address.
+    echo "ok  ${sha:0:9}  ${name} <${email}>"
   elif [[ "$email_lc" =~ $ID_PREFIXED_RE ]]; then
     id="${BASH_REMATCH[1]}"
     if is_allowed_id "$id"; then

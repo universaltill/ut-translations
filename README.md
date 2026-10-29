@@ -114,8 +114,38 @@ python3 tools/sync_english.py --source ../universal-till --no-commit
 
 In CI this is `.github/workflows/sync-english.yml`: hourly, by hand, or on a
 `repository_dispatch` of type `universal-till-main`. It commits as
-`github-actions[bot]` and pushes with the job's own `GITHUB_TOKEN`
-(`contents: write` on this repo only).
+`github-actions[bot]`, never pushes to `main`: it pushes the bot branch
+`sync/english`, opens (or updates) a pull request and enables auto-merge
+(merge commit, never squash: repo rule #250). First comes the **path gate**
+(`tools/sync_english.py --check-paths --raw`, over `git diff --raw -z
+--no-renames`): every changed path must be a regular-file (mode 100644)
+add, modify or delete of `<area>/en.json` of an area already on `main` or
+`meta/<name>.json`; anything else (tools, workflows, config, a new area, a
+symlink or exec bit, a look-alike or traversal path) fails the job and opens
+nothing, and `tools .github scripts config` must be identical to `main`.
+The same gate runs again server side as the required `paths` check
+(`test.yml`) over the whole PR range, because the local gate runs once and a
+write user can push to the bot branch afterwards.
+
+A `GITHUB_TOKEN` PR starts no workflow, so the job dispatches `test.yml` and
+`commit-attribution.yml` on `sync/english` (the one event that token may
+start). Token: `contents`, `pull-requests` and `actions` write, job level
+(`actions` for the two dispatches; it also allows cancelling or re-running
+runs in this repo, accepted).
+
+**The ruleset on `main` (ut-infra) must land first.** `gh pr merge --auto`
+merges at once when no check is required, so before enabling auto-merge the
+job reads `repos/$GITHUB_REPOSITORY/rules/branches/main` and fails unless
+`unit`, `authors` and `paths` are all required; it also pins the merge to the
+gated head commit (`--match-head-commit`). Until the ruleset exists the sync
+fails loudly and leaves its PR open: that is the intended safe state.
+
+The sync PR is not "unable to carry a code change" by construction; what holds
+is the layered checks above plus one that does not depend on them: every
+bundle build, for every locale, re-derives `<area>/en.json` and
+`meta/<area>.json` from universal-till at `meta/source.json`'s commit and
+fails on any difference, so a tampered English string or a dropped `legal`
+label cannot ship.
 
 Provision Weblate (idempotent; a second run makes no write call):
 
@@ -304,15 +334,18 @@ python3 tools/till_verify.py --till ../universal-till --commit <source_commit> \
 
 - Public repo: GitHub-hosted runners only, never self-hosted.
 - CODEOWNERS (`.github/CODEOWNERS`) puts the owner on every change to the
-  publish path: the bundle tools and workflows, `config/`, `meta/` (which
-  holds the source commit and the `legal` labels), every `<area>/en.json`,
-  and the sync job that writes them.
+  publish path: the bundle tools and workflows, `config/`, `scripts/` and
+  the sync job and gate. The data the sync owns (`meta/`, which holds the
+  source commit and the `legal` labels, and `<area>/en.json`) is not owned:
+  it merges by the sync's auto-merge PR only (see the ruleset below), and
+  every bundle build re-checks it against universal-till. `.github/` is owned
+  wholesale.
 - No secret in the repo or its workflows. The sync reads universal-till
   without a credential; the dispatch payload is ignored. The
   `repository_dispatch` sender in universal-till stays optional: the hourly
   schedule needs no secret, so the dispatch only makes the sync faster.
 - Weblate pushes with its own SSH key, added here as the only write deploy
-  key. The Weblate API token is a person's or a protected job's, from the
+  key (not created yet: until it is, no Weblate push reaches `main`). The Weblate API token is a person's or a protected job's, from the
   environment only; the client refuses plain http (except loopback),
   never follows a redirect (urllib would re-send the token to any
   `Location`), rebases pagination links onto `WEBLATE_URL`, and never sends
@@ -321,10 +354,18 @@ python3 tools/till_verify.py --till ../universal-till --commit <source_commit> \
   `PRIVATE_COMMIT_EMAIL_TEMPLATE`, and each user's "private commit email"
   left on). This repo is public: without it, every Weblate commit publishes
   the translator's Zitadel e-mail address.
-- **Protect `main` with a ruleset that blocks force-push and deletion.**
-  The sync job and Weblate both push to `main` directly, so `main` can't
-  require pull requests; the ruleset keeps its history from being rewritten
-  or removed.
+- **`main` is protected by a ruleset** requiring a pull request and
+  code-owner review for everything except the sync's own paths
+  (`<area>/en.json`, `meta/*.json`), blocking force-push and deletion. The
+  ruleset is managed in `ut-infra` and applied separately, and must require
+  the status checks `unit`, `authors` and `paths`. The sync reaches `main`
+  only through its auto-merge PR (path gate, `paths` check); `/meta/` and
+  `/*/en.json` are deliberately not in CODEOWNERS (a code-owner review would
+  stop the auto-merge), while `.github/`, tools, `config/` and `scripts/`
+  stay owned. Weblate still pushes
+  `<area>/<code>.json` with its deploy key, which the ruleset must allow as
+  a bypass actor. Needs repo settings "Allow auto-merge" and "Allow GitHub
+  Actions to create and approve pull requests".
 - Area ids come from universal-till's `areas.json` and become folders and
   component slugs here, so both tools require `^[a-z0-9-]+$` (words joined
   by single hyphens) and refuse this repo's own folders (`meta`, `tools`,

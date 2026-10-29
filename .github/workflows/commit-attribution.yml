@@ -2,14 +2,19 @@
 # (ut-docs#732, #1373; copied from universal-till). Public repo: GitHub-hosted
 # runner only — a fork PR must never run inside the homelab.
 #
-# Commits Weblate pushes to main (author = the translator, from their Zitadel
-# identity) and the sync job's github-actions[bot] commits don't go through a
-# PR, so this only gates human changes to the tooling.
+# The sync job's github-actions[bot] commits reach main through a PR whose
+# checks are dispatched (below); the bot address is accepted only on that
+# dispatch run, never on a pull_request run. No Weblate push to main exists
+# yet (no deploy key); if one is added it must not go through this guard's
+# bot allowance.
 
 name: commit-attribution
 
 on:
   pull_request:
+  # Dispatched by sync-english on its bot branch (a GITHUB_TOKEN PR starts no
+  # pull_request run, ut-docs#4367). Range = origin/main..HEAD of that branch.
+  workflow_dispatch:
 
 permissions:
   contents: read
@@ -31,6 +36,13 @@ jobs:
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
           HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+          # The sync bot's commits are accepted only on a dispatch run; on a
+          # pull_request a human could author a commit as the bot address.
+          ALLOW_ACTIONS_BOT: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
         run: |
           set -euo pipefail
+          if [ -z "${BASE_SHA}" ]; then
+            BASE_SHA=$(git rev-parse origin/main)
+            HEAD_SHA=$(git rev-parse HEAD)
+          fi
           git log --format='%H|%ae|%an' "$BASE_SHA..$HEAD_SHA" | bash scripts/ci/guard-commit-attribution.sh
