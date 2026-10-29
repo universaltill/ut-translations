@@ -32,7 +32,7 @@
   "tills": {
     "name": "Tills",
     "description": "Tills and devices: sync, pairing, Bluetooth devices, status chips, diagnostics, recovery and uninstall.",
-    "keys": 347
+    "keys": 348
   },
   "setup": {
     "name": "Setup",

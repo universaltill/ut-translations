@@ -1337,6 +1337,14 @@
       "0.34"
     ]
   },
+  "sync.quarantine_reason.single_purpose_voucher_top_up": {
+    "explanation": "Reason column on /sync-quarantine: a journaled top-up of a single-purpose voucher (VAT fixed at issue) from an additional till was refused, so the entry is quarantined.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "sync.quarantine_reason.unknown_line_reference": {
     "explanation": "",
     "flags": "",
