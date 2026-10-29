@@ -58,16 +58,20 @@ if [ -n "$(docker ps -q -f "name=^${name}$")" ]; then
 fi
 docker rm -f "$name" >/dev/null 2>&1 || true
 human_env=()
+# re-approving already-approved strings (imports) only for approve runs; a
+# translate run ("all") must not redo the whole language
+include=""
+case "$cmd" in approve|approve-legal) include="--include-approved" ;; esac
 [ "$cmd" = approve-legal ] && human_env=(-e WEBLATE_HUMAN_TOKEN)
 docker run -d --rm --name "$name" \
   -e WEBLATE_APPROVER_TOKEN -e WEBLATE_TRANSLATOR_TOKEN -e OLLAMA_API_TOKEN ${human_env[@]+"${human_env[@]}"} \
-  -e BULK_NAME="$name" -e OLLAMA_URL="$url" -e OLLAMA_MODEL="$model" -e PYTHONDONTWRITEBYTECODE=1 -e PYTHONUNBUFFERED=1 \
+  -e BULK_NAME="$name" -e INCLUDE="$include" -e OLLAMA_URL="$url" -e OLLAMA_MODEL="$model" -e PYTHONDONTWRITEBYTECODE=1 -e PYTHONUNBUFFERED=1 \
   -v "$PWD:/work:ro" -v "$HOME/ut-bulk-reports:/reports" \
   python:3.13-slim sh -c '
     cmd="$1"; shift
     { for l in "$@"; do
         echo "=== $l ($cmd) $(date -u +%H:%M:%S)"
-        python /work/tools/bulk_locale.py "$cmd" --locale "$l" --include-approved \
+        python /work/tools/bulk_locale.py "$cmd" --locale "$l" $INCLUDE \
           --report "/reports/$l-$cmd.json" || echo "!!! $l stopped, see its report"
       done
       echo "=== all done $(date -u +%H:%M:%S)"; } 2>&1 | tee -a "/reports/$BULK_NAME.log"' sh "$cmd" "$@"

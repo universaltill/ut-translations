@@ -48,3 +48,6 @@ See the addendum below.
 - LOW fixed: `--rm` (tokens do not linger in a stopped container; the log goes
   to `~/ut-bulk-reports/<name>.log`), the human token is passed only for
   `--legal`, `--name` argument check, header comment.
+- Found while starting the runs: the script passed `--include-approved` to
+  every command, so a translate run (`all`) would have re-authored the whole
+  language. Now only `approve` and `approve-legal` get it.
