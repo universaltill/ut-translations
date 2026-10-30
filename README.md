@@ -1,5 +1,7 @@
 # ut-translations
 
+[![Translation status](https://translate.universaltill.com/widget/universal-till/svg-badge.svg)](https://translate.universaltill.com/engage/universal-till/)
+
 The Git backing of the Universal Till translation workbench — the
 self-hosted Weblate at `translate.universaltill.com`
 ([ADR-0160](https://github.com/universaltill/ut-docs/blob/main/adr/0160-language-service-weblate-signed-bundles.md)).
