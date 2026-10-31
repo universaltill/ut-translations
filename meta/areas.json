@@ -52,7 +52,7 @@
   "plugins": {
     "name": "Plugins",
     "description": "The plugin marketplace, plugin pages and the assistant.",
-    "keys": 287
+    "keys": 291
   },
   "support": {
     "name": "Support",

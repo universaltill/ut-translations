@@ -855,11 +855,10 @@
     ]
   },
   "plugins.install.error.network": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -924,6 +923,14 @@
       "0.34"
     ]
   },
+  "plugins.install.error.register_new": {
+    "explanation": "Error shown when the cloud rejects this till's credential and its store has no owner yet: tells the owner to register the till as a new store under Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.install.error.registered_required": {
     "explanation": "",
     "flags": "",
@@ -951,8 +958,32 @@
       "0.34"
     ]
   },
+  "plugins.install.error.service_unavailable": {
+    "explanation": "Error shown when the marketplace refuses plugin downloads for this shop because its country is not served.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.install.error.till_moved": {
+    "explanation": "Error shown when this till was moved to another shop so its old shop connection can no longer download plugins: tells the owner to connect it to its new shop under Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.install.error.till_removed": {
     "explanation": "Error shown when the shop has removed, replaced or moved this till so it can no longer download plugins: tells the owner to pair it with the shop again. 'Pair with a shop' is the section label under Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.install.error.till_replaced": {
+    "explanation": "Error shown when another till in the shop replaced this one so it can no longer download plugins: tells the owner to install plugins on the till that replaced it.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -969,110 +1000,98 @@
     ]
   },
   "plugins.install.modal.cancel": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.close": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.description": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.done": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.complete": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.downloading": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.failed": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.fetching": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.initializing": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.installing": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.verifying": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.title": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
