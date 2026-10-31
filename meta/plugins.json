@@ -8,6 +8,22 @@
       "0.34"
     ]
   },
+  "agent.action.catalog_item_update": {
+    "explanation": "Title of the confirm card when the AI assistant proposes changing existing items' name, price, category or barcode.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "agent.action.settings_set": {
+    "explanation": "Title of the core-rendered confirm card when the AI assistant asks to change one or more shop settings. Nothing changes until the operator presses Confirm.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "agent.action.stock_adjust": {
     "explanation": "",
     "flags": "",
@@ -89,6 +105,22 @@
       "0.34"
     ]
   },
+  "agent.field.category": {
+    "explanation": "Row label on the AI confirm card for an item's category change.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "agent.field.name": {
+    "explanation": "Row label on the AI confirm card for an item's name change.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "agent.field.price": {
     "explanation": "",
     "flags": "",
@@ -98,6 +130,14 @@
       "0.34"
     ]
   },
+  "agent.field.setting": {
+    "explanation": "Column value on the assistant's confirm card for a settings change: names the row's change as a setting (the row's item is the setting's own label from the Settings screen).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "agent.field.stock": {
     "explanation": "",
     "flags": "",
@@ -105,6 +145,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "agent.items.no_photo": {
+    "explanation": "Screen-reader label for the empty thumbnail of an item that has no photo in the AI assistant's item list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "agent.items.open_catalog": {
+    "explanation": "Button under the AI assistant's item list that opens the catalog showing the same items.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "agent.notice.applied": {
@@ -159,6 +215,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "agent.value.off": {
+    "explanation": "Before/after value on the assistant's confirm card for an on/off setting that is switched off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "agent.value.on": {
+    "explanation": "Before/after value on the assistant's confirm card for an on/off setting that is switched on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "ext.error.unreachable": {

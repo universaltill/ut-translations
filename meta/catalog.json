@@ -2384,6 +2384,54 @@
       "0.34"
     ]
   },
+  "catalog.missing.barcode": {
+    "explanation": "Banner on the catalog when it is filtered to items without a barcode (opened from an AI assistant answer).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.missing.category": {
+    "explanation": "Banner on the catalog when it is filtered to items without a category.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.missing.clear": {
+    "explanation": "Link in the filter banner that returns to the full catalog list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.missing.image": {
+    "explanation": "Banner on the catalog when it is filtered to items without a photo.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.missing.price": {
+    "explanation": "Banner on the catalog when it is filtered to items with no price (zero).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.missing.several": {
+    "explanation": "Banner on the catalog when it is filtered to items missing any of barcode, photo, price or category.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.modifiers.add_group": {
     "explanation": "",
     "flags": "",

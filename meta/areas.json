@@ -7,7 +7,7 @@
   "catalog": {
     "name": "Catalog",
     "description": "Items, categories, modifiers, stock, promotions, vouchers, imports and the menu designer.",
-    "keys": 874
+    "keys": 880
   },
   "orders": {
     "name": "Orders",
@@ -52,7 +52,7 @@
   "plugins": {
     "name": "Plugins",
     "description": "The plugin marketplace, plugin pages and the assistant.",
-    "keys": 291
+    "keys": 300
   },
   "support": {
     "name": "Support",
