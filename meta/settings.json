@@ -917,6 +917,14 @@
       "0.34"
     ]
   },
+  "page.title.move_till": {
+    "explanation": "Browser tab title of the page where a manager approves or declines moving this till into another shop.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "page.title.my_reports": {
     "explanation": "",
     "flags": "",
@@ -4424,6 +4432,382 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.move.approve": {
+    "explanation": "Primary button: approve moving this till into the other shop (asks for a PIN next).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.confirm_body": {
+    "explanation": "Body of that confirmation. Keep both placeholders; the till wraps each in bidi isolates.\n\nPlaceholders:\n- %s: the shop's name, or its store ID when no shop name is set\n- %s: the pairing code the operator typed, shown so a typo can be spotted (keep as is)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.confirm_btn": {
+    "explanation": "Primary button of that confirmation: send the code and ask for the move.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.confirm_title": {
+    "explanation": "Heading of the confirmation after pressing Pair on a till that belongs to a shop, where pairing asks to move it.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.decline": {
+    "explanation": "Secondary button: decline the move (asks for a PIN next). Nothing moves.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.declined": {
+    "explanation": "After a declined move (or one already declined).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.done": {
+    "explanation": "Success after an approved move.\n\nPlaceholders:\n- %s: the name of the shop the till moved into",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.expires": {
+    "explanation": "Label before the date and time after which the move request expires and nothing moves.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.from": {
+    "explanation": "Label before the name of the shop this till belongs to now, on the move approval page.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.gone": {
+    "explanation": "Shown on the move page when the move is unknown or already ended.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.into": {
+    "explanation": "Label before the name of the shop the till would move into, on the move approval page.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.locked": {
+    "explanation": "After 3 wrong PINs on one move: it is declined automatically.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.name_mismatch": {
+    "explanation": "Error when the typed target shop name does not match; nothing was sent and no PIN was asked.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.notice_cancelled": {
+    "explanation": "Banner after the target owner cancelled a pending move.\n\nPlaceholders:\n- %s: the name of the shop the move was into",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.notice_expired": {
+    "explanation": "Banner after a pending move expired.\n\nPlaceholders:\n- %s: the name of the shop the move was into",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.notice_locked": {
+    "explanation": "Banner after a move was declined automatically for wrong PINs.\n\nPlaceholders:\n- %s: the name of the shop the move was into",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.notice_pending": {
+    "explanation": "Banner for managers/admins when a move waits for this till's approval.\n\nPlaceholders:\n- %s: the name of the shop asking to take the till\n- %s: the date and time the request expires",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.notice_review": {
+    "explanation": "Link in the move banner (and after pairing) that opens the approval page.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.offline": {
+    "explanation": "Shown when the cloud is out of reach: the decision cannot be sent; nothing is queued.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.pending_msg": {
+    "explanation": "After Pair: the cloud recorded the move; it waits for approval on this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused": {
+    "explanation": "Generic refusal of a move request (wrong code, server error...).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_currency": {
+    "explanation": "Move refused: currencies differ.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_declined_recently": {
+    "explanation": "Move refused: a recent decline blocks this requester for a day.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_fiscal_device": {
+    "explanation": "Move refused: the till's shop has a fiscal device (e.g. TSE). No compliance claims.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_needs_owner": {
+    "explanation": "Move refused: the code was made by a member, not the owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_other_owner": {
+    "explanation": "Move refused: the till's shop has a different owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_paid_licence": {
+    "explanation": "Move refused: the till's shop has a paid/granted plan.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_pending": {
+    "explanation": "Move refused: another move is already pending for this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_rate_limited": {
+    "explanation": "Move refused: rate limited.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_shop_has_tills": {
+    "explanation": "Move refused: the till's current shop has other tills.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_source_unavailable": {
+    "explanation": "Move refused: the till's current shop is unavailable (deleted or merging).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_target_unavailable": {
+    "explanation": "Move refused: the target shop already has a main till, is merging, or is unavailable.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_cancelled": {
+    "explanation": "The target shop's owner cancelled the move on my.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_done": {
+    "explanation": "The cloud says the move already happened.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_error": {
+    "explanation": "Any other failure sending the decision.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_expired": {
+    "explanation": "The cloud says the move expired.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_failed": {
+    "explanation": "The cloud refused the move after approval (state changed) or moves are switched off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_invalid": {
+    "explanation": "Signature or credential refused by the cloud.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_key": {
+    "explanation": "Approval key conflict, missing or unusable on the till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_quarantined": {
+    "explanation": "The till's approval key was reported recently and is in its waiting period.\n\nPlaceholders:\n- %s: the date and time from which the till can approve",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.source_lost": {
+    "explanation": "Pair refused on the till: its old shop credential is dead and it has history; nothing changed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.summary_approve": {
+    "explanation": "What the PIN dialog says is being approved (approve a move).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.summary_decline": {
+    "explanation": "What the PIN dialog says is being approved (decline a move).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.title": {
+    "explanation": "Heading of the page where a manager or admin approves or declines moving this till (with its history) into another shop's cloud account.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.type_name": {
+    "explanation": "Label of the text field where the approver types the target shop's name (shown right after the label) before Approve works.",
+    "flags": "max-length:70",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.warning": {
+    "explanation": "Plain warning on the move approval page: what approving does (all history goes to the other account) and an anti-scam line. No compliance claims.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.who": {
+    "explanation": "Line under the warning: who decides (manager/admin PIN) and that selling continues meanwhile.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.nav.back": {
