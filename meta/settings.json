@@ -3882,6 +3882,30 @@
       "0.34"
     ]
   },
+  "settings.enrol.pair_replace_body": {
+    "explanation": "Body of that confirmation: what replacing the connection means and the risk of a wrong code; no compliance claims. 1st placeholder: the shop's name, or its store ID when no shop name is set; 2nd: the pairing code the operator typed, shown so a typo can be spotted. Keep both placeholders; the till wraps each in bidi isolates.\n\nPlaceholders:\n- %s: the shop's name, or its store ID when no shop name is set\n- %s: the pairing code the operator typed, shown so a typo can be spotted (keep as is)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.enrol.pair_replace_confirm": {
+    "explanation": "Primary (red) button of that confirmation; pairs this till with the code, replacing its current cloud connection (Cancel is common.cancel).",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.enrol.pair_replace_title": {
+    "explanation": "Heading of the confirmation shown after pressing Pair under Settings → Pair with a shop on a till that is already connected to a shop's cloud account.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.enrol.pair_replica_no_store": {
     "explanation": "",
     "flags": "",

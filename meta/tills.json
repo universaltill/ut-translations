@@ -2627,6 +2627,38 @@
       "0.34"
     ]
   },
+  "tills.promote_adopt_failed": {
+    "explanation": "Promote result: some copied sales could not be added to this till's record (a receipt number or reference it refuses); they stay in the copy.\n\nPlaceholders:\n- %d: number of sales",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.promote_adopt_resumes": {
+    "explanation": "Promote result: adopting the copy stopped (an error); nothing is lost and it resumes on its own.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.promote_adopt_voided": {
+    "explanation": "Promote result: sales this till held as completed that the copy knew were voided, now voided here too.\n\nPlaceholders:\n- %d: number of sales",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.promote_adopted": {
+    "explanation": "Promote result on a till that kept a copy of the shop's sales: how many copied sales became its own record.\n\nPlaceholders:\n- %d: number of sales",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tills.promote_btn": {
     "explanation": "",
     "flags": "",
@@ -2679,6 +2711,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "tills.promote_outside_z": {
+    "explanation": "Promote warning: sales from before the previous main till's last close that never reached it in time, so they may be in no Z report.\n\nPlaceholders:\n- %d: number of sales",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "tills.promote_title": {
@@ -2804,6 +2844,190 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "tills.sales_mirror.copy_behind": {
+    "explanation": "On an additional till: how many changes its copy is behind the main till.\n\nPlaceholders:\n- %d: number of changes",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.copy_empty": {
+    "explanation": "On an additional till with the copy on: nothing copied yet.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.copy_summary": {
+    "explanation": "On an additional till: how many sales its copy holds and the oldest day (YYYY-MM-DD).\n\nPlaceholders:\n- %d: number of copied sales\n- %s: oldest copied day",
+    "flags": "placeholders:\"%d\":\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.help": {
+    "explanation": "Explanation under the sales-copy card heading on the Tills page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.state.catching_up": {
+    "explanation": "State of this additional till's copy: it is fetching changes or re-syncing; the count of changes to go follows.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.state.main_off": {
+    "explanation": "State of this additional till's copy: the main till has the copy switched off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.state.needs_tls": {
+    "explanation": "State of this additional till's copy: it has no secure (pinned TLS) link to the main till yet.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.state.needs_update": {
+    "explanation": "State of this additional till's copy: the main till runs a newer copy format; update this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.state.off": {
+    "explanation": "State of this additional till's copy: the shop has the copy switched off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.state.off_here": {
+    "explanation": "State of this additional till's copy: this till's own switch is off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.state.paused_budget": {
+    "explanation": "State of this additional till's copy: paused at its disk budget.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.state.paused_low_disk": {
+    "explanation": "State of this additional till's copy: paused because the disk is nearly full (only the last 31 days are kept).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.state.satellite": {
+    "explanation": "State on a satellite till: satellites keep no copy of the shop's sales.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.state.up_to_date": {
+    "explanation": "State of this additional till's copy: current.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.status_off": {
+    "explanation": "State of the shop-wide sales copy on the main till: switched off (the default).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.status_on": {
+    "explanation": "State of the shop-wide sales copy on the main till: switched on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.till_catching_up": {
+    "explanation": "Line per additional till on the main till: how many changes its copy is behind.\n\nPlaceholders:\n- %s: till name\n- %d: number of changes",
+    "flags": "placeholders:\"%s\":\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.till_up_to_date": {
+    "explanation": "Line per additional till on the main till: its copy is current.\n\nPlaceholders:\n- %s: till name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.till_waiting": {
+    "explanation": "Line per additional till on the main till: that till has not fetched its copy yet.\n\nPlaceholders:\n- %s: till name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.title": {
+    "explanation": "Heading of the Tills page card for the read-only copy of the shop's sales kept on every additional till (ut-docs#5074).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.turn_off": {
+    "explanation": "Button on the main till that switches the shop's sales copy off (copies are kept).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.turn_on": {
+    "explanation": "Button on the main till that switches the shop's sales copy on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.sales_mirror.window": {
+    "explanation": "How long each additional till keeps copied sales.\n\nPlaceholders:\n- %d: number of days",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "tills.show_qr": {
