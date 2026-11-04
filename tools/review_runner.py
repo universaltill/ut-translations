@@ -69,6 +69,7 @@ import urllib.parse
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import build_bundle  # noqa: E402
+import locales  # noqa: E402
 import review_checks  # noqa: E402
 import review_model  # noqa: E402
 import review_prompt  # noqa: E402
@@ -231,7 +232,7 @@ def weblate_client(*env_vars, services=(REVIEWER_KEYCHAIN,)):
 
 def export(args):
     lang = args.lang
-    if not build_bundle.WEBLATE_CODE_RE.fullmatch(lang or ""):
+    if not locales.CODE_RE.fullmatch(lang or ""):
         raise RunnerError(f"bad Weblate language code {lang!r}")
     client = weblate_client("WEBLATE_TOKEN", "WEBLATE_REVIEWER_TOKEN", services=(REVIEWER_KEYCHAIN, "weblate-codex"))
     if client is None:
