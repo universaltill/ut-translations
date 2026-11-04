@@ -98,6 +98,14 @@
       "0.34"
     ]
   },
+  "common.error.outcome_unknown": {
+    "explanation": "Error shown when the connection drops after the operator confirmed an action (manager PIN or confirm prompt) but before the till answered, so nobody knows if the action ran. Tells them to check before repeating it; there is no retry button.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "common.error.server": {
     "explanation": "Generic error shown when an action fails for an unexpected reason.",
     "flags": "",
