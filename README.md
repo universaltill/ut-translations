@@ -42,7 +42,7 @@ universal-till main ──(sync job, this repo)──▶ <area>/en.json + meta/
 | `config/lines.json` | people | The source repo and the **supported till lines** (below). |
 | `config/bundles.json` | people | Locales a bundle may be built for: Weblate code, name, script, `human_spot_check`, `min_coverage`. |
 | `config/ai-accounts.json` | people | Weblate AI service accounts and the model each is tied to (ut-docs#4366 fills it in). |
-| `tools/` | — | `sync_english.py`, `provision_weblate.py`, `i18n_map.py` (the shared mapping), `import_existing.py` (the one-off import below), and the bundle tools `build_bundle.py`, `bundle_checks.py`, `till_verify.py` (+ `till_harness/`), `publish_bundle.py`. Python 3 standard library only. |
+| `tools/` | — | `sync_english.py`, `provision_weblate.py`, `i18n_map.py` (the shared mapping), `import_existing.py` (the one-off import below), and the bundle tools `build_bundle.py`, `bundle_checks.py`, `till_verify.py` (+ `till_harness/`), `publish_bundle.py`; the AI reviewer runner `review_runner.py` (+ `review_checks.py`, `review_model.py`, `review_prompt.py`, see `docs/ai-review.md`). Python 3 standard library only. |
 | `tests/` | — | Unit tests; run in CI by `.github/workflows/test.yml`. |
 
 ### Areas (components)

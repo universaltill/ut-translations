@@ -1,0 +1,222 @@
+# AI review of one language's Weblate translations by a model of another
+# family than the one that wrote them (ADR-0160 §4, §10; ut-docs#5420).
+# tools/review_runner.py does the work; docs/ai-review.md explains it.
+#
+# By hand only (workflow_dispatch), one language per run, on main only.
+# Dry run unless `write` is ticked.
+#
+#   export  reads the language's units and history from Weblate with the
+#           reviewer token (export step only) and runs the deterministic
+#           pre-checks. Runs no universal-till code (--no-scans).
+#   scan    no environment, no secret: universal-till's compliance and
+#           naming guards (ADR-0040, ADR-0106) at meta/source.json's commit,
+#           which must be on universal-till main or a vX.Y.Z tag; then plans
+#           the batches (pre-check failures and legal/tax/money units are
+#           decided here, never sent to the model for approval).
+#   review  the Anthropic API key, in the review step only: one verdict file
+#           per batch.
+#   apply   the reviewer token, in the apply step only: re-reads each unit,
+#           refuses (exit 2, nothing written) unless the account is a
+#           registered reviewer of the verdicts' model family, writes only
+#           with `write`, and uploads audit.jsonl + summary.md (always).
+#
+# Secrets live in the `ai-review` environment (limited to main):
+# WEBLATE_REVIEWER_TOKEN (the reviewer bot's Weblate token) and
+# ANTHROPIC_API_KEY. Never echoed. Least privilege: no workflow-level
+# permissions, contents: read per job. GitHub-hosted runners only (public
+# repo).
+
+name: ai-review
+
+on:
+  workflow_dispatch:
+    inputs:
+      lang:
+        description: "Weblate language code"
+        required: true
+        type: choice
+        options: [fr, ms, zh_Hans, de, es, pt, tr, it, ar, fa]
+      component:
+        description: "Only this component (empty: all)"
+        type: string
+        default: ""
+      limit:
+        description: "Stop after this many units (empty: no limit)"
+        type: string
+        default: ""
+      include_reviewed_by:
+        description: "Re-review units this AI reviewer account already approved (empty: none)"
+        type: string
+        default: ""
+      write:
+        description: "Write approvals, suggestions and comments to Weblate (untick for a dry run)"
+        type: boolean
+        default: false
+
+permissions: {}
+
+concurrency:
+  group: ai-review-${{ inputs.lang }}
+  cancel-in-progress: false
+
+jobs:
+  export:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    environment: ai-review
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Export and pre-check
+        env:
+          WEBLATE_URL: ${{ vars.WEBLATE_URL }}
+          WEBLATE_TOKEN: ${{ secrets.WEBLATE_REVIEWER_TOKEN }}
+          LANG_CODE: ${{ inputs.lang }}
+          COMPONENT: ${{ inputs.component }}
+          LIMIT: ${{ inputs.limit }}
+          INCLUDE: ${{ inputs.include_reviewed_by }}
+        run: |
+          set -euo pipefail
+          args=(--lang "$LANG_CODE" --out review-run --logs-root review-run --no-scans)
+          if [ -n "$COMPONENT" ]; then args+=(--component "$COMPONENT"); fi
+          if [ -n "$LIMIT" ]; then args+=(--limit "$LIMIT"); fi
+          if [ -n "$INCLUDE" ]; then args+=(--include-reviewed-by "$INCLUDE"); fi
+          python3 tools/review_runner.py export "${args[@]}"
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ai-review-${{ inputs.lang }}-export
+          path: review-run/
+          if-no-files-found: error
+          retention-days: 30
+
+  scan:
+    needs: export
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Source commit
+        id: src
+        run: |
+          set -euo pipefail
+          commit=$(python3 -c 'import json; print(json.load(open("meta/source.json"))["main"]["commit"])')
+          [[ "$commit" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::meta/source.json main.commit is not a sha"; exit 1; }
+          echo "commit=${commit}" >> "$GITHUB_OUTPUT"
+
+      - name: universal-till at source_commit
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          repository: universaltill/universal-till
+          ref: ${{ steps.src.outputs.commit }}
+          path: till
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: source_commit is on universal-till main (a fork's commit is fetchable by sha)
+        env:
+          COMMIT: ${{ steps.src.outputs.commit }}
+        run: |
+          set -euo pipefail
+          commit="$COMMIT"
+          git -C till fetch --quiet --tags origin +refs/heads/main:refs/remotes/origin/main
+          if git -C till merge-base --is-ancestor "$commit" refs/remotes/origin/main; then exit 0; fi
+          if git -C till tag --points-at "$commit" | grep -Eqx 'v[0-9]+\.[0-9]+\.[0-9]+'; then exit 0; fi
+          echo "::error::source_commit $commit is not on universal-till main and no vX.Y.Z tag points at it"
+          exit 1
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: ai-review-${{ inputs.lang }}-export
+          path: review-run/
+
+      - name: Compliance and naming scans, then plan the batches
+        run: python3 tools/review_runner.py scan --out review-run --till-source till
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: ai-review-${{ inputs.lang }}-planned
+          path: review-run/
+          if-no-files-found: error
+          retention-days: 30
+
+  review:
+    needs: scan
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    environment: ai-review
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: ai-review-${{ inputs.lang }}-planned
+          path: review-run/
+
+      - name: Model review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python3 tools/review_runner.py review --out review-run
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: ai-review-${{ inputs.lang }}-verdicts
+          path: review-run/
+          if-no-files-found: error
+          retention-days: 30
+
+  apply:
+    needs: review
+    # Also after a review job that failed on some batches (never after a
+    # cancel): the verdicts that exist are applied, the audit is always made.
+    if: github.ref == 'refs/heads/main' && !cancelled() && (needs.review.result == 'success' || needs.review.result == 'failure')
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    environment: ai-review
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: ai-review-${{ inputs.lang }}-verdicts
+          path: review-run/
+
+      - name: Apply (dry run unless write is ticked)
+        env:
+          WEBLATE_URL: ${{ vars.WEBLATE_URL }}
+          WEBLATE_REVIEWER_TOKEN: ${{ secrets.WEBLATE_REVIEWER_TOKEN }}
+          WRITE: ${{ inputs.write }}
+        run: |
+          set -euo pipefail
+          args=(--out review-run --logs-root review-run)
+          if [ "$WRITE" = "true" ]; then args+=(--write); fi
+          python3 tools/review_runner.py apply "${args[@]}"
+
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: ai-review-${{ inputs.lang }}-audit
+          path: review-run/
+          if-no-files-found: error
+          retention-days: 30
