@@ -128,12 +128,12 @@ class Workflow(unittest.TestCase):
         self.assertNotIn("locales", self.cfg)
 
     def test_artifact_names_use_the_validated_tag_only(self):
-        names = re.findall(r"name: (bundle-\S+)", self.text)
+        names = re.findall(r"name: (bundle-.*)$", self.text, re.M)
         self.assertEqual(len(names), 4)  # upload + verify + two publish downloads
         for n in names:
-            self.assertEqual(n, "bundle-${{ needs.validate.outputs.tag }}" if "needs" in n else n)
-            self.assertNotIn("inputs.locale", n)
+            self.assertEqual(n, "bundle-${{ needs.validate.outputs.tag }}")
         self.assertEqual(self.text.count("inputs.locale"), 5)  # group + 4 env bindings
+        self.assertNotIn("github.event.inputs", self.text)  # the same raw input under another name
         for block in run_blocks(self.text):
             self.assertNotIn("inputs.", block)
 
@@ -232,7 +232,8 @@ class Workflow(unittest.TestCase):
     def test_codeowners_cover_the_publish_path(self):
         owners = read(os.path.join(ROOT, ".github", "CODEOWNERS"))
         for path in ("/.github/workflows/publish-bundle.yml", "/tools/build_bundle.py", "/tools/bundle_checks.py",
-                     "/tools/publish_bundle.py", "/tools/till_verify.py", "/tools/locales.py", "/tests/test_locales.py", "/tools/till_harness/",
+                     "/tools/publish_bundle.py", "/tools/till_verify.py", "/tools/locales.py", "/tests/test_locales.py",
+                     "/tests/test_workflow.py", "/tests/test_bundle.py", "/tools/till_harness/",
                      "/config/ai-accounts.json", "/config/bundles.json", "/.github/CODEOWNERS",
                      # Review finding 2(b): what decides the English, its
                      # labels and the source commit, and the job that writes them.

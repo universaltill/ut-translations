@@ -120,6 +120,21 @@ class Spec(unittest.TestCase):
         self.assertEqual(sorted(c for c, o in CFG["overrides"].items() if o.get("human_spot_check")),
                          ["de", "en", "tr"])
 
+    def test_a_variant_of_a_human_language_is_human(self):
+        # Review 2026-11-04: de_DE/de_AT/en_GB/tr_CY must not route around
+        # bundle-publish-human just because the override is keyed "de".
+        rows = ROWS + [{"code": c, "name": c} for c in ("de_AT", "de_DE", "en_GB", "tr_CY")]
+        for code in ("de_AT", "de_DE", "en_GB", "tr_CY"):
+            self.assertTrue(L.resolve_spec(rows, CFG, code)["human_spot_check"], code)
+            self.assertTrue(L.human_spot_check(CFG, code), code)
+        for code in ("pt_BR", "fr", "sr_Latn"):
+            self.assertFalse(L.resolve_spec(rows, CFG, code)["human_spot_check"], code)
+        s = L.resolve_spec(rows, CFG, "en_GB")  # only human_spot_check is inherited
+        self.assertNotIn("source", s)
+        self.assertNotIn("min_coverage", L.resolve_spec(rows, CFG, "de_AT"))
+        own = {**CFG, "overrides": {**CFG["overrides"], "de_AT": {"human_spot_check": False}}}
+        self.assertFalse(L.human_spot_check(own, "de_AT"))  # an explicit (CODEOWNED) override wins
+
     def test_weblate_cannot_set_gate_fields(self):
         rows = [{"code": "fr", "name": "French", "human_spot_check": False, "min_coverage": 0.0, "source": True,
                  "script": "Hans", "tag": "evil"}]
@@ -255,6 +270,8 @@ class Cli(unittest.TestCase):
         self.assertEqual(self.run_cli("--check", "tr")[1], "tag=tr\nhuman=true\n")
         self.assertEqual(self.run_cli("--check", "pt_BR")[1], "tag=pt-br\nhuman=false\n")
         self.assertEqual(self.run_cli("--check", "zh_Hans")[1], "tag=zh-hans\nhuman=false\n")
+        self.assertEqual(self.run_cli("--check", "de_AT")[1], "tag=de-at\nhuman=true\n")
+        self.assertEqual(self.run_cli("--check", "en_GB")[1], "tag=en-gb\nhuman=true\n")
 
     def test_check_refuses_with_nothing_on_stdout(self):
         for bad in ("pt-BR", "de;ls", "zh", "xx"):

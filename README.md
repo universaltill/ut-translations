@@ -198,7 +198,10 @@ two codes share a tag. Name and script are derived by `tools/locales.py`
 a `script` override; a script with no per-string checker is refused). A
 derived language gets `human_spot_check` false and no `min_coverage`; only
 `config/bundles.json` overrides change that (en, de, tr are the human
-spot-check languages; de/es/pt carry `min_coverage`). Nothing Weblate
+spot-check languages; de/es/pt carry `min_coverage`). A regional or script
+variant of a human spot-check language (`de_AT`, `en_GB`, `tr_CY`) inherits
+`human_spot_check` from its base language, so it publishes through
+`bundle-publish-human` too; nothing else is inherited. Nothing Weblate
 returns, other than the code and a sanitised display name, can set a gate
 field.
 

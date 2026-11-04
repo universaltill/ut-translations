@@ -15,11 +15,16 @@ What config/bundles.json may say (overrides only, a closed set of fields):
   script           ISO 15924 script (only a known one; a suffix like _Hans wins)
   name             exact manifest name (keeps the first seven byte-identical)
 A language without an override gets human_spot_check false and no
-min_coverage. Only the code and the display name are ever read from Weblate;
-no review-gate field (ADR-0160 §4) can come from there.
+min_coverage — except that a regional or script variant (de_AT, en_GB,
+tr_CY) inherits human_spot_check from its base language's override, so a
+variant of a human-spot-check language can never route around the
+bundle-publish-human environment (review 2026-11-04). Only the code and the
+display name are ever read from Weblate; no review-gate field (ADR-0160 §4)
+can come from there.
 
 CLI:  locales.py --check <code> [--live]
-  prints tag=<tag> and human=true|false (from the overrides only). --live
+  prints tag=<tag> and human=true|false (from the overrides only, the base
+  language's included). --live
   also requires the code in Weblate's public language list ($WEBLATE_URL,
   https, no token, no redirect). Exit 1 on any refusal.
 """
@@ -169,7 +174,20 @@ def load_config(repo):
         return validate_shape(json.load(f))
 
 
-def derive_spec(code, weblate_name, override=None):
+def human_spot_check(cfg, code):
+    """Whether `code` publishes through bundle-publish-human: its own override
+    first, else its base language's (de_AT -> de), else False. Only
+    human_spot_check is inherited: source and min_coverage never are."""
+    till_tag(code)
+    ov = cfg["overrides"]
+    own = ov.get(code) or {}
+    if "human_spot_check" in own:
+        return bool(own["human_spot_check"])
+    base = ov.get(code.partition("_")[0]) or {}
+    return bool(base.get("human_spot_check", False))
+
+
+def derive_spec(code, weblate_name, override=None, cfg=None):
     """The build spec of one language. Gate fields come from the overrides
     only; Weblate supplies the code and a sanitised display name."""
     o = override or {}
@@ -178,7 +196,7 @@ def derive_spec(code, weblate_name, override=None):
         "tag": till_tag(code),
         "name": o["name"] if "name" in o else clean_name(weblate_name, code),
         "script": script_for(code, o.get("script")),
-        "human_spot_check": bool(o.get("human_spot_check", False)),
+        "human_spot_check": human_spot_check(cfg, code) if cfg is not None else bool(o.get("human_spot_check", False)),
     }
     if o.get("source"):
         spec["source"] = True
@@ -250,7 +268,7 @@ def resolve_spec(source, repo, code, languages_fetch=None):
     override = cfg["overrides"].get(code)
     if override and override.get("source"):
         # Built from this repo's English: no Weblate list needed.
-        return derive_spec(code, "", override)
+        return derive_spec(code, "", override, cfg)
     live = None
     if source is not None:
         if hasattr(source, "get") and not isinstance(source, dict):
@@ -271,7 +289,7 @@ def resolve_spec(source, repo, code, languages_fetch=None):
         raise LocaleError("WEBLATE_URL and WEBLATE_TOKEN are needed to resolve a translated language")
     if code not in live:
         raise LocaleError(f"{code!r} is not a language of Weblate project {cfg['project']!r}")
-    return derive_spec(code, live[code], override)
+    return derive_spec(code, live[code], override, cfg)
 
 
 def main(argv=None):
@@ -294,7 +312,7 @@ def main(argv=None):
         print(f"locale refused: {e}", file=sys.stderr)
         return 1
     print(f"tag={tag}")
-    print(f"human={'true' if o.get('human_spot_check') else 'false'}")
+    print(f"human={'true' if human_spot_check(cfg, args.check) else 'false'}")
     return 0
 
 

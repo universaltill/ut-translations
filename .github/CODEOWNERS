@@ -8,6 +8,8 @@
 /tools/bundle_checks.py @farshidmirza
 /tools/locales.py @farshidmirza
 /tests/test_locales.py @farshidmirza
+/tests/test_workflow.py @farshidmirza
+/tests/test_bundle.py @farshidmirza
 /tools/publish_bundle.py @farshidmirza
 /tools/till_verify.py @farshidmirza
 /tools/till_harness/ @farshidmirza
