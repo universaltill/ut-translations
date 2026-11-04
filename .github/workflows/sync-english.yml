@@ -14,7 +14,8 @@
 # Least privilege: `contents: write` on this repo only (the job pushes its
 # own commit with the built-in GITHUB_TOKEN). It reads universal-till over
 # its public https clone URL with no credential, and has no way to write to
-# it. No secrets. GitHub-hosted runner (public repo).
+# it; the website step also reads ut-website's public main the same way.
+# No secrets. GitHub-hosted runner (public repo).
 
 name: sync-english
 
@@ -51,8 +52,15 @@ jobs:
         id: sync
         run: python3 tools/sync_english.py
 
+      # Surfaces whose source repo already has its English file (ADR-0177).
+      # ut-cloud's surfaces join here when ut-cloud/i18n/en.json exists.
+      - name: Sync English from ut-website (surface website)
+        id: sync_website
+        continue-on-error: true   # one surface never blocks the till sync's push
+        run: python3 tools/sync_english.py --surface website
+
       - name: Push
-        if: steps.sync.outputs.changed == 'true'
+        if: steps.sync.outputs.changed == 'true' || steps.sync_website.outputs.changed == 'true'
         run: |
           set -euo pipefail
           # Weblate pushes translations to main too; rebase over them (the two
