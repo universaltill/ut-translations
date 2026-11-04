@@ -141,7 +141,7 @@ and commits only when the content changed (`generated_at` is kept otherwise).
   every non-legal-omitted `core` key shipped,
   `omitted_broken` <= `max_broken_ratio` (0.10). Per-language and
   per-surface overrides live in `config/publish-policy.json`.
-- URL locales (`config/locale-regions.json`) are the owner's eleven choices;
+- URL locales (`config/locale-regions.json`) are the owner's twelve choices;
   any other language is derived by CLDR (Babel, if installed) or the run
   fails asking for an entry. Two languages on one URL locale fail the run.
   Direction comes from Weblate's `/api/languages/<code>/`. English and native

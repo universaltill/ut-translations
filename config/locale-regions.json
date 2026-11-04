@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "description": "Weblate language code -> URL locale (ADR-0038 region choice, ADR-0177 section 3). These eleven are OWNER DECISIONS of 2026-11-04, not CLDR output. A language not listed is derived from CLDR likely-subtags when Babel is installed, otherwise the publish run fails and asks for an entry here. Two codes mapping to one `url` fail the run. `english_name` / `native_name` are the checked-in fallback for Babel (the run fails for a code with no entry and no Babel).",
+  "description": "Weblate language code -> URL locale (ADR-0038 region choice, ADR-0177 section 3). These twelve are OWNER DECISIONS of 2026-11-04 (el-gr added by the ADR-0177 amendment, ut-docs#5533), not CLDR output. A language not listed is derived from CLDR likely-subtags when Babel is installed, otherwise the publish run fails and asks for an entry here. Two codes mapping to one `url` fail the run. `english_name` / `native_name` are the checked-in fallback for Babel (the run fails for a code with no entry and no Babel).",
   "locales": {
     "en":      {"url": "en-gb", "english_name": "English",               "native_name": "English"},
     "de":      {"url": "de-de", "english_name": "German",                "native_name": "Deutsch"},
@@ -12,6 +12,7 @@
     "fr":      {"url": "fr-fr", "english_name": "French",                "native_name": "Français"},
     "ar":      {"url": "ar-sa", "english_name": "Arabic",                "native_name": "العربية"},
     "it":      {"url": "it-it", "english_name": "Italian",               "native_name": "Italiano"},
-    "ms":      {"url": "ms-my", "english_name": "Malay",                 "native_name": "Bahasa Melayu"}
+    "ms":      {"url": "ms-my", "english_name": "Malay",                 "native_name": "Bahasa Melayu"},
+    "el":      {"url": "el-gr", "english_name": "Greek",                 "native_name": "Ελληνικά"}
   }
 }

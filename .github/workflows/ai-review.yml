@@ -35,7 +35,7 @@ on:
         description: "Weblate language code"
         required: true
         type: choice
-        options: [fr, ms, zh_Hans, de, es, pt, tr, it, ar, fa]
+        options: [fr, ms, zh_Hans, de, es, pt, tr, it, ar, fa, el]
       component:
         description: "Only this component (empty: all)"
         type: string

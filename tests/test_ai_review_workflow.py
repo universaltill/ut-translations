@@ -33,7 +33,7 @@ class AiReviewWorkflow(unittest.TestCase):
         self.assertEqual(sorted(re.findall(r"^      ([a-z_]+):", on, re.M)),
                          ["component", "include_reviewed_by", "lang", "limit", "write"])
         opts = re.search(r"lang:\n(?:\s+.*\n)*?\s+options: \[([^\]]*)\]", on).group(1)
-        self.assertTrue({"fr", "ms", "zh_Hans"} <= {o.strip() for o in opts.split(",")})
+        self.assertTrue({"fr", "ms", "zh_Hans", "el"} <= {o.strip() for o in opts.split(",")})
         self.assertRegex(on, r"write:\n(?:\s+.*\n)*?\s+default: false")
 
     def test_least_privilege(self):

@@ -263,7 +263,7 @@ class PublishTest(unittest.TestCase):
 
     def test_all_owner_regions(self):
         want = {"en": "en-gb", "de": "de-de", "tr": "tr-tr", "zh_Hans": "zh-cn", "fa": "fa-ir", "pt": "pt-pt", "es": "es-es",
-                "fr": "fr-fr", "ar": "ar-sa", "it": "it-it", "ms": "ms-my"}
+                "fr": "fr-fr", "ar": "ar-sa", "it": "it-it", "ms": "ms-my", "el": "el-gr"}
         reg = json.load(open(os.path.join(REPO, "config/locale-regions.json")))["locales"]
         self.assertEqual({k: v["url"] for k, v in reg.items()}, want)
 

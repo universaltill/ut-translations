@@ -57,6 +57,15 @@ class IcuForms(Base):
                "many {# عنصرًا} other {# عنصر}}")
         self.assertPass(checks(self.SRC, tgt, "ar"), "icu_forms")
 
+    def test_pass_greek_one_other(self):
+        self.assertPass(checks(self.SRC, "{count, plural, one {# προϊόν} other {# προϊόντα}}", "el"), "icu_forms")
+
+    def test_fail_greek_extra_category(self):
+        self.assertFail(checks(self.SRC, "{count, plural, one {# προϊόν} few {# π} other {# προϊόντα}}", "el"), "icu_forms")
+
+    def test_greek_script_is_grek(self):
+        self.assertEqual(rc.script_for("el"), "Grek")
+
     def test_fail_arabic_missing_categories(self):
         r = checks(self.SRC, "{count, plural, one {عنصر واحد} other {# عنصر}}", "ar")
         self.assertFail(r, "icu_forms")
@@ -236,6 +245,15 @@ class Scans(unittest.TestCase):
     def test_a_term_split_by_a_newline_is_still_caught(self):
         hits = rc.run_scans(self.till, self.sha, [(4, "fully\ncompliant")])
         self.assertEqual(list(hits), [4])
+
+
+class UploadScript(unittest.TestCase):
+    def test_script_of_greek_is_grek(self):
+        import upload_translations as up
+        self.assertEqual(up.script_of("el"), "Grek")
+        self.assertEqual(up.script_of("fa"), "Arab")
+        self.assertEqual(up.script_of("it"), "Latn")
+        self.assertIsNone(up.problems("Add item", "Προσθέστε προϊόν", {}, up.script_of("el")))
 
 
 if __name__ == "__main__":

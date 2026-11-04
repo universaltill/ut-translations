@@ -53,7 +53,7 @@ BRAND_TERMS = tuple(sorted({"Universal Till", "Bluetooth", "Wi-Fi", "PIN", "USB"
                             "Code 128", "Local Plus"} | set(bulk_locale.KEEP_NAMES), key=len, reverse=True))
 RTL_LANGS = {"ar", "fa", "he", "ur"}
 LTR_MARKS = re.compile("[‎‪‭⁦]")
-SCRIPTS = {"ar": "Arab", "fa": "Arab", "zh_Hans": "Hans", "zh_Hant": "Hant", "ja": "Jpan", "ko": "Kore"}
+SCRIPTS = {"ar": "Arab", "fa": "Arab", "el": "Grek", "zh_Hans": "Hans", "zh_Hant": "Hant", "ja": "Jpan", "ko": "Kore"}
 
 # CLDR cardinal plural categories: (required, also allowed). The Romance
 # languages' `many` (compact large numbers) is accepted, not required.
@@ -68,6 +68,7 @@ PLURAL_CATEGORIES = {
     "it": ({"one", "other"}, {"many"}),
     "pt": ({"one", "other"}, {"many"}),
     "ms": ({"other"}, set()),
+    "el": ({"one", "other"}, set()),
     "zh_Hans": ({"other"}, set()),
 }
 ICU_KINDS = ("plural", "select", "selectordinal")
