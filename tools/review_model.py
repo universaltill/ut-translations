@@ -7,6 +7,12 @@ doesn't match the schema exactly gives no verdict for that unit, and a file
 for another batch or prompt version gives none at all: no verdict is never
 an approval.
 
+GeminiAdapter.complete(system, user) -> (text, "gemini/<modelVersion>") is the
+same for the Gemini API (generateContent, ut-docs#5532): a third model
+family. The key travels in the x-goog-api-key header, never in the URL, a
+body or an error text. A reply that stopped for any reason but STOP, was
+blocked, or names no model is a ModelError.
+
 AnthropicAdapter.complete(system, user) -> (text, "anthropic/<model>"),
 the model id taken from the response, not the request. 429/529 are retried
 up to 5 tries in all, honouring retry-after; a refusal or anything else is
@@ -17,6 +23,7 @@ followed.
 """
 
 import json
+import re
 import time
 import urllib.error
 import urllib.parse
@@ -30,6 +37,9 @@ DEFAULT_MODEL = "claude-opus-5-5"
 API_VERSION = "2026-10-21"
 LOOPBACK = {"127.0.0.1", "localhost", "::1"}
 RETRY_STATUS = {429, 529}
+GEMINI_DEFAULT_MODEL = "gemini-2.5-pro"
+GEMINI_RETRY_STATUS = {429, 500, 503, 504}
+GEMINI_MODEL_RE = re.compile(r"[A-Za-z0-9][A-Za-z0-9._-]*")
 
 
 class ModelError(Exception):
@@ -160,3 +170,67 @@ class AnthropicAdapter:
         if not model:
             raise ModelError("the response names no model")
         return text, "anthropic/" + model
+
+
+class GeminiAdapter:
+    def __init__(self, api_key, model=GEMINI_DEFAULT_MODEL, base_url="https://generativelanguage.googleapis.com",
+                 timeout=600, sleep=time.sleep, max_tries=5, max_tokens=32000,
+                 thinking_budget=8192):
+        if not api_key:
+            raise ModelError("no Gemini API key (GEMINI_API_KEY)")
+        if not GEMINI_MODEL_RE.fullmatch(model or "") or ".." in model:
+            raise ModelError(f"bad Gemini model name {model!r}")
+        u = urllib.parse.urlparse(base_url)
+        if u.scheme != "https" and not (u.scheme == "http" and u.hostname in LOOPBACK):
+            raise ModelError(f"refusing {u.scheme}:// for {u.hostname}: the API key must travel over https")
+        self._key = api_key
+        self.model, self.base, self.timeout = model, base_url.rstrip("/"), timeout
+        self.sleep, self.max_tries, self.max_tokens = sleep, max_tries, max_tokens
+        self.thinking_budget = thinking_budget
+        self._opener = urllib.request.build_opener(_RefuseRedirects)
+
+    def _post(self, body):
+        url = f"{self.base}/v1beta/models/{self.model}:generateContent"
+        req = urllib.request.Request(url, data=json.dumps(body).encode(), method="POST")
+        req.add_header("x-goog-api-key", self._key)
+        req.add_header("content-type", "application/json")
+        with self._opener.open(req, timeout=self.timeout) as r:
+            return json.loads(r.read())
+
+    def complete(self, system, user):
+        body = {"systemInstruction": {"parts": [{"text": system}]},
+                "contents": [{"role": "user", "parts": [{"text": user}]}],
+                "generationConfig": {"responseMimeType": "application/json", "maxOutputTokens": self.max_tokens,
+                                     # thinking tokens count against maxOutputTokens: cap them
+                                     # so the JSON answer always fits
+                                     "thinkingConfig": {"thinkingBudget": self.thinking_budget}}}
+        for attempt in range(1, self.max_tries + 1):
+            try:
+                resp = self._post(body)
+                break
+            except urllib.error.HTTPError as e:
+                with e:
+                    retry_after = e.headers.get("retry-after")
+                if e.code in GEMINI_RETRY_STATUS and attempt < self.max_tries:
+                    try:
+                        wait = min(float(retry_after), 120) if retry_after else min(2 ** attempt, 60)
+                    except ValueError:
+                        wait = min(2 ** attempt, 60)
+                    self.sleep(wait)
+                    continue
+                # The body is not echoed: an error text can quote the request.
+                raise ModelError(f"Gemini API HTTP {e.code}") from None
+            except (urllib.error.URLError, OSError, ValueError) as e:
+                raise ModelError(f"Gemini API: {type(e).__name__}") from None
+        if (resp.get("promptFeedback") or {}).get("blockReason"):
+            raise ModelError("the prompt was blocked: no verdicts")
+        cands = resp.get("candidates") or []
+        if not cands or cands[0].get("finishReason") != "STOP":
+            why = cands[0].get("finishReason") if cands else "no candidate"
+            raise ModelError(f"model stopped with {why!r}: no verdicts")
+        parts = (cands[0].get("content") or {}).get("parts") or []
+        text = "".join(p.get("text", "") for p in parts if isinstance(p, dict) and not p.get("thought"))
+        model = resp.get("modelVersion")
+        if not model:
+            raise ModelError("the response names no model")
+        return text, "gemini/" + model

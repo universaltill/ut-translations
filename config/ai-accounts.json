@@ -6,6 +6,13 @@
       "role": "reviewer",
       "note": "Weblate bot (user id 12). Reviews and approves; never approves legal keys (a human-reviewers member does). The model label is the family; a future translator account must name a different model (ut-docs#4366)."
     },
+    "bot-universal-till-ai-reviewer-gemini": {
+      "model": "gemini",
+      "role": "reviewer",
+      "keychain": "weblate-gemini-reviewer",
+      "token_env": "WEBLATE_GEMINI_REVIEWER_TOKEN",
+      "note": "Weblate bot for the Gemini reviewer (ut-docs#5532, owner-approved 2026-11-04). A third family beside claude and codex. Reviews and approves strings written by another family; never approves legal, money, tax or receipt keys (a human does); can only escalate, never edits text. The Weblate user must be created before it is used; its token is Keychain weblate-gemini-reviewer."
+    },
     "bot-universal-till-bootstrap-approver": {
       "model": "owner-bootstrap",
       "role": "reviewer",
