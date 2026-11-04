@@ -1,0 +1,172 @@
+"""When a bundle is rebuilt (tools/bundle_refresh.py, ut-docs#5479): the
+stale/never/empty/current verdict, the opt-in list, and the workflow's shape
+(no secret, publish-bundle is only started for the opted-in languages)."""
+
+import io
+import json
+import os
+import re
+import sys
+import threading
+import unittest
+from contextlib import redirect_stderr, redirect_stdout
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+
+import bundle_refresh as R  # noqa: E402
+
+WF = os.path.join(ROOT, ".github", "workflows", "refresh-bundles.yml")
+
+
+def T(ymd, secs=0):
+    return R.version_time(f"2.{ymd}.{secs}")
+
+
+def row(code, when, approved=10):
+    return {"code": code, "changed": when, "approved": approved}
+
+
+class Classify(unittest.TestCase):
+    def test_verdicts(self):
+        rows = [row("de", T("20261030")), row("pt", T("20261104", 1)), row("tr", T("20261104", 4)),
+                row("fa", T("20261104")), row("it", T("20261104"), 0), row("zh_Hans", T("20261101"))]
+        versions = {"de": "2.20261104.1", "pt": "2.20261104.2", "tr": "2.20261104.3"}
+        got = {c: s for c, _t, s, _v in R.classify(rows, versions)}
+        self.assertEqual(got, {"de": "current", "pt": "current", "tr": "stale", "fa": "never",
+                               "it": "empty", "zh_Hans": "never"})
+
+    def test_unusable_inputs_err_towards_a_rebuild(self):
+        got = R.classify([row("de", None)], {"de": "2.20261104.1"})
+        self.assertEqual(got[0][2], "stale")
+        got = R.classify([row("de", T("20261001"))], {"de": "garbage"})
+        self.assertEqual(got[0][2], "never")
+
+    def test_zh_hans_tag_matches_catalogue(self):
+        got = R.classify([row("zh_Hans", T("20261101"))], {"zh-hans": "2.20261102.1"})
+        self.assertEqual(got[0][:3], ("zh_Hans", "zh-hans", "current"))
+
+    def test_only_opted_in_and_behind_languages_dispatch(self):
+        rows = [("de", "de", "stale", "-"), ("tr", "tr", "never", "-"), ("fa", "fa", "current", "-"),
+                ("it", "it", "empty", "-"), ("pt", "pt", "stale", "-")]
+        self.assertEqual(R.to_dispatch(rows, "de, fa,it"), ["de"])
+        self.assertEqual(R.to_dispatch(rows, ""), [])
+        self.assertEqual(R.to_dispatch(rows, None), [])
+
+
+class Handler(BaseHTTPRequestHandler):
+    def log_message(self, *a):
+        pass
+
+    def do_GET(self):
+        if "/languages/" in self.path:
+            body = {"results": [{"code": "tr", "last_change": "2026-11-04T06:39:26Z", "approved": 5}]}
+        else:
+            body = {"plugins": [{"version": "2.20261030.9", "availableLocales": ["tr"]}], "nextPageToken": ""}
+        data = json.dumps(body).encode()
+        self.send_response(200)
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
+
+class TwoListings(Handler):
+    def do_GET(self):
+        body = {"plugins": [{"version": "2.20261104.5", "availableLocales": ["tr"]},
+                            {"version": "2.20261030.9", "availableLocales": ["tr"]}]}
+        data = json.dumps(body).encode()
+        self.send_response(200)
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
+
+class Live(unittest.TestCase):
+    def test_reads_both_public_lists(self):
+        srv = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+        threading.Thread(target=srv.serve_forever, daemon=True).start()
+        try:
+            base = f"http://127.0.0.1:{srv.server_address[1]}"
+            rows = R.weblate_rows(base, "universal-till")
+            self.assertEqual(rows, [{"code": "tr", "changed": R.version_time("2.20261104.23966"), "approved": 5}])
+            self.assertEqual(R.published_versions(base), {"tr": "2.20261030.9"})
+            self.assertEqual(R.classify(rows, R.published_versions(base))[0][2], "stale")
+        finally:
+            srv.shutdown()
+            srv.server_close()
+
+    def test_newest_listing_of_a_tag_counts(self):
+        srv = ThreadingHTTPServer(("127.0.0.1", 0), TwoListings)
+        threading.Thread(target=srv.serve_forever, daemon=True).start()
+        try:
+            self.assertEqual(R.published_versions(f"http://127.0.0.1:{srv.server_address[1]}"),
+                             {"tr": "2.20261104.5"})
+        finally:
+            srv.shutdown()
+            srv.server_close()
+
+    def test_same_day_edit_after_the_build_is_stale_before_it_is_not(self):
+        v = {"de": "2.20261104.43200"}  # built 12:00 UTC
+        self.assertEqual(R.classify([row("de", T("20261104", 43199))], v)[0][2], "current")
+        self.assertEqual(R.classify([row("de", T("20261104", 43201))], v)[0][2], "stale")
+
+    def test_non_numeric_approved_is_empty_not_a_crash(self):
+        old = R._get_json
+        R._get_json = lambda url, timeout=30: [{"code": "de", "last_change": "x", "approved": "12"}]
+        try:
+            rows = R.weblate_rows("https://w.example", "p")
+        finally:
+            R._get_json = old
+        self.assertEqual(R.classify(rows, {})[0][2], "empty")
+
+    def test_main_prints_one_dispatch_line(self):
+        srv = ThreadingHTTPServer(("127.0.0.1", 0), Handler)
+        threading.Thread(target=srv.serve_forever, daemon=True).start()
+        base = f"http://127.0.0.1:{srv.server_address[1]}"
+        old = {k: os.environ.get(k) for k in ("WEBLATE_URL", "MARKETPLACE_CATALOG_URL")}
+        os.environ["WEBLATE_URL"] = os.environ["MARKETPLACE_CATALOG_URL"] = base
+        out, err = io.StringIO(), io.StringIO()
+        try:
+            with redirect_stdout(out), redirect_stderr(err):
+                self.assertEqual(R.main(["--publish-list", "tr,fa"]), 0)
+        finally:
+            for k, v in old.items():
+                os.environ.pop(k, None) if v is None else os.environ.__setitem__(k, v)
+            srv.shutdown()
+            srv.server_close()
+        self.assertEqual(out.getvalue(), 'dispatch=["tr"]\n')
+
+    def test_refuses_plain_http_off_loopback(self):
+        with self.assertRaises(R.RefreshError):
+            R.published_versions("http://example.com")
+
+
+class WorkflowShape(unittest.TestCase):
+    def setUp(self):
+        with open(WF, encoding="utf-8") as f:
+            self.text = f.read()
+
+    def test_no_secret_and_least_privilege(self):
+        self.assertNotIn("secrets.", self.text)
+        self.assertIn("\npermissions: {}\n", self.text)
+        self.assertNotIn("contents: write", self.text)
+        self.assertEqual(len(re.findall(r"^\s+actions: write$", self.text, re.M)), 1)
+        self.assertNotIn("self-hosted", self.text)
+
+    def test_actions_are_pinned(self):
+        for m in re.finditer(r"uses: (\S+)", self.text):
+            self.assertRegex(m.group(1), r"@[0-9a-f]{40}$")
+
+    def test_no_expression_in_a_script(self):
+        for body in re.findall(r"run: \|\n((?:\s{10}.*\n?)+)", self.text):
+            self.assertNotIn("${{", body)
+
+    def test_dispatches_only_publish_bundle_on_main(self):
+        self.assertIn("gh workflow run publish-bundle.yml", self.text)
+        self.assertIn("--ref main", self.text)
+        self.assertIn("vars.BUNDLE_AUTO_PUBLISH", self.text)
+
+
+if __name__ == "__main__":
+    unittest.main()
