@@ -729,6 +729,54 @@
       "0.34"
     ]
   },
+  "setup.next_steps.devices": {
+    "explanation": "Next-steps line: payment terminal and printer are set up per device; links to Settings.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.next_steps.dismiss": {
+    "explanation": "Accessible name of the ✕ that removes the Next steps card for good on this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.next_steps.no_catalog": {
+    "explanation": "Next-steps line, only on a plan where the till masters the catalogue: products were not copied; links to Import. \"Catalog\" is the nav.catalog label.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.next_steps.pins": {
+    "explanation": "Next-steps line: staff PINs are never copied to a new till; links to Users.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.next_steps.stock": {
+    "explanation": "Next-steps line: stock on hand is not copied; links to Inventory.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.next_steps.title": {
+    "explanation": "Heading of the dismissible card on the sale screen after a till was set up from the shop's cloud account (my.), listing what is not copied to a new till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "setup.shop_type.cafe": {
     "explanation": "",
     "flags": "",

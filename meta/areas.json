@@ -22,7 +22,7 @@
   "staff": {
     "name": "Staff",
     "description": "Users, permissions, sign-in, PIN elevation and shifts.",
-    "keys": 266
+    "keys": 267
   },
   "settings": {
     "name": "Settings",
@@ -37,7 +37,7 @@
   "setup": {
     "name": "Setup",
     "description": "First-run setup, the guided tour, demo data and onboarding notices.",
-    "keys": 151
+    "keys": 157
   },
   "selforder": {
     "name": "Self-order",

@@ -899,6 +899,14 @@
       "0.34"
     ]
   },
+  "elevation.summary.reduce_line_qty": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier lowers a priced basket line's quantity (the minus button, the quantity box, or zero): it names the item, the old and new quantity and the void/comp/waste reason the approver is allowing.\n\nPlaceholders:\n- %s: item name\n- %s: current quantity\n- %s: new quantity\n- %s: reason (void, comp or waste)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.summary.remove_demo_data": {
     "explanation": "",
     "flags": "",

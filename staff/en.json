@@ -99,6 +99,7 @@
   "elevation.summary.permission_grant": "Grant the %s role the \"%s\" permission.",
   "elevation.summary.permission_revoke": "Revoke the \"%s\" permission from the %s role.",
   "elevation.summary.printer_settings": "Change the printer settings.",
+  "elevation.summary.reduce_line_qty": "Reduce %s from %s to %s as %s.",
   "elevation.summary.remove_demo_data": "Permanently remove all untouched sample data (catalogue items, customers and promo codes).",
   "elevation.summary.remove_demo_item": "Permanently remove sample item %s.",
   "elevation.summary.remove_demo_promo": "Permanently remove sample promo code %s.",
