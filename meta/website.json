@@ -1,0 +1,4027 @@
+{
+  "about.body": {
+    "explanation": "About paragraph: the product is built by Task Runner Technology LTD, a British company; belief that every shop anywhere deserves a good point of sale. Company identity statement, keep the legal name and country.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "about.title": {
+    "explanation": "Heading of the About section.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.cta": {
+    "explanation": "Primary button on the Android page: download the Android app.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.cta2": {
+    "explanation": "Secondary link on the Android page: jump to the set-up steps.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.faq.a1": {
+    "explanation": "Android FAQ answer 1: not to sell; a sale completes with no connection; Wi-Fi is needed to work with other tills on the shop's network.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.faq.a2": {
+    "explanation": "Android FAQ answer 2: yes, every version runs the same till; the tablet can be the main till or join a main till on another platform.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.faq.a3": {
+    "explanation": "Android FAQ answer 3: not yet; download from our site; Android warns the first time because the app is from outside Google Play, which is expected.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.faq.a4": {
+    "explanation": "Android FAQ answer 4: Android 7.0 or newer; a 64-bit version for most tablets, one for older 32-bit tablets, a universal one when unsure.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.faq.q1": {
+    "explanation": "Android FAQ question 1: does the tablet need Wi-Fi or mobile data.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.faq.q2": {
+    "explanation": "Android FAQ question 2: can an Android tablet work alongside a Windows or Raspberry Pi till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.faq.q3": {
+    "explanation": "Android FAQ question 3: is it on Google Play.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.faq.q4": {
+    "explanation": "Android FAQ question 4: which tablets does it run on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.faq.title": {
+    "explanation": "Heading of the FAQ on the Android page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.lede": {
+    "explanation": "Intro paragraph of the Android page: the whole till runs on the tablet so a sale completes offline; free.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.limits.i1": {
+    "explanation": "Limitation: the app is not on Google Play yet, it is downloaded from this website.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.limits.i2": {
+    "explanation": "Limitation: Android does not let an app replace itself silently, so every update needs one tap in Android's installer.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.limits.i3": {
+    "explanation": "Limitation: an Android till joined to a main till does not update itself to match; install the new version by hand.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.limits.i4": {
+    "explanation": "Limitation: card payments go through the shop's own card machine and provider, which may need its own connection.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.limits.i5": {
+    "explanation": "Limitation: screen pinning is Android's standard pin; it starts only after the user accepts Android's prompt, and someone who knows Android's unpin gesture can leave it. Security-relevant, keep accurate.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.limits.t": {
+    "explanation": "Heading of the limitations list on the Android page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.note": {
+    "explanation": "Small note under the Android buttons: Android 7.0 or newer, installed from our website, not yet from Google Play.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.setup.s1": {
+    "explanation": "Android step 1: open the download page on the tablet and tap the Android app; most tablets need the 64-bit version which the page picks automatically.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.setup.s2": {
+    "explanation": "Android step 2: allow installing from unknown sources when Android asks; Play Protect may say it has not seen the app before, tap Scan app, then continue. Button names must match Android's wording in the target language.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.setup.s3": {
+    "explanation": "Android step 3: open Universal Till and follow the setup (language, country, shop name), then add products.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.setup.steps.t": {
+    "explanation": "Sub-heading above the numbered Android set-up steps.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.setup.title": {
+    "explanation": "Heading of the Android set-up section.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.shot": {
+    "explanation": "Caption and image alt text of the Android sale-screen screenshot: the sale screen is the same on a tablet as on every other till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.title": {
+    "explanation": "Main heading of the Android till page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.what.bt.d": {
+    "explanation": "Feature text: pair a Bluetooth barcode scanner or scale from inside the till; Android asks once to allow Bluetooth.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.what.bt.t": {
+    "explanation": "Feature title: Bluetooth scanners and scales.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.what.kiosk.d": {
+    "explanation": "Feature text: set a tablet to self-order so customers order themselves; the till asks Android to pin the screen, which blocks the Home and Back buttons.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.what.kiosk.t": {
+    "explanation": "Feature title: self-order kiosk.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.what.multi.d": {
+    "explanation": "Feature text: an Android tablet can be the main till or join another till on the shop's network; sales sync between them.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.what.multi.t": {
+    "explanation": "Feature title: one till or several.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.what.offline.d": {
+    "explanation": "Feature text: everything is stored on the tablet; if Wi-Fi drops the status bar says so and sales continue.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.what.offline.t": {
+    "explanation": "Feature title: keeps selling offline.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.what.same.d": {
+    "explanation": "Feature text: the Android app runs the very same till as Windows, Mac and Raspberry Pi: sale screen, catalogue, stock, receipts and so on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.what.same.t": {
+    "explanation": "Feature title: the same till, not a cut-down app.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.what.title": {
+    "explanation": "Heading of the section listing what an Android tablet till offers.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.what.update.d": {
+    "explanation": "Feature text: when a new version is out tap the update chip and confirm in Android's own installer; the first time Android also asks for permission. 'Update chip' must match the till's status-bar label.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "android.what.update.t": {
+    "explanation": "Feature title: updates from inside the till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "close.cta": {
+    "explanation": "Button of the closing block: start free (links to the Find your setup wizard).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "close.talk": {
+    "explanation": "Lead-in text before a contact link/email address: 'Or talk to a person:'. Ends with a colon; the address follows.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "close.title": {
+    "explanation": "Heading of the closing call-to-action block on the home page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "consent.accept": {
+    "explanation": "Consent banner button: accept analytics cookies. Must be as visually and verbally equal to Reject as the original.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "consent.label": {
+    "explanation": "Accessible name (aria-label, read by screen readers only) of the cookie consent banner. One word.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "consent.privacy": {
+    "explanation": "Link in the consent banner to the privacy policy.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "consent.reject": {
+    "explanation": "Consent banner button: reject analytics cookies. Must be as easy and clear as Accept.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "consent.text": {
+    "explanation": "Cookie consent banner text: we would like to use Google Analytics cookies to see how visitors use the site; nothing is set unless the visitor accepts. Consent wording, keep the 'nothing is set unless you accept' promise exact. 'Google Analytics' is a brand name.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "cta.btn": {
+    "explanation": "Button label of the final call-to-action band: get started. Currently not referenced by any page (kept because it is in every locale dictionary).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "cta.lede": {
+    "explanation": "Text of the final call-to-action band: free forever for a single till; download today. Pricing claim, keep exact.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "cta.title": {
+    "explanation": "Heading of the final call-to-action band.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.android.about": {
+    "explanation": "Link on the download page to the Android till page. The arrow is a visual cue.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.android.arm64": {
+    "explanation": "Download link label: the 64-bit Android app, right for most devices.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.android.armv7": {
+    "explanation": "Download link label: Android app for older 32-bit devices.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.android.d": {
+    "explanation": "Download card text: Android 7.0 or newer; installed from the website, not Google Play.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.android.note": {
+    "explanation": "Note under the Android download: Android warns about 'unknown sources' the first time, which is expected for an app from outside Google Play and not a sign of danger. The quoted phrase must match Android's own wording in the target language. Security-relevant reassurance, keep accurate.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.android.universal": {
+    "explanation": "Download link label: the larger universal Android app for people unsure which to pick.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.lx64.d": {
+    "explanation": "Download card text: 64-bit PC or mini-PC running Linux.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.lx64.deb": {
+    "explanation": "Download link label: Debian/Ubuntu package. '.deb' extension, keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.lx64.tar": {
+    "explanation": "Download link label: generic Linux archive. '.tar.gz' extension, keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.lxarm.d": {
+    "explanation": "Download card text: ARM boards other than Raspberry Pi.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.lxarm.tar": {
+    "explanation": "Download link label: ARM64 Linux archive. '.tar.gz' extension, keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.mac.d": {
+    "explanation": "Download card text: Apple Silicon Macs (M1 and newer).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.mac.dmg": {
+    "explanation": "Download link label: macOS app disk image. '.dmg' extension, keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.mac.tar": {
+    "explanation": "Download link label: portable macOS build. '.tar.gz' extension, keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.next": {
+    "explanation": "Long paragraph after the downloads, per platform: Windows installer, macOS .dmg (states it is Developer ID signed and notarized by Apple, a security claim), Raspberry Pi/Debian .deb, portable archives, and the dedicated Raspberry Pi kiosk setup (reboot once, boots fullscreen into the till; Settings, Display, Exit to OS window with the manager PIN returns to the desktop). Contains HTML tags (strong, code); keep tags, file names and commands unchanged, translate only the prose. Menu names must match the OS and till wording.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.note.android": {
+    "explanation": "Note for the detected-Android download: Android 7.0 or newer, installed outside Google Play, allow unknown sources when prompted.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.note.android.armv7": {
+    "explanation": "Note under the 32-bit Android download: needs Android 7.0 or newer, installed outside Google Play, allow unknown sources when prompted. The quoted setting name must match Android's wording.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.note.linux64": {
+    "explanation": "Note for the detected-Linux download: Debian or Ubuntu, 64-bit.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.note.macos": {
+    "explanation": "Note for the detected-Mac download: Apple Silicon (M1 and newer), the .dmg app.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.note.pi": {
+    "explanation": "Note for the detected-Raspberry Pi download: 64-bit Raspberry Pi OS or ARM Linux.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.note.pi.hints": {
+    "explanation": "Same as dl.note.pi but shown when the platform was detected through browser Client Hints; the bracket is a technical aside.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.note.windows": {
+    "explanation": "Note for the detected-Windows download: Windows 10 or 11, 64-bit, guided installer.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.os.android": {
+    "explanation": "Operating system name in the platform selector. 'Android' is a brand name.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.os.linux64": {
+    "explanation": "Platform selector label for 64-bit Linux.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.os.macos": {
+    "explanation": "Operating system name in the platform selector, with the chip family (Apple Silicon) in brackets.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.os.pi": {
+    "explanation": "Platform selector label for Raspberry Pi and other ARM64 boards.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.os.windows": {
+    "explanation": "Operating system name in the platform selector. 'Windows' is a brand name.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.others": {
+    "explanation": "Small sub-heading above the list of all downloads on every platform.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.pi.d": {
+    "explanation": "Download card text: Raspberry Pi 4 or 5 running 64-bit Raspberry Pi OS.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.pi.deb": {
+    "explanation": "Download link label: Raspberry Pi package. '.deb' extension, keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.pilotlink": {
+    "explanation": "Link on the download page offering assisted setup via the free pilot instead. Arrow is a visual cue.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.primary": {
+    "explanation": "Label on the main (detected-platform) download button. One word.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.steps": {
+    "explanation": "Link to the three-steps getting started guide.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.sub": {
+    "explanation": "Sub-heading of the download page: free and offline-first; a best-guess device is preselected.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.title": {
+    "explanation": "Main heading of the download page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.version.prefix": {
+    "explanation": "Text before the latest version number on the download page, for example 'Latest version: 1.2.3'. Ends with a colon and a space; the page appends the number.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.win.d": {
+    "explanation": "Download card text: supported Windows versions (10 or 11, 64-bit).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.win.exe": {
+    "explanation": "Download link label: Windows installer. '.exe' is a file extension, keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "dl.win.zip": {
+    "explanation": "Download link label: portable Windows build. '.zip' is an extension, keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.a1": {
+    "explanation": "FAQ answer 1: yes; EPOS, POS, till system and cash register all mean the same selling software.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.a2": {
+    "explanation": "FAQ answer 2: the till is free forever on own hardware, open source under the MIT licence, no monthly fee for the core; paid plans only cover cloud and services. Pricing and licence claims, keep exact.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.a3": {
+    "explanation": "FAQ answer 3: yes, a full sale completes offline; syncing is a bonus; card payments may need a connection depending on the provider.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.a4": {
+    "explanation": "FAQ answer 4: Raspberry Pi, old PC or laptop, mini-PC, touch terminal; downloads for Windows, macOS, Linux, Raspberry Pi and Android. Also states the iPhone and iPad apps are in internal testing (not on the App Store) and that a DIY till costs from about 70 pounds. Availability and price claims, keep exact.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.a5": {
+    "explanation": "FAQ answer 5: yes, any card machine and processor; we are never in the money flow, no fee creep, no frozen payouts. Pricing claim.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.a6": {
+    "explanation": "FAQ answer 6: export from the current system and import; Loyverse, Square, SumUp and Shopify exports are recognised automatically.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.q1": {
+    "explanation": "FAQ question 1 (also used in structured data for search engines): whether Universal Till is an EPOS system.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.q2": {
+    "explanation": "FAQ question 2: is it really free.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.q3": {
+    "explanation": "FAQ question 3: does it work without internet.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.q4": {
+    "explanation": "FAQ question 4: what hardware is needed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.q5": {
+    "explanation": "FAQ question 5: can the shop take card payments.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.q6": {
+    "explanation": "FAQ question 6: can the shop move over from its current till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.sub": {
+    "explanation": "Sub-heading of the FAQ: explains the words EPOS, POS, till system and cash register as search terms and names the two topics, what it is and what it costs.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "faq.title": {
+    "explanation": "Heading of the home page FAQ section.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "foot.cookies": {
+    "explanation": "Footer link that re-opens the cookie consent banner so the visitor can change their choice.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "foot.impressum": {
+    "explanation": "Footer link to the legal notice (Impressum) page. Germany-specific legal term; use the local legal-notice term where one exists.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "foot.owner": {
+    "explanation": "Footer line naming the company that owns the product (Task Runner Technology LTD). Company identity; keep the legal name unchanged.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "foot.privacy": {
+    "explanation": "Footer link to the privacy policy page.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "foot.rights": {
+    "explanation": "Footer line stating the product is open source under the MIT licence. Licence statement, keep exact.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "foot.tagline": {
+    "core": true,
+    "explanation": "Tagline in the page footer under the logo: the free, offline-first EPOS and till system.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "foot.terms": {
+    "explanation": "Footer link to the terms of use page.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "free.body": {
+    "explanation": "Paragraph listing what is included free (tables, kitchen screens, self-order kiosk, stock, staff and shifts, promotions, vouchers, reports, an AI assistant that uses the shop's own AI provider key). Pricing claim, keep the list exact.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "free.cta": {
+    "explanation": "Link in the free section to the plan finder (Find your setup). Arrow is a visual cue.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "free.pay": {
+    "explanation": "Sentence under the free list: anything running in the shop is free; the shop only pays for our cloud and our people. Pricing claim.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "free.title": {
+    "explanation": "Heading of the 'free' section on the home page: a promise that free really is free.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "get.download": {
+    "explanation": "Button under the three steps: download for the visitor's device.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "get.s1.d": {
+    "explanation": "Three-steps card 1 text: use a Raspberry Pi, old laptop or touch terminal the shop already has.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "get.s1.t": {
+    "explanation": "Three-steps card 1 title: get a device.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "get.s2.d": {
+    "explanation": "Three-steps card 2 text: download the ready-made installer and open it; one small app, nothing complicated.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "get.s2.t": {
+    "explanation": "Three-steps card 2 title: install Universal Till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "get.s3.d": {
+    "explanation": "Three-steps card 3 text: pick language and currency, set a PIN, start selling in a few minutes.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "get.s3.t": {
+    "explanation": "Three-steps card 3 title: follow the setup wizard.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "get.sub": {
+    "explanation": "Sub-heading of the three-steps section: no technical setup needed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "get.title": {
+    "explanation": "Heading of the three-steps section on the home page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.back": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.back. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.clear": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.clear. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.count": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.count. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.\n\nPlaceholders:\n- 1: {total} — filled in by the page; keep unchanged",
+    "flags": "placeholders:\"{total}\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.count.filtered": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.count.filtered. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.\n\nPlaceholders:\n- 1: {n} — filled in by the page; keep unchanged\n- 2: {total} — filled in by the page; keep unchanged",
+    "flags": "placeholders:\"{n}\":\"{total}\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.count.none": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.count.none. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.\n\nPlaceholders:\n- 1: {q} — filled in by the page; keep unchanged",
+    "flags": "placeholders:\"{q}\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.crumb.label": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.crumb.label. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.intro": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.intro. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.meta.desc": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.meta.desc. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.more": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.more. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.\n\nPlaceholders:\n- 1: {section} — filled in by the page; keep unchanged",
+    "flags": "placeholders:\"{section}\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.next": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.next. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.pager.label": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.pager.label. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.prev": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.prev. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.search.label": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.search.label. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.search.placeholder": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.search.placeholder. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.shot.alt": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.shot.alt. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.\n\nPlaceholders:\n- 1: {title} — filled in by the page; keep unchanged",
+    "flags": "placeholders:\"{title}\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.title": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.title. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "help.untranslated": {
+    "explanation": "Text of the public help pages (/<locale>/help/), key help.untranslated. Plain text; keep placeholders such as {n} unchanged; friendly tone for a small-business owner.\n\nPlaceholders:\n- 1: {language} — filled in by the page; keep unchanged",
+    "flags": "placeholders:\"{language}\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "hero.cta1": {
+    "explanation": "Primary hero button: start free (links to the Find your setup wizard, which leads to the download).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "hero.cta2": {
+    "explanation": "Secondary hero button: opens the source code repository on GitHub.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "hero.lede": {
+    "explanation": "Hero paragraph on the home page: never stops selling, runs on hardware the shop already owns, costs nothing to start, no minimum term on monthly billing except Germany's managed TSE line (the exception stays in the same sentence). Pricing claims, keep exact.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "hero.note": {
+    "explanation": "Small note under the hero buttons, three facts separated by middle dots: MIT licensed, one small binary, works today. 'MIT' is a licence name, keep it.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "hero.pilotlink": {
+    "explanation": "Link under the hero buttons inviting cafes and shops to the free pilot. The arrow is a visual cue. Longest hero string; keep concise.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "hero.title": {
+    "explanation": "Main heading (h1) of the home page hero: three short parallel phrases about ownership (your till, your money, your data). Keep the rhythm of three.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "hw.androidlink": {
+    "explanation": "Link in the Hardware section to the Android till page. The arrow is a visual cue.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "hw.lede": {
+    "explanation": "Paragraph of the Hardware section: Raspberry Pi, old PC, mini-PC, touch terminal; one small binary runs on all.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "hw.title": {
+    "explanation": "Heading of the Hardware section on the home page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "language.back": {
+    "core": true,
+    "explanation": "Back link on the language picker page, returns to the page the visitor came from.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "language.current": {
+    "core": true,
+    "explanation": "Visible and spoken marker on the language picker card of the language the visitor is currently reading.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "language.select": {
+    "core": true,
+    "explanation": "Main heading of the language picker page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "language.subtitle": {
+    "core": true,
+    "explanation": "Sub-heading under the language picker heading: the choice applies to the whole site. Fits one line.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "manage.catalog": {
+    "explanation": "Feature title: catalogue and categories.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "manage.catalog.d": {
+    "explanation": "Feature text: items, prices, icons and which tills see what.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "manage.mods": {
+    "explanation": "Feature title: options and add-ons (modifiers such as milk choice or size).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "manage.mods.d": {
+    "explanation": "Feature text: milk choices, sizes and extras with prices in one place.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "manage.reports": {
+    "explanation": "Feature title: sales reports.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "manage.reports.d": {
+    "explanation": "Feature text: sales by hour and by till, A4 printing. Ends with a coming-soon marker, keep that honesty.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "manage.sub": {
+    "explanation": "Sub-heading: at my.universaltill.com the owner changes catalogue, modifiers and till settings and sees sales from any browser; every till picks up changes. The address is a URL, keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "manage.title": {
+    "explanation": "Heading of the cloud management section: manage the shop from anywhere.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.android-till.desc": {
+    "explanation": "Meta description of the Android till page: turn a tablet into a till; free, open-source EPOS for Android 7.0 and newer; keeps selling offline. Pricing claim (free), keep exact.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.android-till.title": {
+    "core": true,
+    "explanation": "Browser-tab title and search headline of the Android till page. Keep 'Universal Till' and the product name Android.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.download.desc": {
+    "explanation": "Meta description of the download page: free EPOS and POS software for Windows, macOS, Linux, Raspberry Pi and Android; free and offline-first.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.download.title": {
+    "core": true,
+    "explanation": "Browser-tab title and search headline of the download page. Keep 'Universal Till'.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.find-your-setup.desc": {
+    "explanation": "Meta description (search-result snippet) of the Find your setup page. Plain sentence, about 150 characters, friendly tone, addresses a small-business owner. Keep the claim that the page stores and sends nothing.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.find-your-setup.title": {
+    "core": true,
+    "explanation": "Browser-tab title and search-result headline of the Find your setup page (/find-your-setup). Keep the brand name 'Universal Till' unchanged; keep it short, ideally under 60 characters.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.home.desc": {
+    "explanation": "Meta description (search snippet) of the home page: free EPOS and till, no monthly fee for the core, no minimum term on monthly billing (Germany's managed TSE line excepted). Pricing claims, keep exact. At most 160 characters (seo-prerender test).",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.home.title": {
+    "core": true,
+    "explanation": "Browser-tab title and search headline of the home page. Keep 'Universal Till' unchanged; terms EPOS and POS are the words shop owners search for, keep them or use the local equivalent. Under about 60 characters.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.language.desc": {
+    "explanation": "Meta description of the language picker page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.language.title": {
+    "core": true,
+    "explanation": "Browser-tab title of the language picker page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.nf.title": {
+    "core": true,
+    "explanation": "Browser-tab title of the 404 page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.pilot.desc": {
+    "explanation": "Meta description of the pilot page: addressed to cafe and shop owners in Germany or the UK; the pilot costs nothing, we set it up with them, they keep their data. Free-of-charge claim, keep exact.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.pilot.title": {
+    "core": true,
+    "explanation": "Browser-tab title and search headline of the pilot programme page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.start.desc": {
+    "explanation": "Meta description of the Getting started page: install on Windows, macOS, Raspberry Pi or Linux and set up in minutes, step by step, in the visitor's language.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.start.title": {
+    "core": true,
+    "explanation": "Browser-tab title and search headline of the Getting started page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nav.about": {
+    "core": true,
+    "explanation": "Top navigation link to the About section. Tight space.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nav.download": {
+    "core": true,
+    "explanation": "Top navigation button/link to the download page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nav.get": {
+    "core": true,
+    "explanation": "Top navigation button (accent style) to the Find your setup wizard, labelled Get started. Tight space.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nav.hardware": {
+    "core": true,
+    "explanation": "Top navigation link to the Hardware section. One word; tight space.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nav.language": {
+    "core": true,
+    "explanation": "Accessible label of the language switcher link in the top navigation.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nav.menu": {
+    "core": true,
+    "explanation": "Accessible label and text of the mobile menu (burger) button.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nav.menu.close": {
+    "core": true,
+    "explanation": "Accessible label of the mobile menu button while the menu is open.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nav.news": {
+    "core": true,
+    "explanation": "Top navigation link to the News (blog) section. One short word; tight space.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nav.plugins": {
+    "core": true,
+    "explanation": "Top navigation link to the Plugins section/page. One word; tight space.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nav.solutions": {
+    "core": true,
+    "explanation": "Top navigation link to the Solutions section (kinds of shops). One word if possible; space is tight in the nav bar.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nav.start": {
+    "core": true,
+    "explanation": "Top navigation link to the Find your setup wizard, labelled Get started. Tight space.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nav.tour": {
+    "core": true,
+    "explanation": "Top navigation link to the Tour (screenshots) section. Tight space.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nav.why": {
+    "core": true,
+    "explanation": "Top navigation link to the 'Why it is different' section. Tight space in the nav bar.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "news.back": {
+    "explanation": "Back link at the top of a blog post, returns to the News index. The arrow is a visual cue; flip it for right-to-left languages.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "news.empty": {
+    "explanation": "Empty-state message on the News index when there are no posts.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "news.machine": {
+    "explanation": "Small label on a blog post that was translated by machine.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "news.original": {
+    "explanation": "Link text on a translated blog post, pointing to the English original.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "news.sub": {
+    "explanation": "Subtitle on the News index page: product news, release notes and guides.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "news.untranslated": {
+    "explanation": "Notice on a blog post that has no translation in the visitor's language and is shown in English.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nf.download": {
+    "explanation": "Button on the 404 page: go to the download page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nf.home": {
+    "explanation": "Button on the 404 page: go to the home page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nf.lede": {
+    "explanation": "Paragraph under the 404 heading: the page may have moved or the link may be wrong. Apologetic, neutral tone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "nf.title": {
+    "explanation": "Main heading of the 404 (page not found) page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.ask.i1": {
+    "explanation": "Pilot ask bullet: honest day-to-day feedback.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.ask.i2": {
+    "explanation": "Pilot ask bullet: a short parallel (shadow) run next to the current till before going live.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.ask.t": {
+    "explanation": "Heading of the list of what we ask of pilot participants.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.badge": {
+    "explanation": "Small badge above the heading on the pilot page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.cta": {
+    "explanation": "Primary button on the pilot page: opens an email to us.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.get.i1": {
+    "explanation": "Pilot benefit bullet: free of charge. Pricing claim.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.get.i2": {
+    "explanation": "Pilot benefit bullet: we set it up with the shop (catalogue, hardware, training).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.get.i3": {
+    "explanation": "Pilot benefit bullet: the shop keeps its data, full export any time, no lock-in.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.get.t": {
+    "explanation": "Heading of the list of what pilot participants get.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.lede": {
+    "explanation": "Intro paragraph on the pilot page: we are onboarding a small number of cafes and shops in Germany and the UK as free pilots; ask them to tell us about their shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.meanwhile": {
+    "explanation": "Secondary button or link on the pilot page: download the app while waiting.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.note": {
+    "explanation": "Small note under the pilot buttons: expected reply time (a couple of days).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.title": {
+    "explanation": "Main heading of the pilot programme page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.cta": {
+    "explanation": "Button of the Plugins teaser: go to the plugin list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.lede": {
+    "explanation": "Paragraph of the Plugins teaser: a signed, verified marketplace for payments, integrations, loyalty, themes; one-click install; everything checked before it runs.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.title": {
+    "explanation": "Heading of the Plugins teaser section on the home page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.back": {
+    "explanation": "Back link on a plugin detail page, to the plugin list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.desc": {
+    "explanation": "Meta description of the plugin list page: every plugin is free to download and install from GitHub forever; Universal Till may also offer paid official plugins. Pricing claim, keep exact.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.details": {
+    "explanation": "Heading of the details table on a plugin detail page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.devices": {
+    "explanation": "Row label in the plugin details table: which device types it runs on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.devices.any": {
+    "explanation": "Value in the devices row: runs on all devices.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.download": {
+    "explanation": "Download button on a plugin card: gets the latest release.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.footer": {
+    "explanation": "Footer note of the plugin list page, containing a link: building your own plugin, any listed plugin is a working reference, see the documentation. Contains HTML (an anchor); keep the tag and attributes untouched and translate only the text.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.free": {
+    "explanation": "Price label on a plugin page: the plugin is free. Single word.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.instore": {
+    "explanation": "Sentence on a plugin page: it can also be installed from the plugin store inside the till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.intro": {
+    "explanation": "Intro paragraph of the plugin list page: every plugin listed is free, open source and downloadable from GitHub with no account or payment. Pricing claim, keep exact.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.kind.button": {
+    "explanation": "Singular type label of a plugin on its detail page: button (adds a button).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.kind.integration": {
+    "explanation": "Singular type label of a plugin on its detail page: integration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.kind.language": {
+    "explanation": "Singular type label of a plugin on its detail page: language pack.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.kind.page": {
+    "explanation": "Singular type label of a plugin on its detail page: page (adds a screen).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.kind.payment": {
+    "explanation": "Singular type label of a plugin on its detail page: payment.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.kind.theme": {
+    "explanation": "Singular type label of a plugin on its detail page: theme.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.minversion": {
+    "explanation": "Row label in the plugin details table: the oldest Universal Till version that supports the plugin.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.noperms": {
+    "explanation": "Text shown when a plugin requests no special permissions.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.norelease": {
+    "explanation": "Label on a plugin card with no packaged release yet.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.perm.events": {
+    "explanation": "Permission line: the plugin is told about till events such as a finished sale. Security disclosure.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.perm.lan": {
+    "explanation": "Permission line: the plugin connects to devices on the shop's local network, for example a receipt printer or card reader.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.perm.locale": {
+    "explanation": "Permission line: the plugin adds a language to the till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.perm.net": {
+    "explanation": "Permission line ending with a colon, followed by one internet address supplied by the page.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.perm.net_any": {
+    "explanation": "Permission line: the plugin can connect to any internet address. Security disclosure.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.perm.net_setting": {
+    "explanation": "Permission line: the plugin connects to the address saved in its settings.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.perm.page": {
+    "explanation": "Permission line: the plugin adds its own page or screen to the till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.perm.slot": {
+    "explanation": "Permission line: the plugin adds content to a specific place in the till's screens.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.perm.storage": {
+    "explanation": "Permission line: the plugin stores its own settings and data on the till.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.perm.tender": {
+    "explanation": "Permission line: the plugin can take payments at checkout as a payment method. Security disclosure, keep exact.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.perm.theme": {
+    "explanation": "Permission line: the plugin changes how the till looks.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.perm.view": {
+    "explanation": "Permission line: the plugin reads specific till reports the shop approved, for example sales by day. Data-access disclosure.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.permissions": {
+    "explanation": "Heading of the permissions list on a plugin detail page: what the plugin is allowed to access. Security disclosure.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.price": {
+    "explanation": "Row label in the plugin details table: price.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.publisher": {
+    "explanation": "Row label in the plugin details table: who published the plugin.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.screenshot": {
+    "explanation": "Alt text base for a plugin screenshot image (a number may be appended by the page).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.screenshots": {
+    "explanation": "Heading of the screenshots gallery on a plugin detail page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.source": {
+    "explanation": "Link text to the plugin's source code on GitHub.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.title": {
+    "explanation": "Heading and browser-tab title of the public plugin list page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.type": {
+    "explanation": "Row label in the plugin details table: the plugin's type.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.type.button": {
+    "explanation": "Section heading of button plugins (plural; plugins that add buttons).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.type.integration": {
+    "explanation": "Section heading of integration plugins (plural category name).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.type.language": {
+    "explanation": "Section heading of language pack plugins (plural category name).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.type.page": {
+    "explanation": "Section heading of page plugins (plural; plugins that add a screen).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.type.payment": {
+    "explanation": "Section heading of payment plugins on the plugin list (plural category name).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.type.theme": {
+    "explanation": "Section heading of theme plugins (plural category name).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pluginspage.version": {
+    "explanation": "Row label in the plugin details table: the plugin's version.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "site.fallback_note": {
+    "core": true,
+    "explanation": "Note shown once under the header when a page still contains English text because a string is missing in this language.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "site.legal_english_binding": {
+    "core": true,
+    "explanation": "Notice at the top of a legal page (privacy, terms, legal notice) that has no approved translation: the page is the English text and English is the binding version.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "site.machine_label": {
+    "core": true,
+    "explanation": "Short label (bold lead of a notice band, also an accessible name). Says the page text was translated by AI. Use the usual term for AI in the language, not 'automatic' or 'robot'.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "site.machine_label_badge": {
+    "core": true,
+    "explanation": "Tiny badge next to a language in the language picker meaning 'translated with AI'. At most 12 characters; the local usual abbreviation (KI, YZ, IA) is fine.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "site.machine_label_detail": {
+    "core": true,
+    "explanation": "Second sentence of the translated-with-AI notice band: no person has reviewed the translation yet, and the English text is the reference if something reads wrongly. Calm, factual, no apology.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "site.machine_label_link": {
+    "core": true,
+    "explanation": "Link text in the notice band that opens the same page in English.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "site.machine_label_report": {
+    "core": true,
+    "explanation": "Link text (opens the visitor's email program) to report a wrong translation.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.grocery.d": {
+    "explanation": "Card text for grocery and convenience shops: barcode scanning, weighed items, fast tender (payment), resilience offline.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.grocery.t": {
+    "explanation": "Card title: grocery and convenience shops.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.hospitality.d": {
+    "explanation": "Card text for hospitality: held orders, split payments, fast repeat items, kitchen workflow through plugins.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.hospitality.t": {
+    "explanation": "Card title: cafes and restaurants.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.market.d": {
+    "explanation": "Card text for market stalls: runs on a cheap phone-sized budget, needs no signal, easy to pack up and move.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.market.t": {
+    "explanation": "Card title: market stalls and pop-up shops.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.multi.d": {
+    "explanation": "Card text: add a second till by scanning a QR code; tills sync over the shop's own network (LAN) for free without the cloud.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.multi.t": {
+    "explanation": "Card title: growing to several tills.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.retail.d": {
+    "explanation": "Card text for retail: variants, product photos, catalogue import, branded receipts.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.retail.t": {
+    "explanation": "Card title: retail shops and boutiques.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.service.d": {
+    "explanation": "Card text for service trades (barbers, repairs, workshops): quick sales, VAT invoices and credit notes for business customers.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.service.t": {
+    "explanation": "Card title: service trades.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.sub": {
+    "explanation": "Sub-heading of the Solutions section.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "sol.title": {
+    "explanation": "Heading of the Solutions section on the home page. EPOS = electronic point of sale, use the local common term.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.cta": {
+    "explanation": "Button on the Getting started page: go to the download page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.dev.mac.d": {
+    "explanation": "Device card text: Apple Silicon Macs (M1 and newer) run it natively.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.dev.mac.t": {
+    "explanation": "Device card title: a Mac.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.dev.pc.d": {
+    "explanation": "Device card text: any 64-bit Windows or Linux machine works; gives an old computer a second life.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.dev.pc.t": {
+    "explanation": "Device card title: an old PC or laptop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.dev.pi.d": {
+    "explanation": "Device card text: a Pi 4 or 5 with a touch screen makes a tidy low-cost till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.dev.pi.t": {
+    "explanation": "Device card title: Raspberry Pi (a product name).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.dev.term.d": {
+    "explanation": "Device card text: proper POS terminals work too.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.dev.term.t": {
+    "explanation": "Device card title: a touch terminal.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.help.d": {
+    "explanation": "Card text: the till has a built-in 'How to use the till' guide in the user's language; the download page offers a fresh copy. The quoted guide title must match the till's own help title.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.help.t": {
+    "explanation": "Card title: need a hand?",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.lede": {
+    "explanation": "Intro paragraph: pick a device, install one small app, follow the setup wizard; no technical skills needed, and no minimum term on monthly billing except Germany's managed TSE line (contract claim, the exception stays in the same sentence, keep exact).",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.lx.1": {
+    "explanation": "Linux step 1: download the .tar.gz for the CPU and extract it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.lx.2": {
+    "explanation": "Linux step 2: run the script from the extracted folder. The command is code; do not alter it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.lx.3": {
+    "explanation": "Linux step 3: the browser opens the setup screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.lx.t": {
+    "explanation": "Other Linux install block title, with an emoji icon.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.mac.1": {
+    "explanation": "macOS step 1: download the file and unzip it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.mac.2": {
+    "explanation": "macOS step 2: double-click run-unitill.command; macOS blocks it the first time, so open System Settings, Privacy & Security and click Open Anyway. Menu names must match the operating system's wording in the target language; the file name stays unchanged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.mac.3": {
+    "explanation": "macOS step 3: the browser opens the setup screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.mac.t": {
+    "explanation": "macOS install block title, with an emoji icon. Keep the emoji and 'macOS'.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.pi.1": {
+    "explanation": "Pi step 1: download the .deb package for the board.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.pi.2": {
+    "explanation": "Pi step 2: install it with the command shown. The command is code; do not translate or alter it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.pi.3": {
+    "explanation": "Pi step 3: open the local address to reach the setup screen. The URL is code; do not alter it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.pi.t": {
+    "explanation": "Raspberry Pi / Debian install block title, with an emoji icon.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.s1.d": {
+    "explanation": "Step 1 text: Universal Till is one small app that runs on hardware the shop already owns.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.s1.t": {
+    "explanation": "Step 1 heading, with its number: choose a device. Keep the number and the middle dot.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.s2.d": {
+    "explanation": "Step 2 text: download the version for the device from the download page then follow the steps for the system; every install opens the setup screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.s2.t": {
+    "explanation": "Step 2 heading, with its number: install the app.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.s3.d": {
+    "explanation": "Step 3 text: the first start opens a short wizard.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.s3.t": {
+    "explanation": "Step 3 heading, with its number: follow the setup wizard.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.s4.d": {
+    "explanation": "Step 4 text: add a few products and ring up the first sale.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.s4.t": {
+    "explanation": "Step 4 heading, with its number: start selling.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.sell.add.d": {
+    "explanation": "Card text: add items by hand or import a CSV; Loyverse and Square exports are recognised automatically.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.sell.add.t": {
+    "explanation": "Card title: add products.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.sell.grow.d": {
+    "explanation": "Card text: scan a QR code to add a second till; tills sync over the shop's own network, free of charge.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.sell.grow.t": {
+    "explanation": "Card title: add more tills.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.sell.plug.d": {
+    "explanation": "Card text: open the plugin store for payments, loyalty, themes and more; verified, one-click install.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.sell.plug.t": {
+    "explanation": "Card title: add plugins.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.sell.ring.d": {
+    "explanation": "Card text: scan a barcode or tap a product tile, take cash or card, print or skip the receipt.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.sell.ring.t": {
+    "explanation": "Card title: ring up a sale.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.title": {
+    "explanation": "Main heading of the Getting started page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.w1.d": {
+    "explanation": "Setup wizard item text: pick the till's language, including right-to-left for Persian and Arabic.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.w1.t": {
+    "explanation": "Setup wizard item title: your language.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.w2.d": {
+    "explanation": "Setup wizard item text: sets currency and tax; everything can be changed later in Settings. 'Settings' should match the till's own menu name.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.w2.t": {
+    "explanation": "Setup wizard item title: your country.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.w3.d": {
+    "explanation": "Setup wizard item text: name the shop and choose an admin PIN, then it is ready.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.w3.t": {
+    "explanation": "Setup wizard item title: shop name and PIN.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.win.1": {
+    "explanation": "Windows step 1: download the installer; '.exe' is a file extension, keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.win.2": {
+    "explanation": "Windows step 2: double-click and follow the wizard; it adds Start-menu and desktop shortcuts.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.win.3": {
+    "explanation": "Windows step 3: open the app from the shortcut; the browser shows the setup screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "start.win.t": {
+    "explanation": "Windows install block title, with an emoji icon. Keep the emoji.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "switch.body": {
+    "explanation": "Paragraph: import products from Loyverse, Square, SumUp, Shopify or a spreadsheet; a preview is shown before anything is saved. Competitor names are brand names.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "switch.pro": {
+    "explanation": "Sentence: on the Pro plan we do the move for the shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "switch.side": {
+    "explanation": "Sentence: run Universal Till next to the old till until the shop is sure.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "switch.title": {
+    "explanation": "Heading of the 'switch' section: moving from another till takes an afternoon.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.catalog": {
+    "explanation": "Screenshot caption title: the whole catalogue.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.catalog.d": {
+    "explanation": "Screenshot caption text: barcodes, variants, photos, tax and price.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.inventory": {
+    "explanation": "Screenshot caption title: stock you can trust.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.inventory.d": {
+    "explanation": "Screenshot caption text: receive, adjust, low-stock alerts, returns.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.lang": {
+    "explanation": "Screenshot caption title: speaks your language.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.lang.d": {
+    "explanation": "Screenshot caption text: lists some supported languages and notes right-to-left support. The language list is a statement of fact about the product; keep it consistent with what ships.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.plugins": {
+    "explanation": "Screenshot caption title: a signed plugin store.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.plugins.d": {
+    "explanation": "Screenshot caption text: payments, loyalty, themes; verified, one-click.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.reports": {
+    "explanation": "Screenshot caption title: reports and asking your till questions.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.reports.d": {
+    "explanation": "Screenshot caption text: sales, tax and top items, answered on the device.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.sale": {
+    "explanation": "Screenshot caption title: the fast touch sale screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.sale.d": {
+    "explanation": "Screenshot caption text: product tiles, scanning, one-tap payment.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.sub": {
+    "explanation": "Sub-heading of the tour: real screens from a running till, not mock-ups.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tour.title": {
+    "explanation": "Heading of the screenshots tour section.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "why.exit.d": {
+    "explanation": "Benefit text: no minimum term on monthly billing, cancel any month, take all data away free of charge; the one exception is Germany's managed TSE line, which has a minimum in months per activated main till (merchant terms clause 6; the number comes from the price file). Contract/pricing claim, keep exact.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "why.exit.t": {
+    "explanation": "Benefit title: the plan itself never ties the shop in; the body (why.exit.d) names Germany's managed TSE line as the one exception.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "why.hardware.d": {
+    "explanation": "Benefit text: old PC, laptop, Raspberry Pi, Android tablet or phone; unlimited tills, never charged per till.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "why.hardware.t": {
+    "explanation": "Benefit title: use hardware you already have. Short sentence.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "why.offline.d": {
+    "explanation": "Benefit text: a full sale works with no internet; tills catch up with each other when they reconnect.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "why.offline.t": {
+    "explanation": "Benefit title: the till never stops selling. Short sentence with a full stop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "why.payments.d": {
+    "explanation": "Benefit text: SumUp, Stripe or any standalone card machine; we never take a cut of the shop's takings. Pricing claim, keep exact.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "why.payments.t": {
+    "explanation": "Benefit title: keep your own card provider.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "why.title": {
+    "explanation": "Heading of the 'Why shops switch' section on the home page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.back": {
+    "explanation": "Wizard button: go to the previous question. Short, one word if possible.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.cta.cloud": {
+    "explanation": "Result button: create a cloud account or sign in. Fits on one line in a button.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.cta.download": {
+    "explanation": "Primary result button: download the free local app.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.cta.startfree": {
+    "explanation": "Secondary link under the main button on paid recommendations: start with the free local app instead. Fits on a button.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.cta.talk": {
+    "explanation": "Result button: opens an email draft to us with the visitor's answers (mailto link).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.edit": {
+    "explanation": "Button on the result screen: return to the questions to change answers.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.finish": {
+    "explanation": "Wizard button on the last question: calculate and show the recommended setup (plan, hardware, plugins).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.gap.appointments": {
+    "explanation": "Honesty note: two-way sync with booking platforms (such as Booksy) is coming but not available, it depends on partner access we do not have yet. Do not soften into a promise.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.gap.cardother": {
+    "explanation": "Honesty note: we only have plugins for SumUp and Stripe; asks which provider the visitor uses.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.gap.fiscalother": {
+    "explanation": "Honesty note for countries outside the supported fiscal rules: we do not support the visitor's country's fiscal rules yet and they must check their own legal requirements. Legal-sensitive.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.gap.online": {
+    "explanation": "Honesty note: online ordering and web-shop sync are coming but not available, no date can be given; invites the visitor to tell us what they need.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.gap.team": {
+    "explanation": "Honesty note: accountant access and phone support are not available yet; fixed staff roles are free on every plan, only custom roles are on the Pro plan.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.gap.tr": {
+    "explanation": "Honesty note for Turkey: Turkish fiscal certification is unfinished, so we cannot promise legal Turkish receipts today. Legal-sensitive, must not be weakened.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.hw.android": {
+    "explanation": "Link text in the hardware block, to the Android tablet till page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.hw.devices": {
+    "explanation": "Link text in the hardware block, to the Getting started page, which lists device options.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.hw.have": {
+    "explanation": "Hardware advice when the visitor owns a device: any PC, laptop, Raspberry Pi, Android tablet or touch terminal works.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.hw.need": {
+    "explanation": "Hardware advice when the visitor owns no device: our hardware shop is not open yet; a complete do-it-yourself till costs from about 70 pounds. Contains a price claim; keep the amount and currency exactly (use the local convention for the symbol position).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.lede": {
+    "explanation": "Intro paragraph under the wizard heading. Sets the expectation that it is a short questionnaire (about a minute) leading to a plan, hardware and plugin recommendation. Friendly, 'we' voice.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.n.cafe": {
+    "explanation": "Note for cafes: works offline so a Wi-Fi drop never stops a sale.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.n.cardnone": {
+    "explanation": "Note for shops without card payments: start with cash, add SumUp or Stripe later from the plugin marketplace.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.n.deowndevice": {
+    "explanation": "Note for Germany: the visitor may stay on the Local or Local Plus plan using their own approved fiscal device. Legal-sensitive.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.n.detsemin": {
+    "explanation": "Note for Germany: law requires a TSE (certified fiscal security device) for every business whatever till is used; Local and Local Plus users bring their own, from Shop a managed one is {tse} per month excluding VAT per main till; that managed line has a minimum term of {months} months for each activated main till and the plan itself has none (merchant terms clause 6); the free app is therefore not zero cost in Germany. {tse} is a formatted amount and {months} a whole number, both supplied by the page. Legal and pricing sensitive.\n\nPlaceholders:\n- 1: {tse} — a ready formatted monthly price for the managed fiscal device, supplied by the page\n- 2: {months} — the whole number of months of the minimum term, supplied by the page from the price file",
+    "flags": "placeholders:\"{tse}\":\"{months}\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.n.restaurant": {
+    "explanation": "Note for restaurants and bars: table plan, kitchen screen and self-order are included free.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.n.retail": {
+    "explanation": "Note for shops: barcodes, variants and stock tracking free; catalogue import from CSV or Excel.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.n.salon": {
+    "explanation": "Note for barbers and salons: staff accounts and shifts free; booking platform sync (such as Booksy) not available yet.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.n.stall": {
+    "explanation": "Note for market stalls: runs on an Android tablet or phone, keeps selling without signal.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.n.ukfiscal": {
+    "explanation": "Note for the UK: there is no fiscal-device requirement. Legal statement about UK law; keep exact.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.next": {
+    "explanation": "Wizard button: go to the next question. Short, one word if possible.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.nojs": {
+    "explanation": "Fallback notice shown only when JavaScript is off: the questions need it, so the visitor is pointed to the two options below (download or cloud account).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.biz.cafe": {
+    "explanation": "Answer option (radio button) in the business-type question of the Find your setup wizard: a cafe or takeaway. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.biz.other": {
+    "explanation": "Answer option (radio button) in the business-type question of the Find your setup wizard: none of the above. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.biz.restaurant": {
+    "explanation": "Answer option (radio button) in the business-type question of the Find your setup wizard: a restaurant or bar. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.biz.retail": {
+    "explanation": "Answer option (radio button) in the business-type question of the Find your setup wizard: a shop or retail business. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.biz.salon": {
+    "explanation": "Answer option (radio button) in the business-type question of the Find your setup wizard: a barber, salon or beauty business. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.biz.stall": {
+    "explanation": "Answer option (radio button) in the business-type question of the Find your setup wizard: a market stall or pop-up. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.card.none": {
+    "explanation": "Answer option (radio button) in the card-provider question of the Find your setup wizard: cash only, or the visitor has not decided yet. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.card.other": {
+    "explanation": "Answer option (radio button) in the card-provider question of the Find your setup wizard: a different card payment provider. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.card.stripe": {
+    "explanation": "Answer option (radio button) in the card-provider question of the Find your setup wizard: Stripe (brand name, keep). Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.card.sumup": {
+    "explanation": "Answer option (radio button) in the card-provider question of the Find your setup wizard: SumUp (brand name, keep). Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.country.de": {
+    "explanation": "Answer option (radio button) in the country question of the Find your setup wizard: Germany. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.country.eu": {
+    "explanation": "Answer option (radio button) in the country question of the Find your setup wizard: any other country that uses the euro. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.country.other": {
+    "explanation": "Answer option (radio button) in the country question of the Find your setup wizard: any country not listed. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.country.tr": {
+    "explanation": "Answer option (radio button) in the country question of the Find your setup wizard: Turkey. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.country.uk": {
+    "explanation": "Answer option (radio button) in the country question of the Find your setup wizard: the United Kingdom. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.hardware.have": {
+    "explanation": "Radio option for the hardware question: the shop already has a device. Fits one line in a radio label.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.hardware.need": {
+    "explanation": "Radio option for the hardware question: the shop has no device yet.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.needs.appointments": {
+    "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: appointments and bookings. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.needs.fiscal": {
+    "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: a fiscal (tax authority approved) device. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.needs.online": {
+    "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: an online shop or online ordering. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.needs.remote": {
+    "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: managing the shop from a browser away from the till (cloud). Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.needs.stock": {
+    "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: stock control. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.needs.tables": {
+    "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: a table plan and a kitchen screen. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.needs.team": {
+    "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: accountant access, custom staff roles or phone support. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.sites.few": {
+    "explanation": "Answer option (radio button) in the locations question of the Find your setup wizard: two or three locations. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.sites.huge": {
+    "explanation": "Answer option (radio button) in the locations question of the Find your setup wizard: more than ten locations (leads to a custom setup). Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.sites.many": {
+    "explanation": "Answer option (radio button) in the locations question of the Find your setup wizard: four to ten locations. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.sites.one": {
+    "explanation": "Answer option (radio button) in the locations question of the Find your setup wizard: a single location. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.plan.enterprise": {
+    "explanation": "Plan name for chains with more than 10 locations, which get a custom setup. Card heading; short.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.plan.local": {
+    "explanation": "Plan name 'Local' (free app on own hardware) shown as the recommended plan heading. Plan names are product names and are normally kept in English or transliterated; do not invent a new meaning.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.plan.multi": {
+    "explanation": "Plan name for multi-location businesses (2 to 10 locations). Card heading; short.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.plan.plus": {
+    "explanation": "Plan name 'Local Plus' (local app plus cloud access). Product name; see wiz.plan.local.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.plan.pro": {
+    "explanation": "Plan name 'Pro' (includes assisted migration). Product name; see wiz.plan.local.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.plan.shop": {
+    "explanation": "Plan name 'Shop' (managed cloud features, optional managed fiscal device in Germany). Product name; see wiz.plan.local.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.plugin.language-de": {
+    "explanation": "Name of the German language pack plugin in the recommended-plugins list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.plugin.payment-stripe": {
+    "explanation": "Name of the Stripe card payment plugin in the recommended-plugins list. 'Stripe' is a brand name.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.plugin.payment-sumup": {
+    "explanation": "Name of the SumUp card payment plugin in the recommended-plugins list. 'SumUp' is a brand name.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.price.annual": {
+    "explanation": "Price line: the lower monthly price when paying annually, with two months free.\n\nPlaceholders:\n- 1: {price} — a ready formatted price with currency symbol, for example £30, supplied by the page",
+    "flags": "placeholders:\"{price}\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.price.free": {
+    "explanation": "Price label of the free plan on the result card, shown where a price would be. Single word.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.price.month": {
+    "explanation": "Price line on the result card: monthly price excluding VAT. {price} is a ready formatted amount with its currency symbol, placed by the page; keep {price} intact.\n\nPlaceholders:\n- 1: {price} — a ready formatted price with currency symbol, for example £30, supplied by the page",
+    "flags": "placeholders:\"{price}\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.price.multi": {
+    "explanation": "Price line for the multi-location plan: how many locations are included, the price of each extra location and the maximum total.\n\nPlaceholders:\n- 1: {included} — how many locations the plan includes, a whole number\n- 2: {max} — the maximum total number of locations, a whole number\n- 3: {price} — a ready formatted price with currency symbol, for example £30, supplied by the page",
+    "flags": "placeholders:\"{included}\":\"{max}\":\"{price}\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.price.pick": {
+    "explanation": "Price line shown before a country has been chosen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.price.talk": {
+    "explanation": "Price line for custom setups (chains): price is agreed individually; invites the visitor to talk to us.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.price.tse": {
+    "explanation": "Extra price line (Germany): the monthly surcharge, excluding VAT, for the managed fiscal device (TSE) per main till. States it is not discounted on annual billing.\n\nPlaceholders:\n- 1: {price} — a ready formatted price with currency symbol, for example £30, supplied by the page",
+    "flags": "placeholders:\"{price}\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.price.tsemin": {
+    "explanation": "Extra price line (Germany), shown under the managed fiscal device (TSE) line: that line (not the plan) has a minimum term in months for each activated main till; if the plan ends earlier, we keep that till's managed fiscal device (TSE) running, and billed, until the minimum is over (merchant terms clause 6). Legal and pricing sensitive.\n\nPlaceholders:\n- 1: {months} — the whole number of months of the minimum term, supplied by the page from the price file",
+    "flags": "placeholders:\"{months}\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.price.unpub": {
+    "explanation": "Price line when no price is published yet for the visitor's country; invites them to contact us.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.privacy": {
+    "explanation": "Small privacy statement under the wizard intro: the page keeps nothing and sends nothing; answers only leave if the visitor emails them; analytics consent still applies to visit statistics but never includes answers. Must stay factually identical in every language.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.progress": {
+    "explanation": "Accessible label (screen readers only) of the wizard's progress indicator.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.biz": {
+    "explanation": "Wizard question 1 (heading of the radio group): the kind of business the visitor runs.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.biz.hint": {
+    "explanation": "Helper line under the business-type question.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.card": {
+    "explanation": "Wizard question 5: how the shop takes card payments (which payment provider).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.card.hint": {
+    "explanation": "Helper line under the card question: reassurance that Universal Till takes no share of card payments.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.country": {
+    "explanation": "Wizard question 2 (heading of the radio group): the country the business operates in; it decides price and fiscal rules.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.country.hint": {
+    "explanation": "Helper line under the country question: explains why we ask (prices and rules differ per country).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.hardware": {
+    "explanation": "Wizard question 6: whether the shop already owns a device to run the till on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.hardware.hint": {
+    "explanation": "Helper line under the hardware question: examples of devices that count (PC, laptop, Raspberry Pi, Android tablet, touch terminal). 'Raspberry Pi' is a product name.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.needs": {
+    "explanation": "Wizard question 4 (checkbox group): which extra capabilities the shop needs. Multiple answers allowed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.needs.hint": {
+    "explanation": "Helper line under the needs question: tick all that apply, or none.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.sites": {
+    "explanation": "Wizard question 3: how many shop locations (branches) the business has.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.sites.hint": {
+    "explanation": "Helper line under the locations question: reassures that the number of tills per location is not limited.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.r.defiscal": {
+    "explanation": "Reason bullet for Germany: a managed fiscal device (TSE) is available from the Shop plan for an extra monthly fee per main till.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.r.huge": {
+    "explanation": "Reason bullet in 'Why this fits' for more than 10 locations: it is a custom setup.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.r.local": {
+    "explanation": "Reason bullet for the default recommendation: start with the free app on own hardware; offline, no monthly fee.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.r.multi": {
+    "explanation": "Reason bullet for several locations: they need one central catalogue, pricing and reports.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.r.remote": {
+    "explanation": "Reason bullet: managing the shop from a browser needs the cloud, from the Local Plus plan upwards.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.r.stock": {
+    "explanation": "Reason bullet: stock control is free on every plan.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.r.tables": {
+    "explanation": "Reason bullet: the table plan and kitchen screen are free on every plan.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.res.gaps": {
+    "explanation": "Subheading of the block listing capabilities the visitor asked for that do not exist yet. Short, honest tone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.res.guide": {
+    "explanation": "Subheading of the setup guide block on the result screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.res.guide.link": {
+    "explanation": "Link text to the step-by-step getting started page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.res.hw": {
+    "explanation": "Subheading of the hardware block on the result screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.res.next": {
+    "explanation": "Subheading above the call-to-action buttons on the result screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.res.notes": {
+    "explanation": "Subheading of the extra notes block on the result screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.res.plugins": {
+    "explanation": "Subheading of the recommended plugins block on the result screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.res.plugins.all": {
+    "explanation": "Link text to the full plugin list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.res.plugins.none": {
+    "explanation": "Text shown instead of the plugin list when no plugin is needed to start; points to the marketplace.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.res.sent": {
+    "explanation": "Privacy footnote at the bottom of the result screen: the page has sent nothing; answers leave only if emailed to us. Must stay factually identical in every language.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.res.title": {
+    "explanation": "Heading above the recommended plan on the wizard result screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.res.why": {
+    "explanation": "Subheading above the list of reasons for the recommendation.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.restart": {
+    "explanation": "Button on the result screen: discard the answers and begin again at question one.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.short.cloud": {
+    "explanation": "Button label in the shortcut box: goes to the cloud account sign-up or sign-in at my.universaltill.com.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.short.cloud.d": {
+    "explanation": "One-line caption under the cloud account shortcut: managing the shop from any browser plus the paid cloud features.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.short.free": {
+    "explanation": "Button label in the shortcut box: goes to the download page for the free local app.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.short.free.d": {
+    "explanation": "One-line caption under the 'download the free app' shortcut. Claims: runs on the shop's own computer, works offline, no monthly fee.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.short.title": {
+    "explanation": "Heading of the shortcut box above the wizard for visitors who already know what they want.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.skiphint": {
+    "explanation": "Small hint under a question: answering is optional, the visitor may leave it blank and continue.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.step": {
+    "explanation": "Progress text above each wizard question, for example 'Step 2 of 6'.\n\nPlaceholders:\n- 1: {n} — the number of the current step, a whole number starting at 1\n- 2: {total} — the total number of questions, a whole number",
+    "flags": "placeholders:\"{n}\":\"{total}\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.talk.intro": {
+    "explanation": "First line of the pre-filled email body, followed by the visitor's answers. Plain text.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.talk.note": {
+    "explanation": "Note next to the 'Talk to us' button: it opens the visitor's own email app with answers filled in and nothing is sent unless they send it. Privacy-relevant, keep factually exact.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.talk.plan": {
+    "explanation": "Label in the pre-filled email for the suggested plan, followed by the plan name. Plain text.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.talk.subject": {
+    "explanation": "Subject line of the pre-filled email created by the 'Talk to us' button. Plain text, no markup.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.title": {
+    "explanation": "Main heading (h1) of the Find your setup wizard page. A plain, inviting question-style promise.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  }
+}
