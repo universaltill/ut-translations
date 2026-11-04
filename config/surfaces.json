@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "note": "Non-till translation surfaces (ADR-0177 §1). Each surface is one Weblate component of the same slug; its English and key metadata live in the code repo and tools/sync_english.py --surface <name> copies them to <component>/en.json and meta/<component>.json. `namespaces` (optional) keeps only keys whose first dotted segment is listed, so one repo can feed several components; `catch_all: true` takes every key no sibling surface (same repo and English file) claims. ut-cloud's real namespaces are manage_app, admin_app, partner_app (its ?ns= values); the cloud entries are provisional until ADR-0177 slice 6 adds ut-cloud/i18n/en.json. Hand-kept because it names repos, not languages; the till areas stay in the generated meta/areas.json.",
+  "surfaces": {
+    "website": {
+      "repo": "https://github.com/universaltill/ut-website.git",
+      "branch": "main",
+      "english": "i18n/en.json",
+      "metadata": "i18n/en.meta.json",
+      "component": "website",
+      "name": "Website"
+    },
+    "cloud-manage": {
+      "repo": "https://github.com/universaltill/ut-cloud.git",
+      "branch": "main",
+      "english": "i18n/en.json",
+      "metadata": "i18n/en.meta.json",
+      "component": "cloud-manage",
+      "name": "Cloud: my. (shop manager)",
+      "namespaces": ["manage_app"]
+    },
+    "cloud-admin": {
+      "repo": "https://github.com/universaltill/ut-cloud.git",
+      "branch": "main",
+      "english": "i18n/en.json",
+      "metadata": "i18n/en.meta.json",
+      "component": "cloud-admin",
+      "name": "Cloud: admin.",
+      "namespaces": ["admin_app"]
+    },
+    "cloud-partner": {
+      "repo": "https://github.com/universaltill/ut-cloud.git",
+      "branch": "main",
+      "english": "i18n/en.json",
+      "metadata": "i18n/en.meta.json",
+      "component": "cloud-partner",
+      "name": "Cloud: partner.",
+      "namespaces": ["partner_app"]
+    },
+    "cloud-public": {
+      "repo": "https://github.com/universaltill/ut-cloud.git",
+      "branch": "main",
+      "english": "i18n/en.json",
+      "metadata": "i18n/en.meta.json",
+      "component": "cloud-public",
+      "name": "Cloud: public pages and emails",
+      "catch_all": true
+    }
+  }
+}

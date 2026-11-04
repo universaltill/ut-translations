@@ -42,7 +42,7 @@ AREA_NAMES = {"selforder": "Self-order"}
 # comes from another repo (universal-till's areas.json): lowercase words
 # joined by hyphens, and never one of this repo's own top-level folders.
 AREA_ID_RE = re.compile(r"[a-z0-9]+(?:-[a-z0-9]+)*")
-RESERVED_AREAS = frozenset({"meta", "tools", "tests", "config", "scripts", ".github"})
+RESERVED_AREAS = frozenset({"meta", "tools", "tests", "config", "scripts", ".github", "published"})
 
 
 def validate_area_id(area):

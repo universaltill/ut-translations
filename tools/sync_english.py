@@ -20,6 +20,13 @@ rewritten together with a real change).
 
 Usage:
   python3 tools/sync_english.py [--repo DIR] [--source URL] [--no-commit]
+  python3 tools/sync_english.py --surface NAME [--repo DIR] [--source URL] [--no-commit]
+
+--surface syncs one non-till surface from config/surfaces.json (ADR-0177 §1;
+website, cloud-*): main of that surface's repo -> <component>/en.json and
+meta/<component>.json (+ meta/source-<surface>.json), restricted to the
+surface's `namespaces` when it lists any. No supported-line union: those
+repos are not versioned in lines. The till path above is unchanged.
 """
 
 import argparse
@@ -33,6 +40,7 @@ import tempfile
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import i18n_map  # noqa: E402
+import surfaces as surfaces_mod  # noqa: E402
 
 EN_PATH = "web/locales/en.json"
 META_PATH = "web/i18n-meta/en.meta.json"
@@ -177,6 +185,10 @@ def sync(repo, cfg, commit=True, source=None, log=print):
     files, info = collect(cfg, source)
     changed = sorted(p for p, text in files.items() if _read(os.path.join(repo, p)) != text)
     known = {p.split("/")[0] for p in files if p.endswith("/en.json")}
+    try:
+        known |= {sp["component"] for sp in surfaces_mod.load(repo).values()}
+    except surfaces_mod.SurfaceError as e:
+        raise SyncError(str(e)) from None
     for name in sorted(os.listdir(repo)):
         if (os.path.isfile(os.path.join(repo, name, "en.json")) and name not in known):
             log(f"warning: {name}/ is no longer an area in areas.json; its component and files "
@@ -203,17 +215,95 @@ def sync(repo, cfg, commit=True, source=None, log=print):
     return True
 
 
+def collect_surface(spec, claimed=()):
+    """-> (files, info) for one surface."""
+    src = GitSource(spec["repo"])
+    try:
+        branch = spec["branch"]
+        src.fetch(branch, [])
+        ref = f"refs/remotes/src/{branch}"
+        en = src.read_json(ref, spec["english"])
+        if not isinstance(en, dict):
+            raise SyncError(f"{branch}:{spec['english']} is missing in {spec['repo']}")
+        meta = src.read_json(ref, spec["metadata"]) or {}
+        if not isinstance(meta, dict):
+            raise SyncError(f"{branch}:{spec['metadata']} must be a JSON object")
+        ns = spec.get("namespaces")
+        catch_all = bool(spec.get("catch_all"))
+        union = i18n_map.build_union([i18n_map.Line("main", en, meta)])
+        english, out_meta = {}, {}
+        for key, e in union.items():
+            top = key.split(".")[0]
+            if ns is not None and top not in ns:
+                continue
+            if catch_all and top in claimed:
+                continue
+            english[key] = e.english
+            m = i18n_map.unit_metadata(key, e.english, e.meta, [], e.lines)
+            m["lines"] = e.lines
+            if (e.meta or {}).get("core") is True:
+                m["core"] = True  # ADR-0177 §3: frame text a published page needs
+            out_meta[key] = m
+        comp = spec["component"]
+        if not english:
+            # A filter that matches nothing is a wrong namespace, not an empty
+            # surface: fail instead of provisioning an empty component.
+            raise SyncError(f"surface {comp}: no key of {spec['english']} matches its namespaces "
+                            f"({'catch_all' if catch_all else ns or 'all'})")
+        info = {"repo": spec["repo"], "branch": branch, "commit": src.commit(ref)}
+        return {f"{comp}/en.json": i18n_map.dumps(english), f"meta/{comp}.json": i18n_map.dumps(out_meta)}, info
+    finally:
+        src.close()
+
+
+def sync_surface(repo, name, commit=True, url=None, log=print):
+    try:
+        surfaces = surfaces_mod.load(repo)
+    except surfaces_mod.SurfaceError as e:
+        raise SyncError(str(e)) from None
+    if name not in surfaces:
+        raise SyncError(f"unknown surface {name!r}; config/surfaces.json has: {', '.join(sorted(surfaces)) or 'none'}")
+    spec = dict(surfaces[name], repo=url) if url else surfaces[name]
+    claimed = {n for other, sp in surfaces.items() if other != name
+               and (sp["repo"], sp["english"]) == (surfaces[name]["repo"], surfaces[name]["english"])
+               for n in sp.get("namespaces", [])}
+    files, info = collect_surface(spec, claimed)
+    changed = sorted(p for p, text in files.items() if _read(os.path.join(repo, p)) != text)
+    if not changed:
+        log(f"no change: {name} English and metadata already match {spec['repo']}")
+        return False
+    src_rel = f"meta/source-{name}.json"
+    files[src_rel] = i18n_map.dumps(info)
+    for rel in [*changed, src_rel]:
+        path = os.path.join(repo, rel)
+        os.makedirs(os.path.dirname(path), exist_ok=True)
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(files[rel])
+    log(f"updated: {', '.join(changed)}")
+    if commit:
+        _git(["add", "--", *sorted({*changed, src_rel})], cwd=repo)
+        msg = (f"sync: {name} English from {info['commit'][:12]}\n\n"
+               f"Source: {spec['repo']} ({info['branch']}).\nChanged: {', '.join(changed)}\n")
+        _git(["commit", "-q", "-m", msg], cwd=repo)
+    return True
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     ap.add_argument("--repo", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
     ap.add_argument("--source", help="override config/lines.json `source` (e.g. a local clone)")
+    ap.add_argument("--surface", help="sync one surface from config/surfaces.json instead of the till")
     ap.add_argument("--no-commit", action="store_true", help="write the files, don't commit")
     args = ap.parse_args(argv)
     try:
-        cfg = load_config(args.repo)
-        if args.source:
-            cfg["source"] = args.source
-        changed = sync(args.repo, cfg, commit=not args.no_commit)
+        if args.surface:
+            changed = sync_surface(args.repo, args.surface, commit=not args.no_commit,
+                                   url=args.source)
+        else:
+            cfg = load_config(args.repo)
+            if args.source:
+                cfg["source"] = args.source
+            changed = sync(args.repo, cfg, commit=not args.no_commit)
     except SyncError as e:
         print(f"sync failed: {e}", file=sys.stderr)
         return 1

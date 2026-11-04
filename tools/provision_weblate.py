@@ -15,6 +15,10 @@ nothing changed makes no write call.
             source string, from meta/<area>.json. Other labels people put on
             a string are kept.
 
+            Surfaces (config/surfaces.json, ADR-0177) get one component each
+            the same way, once their `<component>/en.json` has been synced;
+            before that they are skipped.
+
 A component Weblate hasn't finished importing yet has no units; it is listed
 as pending and the next run fills it in.
 
@@ -41,6 +45,7 @@ import urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import i18n_map  # noqa: E402
+import surfaces as surfaces_mod  # noqa: E402
 
 DEFAULT_PROJECT = "universal-till"
 DEFAULT_REPO_URL = "https://github.com/universaltill/ut-translations.git"
@@ -331,6 +336,28 @@ class Provisioner:
                 self.write("PATCH", f"/api/units/{unit['id']}/", diff,
                            f"update {area}:{key}: {', '.join(sorted(diff))}")
 
+    def provision_surfaces(self, areas):
+        """One component per surface in config/surfaces.json (ADR-0177 §1),
+        built exactly like an area's. A surface whose source repo hasn't been
+        synced yet (`sync_english.py --surface`) has no template to import, so
+        it is skipped until it has one."""
+        try:
+            surfaces = surfaces_mod.load(self.repo)
+        except surfaces_mod.SurfaceError as e:
+            raise WeblateError(str(e)) from None
+        for name, sp in surfaces.items():
+            comp = sp["component"]
+            if comp in areas:
+                raise WeblateError(f"surface {name!r}: component {comp!r} is a till area")
+            if not (os.path.isfile(os.path.join(self.repo, comp, "en.json"))
+                    and os.path.isfile(os.path.join(self.repo, "meta", f"{comp}.json"))):
+                self.r.log(f"skip {comp}: surface {name!r} not synced yet "
+                           f"(run sync_english.py --surface {name})")
+                continue
+            created = self.ensure_component(comp, sp["name"])
+            self.ensure_addon(comp)
+            self.ensure_units(comp, created)
+
     def run(self):
         areas = self.load("meta/areas.json")
         for area in areas:
@@ -347,6 +374,7 @@ class Provisioner:
             created = self.ensure_component(area, areas[area]["name"])
             self.ensure_addon(area)
             self.ensure_units(area, created)
+        self.provision_surfaces(areas)
         self.r.log(f"done: {self.r.writes} write(s), {len(self.r.pending)} component(s) pending import")
         return self.r
 
