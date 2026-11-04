@@ -43,7 +43,7 @@ universal-till main ──(sync job, this repo)──▶ <area>/en.json + meta/
 | `config/bundles.json` | people | Overrides only (no language list): per Weblate code `source`, `human_spot_check`, `min_coverage`, `script`, `name`. Any other field is refused (`tools/locales.py`). |
 | `config/ai-accounts.json` | people | Weblate AI service accounts and the model each is tied to (ut-docs#4366 fills it in). |
 | `config/glossary/` | people | Per-language glossary and style (`it.md`, informal tu) and the reviewed list of strings that may equal the English (`it.same.json`). |
-| `tools/` | — | `sync_english.py`, `provision_weblate.py`, `i18n_map.py` (the shared mapping), `import_existing.py` (the one-off import below), and the bundle tools `build_bundle.py`, `locales.py` (language code -> till tag, script and spec), `bundle_checks.py`, `till_verify.py` (+ `till_harness/`), `publish_bundle.py`, `upload_translations.py` (validate and save build-time translations as "needs review", never approved, never legal; used for Italian, ut-docs#5421); the AI reviewer runner `review_runner.py` (+ `review_checks.py`, `review_model.py`, `review_prompt.py`, see `docs/ai-review.md`). Python 3 standard library only. |
+| `tools/` | — | `sync_english.py`, `provision_weblate.py`, `i18n_map.py` (the shared mapping), `import_existing.py` (the one-off import below), and the bundle tools `build_bundle.py`, `locales.py` (language code -> till tag, script and spec), `bundle_checks.py`, `till_verify.py` (+ `till_harness/`), `publish_bundle.py`, `publish_locales.py` (published locales, below), `upload_translations.py` (validate and save build-time translations as "needs review", never approved, never legal; used for Italian, ut-docs#5421); the AI reviewer runner `review_runner.py` (+ `review_checks.py`, `review_model.py`, `review_prompt.py`, see `docs/ai-review.md`). Python 3 standard library only. |
 | `tests/` | — | Unit tests; run in CI by `.github/workflows/test.yml`. |
 
 ### Areas (components)
@@ -109,6 +109,50 @@ repo has the English file (ut-website: ADR-0177 slice 2). `provision_weblate.py`
 creates a surface's component (linked to `common`'s clone, same checks and
 add-on as an area) once its files exist and skips it with a log line before
 that.
+
+## Published locales (ADR-0177 §2-§3; ut-docs#5405)
+
+`tools/publish_locales.py` computes, from Weblate's **public** read API (no
+token, no secret), which languages each non-till surface (`config/surfaces.json`)
+may show, and writes `published/locales.json` plus the approved strings
+`published/<surface>/<weblate code>.json` (flat key -> text). The workflow
+`publish-locales.yml` runs it every 6 h, by hand, and after `sync-english`,
+and commits only when the content changed (`generated_at` is kept otherwise).
+
+- A string ships only when it is Weblate state `approved` against the current
+  English and its change history shows an approval by a different account
+  than the author (`build_bundle.review_verdict`, ADR-0160 §4). The public
+  API cannot read team membership: a human approver outside
+  `config/publish-policy.json` `human_reviewers` is accepted but not recorded
+  as a human review, so `human_reviewed` is false (and `machine_label` true)
+  until reviewers are listed; `legal` keys then stay English. When the change
+  history is unreadable the string ships on its state alone and
+  `review_verified` is false.
+- Weblate's failing style checks never block. A unit whose placeholders, ICU
+  argument names or HTML tag set differ from English (or is blank) is omitted
+  (consumers show English) and counted as `omitted_broken`.
+- A `legal` key without a `human_reviewers` approval on the current English is
+  omitted for that locale (English by design, per-key fallback; ADR-0160 s4,
+  ADR-0177). It is excluded from the coverage denominator and from the `core`
+  test, and counted in the surface's `omitted_legal`; the locale still
+  publishes. So a `core` key must be `standard` tier (e.g. `site.machine_label`)
+  or it stays English for AI-only locales.
+- Gate per surface: `min_coverage` (default 0.90, over non-legal-omitted keys),
+  every non-legal-omitted `core` key shipped,
+  `omitted_broken` <= `max_broken_ratio` (0.10). Per-language and
+  per-surface overrides live in `config/publish-policy.json`.
+- URL locales (`config/locale-regions.json`) are the owner's eleven choices;
+  any other language is derived by CLDR (Babel, if installed) or the run
+  fails asking for an entry. Two languages on one URL locale fail the run.
+  Direction comes from Weblate's `/api/languages/<code>/`. English and native
+  names are the checked-in table (Babel is optional).
+- `withdrawn` is sticky per `(url, surface)` so consumers can 301 it.
+
+```sh
+python3 tools/publish_locales.py --dry-run     # summary only, nothing written
+python3 tools/publish_locales.py               # writes published/
+python3 tools/publish_locales.py --check       # offline validation (CI)
+```
 
 ## Supported till lines (ADR-0160 §5)
 

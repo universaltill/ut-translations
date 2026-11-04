@@ -29,3 +29,6 @@
 /.github/workflows/refresh-bundles.yml @farshidmirza
 /tools/bundle_refresh.py @farshidmirza
 /tests/test_bundle_refresh.py @farshidmirza
+/tools/publish_locales.py @farshidmirza
+/.github/workflows/publish-locales.yml @farshidmirza
+/published/ @farshidmirza

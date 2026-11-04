@@ -1,0 +1,71 @@
+# Compute published/locales.json and published/<surface>/<code>.json from
+# Weblate's PUBLIC API (ADR-0177 section 2; ut-docs#5405).
+#
+# Triggers: every 6 h, by hand, and after sync-english finished (a new
+# English source can change what is "stale" and so what ships). The
+# workflow_run payload is ignored: the job always reads main and Weblate.
+#
+# Least privilege: `contents: write` on this repo only (pushes its own commit
+# with the built-in GITHUB_TOKEN, same pattern as sync-english). No secrets:
+# the Weblate languages/units/changes endpoints are public. GitHub-hosted
+# runner (public repo).
+
+name: publish-locales
+
+on:
+  schedule:
+    - cron: "37 */6 * * *"
+  workflow_run:
+    workflows: [sync-english]
+    types: [completed]
+    branches: [main]
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: publish-locales
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: main
+
+      - name: Commit identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Compute the published locales
+        id: pub
+        run: python3 tools/publish_locales.py
+
+      - name: Validate the output
+        run: python3 tools/publish_locales.py --check
+
+      - name: Commit and push
+        if: steps.pub.outputs.changed == 'true'
+        run: |
+          set -euo pipefail
+          git add -A published
+          git commit -q -m "published locales: refresh from Weblate (ADR-0177)"
+          for attempt in 1 2 3; do
+            git pull --rebase --quiet origin main
+            # sync-english may have landed meanwhile: validate the merged tree
+            python3 tools/publish_locales.py --check
+            if git push --quiet origin HEAD:main; then
+              exit 0
+            fi
+            echo "push rejected (attempt ${attempt}), retrying"
+            sleep $((attempt * 5))
+          done
+          echo "::error::could not push the published-locales commit after 3 attempts"
+          exit 1
