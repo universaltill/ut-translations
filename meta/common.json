@@ -98,6 +98,14 @@
       "0.34"
     ]
   },
+  "common.error.outcome_timeout": {
+    "explanation": "Error shown when the till itself did not answer an action within 30 seconds (it was slow, the connection was fine), so nobody knows if the action ran. Tells them to check before repeating it; there is no retry button. Sibling of common.error.outcome_unknown, which is for a dropped connection.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "common.error.outcome_unknown": {
     "explanation": "Error shown when the connection drops after the operator confirmed an action (manager PIN or confirm prompt) but before the till answered, so nobody knows if the action ran. Tells them to check before repeating it; there is no retry button.",
     "flags": "",

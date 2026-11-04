@@ -27,7 +27,7 @@
   "settings": {
     "name": "Settings",
     "description": "Settings, admin menus, locations, registers, country settings, translations and the subscription.",
-    "keys": 817
+    "keys": 818
   },
   "tills": {
     "name": "Tills",
@@ -62,6 +62,6 @@
   "common": {
     "name": "Common",
     "description": "Shared words and messages used across many screens.",
-    "keys": 29
+    "keys": 30
   }
 }

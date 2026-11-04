@@ -3904,12 +3904,19 @@
     ]
   },
   "settings.enrol.pair_help": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
+    ]
+  },
+  "settings.enrol.pair_help_2": {
+    "explanation": "Explanation under the Pair with a shop heading in Settings → Till registration. The two quoted names are the exact button labels on my.universaltill.com (Pair a till / Pair again); translators should use the my. translations of those labels.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.enrol.pair_identity_pinned": {

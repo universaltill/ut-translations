@@ -2204,20 +2204,18 @@
     ]
   },
   "tile_sheet.delete_item": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "tile_sheet.delete_item_confirm": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
