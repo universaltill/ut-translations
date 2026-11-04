@@ -270,13 +270,20 @@ def cmd_validate(a, quiet=False):
             req = {k for k in en if not is_legal_key(comp, k, meta)}
             if a.skip_dir:
                 req -= set(read_dir(a.skip_dir, comp))
-        probs = validate_map(comp, tr, en, meta, req, same=load_same(a.locale))
+        probs = validate_map(comp, tr, en, meta, req, script=script_of(a.locale), same=load_same(a.locale))
         bad_total += len(probs)
         print(f"{comp}: {len(tr)} strings, {len(probs)} problems")
         for k, kind, detail in probs[:a.show]:
             print(f"   {k}: {kind} {detail}")
     print("problems:", bad_total)
     return 1 if bad_total else 0
+
+
+def script_of(locale):
+    """The ISO 15924 script a draft in `locale` is checked against (Grek for el,
+    Arab for ar and fa); Latin only when the language is Latin."""
+    import review_checks
+    return review_checks.script_for(locale)
 
 
 def client(a):
@@ -294,7 +301,7 @@ def cmd_upload(a):
         tr = read_dir(a.dir, comp)
         if not tr:
             continue
-        s = upload_component(c, comp, a.locale, tr, meta, a.dry_run, a.overwrite, note=a.note, same=load_same(a.locale))
+        s = upload_component(c, comp, a.locale, tr, meta, a.dry_run, a.overwrite, script=script_of(a.locale), note=a.note, same=load_same(a.locale))
         rej += [(comp, r) for r in s["rejected"]]
         print(comp, {k: (len(v) if isinstance(v, list) else v) for k, v in s.items()}, flush=True)
         for k, v in s.items():

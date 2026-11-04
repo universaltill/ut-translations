@@ -81,12 +81,13 @@ LANGUAGE_NOTES = {
     "pt": "European Portuguese (Portugal), not Brazilian. Prefer the formal impersonal form. Retail terms: caixa, talão/recibo, devolução, anulação, gaveta, artigo, categoria.",
     "tr": "Address the user formally with 'siz'; use 'Lütfen' for requests. Retail terms: kasa, fiş, iade, iptal, ürün, kategori. Keep Turkish characters correct.",
     "it": "Italian (Italy). Address the user informally with 'tu' (puoi, il tuo), never 'Lei'. Concise imperative UI phrasing. Retail terms: cassa (the till), scontrino (receipt), reso/rimborso (refund), annullo/storno (void), cassetto, articolo (item), categoria, pulsanti rapidi (quick buttons), catalogo, responsabile (manager). Glossary: config/glossary/it.md.",
+    "el": "Modern Greek (Greece), monotonic orthography with correct tonos (accent marks), never polytonic. Use the polite plural imperative for instructions (Προσθέστε, Επιλέξτε) and nouns for buttons (Αποθήκευση, Ακύρωση). Concise UI phrasing. Retail terms: ταμείο (the till), απόδειξη (receipt), επιστροφή χρημάτων (refund), ακύρωση (void), συρτάρι μετρητών (cash drawer), προϊόν (item), κατηγορία, κουμπιά γρήγορης πρόσβασης (quick buttons), κατάλογος (catalog), υπεύθυνος (manager), ΦΠΑ (VAT). Glossary: config/glossary/el.md.",
     "ar": "Modern Standard Arabic, right-to-left, formal address. Use Western digits (0-9) to match the till.",
     "fa": "Persian (Iran), right-to-left, formal. Use the zero-width non-joiner correctly. Use Western digits (0-9) to match the till.",
     "ms": "Standard Bahasa Malaysia (not Indonesian). Use 'anda'. Keep common English tech words (Bluetooth, Wi-Fi, PIN) unchanged.",
     "zh_Hans": "Simplified Chinese for mainland China. Concise imperative UI phrasing, full-width Chinese punctuation; keep placeholders and HTML unchanged.",
 }
-SCRIPTS = {"ar": "Arab", "fa": "Arab", "zh_Hans": "Hans"}
+SCRIPTS = {"ar": "Arab", "fa": "Arab", "el": "Grek", "zh_Hans": "Hans"}
 
 
 def secret(service, env_var):

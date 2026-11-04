@@ -9,6 +9,7 @@
     "pt": ["Total", "Local", "Logo", "Info"],
     "it": ["Menu", "Logo", "Info", "Online", "Offline", "Email"],
     "ms": ["Status", "Menu", "Logo", "Info", "Email", "Online", "Offline"],
-    "tr": ["Logo", "Online", "Offline"]
+    "tr": ["Logo", "Online", "Offline"],
+    "el": ["Email"]
   }
 }

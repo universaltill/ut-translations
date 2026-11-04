@@ -34,6 +34,7 @@ REGISTER = {
                "punctuation, mainland terminology (never Taiwan/Hong Kong variants).",
     "it": "Italian. Informal 'tu' address (the product's chosen register for Italian), consistently. Retail terms: "
           "cassa, scontrino, reso, annullamento, cassetto.",
+    "el": "Modern Greek (Greece), monotonic orthography with correct tonos accents. Polite plural imperative for instructions, nouns for buttons, consistently. Retail terms: ταμείο, απόδειξη, επιστροφή χρημάτων, ακύρωση, συρτάρι μετρητών, προϊόν, κατηγορία. Glossary: config/glossary/el.md.",
     "ar": "Modern Standard Arabic, right-to-left, formal address. Western digits (0-9) as the till shows them.",
     "fa": "Persian (Iran), right-to-left, formal address; correct zero-width non-joiner. Western digits (0-9).",
 }
