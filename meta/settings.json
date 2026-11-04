@@ -2090,6 +2090,46 @@
       "0.34"
     ]
   },
+  "settings.currency_display.auto": {
+    "explanation": "Option in the currency display choice: the product picks symbol or code per currency.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.currency_display.code": {
+    "explanation": "Option in the currency display choice: always write the three-letter currency code (for example GBP).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.currency_display.help": {
+    "explanation": "Help line under the currency display choice; says what the three options do and that receipts fall back to the code when the printer cannot print the symbol.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.currency_display.symbol": {
+    "explanation": "Option in the currency display choice: always write the currency symbol (for example the pound sign).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.currency_display.title": {
+    "explanation": "Heading of the Settings card choice that sets how amounts write the shop currency (symbol, code or automatic).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.data.archive_date_col": {
     "explanation": "",
     "flags": "",
