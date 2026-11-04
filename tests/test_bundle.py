@@ -17,7 +17,7 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "tools"))
 
 import build_bundle as bb  # noqa: E402
 import bundle_checks as bc  # noqa: E402
-from bundle_fixtures import TILL_EN, TOKEN, BundleCase, add_english, side_commit, sync_repo, till_source  # noqa: E402
+from bundle_fixtures import TILL_EN, language_rows, TOKEN, BundleCase, add_english, side_commit, sync_repo, till_source  # noqa: E402
 from provision_weblate import WeblateClient  # noqa: E402
 
 NOW = dt.datetime(2026, 10, 16, 12, 30, 5, tzinfo=dt.timezone.utc)
@@ -313,8 +313,11 @@ class Export(BundleCase, unittest.TestCase):
         self.assertEqual(a["sha256"], b["sha256"])
 
     def test_versions_rise_above_the_packs(self):
-        b = bb.Builder(self.repo, "de", None, self.till, now=dt.datetime(2026, 10, 16, 0, 0, 0, tzinfo=dt.timezone.utc))
-        later = bb.Builder(self.repo, "de", None, self.till, now=dt.datetime(2026, 10, 16, 0, 0, 10, tzinfo=dt.timezone.utc))
+        langs = language_rows()
+        b = bb.Builder(self.repo, "de", None, self.till, now=dt.datetime(2026, 10, 16, 0, 0, 0, tzinfo=dt.timezone.utc),
+                       languages=langs)
+        later = bb.Builder(self.repo, "de", None, self.till, now=dt.datetime(2026, 10, 16, 0, 0, 10, tzinfo=dt.timezone.utc),
+                           languages=langs)
 
         def key(v):
             return [int(x) for x in v.split(".")]
@@ -485,11 +488,189 @@ class Export(BundleCase, unittest.TestCase):
     def test_translated_locale_needs_weblate(self):
         with self.assertRaisesRegex(bb.BundleError, "WEBLATE_URL"):
             bb.Builder(self.repo, "de", None, self.till, now=NOW).build(self.out)
+        with self.assertRaisesRegex(bb.BundleError, "WEBLATE_URL"):
+            bb.Builder(self.repo, "de", None, self.till, now=NOW, languages=language_rows()).build(self.out)
 
     def test_unknown_or_malformed_locale_is_refused(self):
-        for bad in ("xx", "../de", "DE", ""):
+        for bad in ("xx", "../de", "DE", "", "pt-BR", "de;ls"):
             with self.assertRaises(bb.BundleError):
-                bb.Builder(self.repo, bad, None, self.till, now=NOW)
+                bb.Builder(self.repo, bad, None, self.till, now=NOW, languages=language_rows())
+
+
+@unittest.skipUnless(till_source(), "needs a universal-till checkout (UTT_TILL_SOURCE) for the real guards")
+class DerivedLanguages(BundleCase, unittest.TestCase):
+    """A language added in Weblate builds with no change in this repo
+    (ut-docs#4640); the review gate (ADR-0160 §4) is the same for it."""
+
+    def setUp(self):
+        self.make(AI)
+        self.en = {**bb.load_json(f"{self.repo}/sale/en.json"), **bb.load_json(f"{self.repo}/receipts-and-legal/en.json")}
+        self.config_before = self.config_bytes()
+
+    def config_bytes(self):
+        with open(f"{self.repo}/config/bundles.json", "rb") as f:
+            return f.read()
+
+    def add_language(self, code, name):
+        self.fake.languages.append({"code": code, "name": name})
+
+    def reviewed(self, lang, key, target, area="sale", history=None):
+        h = history or [(NEW, "alice", target), (APPROVE, "bob", target)]
+        return self.fake.add_unit(area, lang, key, self.en[key], target, history=h)
+
+    def build(self, code, scans=False):
+        client = WeblateClient(self.fake.base(), TOKEN)
+        b = bb.Builder(self.repo, code, client, self.till if scans else None, scans=scans, now=NOW)
+        return b, b.build(self.out)
+
+    def members(self, rep):
+        with tarfile.open(os.path.join(self.out, rep["bundle"])) as tf:
+            names = sorted(tf.getnames())
+            return names, json.load(tf.extractfile("manifest.json")), json.load(tf.extractfile("bundle.json"))
+
+    def test_new_language_builds_with_no_repo_change(self):
+        self.add_language("fr", "French")
+        self.reviewed("fr", "pos.total", "Total")
+        self.reviewed("fr", "pos.items", "%d articles")
+        b, rep = self.build("fr", scans=True)
+        names, manifest, info = self.members(rep)
+        self.assertEqual(names, ["bundle.json", "locales/fr.json", "manifest.json"])
+        self.assertEqual((manifest["id"], manifest["locales"], info["locale"]), ("com.universaltill.language-fr", ["fr"], "fr"))
+        self.assertEqual(manifest["name"], "French")
+        self.assertEqual(b.strings, {"pos.total": "Total", "pos.items": "%d articles"})
+        self.assertFalse(rep["human_spot_check"])
+        self.assertTrue(rep["publishable"], rep["problems"])
+        self.assertEqual(self.config_bytes(), self.config_before)
+
+    def test_zh_hans_gets_the_tag_for_id_locale_and_file(self):
+        self.add_language("zh_Hans", "Chinese (Simplified Han script)")
+        self.reviewed("zh_Hans", "pos.total", "总计")
+        b, rep = self.build("zh_Hans")
+        names, manifest, info = self.members(rep)
+        self.assertEqual(manifest["id"], "com.universaltill.language-zh-hans")
+        self.assertEqual((manifest["locales"], info["locale"], rep["locale"]), (["zh-hans"], "zh-hans", "zh-hans"))
+        self.assertIn("locales/zh-hans.json", names)
+        self.assertEqual(b.strings, {"pos.total": "总计"})
+        # Weblate was asked with the Weblate code
+        paths = [p for _, p in self.fake.requests]
+        self.assertTrue(any("/sale/zh_Hans/units/" in p for p in paths))
+
+    def test_wrong_script_for_a_derived_language_is_omitted(self):
+        self.add_language("zh_Hans", "Chinese")
+        self.reviewed("zh_Hans", "pos.total", "Gesamt")
+        _, rep = self.build("zh_Hans")
+        self.assertEqual(rep["omitted"]["pos.total"].split(":")[0], "script")
+
+    def test_the_seven_keep_their_exact_specs(self):
+        frozen = bb.load_json(os.path.join(os.path.dirname(__file__), "data", "frozen_bundle_specs.json"))
+        self.assertEqual(sorted(frozen), ["ar", "de", "en", "es", "fa", "pt", "tr"])
+        live = {r["code"]: r["name"] for r in self.fake.languages}
+        for code, old in frozen.items():
+            spec = bb.locales.resolve_spec(live, self.repo, code)
+            self.assertEqual(spec["weblate"], old["weblate"], code)
+            self.assertEqual(spec["name"], old["name"], code)
+            self.assertEqual(spec["script"], old["script"], code)
+            self.assertEqual(spec["human_spot_check"], bool(old.get("human_spot_check")), code)
+            self.assertEqual(spec.get("min_coverage"), old.get("min_coverage"), code)
+            self.assertEqual(bool(spec.get("source")), bool(old.get("source")), code)
+            self.assertEqual(spec["tag"], code)
+
+    def test_de_manifest_is_unchanged(self):
+        self.reviewed("de", "pos.total", "Summe")
+        _, rep = self.build("de")
+        _, manifest, _ = self.members(rep)
+        self.assertEqual(manifest["name"], "German (Deutsch)")
+        self.assertEqual(manifest["description"], "German (Deutsch) language bundle for Universal Till, built from "
+                         "approved translations; strings not approved yet show in English.")
+
+    def test_review_gate_is_the_same_for_a_derived_language(self):
+        self.add_language("fr", "French")
+        for key, tgt, hist, area in (
+            ("pos.total", "Somme", [(NEW, "alice", "Somme"), (APPROVE, "alice", "Somme")], "sale"),          # self
+            ("pos.short", "Payer", [(NEW, "ai-tr-opus", "Payer"), (APPROVE, "ai-rv-opus", "Payer")], "sale"),  # same model
+            ("receipt.vat", "TVA incl.", [(NEW, "ai-tr-opus", "TVA incl."), (APPROVE, "ai-rv-qwen", "TVA incl.")],
+             "receipts-and-legal"),                                                                          # legal, no human
+            ("receipt.thanks", "Merci", [(NEW, "alice", "Merci"), (APPROVE, "carol", "Merci")], "receipts-and-legal"),
+            ("pos.name", "Bonjour {name}", [(NEW, "alice", "Bonjour {name}"), (APPROVE, "carol", "Bonjour {name}")], "sale"),
+        ):
+            self.fake.add_unit(area, "fr", key, self.en[key], tgt, history=hist)
+        b, rep = self.build("fr")
+        self.assertEqual({k: v.split(":")[0] for k, v in rep["omitted"].items()},
+                         {"pos.total": "self_approved", "pos.short": "same_model", "receipt.vat": "legal_needs_human",
+                          "receipt.thanks": "legal_needs_human", "pos.name": "unknown_approver"})
+        self.assertEqual(b.strings, {})
+
+    def test_legal_string_with_a_human_approval_ships_for_a_derived_language(self):
+        self.add_language("fr", "French")
+        self.fake.add_unit("receipts-and-legal", "fr", "receipt.vat", self.en["receipt.vat"], "TVA incluse",
+                           history=[(NEW, "alice", "TVA incluse"), (APPROVE, "bob", "TVA incluse")])
+        b, _ = self.build("fr")
+        self.assertEqual(b.strings, {"receipt.vat": "TVA incluse"})
+
+    def test_min_coverage_only_where_overridden(self):
+        self.add_language("fr", "French")
+        self.reviewed("fr", "pos.total", "Total")
+        _, rep = self.build("fr")
+        self.assertTrue(rep["publishable"], rep["problems"])  # 1 of many keys, no floor
+        self.reviewed("pt", "pos.total", "Total")
+        _, rep = self.build("pt")
+        self.assertFalse(rep["publishable"])
+        self.assertIn("min_coverage", rep["problems"][0])
+
+    def test_empty_derived_bundle_is_not_publishable(self):
+        self.add_language("fr", "French")
+        self.fake.units[("sale", "fr")] = []
+        _, rep = self.build("fr")
+        self.assertEqual(rep["bundle_json"]["approved_count"], 0)
+        self.assertFalse(rep["publishable"])
+        self.assertIn("empty", rep["problems"][0])
+
+    def test_scan_bundle_needs_no_network(self):
+        from unittest import mock
+        self.add_language("pt_BR", "Portuguese (Brazil)")
+        self.reviewed("pt_BR", "pos.total", "Total")
+        _, rep = self.build("pt_BR")
+        bundle = os.path.join(self.out, rep["bundle"])
+        with mock.patch("socket.socket.connect", side_effect=AssertionError("network used")):
+            bb.scan_bundle(self.repo, self.till, bundle, "pt_BR")
+            with contextlib.redirect_stdout(io.StringIO()):
+                self.assertEqual(bb.main(["--locale", "pt_BR", "--repo", self.repo, "--till-source", self.till,
+                                          "--scan-bundle", bundle]), 0)
+        with self.assertRaisesRegex(bb.BundleError, "language-pt-br"):
+            bb.scan_bundle(self.repo, self.till, bundle, "pt")
+
+    def test_language_list_failures_build_nothing(self):
+        for label, setup in (("404", lambda: setattr(self.fake, "languages", None)),
+                             ("500", lambda: setattr(self.fake, "languages_status", 500)),
+                             ("empty", lambda: setattr(self.fake, "languages", [])),
+                             ("malformed", lambda: setattr(self.fake, "languages", [{"name": "x"}]))):
+            self.fake.languages, self.fake.languages_status = language_rows(), 200
+            setup()
+            with self.assertRaises(bb.BundleError, msg=label):
+                self.build("de")
+            self.assertFalse(os.path.exists(self.out), label)
+
+    def test_code_missing_from_the_list_is_refused_even_with_an_override(self):
+        self.fake.languages = [r for r in language_rows() if r["code"] != "de"]
+        with self.assertRaisesRegex(bb.BundleError, "not a language"):
+            self.build("de")
+        with self.assertRaises(bb.BundleError):
+            self.build("ja")
+        self.assertFalse(os.path.exists(self.out))
+
+    def test_two_live_codes_with_one_tag_are_refused(self):
+        self.add_language("pt_BR", "a")
+        self.add_language("pt_br", "b")
+        with self.assertRaisesRegex(bb.BundleError, "both map"):
+            self.build("pt_BR")
+
+    def test_weblate_cannot_widen_the_gate(self):
+        self.fake.languages.append({"code": "fr", "name": "French", "human_spot_check": False, "min_coverage": 0,
+                                    "source": True})
+        b, _ = self.build("fr")
+        self.assertFalse(b.spec.get("source"))
+        self.assertNotIn("min_coverage", b.spec)
+        self.assertEqual(b.strings, {})  # not the English
 
 
 class Checks(unittest.TestCase):

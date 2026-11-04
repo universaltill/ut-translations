@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Build the signed-to-be language bundle com.universaltill.language-<code>
+"""Build the signed-to-be language bundle com.universaltill.language-<tag>
 from approved translations only (ADR-0160 §4, §5; ut-docs#4367).
 
   export   every area component's units in state approved, read from the
@@ -72,6 +72,7 @@ from collections import Counter
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import bundle_checks  # noqa: E402
+import locales  # noqa: E402
 import i18n_map  # noqa: E402
 import sync_english  # noqa: E402
 import till_verify  # noqa: E402
@@ -82,8 +83,6 @@ LEGAL = "legal"
 STATE_APPROVED = 30
 STATE_READONLY = 100
 GUARDS = ("scripts/ci/guard-compliance-claims.sh", "scripts/ci/guard-competitor-naming.sh")
-LOCALE_RE = re.compile(r"[a-z]{2,3}(?:-[a-z0-9]{2,8})*")
-WEBLATE_CODE_RE = re.compile(r"[A-Za-z]{2,3}(?:[_@-][A-Za-z0-9]{2,8})*")
 SHA_RE = re.compile(r"[0-9a-f]{40}")
 
 # Weblate change actions (weblate/trans/actions.py, ActionEvents).
@@ -231,20 +230,23 @@ def unit_labels(unit):
 
 
 class Builder:
-    def __init__(self, repo, locale, client=None, till=None, text_source="api", now=None, scans=True):
+    def __init__(self, repo, locale, client=None, till=None, text_source="api", now=None, scans=True,
+                 languages=None):
+        """`locale` is the Weblate language code (de, pt_BR, zh_Hans); the
+        bundle's own locale (self.locale) is its till tag (pt-br, zh-hans).
+        The spec is derived from the live language list (`client`, or
+        `languages` in tests), never from a list in this repo."""
         self.repo = repo
-        self.cfg = load_json(os.path.join(repo, "config", "bundles.json"))
-        ai = load_json(os.path.join(repo, "config", "ai-accounts.json")).get("accounts") or {}
-        if not LOCALE_RE.fullmatch(locale or ""):
-            raise BundleError(f"locale {locale!r} must match ^[a-z]{{2,3}}(-[a-z0-9]{{2,8}})*$")
-        spec = self.cfg["locales"].get(locale)
-        if spec is None:
-            raise BundleError(f"locale {locale!r} is not in config/bundles.json")
-        if not WEBLATE_CODE_RE.fullmatch(spec.get("weblate", "")):
-            raise BundleError(f"bad Weblate code for {locale}: {spec.get('weblate')!r}")
+        try:
+            self.cfg = locales.load_config(repo)
+            ai = load_json(os.path.join(repo, "config", "ai-accounts.json")).get("accounts") or {}
+            self.spec = locales.resolve_spec(client if languages is None else languages, self.cfg, locale)
+            tag = locales.till_tag(locale)
+        except locales.LocaleError as e:
+            raise BundleError(str(e)) from None
         if text_source not in ("api", "git"):
             raise BundleError("text_source must be api or git")
-        self.locale, self.spec = locale, spec
+        self.code, self.locale = locale, tag
         self.client, self.till, self.text_source, self.scans = client, till, text_source, scans
         self.ai = ai
         self.accounts = Accounts(client, self.cfg["human_reviewers_team"], ai) if client else None
@@ -582,9 +584,12 @@ def _member(tf, name):
 
 def scan_bundle(repo, till, path, locale):
     """Run the guards over a bundle another job built: its id must be this
-    locale's and its source_commit meta/source.json's."""
-    if not LOCALE_RE.fullmatch(locale or ""):
-        raise BundleError(f"bad locale {locale!r}")
+    locale's (a Weblate code, mapped to its till tag locally: no network)
+    and its source_commit meta/source.json's."""
+    try:
+        locale = locales.till_tag(locale)
+    except locales.LocaleError as e:
+        raise BundleError(str(e)) from None
     commit = read_source(repo)[0]
     with tarfile.open(path) as tf:
         manifest_text = _member(tf, "manifest.json")
@@ -641,7 +646,7 @@ def write_outputs(report, out_dir):
 
 def main(argv=None):
     ap = argparse.ArgumentParser(description="Build a language bundle from approved translations.")
-    ap.add_argument("--locale", required=True)
+    ap.add_argument("--locale", required=True, help="the Weblate language code (de, pt_BR, zh_Hans)")
     ap.add_argument("--repo", default=os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
     ap.add_argument("--till-source", required=True, help="universal-till git checkout holding source_commit")
     ap.add_argument("--out", default="dist")
@@ -667,7 +672,7 @@ def main(argv=None):
             client = WeblateClient(url, token)
         report = Builder(args.repo, args.locale, client, args.till_source, args.text_source,
                          scans=not args.no_scans).build(args.out)
-    except (BundleError, WeblateError, OSError, ValueError, KeyError) as e:
+    except (BundleError, WeblateError, locales.LocaleError, OSError, ValueError, KeyError) as e:
         print(f"bundle build failed: {e}", file=sys.stderr)
         return 1
     info = report["bundle_json"]

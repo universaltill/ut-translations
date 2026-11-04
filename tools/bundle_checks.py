@@ -53,6 +53,12 @@ SCRIPT_FAMILIES = {
 }
 
 
+def supports_script(script):
+    """True when check_script can tell this ISO 15924 script apart; a script
+    without a checker must be refused, never published unchecked."""
+    return script in set(_SCRIPT_WORDS.values()) or script in SCRIPT_FAMILIES
+
+
 def letter_script(ch):
     if not ch.isalpha():
         return None

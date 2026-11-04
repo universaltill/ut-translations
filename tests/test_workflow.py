@@ -1,15 +1,21 @@
 """The publish workflow's security shape (ut-docs#4367), checked on the YAML
 text (no YAML parser in the standard library): least privilege, pinned
 actions, GitHub-hosted runners, secrets only where needed, no expression
-interpolated into a shell script, the locale list and the human
-environment's locales equal to config/bundles.json, CODEOWNERS on it."""
+interpolated into a shell script, a secret-free validate job first (strict
+locale regex equal to tools/locales.py's), the human environment chosen by
+the config overrides (no list in the workflow), CODEOWNERS on it."""
 
 import json
 import os
 import re
+import sys
 import unittest
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, os.path.join(ROOT, "tools"))
+
+import locales  # noqa: E402
+
 WF = os.path.join(ROOT, ".github", "workflows", "publish-bundle.yml")
 
 
@@ -52,19 +58,84 @@ class Workflow(unittest.TestCase):
         self.cfg = json.loads(read(os.path.join(ROOT, "config", "bundles.json")))
         self.jobs = jobs(self.text)
 
-    def test_dispatch_only_one_locale_from_the_config(self):
+    def test_dispatch_only_and_locale_is_a_free_string(self):
         on = self.text.split("\non:\n", 1)[1].split("\npermissions:", 1)[0]
         self.assertEqual(re.findall(r"^  ([a-z_]+):", on, re.M), ["workflow_dispatch"])
-        m = re.search(r"locale:\n(?:\s+.*\n)*?\s+options: \[([^\]]*)\]", on)
-        self.assertEqual(sorted(o.strip() for o in m.group(1).split(",")), sorted(self.cfg["locales"]))
+        block = re.search(r"\n      locale:\n((?:        .*\n)+)", on).group(1)
+        self.assertIn("type: string", block)
+        self.assertIn("required: true", block)
+        self.assertNotIn("options", block)
 
-    def test_human_environment_holds_exactly_the_spot_check_locales(self):
-        m = re.search(r"contains\(fromJSON\('(\[[^']*\])'\), inputs\.locale\) && 'bundle-publish-human' \|\| 'bundle-publish'",
-                      self.jobs["publish"])
-        self.assertIsNotNone(m, "publish job must pick bundle-publish-human / bundle-publish by locale")
-        want = sorted(c for c, s in self.cfg["locales"].items() if s.get("human_spot_check"))
-        self.assertEqual(sorted(json.loads(m.group(1))), want)
+    def test_no_locale_list_in_the_workflow(self):
+        self.assertNotIn("fromJSON", self.text)
+        self.assertNotRegex(self.text, r"\[\s*\"?en\"?\s*,\s*\"?de\"?")
+        self.assertNotRegex(self.text, r"options: \[en")
+
+    def test_validate_is_first_and_secret_free(self):
+        self.assertEqual(list(self.jobs)[0], "validate")
+        v = self.jobs["validate"]
+        self.assertNotIn("secrets.", v)
+        self.assertNotIn("environment:", v)
+        self.assertNotIn("needs:", v)
+        self.assertIn("github.ref == 'refs/heads/main'", v)
+        self.assertEqual(re.search(r"\n    permissions:\n((?:      .*\n)+)", v).group(1).strip(), "contents: read")
+        for name in ("build", "verify", "publish", "publish-human"):
+            self.assertRegex(self.jobs[name], r"needs: (validate|\[validate,)", name)
+
+    def test_regex_is_the_first_step_and_equals_the_python_one(self):
+        steps = re.split(r"\n      - ", self.jobs["validate"])[1:]
+        first = steps[0]
+        self.assertNotIn("uses:", first)
+        self.assertIn("LOCALE: ${{ inputs.locale }}", first)
+        m = re.search(r"\[\[ \"\$LOCALE\" =~ (\S+) \]\]", first)
+        self.assertIsNotNone(m)
+        self.assertEqual(m.group(1), locales.CODE_RE_TEXT)
+        self.assertEqual(re.compile(m.group(1)).pattern, locales.CODE_RE.pattern)
+        # nothing that holds a credential or reads the repo runs before it
+        self.assertNotIn("secrets.", first)
+        self.assertIn("actions/checkout@", steps[1])
+        self.assertIn("tools/locales.py --check \"$LOCALE\" --live", steps[2])
+        self.assertIn("vars.WEBLATE_URL", steps[2])
+
+    def test_no_secret_step_before_validation(self):
+        text = self.text
+        self.assertLess(text.index("validate:"), text.index("secrets."))
+        for name, job in self.jobs.items():
+            if name != "validate":
+                self.assertIn("validate", job.split("steps:")[0], name)
+
+    def test_publish_routing_is_by_the_validated_flag_only(self):
+        human, normal = self.jobs["publish-human"], self.jobs["publish"]
+        self.assertIn("environment: bundle-publish-human\n", human)
+        self.assertIn("environment: bundle-publish\n", normal)
+        self.assertIn("needs.validate.outputs.human == 'true'", human)
+        self.assertIn("needs.validate.outputs.human == 'false'", normal)
+        self.assertNotIn("== 'false'", human)
+        self.assertNotIn("== 'true'", normal)
+        self.assertNotIn("contains(", self.text)
+        self.assertNotIn("environment: ${{", self.text)
+
+    def test_the_two_publish_jobs_differ_only_in_environment_and_condition(self):
+        def norm(job):
+            job = re.sub(r"^    if: .*$", "IF", job, flags=re.M)
+            job = re.sub(r"^    environment: .*$", "ENV", job, flags=re.M)
+            return job.strip()
+        self.assertEqual(norm(self.jobs["publish-human"]), norm(self.jobs["publish"]))
+
+    def test_human_locales_come_from_the_overrides(self):
+        want = sorted(c for c, o in self.cfg["overrides"].items() if o.get("human_spot_check"))
         self.assertEqual(want, ["de", "en", "tr"])
+        self.assertNotIn("locales", self.cfg)
+
+    def test_artifact_names_use_the_validated_tag_only(self):
+        names = re.findall(r"name: (bundle-.*)$", self.text, re.M)
+        self.assertEqual(len(names), 4)  # upload + verify + two publish downloads
+        for n in names:
+            self.assertEqual(n, "bundle-${{ needs.validate.outputs.tag }}")
+        self.assertEqual(self.text.count("inputs.locale"), 5)  # group + 4 env bindings
+        self.assertNotIn("github.event.inputs", self.text)  # the same raw input under another name
+        for block in run_blocks(self.text):
+            self.assertNotIn("inputs.", block)
 
     def test_least_privilege(self):
         self.assertRegex(self.text, r"\npermissions: \{\}\n")
@@ -95,10 +166,11 @@ class Workflow(unittest.TestCase):
         return re.split(r"\n      - ", self.jobs[job])[1:]
 
     def test_secrets_only_where_needed(self):
-        build, verify, publish = self.jobs["build"], self.jobs["verify"], self.jobs["publish"]
+        build, verify = self.jobs["build"], self.jobs["verify"]
         self.assertEqual(re.findall(r"secrets\.(\w+)", build), ["WEBLATE_BUNDLE_TOKEN"])
         self.assertEqual(re.findall(r"secrets\.(\w+)", verify), [])
-        self.assertEqual(re.findall(r"secrets\.(\w+)", publish), ["MARKETPLACE_LANGUAGE_UPLOAD_TOKEN"])
+        for name in ("publish", "publish-human"):
+            self.assertEqual(re.findall(r"secrets\.(\w+)", self.jobs[name]), ["MARKETPLACE_LANGUAGE_UPLOAD_TOKEN"])
         self.assertIn("environment: bundle-build", build)
         self.assertNotIn("environment:", verify)
         holding = [s for s in self.steps("build") if "WEBLATE_BUNDLE_TOKEN" in s]
@@ -114,10 +186,11 @@ class Workflow(unittest.TestCase):
         step = [s for s in self.steps("build") if "tools/build_bundle.py" in s][0]
         self.assertIn("--no-scans", step)
         verify = self.jobs["verify"]
-        self.assertIn("needs: build", verify)
+        self.assertIn("needs: [validate, build]", verify)
         self.assertIn("tools/till_verify.py", verify)
         self.assertIn("--scan-bundle", verify)
         self.assertIn('--commit "$COMMIT"', verify)
+        self.assertIn('--locale "$TAG"', verify)
 
     def test_artifact_is_uploaded_right_after_the_build(self):
         steps = self.steps("build")
@@ -128,10 +201,11 @@ class Workflow(unittest.TestCase):
     def test_hand_off_is_pinned_by_sha256(self):
         outs = re.search(r"\n    outputs:\n((?:      .*\n)+)", self.jobs["build"]).group(1)
         self.assertEqual(sorted(re.findall(r"^      (\w+):", outs, re.M)), ["bundle", "report_sha256", "sha256", "version"])
-        for job in ("verify", "publish"):
+        for job in ("verify", "publish", "publish-human"):
             self.assertIn("needs.build.outputs.sha256", self.jobs[job], job)
             self.assertIn("needs.build.outputs.report_sha256", self.jobs[job], job)
-        self.assertIn('--report-sha256 "$REPORT_SHA256"', self.jobs["publish"])
+        for job in ("publish", "publish-human"):
+            self.assertIn('--report-sha256 "$REPORT_SHA256"', self.jobs[job])
         self.assertIn("sha256sum -c", self.jobs["verify"])
 
     def test_till_checkouts_must_be_on_universal_till_main(self):
@@ -150,14 +224,16 @@ class Workflow(unittest.TestCase):
             self.assertNotIn("${{", block, block)
 
     def test_publish_needs_the_build_the_verifier_and_the_tick(self):
-        self.assertIn("needs: [build, verify]", self.jobs["publish"])
-        self.assertIn("if: inputs.publish &&", self.jobs["publish"])
+        for job in ("publish", "publish-human"):
+            self.assertIn("needs: [validate, build, verify]", self.jobs[job])
+            self.assertIn("if: inputs.publish &&", self.jobs[job])
         self.assertIn("--require-publishable", self.jobs["build"])
 
     def test_codeowners_cover_the_publish_path(self):
         owners = read(os.path.join(ROOT, ".github", "CODEOWNERS"))
         for path in ("/.github/workflows/publish-bundle.yml", "/tools/build_bundle.py", "/tools/bundle_checks.py",
-                     "/tools/publish_bundle.py", "/tools/till_verify.py", "/tools/till_harness/",
+                     "/tools/publish_bundle.py", "/tools/till_verify.py", "/tools/locales.py", "/tests/test_locales.py",
+                     "/tests/test_workflow.py", "/tests/test_bundle.py", "/tools/till_harness/",
                      "/config/ai-accounts.json", "/config/bundles.json", "/.github/CODEOWNERS",
                      # Review finding 2(b): what decides the English, its
                      # labels and the source commit, and the job that writes them.
