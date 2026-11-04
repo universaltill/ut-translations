@@ -41,3 +41,14 @@ The model correction is ready for review. Translation review can proceed
 under the verified bot identity; replacing the seven owner-authored
 suggestions requires the Weblate reviewer account to have delete-suggestion
 permission. An independent diff review found no config issues.
+
+## Addendum 2026-11-04 (rebase onto main, ut-docs#4366)
+
+This record describes the original 2026-10-18 setup and is kept as history. What this PR registers today, after the
+rebase onto main (which already carries the local-Ollama translator):
+- `config/ai-accounts.json` keeps main's entries, **including `bot-universal-till-bootstrap-approver`** (the shipped
+  de/es/pt/tr bundles depend on it; `tests/test_ai_accounts.py` fails if it is removed).
+- A separate, droppable commit registers `bot-universal-till-ai-translator-claude`.
+- Dropped from the PR: the `openai/gpt-6` model id and the Hy-MT2 entry (main's `bot-universal-till-ai-translator-local`
+  replaces it). The Weblate user for the Claude translator still has to be created in the Weblate UI.
+- "Review paused" in the text above no longer applies; the reviewer runner (ut-translations#17) is merged.
