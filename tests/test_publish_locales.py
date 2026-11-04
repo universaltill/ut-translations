@@ -317,6 +317,76 @@ class PublishTest(unittest.TestCase):
         self.assertEqual(pl.check(REPO), [])
 
 
+class LegalTierPublishTest(unittest.TestCase):
+    """Owner 2026-11-04 / ADR-0160 s4: an unapproved legal key is English by
+    design: omitted, outside the coverage denominator and the core test."""
+
+    LANGS = ["de", "fr", "es", "it", "pt", "tr", "ar", "fa", "zh_Hans"]
+
+    def build(self, policy=None, drop=None, break_legal=False):
+        tmp = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, tmp)
+        en = {f"s.{i}": f"Text {i}" for i in range(360)}
+        en.update({f"legal.{i}": f"Legal {i}" for i in range(97)})
+        meta = {f"legal.{i}": {"labels": ["legal"]} for i in range(97)}
+        meta["legal.0"]["core"] = True  # a core key that is legal-tier
+        meta["s.0"] = {"core": True, "labels": []}
+        make_repo(tmp, en=en, meta=meta, policy=dict({"min_coverage": 0.9}, **(policy or {})))
+        fake = FakeWeblate()
+        fake.languages = [{"code": "en"}] + [{"code": c} for c in self.LANGS]
+        for c in self.LANGS:
+            fake.dirs[c] = ("rtl" if c in ("ar", "fa") else "ltr")
+            fake.units[(COMP, c)], fake.changes[(COMP, c)] = [], []
+            for i, (k, t) in enumerate(en.items(), 1):
+                if c == "de" and drop and drop(k):
+                    continue
+                if c == "de" and break_legal and k == "legal.0":
+                    t_bad = "x {oops}"
+                    fake.units[(COMP, c)].append({"id": i, "context": k, "source": [t], "target": [t_bad], "state": 30, "previous_source": ""})
+                    fake.changes[(COMP, c)] += good_history(i, t_bad)
+                    continue
+                fake.units[(COMP, c)].append({"id": i, "context": k, "source": [t], "target": ["x " + t], "state": 30, "previous_source": ""})
+                fake.changes[(COMP, c)] += good_history(i, "x " + t)
+        doc, files = pl.compute(tmp, pl.Config(tmp), fake)
+        return doc, files
+
+    def test_nine_languages_publish_with_legal_omitted(self):
+        doc, files = self.build()
+        for c in self.LANGS:
+            l = next(x for x in doc["locales"] if x["weblate"] == c)
+            w = l["surfaces"]["website"]
+            self.assertTrue(l["published"], (c, l["reason"]))
+            self.assertEqual((w["omitted_legal"], w["total"], w["approved"]), (97, 457, 360))
+            self.assertEqual(w["coverage"], 1.0)
+            self.assertTrue(w["core_ok"])
+            strings = json.loads(files[f"published/website/{c}.json"])
+            self.assertFalse([k for k in strings if k.startswith("legal.")])
+            self.assertFalse(l["legal_approved"])
+
+    def test_human_reviewer_ships_the_legal_keys(self):
+        doc, files = self.build({"human_reviewers": ["bob"]})
+        w = next(x for x in doc["locales"] if x["weblate"] == "de")["surfaces"]["website"]
+        self.assertEqual((w["omitted_legal"], w["approved"]), (0, 457))
+        self.assertIn("legal.5", json.loads(files["published/website/de.json"]))
+
+    def test_non_legal_gaps_still_block(self):
+        doc, _ = self.build(drop=lambda k: k.startswith("s.") and int(k[2:]) % 5 == 0)
+        self.assertFalse(next(x for x in doc["locales"] if x["weblate"] == "de")["published"])
+
+    def test_missing_core_key_blocks_even_with_legal_omitted(self):
+        doc, _ = self.build(drop=lambda k: k == "s.0")
+        de = next(x for x in doc["locales"] if x["weblate"] == "de")
+        self.assertFalse(de["published"])
+        self.assertIn("core", de["surfaces"]["website"]["reason"])
+
+    def test_broken_legal_key_is_a_defect_not_an_omission(self):
+        doc, _ = self.build({"human_reviewers": ["bob"]}, break_legal=True)
+        w = next(x for x in doc["locales"] if x["weblate"] == "de")["surfaces"]["website"]
+        self.assertEqual(w["omitted_legal"], 0)
+        self.assertEqual(w["omitted_broken"], 1)
+        self.assertFalse(w["core_ok"])
+
+
 class WorkflowTest(unittest.TestCase):
     def test_workflow_has_no_secrets_and_least_privilege(self):
         text = open(os.path.join(REPO, ".github/workflows/publish-locales.yml"), encoding="utf-8").read()

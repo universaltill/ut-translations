@@ -131,7 +131,14 @@ and commits only when the content changed (`generated_at` is kept otherwise).
 - Weblate's failing style checks never block. A unit whose placeholders, ICU
   argument names or HTML tag set differ from English (or is blank) is omitted
   (consumers show English) and counted as `omitted_broken`.
-- Gate per surface: `min_coverage` (default 0.90), every `core` key shipped,
+- A `legal` key without a `human_reviewers` approval on the current English is
+  omitted for that locale (English by design, per-key fallback; ADR-0160 s4,
+  ADR-0177). It is excluded from the coverage denominator and from the `core`
+  test, and counted in the surface's `omitted_legal`; the locale still
+  publishes. So a `core` key must be `standard` tier (e.g. `site.machine_label`)
+  or it stays English for AI-only locales.
+- Gate per surface: `min_coverage` (default 0.90, over non-legal-omitted keys),
+  every non-legal-omitted `core` key shipped,
   `omitted_broken` <= `max_broken_ratio` (0.10). Per-language and
   per-surface overrides live in `config/publish-policy.json`.
 - URL locales (`config/locale-regions.json`) are the owner's eleven choices;

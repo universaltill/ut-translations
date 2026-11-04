@@ -23,6 +23,11 @@ Rules (owner decisions of 2026-11-04):
   * Weblate's failing style checks never block. A unit whose placeholder set,
     ICU argument names or HTML tag set differs from English is omitted (the
     consumer shows English for it) and counted in `omitted_broken`.
+  * a `legal` key without that approval is OMITTED (English by design, per-key
+    fallback), excluded from the coverage denominator and the `core` test, and
+    counted in `omitted_legal`; the locale still publishes. A `core` key that
+    is legal-tier is therefore English for AI-only locales: core UI keys such
+    as `site.machine_label` must be `standard` tier.
   * a surface is published when coverage >= min_coverage, every `core` key
     ships, and omitted_broken <= max_broken_ratio of its keys.
 """
@@ -246,7 +251,7 @@ def is_legal(meta):
 def translate_surface(client, cfg, comp, wl, en, meta):
     """-> dict(strings, omitted Counter, review_verified, human_approved)."""
     base = f"/api/translations/{cfg.project}/{comp}/{wl}"
-    omitted, strings = Counter(), {}
+    omitted, strings, defective = Counter(), {}, set()
     units = client.list(f"{base}/units/?q=state%3Aapproved&page_size=1000") or []
     approved = [u for u in units if STATE_APPROVED <= (u.get("state") or 0) < STATE_READONLY]
     history, readable = {}, True
@@ -277,6 +282,7 @@ def translate_surface(client, cfg, comp, wl, en, meta):
         legal = is_legal(m)
         if build_bundle.first(u.get("source")) != en[key] or build_bundle.first(u.get("previous_source")):
             omitted["stale_source"] += 1
+            defective.add(key)
             continue
         approver = None
         if readable:
@@ -294,11 +300,13 @@ def translate_surface(client, cfg, comp, wl, en, meta):
         why = broken(en[key], target, m)
         if why:
             omitted["broken_" + why] += 1
+            defective.add(key)
             continue
         strings[key] = target
         if approver and accounts.is_human_reviewer(approver):
             human += 1
-    return {"strings": strings, "omitted": omitted, "review_verified": readable, "human_approved": human}
+    return {"strings": strings, "omitted": omitted, "review_verified": readable, "human_approved": human,
+            "defective": defective}
 
 
 def _approver(history, target):
@@ -366,15 +374,20 @@ def compute(repo, cfg, client, previous=None, now=None, source_commit=None):
         surf, reasons, human_all, verified_all, shipped_any = {}, [], True, True, False
         for name, (en, meta) in english.items():
             total = len(en)
-            core = {k for k, m in meta.items() if k in en and m.get("core")}
             legal_keys = sum(1 for k in en if is_legal(meta.get(k) or {}))
             if code == SOURCE:
-                strings, omitted, verified, human = dict(en), Counter(), True, total
+                strings, omitted, verified, human, defective = dict(en), Counter(), True, total, set()
             else:
                 r = translate_surface(client, cfg, cfg.surfaces[name]["component"], code, en, meta)
-                strings, omitted, verified, human = r["strings"], r["omitted"], r["review_verified"], r["human_approved"]
+                strings, omitted, verified, human, defective = r["strings"], r["omitted"], r["review_verified"], r["human_approved"], r["defective"]
             broken_n = sum(v for k, v in omitted.items() if k.startswith("broken_"))
-            cov = round(len(strings) / total, 4) if total else 0.0
+            # a legal-tier key not shipped is English by design (ADR-0160 s4): outside the
+            # coverage denominator and the core test, reported as omitted_legal. A legal key
+            # that is broken or stale is a defect, not a missing approval: it still counts.
+            legal_out = {k for k in en if is_legal(meta.get(k) or {}) and k not in strings and k not in defective}
+            core = {k for k, m in meta.items() if k in en and m.get("core") and k not in legal_out}
+            denom = total - len(legal_out)
+            cov = round(len(strings) / denom, 4) if denom else 0.0
             core_ok = core <= set(strings)
             why = None
             if code != SOURCE:
@@ -388,7 +401,7 @@ def compute(repo, cfg, client, previous=None, now=None, source_commit=None):
                     why = f"{broken_n} of {total} strings broken (placeholders/tags), above {cfg.setting('max_broken_ratio', code, name)}"
             ok = why is None
             entry = {"published": ok, "approved": len(strings), "total": total, "coverage": cov, "core_ok": core_ok,
-                     "omitted_broken": broken_n, "omitted": dict(sorted(omitted.items())),
+                     "omitted_broken": broken_n, "omitted_legal": len(legal_out), "omitted": dict(sorted(omitted.items())),
                      "legal_approved": all(k in strings for k in en if is_legal(meta.get(k) or {})),
                      "legal_keys": legal_keys, "review_verified": verified}
             if not ok:
@@ -448,6 +461,7 @@ def summary(doc):
     for l in doc["locales"]:
         parts = [f"{n} {'LIVE' if v['published'] else 'off'} {v['approved']}/{v['total']}"
                  + (f" omitted_broken={v['omitted_broken']}" if v["omitted_broken"] else "")
+                 + (f" omitted_legal={v['omitted_legal']}" if v.get("omitted_legal") else "")
                  for n, v in _flat(l["surfaces"])]
         lines.append(f"{l['code']:8} {l['url']:6} {l['dir']}  {'PUBLISHED' if l['published'] else 'not-published'}  "
                      f"label={'ai' if l['machine_label'] else 'none'} review_verified={l['review_verified']}  "
