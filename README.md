@@ -212,6 +212,16 @@ language, builds `com.universaltill.language-<tag>`, checks it against the
 till, and (with **publish** ticked) uploads and approves it in the
 marketplace.
 
+**Keeping bundles current (ut-docs#5479).** `.github/workflows/refresh-bundles.yml`
+runs daily: `tools/bundle_refresh.py` reads Weblate's and the marketplace's
+public lists (no secret) and logs each language as `never` published, `stale`
+(Weblate changed after the bundle was built), `current` or `empty`
+(nothing approved yet). It publishes nothing by itself: only languages named in
+the repository variable `BUNDLE_AUTO_PUBLISH` (comma separated Weblate codes,
+empty by default) get `publish-bundle` started with publish ticked, and that
+workflow keeps every control (review gate, `min_coverage`, scans, the
+`bundle-publish-human` reviewer for en/de/tr).
+
 **Adding a language is one step: add it in Weblate.** The workflow input is
 the Weblate language code (`de`, `pt_BR`, `zh_Hans`). Its **till tag** is the
 code lower-cased with `_` -> `-` (`pt-br`, `zh-hans`), used for the plugin id,

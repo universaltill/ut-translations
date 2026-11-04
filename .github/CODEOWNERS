@@ -25,3 +25,7 @@
 /config/ @farshidmirza
 /tools/sync_english.py @farshidmirza
 /.github/workflows/sync-english.yml @farshidmirza
+# Starts the publish workflow on a schedule (ut-docs#5479).
+/.github/workflows/refresh-bundles.yml @farshidmirza
+/tools/bundle_refresh.py @farshidmirza
+/tests/test_bundle_refresh.py @farshidmirza

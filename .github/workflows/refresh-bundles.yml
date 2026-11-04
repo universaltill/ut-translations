@@ -1,0 +1,77 @@
+# Keep the published language bundles in step with Weblate (ADR-0160 §5;
+# ut-docs#5479).
+#
+# Daily (and by hand): `plan` compares each Weblate language's last change
+# with the version date of its published bundle (tools/bundle_refresh.py;
+# public reads only, no secret) and lists the stale ones in the job log.
+# Nothing is published unless the owner opts a language in: the repository
+# variable BUNDLE_AUTO_PUBLISH (comma separated Weblate codes, e.g.
+# "fa,ar,fr") names the languages this workflow may rebuild. For those only,
+# `dispatch` starts publish-bundle (publish ticked) on main. That workflow
+# is unchanged and holds every control: the review gate (approved strings
+# only, legal/money strings need a human approval, the rest falls back to
+# English), min_coverage, the compliance scans, and for en/de/tr the required
+# reviewer of the bundle-publish-human environment. This file never sees the
+# Weblate or marketplace tokens and cannot approve anything.
+#
+# Least privilege: no workflow-level permissions; `plan` reads nothing from
+# the repo but its own tools; `dispatch` gets actions: write (to start the
+# publish workflow) and nothing else. GitHub-hosted runners (public repo).
+
+name: refresh-bundles
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: refresh-bundles
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    outputs:
+      dispatch: ${{ steps.plan.outputs.dispatch }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Which bundles are behind Weblate
+        id: plan
+        env:
+          WEBLATE_URL: ${{ vars.WEBLATE_URL }}
+          BUNDLE_AUTO_PUBLISH: ${{ vars.BUNDLE_AUTO_PUBLISH }}
+        run: |
+          set -euo pipefail
+          python3 tools/bundle_refresh.py >> "$GITHUB_OUTPUT"
+
+  dispatch:
+    needs: plan
+    if: needs.plan.outputs.dispatch != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+    strategy:
+      fail-fast: false
+      matrix:
+        locale: ${{ fromJSON(needs.plan.outputs.dispatch) }}
+    steps:
+      - name: Start publish-bundle for ${{ matrix.locale }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LOCALE: ${{ matrix.locale }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          [[ "$LOCALE" =~ ^[a-z]{2,3}(_[A-Za-z0-9]{2,8})?$ ]] || { echo "::error::not a Weblate language code"; exit 1; }
+          gh workflow run publish-bundle.yml --repo "$REPO" --ref main -f locale="$LOCALE" -f channel=stable -f publish=true
