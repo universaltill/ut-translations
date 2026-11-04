@@ -70,6 +70,11 @@ for _script, _langs in {
         SCRIPTS[_l] = _script
 
 
+# The public, anonymous-readable Weblate (no secret): the validate job has no
+# environment, so it cannot read the bundle-build WEBLATE_URL variable.
+PUBLIC_WEBLATE_URL = "https://translate.universaltill.com"
+
+
 class LocaleError(Exception):
     pass
 
@@ -281,7 +286,7 @@ def main(argv=None):
         o = cfg["overrides"].get(args.check, {})
         if args.live:
             if not o.get("source"):
-                live = fetch_languages_public(os.environ.get("WEBLATE_URL", ""), cfg["project"])
+                live = fetch_languages_public((os.environ.get("WEBLATE_URL") or PUBLIC_WEBLATE_URL), cfg["project"])
                 resolve_spec(live, cfg, args.check)
         else:
             script_for(args.check, o.get("script"))
