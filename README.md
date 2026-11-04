@@ -42,7 +42,8 @@ universal-till main ──(sync job, this repo)──▶ <area>/en.json + meta/
 | `config/lines.json` | people | The source repo and the **supported till lines** (below). |
 | `config/bundles.json` | people | Overrides only (no language list): per Weblate code `source`, `human_spot_check`, `min_coverage`, `script`, `name`. Any other field is refused (`tools/locales.py`). |
 | `config/ai-accounts.json` | people | Weblate AI service accounts and the model each is tied to (ut-docs#4366 fills it in). |
-| `tools/` | — | `sync_english.py`, `provision_weblate.py`, `i18n_map.py` (the shared mapping), `import_existing.py` (the one-off import below), and the bundle tools `build_bundle.py`, `locales.py` (language code -> till tag, script and spec), `bundle_checks.py`, `till_verify.py` (+ `till_harness/`), `publish_bundle.py`; the AI reviewer runner `review_runner.py` (+ `review_checks.py`, `review_model.py`, `review_prompt.py`, see `docs/ai-review.md`). Python 3 standard library only. |
+| `config/glossary/` | people | Per-language glossary and style (`it.md`, informal tu) and the reviewed list of strings that may equal the English (`it.same.json`). |
+| `tools/` | — | `sync_english.py`, `provision_weblate.py`, `i18n_map.py` (the shared mapping), `import_existing.py` (the one-off import below), and the bundle tools `build_bundle.py`, `locales.py` (language code -> till tag, script and spec), `bundle_checks.py`, `till_verify.py` (+ `till_harness/`), `publish_bundle.py`, `upload_translations.py` (validate and save build-time translations as "needs review", never approved, never legal; used for Italian, ut-docs#5421); the AI reviewer runner `review_runner.py` (+ `review_checks.py`, `review_model.py`, `review_prompt.py`, see `docs/ai-review.md`). Python 3 standard library only. |
 | `tests/` | — | Unit tests; run in CI by `.github/workflows/test.yml`. |
 
 ### Areas (components)
