@@ -86,13 +86,16 @@ CHECK_ORDER = ("empty", "placeholders", "max_length", "script", "dropped", "icu_
 
 
 def family(model):
-    """Model family: claude for anthropic/claude*, openai for codex/gpt*.
+    """Model family: claude for anthropic/claude*, openai for codex/gpt*,
+    gemini for gemini*/google*.
     Two accounts in the same family never review each other."""
     m = (model or "").strip().lower().split("/")[0]
     if m.startswith(("anthropic", "claude")):
         return "claude"
     if m.startswith(("openai", "codex", "gpt")):
         return "openai"
+    if m.startswith(("gemini", "google")):
+        return "gemini"
     return m
 
 

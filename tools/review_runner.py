@@ -21,7 +21,9 @@ ut-docs#5420). A build-time tool: no till ever depends on it.
   prompt   print the exact prompt for one batch, for an external sub-agent,
            which writes verdicts/<same file name> (schema in review_model).
   review   the same prompt through the Anthropic Messages API
-           (ANTHROPIC_API_KEY), one verdict file per batch.
+           (ANTHROPIC_API_KEY), or with --provider gemini the Gemini API
+           (GEMINI_API_KEY; the third family, ut-docs#5532), one verdict
+           file per batch.
   apply    verdicts -> audit.jsonl + summary.md, and with --write the
            Weblate writes, as the reviewer account only:
              approve      state translated then approved, text untouched,
@@ -49,7 +51,10 @@ again; re-running resumes. --re-review ignores earlier audits.
 
 Tokens: WEBLATE_REVIEWER_TOKEN, else the macOS Keychain service
 weblate-claude-reviewer (export also takes WEBLATE_TOKEN for reading);
-ANTHROPIC_API_KEY, else Keychain anthropic-api. Never printed or logged.
+ANTHROPIC_API_KEY, else Keychain anthropic-api. Gemini: GEMINI_API_KEY, else
+Keychain weblate-review-gemini; the Gemini reviewer account's Weblate token
+is Keychain weblate-gemini-reviewer or WEBLATE_GEMINI_REVIEWER_TOKEN (never
+the generic WEBLATE_REVIEWER_TOKEN, which is the Claude reviewer's). Never printed or logged.
 
 Exit: 0 done, 1 a write or model call failed, 2 refused or usage.
 """
@@ -75,7 +80,7 @@ import review_model  # noqa: E402
 import review_prompt  # noqa: E402
 from provision_weblate import WeblateClient, WeblateError  # noqa: E402
 from review_checks import run_scans  # noqa: E402,F401  (patched in tests)
-from review_model import AnthropicAdapter  # noqa: E402,F401  (patched in tests)
+from review_model import AnthropicAdapter, GeminiAdapter  # noqa: E402,F401  (patched in tests)
 
 RUNNER_VERSION = "1.0.0"
 PROJECT = "universal-till"
@@ -85,6 +90,7 @@ DEFAULT_ACCOUNT = "bot-universal-till-ai-reviewer-claude"
 BOOTSTRAP = "bot-universal-till-bootstrap-approver"
 REVIEWER_KEYCHAIN = "weblate-claude-reviewer"
 ANTHROPIC_KEYCHAIN = "anthropic-api"
+GEMINI_KEYCHAIN = "weblate-review-gemini"  # the Gemini API key
 TRANSLATED, APPROVED, READONLY = 20, 30, 100
 MAX_CONSECUTIVE_FAILURES = 5
 DETERMINISTIC = "none:deterministic-checks"
@@ -109,6 +115,36 @@ def secret(service, *env_vars):
         return v or None
     except (OSError, subprocess.CalledProcessError):
         return None
+
+
+def reviewer_keychain(account, accounts):
+    """The Keychain item holding an account's Weblate token: its "keychain"
+    entry in config/ai-accounts.json, else the Claude reviewer's."""
+    item = (accounts.get(account) or {}).get("keychain")
+    return item if isinstance(item, str) and item else REVIEWER_KEYCHAIN
+
+
+def reviewer_env(account, accounts):
+    acc = accounts.get(account) or {}
+    if acc.get("keychain"):
+        return acc.get("token_env") or "(none: Keychain only)"
+    return "WEBLATE_REVIEWER_TOKEN"
+
+
+def reviewer_token(account, accounts):
+    """The Weblate token to write as `account`. An account with its own
+    "keychain" entry never takes the generic WEBLATE_REVIEWER_TOKEN (that is
+    the Claude reviewer's: it would write as the wrong user while the audit
+    names this account); it reads its Keychain item or its "token_env"."""
+    acc = accounts.get(account) or {}
+    if isinstance(acc.get("keychain"), str) and acc["keychain"]:
+        env = acc.get("token_env")
+        return secret(acc["keychain"], *([env] if isinstance(env, str) and env else []))
+    return secret(REVIEWER_KEYCHAIN, "WEBLATE_REVIEWER_TOKEN")
+
+
+def gemini_key():
+    return secret(GEMINI_KEYCHAIN, "GEMINI_API_KEY")
 
 
 def sha(obj):
@@ -390,8 +426,15 @@ def prompt(args):
 
 
 def review(args):
-    key = secret(ANTHROPIC_KEYCHAIN, "ANTHROPIC_API_KEY")
-    adapter = AnthropicAdapter(key, model=args.model, base_url=args.api_base)
+    if args.provider == "gemini":
+        adapter = GeminiAdapter(gemini_key(), model=args.model or os.environ.get("GEMINI_MODEL")
+                                or review_model.GEMINI_DEFAULT_MODEL,
+                                base_url=args.api_base or "https://generativelanguage.googleapis.com")
+    else:
+        key = secret(ANTHROPIC_KEYCHAIN, "ANTHROPIC_API_KEY")
+        adapter = AnthropicAdapter(key, model=args.model or os.environ.get("ANTHROPIC_MODEL")
+                                   or review_model.DEFAULT_MODEL,
+                                   base_url=args.api_base or "https://api.anthropic.com")
     failures = 0
     for path in sorted(glob.glob(os.path.join(args.out, "batches", "*.json"))):
         dest = os.path.join(args.out, "verdicts", os.path.basename(path))
@@ -471,7 +514,7 @@ def run_refusals(args, accounts, token, models):
         return []
     why = []
     if not token:
-        why.append("no Weblate reviewer token (WEBLATE_REVIEWER_TOKEN / Keychain weblate-claude-reviewer)")
+        why.append(f"no Weblate reviewer token ({reviewer_env(args.account, accounts)} / Keychain {reviewer_keychain(args.account, accounts)})")
     acc = accounts.get(args.account)
     if args.account == BOOTSTRAP:
         why.append(f"{BOOTSTRAP} is the bootstrap approver, not an AI reviewer")
@@ -544,7 +587,7 @@ def apply(args):
                 models.add(model or "")
         for u in batch["units"]:
             work.append((u, got.get(u["id"]), model, intact))
-    token = secret(REVIEWER_KEYCHAIN, "WEBLATE_REVIEWER_TOKEN")
+    token = reviewer_token(args.account, accounts)
     refusals = run_refusals(args, accounts, token, models)
     client = WeblateClient(os.environ.get("WEBLATE_URL") or WEBLATE_URL, token) if token else None
     writer = Writer(client, args.write_interval, args.max_writes) if client else None
@@ -744,8 +787,10 @@ def parse(argv):
 
     r = sub.add_parser("review")
     r.add_argument("--out", required=True)
-    r.add_argument("--model", default=os.environ.get("ANTHROPIC_MODEL") or review_model.DEFAULT_MODEL)
-    r.add_argument("--api-base", default="https://api.anthropic.com")
+    r.add_argument("--provider", choices=("anthropic", "gemini"), default="anthropic",
+                   help="which API answers: anthropic (ANTHROPIC_API_KEY) or gemini (GEMINI_API_KEY, ut-docs#5532)")
+    r.add_argument("--model", help="default: ANTHROPIC_MODEL / GEMINI_MODEL, else the adapter's default")
+    r.add_argument("--api-base", help="default: the provider's own https endpoint")
     r.add_argument("--force", action="store_true", help="redo batches that already have a verdict file")
 
     a = sub.add_parser("apply")

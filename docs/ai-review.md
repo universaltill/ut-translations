@@ -82,6 +82,42 @@ python3 tools/review_runner.py apply --out .review-logs/<date>-fr
 python3 tools/review_runner.py apply --out .review-logs/<date>-fr --write
 ```
 
+## Gemini reviewer (third family, ut-docs#5532)
+
+Gemini reviews strings written by Claude, Codex or a local model. Its account
+is `bot-universal-till-ai-reviewer-gemini` (model family `gemini`, role
+`reviewer`); the family check treats `gemini*` and `google*` as one family, so
+Gemini never reviews its own text and a Claude/Codex verdict file cannot be
+recorded under it (nor a Gemini file under another account).
+
+```sh
+python3 tools/review_runner.py export --lang it --till-source ../universal-till
+python3 tools/review_runner.py review --provider gemini --out .review-logs/<date>-it
+python3 tools/review_runner.py apply --out .review-logs/<date>-it \
+    --account bot-universal-till-ai-reviewer-gemini            # dry run first
+```
+
+The model is `GEMINI_MODEL` or `--model` (default `gemini-2.5-pro`); the
+verdict file records the model that answered (`gemini/<modelVersion>`).
+Same rules as every reviewer: legal, tax, fiscal, receipt and money strings are
+needs-human before any model is asked, and a forged approve for one is
+dropped; a model can only escalate (never override a failed pre-check);
+needs-fix is a suggestion, text is never edited.
+
+Secrets (never printed or logged; the Gemini key travels in the
+`x-goog-api-key` header only, over https):
+
+- Gemini API key: `GEMINI_API_KEY`, or the Keychain item
+  `weblate-review-gemini`. The copy of record is Key Vault
+  `kv-unitill-dev` secret `weblate-review-gemini-key` (made by
+  `ut-infra` `unitill-infra/google-translate/gemini-review.tf`, restricted to
+  the Generative Language API, daily request cap, budget alert).
+- The account's Weblate token: `WEBLATE_GEMINI_REVIEWER_TOKEN`, or the
+  Keychain item `weblate-gemini-reviewer` (the account's `keychain` and
+  `token_env` entries in `config/ai-accounts.json`). The generic
+  `WEBLATE_REVIEWER_TOKEN` is the Claude reviewer's and is never used for
+  an account that names its own item: it would write as the wrong user.
+
 ## Session-run mode (the default while API credit is spent)
 
 In this mode, a Claude Code session does the model step. No Anthropic API key
