@@ -153,7 +153,7 @@ def needs_approval(unit, include_approved=False):
     return include_approved and APPROVED <= state < READONLY
 
 
-KEEP_NAMES = {"SKU", "PIN", "QR", "EAN-8", "EAN-13", "UPC-A", "UPC-E", "Code 39", "Code 128", "Local Plus"}
+KEEP_NAMES = {"Universal Till", "SKU", "PIN", "QR", "EAN-8", "EAN-13", "UPC-A", "UPC-E", "Code 39", "Code 128", "Local Plus"}
 
 
 def keep_as_is(unit):

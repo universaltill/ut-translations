@@ -95,7 +95,7 @@ class Translate(unittest.TestCase):
 
 class KeepAsIs(unittest.TestCase):
     def test_codes_and_product_names_are_copied_not_translated(self):
-        for src in ("SKU", "EAN-13", "QR", "Code 128", "Local Plus", "PIN"):
+        for src in ("SKU", "EAN-13", "QR", "Code 128", "Local Plus", "PIN", "Universal Till"):
             self.assertTrue(b.keep_as_is(unit(0, [""], source=src)), src)
 
     def test_ordinary_text_is_translated(self):
