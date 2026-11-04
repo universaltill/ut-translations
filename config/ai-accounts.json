@@ -15,6 +15,11 @@
       "model": "local-ollama",
       "role": "translator",
       "note": "Weblate bot that saves machine translations made by a local Ollama model through tools/bulk_locale.py (ut-docs#4371). Never approves. Its strings are approved by a different account (the codex reviewer, or the bootstrap approver while the re-review is pending)."
+    },
+    "bot-universal-till-ai-translator-claude": {
+      "model": "claude",
+      "role": "translator",
+      "note": "Weblate bot for translations drafted by Claude. Never approves; its strings are approved by a different model (the codex reviewer) or a human (ut-docs#4366). The Weblate user must be created before it is used."
     }
   }
 }
