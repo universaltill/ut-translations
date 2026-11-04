@@ -80,6 +80,7 @@ LANGUAGE_NOTES = {
     "fr": "Use 'vous' (formal). Retail terms: caisse, ticket de caisse, remboursement, annulation, tiroir-caisse, article, catégorie. Put a non-breaking space before : ; ! ? as French typography requires.",
     "pt": "European Portuguese (Portugal), not Brazilian. Prefer the formal impersonal form. Retail terms: caixa, talão/recibo, devolução, anulação, gaveta, artigo, categoria.",
     "tr": "Address the user formally with 'siz'; use 'Lütfen' for requests. Retail terms: kasa, fiş, iade, iptal, ürün, kategori. Keep Turkish characters correct.",
+    "it": "Italian (Italy). Address the user informally with 'tu' (puoi, il tuo), never 'Lei'. Concise imperative UI phrasing. Retail terms: cassa (the till), scontrino (receipt), reso/rimborso (refund), annullo/storno (void), cassetto, articolo (item), categoria, pulsanti rapidi (quick buttons), catalogo, responsabile (manager). Glossary: config/glossary/it.md.",
     "ar": "Modern Standard Arabic, right-to-left, formal address. Use Western digits (0-9) to match the till.",
     "fa": "Persian (Iran), right-to-left, formal. Use the zero-width non-joiner correctly. Use Western digits (0-9) to match the till.",
     "ms": "Standard Bahasa Malaysia (not Indonesian). Use 'anda'. Keep common English tech words (Bluetooth, Wi-Fi, PIN) unchanged.",
