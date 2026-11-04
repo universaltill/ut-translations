@@ -159,6 +159,15 @@ def make_repo(root, till_sha, ai_accounts=None):
     return r
 
 
+LANGUAGES = [("en", "English"), ("de", "German"), ("tr", "Turkish"), ("es", "Spanish"), ("pt", "Portuguese"),
+             ("ar", "Arabic"), ("fa", "Persian")]
+
+
+def language_rows(extra=()):
+    """Weblate's /api/projects/<p>/languages/ rows (a plain list)."""
+    return [{"code": c, "name": n} for c, n in [*LANGUAGES, *extra]]
+
+
 class FakeWeblate:
     """Units, changes, groups and users of Weblate's REST API (2026.10
     shapes: users/authors as /api/users/<name>/ URLs, units as
@@ -172,6 +181,8 @@ class FakeWeblate:
         self.users = {}     # name -> user
         self.groups = [{"id": TEAM_ID, "name": "human-reviewers"}, {"id": 1, "name": "Users"}]
         self.hide_groups = False
+        self.languages = language_rows()   # None -> the endpoint answers 404
+        self.languages_status = 200
         self.requests = []
         self.next_id = 1000
         self.ts = 0
@@ -235,6 +246,12 @@ class FakeWeblate:
                 return 404, {"detail": "Not found."}
             # Weblate lists newest first.
             return self.page(list(reversed(self.changes.get(key, []))), q, path)
+        if path == f"/api/projects/{PROJECT}/languages/":
+            if self.languages_status != 200:
+                return self.languages_status, {"detail": "error"}
+            if self.languages is None:
+                return 404, {"detail": "Not found."}
+            return 200, self.languages
         if path == "/api/groups/":
             return self.page(self.groups, q, path)
         if (m := re.fullmatch(r"/api/users/([^/]+)/", path)):

@@ -1,14 +1,25 @@
 # Build, verify and publish one language bundle,
-# com.universaltill.language-<locale> (ADR-0160 §4, §5; ut-docs#4367).
+# com.universaltill.language-<tag> (ADR-0160 §4, §5; ut-docs#4367, #4640).
 #
-# By hand only (workflow_dispatch), one locale per run, on main only.
+# By hand only (workflow_dispatch), one language per run, on main only. The
+# input is the WEBLATE language code (de, pt_BR, zh_Hans); any language that
+# exists in the Weblate project can be built, with no change in this repo
+# (tools/locales.py). The till tag is the code lower-cased with "_" -> "-"
+# (zh_Hans -> zh-hans): the plugin id, locales/<tag>.json, artifact names.
 #
+#   validate no secret, no environment, runs first. Refuses a code that is
+#            not [a-z]{2,3}(_[A-Za-z0-9]{2,8})? BEFORE anything else (a plain
+#            regex step, no checkout, no action), then checks the code is in
+#            Weblate's public language list and prints the tag and whether
+#            the language is a human-spot-check one (config/bundles.json
+#            overrides only: en, de, tr).
 #   build    reads approved translations from Weblate (tools/build_bundle.py:
 #            review gate, per-string checks; for en, this repo's English is
 #            compared with universal-till's at source_commit) and uploads the
 #            bundle, report.json and review.md as a run artifact straight
-#            away. Holds the Weblate read token, in the build step only, and
-#            runs no universal-till code: no Go, no guard scripts
+#            away. Re-derives the language from the live list itself (fail
+#            closed). Holds the Weblate read token, in the build step only,
+#            and runs no universal-till code: no Go, no guard scripts
 #            (--no-scans). review.md is the job summary the spot-checker
 #            reads. Outputs the sha256 of the bundle and of report.json.
 #   verify   no environment, no secret. Checks the artifact against those
@@ -16,18 +27,20 @@
 #            guards over the bundle (build_bundle.py --scan-bundle) and the
 #            till's own installer + locale loader, with tampered copies
 #            refused (tools/till_verify.py).
-#   publish  only with `publish` ticked, after build and verify: uploads that
-#            exact artifact (bundle and report.json sha256 re-checked against
-#            the build job's outputs, since verify ran the till's code in
-#            between) with the scoped language-publisher token and approves
-#            it (the marketplace signs on approval). Runs in
-#              bundle-publish-human  for en, de, tr — a required reviewer
-#                                    approves the deployment: that approval
-#                                    is the human spot-check (ADR-0160 §4);
-#              bundle-publish        for every other locale.
-#            Both environments are limited to main. The token is an
-#            environment secret, passed to the one step that needs it, never
-#            echoed.
+#   publish  only with `publish` ticked, after validate, build and verify:
+#            uploads that exact artifact (bundle and report.json sha256
+#            re-checked against the build job's outputs, since verify ran
+#            the till's code in between) with the scoped language-publisher
+#            token and approves it (the marketplace signs on approval). Two
+#            jobs, identical except environment and condition:
+#              publish-human  environment bundle-publish-human, validate's
+#                             human == 'true' (en, de, tr): a required
+#                             reviewer approves the deployment, which is the
+#                             human spot-check (ADR-0160 §4);
+#              publish        environment bundle-publish, human == 'false'.
+#            An empty human output runs neither. Both environments are
+#            limited to main. The token is an environment secret, passed to
+#            the one step that needs it, never echoed.
 #
 # source_commit (meta/source.json) must be on universal-till main or be a
 # vX.Y.Z tag's commit: GitHub serves a fork's commit by sha through the
@@ -43,9 +56,9 @@ on:
   workflow_dispatch:
     inputs:
       locale:
-        description: "Locale to build (config/bundles.json)"
-        type: choice
-        options: [en, de, tr, es, pt, ar, fa]
+        description: "Weblate language code to build (de, pt_BR, zh_Hans; must exist in the Weblate project)"
+        type: string
+        required: true
       channel:
         description: "Marketplace channel"
         type: choice
@@ -63,7 +76,38 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  validate:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    outputs:
+      tag: ${{ steps.check.outputs.tag }}
+      human: ${{ steps.check.outputs.human }}
+    steps:
+      - name: Locale code shape
+        env:
+          LOCALE: ${{ inputs.locale }}
+        run: |
+          set -euo pipefail
+          [[ "$LOCALE" =~ ^[a-z]{2,3}(_[A-Za-z0-9]{2,8})?$ ]] || { echo "::error::locale is not a Weblate language code"; exit 1; }
+
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Language exists in Weblate (anonymous, public list)
+        id: check
+        env:
+          LOCALE: ${{ inputs.locale }}
+          WEBLATE_URL: ${{ vars.WEBLATE_URL }}
+        run: |
+          set -euo pipefail
+          python3 tools/locales.py --check "$LOCALE" --live >> "$GITHUB_OUTPUT"
+
   build:
+    needs: validate
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -128,7 +172,7 @@ jobs:
 
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
-          name: bundle-${{ inputs.locale }}
+          name: bundle-${{ needs.validate.outputs.tag }}
           path: dist/
           if-no-files-found: error
           retention-days: 30
@@ -137,7 +181,7 @@ jobs:
         run: cat dist/review.md >> "$GITHUB_STEP_SUMMARY"
 
   verify:
-    needs: build
+    needs: [validate, build]
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 30
@@ -184,7 +228,7 @@ jobs:
 
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
-          name: bundle-${{ inputs.locale }}
+          name: bundle-${{ needs.validate.outputs.tag }}
           path: dist/
 
       - name: The artifact is what the build job made
@@ -204,17 +248,17 @@ jobs:
 
       - name: Till verifier (real installer + loader; tampered copies refused)
         env:
-          LOCALE: ${{ inputs.locale }}
+          TAG: ${{ needs.validate.outputs.tag }}
           BUNDLE: ${{ needs.build.outputs.bundle }}
           COMMIT: ${{ steps.src.outputs.commit }}
-        run: python3 tools/till_verify.py --till till --commit "$COMMIT" --bundle "$BUNDLE" --locale "$LOCALE"
+        run: python3 tools/till_verify.py --till till --commit "$COMMIT" --bundle "$BUNDLE" --locale "$TAG"
 
-  publish:
-    needs: [build, verify]
-    if: inputs.publish && github.ref == 'refs/heads/main'
+  publish-human:
+    needs: [validate, build, verify]
+    if: inputs.publish && github.ref == 'refs/heads/main' && needs.validate.outputs.human == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 10
-    environment: ${{ contains(fromJSON('["en","de","tr"]'), inputs.locale) && 'bundle-publish-human' || 'bundle-publish' }}
+    environment: bundle-publish-human
     permissions:
       contents: read
     steps:
@@ -224,18 +268,49 @@ jobs:
 
       - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
         with:
-          name: bundle-${{ inputs.locale }}
+          name: bundle-${{ needs.validate.outputs.tag }}
           path: dist/
 
       - name: Upload and approve
         env:
           MARKETPLACE_BASE_URL: ${{ vars.MARKETPLACE_BASE_URL }}
           MARKETPLACE_LANGUAGE_UPLOAD_TOKEN: ${{ secrets.MARKETPLACE_LANGUAGE_UPLOAD_TOKEN }}
-          LOCALE: ${{ inputs.locale }}
+          TAG: ${{ needs.validate.outputs.tag }}
           CHANNEL: ${{ inputs.channel }}
           BUNDLE: ${{ needs.build.outputs.bundle }}
           SHA256: ${{ needs.build.outputs.sha256 }}
           REPORT_SHA256: ${{ needs.build.outputs.report_sha256 }}
         run: >-
           python3 tools/publish_bundle.py --bundle "$BUNDLE" --report dist/report.json
-          --sha256 "$SHA256" --report-sha256 "$REPORT_SHA256" --locale "$LOCALE" --channel "$CHANNEL"
+          --sha256 "$SHA256" --report-sha256 "$REPORT_SHA256" --locale "$TAG" --channel "$CHANNEL"
+
+  publish:
+    needs: [validate, build, verify]
+    if: inputs.publish && github.ref == 'refs/heads/main' && needs.validate.outputs.human == 'false'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    environment: bundle-publish
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: bundle-${{ needs.validate.outputs.tag }}
+          path: dist/
+
+      - name: Upload and approve
+        env:
+          MARKETPLACE_BASE_URL: ${{ vars.MARKETPLACE_BASE_URL }}
+          MARKETPLACE_LANGUAGE_UPLOAD_TOKEN: ${{ secrets.MARKETPLACE_LANGUAGE_UPLOAD_TOKEN }}
+          TAG: ${{ needs.validate.outputs.tag }}
+          CHANNEL: ${{ inputs.channel }}
+          BUNDLE: ${{ needs.build.outputs.bundle }}
+          SHA256: ${{ needs.build.outputs.sha256 }}
+          REPORT_SHA256: ${{ needs.build.outputs.report_sha256 }}
+        run: >-
+          python3 tools/publish_bundle.py --bundle "$BUNDLE" --report dist/report.json
+          --sha256 "$SHA256" --report-sha256 "$REPORT_SHA256" --locale "$TAG" --channel "$CHANNEL"

@@ -40,9 +40,9 @@ universal-till main ──(sync job, this repo)──▶ <area>/en.json + meta/
 | `meta/areas.json` | sync job | Component name, description and key count per area. |
 | `meta/source.json` | sync job | The universal-till commits the current files came from (rewritten only together with a real change). |
 | `config/lines.json` | people | The source repo and the **supported till lines** (below). |
-| `config/bundles.json` | people | Locales a bundle may be built for: Weblate code, name, script, `human_spot_check`, `min_coverage`. |
+| `config/bundles.json` | people | Overrides only (no language list): per Weblate code `source`, `human_spot_check`, `min_coverage`, `script`, `name`. Any other field is refused (`tools/locales.py`). |
 | `config/ai-accounts.json` | people | Weblate AI service accounts and the model each is tied to (ut-docs#4366 fills it in). |
-| `tools/` | — | `sync_english.py`, `provision_weblate.py`, `i18n_map.py` (the shared mapping), `import_existing.py` (the one-off import below), and the bundle tools `build_bundle.py`, `bundle_checks.py`, `till_verify.py` (+ `till_harness/`), `publish_bundle.py`; the AI reviewer runner `review_runner.py` (+ `review_checks.py`, `review_model.py`, `review_prompt.py`, see `docs/ai-review.md`). Python 3 standard library only. |
+| `tools/` | — | `sync_english.py`, `provision_weblate.py`, `i18n_map.py` (the shared mapping), `import_existing.py` (the one-off import below), and the bundle tools `build_bundle.py`, `locales.py` (language code -> till tag, script and spec), `bundle_checks.py`, `till_verify.py` (+ `till_harness/`), `publish_bundle.py`; the AI reviewer runner `review_runner.py` (+ `review_checks.py`, `review_model.py`, `review_prompt.py`, see `docs/ai-review.md`). Python 3 standard library only. |
 | `tests/` | — | Unit tests; run in CI by `.github/workflows/test.yml`. |
 
 ### Areas (components)
@@ -151,7 +151,7 @@ Optional env: `WEBLATE_REPO_URL` (pull, default the public https clone),
 ## Importing the translations we already have (ADR-0160 §9; ut-docs#4371, #4372)
 
 `tools/import_existing.py` pre-fills `<area>/<code>.json` for every
-translated locale in `config/bundles.json` from what already exists —
+locale with an existing pack (the fixed `SOURCES` table in the tool; pass `--locale` to limit) from what already exists —
 `ut-plugin-language-{de,es,pt}` `locales/<code>.json` and universal-till
 `web/locales/{tr,ar,fa}.json` — read with `git show <ref>:` (default
 `origin/main`) from sibling checkouts, never from their working trees. It
@@ -179,9 +179,33 @@ python3 tools/import_existing.py --report /tmp/import-report.json
 ## Language bundles (ADR-0160 §4, §5; ut-docs#4367)
 
 `.github/workflows/publish-bundle.yml`, run by hand on `main` for one
-locale, builds `com.universaltill.language-<code>`, checks it against the
+language, builds `com.universaltill.language-<tag>`, checks it against the
 till, and (with **publish** ticked) uploads and approves it in the
 marketplace.
+
+**Adding a language is one step: add it in Weblate.** The workflow input is
+the Weblate language code (`de`, `pt_BR`, `zh_Hans`). Its **till tag** is the
+code lower-cased with `_` -> `-` (`pt-br`, `zh-hans`), used for the plugin id,
+`locales/<tag>.json`, the manifest's `locales`, `bundle.json`'s `locale` and
+artifact names; Weblate calls keep the code. A first `validate` job (no
+secret, no environment) checks the code against a strict pattern, then
+against Weblate's public language list (a repository variable `WEBLATE_URL`
+is needed, since this job has no environment), and prints the tag and whether
+the language is a human-spot-check one; `build` re-derives the language from
+the live list itself and fails closed if the list is unreachable, empty or
+two codes share a tag. Name and script are derived by `tools/locales.py`
+(a language written in several scripts, like `zh`, needs a script suffix or
+a `script` override; a script with no per-string checker is refused). A
+derived language gets `human_spot_check` false and no `min_coverage`; only
+`config/bundles.json` overrides change that (en, de, tr are the human
+spot-check languages; de/es/pt carry `min_coverage`). Nothing Weblate
+returns, other than the code and a sanitised display name, can set a gate
+field.
+
+**The review gate still applies to every language.** A language whose
+`legal` strings lack a human approval builds only the gate-clean strings;
+a bundle with zero approved strings is never published; publishing is a
+manual dispatch, never automatic.
 
 **What ships.** Only strings Weblate holds as *approved*, read from the
 Weblate REST API (Weblate can't push to this repo yet; `--text-source git`
@@ -241,7 +265,7 @@ one-line-per-string view of them (newlines, tags, non-breaking spaces and
 Unicode dashes folded, so those can't hide a term) and the manifest, with no
 token in their environment. A hit stops the build; a human fixes the string
 in Weblate. A publish also stops when the bundle is empty, or below the
-locale's `min_coverage` — set for de/es/pt, because their 2.x bundle
+language's `min_coverage` (a `config/bundles.json` override) — set for de/es/pt, because their 2.x bundle
 replaces the installed pack under the same id until ut-docs#4371 imports it.
 
 **Format.** A `language` plugin package (ADR-0010), deterministic tar.gz:
@@ -294,8 +318,9 @@ python3 tools/till_verify.py --till ../universal-till --commit <source_commit> \
 **Environments** (GitHub → Settings → Environments, all limited to `main`):
 - `bundle-build`: secret `WEBLATE_BUNDLE_TOKEN` (a read-only Weblate bot
   that can see users' teams and bot flag), variable `WEBLATE_URL`. No
-  reviewer.
-- `bundle-publish` (ar, es, fa, pt…): secret
+  reviewer. The `validate` job has no environment, so `WEBLATE_URL` must
+  also exist as a **repository** variable.
+- `bundle-publish` (every language without a human spot-check): secret
   `MARKETPLACE_LANGUAGE_UPLOAD_TOKEN`, variable `MARKETPLACE_BASE_URL`.
   No reviewer: the AI review already gated each string.
 - `bundle-publish-human` (en, de, tr): the same secret and variable, plus a

@@ -21,11 +21,8 @@ EN = {
     "sale": {"pos.pay": "Pay %s", "pos.total": "Total {{.Amount}}", "pos.sku": "SKU"},
     "common": {"common.ok": "OK", "common.hello": "Hello {name}"},
 }
-BUNDLES = {"locales": {
-    "en": {"weblate": "en", "source": True},
-    "de": {"weblate": "de"},
-    "tr": {"weblate": "tr"},
-}}
+# The fixture workspace holds the de and tr sources only.
+DEFAULT_LOCALES = ["--locale", "de", "--locale", "tr"]
 
 
 def git(cwd, *args):
@@ -81,7 +78,6 @@ class Fixture(unittest.TestCase):
             write(os.path.join(self.repo, area, "en.json"), i18n_map.dumps(keys))
         write(os.path.join(self.repo, "meta", "areas.json"),
               i18n_map.dumps({a: {"keys": len(k)} for a, k in EN.items()}, sort=False))
-        write(os.path.join(self.repo, "config", "bundles.json"), json.dumps(BUNDLES))
         source_repo(os.path.join(self.ws, "ut-plugin-language-de"), {
             "locales/de.json": json.dumps(self.DE, ensure_ascii=False),
             "i18n-baseline/de.same-as-en.txt": "# header\n#\npos.sku\n",
@@ -96,7 +92,8 @@ class Fixture(unittest.TestCase):
     def run_main(self, *args):
         out, err = io.StringIO(), io.StringIO()
         with redirect_stdout(out), redirect_stderr(err):
-            code = imp.main(["--repo", self.repo, "--workspace", self.ws, *args])
+            default = [] if "--locale" in args else DEFAULT_LOCALES
+            code = imp.main(["--repo", self.repo, "--workspace", self.ws, *default, *args])
         return code, out.getvalue(), err.getvalue()
 
     def read(self, rel):

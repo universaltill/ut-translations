@@ -6,6 +6,8 @@
 /.github/workflows/test.yml @farshidmirza
 /tools/build_bundle.py @farshidmirza
 /tools/bundle_checks.py @farshidmirza
+/tools/locales.py @farshidmirza
+/tests/test_locales.py @farshidmirza
 /tools/publish_bundle.py @farshidmirza
 /tools/till_verify.py @farshidmirza
 /tools/till_harness/ @farshidmirza

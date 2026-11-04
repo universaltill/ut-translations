@@ -8,7 +8,7 @@ Reads (never writes), at a git ref (default origin/main):
                + i18n-baseline/<code>.same-as-en.txt (the pack's reviewed
                  list of keys that are legitimately the same as English)
   tr, ar, fa   universal-till             web/locales/<code>.json
-and writes, for every locale in config/bundles.json except the source and
+and writes, for every locale in SOURCES below (the source language excluded) and
 every area that has an <area>/en.json here:
   <area>/<code>.json   flat key -> text, same format as <area>/en.json
                        (tools/i18n_map.dumps: sorted keys, 2-space indent,
@@ -51,7 +51,6 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import bundle_checks  # noqa: E402
 import i18n_map  # noqa: E402
 
-BUNDLES_PATH = "config/bundles.json"
 AREAS_PATH = "meta/areas.json"
 
 # locale -> (sibling repo, locale file, same-as-English list or None)
@@ -179,13 +178,14 @@ def read_source(workspace, code, ref):
 
 def plan(repo, workspace, ref, locales=None):
     """-> ({relative path: text}, report). No writes."""
-    with open(os.path.join(repo, BUNDLES_PATH), encoding="utf-8") as f:
-        bundles = json.load(f)["locales"]
-    codes = [c for c, spec in bundles.items() if not spec.get("source")]
+    # The locales with an existing pack to import are the fixed SOURCES; a
+    # language added in Weblate later has nothing to import (ut-docs#4640).
+    codes = sorted(SOURCES)
     if locales:
         unknown = sorted(set(locales) - set(codes))
         if unknown:
-            raise ImportFailed(f"not a translated bundle locale in {BUNDLES_PATH}: {', '.join(unknown)}")
+            raise ImportFailed(f"no existing translations to import for: {', '.join(unknown)} "
+                               f"(known: {', '.join(codes)})")
         codes = [c for c in codes if c in locales]
     english = load_english(repo)
     metas = {a: load_meta(repo, a) for a in english}
