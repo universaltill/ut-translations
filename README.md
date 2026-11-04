@@ -81,6 +81,34 @@ invite limits a Weblate team to those components (ADR-0160 §3).
 | `review: legal`, or any key in a `legal_namespaces` namespace without a reviewed `review_exception` (deny by default) | label **`legal`** — the publish step (ut-docs#4367) needs a `human-reviewers` approval for these |
 | a key only an older supported line uses | a note in the explanation |
 
+## Surfaces: website and ut-cloud (ADR-0177 §1; ut-docs#5405)
+
+Besides the 13 till areas, `config/surfaces.json` declares the other places
+that translate through Weblate: `website`, `cloud-manage`, `cloud-admin`,
+`cloud-partner`, `cloud-public`. Each surface is one Weblate component of the
+same slug and names its source `repo`/`branch`, the `english` file and the
+`metadata` file in it (same fields as the till's `en.meta.json`: `description`,
+`placeholders`, `max_length`, `review`, plus an optional `core: true` for
+frame text a published page cannot do without). `namespaces` (optional) keeps
+only the keys whose first dotted segment is listed, so ut-cloud's one English
+file feeds four components. The file is hand-kept because it names repos, not
+languages.
+
+```sh
+python3 tools/sync_english.py --surface website --no-commit
+python3 tools/sync_english.py --surface cloud-manage --source ../ut-cloud --no-commit
+```
+
+writes `<component>/en.json`, `meta/<component>.json` and
+`meta/source-<surface>.json`, and commits only when English or metadata
+changed. Main of the source repo only (no supported-line union); the till
+sync is unchanged and does not report surface folders as stale areas. The
+sync workflow does not run surfaces yet: a surface goes live when its source
+repo has the English file (ut-website: ADR-0177 slice 2). `provision_weblate.py`
+creates a surface's component (linked to `common`'s clone, same checks and
+add-on as an area) once its files exist and skips it with a log line before
+that.
+
 ## Supported till lines (ADR-0160 §5)
 
 One language bundle serves every supported till line, so the components
