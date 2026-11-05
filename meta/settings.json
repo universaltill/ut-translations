@@ -1474,6 +1474,62 @@
       "0.34"
     ]
   },
+  "settings.backup.delete": {
+    "explanation": "Button on a row of the backups list that deletes that backup file.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.delete_confirm": {
+    "explanation": "Question asked before a backup file is deleted from the backups list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.delete_failed": {
+    "explanation": "Error when deleting a backup file failed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.delete_invalid": {
+    "explanation": "Error when the name sent to delete is not a backup file.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.delete_missing": {
+    "explanation": "Error when the backup to delete is already gone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.delete_newest": {
+    "explanation": "Error when someone tries to delete the newest backup, which is always kept.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.deleted": {
+    "explanation": "Confirmation shown after a backup file was deleted.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.backup.done": {
     "explanation": "",
     "flags": "",
@@ -1526,6 +1582,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.backup.newest_kept": {
+    "explanation": "Label on the newest backup row, which has no Delete button because it is always kept.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.backup.none_yet": {
@@ -1603,6 +1667,54 @@
   "settings.backup.restore_refused": {
     "explanation": "Notice in Settings → Backups after the till refused, at restart, a staged restore whose file was not a usable till database. Shown until the next restore is staged.",
     "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.retention_days": {
+    "explanation": "Label of the number field: how many days of backups the till keeps.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.retention_failed": {
+    "explanation": "Error when the backup days setting could not be saved.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.retention_hint": {
+    "explanation": "Help under the backup days field: older backups are deleted automatically when the next one is made; the newest is always kept.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.retention_invalid": {
+    "explanation": "Error for a backup days value that is not a whole number in range.\n\nPlaceholders:\n- %d: the largest allowed number of days",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.retention_save": {
+    "explanation": "Button that saves the backup days setting.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.retention_saved": {
+    "explanation": "Confirmation shown after the backup days setting was saved.",
+    "flags": "max-length:20",
     "labels": [],
     "lines": [
       "main"

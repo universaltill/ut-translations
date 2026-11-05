@@ -6892,6 +6892,14 @@
       "0.34"
     ]
   },
+  "promotions.col.dates": {
+    "explanation": "Column header on the Promotions list: the promotion's start and end dates, shown as two stacked lines in one column. An open side shows a dash.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "promotions.col.status": {
     "explanation": "",
     "flags": "",
@@ -6946,6 +6954,14 @@
       "0.34"
     ]
   },
+  "promotions.deactivate_confirm": {
+    "explanation": "Confirmation shown before a promotion is deactivated from its edit dialog: says it stops working at checkout and can be reactivated.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "promotions.edit": {
     "explanation": "",
     "flags": "",
@@ -6953,6 +6969,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "promotions.edit_title": {
+    "explanation": "Title of the Promotions record dialog when an existing promotion is opened for editing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "promotions.empty": {
+    "explanation": "Empty state on the Promotions page when no promotion exists yet; points at the + button next to the search field.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "promotions.error.code_exists": {
@@ -7079,6 +7111,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "promotions.search_placeholder": {
+    "explanation": "Label and placeholder of the search field above the Promotions list (filters rows by code, description or customer).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "promotions.title": {
