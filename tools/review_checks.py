@@ -76,7 +76,9 @@ ICU_HEAD = re.compile(r"\s*([A-Za-z_][A-Za-z0-9_]*)\s*,\s*(plural|selectordinal|
 
 HUMAN_WORDS = {"fiscal", "tax", "taxes", "taxable", "vat", "invoice", "invoices", "receipt", "receipts", "tse",
                "legal", "terms", "privacy", "price", "prices", "pricing", "amount", "amounts", "currency",
-               "currencies", "money"}
+               "currencies", "money", "cost", "costs", "billing", "impressum", "cookie", "cookies", "consent",
+               "gdpr", "licence", "license"}
+MONEY_SYMBOL = re.compile(r"[£€$¥₺]\s?\d|\d\s?[£€$¥₺]")
 HUMAN_COMPONENTS = {"receipts-and-legal"}
 
 LENGTH_RATIO, LENGTH_SLACK = 2.5, 15
@@ -343,6 +345,8 @@ def needs_human(key, component, meta_entry, labels, english):
     hit = sorted(segs & HUMAN_WORDS)
     if hit:
         return f"tax/fiscal/money key ({hit[0]})"
+    if MONEY_SYMBOL.search(english or ""):
+        return "tax/fiscal/money wording (amount)"
     words = set(re.findall(r"[a-z]+", (english or "").lower()))
     hit = sorted(words & HUMAN_WORDS)
     if hit:

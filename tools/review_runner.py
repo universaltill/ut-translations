@@ -78,6 +78,7 @@ import locales  # noqa: E402
 import review_checks  # noqa: E402
 import review_model  # noqa: E402
 import review_prompt  # noqa: E402
+import surfaces as surfaces_mod  # noqa: E402
 from provision_weblate import WeblateClient, WeblateError  # noqa: E402
 from review_checks import run_scans  # noqa: E402,F401  (patched in tests)
 from review_model import AnthropicAdapter, GeminiAdapter  # noqa: E402,F401  (patched in tests)
@@ -241,10 +242,21 @@ def labels(unit):
     return sorted({(lab.get("name") if isinstance(lab, dict) else lab) for lab in unit.get("labels") or []})
 
 
+def surface_components(repo):
+    """{Weblate component: surface name} for the non-till surfaces in
+    config/surfaces.json (website, cloud-*; ADR-0177). They are reviewed by the
+    same rules as the till areas; only the till source scans do not apply."""
+    try:
+        return {sp["component"]: name for name, sp in surfaces_mod.load(repo).items()}
+    except surfaces_mod.SurfaceError as e:
+        raise RunnerError(str(e)) from None
+
+
 def areas(repo, only):
     names = list(load_json(os.path.join(repo, "meta", "areas.json")))
     for a in names:
         build_bundle.i18n_map.validate_area_id(a)
+    names += [c for c in surface_components(repo) if c not in names]
     if only:
         unknown = sorted(set(only) - set(names))
         if unknown:
@@ -291,6 +303,7 @@ def export(args):
                                   "a human approval can't be told from an unlisted bot's")
             bots[name] = bool(u["is_bot"])
         return bots[name]
+    surface_comps = surface_components(args.repo)
     for comp in areas(args.repo, args.component):
         meta_path = os.path.join(args.repo, "meta", f"{comp}.json")
         meta = load_json(meta_path) if os.path.exists(meta_path) else {}
@@ -333,7 +346,7 @@ def export(args):
             if audit_key(rec["id"], rec["src_sha"], rec["tgt_sha"]) in done:
                 continue
             rec["checks"] = review_checks.check_unit(rec, lang, m, glossary, plural_number, script)
-            rec["checks"]["scans"] = "pending"
+            rec["checks"]["scans"] = "skipped" if comp in surface_comps else "pending"  # till scans: till only
             rec["needs_human"] = human
             records.append(rec)
             if args.limit and len(records) >= args.limit:
@@ -365,24 +378,31 @@ def export(args):
 def scan_and_plan(out, till, repo):
     doc = load_json(os.path.join(out, "units.json"))
     units = doc["units"]
-    entries = [(f"{u['id']}.{n}", form) for u in units for n, form in enumerate(u["target"])]
+    surf = surface_components(repo)  # a surface is decided by the component, never by a field in units.json
+    entries = [(f"{u['id']}.{n}", form) for u in units if u["component"] not in surf
+               for n, form in enumerate(u["target"])]
     hits = {}
     if entries:
         commit = build_bundle.read_source(repo)[0]
         hits = run_scans(till, commit, entries)
     for u in units:
         found = sorted({v for k, v in hits.items() if str(k).split(".")[0] == str(u["id"])})
+        if u["component"] in surf:  # the ADR-0040/0106 scans read the till's source: none for a surface
+            u["checks"]["scans"] = "skipped"
+            continue
         u["checks"]["scans"] = "; ".join(found) if found else "pass"
     doc["scans"] = "done"
     dump(os.path.join(out, "units.json"), doc)
-    plan(out, doc)
+    plan(out, doc, surf)
 
 
 def batch_digest(batch):
-    return sha({k: batch.get(k) for k in ("prompt_version", "lang", "component", "units")})
+    keys = ("prompt_version", "lang", "component", "units") + (("surface",) if batch.get("surface") else ())
+    return sha({k: batch.get(k) for k in keys})
 
 
-def plan(out, doc):
+def plan(out, doc, surf=None):
+    surf = surf or {}
     lang, size = doc["lang"], max(1, int(doc.get("batch_size") or 40))
     decided, pending = [], {}
     for u in doc["units"]:
@@ -400,6 +420,8 @@ def plan(out, doc):
             chunk = units[i:i + size]
             batch = {"schema": 1, "prompt_version": review_prompt.PROMPT_VERSION, "lang": lang, "component": comp,
                      "units": chunk}
+            if comp in surf:
+                batch["surface"] = surf[comp]
             batch["batch_sha"] = batch_digest(batch)
             dump(os.path.join(out, "batches", f"{comp}-{i // size + 1:03d}.json"), batch)
             n_batches += 1
@@ -533,7 +555,7 @@ def run_refusals(args, accounts, token, models):
     return why
 
 
-def final_verdict(u, v):
+def final_verdict(u, v, surf=()):
     """-> (verdict, reasons, correction, note) or None (no verdict)."""
     bad = review_checks.failed(u["checks"])
     if u.get("needs_human"):
@@ -543,7 +565,8 @@ def final_verdict(u, v):
         return "needs-fix", bad + [r for r in (v["reasons"] if v else []) if r not in bad], corr, v["note"] if v else ""
     if v is None:
         return None
-    if u["checks"].get("scans") != "pass" and v["verdict"] == "approve":
+    scanned = u["checks"].get("scans") == "pass" or (u["component"] in surf and u["checks"].get("scans") == "skipped")
+    if not scanned and v["verdict"] == "approve":
         return "needs-fix", ["scans_not_run"], None, ""
     return v["verdict"], v["reasons"], v["correction"], v["note"]
 
@@ -568,6 +591,7 @@ def apply(args):
     decided = load_json(os.path.join(out, "decided.json"))["units"] if os.path.exists(
         os.path.join(out, "decided.json")) else []
     work, models, file_errors = [], set(), []
+    surf = surface_components(args.repo)
     for u in decided:
         work.append((u, None, None, True))
     for path in sorted(glob.glob(os.path.join(out, "batches", "*.json"))):
@@ -597,7 +621,7 @@ def apply(args):
     run_model =sorted(m for m in models if m)[0] if [m for m in models if m] else DETERMINISTIC
     lines, errors, stopped = [], 0, False
     for u, v, model, intact in work:
-        fv = final_verdict(u, v) if intact else None
+        fv = final_verdict(u, v, surf) if intact else None
         verdict, reasons, corr, note = fv if fv else (None, [], None, "")
         line = {"ts": now(), "runner_version": RUNNER_VERSION, "prompt_version": review_prompt.PROMPT_VERSION,
                 "prompt_sha256": review_prompt.prompt_sha256(lang), "reviewer_model": model or run_model,
@@ -641,6 +665,11 @@ def apply(args):
             if not fresh or sha(list(fresh.get("source") or [])) != u["src_sha"] or \
                     sha(list(fresh.get("target") or [])) != u["tgt_sha"]:
                 line["action"] = "stale"
+                continue
+            if f"/{PROJECT}/{u['component']}/" not in str(fresh.get("translation") or ""):
+                # the component (which decides surface vs till scans) must be Weblate's, not the file's
+                line["error"] = "unit does not belong to the component named in the file"
+                errors += 1
                 continue
         if not args.write:
             continue

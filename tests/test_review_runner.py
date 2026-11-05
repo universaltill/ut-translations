@@ -77,7 +77,7 @@ class ReviewFake(FakeWeblate):
                 if self.throttle_gets:
                     self.throttle_gets -= 1
                     return 429, {"detail": "Request was throttled. Expected available in 0 seconds."}
-                return 200, u
+                return 200, {**u, "translation": f"{self.base()}/api/translations/universal-till/{area}/{lang}/"}
             if method == "PATCH":
                 if body.get("state") == 30 and self.fail_approvals:
                     self.fail_approvals -= 1
@@ -856,6 +856,106 @@ class RealScans(RunnerCase):
         decided = {u["key"]: u for u in bb.load_json(os.path.join(self.out, "decided.json"))["units"]}
         self.assertEqual(list(decided), ["pos.link"])
         self.assertEqual(decided["pos.link"]["reasons"], ["scans"])
+
+
+class Surface(RunnerCase):
+    """Non-till surface components (config/surfaces.json: website first;
+    ut-docs#5570) are reviewed by the same rules as the till areas."""
+
+    def setUp(self):
+        super().setUp()
+        for rel, doc in (
+                ("config/surfaces.json", {"schema": 1, "surfaces": {"website": {
+                    "repo": "https://github.com/universaltill/ut-website.git", "english": "i18n/en.json",
+                    "metadata": "i18n/en.meta.json", "component": "website", "name": "Website"}}}),
+                ("website/en.json", {"home.title": "Sell faster", "terms.intro": "Our terms", "pricing.cta": "Buy"}),
+                ("meta/website.json", {"home.title": {"labels": [], "flags": ""},
+                                       "about.body": {"labels": ["legal"], "flags": ""}})):
+            path = os.path.join(self.repo, rel)
+            os.makedirs(os.path.dirname(path), exist_ok=True)
+            with open(path, "w", encoding="utf-8") as f:
+                json.dump(doc, f)
+
+    def web(self, key, target, source="Sell faster", **kw):
+        return self.unit(key, target, [(NEW, "tr-local", target), (APPROVE, BOOT, target)], area="website",
+                         source=source, **kw)
+
+    def test_component_website_is_accepted_and_batched_without_till_scans(self):
+        self.web("home.title", "Vendez plus vite")
+        self.scan_hits = {999: "irrelevant"}
+        self.export("--component", "website")
+        units = [u for b in self.batches() for u in bb.load_json(b)["units"]]
+        self.assertEqual([u["key"] for u in units], ["home.title"])
+        self.assertEqual(units[0]["checks"]["scans"], "skipped")
+        self.assertEqual(bb.load_json(self.batches()[0]).get("surface"), "website")
+
+    def test_unknown_component_still_rejected(self):
+        code = self.run_cli("export", "--lang", "fr", "--repo", self.repo, "--accounts", self.accounts_path,
+                            "--out", self.out, "--logs-root", self.logs, "--no-scans", "--component", "nope")
+        self.assertEqual(code, 2)
+        self.assertIn("unknown component", self.stderr)
+
+    def test_till_component_unaffected_when_surfaces_exist(self):
+        self.bootstrap("pos.total", "Somme")
+        self.export("--component", "sale")
+        self.assertEqual(bb.load_json(self.batches()[0]).get("surface"), None)
+
+    def test_legal_money_tax_keys_are_needs_human_on_the_website(self):
+        self.web("about.body", "A propos", source="About us")  # meta label legal
+        self.web("terms.intro", "Nos conditions", source="Our terms")  # key word
+        self.web("pricing.cta", "Acheter", source="Buy")  # key word: pricing
+        self.web("home.title", "Vendez plus vite")
+        self.export("--component", "website")
+        decided = {u["key"]: u["verdict"] for u in bb.load_json(os.path.join(self.out, "decided.json"))["units"]}
+        self.assertEqual(decided, {"about.body": "needs-human", "terms.intro": "needs-human",
+                                   "pricing.cta": "needs-human"})
+        self.assertEqual([u["key"] for b in self.batches() for u in bb.load_json(b)["units"]], ["home.title"])
+
+    def test_model_can_only_escalate_and_text_is_never_edited(self):
+        self.web("home.title", "Vendez plus vite")
+        self.export("--component", "website")
+        self.verdicts()
+        self.assertEqual(self.apply("--write"), 0, self.stderr)
+        self.assertEqual([b["target"] for _, _, b in self.fake.writes], [["Vendez plus vite"]] * 2)
+
+    def test_model_needs_human_is_not_written_on_the_website(self):
+        self.web("home.title", "Vendez plus vite")
+        self.export("--component", "website")
+        self.verdicts("needs-human")
+        self.assertEqual(self.apply("--write"), 0, self.stderr)
+        self.assertEqual(self.non_get(), [])
+        self.assertEqual({a["verdict"] for a in self.audit()}, {"needs-human"})
+
+    def test_failed_precheck_beats_a_model_approve_on_the_website(self):
+        self.web("home.cta", "Vendez {name}", source="Sell {n}")
+        self.export("--component", "website")
+        decided = bb.load_json(os.path.join(self.out, "decided.json"))["units"]
+        self.assertEqual((decided[0]["verdict"], decided[0]["reasons"]), ("needs-fix", ["placeholders"]))
+
+    def test_forged_skipped_scans_cannot_approve_a_till_unit(self):
+        self.assertEqual(rr.final_verdict(
+            {"component": "sale", "surface": "website", "checks": {"scans": "skipped"}, "needs_human": None},
+            {"verdict": "approve", "reasons": [], "correction": None, "note": ""})[0], "needs-fix")
+
+    def test_surface_comes_from_the_component_not_a_field_in_the_file(self):
+        v = {"verdict": "approve", "reasons": [], "correction": None, "note": ""}
+        u = {"component": "website", "checks": {"scans": "skipped"}, "needs_human": None}
+        self.assertEqual(rr.final_verdict(u, v, {"website": "website"})[0], "approve")
+        self.assertEqual(rr.final_verdict(u, v, {})[0], "needs-fix")  # not in config -> no pass
+        self.assertEqual(rr.final_verdict({**u, "component": "sale", "surface": "website"}, v,
+                                          {"website": "website"})[0], "needs-fix")
+
+    def test_price_amounts_and_cookie_wording_need_a_human(self):
+        import review_checks as rc
+        for en in ("A complete DIY till costs from about £70.", "We use cookies.", "From 5€ a month"):
+            self.assertTrue(rc.needs_human("faq.a4", "website", {}, set(), en), en)
+        self.assertIsNone(rc.needs_human("home.cta", "website", {}, set(), "Start selling today"))
+
+    def test_prompt_tells_the_model_it_is_a_web_surface(self):
+        _, user = rp.render({"lang": "fr", "component": "website", "surface": "website", "units": []})
+        self.assertIn("website surface", user)
+        _, user = rp.render({"lang": "fr", "component": "sale", "units": []})
+        self.assertNotIn("surface", user)
 
 
 if __name__ == "__main__":
