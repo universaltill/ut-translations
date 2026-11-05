@@ -91,7 +91,12 @@ def render(batch):
               "target": u.get("target"), "hints": u.get("hints") or [], "checks": u.get("checks") or {}}
              for u in batch.get("units") or []]
     data = _data_block({"component": batch.get("component"), "units": units})
+    where = ""
+    if batch.get("surface"):
+        where = (f"context: these units are the {batch['surface']} surface of Universal Till (public website or "
+                 "cloud web page), not the till screen: judge fluent, natural marketing/help prose for a web "
+                 "reader instead of touchscreen brevity; every other rule applies unchanged.\n")
     user = (f"batch_sha: {batch.get('batch_sha')}\nprompt_version: {batch.get('prompt_version')}\n"
-            f"language: {lang}\nunits: {len(units)}\n\n"
+            f"language: {lang}\n{where}units: {len(units)}\n\n"
             f"<<<UNITS_JSON\n{data}\nUNITS_JSON>>>\n\nReply with the JSON object only.")
     return system_prompt(lang), user

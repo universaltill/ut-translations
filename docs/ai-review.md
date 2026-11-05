@@ -41,6 +41,26 @@ and does not count as a review (ut-docs#4371).
 
 A model can only escalate: it can't approve over a failed check.
 
+## Website and other surfaces (ut-docs#5570)
+
+`--component` takes any till area **and** any component in
+`config/surfaces.json` (`website`, `cloud-*`; ADR-0177), e.g.
+`export --lang fr --component website`. The rules are the till's, unchanged:
+the same pre-checks, the same needs-human rule (a `legal` label in
+`meta/<component>.json`, or legal/tax/fiscal/receipt/invoice/price/amount/
+currency/money wording in the key or the English, so `terms.*`, `privacy.*`,
+`pricing.*` stay with a person), the model can only escalate, and text is
+never edited (corrections are suggestions). Differences:
+
+- The ADR-0040/0106 scans read the till's source, so a surface unit's `scans`
+  check is `skipped` (accepted for a surface unit only; a till unit still
+  needs `pass`). A surface-only export needs no till checkout, but `scan`
+  still takes `--till-source` (any directory then).
+- Batches carry `"surface": "<name>"` and the prompt says so: judge natural
+  web prose, not touchscreen brevity.
+- Reviewer accounts are the same: Codex works without any Gemini key; the
+  Gemini account needs `weblate-review-gemini` only for `--provider gemini`.
+
 ## Pre-checks (`tools/review_checks.py`)
 
 - **placeholders / max_length / script / dropped / empty**: the publish gate's own
@@ -284,3 +304,14 @@ Both secrets live in the `ai-review` environment, limited to main:
 `WEBLATE_REVIEWER_TOKEN` and `ANTHROPIC_API_KEY`. Each is passed only to the
 one step that needs it. The workflow uses GitHub-hosted runners only, because
 this is a public repo.
+
+### Surfaces and an export with no `--component`
+
+With no `--component`, `export` covers the till areas **and** every surface in
+`config/surfaces.json` (website, cloud-*): intended. A surface component that
+does not exist in Weblate yet returns 404 and is skipped. Which units skip the
+till source scans is decided by the component name looked up in
+`config/surfaces.json`, never by a field in `units.json`; `apply` also refuses
+a unit whose Weblate record belongs to a different component than the file
+says. Price amounts (currency symbol + digit) and cookie/consent/GDPR/licence/
+billing wording stay `needs-human`.
