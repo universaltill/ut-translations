@@ -656,6 +656,14 @@
       "0.34"
     ]
   },
+  "reports.days.last_24h": {
+    "explanation": "Reports page, Custom range: the option in the 'number of days' dropdown that shows the rolling last 24 hours up to now (not the business day, which is the Today chip). Sits in a narrow select.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.dead_stock": {
     "explanation": "",
     "flags": "",
@@ -1791,11 +1799,10 @@
     ]
   },
   "reports.today": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },

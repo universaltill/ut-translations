@@ -2,32 +2,32 @@
   "sale": {
     "name": "Sale",
     "description": "The sale screen: basket, scanning, payment, holds, refunds and the quick-button grid.",
-    "keys": 258
+    "keys": 279
   },
   "catalog": {
     "name": "Catalog",
     "description": "Items, categories, modifiers, stock, promotions, vouchers, imports and the menu designer.",
-    "keys": 885
+    "keys": 889
   },
   "orders": {
     "name": "Orders",
     "description": "Orders, tables, kitchen stations and displays, and order tracking.",
-    "keys": 176
+    "keys": 181
   },
   "reports": {
     "name": "Reports",
     "description": "Reports, the journal, end of day and the audit trail.",
-    "keys": 285
+    "keys": 286
   },
   "staff": {
     "name": "Staff",
     "description": "Users, permissions, sign-in, PIN elevation and shifts.",
-    "keys": 267
+    "keys": 269
   },
   "settings": {
     "name": "Settings",
     "description": "Settings, admin menus, locations, registers, country settings, translations and the subscription.",
-    "keys": 832
+    "keys": 837
   },
   "tills": {
     "name": "Tills",

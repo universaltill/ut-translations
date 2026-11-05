@@ -683,6 +683,174 @@
       "0.34"
     ]
   },
+  "notices.critical.ack": {
+    "explanation": "Button on a critical notice that a manager or admin presses to say they have seen it; it removes the strip.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.critical.cashier": {
+    "explanation": "Second line of the critical strip for a cashier, who cannot acknowledge it: a manager has been told and selling continues.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.dismiss": {
+    "explanation": "Button that hides a notice from the Unread tab; it stays in All until it expires.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.dismiss.aria": {
+    "explanation": "Accessible name of the close button on a pop-up notice, naming the notice.\n\nPlaceholders:\n- %s: the notice title",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.drawer.open_unread": {
+    "explanation": "Accessible name of the phone top bar menu button while notices are unread: the menu label plus how many are unread.\n\nPlaceholders:\n- %d: how many notices are unread",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.empty.body": {
+    "explanation": "Sentence under the empty-inbox heading: says what appears here and that selling is not affected.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.empty.title": {
+    "explanation": "Heading of the empty Notices inbox.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.expires": {
+    "explanation": "Expiry line of a notice in the inbox; the date follows in the shop's date format.\n\nPlaceholders:\n- %s: the date the notice stops showing",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.nav": {
+    "explanation": "Label of the bell in the left rail (and the Notices row of the phone menu) that opens the Notices inbox.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.nav.unread": {
+    "explanation": "Accessible name of the bell when something is unread: the label plus how many notices are unread.\n\nPlaceholders:\n- %d: how many notices are unread",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.open": {
+    "explanation": "Button or link that opens a notice in full, or follows the action link it carries.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.sender.partner": {
+    "explanation": "Sender line on a notice sent by a partner of the shop; the partner name comes from the server.\n\nPlaceholders:\n- %s: the partner's name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.sender.platform": {
+    "explanation": "Sender shown on a notice sent by Universal Till itself. A brand name: never translate it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.sender.sr": {
+    "explanation": "Screen-reader-only word placed before the sender of a notice.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.sev.critical": {
+    "explanation": "Severity word on a notice from Universal Till that stays as a strip on every screen until a manager acknowledges it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.sev.important": {
+    "explanation": "Severity word on a notice that also pops up once on the sale screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.sev.info": {
+    "explanation": "Severity word on a notice: plain information, shown in the inbox only.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.tab.all": {
+    "explanation": "Inbox tab showing every notice currently held, read or not.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.tab.unread": {
+    "explanation": "Inbox tab showing only notices not yet opened or dismissed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.title": {
+    "explanation": "Heading of the Notices inbox page, listing messages from Universal Till and from partners.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "notices.unread.sr": {
+    "explanation": "Screen-reader-only word placed before the title of an unread notice.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "open_orders.age_days": {
     "explanation": "",
     "flags": "placeholders:\"%d\"",

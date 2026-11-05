@@ -934,6 +934,14 @@
       "0.34"
     ]
   },
+  "page.title.notices": {
+    "explanation": "Browser tab title of the Notices inbox page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "page.title.open_orders": {
     "explanation": "",
     "flags": "",
@@ -4985,6 +4993,38 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.notices.enable": {
+    "explanation": "Checkbox label that switches Notices on for this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.notices.help": {
+    "explanation": "Help text of the Notices settings card: what it shows, that a notice never blocks a sale, off by default, and that turning it off removes held notices.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.notices.save": {
+    "explanation": "Save button of the Notices settings card.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.notices.title": {
+    "explanation": "Heading of the Settings card that switches Notices on or off for this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.order_no.help": {

@@ -602,6 +602,14 @@
       "0.34"
     ]
   },
+  "kitchenstations.deactivate_confirm": {
+    "explanation": "Confirmation shown before a station is deactivated from its dialog; says orders stop and station-only routes fall back to the default kitchen printer.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "kitchenstations.destination.both": {
     "explanation": "",
     "flags": "",
@@ -699,6 +707,30 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "kitchenstations.discover.used": {
+    "explanation": "Confirmation shown under Find printers after the operator taps Use this address on a discovered printer; the address field is filled but not yet saved.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "kitchenstations.edit": {
+    "explanation": "Title of the Kitchen stations record dialog when an existing station is opened for editing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "kitchenstations.empty": {
+    "explanation": "Empty state on the Kitchen stations page when no station exists yet; points at the + button and says where tickets go meanwhile.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "kitchenstations.error.address_required": {
@@ -846,11 +878,10 @@
     ]
   },
   "kitchenstations.new.submit": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -864,11 +895,10 @@
     ]
   },
   "kitchenstations.none": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -879,6 +909,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "kitchenstations.search_placeholder": {
+    "explanation": "Label and placeholder of the search field above the Kitchen stations list (filters rows by name, destination or printer address).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "kitchenstations.title": {

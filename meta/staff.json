@@ -1185,6 +1185,14 @@
       "0.34"
     ]
   },
+  "permissions.action.notices.view": {
+    "explanation": "Name of the permission that lets a role see the Notices bell and inbox, and mark notices read or acknowledged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "permissions.action.permission_management": {
     "explanation": "",
     "flags": "",
@@ -1390,6 +1398,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "permissions.action_desc.notices.view": {
+    "explanation": "One-line description of the Notices permission on the Permissions page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "permissions.action_desc.permission_management": {
