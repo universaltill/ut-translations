@@ -1518,6 +1518,15 @@
       "main"
     ]
   },
+  "nav.help": {
+    "core": true,
+    "explanation": "Top navigation and footer link to the public Help pages (the product manual). One short word; tight space.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "nav.language": {
     "core": true,
     "explanation": "Accessible label of the language switcher link in the top navigation.",
