@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-05T01:26:30Z",
-  "source_commit": "9741fd318a1465916ba46fc6d3d8cdda2b6f571e",
+  "generated_at": "2026-11-06T07:59:32Z",
+  "source_commit": "6bf1fe99fef2accd6349d180e0592db2cb396f64",
   "locales": [
     {
       "code": "ar",
@@ -21,7 +21,7 @@
         "website": {
           "published": false,
           "approved": 0,
-          "total": 483,
+          "total": 484,
           "coverage": 0.0,
           "core_ok": false,
           "omitted_broken": 0,
@@ -52,7 +52,7 @@
         "website": {
           "published": false,
           "approved": 0,
-          "total": 483,
+          "total": 484,
           "coverage": 0.0,
           "core_ok": false,
           "omitted_broken": 0,
@@ -83,7 +83,7 @@
         "website": {
           "published": false,
           "approved": 0,
-          "total": 483,
+          "total": 484,
           "coverage": 0.0,
           "core_ok": false,
           "omitted_broken": 0,
@@ -113,8 +113,8 @@
       "surfaces": {
         "website": {
           "published": true,
-          "approved": 483,
-          "total": 483,
+          "approved": 484,
+          "total": 484,
           "coverage": 1.0,
           "core_ok": true,
           "omitted_broken": 0,
@@ -144,7 +144,7 @@
         "website": {
           "published": false,
           "approved": 0,
-          "total": 483,
+          "total": 484,
           "coverage": 0.0,
           "core_ok": false,
           "omitted_broken": 0,
@@ -175,7 +175,7 @@
         "website": {
           "published": false,
           "approved": 0,
-          "total": 483,
+          "total": 484,
           "coverage": 0.0,
           "core_ok": false,
           "omitted_broken": 0,
@@ -206,7 +206,7 @@
         "website": {
           "published": false,
           "approved": 0,
-          "total": 483,
+          "total": 484,
           "coverage": 0.0,
           "core_ok": false,
           "omitted_broken": 0,
@@ -237,7 +237,7 @@
         "website": {
           "published": false,
           "approved": 0,
-          "total": 483,
+          "total": 484,
           "coverage": 0.0,
           "core_ok": false,
           "omitted_broken": 0,
@@ -268,7 +268,7 @@
         "website": {
           "published": false,
           "approved": 0,
-          "total": 483,
+          "total": 484,
           "coverage": 0.0,
           "core_ok": false,
           "omitted_broken": 0,
@@ -299,7 +299,7 @@
         "website": {
           "published": false,
           "approved": 0,
-          "total": 483,
+          "total": 484,
           "coverage": 0.0,
           "core_ok": false,
           "omitted_broken": 0,
@@ -330,7 +330,7 @@
         "website": {
           "published": false,
           "approved": 0,
-          "total": 483,
+          "total": 484,
           "coverage": 0.0,
           "core_ok": false,
           "omitted_broken": 0,
@@ -361,7 +361,7 @@
         "website": {
           "published": false,
           "approved": 0,
-          "total": 483,
+          "total": 484,
           "coverage": 0.0,
           "core_ok": false,
           "omitted_broken": 0,
