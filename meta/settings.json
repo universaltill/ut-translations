@@ -5626,6 +5626,22 @@
       "0.34"
     ]
   },
+  "settings.printer.voucher_slip": {
+    "explanation": "Checkbox label in Settings > Receipt printer: when ticked, every gift voucher sold in a sale also prints on its own separate slip after the receipt.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.printer.voucher_slip_hint": {
+    "explanation": "Help line under the separate-gift-voucher-slip checkbox in Settings > Receipt printer: when it prints, what is on the slip, and that voided vouchers and top-ups get none.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.retention.capacity_advisory": {
     "explanation": "",
     "flags": "",
