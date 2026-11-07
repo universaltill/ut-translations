@@ -1121,6 +1121,14 @@
       "main"
     ]
   },
+  "elevation.summary.x_report_print": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier prints the X report on the Shifts page: names the register whose figures the approver is allowing to be printed.\n\nPlaceholders:\n- %s: the register's name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "permissions.action.audit": {
     "explanation": "",
     "flags": "",
@@ -2132,7 +2140,7 @@
     ]
   },
   "shifts.x_report.adjustments_total": {
-    "explanation": "Shifts page, X report: row label for the total of the shift's cash adjustments and payouts.",
+    "explanation": "Shifts page, X report: row label for the total of the shift's cash adjustments and payouts. Also printed on the X report (Shifts page).",
     "flags": "",
     "labels": [],
     "lines": [
@@ -2251,6 +2259,54 @@
       "main"
     ]
   },
+  "shifts.x_report.paper.not_a_close": {
+    "explanation": "Printed X report on the receipt printer: line under the title saying the report only reads the figures and closes or resets nothing. One 42-character line.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.paper.title": {
+    "explanation": "Printed X report on the receipt printer: title line at the top. A mid-shift read, never an end-of-day (Z) report. Printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.print": {
+    "explanation": "Shifts page, loaded X report: button that prints the X report (figures as of the moment it is pressed) on the receipt printer. Not an end-of-day (Z) report.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.print_failed": {
+    "explanation": "Shifts page, X report: error beside the Print button when the receipt printer is off, not set up or did not answer. Names the Receipt printer settings section and the Print X report button, so keep those two names identical to their translations.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.print_ok": {
+    "explanation": "Shifts page, X report: confirmation beside the Print button once the receipt printer accepted the X report.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.printing": {
+    "explanation": "Shifts page, X report: short status beside the Print button while the print request runs (up to 15 seconds).",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "shifts.x_report.received": {
     "explanation": "Shifts page, X report: column header for the amount received by a payment method.",
     "flags": "max-length:14",
@@ -2284,7 +2340,7 @@
     ]
   },
   "shifts.x_report.section_cash": {
-    "explanation": "Shifts page, X report: sub-heading of the cash breakdown (opening cash, cash sales, adjustments, expected).",
+    "explanation": "Shifts page, X report: sub-heading of the cash breakdown (opening cash, cash sales, adjustments, expected). Also printed on the X report (Shifts page).",
     "flags": "",
     "labels": [],
     "lines": [

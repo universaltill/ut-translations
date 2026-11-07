@@ -22,7 +22,7 @@
   "staff": {
     "name": "Staff",
     "description": "Users, permissions, sign-in, PIN elevation and shifts.",
-    "keys": 298
+    "keys": 305
   },
   "settings": {
     "name": "Settings",

@@ -2323,7 +2323,7 @@
     ]
   },
   "reports.zpaper.cash.cash_sales": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash taken for sales. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash taken for sales. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper. Also printed on the X report (Shifts page).",
     "flags": "max-length:20",
     "labels": [],
     "lines": [
@@ -2341,7 +2341,7 @@
     ]
   },
   "reports.zpaper.cash.opening_float": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash in the drawer when the shift opened. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash in the drawer when the shift opened. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper. Also printed on the X report (Shifts page).",
     "flags": "max-length:20",
     "labels": [],
     "lines": [
@@ -2368,7 +2368,7 @@
     ]
   },
   "reports.zpaper.cash.tips_held_out": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash tips kept apart from the shop's takings. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper. Also the row label of the on-screen X report's cash breakdown on the Shifts page.",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash tips kept apart from the shop's takings. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper. Also the row label of the on-screen X report's cash breakdown on the Shifts page. Also printed on the X report (Shifts page).",
     "flags": "max-length:20",
     "labels": [],
     "lines": [
@@ -2386,7 +2386,7 @@
     ]
   },
   "reports.zpaper.cleared_baskets": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: shopping baskets the cashier cleared with New sale before taking payment (no sale happened, not in revenue). Printed as a row label in a 20-character column before the baskets' total amount; a longer label is cut short on paper.\n\nPlaceholders:\n- %d: the number of cleared baskets",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: shopping baskets the cashier cleared with New sale before taking payment (no sale happened, not in revenue). Printed as a row label in a 20-character column before the baskets' total amount; a longer label is cut short on paper. Also printed on the X report (Shifts page).\n\nPlaceholders:\n- %d: the number of cleared baskets",
     "flags": "max-length:20, placeholders:\"%d\"",
     "labels": [],
     "lines": [
@@ -2520,7 +2520,7 @@
     ]
   },
   "reports.zpaper.no_sale_total": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: row label before the total number of no-sale drawer opens. A longer label is cut short on paper.",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: row label before the total number of no-sale drawer opens. A longer label is cut short on paper. Also printed on the X report (Shifts page).",
     "flags": "max-length:30",
     "labels": [],
     "lines": [
@@ -2528,7 +2528,7 @@
     ]
   },
   "reports.zpaper.receipts_range": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: the first and last receipt numbers in this period.\n\nPlaceholders:\n- %s: the first receipt number\n- %s: the last receipt number",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: the first and last receipt numbers in this period. Also printed on the X report (Shifts page).\n\nPlaceholders:\n- %s: the first receipt number\n- %s: the last receipt number",
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
@@ -2582,7 +2582,7 @@
     ]
   },
   "reports.zpaper.voided": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: completed sales cancelled afterwards. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.\n\nPlaceholders:\n- %d: the number of voided receipts",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: completed sales cancelled afterwards. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper. Also printed on the X report (Shifts page).\n\nPlaceholders:\n- %d: the number of voided receipts",
     "flags": "max-length:20, placeholders:\"%d\"",
     "labels": [],
     "lines": [
