@@ -1732,12 +1732,19 @@
       "0.34"
     ]
   },
+  "shifts.adjustment_confirmed": {
+    "explanation": "Shifts page: confirmation shown in the cash adjustment / payout form's result area after an adjustment or payout is recorded (also returned to the Pfand return dialog). Plain sentence, no identifiers.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "shifts.adjustment_success": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -1965,6 +1972,14 @@
       "0.34"
     ]
   },
+  "shifts.open_confirmed": {
+    "explanation": "Shifts page: confirmation shown in the open-shift form's result area after a shift is opened successfully. Plain sentence, no identifiers.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "shifts.open_new": {
     "explanation": "",
     "flags": "",
@@ -1984,11 +1999,10 @@
     ]
   },
   "shifts.open_success": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },

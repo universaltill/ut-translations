@@ -863,12 +863,19 @@
     ]
   },
   "reports.eod.fiscal_device.mismatch": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "placeholders:\"%d\"",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.mismatch_count": {
+    "explanation": "Reports > End of day archive, Turkish fiscal device (ÖKC) check: shown when the device's receipt count differs from the till's tender count on it.\n\nPlaceholders:\n- %s: the device's receipt count (a number)\n- %s: the till's tender count on the device (a number)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "reports.eod.fiscal_device.none": {
