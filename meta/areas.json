@@ -17,12 +17,12 @@
   "reports": {
     "name": "Reports",
     "description": "Reports, the journal, end of day and the audit trail.",
-    "keys": 292
+    "keys": 293
   },
   "staff": {
     "name": "Staff",
     "description": "Users, permissions, sign-in, PIN elevation and shifts.",
-    "keys": 272
+    "keys": 298
   },
   "settings": {
     "name": "Settings",

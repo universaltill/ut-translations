@@ -124,6 +124,7 @@
   "reports.eod.title": "End of day",
   "reports.eod.unattributed": "Unattributed",
   "reports.eod.variance_flag": "Cash count variance",
+  "reports.eod.x_report_link": "Mid-shift figures without closing anything: X report on the Shifts page",
   "reports.margins": "Margins",
   "reports.margins_hint": "Revenue minus cost, for items with a cost price set in the catalog.",
   "reports.margins_none": "Set cost prices in the catalog to see margins.",

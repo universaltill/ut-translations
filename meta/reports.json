@@ -1118,6 +1118,14 @@
       "0.34"
     ]
   },
+  "reports.eod.x_report_link": {
+    "explanation": "Reports, End of day tab: a link under the heading to the X report on the Shifts page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.margins": {
     "explanation": "",
     "flags": "",
@@ -2360,7 +2368,7 @@
     ]
   },
   "reports.zpaper.cash.tips_held_out": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash tips kept apart from the shop's takings. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash tips kept apart from the shop's takings. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper. Also the row label of the on-screen X report's cash breakdown on the Shifts page.",
     "flags": "max-length:20",
     "labels": [],
     "lines": [

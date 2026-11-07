@@ -1113,6 +1113,14 @@
       "0.34"
     ]
   },
+  "elevation.summary.x_report": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier opens the X report on the Shifts page: names the register the approver is allowing the cashier to view.\n\nPlaceholders:\n- %s: the register's name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "permissions.action.audit": {
     "explanation": "",
     "flags": "",
@@ -2121,6 +2129,206 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "shifts.x_report.adjustments_total": {
+    "explanation": "Shifts page, X report: row label for the total of the shift's cash adjustments and payouts.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.cash_sales": {
+    "explanation": "Shifts page, X report: row label for cash taken from sales after cash refunds and change given. Cash tips are shown on their own line.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.cleared": {
+    "explanation": "Shifts page, X report: row label for baskets the cashier cleared before taking payment (count and value). Not revenue, and not the No sale drawer count shown further down.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.count": {
+    "explanation": "Shifts page, X report: column header for the number of sales, returns and similar.",
+    "flags": "max-length:14",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.failed": {
+    "explanation": "Shifts page, X report: error when the figures could not be read; says what to do next.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.first_receipt": {
+    "explanation": "Shifts page, X report: row label for the first receipt number of the shift.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.generated_at": {
+    "explanation": "Shifts page, X report: label before the time the figures were read. A point-in-time read, not a period.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.hide": {
+    "explanation": "Shifts page, X report section: button in the loaded report that removes the figures from the screen again.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.invalid_register": {
+    "explanation": "Shifts page, X report: error for a register value that is malformed or too long.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.invalid_request": {
+    "explanation": "Shifts page, X report: error when the request could not be read.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.last_receipt": {
+    "explanation": "Shifts page, X report: row label for the last receipt number of the shift.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.method": {
+    "explanation": "Shifts page, X report: column header of the payment method name.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.no_open_shift": {
+    "explanation": "Shifts page, X report: error shown (and returned to API clients) when the chosen register has no open shift, usually because it was closed meanwhile.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.no_payments": {
+    "explanation": "Shifts page, X report: shown instead of the payments table when the shift has no payments.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.not_a_close": {
+    "explanation": "Shifts page, X report section: one line under the heading saying the report only reads figures and closes nothing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.received": {
+    "explanation": "Shifts page, X report: column header for the amount received by a payment method.",
+    "flags": "max-length:14",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.refunded": {
+    "explanation": "Shifts page, X report: column header for the amount refunded through a payment method.",
+    "flags": "max-length:14",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.returns": {
+    "explanation": "Shifts page, X report: row label for the returns of this shift (count and amount refunded).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.sales": {
+    "explanation": "Shifts page, X report: row label for the completed sales of this shift (count and gross amount).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.section_cash": {
+    "explanation": "Shifts page, X report: sub-heading of the cash breakdown (opening cash, cash sales, adjustments, expected).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.section_tenders": {
+    "explanation": "Shifts page, X report: sub-heading of the table of payments per payment method.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.show": {
+    "explanation": "Shifts page, X report section: button that loads the report figures. Pressing it again reads fresh figures.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.tax": {
+    "explanation": "Shifts page, X report: row label for the tax on sales minus the tax on returns.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.title": {
+    "explanation": "Shifts page, Current Shift card: heading of the mid-shift report section. A read of the open shift so far, NOT an end-of-day (Z) report.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.voids": {
+    "explanation": "Shifts page, X report: row label for sales voided during this shift (count and amount).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "users.activate": {
