@@ -952,6 +952,30 @@
       "0.34"
     ]
   },
+  "reports.eod.no_sale_opens": {
+    "explanation": "Reports, End of day, no-sale table: column header, the number of drawer opens per cashier. Also used on the Shifts page's Current Shift card.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.no_sale_title": {
+    "explanation": "Reports, End of day, archived report detail: heading of the table of cash-drawer opens without a sale. Also used as the row label (with the count) on the Shifts page's Current Shift card.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.no_sale_total": {
+    "explanation": "Reports, End of day, no-sale table: label of the total row.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.eod.operator": {
     "explanation": "",
     "flags": "",
@@ -2470,6 +2494,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "reports.zpaper.no_sale_title": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the section counting cash-drawer opens with no sale (no money moved, not in revenue). A section heading, printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.no_sale_total": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: row label before the total number of no-sale drawer opens. A longer label is cut short on paper.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "reports.zpaper.receipts_range": {

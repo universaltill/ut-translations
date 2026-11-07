@@ -1777,6 +1777,14 @@
       "0.34"
     ]
   },
+  "shifts.close_no_sale_opens": {
+    "explanation": "Shifts page, shift-close confirmation: a second line shown under the expected/actual/variance message only when the cash drawer was opened without a sale during the closed shift. Informational; it never changes the cash figures.\n\nPlaceholders:\n- %s: number of times the drawer was opened without a sale during the shift",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "shifts.close_success": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",

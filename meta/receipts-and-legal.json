@@ -1902,6 +1902,16 @@
       "0.34"
     ]
   },
+  "receipt.vouchers.reprinted": {
+    "explanation": "Printed on a gift-voucher slip printed again from the voucher's page, so it can be told from the slip handed over at the sale. Printed on 58/80 mm paper.\n\nPlaceholders:\n- %s: date the slip was reprinted",
+    "flags": "max-length:42, placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "receipt.vouchers.top_up": {
     "explanation": "",
     "flags": "",
