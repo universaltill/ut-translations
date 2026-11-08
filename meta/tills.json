@@ -2065,6 +2065,14 @@
       "main"
     ]
   },
+  "tills.join_error.unsent_day_closes_refused_ios": {
+    "explanation": "iPhone/iPad app only, instead of tills.join_error.unsent_day_closes_refused: join error on a joined till whose day closes cannot reach the cloud because the cloud refuses uploads (subscription not active). Names the one fix the app can offer (report retention on this till); must not tell the reader to renew.\n\nPlaceholders:\n- %s: how many day closes are not in the cloud yet",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tills.join_error.unsent_not_sent": {
     "explanation": "Join error on a joined till re-joining a (new) main till: its sales that never reached a main till could not be sent there first, so the join was refused and nothing on this till changed.\n\nPlaceholders:\n- %s: how many unsent sales this till has",
     "flags": "placeholders:\"%s\"",

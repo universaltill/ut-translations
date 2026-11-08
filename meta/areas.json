@@ -17,22 +17,22 @@
   "reports": {
     "name": "Reports",
     "description": "Reports, the journal, end of day and the audit trail.",
-    "keys": 293
+    "keys": 306
   },
   "staff": {
     "name": "Staff",
     "description": "Users, permissions, sign-in, PIN elevation and shifts.",
-    "keys": 305
+    "keys": 315
   },
   "settings": {
     "name": "Settings",
     "description": "Settings, admin menus, locations, registers, country settings, translations and the subscription.",
-    "keys": 852
+    "keys": 855
   },
   "tills": {
     "name": "Tills",
     "description": "Tills and devices: sync, pairing, Bluetooth devices, status chips, diagnostics, recovery and uninstall.",
-    "keys": 381
+    "keys": 382
   },
   "setup": {
     "name": "Setup",
@@ -52,7 +52,7 @@
   "plugins": {
     "name": "Plugins",
     "description": "The plugin marketplace, plugin pages and the assistant.",
-    "keys": 300
+    "keys": 302
   },
   "support": {
     "name": "Support",
@@ -62,6 +62,6 @@
   "common": {
     "name": "Common",
     "description": "Shared words and messages used across many screens.",
-    "keys": 30
+    "keys": 31
   }
 }

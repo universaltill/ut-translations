@@ -951,6 +951,14 @@
       "0.34"
     ]
   },
+  "elevation.summary.shift_slip_print": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier prints the shift close slip after closing a shift: names the register whose shift the approver is allowing to be printed.\n\nPlaceholders:\n- %s: the register's name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.summary.shop_type": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -1803,6 +1811,78 @@
   "shifts.close_no_sale_opens": {
     "explanation": "Shifts page, shift-close confirmation: a second line shown under the expected/actual/variance message only when the cash drawer was opened without a sale during the closed shift. Informational; it never changes the cash figures.\n\nPlaceholders:\n- %s: number of times the drawer was opened without a sale during the shift",
     "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.failed": {
+    "explanation": "Error when the shift slip could not be prepared because of an unexpected fault; tells the operator to tap Print shift slip again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.invalid_request": {
+    "explanation": "Error when the shift slip print request could not be read (malformed or too large).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.not_closed": {
+    "explanation": "Error when a shift slip is requested for a shift that is unknown or still open (for example a stale page). Tells the operator to reload.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.paper.section_close": {
+    "explanation": "Printed shift close slip: heading above the drawer count figures (expected, counted, variance, skim, new float).",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.paper.title": {
+    "explanation": "Printed shift close slip on the receipt printer: title line at the top. The close of one shift, never an end-of-day (Z) report. Printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.print": {
+    "explanation": "Shifts page, close result: label of the button that prints the shift close slip on the receipt printer after a shift has been closed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.print_failed": {
+    "explanation": "Shifts page, close result: error beside the Print shift slip button when the receipt printer is off, not set up or did not answer. Names the Receipt printer settings section and the Print shift slip button, so keep those names identical to their translations.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.print_ok": {
+    "explanation": "Shifts page, close result: confirmation beside the Print shift slip button once the receipt printer accepted the slip.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.printing": {
+    "explanation": "Shifts page, close result: short status beside the Print shift slip button while the print request runs (up to 15 seconds).",
+    "flags": "max-length:30",
     "labels": [],
     "lines": [
       "main"

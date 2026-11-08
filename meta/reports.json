@@ -1171,6 +1171,102 @@
       "0.34"
     ]
   },
+  "reports.online_channels.cancelled_unpaid_plural": {
+    "explanation": "Note under the Online channels table: how many orders in the period were cancelled before the customer paid and are therefore left out of all figures ({count} is the number; plural forms per language).",
+    "flags": "icu-message-format",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.col.currency": {
+    "explanation": "Column heading: the ISO currency code of the orders in that row (amounts are never added across currencies).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.col.gross": {
+    "explanation": "Column heading: sum of the order totals as the channel reported them (including shipping and any tax the channel added). Not 'gross of tax' in the accounting sense; avoid a word that means 'including VAT'.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.col.net": {
+    "explanation": "Column heading: order totals minus refunds. Means 'after refunds', not 'excluding tax'.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.col.orders": {
+    "explanation": "Column heading: number of online orders counted in that row.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.col.refunds": {
+    "explanation": "Column heading: amount refunded so far on those orders by the channel.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.currency_total": {
+    "explanation": "Row label: total of all channels for one currency (shown only when two or more channels use that currency).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.empty": {
+    "explanation": "Online channels report when no online order is left to count in the selected period.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.link": {
+    "explanation": "Link from the Online channels report to the Online orders list page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.notice": {
+    "explanation": "Line under the Online channels heading: these orders are not till sales and are not in the till's key figures, the cash drawer, the day-end (Z) report or the fiscal journal. Describe, do not claim compliance.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.refunds_note": {
+    "explanation": "Note under the Online channels table: refunds are counted in the period the order was placed, not the day the refund happened.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.title": {
+    "explanation": "Heading of the Online channels report: totals of web-shop and marketplace orders for the selected period.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.period.anchor": {
     "explanation": "",
     "flags": "",
@@ -1475,6 +1571,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "reports.tab.online_channels": {
+    "explanation": "Reports tab button: totals of orders from the shop's web shop and marketplaces (sales channels), not till sales. Different from the 'Payments & channels' tab, which is about payment methods at the till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "reports.tab.payments": {

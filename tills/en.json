@@ -231,6 +231,7 @@
   "tills.join_error.unreachable": "cannot reach the main till: %s",
   "tills.join_error.unsent_day_closes": "Day closes of this till that have not reached the cloud yet: %s. Connect this till to the internet and wait a few minutes until they are sent, then join again. Nothing was changed.",
   "tills.join_error.unsent_day_closes_refused": "Day closes of this till that have not reached the cloud yet: %s. The cloud refuses them because the shop's subscription is not active. Renew it, or set report retention to this till in Settings (they then stay only in this till's backup copy), and join again. Nothing was changed.",
+  "tills.join_error.unsent_day_closes_refused_ios": "Day closes of this till that have not reached the cloud yet: %s. The cloud refuses them because the shop's subscription is not active. Set report retention to this till in Settings (they then stay only in this till's backup copy), and join again. Nothing was changed.",
   "tills.join_error.unsent_not_sent": "This till's sales that have not reached a main till (%s) could not be sent to this main till, so nothing was changed on this till. Back up this till now (Settings → Backups → Back up now), then try again. If it keeps failing, contact support.",
   "tills.join_help": "On the NEW till: type the code and the address shown on the main till (Settings → Tills → Show pairing code).",
   "tills.join_name": "This till's name",

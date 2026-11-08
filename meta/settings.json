@@ -6711,6 +6711,14 @@
       "0.34"
     ]
   },
+  "subscription.banner.lapsed.fix_ios": {
+    "explanation": "iPhone/iPad app only, instead of subscription.banner.lapsed.fix: second line of the 'Paid features are paused' notice when the shop's subscription has ended. Says the till picks up an active subscription by itself and that Check now checks at once. Must not tell the reader to renew, pay or go anywhere to buy (App Store rules).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "subscription.banner.lapsed.fix_via_main": {
     "explanation": "",
     "flags": "",
@@ -6718,6 +6726,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "subscription.banner.lapsed.fix_via_main_ios": {
+    "explanation": "iPhone/iPad app only, instead of subscription.banner.lapsed.fix_via_main: the same notice on a till registered through its main till, so Check now is pressed on the main till. Must not tell the reader to renew, pay or go anywhere to buy (App Store rules).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "subscription.banner.lapsed.title": {
@@ -6879,6 +6895,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "subscription.check_result.still_lapsed_ios": {
+    "explanation": "iPhone/iPad app only, instead of subscription.check_result.still_lapsed: one-line result of Check now when the cloud answered that the subscription is still not active. Must not mention paying or renewing (App Store rules).",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "subscription.chip.lapsed": {

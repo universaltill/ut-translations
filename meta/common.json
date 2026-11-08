@@ -89,6 +89,14 @@
       "0.34"
     ]
   },
+  "common.error.name_invalid_characters": {
+    "explanation": "Error shown when a name typed on an admin screen (item, variant, category, modifier, option set, tax code, register) or this till's own name (Settings, setup, pairing) contains a line break, tab or invisible formatting character. The name is not saved.",
+    "flags": "max-length:140",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "common.error.network": {
     "explanation": "Error shown when a request fails because the till can't reach the server or another till.",
     "flags": "",
