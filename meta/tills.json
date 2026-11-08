@@ -1146,6 +1146,14 @@
       "0.34"
     ]
   },
+  "sync.error.name_too_long": {
+    "explanation": "Error body (400) the main till returns to a joining till, at pairing or enrolment, when the till name it sent is longer than 60 characters. The till is not enrolled and the one-time code is not used up.",
+    "flags": "max-length:140",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "sync.error.no_lan_address": {
     "explanation": "",
     "flags": "",
@@ -1819,8 +1827,8 @@
     ]
   },
   "tills.discovery.result_name": {
-    "explanation": "",
-    "flags": "",
+    "explanation": "Label before a main till's LAN identifier (a UUID). Shown in the 'Find a main till on this network' results (Tills page and setup wizard) and on the Tills page's main-till row, so an operator can check the till found in the scan is the right device. Both places must use the same word.",
+    "flags": "max-length:20",
     "labels": [],
     "lines": [
       "main",
