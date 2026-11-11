@@ -790,6 +790,134 @@
       "0.34"
     ]
   },
+  "reports.eod.day_x.as_of": {
+    "explanation": "Reports, End of day tab, day so far: label before the time the figures were read.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.empty": {
+    "explanation": "Reports, End of day tab, day so far: line shown when nothing was sold since the last day close.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.failed": {
+    "explanation": "Reports, End of day tab, day so far: error when the figures could not be loaded. Names the Show day so far button, so keep that name identical to its translation.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.hide": {
+    "explanation": "Reports, End of day tab: button that hides the loaded day-so-far figures.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.intro": {
+    "explanation": "Reports, End of day tab: one paragraph under the heading saying the day-so-far report uses the end-of-day layout but closes, stores and resets nothing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.invalid_request": {
+    "explanation": "Reports, End of day tab, day so far: error when the request could not be read (malformed or oversized form).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.paper.title": {
+    "explanation": "Printed day-so-far report on the receipt printer: title line at the top, above the end-of-day layout. A read of the day so far, never an end-of-day (Z) report. Printed in capitals where the language has them; plain ASCII hyphen so it prints on every charset.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.paper_label": {
+    "explanation": "Reports, End of day tab, day so far: accessible name of the preview block that shows the printed report as text.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.print": {
+    "explanation": "Reports, End of day tab, day so far: button that prints the report (figures as of the moment it is pressed) on the receipt printer. Not an end-of-day (Z) report.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.print_failed": {
+    "explanation": "Reports, End of day tab, day so far: error when the receipt printer is off, not set up or did not answer. Names the Receipt printer settings section and the Print day so far button, so keep those names identical to their translations.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.print_ok": {
+    "explanation": "Reports, End of day tab, day so far: confirmation beside the Print button once the receipt printer accepted the report.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.printing": {
+    "explanation": "Reports, End of day tab, day so far: short status beside the Print button while the print request runs (up to 15 seconds).",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.show": {
+    "explanation": "Reports, End of day tab: button that loads the day-so-far figures. Pressing it again reads fresh figures.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.since": {
+    "explanation": "Reports, End of day tab, day so far: line naming the last day close the figures start from.\n\nPlaceholders:\n- %s: date and time of the last day close",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.since_first": {
+    "explanation": "Reports, End of day tab, day so far: line shown instead of the date when this till has never closed a day.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.title": {
+    "explanation": "Reports, End of day tab: heading of the day-so-far section. A read of everything since the last day close, NOT an end-of-day (Z) report.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.eod.done": {
     "explanation": "",
     "flags": "",

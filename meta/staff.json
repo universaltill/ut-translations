@@ -718,6 +718,22 @@
       "0.34"
     ]
   },
+  "elevation.summary.eod_day_x": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier opens the day-so-far X report on Reports, End of day: says the approver is allowing all sales since the last day close to be shown.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.eod_day_x_print": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier prints the day-so-far X report on Reports, End of day: says the approver is allowing all sales since the last day close to be printed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.summary.eod_range_export": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -2340,7 +2356,7 @@
     ]
   },
   "shifts.x_report.paper.not_a_close": {
-    "explanation": "Printed X report on the receipt printer: line under the title saying the report only reads the figures and closes or resets nothing. One 42-character line.",
+    "explanation": "Printed X report on the receipt printer: line under the title saying the report only reads the figures and closes or resets nothing. Used by the shift X report and by the day-so-far X report. One 42-character line.",
     "flags": "max-length:42",
     "labels": [],
     "lines": [
