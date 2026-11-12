@@ -3668,6 +3668,14 @@
       "0.34"
     ]
   },
+  "settings.display.f11_kiosk_locked": {
+    "explanation": "Status message shown in the alert strip when a manager presses F11 in the desktop app while the window is locked in kiosk mode; F11 never leaves kiosk, so it points to the Exit to OS window button in Settings.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.display.help": {
     "explanation": "",
     "flags": "",
