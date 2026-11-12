@@ -34,6 +34,7 @@
   "basket.error.server": "Something went wrong. Please try again.",
   "basket.gift_voucher.for": "For %s",
   "basket.gift_voucher.top_up": "Top-up",
+  "basket.line_changed": "This line changed while your edit was being saved, so your edit wasn't applied. Check it and try again.",
   "basket.order_type.all_dine_in": "All dine in",
   "basket.order_type.all_takeaway": "All takeaway",
   "basket.order_type.dine_in": "Dine in",

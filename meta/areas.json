@@ -2,7 +2,7 @@
   "sale": {
     "name": "Sale",
     "description": "The sale screen: basket, scanning, payment, holds, refunds and the quick-button grid.",
-    "keys": 279
+    "keys": 280
   },
   "catalog": {
     "name": "Catalog",

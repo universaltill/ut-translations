@@ -314,6 +314,14 @@
       "0.34"
     ]
   },
+  "basket.line_changed": {
+    "explanation": "Sale screen basket: shown under a line (or above the totals when the line no longer exists) when the cashier's quantity or discount change was not applied because the same line changed (or was removed) in the meantime, for example from another screen or a quick second tap. Nothing was charged or recorded by this edit.",
+    "flags": "max-length:110",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "basket.order_type.all_dine_in": {
     "explanation": "",
     "flags": "",
