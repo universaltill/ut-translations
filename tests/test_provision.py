@@ -15,8 +15,10 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from urllib.parse import urlparse, parse_qs
 
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "tools"))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import provision_weblate as p  # noqa: E402
+import retry_server  # noqa: E402
 
 TOKEN = "wlu_test_token"
 LINKED_FORBIDDEN = ("branch", "push", "push_branch", "merge_style", "push_on_commit", "vcs")
@@ -428,6 +430,73 @@ class Redirects(unittest.TestCase):
         self.assertIn("302", err.getvalue())
         self.assertNotIn(TOKEN, err.getvalue())
         self.assertEqual(self.catcher.seen, [])
+
+
+class ClientRetry(unittest.TestCase):
+    """GET retries transient failures; writes never (ut-docs#5559)."""
+
+    def client(self, steps, body=None):
+        url, hits = retry_server.serve(self, steps, {"ok": 1} if body is None else body)
+        sleeps = []
+        return p.WeblateClient(url, TOKEN, timeout=0.2, sleep=sleeps.append), hits, sleeps
+
+    def test_get_timeouts_then_ok(self):
+        c, hits, sleeps = self.client(["timeout", "timeout", 200])
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            self.assertEqual(c.get("/api/x/"), {"ok": 1})
+        self.assertEqual((len(hits), sleeps), (3, [5, 10]))
+        self.assertIn("attempt 2/4", err.getvalue())
+        self.assertNotIn(TOKEN, err.getvalue())
+
+    def test_get_503_then_ok(self):
+        c, hits, sleeps = self.client([503, 200])
+        with contextlib.redirect_stderr(io.StringIO()):
+            self.assertEqual(c.get("/api/x/"), {"ok": 1})
+        self.assertEqual(len(hits), 2)
+
+    def test_get_always_times_out_raises_as_before(self):
+        c, hits, sleeps = self.client(["timeout"])
+        with contextlib.redirect_stderr(io.StringIO()), self.assertRaises(TimeoutError):
+            c.get("/api/x/")
+        self.assertEqual((len(hits), sum(sleeps)), (4, 35))
+
+    def test_read_tries_one_means_single_attempt(self):
+        url, hits = retry_server.serve(self, [503, 200], {"ok": 1})
+        c = p.WeblateClient(url, TOKEN, timeout=0.2, sleep=lambda s: None, read_tries=1)
+        with self.assertRaises(p.WeblateError):
+            c.get("/api/x/")
+        self.assertEqual(len(hits), 1)
+
+    def test_retry_log_has_path_but_no_query_or_host(self):
+        c, hits, sleeps = self.client([503, 200])
+        err = io.StringIO()
+        with contextlib.redirect_stderr(err):
+            c.get(c.base + "/api/units/?q=state%3Aapproved&token=SECRETQ&page=2")
+        log = err.getvalue()
+        self.assertIn("GET /api/units/: attempt 1/4", log)
+        for bad in ("?", "SECRETQ", "state", "127.0.0.1"):
+            self.assertNotIn(bad, log)
+
+    def test_get_404_is_none_without_retry(self):
+        c, hits, sleeps = self.client([404])
+        self.assertIsNone(c.get("/api/x/"))
+        self.assertEqual((len(hits), sleeps), (1, []))
+
+    def test_get_403_and_500_not_retried(self):
+        for status in (403, 500):
+            c, hits, sleeps = self.client([status])
+            with self.assertRaises(p.WeblateError):
+                c.get("/api/x/")
+            self.assertEqual((len(hits), sleeps), (1, []), status)
+
+    def test_writes_are_attempted_once(self):
+        for method in ("POST", "PATCH"):
+            for step in ("timeout", 503):
+                c, hits, sleeps = self.client([step])
+                with contextlib.redirect_stderr(io.StringIO()), self.assertRaises((p.WeblateError, TimeoutError)):
+                    c.request(method, "/api/x/", {"a": 1})
+                self.assertEqual((len(hits), sleeps), (1, []), (method, step))
 
 
 class ClientSafety(unittest.TestCase):

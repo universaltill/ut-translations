@@ -15,8 +15,10 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, ".."))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
+sys.path.insert(0, HERE)
 
 import bundle_checks  # noqa: E402
+import retry_server  # noqa: E402
 import locales as L  # noqa: E402
 from provision_weblate import WeblateError  # noqa: E402
 
@@ -250,6 +252,62 @@ class Fetch(unittest.TestCase):
             url, _ = self.serve(status, body, loc)
             with self.assertRaises(L.LocaleError, msg=str(status)):
                 L.fetch_languages_public(url, "p")
+
+
+class FetchRetry(unittest.TestCase):
+    """fetch_languages_public retries transient failures only (ut-docs#5559)."""
+
+    ROWS = [{"code": "de", "name": "German"}]
+
+    def fetch(self, steps, body=None):
+        url, hits = retry_server.serve(self, steps, self.ROWS if body is None else body)
+        sleeps = []
+        try:
+            out = L.fetch_languages_public(url, "p", timeout=0.2, sleep=sleeps.append)
+        except L.LocaleError as e:
+            out = e
+        return out, hits, sleeps
+
+    def quiet(self, *a, **kw):
+        with redirect_stderr(io.StringIO()):
+            return self.fetch(*a, **kw)
+
+    def test_ac1_timeouts_then_ok(self):
+        out, hits, sleeps = self.quiet(["timeout", "timeout", 200])
+        self.assertEqual(out, {"de": "German"})
+        self.assertEqual((len(hits), sleeps), (3, [5, 10]))
+
+    def test_ac2_always_timeout(self):
+        out, hits, sleeps = self.quiet(["timeout"])
+        self.assertIsInstance(out, L.LocaleError)
+        self.assertIn("can't read Weblate's language list", str(out))
+        self.assertEqual(len(hits), 4)
+        self.assertEqual(sum(sleeps), 35)
+        self.assertLessEqual(sum(sleeps), 60)
+
+    def test_ac3_refusals_not_retried(self):
+        for status in (404, 403, 400, 302, 500):
+            out, hits, sleeps = self.quiet([(status, {"Location": "http://evil.example/"}) if status == 302 else status])
+            self.assertEqual(str(out), f"Weblate language list: HTTP {status}", status)
+            self.assertEqual((len(hits), sleeps), (1, []), status)
+
+    def test_ac4_503_and_429_then_ok_with_capped_retry_after(self):
+        out, hits, sleeps = self.quiet([(503, {"Retry-After": "999"}), 200])
+        self.assertEqual((out, len(hits), sleeps), ({"de": "German"}, 2, [30]))
+        out, hits, sleeps = self.quiet([429, 200])
+        self.assertEqual((out, len(hits), sleeps), ({"de": "German"}, 2, [5]))
+
+    def test_malformed_json_not_retried(self):
+        out, hits, sleeps = self.quiet([200], body="junk")
+        self.assertIsInstance(out, L.LocaleError)
+        self.assertEqual((len(hits), sleeps), (1, []))
+
+    def test_ac5_unknown_code_refused_after_one_request(self):
+        url, hits = retry_server.serve(self, [200], self.ROWS)
+        live = L.fetch_languages_public(url, "p", timeout=0.2)
+        with self.assertRaises(L.LocaleError):
+            L.resolve_spec(live, CFG, "xx")
+        self.assertEqual(len(hits), 1)
 
 
 class Cli(unittest.TestCase):

@@ -265,6 +265,14 @@ the repository variable `BUNDLE_AUTO_PUBLISH` (comma separated Weblate codes,
 empty by default) get `publish-bundle` started with publish ticked, and that
 workflow keeps every control (review gate, `min_coverage`, scans, the
 `bundle-publish-human` reviewer for en/de/tr).
+Those dispatches are serial and 120 s apart (`max-parallel: 1` plus a fixed
+gap, because `gh workflow run` returns at once), so the publish runs do not hit
+the self-hosted Weblate together. Weblate GET reads (every `WeblateClient` GET except
+`ai-review apply`'s writer client, which has its own 429 loop) and the marketplace
+catalogue reads in `bundle_refresh` retry a timeout, a connection error or HTTP 429/502/503/504, 4 tries
+in all (waits of 5, 10, 20 s; a `Retry-After` is honoured up to 30 s) and log
+each one as `attempt n/N`; other errors, and every write, are never retried
+(`tools/http_retry.py`, ut-docs#5559).
 
 **Adding a language is one step: add it in Weblate.** The workflow input is
 the Weblate language code (`de`, `pt_BR`, `zh_Hans`). Its **till tag** is the

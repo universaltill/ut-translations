@@ -14,6 +14,13 @@
 # reviewer of the bundle-publish-human environment. This file never sees the
 # Weblate or marketplace tokens and cannot approve anything.
 #
+# Fan-out (ut-docs#5559): `dispatch` runs one language at a time and waits
+# DISPATCH_GAP seconds after each start, so the publish runs do not all read
+# our own Weblate server in the same second (it timed out under that load).
+# max-parallel alone is not enough: `gh workflow run` returns in about 1 s.
+# Weblate reads are retried too (tools/http_retry.py). The per-language
+# concurrency group in publish-bundle.yml is deliberately not shared.
+#
 # Least privilege: no workflow-level permissions; `plan` reads nothing from
 # the repo but its own tools; `dispatch` gets actions: write (to start the
 # publish workflow) and nothing else. GitHub-hosted runners (public repo).
@@ -35,7 +42,9 @@ jobs:
   plan:
     if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    # Two or more public reads, each retried (tools/http_retry.py: up to
+    # 155 s per read), so 5 minutes was too tight.
+    timeout-minutes: 10
     permissions:
       contents: read
     outputs:
@@ -61,8 +70,11 @@ jobs:
     timeout-minutes: 5
     permissions:
       actions: write
+    env:
+      DISPATCH_GAP: "120"
     strategy:
       fail-fast: false
+      max-parallel: 1
       matrix:
         locale: ${{ fromJSON(needs.plan.outputs.dispatch) }}
     steps:
@@ -75,3 +87,7 @@ jobs:
           set -euo pipefail
           [[ "$LOCALE" =~ ^[a-z]{2,3}(_[A-Za-z0-9]{2,8})?$ ]] || { echo "::error::not a Weblate language code"; exit 1; }
           gh workflow run publish-bundle.yml --repo "$REPO" --ref main -f locale="$LOCALE" -f channel=stable -f publish=true
+          # `gh workflow run` returns in about a second, so max-parallel alone
+          # would still start every publish run at once. Space the dispatches
+          # a fixed ~2 min apart so the validates rarely overlap.
+          sleep "$DISPATCH_GAP"
