@@ -273,6 +273,14 @@ catalogue reads in `bundle_refresh` retry a timeout, a connection error or HTTP 
 in all (waits of 5, 10, 20 s; a `Retry-After` is honoured up to 30 s) and log
 each one as `attempt n/N`; other errors, and every write, are never retried
 (`tools/http_retry.py`, ut-docs#5559).
+A language whose `publish-bundle` run is still queued, running or waiting for
+the `bundle-publish-human` approval is not dispatched again: GitHub keeps one
+pending run per language's concurrency group, so a second dispatch would only
+cancel the waiting one. The job log shows a notice naming that run, which is
+the reminder that an approval is due. The match is on the run title
+`publish-bundle <code> <channel>` (`run-name` in `publish-bundle.yml`; runs
+started before it are titled just `publish-bundle` and are not recognised)
+(ut-docs#6114).
 
 **Adding a language is one step: add it in Weblate.** The workflow input is
 the Weblate language code (`de`, `pt_BR`, `zh_Hans`). Its **till tag** is the
