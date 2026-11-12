@@ -16,6 +16,7 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 sys.path.insert(0, os.path.join(ROOT, "tools"))
 
 import bundle_refresh as R  # noqa: E402
+import retry_server  # noqa: E402
 
 WF = os.path.join(ROOT, ".github", "workflows", "refresh-bundles.yml")
 
@@ -142,6 +143,29 @@ class Live(unittest.TestCase):
             R.published_versions("http://example.com")
 
 
+class GetJsonRetry(unittest.TestCase):
+    def test_one_timeout_then_ok(self):
+        url, hits = retry_server.serve(self, ["timeout", 200], {"a": 1})
+        sleeps = []
+        with redirect_stderr(io.StringIO()):
+            self.assertEqual(R._get_json(url, timeout=0.2, sleep=sleeps.append), {"a": 1})
+        self.assertEqual((len(hits), sleeps), (2, [5]))
+
+    def test_4xx_not_retried(self):
+        url, hits = retry_server.serve(self, [403])
+        sleeps = []
+        with self.assertRaises(R.RefreshError):
+            R._get_json(url, timeout=0.2, sleep=sleeps.append)
+        self.assertEqual((len(hits), sleeps), (1, []))
+
+    def test_always_timeout_keeps_the_error_text(self):
+        url, hits = retry_server.serve(self, ["timeout"])
+        with redirect_stderr(io.StringIO()), self.assertRaises(R.RefreshError) as cm:
+            R._get_json(url, timeout=0.2, sleep=lambda s: None)
+        self.assertIn("can't read 127.0.0.1", str(cm.exception))
+        self.assertEqual(len(hits), 4)
+
+
 class WorkflowShape(unittest.TestCase):
     def setUp(self):
         with open(WF, encoding="utf-8") as f:
@@ -166,6 +190,25 @@ class WorkflowShape(unittest.TestCase):
         self.assertIn("gh workflow run publish-bundle.yml", self.text)
         self.assertIn("--ref main", self.text)
         self.assertIn("vars.BUNDLE_AUTO_PUBLISH", self.text)
+
+    def job_block(self, name):
+        m = re.search(rf"^  {name}:\n((?:    .*\n|\n)+)", self.text, re.M)
+        self.assertIsNotNone(m, name)
+        return m.group(1)
+
+    def test_dispatch_is_serial_and_spaced(self):
+        d = self.job_block("dispatch")
+        self.assertRegex(d, r"max-parallel: 1\n")
+        self.assertIn("fail-fast: false", d)
+        gap = int(re.search(r'DISPATCH_GAP: "(\d+)"', d).group(1))
+        self.assertGreaterEqual(gap, 60)
+        self.assertLess(d.index("gh workflow run"), d.index('sleep "$DISPATCH_GAP"'))
+        timeout = int(re.search(r"timeout-minutes: (\d+)", d).group(1))
+        self.assertGreater(timeout * 60, gap + 60)
+
+    def test_plan_budget_covers_retries(self):
+        timeout = int(re.search(r"timeout-minutes: (\d+)", self.job_block("plan")).group(1))
+        self.assertGreaterEqual(timeout, 10)
 
 
 if __name__ == "__main__":

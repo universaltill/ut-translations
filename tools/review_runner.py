@@ -485,6 +485,13 @@ def review(args):
 
 # --- apply --------------------------------------------------------------------
 
+def writer_client(token):
+    """The client behind Writer: Writer._send has its own 429 loop, so the
+    client must not also retry reads (read_tries=1: one attempt per loop
+    iteration, ut-docs#5559)."""
+    return WeblateClient(os.environ.get("WEBLATE_URL") or WEBLATE_URL, token, read_tries=1)
+
+
 class Writer:
     def __init__(self, client, interval, max_writes, sleep=time.sleep):
         self.c, self.interval, self.max_writes, self.sleep = client, interval, max_writes, sleep
@@ -613,7 +620,7 @@ def apply(args):
             work.append((u, got.get(u["id"]), model, intact))
     token = reviewer_token(args.account, accounts)
     refusals = run_refusals(args, accounts, token, models)
-    client = WeblateClient(os.environ.get("WEBLATE_URL") or WEBLATE_URL, token) if token else None
+    client = writer_client(token) if token else None
     writer = Writer(client, args.write_interval, args.max_writes) if client else None
     done = set() if args.re_review else prior_written(args.logs_root)
     acc_family = review_checks.family((accounts.get(args.account) or {}).get("model"))

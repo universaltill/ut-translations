@@ -34,6 +34,7 @@ import json
 import os
 import re
 import sys
+import time
 import unicodedata
 import urllib.error
 import urllib.parse
@@ -42,6 +43,7 @@ import urllib.request
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 import bundle_checks  # noqa: E402
+import http_retry  # noqa: E402
 
 # The workflow's validate job carries this exact string (tests/test_workflow.py).
 CODE_RE_TEXT = "^[a-z]{2,3}(_[A-Za-z0-9]{2,8})?$"
@@ -235,7 +237,7 @@ class _NoRedirects(urllib.request.HTTPRedirectHandler):
         return None
 
 
-def fetch_languages_public(base_url, project, timeout=30):
+def fetch_languages_public(base_url, project, timeout=30, sleep=time.sleep):
     """The same list without a token (the endpoint is anonymously readable):
     https only (loopback http for tests), no redirect, fails closed."""
     u = urllib.parse.urlparse(base_url or "")
@@ -243,11 +245,14 @@ def fetch_languages_public(base_url, project, timeout=30):
         raise LocaleError(f"WEBLATE_URL must be an https URL (got {base_url!r})")
     url = base_url.rstrip("/") + f"/api/projects/{urllib.parse.quote(project)}/languages/"
     req = urllib.request.Request(url, headers={"Accept": "application/json"})
-    try:
+    def attempt():
         with urllib.request.build_opener(_NoRedirects).open(req, timeout=timeout) as r:
             if r.status != 200:
                 raise LocaleError(f"Weblate language list: HTTP {r.status}")
-            data = json.loads(r.read())
+            return json.loads(r.read())
+
+    try:
+        data = http_retry.call(attempt, what="Weblate language list", sleep=sleep)
     except LocaleError:
         raise
     except urllib.error.HTTPError as e:

@@ -25,6 +25,7 @@ import review_prompt as rp  # noqa: E402
 import review_runner as rr  # noqa: E402
 from bundle_fixtures import FakeWeblate, make_repo, make_till, till_source  # noqa: E402
 from provision_weblate import WeblateClient  # noqa: E402
+import retry_server  # noqa: E402
 from test_provision import TOKEN, serve  # noqa: E402
 
 NEW, APPROVE, ACCEPT, CHANGE = bb.A_NEW, bb.A_APPROVE, bb.A_ACCEPT, bb.A_CHANGE
@@ -960,3 +961,14 @@ class Surface(RunnerCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class WriterClientSingleAttempt(unittest.TestCase):
+    def test_writer_client_makes_one_attempt_per_loop_iteration(self):
+        url, hits = retry_server.serve(self, [503, 200], {})
+        with mock.patch.object(rr, "WEBLATE_URL", url), mock.patch.dict(os.environ, {"WEBLATE_URL": url}):
+            c = rr.writer_client(TOKEN)
+        self.assertEqual(c.read_tries, 1)
+        with self.assertRaises(Exception):
+            c.get("/api/x/")
+        self.assertEqual(len(hits), 1)

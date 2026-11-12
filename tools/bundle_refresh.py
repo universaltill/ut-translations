@@ -29,12 +29,14 @@ import json
 import os
 import re
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+import http_retry  # noqa: E402
 import locales  # noqa: E402
 
 PUBLIC_MARKETPLACE_URL = "https://cloud.universaltill.com"
@@ -45,16 +47,19 @@ class RefreshError(Exception):
     pass
 
 
-def _get_json(url, timeout=30):
+def _get_json(url, timeout=30, sleep=time.sleep):
     u = urllib.parse.urlparse(url)
     if u.scheme != "https" and not (u.scheme == "http" and u.hostname in locales.LOOPBACK):
         raise RefreshError(f"{url!r} must be https")
     req = urllib.request.Request(url, headers={"Accept": "application/json"})
-    try:
+    def attempt():
         with urllib.request.build_opener(locales._NoRedirects).open(req, timeout=timeout) as r:
             if r.status != 200:
                 raise RefreshError(f"{u.hostname}: HTTP {r.status}")
             return json.loads(r.read())
+
+    try:
+        return http_retry.call(attempt, what=u.hostname, sleep=sleep)
     except RefreshError:
         raise
     except urllib.error.HTTPError as e:

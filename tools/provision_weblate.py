@@ -38,12 +38,14 @@ import argparse
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+import http_retry  # noqa: E402
 import i18n_map  # noqa: E402
 import surfaces as surfaces_mod  # noqa: E402
 
@@ -77,7 +79,8 @@ class _RefuseRedirects(urllib.request.HTTPRedirectHandler):
 
 
 class WeblateClient:
-    def __init__(self, base_url, token, timeout=30):
+    def __init__(self, base_url, token, timeout=30, sleep=time.sleep,
+                 read_tries=http_retry.MAX_TRIES):
         if not token:
             raise WeblateError("WEBLATE_TOKEN is empty")
         u = urllib.parse.urlparse(base_url)
@@ -87,6 +90,8 @@ class WeblateClient:
         self._origin = (u.scheme, u.netloc)
         self._token = token
         self.timeout = timeout
+        self.sleep = sleep
+        self.read_tries = read_tries  # callers with their own 429 loop pass 1
         self._opener = urllib.request.build_opener(_RefuseRedirects)
 
     def _url(self, path):
@@ -114,10 +119,17 @@ class WeblateClient:
         req.add_header("Accept", "application/json")
         if data is not None:
             req.add_header("Content-Type", "application/json")
-        try:
+        def attempt():
             with self._opener.open(req, timeout=self.timeout) as r:
                 raw = r.read()
                 return r.status, (json.loads(raw) if raw else None)
+
+        try:
+            # Only a GET is idempotent: a write is attempted exactly once.
+            # The log names the method and path only: no host, no query string.
+            what = f"{method} {urllib.parse.urlsplit(path).path}"
+            return http_retry.call(attempt, what=what, sleep=self.sleep,
+                                   max_tries=self.read_tries if method == "GET" else 1)
         except urllib.error.HTTPError as e:
             with e:
                 detail = e.read().decode(errors="replace")[:500]
