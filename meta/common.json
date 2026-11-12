@@ -44,6 +44,14 @@
       "0.34"
     ]
   },
+  "common.confirm": {
+    "explanation": "Button in a confirmation dialog that carries out the action the dialog asks about (delete, revoke, deactivate). Cancel is beside it.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "common.discard_confirm": {
     "explanation": "Confirmation question shown when the user leaves a form that has unsaved changes.",
     "flags": "",
