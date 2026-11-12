@@ -132,7 +132,10 @@ class Workflow(unittest.TestCase):
         self.assertEqual(len(names), 4)  # upload + verify + two publish downloads
         for n in names:
             self.assertEqual(n, "bundle-${{ needs.validate.outputs.tag }}")
-        self.assertEqual(self.text.count("inputs.locale"), 5)  # group + 4 env bindings
+        # group + 4 env bindings + the run title (display only, never executed;
+        # refresh-bundles matches on it, ut-docs#6114)
+        self.assertEqual(self.text.count("inputs.locale"), 6)
+        self.assertRegex(self.text, r"(?m)^run-name: publish-bundle \$\{\{ inputs\.locale \}\} \$\{\{ inputs\.channel \}\}$")
         self.assertNotIn("github.event.inputs", self.text)  # the same raw input under another name
         for block in run_blocks(self.text):
             self.assertNotIn("inputs.", block)

@@ -51,6 +51,11 @@
 # read only. GitHub-hosted runners only (public repo).
 
 name: publish-bundle
+# The locale goes in the run's title so refresh-bundles can tell which
+# language a pending run is for (the API does not return a run's inputs)
+# and skip re-dispatching it (ut-docs#6114). Keep the "publish-bundle
+# <locale> " prefix: refresh-bundles matches on it.
+run-name: publish-bundle ${{ inputs.locale }} ${{ inputs.channel }}
 
 on:
   workflow_dispatch:

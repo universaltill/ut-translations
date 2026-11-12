@@ -6,7 +6,11 @@ import io
 import json
 import os
 import re
+import shutil
+import subprocess
 import sys
+import tempfile
+import textwrap
 import threading
 import unittest
 from contextlib import redirect_stderr, redirect_stdout
@@ -19,6 +23,7 @@ import bundle_refresh as R  # noqa: E402
 import retry_server  # noqa: E402
 
 WF = os.path.join(ROOT, ".github", "workflows", "refresh-bundles.yml")
+PUBLISH_WF = os.path.join(ROOT, ".github", "workflows", "publish-bundle.yml")
 
 
 def T(ymd, secs=0):
@@ -209,6 +214,110 @@ class WorkflowShape(unittest.TestCase):
     def test_plan_budget_covers_retries(self):
         timeout = int(re.search(r"timeout-minutes: (\d+)", self.job_block("plan")).group(1))
         self.assertGreaterEqual(timeout, 10)
+
+
+# A stand-in for the gh CLI: `run list` prints $FAKE_RUNS, `workflow run`
+# records its arguments in $GH_CALLS. Anything else fails loudly.
+FAKE_GH = """#!/usr/bin/env bash
+set -euo pipefail
+if [[ "$1 $2" == "run list" ]]; then
+  args=" $* "
+  for need in " --workflow publish-bundle.yml " " --status " "displayTitle" "status" "url"; do
+    [[ "$args" == *"$need"* ]] || { echo "fake gh: run list without $need" >&2; exit 64; }
+  done
+  st=""; prev=""; for a in "$@"; do [[ "$prev" == "--status" ]] && st="$a"; prev="$a"; done
+  jq --arg s "$st" '[.[] | select(.status == $s)]' "$FAKE_RUNS"; exit 0
+fi
+if [[ "$1 $2" == "workflow run" ]]; then shift 2; echo "$*" >> "$GH_CALLS"; exit 0; fi
+echo "fake gh: unexpected $*" >&2; exit 64
+"""
+
+
+@unittest.skipUnless(shutil.which("jq") and shutil.which("bash"), "needs bash and jq (GitHub runners have both)")
+class DispatchSkipsPendingRuns(unittest.TestCase):
+    """ut-docs#6114: the real `dispatch` step script, run against a fake gh."""
+
+    def setUp(self):
+        with open(WF, encoding="utf-8") as f:
+            text = f.read()
+        dispatch = re.search(r"^  dispatch:\n((?:    .*\n|\n)+)", text, re.M).group(1)
+        bodies = [textwrap.dedent(b) for b in re.findall(r"run: \|\n((?:\s{10}.*\n?|\n)+)", dispatch)]
+        self.script = next(b for b in bodies if "gh workflow run" in b)
+        self.tmp = tempfile.mkdtemp()
+        self.addCleanup(shutil.rmtree, self.tmp)
+        gh = os.path.join(self.tmp, "gh")
+        with open(gh, "w", encoding="utf-8") as f:
+            f.write(FAKE_GH)
+        os.chmod(gh, 0o755)
+
+    def dispatch(self, locale, runs):
+        runs_file = os.path.join(self.tmp, "runs.json")
+        calls = os.path.join(self.tmp, "calls")
+        with open(runs_file, "w", encoding="utf-8") as f:
+            json.dump(runs, f)
+        if os.path.exists(calls):
+            os.remove(calls)
+        env = dict(os.environ, PATH=self.tmp + os.pathsep + os.environ["PATH"], FAKE_RUNS=runs_file,
+                   GH_CALLS=calls, LOCALE=locale, REPO="universaltill/ut-translations",
+                   DISPATCH_GAP="0", GH_TOKEN="dummy")
+        p = subprocess.run(["bash", "--noprofile", "--norc", "-eo", "pipefail", "-c", self.script],
+                           env=env, capture_output=True, text=True, timeout=30)
+        self.assertEqual(p.returncode, 0, p.stderr)
+        started = []
+        if os.path.exists(calls):
+            with open(calls, encoding="utf-8") as f:
+                started = f.read().splitlines()
+        return started, p.stdout
+
+    @staticmethod
+    def run_(title, status, n=1):
+        return {"databaseId": n, "status": status, "displayTitle": title,
+                "url": f"https://github.com/universaltill/ut-translations/actions/runs/{n}"}
+
+    def test_waiting_run_is_not_dispatched_again_and_is_named(self):
+        runs = [self.run_("publish-bundle de stable", "waiting", 41969338316)]
+        started, out = self.dispatch("de", runs)
+        self.assertEqual(started, [])
+        self.assertIn("::notice::", out)
+        self.assertIn("actions/runs/41969338316", out)
+
+    def test_every_active_status_skips(self):
+        for status in ("requested", "waiting", "pending", "queued", "in_progress"):
+            with self.subTest(status=status):
+                started, _ = self.dispatch("tr", [self.run_("publish-bundle tr stable", status)])
+                self.assertEqual(started, [])
+
+    def test_other_languages_still_dispatch(self):
+        runs = [self.run_("publish-bundle de stable", "waiting"),
+                self.run_("publish-bundle pt_BR stable", "waiting", 2)]
+        for locale in ("fr", "pt"):  # pt must not match pt_BR's run
+            with self.subTest(locale=locale):
+                started, _ = self.dispatch(locale, runs)
+                self.assertEqual(started, [f"publish-bundle.yml --repo universaltill/ut-translations --ref main "
+                                           f"-f locale={locale} -f channel=stable -f publish=true"])
+
+    def test_match_is_found_anywhere_in_a_mixed_list(self):
+        runs = [self.run_("publish-bundle fr stable", "completed", 9),
+                self.run_("publish-bundle ar stable", "queued", 8),
+                self.run_("publish-bundle de stable", "completed", 7),
+                self.run_("publish-bundle de stable", "waiting", 3)]
+        started, out = self.dispatch("de", runs)
+        self.assertEqual(started, [])
+        self.assertIn("actions/runs/3", out)
+
+    def test_finished_runs_do_not_block(self):
+        runs = [self.run_("publish-bundle de stable", "completed")]
+        started, _ = self.dispatch("de", runs)
+        self.assertEqual(len(started), 1)
+
+    def test_no_runs_at_all_dispatches(self):
+        started, _ = self.dispatch("ar", [])
+        self.assertEqual(len(started), 1)
+
+    def test_publish_run_title_carries_the_locale(self):
+        with open(PUBLISH_WF, encoding="utf-8") as f:
+            text = f.read()
+        self.assertRegex(text, r"(?m)^run-name: publish-bundle \$\{\{ inputs\.locale \}\} ")
 
 
 if __name__ == "__main__":
