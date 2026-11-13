@@ -1803,6 +1803,22 @@
       "0.34"
     ]
   },
+  "receipt.printer.ask_manager": {
+    "explanation": "Shown instead of the link \"Set up a receipt printer\" when the signed-in staff member can't open Settings (for example a cashier). Full sentence.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "receipt.printer.nothing_printed": {
+    "explanation": "Inline notice on a kiosk till whose screen can't open a print dialog, shown when a Print button didn't print. True whether no printer is set up or the set-up printer is off or unplugged. Don't say \"no printer\", and don't say the document was saved or sent. A link \"Set up a receipt printer\", or \"Ask a manager...\", follows.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "receipt.printer.retry": {
     "explanation": "",
     "flags": "",
@@ -1812,6 +1828,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "receipt.printer.set_up": {
+    "explanation": "Link label to Settings > Receipt printer: on the receipt warning, the print notice and the gift voucher page of a kiosk till that can't open a print dialog. Verb phrase on a button-sized link; keep it short.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "receipt.printer.unavailable": {

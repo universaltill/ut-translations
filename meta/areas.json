@@ -7,7 +7,7 @@
   "catalog": {
     "name": "Catalog",
     "description": "Items, categories, modifiers, stock, promotions, vouchers, imports and the menu designer.",
-    "keys": 896
+    "keys": 898
   },
   "orders": {
     "name": "Orders",
@@ -47,7 +47,7 @@
   "receipts-and-legal": {
     "name": "Receipts and legal",
     "description": "Receipts, invoices, fiscal devices and registers, tax codes and other legally relevant wording. Every key here needs a human approval (ADR-0160 §4).",
-    "keys": 198
+    "keys": 201
   },
   "plugins": {
     "name": "Plugins",

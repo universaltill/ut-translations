@@ -7650,6 +7650,22 @@
       "main"
     ]
   },
+  "vouchers.print_slip.no_printer": {
+    "explanation": "Inline refusal after Print voucher slip on a kiosk till with no receipt printer set up and no print dialog (only from a page opened before that state).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "vouchers.print_slip.no_printer_hint": {
+    "explanation": "Shown instead of the Print voucher slip button on a gift voucher's page, on a kiosk till with no receipt printer set up and no print dialog. A link \"Set up a receipt printer\" follows.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "vouchers.print_slip.not_printable": {
     "explanation": "Inline message when Print voucher slip is pressed for a voucher that was voided or used up since the page loaded.",
     "flags": "",
