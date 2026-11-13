@@ -1952,6 +1952,14 @@
       "0.34"
     ]
   },
+  "catalog.icon_match.head_last": {
+    "explanation": "Setting, never shown on screen. Type 1 if, in your language, the main noun of a compound word comes LAST (German: Milchkaffee is a coffee, Apfelsaft is a juice). Then the till can suggest the icon for compound item names. Otherwise type 0. Type only the digit, nothing else. Translators: leave 0 unless a maintainer has measured your language; only the ASCII digit 1 turns it on.",
+    "flags": "max-length:1",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.image.background": {
     "explanation": "",
     "flags": "",
@@ -4283,6 +4291,30 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "designer.receipt.voucher_slip_text": {
+    "explanation": "Label of the receipt designer's multi-line field for the shop's own text printed at the bottom of gift voucher slips (not on receipts).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "designer.receipt.voucher_slip_text_hint": {
+    "explanation": "Help line under the receipt designer's gift voucher slip text field: where it prints (every gift voucher slip, never receipts), examples of what shops write, and the limits.\n\nPlaceholders:\n- %d: maximum number of lines\n- %d: maximum number of characters",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "designer.receipt.voucher_slip_text_too_long": {
+    "explanation": "Shown next to the Save button when the gift voucher slip text is over its line or character limit; nothing on the form was saved, so it says so and what to do.\n\nPlaceholders:\n- %d: maximum number of lines\n- %d: maximum number of characters",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "designer.reorder_hint": {

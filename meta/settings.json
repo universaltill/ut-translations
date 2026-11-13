@@ -5598,6 +5598,14 @@
       "0.34"
     ]
   },
+  "settings.printer.system_unavailable": {
+    "explanation": "Warning under the Connection choice in Settings > Receipt printer, shown only while Regular printer (system) is picked on a till whose own device has no operating-system printer set up (e.g. a kiosk built from the till image). Says Regular printer cannot print there and to choose Network (IP) or USB device instead; ends with a help link. Advisory: saving is still allowed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.printer.test": {
     "explanation": "",
     "flags": "",

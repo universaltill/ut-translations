@@ -1915,6 +1915,16 @@
       "0.34"
     ]
   },
+  "receipt.vouchers.issued_on": {
+    "explanation": "Printed on a gift voucher slip under the code: the date the voucher was sold. Printed on 58/80 mm paper.\n\nPlaceholders:\n- %s: date the voucher was issued",
+    "flags": "max-length:42, placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "receipt.vouchers.new_balance": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -1956,6 +1966,16 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "receipt.vouchers.topped_up_on": {
+    "explanation": "Printed on a gift voucher top-up slip under the code: the date this amount was added to the voucher. Printed on 58/80 mm paper.\n\nPlaceholders:\n- %s: date of this top-up",
+    "flags": "max-length:42, placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
     ]
   },
   "receipt.vouchers.void": {
