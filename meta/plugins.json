@@ -2037,6 +2037,30 @@
       "main"
     ]
   },
+  "plugins.settings.tab.errors": {
+    "explanation": "Accessible name (read by screen readers, shown as a tooltip) of the warning badge on a section of a plugin's settings page when the save was refused because fields in that section are invalid. The badge itself shows a warning sign and the number.\n\nPlaceholders:\n- %d: how many fields in the section are invalid (a number)",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.tab.general": {
+    "explanation": "Title of the section of a plugin's settings page that holds the settings the plugin did not put in a section of its own. It is shown first, before the plugin's own sections.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.tab.list": {
+    "explanation": "Accessible name (read by screen readers, not shown) of the row of section tabs on a plugin's settings page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.settings.takeaway.deleted_code": {
     "explanation": "",
     "flags": "",
