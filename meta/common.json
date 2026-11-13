@@ -229,6 +229,22 @@
       "0.34"
     ]
   },
+  "confirm.delete": {
+    "explanation": "Confirm button of the till's in-page confirmation dialog when the action deletes something for good (a modifier group, unassigned groups, an option set).",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "confirm.keep_order": {
+    "explanation": "Cancel button of the confirmation dialog shown before cancelling an open/parked order: leaves the order as it is. Pairs with 'Cancel order'.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "confirm.make_satellite_body": {
     "explanation": "",
     "flags": "",
@@ -254,6 +270,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "confirm.remove": {
+    "explanation": "Confirm button of the till's in-page confirmation dialog when the action removes something (a barcode, a tile from the quick buttons, a modifier group from an item, an option value, sample data, a catalog item). Verb, imperative.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "error.page.forbidden_title": {

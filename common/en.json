@@ -25,9 +25,12 @@
   "common.show_more": "More",
   "common.submit": "Submit",
   "common.view": "View",
+  "confirm.delete": "Delete",
+  "confirm.keep_order": "Keep order",
   "confirm.make_satellite_body": "Satellite tills are for kiosks, table-QR or order stations, and need the main till to work. This till will start acting as one.",
   "confirm.make_satellite_confirm": "Make satellite",
   "confirm.make_satellite_title": "Make this a satellite?",
+  "confirm.remove": "Remove",
   "error.page.forbidden_title": "Not allowed",
   "error.page.title": "Something went wrong",
   "notice.dismiss": "Dismiss"

@@ -1931,6 +1931,118 @@
       "0.34"
     ]
   },
+  "shifts.count_detail.denomination": {
+    "explanation": "Column header in the stored count: the value of one coin or note.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.failed": {
+    "explanation": "Error after an unexpected fault while loading the count; the button named is the key shifts.count_detail.show.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.hide": {
+    "explanation": "Button in the loaded denomination count panel on the Shifts page that empties the panel again.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.hint": {
+    "explanation": "Line under the panel heading on the Shifts page, shown before any count is loaded; says what the panel is for and how to fill it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.invalid_request": {
+    "explanation": "Error when the count request could not be read (shift id too long).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.mismatch": {
+    "explanation": "Neutral note when the counted-cash figure typed at close is not equal to the total of the coin-and-note count. Information only, not an error.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.none": {
+    "explanation": "Shown when a closed shift was closed without the optional coin-and-note count.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.not_closed": {
+    "explanation": "Error when the count is requested for an unknown or still-open shift (for example a stale page). Tells the operator to reload.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.partial": {
+    "explanation": "Note under a stored count when some entries were unreadable (damaged or invalid data) and left out.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.pieces": {
+    "explanation": "Column header in the stored count: how many of that coin or note were counted.",
+    "flags": "max-length:14",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.show": {
+    "explanation": "Button in a closed shift's row of the Shifts history table; loads that shift's stored coin-and-note count into the panel below the table.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.title": {
+    "explanation": "Heading of the panel under the Shifts history table that shows one closed shift's coin-and-note count.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.total": {
+    "explanation": "Row label in the stored count: the sum of all coin and note lines.",
+    "flags": "max-length:28",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.unreadable": {
+    "explanation": "Shown instead of the table when the stored coin-and-note count is damaged and nothing in it can be read.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "shifts.count_protocol": {
     "explanation": "",
     "flags": "",
