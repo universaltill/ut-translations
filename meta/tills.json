@@ -1950,6 +1950,14 @@
       "0.34"
     ]
   },
+  "tills.join_error.main_no_tls": {
+    "explanation": "Error shown under the join or pairing form on a satellite-to-be when the main till refuses a plain-HTTP join because it cannot serve a secure connection at all. Tells the person to restart the main till and try again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tills.join_error.name_taken": {
     "explanation": "",
     "flags": "",
@@ -2003,6 +2011,14 @@
       "0.34"
     ]
   },
+  "tills.join_error.satellite_tls_only": {
+    "explanation": "Error shown under the join or pairing form when a satellite could not join because this till could not make a secure connection to the main till. Tells the person to update this till if it runs an older version than the main till, otherwise to restart both tills, then try again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tills.join_error.snapshot_failed": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -2028,6 +2044,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "tills.join_error.tls_only": {
+    "explanation": "Error shown under the join or pairing form when the main till only accepts secure connections and this till could not make one. Tells the person to update this till if it runs an older version than the main till, otherwise to restart both tills, then try again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "tills.join_error.too_many_attempts": {
