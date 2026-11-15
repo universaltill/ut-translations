@@ -312,6 +312,8 @@
   "reports.zpaper.no_sale_total": "Drawer opens",
   "reports.zpaper.receipts_range": "Receipts %s - %s",
   "reports.zpaper.refunds": "Refunds (%d)",
+  "reports.zpaper.restored_receipts": "Restored from a backup: receipts continue at %s (last in the backup: %s)",
+  "reports.zpaper.restored_z": "Z numbers continue at %d (last in the backup: %d)",
   "reports.zpaper.sales": "Sales (%d)",
   "reports.zpaper.stornos_note": "voided receipts, not in revenue",
   "reports.zpaper.tax_net": "Tax (net)",

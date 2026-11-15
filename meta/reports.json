@@ -2777,6 +2777,22 @@
       "0.34"
     ]
   },
+  "reports.zpaper.restored_receipts": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer, first report after a backup restore: where receipt numbers continue, and the last receipt number the backup held (a dash when it held none).\n\nPlaceholders:\n- %s: the receipt number the till continues at\n- %s: the last receipt number in the restored backup",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.restored_z": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer, first report after a backup restore: the Z number this report carries, and the last Z number the backup held.\n\nPlaceholders:\n- %d: the Z number this report continues at\n- %d: the last Z number in the restored backup",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.zpaper.sales": {
     "explanation": "",
     "flags": "placeholders:\"%d\"",
