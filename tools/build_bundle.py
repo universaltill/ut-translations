@@ -43,8 +43,8 @@ from approved translations only (ADR-0160 §4, §5; ut-docs#4367).
            deterministic tar.gz the till's marketplace installer accepts once
            the marketplace has signed it (tools/till_verify.py proves that).
 
-Version: 2.<YYYYMMDD>.<second of the day> of generated_at (UTC) — above the
-1.x packs it replaces, rising with every build, no state to keep.
+Version: 2.<YYYYMMDD>.<second of the day> of generated_at (UTC) — rising with
+every build, no state to keep.
 
 Env: WEBLATE_URL, WEBLATE_TOKEN (a read token that can see users' groups:
      Weblate's user.view permission), not needed for --locale en.
@@ -439,7 +439,7 @@ class Builder:
         if floor and info["key_count"] and info["approved_count"] < floor * info["key_count"]:
             problems.append(
                 f"{info['approved_count']}/{info['key_count']} strings is below min_coverage {floor}: "
-                f"this bundle would replace the installed {ID_PREFIX}{self.locale} pack (ut-docs#4371)")
+                f"this bundle would replace the installed {ID_PREFIX}{self.locale} with a much smaller one")
         return problems
 
     # --- scans -------------------------------------------------------------

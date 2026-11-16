@@ -1,8 +1,7 @@
 #!/usr/bin/env python3
 """Upload a built language bundle to the marketplace and approve it
-(ADR-0160 §5; ut-docs#4367). The same two calls each ut-plugin-language-*
-release.yml makes (scripts/publish.sh, scripts/approve.sh), with the scoped
-language-publisher token:
+(ADR-0160 §5; ut-docs#4367). The same two calls the marketplace release flow
+makes (upload, then approve), with the scoped language-publisher token:
 
   POST <base>/ui/api/vendor/releases/upload      multipart: artifact,
        manifest, plugin_id, version, channel, expected_hash, release_notes
