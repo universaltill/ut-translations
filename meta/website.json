@@ -405,6 +405,142 @@
       "main"
     ]
   },
+  "contact.lede": {
+    "explanation": "Intro under the Contact heading. The page has no form: each address is a plain mailto link that opens the visitor's own email app.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.partners.d": {
+    "explanation": "Short text of the partners card.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.partners.t": {
+    "explanation": "Heading of the card for partners (resellers and installers).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.pilot.cta": {
+    "explanation": "Button on the pilot card that opens the Join the pilot page.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.pilot.d": {
+    "explanation": "Short text of the pilot card. Same facts as the Join the pilot page.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.pilot.t": {
+    "explanation": "Heading of the free pilot card on the Contact page.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.privacy": {
+    "explanation": "Small note at the foot of the Contact page, before the link to the privacy policy.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.sales.d": {
+    "explanation": "Short text of the plans and pricing card.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.sales.pricing": {
+    "explanation": "Link under the sales card to the Pricing page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.sales.t": {
+    "explanation": "Heading of the card for questions about plans and pricing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.security.d": {
+    "explanation": "Short text of the security card: a request for a private report with reproduction steps.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.security.t": {
+    "explanation": "Heading of the security card.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.support.d": {
+    "explanation": "Short text of the support card: what to write about.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.support.help": {
+    "explanation": "Link under the support card to the public Help pages.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.support.t": {
+    "explanation": "Heading of the support card on the Contact page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "contact.title": {
+    "explanation": "Main heading (h1) of the Contact page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "cta.btn": {
     "explanation": "Button label of the final call-to-action band: get started. Currently not referenced by any page (kept because it is in every locale dictionary).",
     "flags": "",
@@ -853,6 +989,14 @@
   },
   "faq.title": {
     "explanation": "Heading of the home page FAQ section.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "foot.contact": {
+    "explanation": "Footer link to the Contact page. One short word; tight space.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -1365,6 +1509,24 @@
       "main"
     ]
   },
+  "meta.contact.desc": {
+    "explanation": "Meta description (search-result snippet) of the Contact page. Plain sentence, about 150 characters.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.contact.title": {
+    "explanation": "Browser-tab title and search-result headline of the Contact page. Keep the brand name unchanged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "meta.download.desc": {
     "explanation": "Meta description of the download page: free EPOS and POS software for Windows, macOS, Linux, Raspberry Pi and Android; free and offline-first.",
     "flags": "",
@@ -1447,7 +1609,7 @@
     ]
   },
   "meta.pilot.desc": {
-    "explanation": "Meta description of the pilot page: addressed to cafe and shop owners in Germany or the UK; the pilot costs nothing, we set it up with them, they keep their data. Free-of-charge claim, keep exact.",
+    "explanation": "Meta description of the pilot page: addressed to cafe and shop owners in Germany or the UK; the pilot costs nothing, we set it up with them remotely, they keep their data. Free-of-charge claim, keep exact.",
     "flags": "",
     "labels": [
       "legal"
@@ -1461,6 +1623,26 @@
     "explanation": "Browser-tab title and search headline of the pilot programme page.",
     "flags": "",
     "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.pricing.desc": {
+    "explanation": "Meta description (search-result snippet) of the Pricing page. About 160 characters. States that the app is free, that paid plans can be billed annually with two months free or monthly, and that prices exclude VAT.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "meta.pricing.title": {
+    "explanation": "Browser-tab title and search-result headline of the Pricing page. Keep the brand name Universal Till unchanged; keep it short.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
     "lines": [
       "main"
     ]
@@ -1572,6 +1754,16 @@
       "main"
     ]
   },
+  "nav.pricing": {
+    "explanation": "Top navigation and footer link to the Pricing page. One short word; tight space.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "nav.solutions": {
     "core": true,
     "explanation": "Top navigation link to the Solutions section (kinds of shops). One word if possible; space is tight in the nav bar.",
@@ -1618,14 +1810,6 @@
   },
   "news.empty": {
     "explanation": "Empty-state message on the News index when there are no posts.",
-    "flags": "",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
-  "news.machine": {
-    "explanation": "Small label on a blog post that was translated by machine.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -1697,7 +1881,7 @@
     ]
   },
   "pilot.ask.i2": {
-    "explanation": "Pilot ask bullet: a short parallel (shadow) run next to the current till before going live.",
+    "explanation": "Pilot ask bullet: a short parallel (shadow) run next to the current till before any go-live.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -1739,7 +1923,7 @@
     ]
   },
   "pilot.get.i2": {
-    "explanation": "Pilot benefit bullet: we set it up with the shop (catalogue, hardware, training).",
+    "explanation": "Pilot benefit bullet: we set it up with the shop REMOTELY: catalogue import (including from a previous till's backup file), a check of products and prices, a short training call. Must not promise on-site work.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -1750,6 +1934,16 @@
     "explanation": "Pilot benefit bullet: the shop keeps its data, full export any time, no lock-in.",
     "flags": "",
     "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.get.i4": {
+    "explanation": "Pilot benefit bullet: NO hardware supplied; runs on a tablet, PC or Raspberry Pi the shop already owns. Must never promise hardware.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
     "lines": [
       "main"
     ]
@@ -1790,6 +1984,34 @@
     "explanation": "Main heading of the pilot programme page.",
     "flags": "",
     "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.where.de": {
+    "explanation": "Germany pilot bullet: not yet certified for fiscal use in Germany (no TSE), so pilots run as a shadow run next to the current till, which keeps the shop compliant. Legal claim, keep exact; no fiscal-vendor names.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.where.t": {
+    "explanation": "Heading of the Germany/UK card on the pilot page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pilot.where.uk": {
+    "explanation": "UK pilot bullet: UK pilots can go live after the short shadow run.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
     "lines": [
       "main"
     ]
@@ -2206,6 +2428,352 @@
       "main"
     ]
   },
+  "pricing.billing": {
+    "explanation": "Billing explanation near the top of the Pricing page. Annual billing is the first option shown: ten months paid up front, two months free. Monthly billing is the alternative.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.cta.paid": {
+    "explanation": "Button on a paid plan card; it opens the Find your setup questions, which lead to the right plan and the account page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.effective": {
+    "explanation": "Small note at the foot of the Pricing page: the date the listed prices took effect. {date} is a ready formatted date.\n\nPlaceholders:\n- 1: {date} — a ready formatted date, for example 24 October 2026",
+    "flags": "placeholders:\"{date}\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.extra": {
+    "explanation": "Line on the Multi-location plan card about the locations it includes and the price of each extra location. Placeholders are numbers and ready formatted amounts.\n\nPlaceholders:\n- 1: {included} — number of locations included\n- 2: {max} — the most locations in total before a custom setup\n- 3: {price} — monthly equivalent per extra location when billed annually, formatted amount\n- 4: {monthly} — price per extra location when billed monthly, formatted amount",
+    "flags": "placeholders:\"{included}\":\"{max}\":\"{price}\":\"{monthly}\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.enterprise.1": {
+    "explanation": "One bullet on the Enterprise and chains card of the Pricing page.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.local.1": {
+    "explanation": "One bullet in the feature list of the Local plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.local.2": {
+    "explanation": "One bullet in the feature list of the Local plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.local.3": {
+    "explanation": "One bullet in the feature list of the Local plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.multi.1": {
+    "explanation": "One bullet in the feature list of the Multi-location plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.multi.2": {
+    "explanation": "One bullet in the feature list of the Multi-location plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.multi.3": {
+    "explanation": "One bullet in the feature list of the Multi-location plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.plus.1": {
+    "explanation": "One bullet in the feature list of the Local Plus plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.plus.2": {
+    "explanation": "One bullet in the feature list of the Local Plus plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.plus.3": {
+    "explanation": "One bullet in the feature list of the Local Plus plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.pro.1": {
+    "explanation": "One bullet in the feature list of the Pro plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.pro.2": {
+    "explanation": "One bullet in the feature list of the Pro plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.pro.3": {
+    "explanation": "One bullet in the feature list of the Pro plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.pro.4": {
+    "explanation": "One bullet in the feature list of the Pro plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.shop.1": {
+    "explanation": "One bullet in the feature list of the Shop plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.shop.2": {
+    "explanation": "One bullet in the feature list of the Shop plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.f.shop.3": {
+    "explanation": "One bullet in the feature list of the Shop plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.lede": {
+    "explanation": "Intro paragraph under the Pricing heading. Claims: the app is free on the shop's own hardware, paid features are in the cloud plans, and the software is never charged per till (the German fiscal device line is a separate, clearly shown line).",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.legal.sub": {
+    "explanation": "Link text to the subscription terms (legal page) at the foot of the Pricing page.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.market.de": {
+    "explanation": "Heading and button label for the German price list. Country name plus the currency code.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.market.eu": {
+    "explanation": "Heading and button label for the price list that applies in euro countries other than Germany. Country group plus the currency code.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.market.label": {
+    "explanation": "Accessible label of the group of buttons that switches the Pricing page between the UK, Germany and the eurozone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.market.uk": {
+    "explanation": "Heading and button label for the UK price list. Country name plus the currency code.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.other.t": {
+    "explanation": "Heading of the box about countries whose prices are not published yet.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.price.annual": {
+    "explanation": "Main price line of a paid plan: the per-month equivalent when billed annually. {price} is a ready formatted amount with its currency symbol; keep it intact.\n\nPlaceholders:\n- 1: {price} — a ready formatted amount with currency symbol, for example £24.17",
+    "flags": "placeholders:\"{price}\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.price.annual.total": {
+    "explanation": "Second price line of a paid plan: the yearly amount charged once up front, which is ten times the monthly price (two months free). {total} is a ready formatted amount.\n\nPlaceholders:\n- 1: {total} — a ready formatted amount with currency symbol, for example £290",
+    "flags": "placeholders:\"{total}\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.price.monthly": {
+    "explanation": "Third price line of a paid plan: the monthly price when billed month by month. {price} is a ready formatted amount.\n\nPlaceholders:\n- 1: {price} — a ready formatted amount with currency symbol, for example £29",
+    "flags": "placeholders:\"{price}\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.talk": {
+    "explanation": "Price line of the Enterprise and chains card: no list price, the visitor contacts us.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.title": {
+    "explanation": "Main heading (h1) of the Pricing page.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.tse.t": {
+    "explanation": "Heading of the box on the German price list about the managed TSE (certified fiscal security device).",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "pricing.vat": {
+    "explanation": "One-line statement on the Pricing page that every price is net of VAT.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "site.fallback_note": {
     "core": true,
     "explanation": "Note shown once under the header when a page still contains English text because a string is missing in this language.",
@@ -2218,51 +2786,6 @@
   "site.legal_english_binding": {
     "core": true,
     "explanation": "Notice at the top of a legal page (privacy, terms, legal notice) that has no approved translation: the page is the English text and English is the binding version.",
-    "flags": "",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
-  "site.machine_label": {
-    "core": true,
-    "explanation": "Short label (bold lead of a notice band, also an accessible name). Says the page text was translated by AI. Use the usual term for AI in the language, not 'automatic' or 'robot'.",
-    "flags": "",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
-  "site.machine_label_badge": {
-    "core": true,
-    "explanation": "Tiny badge next to a language in the language picker meaning 'translated with AI'. At most 12 characters; the local usual abbreviation (KI, YZ, IA) is fine.",
-    "flags": "",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
-  "site.machine_label_detail": {
-    "core": true,
-    "explanation": "Second sentence of the translated-with-AI notice band: no person has reviewed the translation yet, and the English text is the reference if something reads wrongly. Calm, factual, no apology.",
-    "flags": "",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
-  "site.machine_label_link": {
-    "core": true,
-    "explanation": "Link text in the notice band that opens the same page in English.",
-    "flags": "",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
-  "site.machine_label_report": {
-    "core": true,
-    "explanation": "Link text (opens the visitor's email program) to report a wrong translation.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -3075,6 +3598,16 @@
       "main"
     ]
   },
+  "wiz.gap.accountant": {
+    "explanation": "Honesty note: an accountant login with a read-only role is coming on the Pro plan but not available yet; no date; on every plan records can be exported, e.g. as a DATEV file or another accounting CSV. DATEV is a brand name.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "wiz.gap.appointments": {
     "explanation": "Honesty note: two-way sync with booking platforms (such as Booksy) is coming but not available, it depends on partner access we do not have yet. Do not soften into a promise.",
     "flags": "",
@@ -3101,6 +3634,16 @@
       "main"
     ]
   },
+  "wiz.gap.mobilesync": {
+    "explanation": "Honesty note: a till away from the shop still sells offline; syncing it with the main till over the internet is coming on the Pro plan but not available yet; no date. Do not soften into a promise.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "wiz.gap.online": {
     "explanation": "Honesty note: online ordering and web-shop sync are coming but not available, no date can be given; invites the visitor to tell us what they need.",
     "flags": "",
@@ -3109,8 +3652,8 @@
       "main"
     ]
   },
-  "wiz.gap.team": {
-    "explanation": "Honesty note: accountant access and phone support are not available yet; fixed staff roles are free on every plan, only custom roles are on the Pro plan.",
+  "wiz.gap.phone": {
+    "explanation": "Honesty note: phone support is coming on the Pro plan but not available yet; no date can be given.",
     "flags": "",
     "labels": [
       "legal"
@@ -3405,8 +3948,34 @@
       "main"
     ]
   },
+  "wiz.o.needs.accountant": {
+    "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: a login for the shop's accountant. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "wiz.o.needs.appointments": {
     "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: appointments and bookings. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.needs.archive": {
+    "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: a cloud archive that keeps receipts and reports for 7 to 10 years. Do not add 'legal', 'compliant' or 'audit-proof'. Short label; must fit one line on a phone. Retention-period claim.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.needs.away": {
+    "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: a till used away from the shop's own network, such as at a market stall or an event. Short label; must fit one line on a phone.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -3429,8 +3998,24 @@
       "main"
     ]
   },
+  "wiz.o.needs.phone": {
+    "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: support by phone. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "wiz.o.needs.remote": {
     "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: managing the shop from a browser away from the till (cloud). Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.needs.roles": {
+    "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: custom staff roles beyond the built-in ones (the built-in roles are free on every plan). Short label; must fit one line on a phone.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -3453,8 +4038,32 @@
       "main"
     ]
   },
-  "wiz.o.needs.team": {
-    "explanation": "Answer option (checkbox) in the needs question of the Find your setup wizard: accountant access, custom staff roles or phone support. Short label; must fit one line on a phone.",
+  "wiz.o.people.more": {
+    "explanation": "Answer option (radio button) in the people question of the Find your setup wizard: more than five people besides the owner manage the shop from a browser. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.people.none": {
+    "explanation": "Answer option (radio button) in the people question of the Find your setup wizard: nobody besides the owner manages the shop from a browser. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.people.upto2": {
+    "explanation": "Answer option (radio button) in the people question of the Find your setup wizard: one or two people besides the owner manage the shop from a browser. Short label; must fit one line on a phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.o.people.upto5": {
+    "explanation": "Answer option (radio button) in the people question of the Find your setup wizard: three to five people besides the owner manage the shop from a browser. Short label; must fit one line on a phone.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -3535,14 +4144,6 @@
   },
   "wiz.plan.shop": {
     "explanation": "Plan name 'Shop' (managed cloud features, optional managed fiscal device in Germany). Product name; see wiz.plan.local.",
-    "flags": "",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
-  "wiz.plugin.language-de": {
-    "explanation": "Name of the German language pack plugin in the recommended-plugins list.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -3682,7 +4283,7 @@
     ]
   },
   "wiz.q.card": {
-    "explanation": "Wizard question 5: how the shop takes card payments (which payment provider).",
+    "explanation": "Wizard question 6: how the shop takes card payments (which payment provider).",
     "flags": "",
     "labels": [],
     "lines": [
@@ -3716,7 +4317,7 @@
     ]
   },
   "wiz.q.hardware": {
-    "explanation": "Wizard question 6: whether the shop already owns a device to run the till on.",
+    "explanation": "Wizard question 7: whether the shop already owns a device to run the till on.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -3732,7 +4333,7 @@
     ]
   },
   "wiz.q.needs": {
-    "explanation": "Wizard question 4 (checkbox group): which extra capabilities the shop needs. Multiple answers allowed.",
+    "explanation": "Wizard question 5 (checkbox group): which extra capabilities the shop needs. Multiple answers allowed.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -3743,6 +4344,24 @@
     "explanation": "Helper line under the needs question: tick all that apply, or none.",
     "flags": "",
     "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.people": {
+    "explanation": "Wizard question 4 (radio group heading): how many people besides the owner will manage the shop from a browser (my.universaltill.com). Not till staff.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.q.people.hint": {
+    "explanation": "Helper line under the people question: only people who sign in to manage the shop from a browser (my.universaltill.com) count; staff who only use the till do not, and till staff accounts are free on every plan. Pricing-sensitive.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
     "lines": [
       "main"
     ]
@@ -3759,6 +4378,16 @@
     "explanation": "Helper line under the locations question: reassures that the number of tills per location is not limited.",
     "flags": "",
     "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.r.archive": {
+    "explanation": "Reason bullet: from the Pro plan the cloud archive keeps receipts and reports 7 years in the UK and 10 years elsewhere; Shop keeps 2 years, Local Plus 1 year; every plan can export records. Do not add 'legal', 'compliant', 'audit-proof' or similar: the shop's own obligations are not judged here. Legal-sensitive.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
     "lines": [
       "main"
     ]
@@ -3791,6 +4420,36 @@
       "main"
     ]
   },
+  "wiz.r.members2": {
+    "explanation": "Reason bullet in 'Why this fits': from the Shop plan up to 2 people besides the owner can manage the shop from a browser (my.universaltill.com); till staff do not count. Plan name stays in English. Pricing-sensitive.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.r.members5": {
+    "explanation": "Reason bullet in 'Why this fits': from the Pro plan up to 5 people besides the owner can manage the shop from a browser (my.universaltill.com); till staff do not count. Plan name stays in English. Pricing-sensitive.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.r.members50": {
+    "explanation": "Reason bullet in 'Why this fits': more than 5 people besides the owner need the Multi-location plan even with one location (Shop 2, Pro 5, Multi-location up to 50; more than 50 means talking to us); till staff do not count. Plan names stay in English. Pricing-sensitive.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "wiz.r.multi": {
     "explanation": "Reason bullet for several locations: they need one central catalogue, pricing and reports.",
     "flags": "",
@@ -3803,6 +4462,16 @@
     "explanation": "Reason bullet: managing the shop from a browser needs the cloud, from the Local Plus plan upwards.",
     "flags": "",
     "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "wiz.r.roles": {
+    "explanation": "Reason bullet: from the Pro plan the shop can create its own staff roles; the built-in staff roles are free on every plan. Plan name stays in English. Pricing-sensitive.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
     "lines": [
       "main"
     ]
