@@ -118,11 +118,15 @@ ICU_HEAD_RE = re.compile(r"\{\s*[A-Za-z_][A-Za-z0-9_]*\s*,\s*(?:plural|select|se
                          r"|\b(?:zero|one|two|few|many|other|=\d+)\s*(?=\{)")
 
 
+# A plain argument {name} or {n, number[, style]}: a placeholder, not text.
+ICU_ARG_ONLY_RE = re.compile(r"\{\s*[A-Za-z_][A-Za-z0-9_]*\s*(?:,\s*(?:number|date|time)\b[^{}]*)?\}")
+
+
 def icu_text(text):
     """An ICU message with its syntax (argument heads, category names, braces)
     taken out and the arms' text kept, so the script check sees the words
     (ut-docs#4371: an all-Arabic plural was judged 'untranslated')."""
-    return re.sub(r"[{}]", " ", ICU_HEAD_RE.sub(" ", text))
+    return re.sub(r"[{}]", " ", ICU_HEAD_RE.sub(" ", ICU_ARG_ONLY_RE.sub(" ", text)))
 
 
 def scripts_in(text):
