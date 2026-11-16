@@ -890,6 +890,14 @@
       "0.34"
     ]
   },
+  "plugins.install.error.device_live": {
+    "explanation": "Error shown when a plugin install cannot start because the cloud refused to register this till for now (it was in use recently); the date is on Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.install.error.forbidden": {
     "explanation": "",
     "flags": "",
@@ -996,7 +1004,7 @@
     ]
   },
   "plugins.install.error.register_new": {
-    "explanation": "Error shown when the cloud rejects this till's credential and its store has no owner yet: tells the owner to register the till as a new store under Settings > Till registration.",
+    "explanation": "Error shown when the cloud rejects this till's credential and its store has no owner yet: tells the owner to reconnect the till under Settings > Till registration > Reconnect this till.",
     "flags": "",
     "labels": [],
     "lines": [

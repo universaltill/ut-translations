@@ -691,6 +691,14 @@
       "0.34"
     ]
   },
+  "elevation.summary.enrol_new_shop": {
+    "explanation": "Sentence in the manager-PIN prompt for Register as a new shop under Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.summary.enrol_now": {
     "explanation": "",
     "flags": "",
@@ -707,6 +715,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "elevation.summary.enrol_reconnect": {
+    "explanation": "Sentence in the manager-PIN prompt for Reconnect this till under Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "elevation.summary.enrol_terms": {

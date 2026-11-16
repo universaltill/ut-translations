@@ -867,6 +867,62 @@
       "0.34"
     ]
   },
+  "setup.tax_autoinstall.error.not_listed": {
+    "explanation": "Second line under the retrying chip: the plugin catalogue has no listing for the shop's country yet.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.tax_autoinstall.error.offline": {
+    "explanation": "Second line under the retrying chip: the till is offline.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.tax_autoinstall.error.refused": {
+    "explanation": "Second line under the retrying chip: the downloaded plugin failed the till's own safety checks (signature, permissions or first-load test), so nothing was installed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.tax_autoinstall.installed": {
+    "explanation": "Status chip: the country's tax plugin finished installing automatically.\n\nPlaceholders:\n- %s: plugin name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.tax_autoinstall.installing": {
+    "explanation": "Status chip shown on the page the setup wizard lands on, and in Settings, while the till installs its country's free tax plugin by itself (ADR-0172). Sales are never blocked.\n\nPlaceholders:\n- %s: plugin name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.tax_autoinstall.plugin_fallback_name": {
+    "explanation": "Generic plugin name used in the install status chip before the catalogue has named the plugin.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.tax_autoinstall.retrying": {
+    "explanation": "Status chip: the automatic tax plugin install has not worked yet and retries on its own; reassures that sales are not affected. A second line gives the reason.\n\nPlaceholders:\n- %s: plugin name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "setup.tax_plugin.description": {
     "explanation": "",
     "flags": "",

@@ -603,6 +603,30 @@
       "main"
     ]
   },
+  "status.cloud_auth.blocked": {
+    "explanation": "Status-bar chip on a till whose cloud registration the cloud refused for now because this till was in use recently: it can reconnect later and keeps selling.",
+    "flags": "max-length:28",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_auth.blocked_hint": {
+    "explanation": "Tooltip of the 'Cloud reconnect paused' chip for a manager: when the till can reconnect, that selling is unaffected, and that support can allow it sooner.\n\nPlaceholders:\n- %s: date and time the till can reconnect",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_auth.blocked_hint_short": {
+    "explanation": "Tooltip of the 'Cloud reconnect paused' chip for a cashier: neutral, no details; a manager finds them in Settings.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "status.cloud_auth.hint": {
     "explanation": "",
     "flags": "",
@@ -610,6 +634,30 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "status.cloud_auth.key_refused_hint": {
+    "explanation": "Tooltip of the status-bar chip for a manager after the cloud refused this till's key proof.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_auth.locked_out": {
+    "explanation": "Status-bar chip text for a registered till of an ownerless shop whose cloud sign-in was refused three times; short, one line.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_auth.locked_out_hint": {
+    "explanation": "Tooltip of the status-bar chip for a manager when the cloud refuses this till's sign-in on an ownerless shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "status.cloud_auth.needs_pairing": {
@@ -622,11 +670,10 @@
     ]
   },
   "status.cloud_auth.register_new": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -696,6 +743,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "status.move_pending": {
+    "explanation": "Status-bar chip on every page, the sale screen included, shown to every role (cashiers too) while a request to move this till into another shop waits for a manager's approval. Read-only; names no shop. Short: it sits in the status bar.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.move_pending_hint": {
+    "explanation": "Tooltip (title) of the pending-move status chip. Shown to cashiers too, so it names no shop and no deadline.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "status.no_internet": {

@@ -4027,6 +4027,14 @@
       "0.34"
     ]
   },
+  "settings.enrol.device_live": {
+    "explanation": "Result of 'Register now' when the cloud refuses to register a till that was in use in the last 72 hours: it can reconnect from the date given.\n\nPlaceholders:\n- %s: date and time the till can reconnect",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.enrol.failed": {
     "explanation": "",
     "flags": "",
@@ -4229,6 +4237,14 @@
       "0.34"
     ]
   },
+  "settings.enrol.rate_limited": {
+    "explanation": "Result when the cloud rate-limits a registration or reconnect attempt (HTTP 429).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.enrol.registered": {
     "explanation": "",
     "flags": "",
@@ -4378,6 +4394,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.enrol.update_needed": {
+    "explanation": "Result when the cloud asks for a key proof this build cannot make.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.error.change_on_main_till": {
@@ -5281,6 +5305,30 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.plugins.auto_installed_for": {
+    "explanation": "Small note on a plugin card in Settings > Plugins: the till installed this plugin by itself for the shop's country.\n\nPlaceholders:\n- %s: country name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.plugins.dismiss_tax_pending_confirm": {
+    "explanation": "Confirm dialog text when removing the automatically queued tax plugin before it has installed: says the install stops, each item's own tax rate applies to eat-in sales, and it is not queued again automatically.\n\nPlaceholders:\n- %s: plugin name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.plugins.uninstall_tax_confirm": {
+    "explanation": "Confirm dialog text when uninstalling the automatically installed tax plugin: says what changes (each item's own tax rate applies to eat-in sales) and that it is not reinstalled automatically.\n\nPlaceholders:\n- %s: plugin name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.printer.address": {
@@ -6230,6 +6278,182 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.till_registration.blocked_help": {
+    "explanation": "Second paragraph of the registration notice: how to reconnect sooner, by asking support, with the till's ID and key fingerprint shown below it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.blocked_soon": {
+    "explanation": "Notice on Settings > Till registration while the cloud refuses to register this till and no date is known.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.blocked_until": {
+    "explanation": "Notice on Settings > Till registration while the cloud refuses to register this till: when it can reconnect and that selling is unaffected.\n\nPlaceholders:\n- %s: date and time the till can reconnect",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.fingerprint": {
+    "explanation": "Label of this till's approval key fingerprint (32 characters in groups of four) on Settings > Till registration; support asks for it.",
+    "flags": "max-length:28",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.fingerprint_unavailable": {
+    "explanation": "Shown instead of the key fingerprint when this till's key cannot be read.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.key_refused": {
+    "explanation": "Result when the cloud refuses this till's key proof; support reads the device ID and fingerprint shown below this text.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.lockout_help": {
+    "explanation": "Help line under the lock-out notice: which of the two actions to try first.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.lockout_notice": {
+    "explanation": "Standing notice on Settings > Till registration when the cloud refuses this till's sign-in on an ownerless shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_btn": {
+    "explanation": "Quiet secondary button: leave the old shop and register this till as a new one (opens a confirmation).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_confirm": {
+    "explanation": "Body of the confirmation for Register as a new shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_hint": {
+    "explanation": "Line above the Register as a new shop button.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_key_later": {
+    "explanation": "Added to the new-shop success text when the plugin signing key fetch failed after registering.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_ok": {
+    "explanation": "Result after Register as a new shop succeeded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_pending": {
+    "explanation": "Result when the identity wipe of Register as a new shop ran but the registration failed; the till is in the ordinary not-registered state.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_title": {
+    "explanation": "Title of the confirmation for Register as a new shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_yes": {
+    "explanation": "Confirm button of the Register as a new shop confirmation (danger styling).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.reconnect_btn": {
+    "explanation": "Button: re-register this till in its own shop, proving its approval key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.reconnect_failed": {
+    "explanation": "Result of Reconnect for a network or server failure.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.reconnect_ok": {
+    "explanation": "Result after a successful Reconnect this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.reconnect_unavailable": {
+    "explanation": "Result when Reconnect or Register as a new shop is refused because the till is a replica or has an environment-pinned identity.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.reconnecting": {
+    "explanation": "Shown next to the Reconnect button while the request runs.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.store_not_reusable": {
+    "explanation": "Result of Reconnect when the shop was claimed by an owner or removed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.tills.help": {
