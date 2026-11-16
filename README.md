@@ -43,7 +43,7 @@ universal-till main ──(sync job, this repo)──▶ <area>/en.json + meta/
 | `config/bundles.json` | people | Overrides only (no language list): per Weblate code `source`, `human_spot_check`, `min_coverage`, `script`, `name`. Any other field is refused (`tools/locales.py`). |
 | `config/ai-accounts.json` | people | Weblate AI service accounts and the model each is tied to (ut-docs#4366 fills it in). |
 | `config/glossary/` | people | Per-language glossary and style (`it.md`, informal tu) and the reviewed list of strings that may equal the English (`it.same.json`). |
-| `tools/` | — | `sync_english.py`, `provision_weblate.py`, `i18n_map.py` (the shared mapping), `import_existing.py` (the one-off import below), and the bundle tools `build_bundle.py`, `locales.py` (language code -> till tag, script and spec), `bundle_checks.py`, `till_verify.py` (+ `till_harness/`), `publish_bundle.py`, `publish_locales.py` (published locales, below), `upload_translations.py` (validate and save build-time translations as "needs review", never approved, never legal; used for Italian, ut-docs#5421); the AI reviewer runner `review_runner.py` (+ `review_checks.py`, `review_model.py`, `review_prompt.py`, see `docs/ai-review.md`). Python 3 standard library only. |
+| `tools/` | — | `sync_english.py`, `provision_weblate.py`, `i18n_map.py` (the shared mapping), and the bundle tools `build_bundle.py`, `locales.py` (language code -> till tag, script and spec), `bundle_checks.py`, `till_verify.py` (+ `till_harness/`), `publish_bundle.py`, `publish_locales.py` (published locales, below), `upload_translations.py` (validate and save build-time translations as "needs review", never approved, never legal; used for Italian, ut-docs#5421); the AI reviewer runner `review_runner.py` (+ `review_checks.py`, `review_model.py`, `review_prompt.py`, see `docs/ai-review.md`). Python 3 standard library only. |
 | `tests/` | — | Unit tests; run in CI by `.github/workflows/test.yml`. |
 
 ### Areas (components)
@@ -221,34 +221,6 @@ see follow-ups).
 Optional env: `WEBLATE_REPO_URL` (pull, default the public https clone),
 `WEBLATE_PUSH_URL` (push, default `git@github.com:universaltill/ut-translations.git`).
 
-## Importing the translations we already have (ADR-0160 §9; ut-docs#4371, #4372)
-
-`tools/import_existing.py` pre-fills `<area>/<code>.json` for every
-locale with an existing pack (the fixed `SOURCES` table in the tool; pass `--locale` to limit) from what already exists —
-`ut-plugin-language-{de,es,pt}` `locales/<code>.json` and universal-till
-`web/locales/{tr,ar,fa}.json` — read with `git show <ref>:` (default
-`origin/main`) from sibling checkouts, never from their working trees. It
-never translates: text is copied byte for byte (placeholders included).
-
-- A key goes to the area whose `<area>/en.json` holds it; keys in no
-  `en.json` are stale and dropped; empty values are skipped.
-- A value identical to English is skipped unless the pack's reviewed
-  `i18n-baseline/<code>.same-as-en.txt` lists the key. Weblate counts any
-  non-empty target as translated, so an English copy would look done;
-  core's tr/ar/fa have no such list and do hold English copies, so those
-  keys stay untranslated in Weblate for a translator.
-- A placeholder set that differs from English is imported as is and listed
-  in the report (Weblate's enforced check and the bundle check catch it).
-- Weblate owns these files afterwards: a file that exists and differs is
-  refused (nothing is written) unless `--force`. Re-running over its own
-  output changes nothing.
-
-```sh
-git -C ../universal-till fetch && git -C ../ut-plugin-language-de fetch   # and es, pt
-python3 tools/import_existing.py --dry-run          # coverage report only
-python3 tools/import_existing.py --report /tmp/import-report.json
-```
-
 ## Language bundles (ADR-0160 §4, §5; ut-docs#4367)
 
 `.github/workflows/publish-bundle.yml`, run by hand on `main` for one
@@ -367,12 +339,12 @@ one-line-per-string view of them (newlines, tags, non-breaking spaces and
 Unicode dashes folded, so those can't hide a term) and the manifest, with no
 token in their environment. A hit stops the build; a human fixes the string
 in Weblate. A publish also stops when the bundle is empty, or below the
-language's `min_coverage` (a `config/bundles.json` override) — set for de/es/pt, because their 2.x bundle
-replaces the installed pack under the same id until ut-docs#4371 imports it.
+language's `min_coverage` (a `config/bundles.json` override) — set for de/es/pt so a bundle never ships far
+below the coverage those languages already had.
 
 **Format.** A `language` plugin package (ADR-0010), deterministic tar.gz:
 `manifest.json` (id, version `2.<YYYYMMDD>.<second of day>` of
-`generated_at` — above the 1.x packs, rising every build), `bundle.json`
+`generated_at` — rising every build), `bundle.json`
 (`locale`, `pos_lines`, `source_commit`, `generated_at`, `key_count`,
 `approved_count`, `omitted` by reason) and `locales/<code>.json`.
 
