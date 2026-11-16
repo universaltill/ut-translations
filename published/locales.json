@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-06T07:59:32Z",
-  "source_commit": "6bf1fe99fef2accd6349d180e0592db2cb396f64",
+  "generated_at": "2026-11-16T21:23:45Z",
+  "source_commit": "a2f1bb7c83f1ad85c65ae7c718957bd9c85d47e1",
   "locales": [
     {
       "code": "ar",
@@ -43,7 +43,7 @@
       "english_name": "German",
       "native_name": "Deutsch",
       "published": false,
-      "reason": "website: no approved strings",
+      "reason": "website: 4 core keys not shipped",
       "human_reviewed": false,
       "machine_label": true,
       "review_verified": false,
@@ -51,17 +51,19 @@
       "surfaces": {
         "website": {
           "published": false,
-          "approved": 0,
+          "approved": 391,
           "total": 484,
-          "coverage": 0.0,
+          "coverage": 0.931,
           "core_ok": false,
           "omitted_broken": 0,
           "omitted_legal": 64,
-          "omitted": {},
+          "omitted": {
+            "review_no_approval": 2
+          },
           "legal_approved": false,
           "legal_keys": 64,
           "review_verified": true,
-          "reason": "no approved strings"
+          "reason": "4 core keys not shipped"
         }
       }
     },
@@ -135,7 +137,7 @@
       "english_name": "Spanish",
       "native_name": "Español",
       "published": false,
-      "reason": "website: no approved strings",
+      "reason": "website: coverage 0.01 below 0.9",
       "human_reviewed": false,
       "machine_label": true,
       "review_verified": false,
@@ -143,17 +145,19 @@
       "surfaces": {
         "website": {
           "published": false,
-          "approved": 0,
+          "approved": 4,
           "total": 484,
-          "coverage": 0.0,
+          "coverage": 0.0095,
           "core_ok": false,
           "omitted_broken": 0,
           "omitted_legal": 64,
-          "omitted": {},
+          "omitted": {
+            "review_no_approval": 2
+          },
           "legal_approved": false,
           "legal_keys": 64,
           "review_verified": true,
-          "reason": "no approved strings"
+          "reason": "coverage 0.01 below 0.9"
         }
       }
     },
@@ -166,7 +170,7 @@
       "english_name": "Persian",
       "native_name": "فارسی",
       "published": false,
-      "reason": "website: no approved strings",
+      "reason": "website: coverage 0.72 below 0.9",
       "human_reviewed": false,
       "machine_label": true,
       "review_verified": false,
@@ -174,9 +178,9 @@
       "surfaces": {
         "website": {
           "published": false,
-          "approved": 0,
+          "approved": 304,
           "total": 484,
-          "coverage": 0.0,
+          "coverage": 0.7238,
           "core_ok": false,
           "omitted_broken": 0,
           "omitted_legal": 64,
@@ -184,7 +188,7 @@
           "legal_approved": false,
           "legal_keys": 64,
           "review_verified": true,
-          "reason": "no approved strings"
+          "reason": "coverage 0.72 below 0.9"
         }
       }
     },
@@ -290,7 +294,7 @@
       "english_name": "Portuguese",
       "native_name": "Português",
       "published": false,
-      "reason": "website: no approved strings",
+      "reason": "website: coverage 0.01 below 0.9",
       "human_reviewed": false,
       "machine_label": true,
       "review_verified": false,
@@ -298,17 +302,19 @@
       "surfaces": {
         "website": {
           "published": false,
-          "approved": 0,
+          "approved": 4,
           "total": 484,
-          "coverage": 0.0,
+          "coverage": 0.0095,
           "core_ok": false,
           "omitted_broken": 0,
           "omitted_legal": 64,
-          "omitted": {},
+          "omitted": {
+            "review_no_approval": 2
+          },
           "legal_approved": false,
           "legal_keys": 64,
           "review_verified": true,
-          "reason": "no approved strings"
+          "reason": "coverage 0.01 below 0.9"
         }
       }
     },
@@ -321,7 +327,7 @@
       "english_name": "Turkish",
       "native_name": "Türkçe",
       "published": false,
-      "reason": "website: no approved strings",
+      "reason": "website: coverage 0.75 below 0.9",
       "human_reviewed": false,
       "machine_label": true,
       "review_verified": false,
@@ -329,9 +335,9 @@
       "surfaces": {
         "website": {
           "published": false,
-          "approved": 0,
+          "approved": 317,
           "total": 484,
-          "coverage": 0.0,
+          "coverage": 0.7548,
           "core_ok": false,
           "omitted_broken": 0,
           "omitted_legal": 64,
@@ -339,7 +345,7 @@
           "legal_approved": false,
           "legal_keys": 64,
           "review_verified": true,
-          "reason": "no approved strings"
+          "reason": "coverage 0.75 below 0.9"
         }
       }
     },
@@ -352,7 +358,7 @@
       "english_name": "Chinese (Simplified)",
       "native_name": "中文（简体）",
       "published": false,
-      "reason": "website: no approved strings",
+      "reason": "website: coverage 0.79 below 0.9",
       "human_reviewed": false,
       "machine_label": true,
       "review_verified": false,
@@ -360,9 +366,9 @@
       "surfaces": {
         "website": {
           "published": false,
-          "approved": 0,
+          "approved": 332,
           "total": 484,
-          "coverage": 0.0,
+          "coverage": 0.7905,
           "core_ok": false,
           "omitted_broken": 0,
           "omitted_legal": 64,
@@ -370,7 +376,7 @@
           "legal_approved": false,
           "legal_keys": 64,
           "review_verified": true,
-          "reason": "no approved strings"
+          "reason": "coverage 0.79 below 0.9"
         }
       }
     }
