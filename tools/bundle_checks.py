@@ -113,8 +113,22 @@ def kept_items(text):
     return items
 
 
+# An ICU message's translatable text lives inside its arms: {n, plural, one {..} other {..}}.
+ICU_HEAD_RE = re.compile(r"\{\s*[A-Za-z_][A-Za-z0-9_]*\s*,\s*(?:plural|select|selectordinal|number)\s*,"
+                         r"|\b(?:zero|one|two|few|many|other|=\d+)\s*(?=\{)")
+
+
+def icu_text(text):
+    """An ICU message with its syntax (argument heads, category names, braces)
+    taken out and the arms' text kept, so the script check sees the words
+    (ut-docs#4371: an all-Arabic plural was judged 'untranslated')."""
+    return re.sub(r"[{}]", " ", ICU_HEAD_RE.sub(" ", text))
+
+
 def scripts_in(text):
     seen = Counter()
+    if i18n_map.ICU_RE.search(text):
+        text = icu_text(text)
     for ch in strip_placeholders(text):
         s = letter_script(ch)
         if s:

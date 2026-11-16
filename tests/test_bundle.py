@@ -692,6 +692,12 @@ class Checks(unittest.TestCase):
         self.assertIsNone(bc.check_script("Universal Till پرداخت", "Arab"))
         self.assertIsNotNone(bc.check_script("Оплата", "Latn"))
         self.assertIsNone(bc.check_script("123 %s", "Arab"))
+
+    def test_icu_plural_arms_are_checked_for_script(self):
+        ar = "{count, plural, one {صنف واحد} two {صنفان} few {# أصناف} other {# صنف}}"
+        self.assertIsNone(bc.check_script(ar, "Arab", "{count, plural, one {# item} other {# items}}"))
+        self.assertIsNotNone(bc.check_script("{count, plural, one {# item} other {# items}}", "Arab"))
+        self.assertIsNotNone(bc.check_script("{count, plural, one {# товар} other {# товара}}", "Arab"))
         # Real key settings.printer.charset_win1253: the English names Greek letters.
         self.assertIsNone(bc.check_string("Greek (Windows-1253 — €/α/β)", "Griechisch (Windows-1253 — €/α/β)", {}, "Latn"))
         self.assertIsNotNone(bc.check_string("Greek", "Griechisch α", {}, "Latn"))
