@@ -6681,6 +6681,86 @@
       "0.34"
     ]
   },
+  "settings.update.android.allow_body": {
+    "explanation": "Tells the manager what to do on Android's own 'install unknown apps' screen. The quoted switch names are Android's wording and may differ by device or language.",
+    "flags": "max-length:260",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.allow_granted": {
+    "explanation": "Shown after the manager came back from Android's settings with the install permission switched on.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.allow_later": {
+    "explanation": "Button that hides the install-permission panel; the update stays available.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.allow_open": {
+    "explanation": "Button that opens Android's 'install unknown apps' screen for this app.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.allow_still_denied": {
+    "explanation": "Shown after the manager came back from Android's settings and the install permission is still off.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.allow_title": {
+    "explanation": "Heading of the panel in Settings (Android till) shown when Android has not yet allowed this app to install its own updates.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.banner_action": {
+    "explanation": "Button in the Android update banner on Settings that scrolls to the install controls.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.banner_body": {
+    "explanation": "Explains the Android update banner: current version, how long installing takes, and a warning to finish open sales first.\n\nPlaceholders:\n- %s: version number this till runs now, without a leading v",
+    "flags": "max-length:160, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.banner_title": {
+    "explanation": "Accessible name of the banner at the top of Settings on an Android till when a newer version can be installed.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.banner_version": {
+    "explanation": "Headline of the banner at the top of Settings on an Android till: a newer version exists.\n\nPlaceholders:\n- %s: version number of the update, without a leading v",
+    "flags": "max-length:40, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.update.android.confirm_version": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -6816,6 +6896,38 @@
       "0.34"
     ]
   },
+  "settings.update.fleet_follow_hint": {
+    "explanation": "Muted line under the 'When additional tills update' dropdown: additional tills always install this (main) till's version and never run ahead of it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.fleet_follow_label": {
+    "explanation": "Label of the dropdown in Settings → Software update (main till only) that chooses when additional tills install the main till's version.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.fleet_follow_next_idle": {
+    "explanation": "Option in the 'When additional tills update' dropdown (the default): an additional till installs the main till's version as soon as it has no open sale.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.fleet_follow_nightly": {
+    "explanation": "Option in the 'When additional tills update' dropdown: an additional till installs the main till's version only at the main till's nightly update time.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.update.follows_main": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -6850,6 +6962,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.update.follows_main_nightly": {
+    "explanation": "Second muted line on an additional till's Settings → Software update, shown only when the shop updates additional tills at the nightly time; follows the line saying this till follows the main till's version. Placeholder: the main till's nightly update time as HH:MM.\n\nPlaceholders:\n- %s: the main till's nightly update time, HH:MM, e.g. 03:00",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.update.follows_main_off": {

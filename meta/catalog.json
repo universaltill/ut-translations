@@ -5963,7 +5963,7 @@
     ]
   },
   "inventory.empty": {
-    "explanation": "",
+    "explanation": "Empty row of the Inventory stock table, shown only when the shop has no active stock-tracked items at all (every tracked item is listed, even at 0). Says what to do next. 'Catalog' is the menu section and 'Not stock-tracked' is the checkbox label on an item there; use the same wording as those labels.",
     "flags": "",
     "labels": [],
     "lines": [

@@ -921,6 +921,14 @@
       "0.34"
     ]
   },
+  "status.update_available_ask_manager": {
+    "explanation": "Status bar pill on an Android till for a signed-in person who cannot open Settings (a cashier): a newer version exists and a manager must install it. Shown after the words \"Update available\" and the version number (\"Update available v1.2.3 — ask a manager\"), never a button.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "status.update_confirm": {
     "explanation": "",
     "flags": "",

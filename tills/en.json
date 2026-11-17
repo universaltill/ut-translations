@@ -104,6 +104,7 @@
   "status.shop_currency_mismatch.label": "Currency differs from shop",
   "status.update_auto_blocked": "can't install it by itself — tap for help",
   "status.update_available": "Update available",
+  "status.update_available_ask_manager": "ask a manager",
   "status.update_confirm": "Confirm update to v",
   "status.update_downloading": "Downloading update…",
   "status.update_failed": "Update failed — see logs",
