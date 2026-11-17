@@ -1,7 +1,7 @@
 {
   "schema": 1,
-  "generated_at": "2026-11-16T22:16:48Z",
-  "source_commit": "98d70d0b11ec09432c9bb074041671c14cb2497e",
+  "generated_at": "2026-11-17T21:20:28Z",
+  "source_commit": "8659786d7e652b4841670e8b7d8db18c451986bb",
   "locales": [
     {
       "code": "ar",
@@ -58,8 +58,7 @@
           "omitted_broken": 0,
           "omitted_legal": 117,
           "omitted": {
-            "review_no_approval": 2,
-            "stale_source": 3
+            "review_no_approval": 2
           },
           "legal_approved": false,
           "legal_keys": 117,
@@ -185,9 +184,7 @@
           "core_ok": false,
           "omitted_broken": 0,
           "omitted_legal": 117,
-          "omitted": {
-            "stale_source": 2
-          },
+          "omitted": {},
           "legal_approved": false,
           "legal_keys": 117,
           "review_verified": true,
@@ -340,13 +337,12 @@
           "published": false,
           "approved": 308,
           "total": 555,
-          "coverage": 0.7016,
+          "coverage": 0.7032,
           "core_ok": false,
           "omitted_broken": 0,
-          "omitted_legal": 116,
+          "omitted_legal": 117,
           "omitted": {
-            "review_self_approved": 78,
-            "stale_source": 3
+            "review_self_approved": 78
           },
           "legal_approved": false,
           "legal_keys": 117,
@@ -378,9 +374,7 @@
           "core_ok": false,
           "omitted_broken": 0,
           "omitted_legal": 117,
-          "omitted": {
-            "stale_source": 3
-          },
+          "omitted": {},
           "legal_approved": false,
           "legal_keys": 117,
           "review_verified": true,
