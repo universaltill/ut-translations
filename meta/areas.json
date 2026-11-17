@@ -27,7 +27,7 @@
   "settings": {
     "name": "Settings",
     "description": "Settings, admin menus, locations, registers, country settings, translations and the subscription.",
-    "keys": 900
+    "keys": 916
   },
   "tills": {
     "name": "Tills",
@@ -52,7 +52,7 @@
   "plugins": {
     "name": "Plugins",
     "description": "The plugin marketplace, plugin pages and the assistant.",
-    "keys": 306
+    "keys": 308
   },
   "support": {
     "name": "Support",

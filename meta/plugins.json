@@ -898,6 +898,14 @@
       "main"
     ]
   },
+  "plugins.install.error.download_failed": {
+    "explanation": "Error on a Plugin Store listing page when pressing Download failed for a reason with no more specific message; 'Download' is the button label on that page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.install.error.forbidden": {
     "explanation": "",
     "flags": "",
@@ -1072,6 +1080,14 @@
   },
   "plugins.install.error.till_replaced": {
     "explanation": "Error shown when another till in the shop replaced this one so it can no longer download plugins: tells the owner to install plugins on the till that replaced it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.install.error.unreachable": {
+    "explanation": "Error on a Plugin Store listing page, and on the store tile after a failed install, when the till could not connect to the plugin marketplace (offline, DNS or timeout).",
     "flags": "",
     "labels": [],
     "lines": [

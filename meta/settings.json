@@ -925,6 +925,14 @@
       "main"
     ]
   },
+  "page.title.my_display": {
+    "explanation": "Browser tab and page heading of the My display page, where an operator picks their own theme and sale screen layout.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "page.title.my_reports": {
     "explanation": "",
     "flags": "",
@@ -1785,6 +1793,14 @@
       "main"
     ]
   },
+  "settings.backup.save_failed_picker_unavailable": {
+    "explanation": "Backups list message on Android when the app's file picker bridge is missing, so the backup could not be saved. Says what to do instead.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.backup.save_failed_space": {
     "explanation": "Backups list message when the copy could not be saved because the destination is full.",
     "flags": "",
@@ -1795,14 +1811,6 @@
   },
   "settings.backup.save_failed_unreachable": {
     "explanation": "Backups list message when the destination folder (for example a USB drive) cannot be reached.",
-    "flags": "",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
-  "settings.backup.save_failed_use_picker": {
-    "explanation": "Backups list message on Android when a direct save is refused because the app saves through its file picker.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -2236,6 +2244,48 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.cloud_staff.enable": {
+    "explanation": "Checkbox label that turns on sending per-staff sales figures to cloud reports for the whole shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.cloud_staff.help": {
+    "explanation": "Help text of the manager-only Settings card for per-staff sales in cloud reports: staff are identified by staff ID, never by name, and it is off by default.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.cloud_staff.title": {
+    "explanation": "Title of the manager-only Settings card that controls whether per-staff sales figures are sent to the shop's cloud reports.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.cloud_staff.window_note": {
+    "explanation": "Note above the Save button: changing the switch re-sends or clears per-staff figures for the last 14 days, while figures already sent for older days stay in the cloud reports.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.cloud_staff.works_council": {
+    "explanation": "Factual note under the checkbox: per-staff figures can show how individual staff work, and in Germany a works council may need to agree first. Keep the conditional wording (\"may need to agree\"); never turn it into \"must\" or claim the shop is compliant.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
     ]
   },
   "settings.currency.apply": {
@@ -5108,6 +5158,86 @@
   "settings.move.who": {
     "explanation": "Line under the warning: who decides (manager/admin PIN) and that selling continues meanwhile.",
     "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.error.invalid": {
+    "explanation": "Error shown after Save on My display when the submitted value is malformed or too long.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.error.replica_use_primary": {
+    "explanation": "Error shown after Save on My display when an additional till refuses the change.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.error.unknown_mode": {
+    "explanation": "Error shown after Save on My display when the chosen sale screen layout is not one of the offered layouts.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.error.unknown_theme": {
+    "explanation": "Error shown after Save on My display when the chosen theme is not installed on this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.intro": {
+    "explanation": "Intro paragraph on the My display page: a personal theme and layout apply to this operator only, on every till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.nav": {
+    "explanation": "Label of the session menu link to the My display page. Sits in a narrow top bar on phones, so keep it short.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.no_operator": {
+    "explanation": "Notice on My display when nobody is signed in, so there is no operator to save a choice for.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.replica_notice": {
+    "explanation": "Notice on My display on an additional till: the pickers are switched off because the choice is made on the main till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.theme_unavailable": {
+    "explanation": "Note under the theme picker on My display when the operator's saved theme has since been uninstalled.\n\nPlaceholders:\n- %s: key of the operator's saved theme",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.use_till_default": {
+    "explanation": "First option of the theme and layout pickers on My display: picking it clears the operator's own choice. The brackets show what the till currently uses.\n\nPlaceholders:\n- %s: name of the till's current theme or layout",
+    "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
       "main"
