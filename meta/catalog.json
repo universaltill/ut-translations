@@ -6727,6 +6727,358 @@
       "0.34"
     ]
   },
+  "photoimport.col.line": {
+    "explanation": "Table column: the line number in the CSV file.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.col.result": {
+    "explanation": "Table column: what happened to that row.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.col.sku": {
+    "explanation": "Table column: the item SKU.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.csv": {
+    "explanation": "Label of the file field for the CSV that lists SKU and image path or address.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.bad_csv": {
+    "explanation": "Error: the photo import CSV is unreadable.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.bad_zip": {
+    "explanation": "Error: the uploaded ZIP is unreadable or has too many files.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.busy": {
+    "explanation": "Error: another photo import is in progress.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.folder": {
+    "explanation": "Error: the folder typed in is not a full path, does not exist or is not a folder; tells the user to type the full path.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.interrupted": {
+    "explanation": "Error: the run was interrupted; running again skips what is done.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.main_till_only": {
+    "explanation": "Message on a joined till: photo import must be run on the main till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.no_input": {
+    "explanation": "Error: neither a CSV nor a ZIP was chosen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.no_sku_column": {
+    "explanation": "Error: the photo import CSV has no sku column.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.too_large": {
+    "explanation": "Error: the upload or number of rows exceeds the limit.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.failed_csv": {
+    "explanation": "Link that downloads a CSV listing the rows the photo import could not handle, with the reason.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.folder": {
+    "explanation": "Label of the text field for the folder on the till computer that holds the photos named in the CSV.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.folder_hint": {
+    "explanation": "Hint under the photos folder field: files outside the folder are refused; https addresses need internet.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.help": {
+    "explanation": "Explanation at the top of the photo import card: existing items only, matched by SKU, preview saves nothing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.import": {
+    "explanation": "Button that saves the photos shown in the preview.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.open": {
+    "explanation": "Link on the Import page that opens the bulk photo import (adds photos to existing items from a CSV or ZIP).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.preview": {
+    "explanation": "Button that checks the photo import and shows what would happen without saving.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.replace": {
+    "explanation": "Checkbox: also replace photos that items already have; off means only items without a photo get one.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.add": {
+    "explanation": "Row result: the item has no photo and gets one.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.ambiguous_sku": {
+    "explanation": "Row result: refused because the SKU is not unique.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.blocked_url": {
+    "explanation": "Row result: only public https addresses are allowed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.duplicate_sku": {
+    "explanation": "Row result: refused because the file lists this SKU more than once.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.fetch_failed": {
+    "explanation": "Row result: the web address could not be downloaded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.image_too_large": {
+    "explanation": "Row result: the image dimensions are too large.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.no_source": {
+    "explanation": "Row result: nothing to read the photo from.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.not_found": {
+    "explanation": "Row result: the file does not exist.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.not_image": {
+    "explanation": "Row result: the file could not be read as an image.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.not_regular": {
+    "explanation": "Row result: the path is a folder or special file.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.outside_folder": {
+    "explanation": "Row result: refused because the path leaves the chosen folder.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.replace": {
+    "explanation": "Row result: the item's photo is replaced.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.skipped_has_photo": {
+    "explanation": "Row result: item already has a photo and replacing is off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.store_failed": {
+    "explanation": "Row result: saving failed on this computer.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.too_big": {
+    "explanation": "Row result: the file is larger than the size limit.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.total_limit": {
+    "explanation": "Row result: the run's total size limit was reached; run again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.unknown_sku": {
+    "explanation": "Row result: no item has this SKU.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.variant_sku": {
+    "explanation": "Row result: refused because only items are supported, not variants.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.summary.done": {
+    "explanation": "Summary line after a photo import finished.\n\nPlaceholders:\n- %d: the number of photos saved",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.summary.preview": {
+    "explanation": "Summary line of the photo import preview.\n\nPlaceholders:\n- %d: the number of photos that would be saved",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.title": {
+    "explanation": "Heading of the Import page card that adds photos to existing items from a CSV or ZIP.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.truncated": {
+    "explanation": "Note under the result table when the list is cut off after a number of rows.\n\nPlaceholders:\n- %d: the number of rows shown",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.zip": {
+    "explanation": "Label of the file field for an optional ZIP whose files are named after the item SKU.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "products.add": {
     "explanation": "",
     "flags": "",
