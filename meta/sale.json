@@ -1515,6 +1515,14 @@
       "0.34"
     ]
   },
+  "pos.toast.payment_outcome_unknown": {
+    "explanation": "Error toast on the till when a card payment may have been charged but the reader could not confirm it: tells the cashier to tap Pay again to settle it and not to take another payment.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "pos.toast.promo_applied": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",

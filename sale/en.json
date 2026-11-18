@@ -170,6 +170,7 @@
   "pos.toast.line_discount_too_large": "Sale not completed: the discount on \"%s\" is more than its line total. Lower the discount and try again.",
   "pos.toast.payment_declined": "Payment declined — try again or choose another method",
   "pos.toast.payment_insufficient": "Amount received does not cover the sale total",
+  "pos.toast.payment_outcome_unknown": "The card may have been charged. Tap Pay again to settle it. Do not take another payment.",
   "pos.toast.promo_applied": "Promotion %s applied",
   "pos.toast.receipt_not_completed": "This sale is not completed",
   "pos.toast.receipt_order_cancelled": "This order was cancelled",

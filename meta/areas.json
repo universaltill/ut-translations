@@ -2,7 +2,7 @@
   "sale": {
     "name": "Sale",
     "description": "The sale screen: basket, scanning, payment, holds, refunds and the quick-button grid.",
-    "keys": 280
+    "keys": 281
   },
   "catalog": {
     "name": "Catalog",
@@ -12,22 +12,22 @@
   "orders": {
     "name": "Orders",
     "description": "Orders, tables, kitchen stations and displays, and order tracking.",
-    "keys": 181
+    "keys": 247
   },
   "reports": {
     "name": "Reports",
     "description": "Reports, the journal, end of day and the audit trail.",
-    "keys": 324
+    "keys": 325
   },
   "staff": {
     "name": "Staff",
     "description": "Users, permissions, sign-in, PIN elevation and shifts.",
-    "keys": 333
+    "keys": 344
   },
   "settings": {
     "name": "Settings",
     "description": "Settings, admin menus, locations, registers, country settings, translations and the subscription.",
-    "keys": 921
+    "keys": 1056
   },
   "tills": {
     "name": "Tills",
@@ -37,12 +37,12 @@
   "setup": {
     "name": "Setup",
     "description": "First-run setup, the guided tour, demo data and onboarding notices.",
-    "keys": 164
+    "keys": 167
   },
   "selforder": {
     "name": "Self-order",
     "description": "The self-order kiosk's customer pages.",
-    "keys": 42
+    "keys": 43
   },
   "receipts-and-legal": {
     "name": "Receipts and legal",

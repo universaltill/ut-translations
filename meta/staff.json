@@ -414,21 +414,91 @@
     ]
   },
   "elevation.summary.auto_register_off": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "elevation.summary.auto_register_on": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
+    ]
+  },
+  "elevation.summary.backup_cloud_key_choice_off": {
+    "explanation": "Sentence in the manager-PIN prompt when the cloud copy of the key is turned off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_key_choice_on": {
+    "explanation": "Sentence in the manager-PIN prompt when the cloud copy of the key is turned on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_key_enter": {
+    "explanation": "Sentence in the manager-PIN prompt before the saved key is used.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_key_new": {
+    "explanation": "Sentence in the manager-PIN prompt before a new backup key is started.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_key_print": {
+    "explanation": "Sentence in the manager-PIN prompt before the backup key is printed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_key_show": {
+    "explanation": "Sentence in the manager-PIN prompt before the backup key is shown.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_link": {
+    "explanation": "Sentence in the manager-PIN prompt before the till asks for the backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_now": {
+    "explanation": "Sentence in the manager-PIN prompt for Copy to the cloud now.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_restore": {
+    "explanation": "Sentence in the manager-PIN prompt before a cloud restore starts.\n\nPlaceholders:\n- %s: date and time the cloud backup was made",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "elevation.summary.backup_now": {
@@ -700,11 +770,10 @@
     ]
   },
   "elevation.summary.enrol_now": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -933,6 +1002,22 @@
   "elevation.summary.reduce_line_qty": {
     "explanation": "Sentence in the manager-PIN prompt shown when a cashier lowers a priced basket line's quantity (the minus button, the quantity box, or zero): it names the item, the old and new quantity and the void/comp/waste reason the approver is allowing.\n\nPlaceholders:\n- %s: item name\n- %s: current quantity\n- %s: new quantity\n- %s: reason (void, comp or waste)",
     "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.registration_resume": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier presses Resume sending on Settings, Cloud record: names the action the approver is allowing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.registration_stop": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier presses Stop sending on Settings, Cloud record: names the action the approver is allowing.",
+    "flags": "",
     "labels": [],
     "lines": [
       "main"

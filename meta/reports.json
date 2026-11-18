@@ -485,6 +485,14 @@
       "0.34"
     ]
   },
+  "journal.reprint_no_slips": {
+    "explanation": "Button on a past sale's journal page, next to Print receipt: prints the receipt again but leaves out the separate gift voucher slips. Shown only when 'Print each gift voucher on its own slip' is on and the sale has a valid voucher.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "journal.reprinted": {
     "explanation": "",
     "flags": "",

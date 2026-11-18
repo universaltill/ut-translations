@@ -9,20 +9,18 @@
     ]
   },
   "setup.auto_register.hint": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "setup.auto_register.label": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -312,6 +310,22 @@
   "setup.cloud.replaced_note": {
     "explanation": "Line on the setup wizard's 'Your shop' step after this till replaced the shop's main till; names the old till.\n\nPlaceholders:\n- %s: the name of the main till this one replaced",
     "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.restore_hint": {
+    "explanation": "Hint on the setup step that shows the connected shop, after this till replaced another main till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.restore_link": {
+    "explanation": "Link in that hint to the cloud restore page.",
+    "flags": "",
     "labels": [],
     "lines": [
       "main"
@@ -727,6 +741,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "setup.next_steps.cloud_restore": {
+    "explanation": "Next-steps line on the home screen of an empty main till whose plan includes cloud backups.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "setup.next_steps.devices": {
