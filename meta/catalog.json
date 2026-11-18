@@ -4776,6 +4776,14 @@
       "0.34"
     ]
   },
+  "import.issue.reorder_level_invalid": {
+    "explanation": "Import row warning: the item was imported, but its reorder level (the low-stock threshold) from the file was not used because it could not be read as a whole number in the allowed range; tells the user to write it without thousands separators.\n\nPlaceholders:\n- %s: the value from the file exactly as written, e.g. '2.5'\n- %s: the lowest allowed reorder level, in the locale's digits, e.g. '0'\n- %s: the highest allowed reorder level, in the locale's digits and deliberately without thousands separators, e.g. '1000000'",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "import.issue.row_not_object": {
     "explanation": "Import row detail: the importer sent something for this row that is not a product record.",
     "flags": "",

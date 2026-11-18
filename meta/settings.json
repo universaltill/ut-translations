@@ -6357,7 +6357,7 @@
     ]
   },
   "settings.telemetry.help": {
-    "explanation": "",
+    "explanation": "Help text of the Plugin telemetry settings card: what the periodic report contains (active plugins, versions, shop and device IDs), that no sales or customer data is sent, and that it is off by default.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -6859,6 +6859,14 @@
       "main"
     ]
   },
+  "settings.update.android.authorized": {
+    "explanation": "Short confirmation returned when a manager approves installing the Android update; the download starts next.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.update.android.banner_action": {
     "explanation": "Button in the Android update banner on Settings that scrolls to the install controls.",
     "flags": "max-length:24",
@@ -7026,6 +7034,30 @@
       "0.34"
     ]
   },
+  "settings.update.error.busy": {
+    "explanation": "Shown when Update now is pressed while another update is still being installed on this till.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.error.failed": {
+    "explanation": "Generic message when installing an update failed for any reason without a more specific message; the details go to the till's log.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.error.verify_failed": {
+    "explanation": "Shown when the downloaded update failed verification (its checksum did not match, or the release's signed checksum list did not verify), so nothing was installed.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.update.fleet_follow_hint": {
     "explanation": "Muted line under the 'When additional tills update' dropdown: additional tills always install this (main) till's version and never run ahead of it.",
     "flags": "",
@@ -7085,6 +7117,14 @@
       "0.34"
     ]
   },
+  "settings.update.follows_main_failed_nightly": {
+    "explanation": "Muted line on an additional till's Settings → Software update when its last automatic install of the main till's version failed and the shop updates additional tills at the nightly time, so it retries the next night.\n\nPlaceholders:\n- %s: the main till's version, e.g. v1.4.0\n- %s: start of this till's nightly install window, HH:MM\n- %s: end of that window, HH:MM",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.update.follows_main_manual": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -7094,8 +7134,8 @@
       "0.34"
     ]
   },
-  "settings.update.follows_main_nightly": {
-    "explanation": "Second muted line on an additional till's Settings → Software update, shown only when the shop updates additional tills at the nightly time; follows the line saying this till follows the main till's version. Placeholder: the main till's nightly update time as HH:MM.\n\nPlaceholders:\n- %s: the main till's nightly update time, HH:MM, e.g. 03:00",
+  "settings.update.follows_main_nightly_window": {
+    "explanation": "Second muted line on an additional till's Settings → Software update when the shop updates additional tills at the nightly time: the window in which THIS till starts its install (main till's update time plus this till's own offset, 30 minutes long). Follows the line saying this till follows the main till's version.\n\nPlaceholders:\n- %s: start of this till's nightly install window, HH:MM, e.g. 03:07\n- %s: end of that window, HH:MM, e.g. 03:37",
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
