@@ -881,6 +881,14 @@
       "0.34"
     ]
   },
+  "plugins.install.error.code_refused_appstore": {
+    "explanation": "Message shown when a plugin install, import or update is refused because the App Store build of the app cannot download or import code (Apple guideline 2.5.2). Names the built-in card payment plugins as the alternative.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.install.error.configuration": {
     "explanation": "",
     "flags": "",
@@ -1289,6 +1297,14 @@
       "0.34"
     ]
   },
+  "plugins.manage.built_in_hint": {
+    "explanation": "Note under the Built in heading on the Plugins page: these plugins ship inside the app, update only with an app update and are switched on or off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.manage.confirm_rollback": {
     "explanation": "",
     "flags": "",
@@ -1343,6 +1359,30 @@
       "0.34"
     ]
   },
+  "plugins.manage.error.bundled_main_till_controls": {
+    "explanation": "Inline message on the Plugins page of a satellite till when someone tries to switch a built-in plugin on or off: the main till decides.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.error.bundled_no_uninstall": {
+    "explanation": "Inline message on the Plugins page when someone tries to uninstall a plugin that ships inside the app.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.error.bundled_trust_fixed": {
+    "explanation": "Error answer when someone tries to change the trust level of a plugin that ships inside the app.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.manage.error.replica_use_primary": {
     "explanation": "",
     "flags": "",
@@ -1354,6 +1394,14 @@
   },
   "plugins.manage.error.revoked": {
     "explanation": "Inline message on the Plugins page when turning on, or rolling back to, a plugin version the marketplace has withdrawn (revoked).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.group.built_in": {
+    "explanation": "Heading above the plugins that ship inside the app (Stripe and SumUp card payments on the App Store build) on the Plugins page.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -1385,6 +1433,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.manage.main_till_controls": {
+    "explanation": "Small tag on a built-in plugin card on a satellite till: its on/off state is set on the main till.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "plugins.manage.no_versions": {
@@ -2265,6 +2321,16 @@
       "0.34"
     ]
   },
+  "plugins.store.content_guidelines": {
+    "explanation": "Link at the foot of the Plugin Store pages to the marketplace content guidelines on the website. It names a legal document, so keep it as the document's title.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.store.empty": {
     "explanation": "",
     "flags": "",
@@ -2299,6 +2365,16 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.store.marketplace_terms": {
+    "explanation": "Link at the foot of the Plugin Store pages to the marketplace publisher terms on the website. It names a legal document, so keep it as the document's title.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
     ]
   },
   "plugins.store.no_matches": {
@@ -2362,6 +2438,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.store.report_listing": {
+    "explanation": "Link on a plugin's page in the Plugin Store. Opens the marketplace's report page in the browser so the person can report the listing (malware, deception, illegal content).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "plugins.store.search_ph": {

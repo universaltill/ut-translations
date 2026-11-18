@@ -173,6 +173,7 @@
   "receipt.title": "Receipt",
   "receipt.total_incl_vat": "Total incl. VAT",
   "receipt.tracking.caption": "Scan to track your order",
+  "receipt.vouchers.balance_on_label": "Balance on %s",
   "receipt.vouchers.issued": "Vouchers issued",
   "receipt.vouchers.issued_on": "Issued %s",
   "receipt.vouchers.new_balance": "New balance %s",

@@ -2,7 +2,7 @@
   "sale": {
     "name": "Sale",
     "description": "The sale screen: basket, scanning, payment, holds, refunds and the quick-button grid.",
-    "keys": 281
+    "keys": 283
   },
   "catalog": {
     "name": "Catalog",
@@ -47,12 +47,12 @@
   "receipts-and-legal": {
     "name": "Receipts and legal",
     "description": "Receipts, invoices, fiscal devices and registers, tax codes and other legally relevant wording. Every key here needs a human approval (ADR-0160 §4).",
-    "keys": 203
+    "keys": 204
   },
   "plugins": {
     "name": "Plugins",
     "description": "The plugin marketplace, plugin pages and the assistant.",
-    "keys": 308
+    "keys": 318
   },
   "support": {
     "name": "Support",

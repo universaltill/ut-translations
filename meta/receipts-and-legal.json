@@ -1904,6 +1904,16 @@
       "0.34"
     ]
   },
+  "receipt.vouchers.balance_on_label": {
+    "explanation": "Left part of the balance row on a gift-voucher slip printed again from the voucher's page, shown when the voucher's current balance differs from its original value; the amount is printed right-aligned on the same row by the printer layout, so do not include it. The placeholder is the date the balance was read (the day the slip is printed, about 10 characters) and may be reordered (%[1]s). Printed on 58/80 mm paper: the whole row is 42 columns wide, so keep the label short.\n\nPlaceholders:\n- %s: date the balance was read (the day the slip is printed)",
+    "flags": "max-length:22, placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "receipt.vouchers.issued": {
     "explanation": "",
     "flags": "",

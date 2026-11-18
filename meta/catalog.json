@@ -8010,6 +8010,14 @@
       "0.34"
     ]
   },
+  "vouchers.print_slip.balance_unknown_note": {
+    "explanation": "Shown above Print voucher slip on an additional till when the main till could not be reached: the slip then prints only the original value, without the current balance. Says why and tells the owner to check the balance on the main till before handing the slip over.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "vouchers.print_slip.browser_hint": {
     "explanation": "Shown above Print voucher slip on a gift voucher's page (manager) when this till has no receipt printer: pressing the button opens just the slip in the browser's print dialog. A link to Settings > Receipt printer follows it. Keep it to two short sentences.",
     "flags": "",
@@ -8060,14 +8068,6 @@
   },
   "vouchers.print_slip.not_printable": {
     "explanation": "Inline message when Print voucher slip is pressed for a voucher that was voided or used up since the page loaded.",
-    "flags": "",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
-  "vouchers.print_slip.original_value_note": {
-    "explanation": "Shown above Print voucher slip when the voucher's balance differs from its original value (part used, topped up or corrected): the reprinted slip prints only the original value.",
     "flags": "",
     "labels": [],
     "lines": [
