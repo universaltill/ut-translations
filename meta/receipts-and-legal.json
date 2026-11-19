@@ -1561,6 +1561,14 @@
       "0.34"
     ]
   },
+  "receipt.order_no_label": {
+    "explanation": "Small label above the large order number on the on-screen receipt and, on the thermal receipt, on its own line above the double-size number (80 mm paper: 42 columns). The number itself is printed separately; do not include it.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "receipt.paper.device.issued_at": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",

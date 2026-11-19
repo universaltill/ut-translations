@@ -1008,7 +1008,7 @@
     ]
   },
   "elevation.summary.registration_resume": {
-    "explanation": "Sentence in the manager-PIN prompt shown when a cashier presses Resume sending on Settings, Cloud record: names the action the approver is allowing.",
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier switches on Send usage facts in Settings, Privacy: names the action the approver is allowing.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -1016,7 +1016,7 @@
     ]
   },
   "elevation.summary.registration_stop": {
-    "explanation": "Sentence in the manager-PIN prompt shown when a cashier presses Stop sending on Settings, Cloud record: names the action the approver is allowing.",
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier switches off Send usage facts in Settings, Privacy: names the action the approver is allowing.",
     "flags": "",
     "labels": [],
     "lines": [

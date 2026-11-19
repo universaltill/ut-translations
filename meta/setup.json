@@ -8,6 +8,62 @@
       "0.34"
     ]
   },
+  "name_shop.error.till_name_invalid": {
+    "explanation": "Inline refusal under the till-name field for a blank, too long, or control-character name.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "name_shop.heading_both": {
+    "explanation": "Heading when both the shop name and this till's own name are missing.",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "name_shop.heading_shop": {
+    "explanation": "Heading when only the shop name is missing.",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "name_shop.heading_till": {
+    "explanation": "Heading when only this till's own name is missing.",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "name_shop.intro": {
+    "explanation": "Shown above one or both name fields; must read right whether one or two fields are asked for. Says selling is never blocked.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "name_shop.save": {
+    "explanation": "Submit button on the name-your-shop page; saves the names and goes on to the page the manager opened.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "name_shop.till_name_help": {
+    "explanation": "Help line inside the till-name field's label, with an example name.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "setup.auto_register.hint": {
     "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",

@@ -1,5 +1,12 @@
 {
   "demo.not_available": "Not available in the demo.",
+  "name_shop.error.till_name_invalid": "Enter a name for this till: up to 60 characters, no line breaks or tabs.",
+  "name_shop.heading_both": "Name your shop and this till",
+  "name_shop.heading_shop": "Name your shop",
+  "name_shop.heading_till": "Name this till",
+  "name_shop.intro": "Add this once to open Settings, Reports and the other manager pages. Selling carries on as normal.",
+  "name_shop.save": "Save and continue",
+  "name_shop.till_name_help": "Shown on reports and the Tills page so you can tell your tills apart, for example \"Front counter\".",
   "setup.auto_register.hint": "If you tick this, the till sends its device ID, your store name, your shop's country, your shop's region and the till's software version to the Universal Till cloud marketplace, so we can help with support, updates and licensing — your address is not sent. Leave it unticked and nothing is sent — the till only registers later, when you first use the plugin store or press Register now. You can change this any time in Settings → Till registration.",
   "setup.auto_register.label": "Register this till with the Universal Till cloud now",
   "setup.back": "Back",

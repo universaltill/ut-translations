@@ -3906,6 +3906,22 @@
       "0.34"
     ]
   },
+  "designer.category.edit_image": {
+    "explanation": "Till Designer, expanded category row: label of the link that opens that category's dialog on Items → Categories, where its picture or icon is changed.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "designer.category.edit_image_for": {
+    "explanation": "Till Designer: accessible name of the Change picture or icon link on a category row; starts with the visible label and names the category.\n\nPlaceholders:\n- %s: category name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "designer.code": {
     "explanation": "",
     "flags": "",
@@ -4901,6 +4917,14 @@
       "0.34"
     ]
   },
+  "import.problem_grid.name_invalid_characters": {
+    "explanation": "Row note when Import anyway was ticked but the typed corrected name holds a tab or invisible character; the row stays skipped. Sits in a narrow table cell / phone card.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "import.problem_grid.name_required": {
     "explanation": "",
     "flags": "",
@@ -5090,6 +5114,14 @@
       "0.34"
     ]
   },
+  "import.status.category_invalid_characters": {
+    "explanation": "Import preview/result row reason: the row's category name holds a line break, tab or invisible formatting character, so the row is not imported and no category or item is created. Sits in a narrow table cell / phone card.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "import.status.created": {
     "explanation": "",
     "flags": "",
@@ -5115,6 +5147,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "import.status.department_invalid_characters": {
+    "explanation": "Import preview/result row reason: the row's department (top-level category) name holds a line break, tab or invisible formatting character, so the row is not imported and no department or item is created. Sits in a narrow table cell / phone card.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "import.status.duplicate_sku_in_file": {
@@ -5205,6 +5245,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "import.status.name_invalid_characters": {
+    "explanation": "Import preview/result row reason: the item name in the uploaded file holds a line break, tab or invisible formatting character, so the row is not imported. Sits in a narrow table cell / phone card.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "import.status.not_sellable": {
@@ -6121,6 +6169,350 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "inventory.stocktake.applied": {
+    "explanation": "Inventory: confirmation line shown above the refreshed stock table after a stock-take was applied.\n\nPlaceholders:\n- %d: lines counted\n- %d: lines whose stock changed\n- %d: lines already matching the count",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.apply": {
+    "explanation": "Inventory > Stock-take review: primary button that saves all counted lines at once.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.applying": {
+    "explanation": "Inventory > Stock-take review: label of the Apply count button while the count is being saved.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.back": {
+    "explanation": "Inventory > Stock-take review: secondary button that returns to the count table with every count kept.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.bad_number": {
+    "explanation": "Inventory > Stock-take: message under a Counted box holding something that is not a quantity.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.begin": {
+    "explanation": "Inventory > Stock-take, location picker: primary button that opens the count table for the chosen location.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.blank_hint": {
+    "explanation": "Inventory > Stock-take: hint above the count table explaining that an empty box is not counted and 0 means none on the shelf.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.choose_location": {
+    "explanation": "Inventory > Stock-take, shown only when the shop has two or more locations: label of the location picker.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.col_counted": {
+    "explanation": "Inventory > Stock-take: column header of the box where the quantity found on the shelf is typed.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.col_difference": {
+    "explanation": "Inventory > Stock-take review: column header of counted minus in-stock, shown with a plus or minus sign.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.col_in_stock": {
+    "explanation": "Inventory > Stock-take: column header of the quantity the till currently shows for the item at that location (also in the review table).",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.counted_n": {
+    "explanation": "Inventory > Stock-take: badge in the bottom bar with the number of lines that have a count typed in.\n\nPlaceholders:\n- %d: number of lines with a count",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.discard": {
+    "explanation": "Inventory > Stock-take: button on the cancel confirmation that throws the typed counts away.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.discard_confirm": {
+    "explanation": "Inventory > Stock-take: inline question shown in the bottom bar when Cancel is pressed after counts were typed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.empty": {
+    "explanation": "Inventory > Stock-take: shown instead of the table when the chosen location has no item that tracks stock.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.code.duplicate": {
+    "explanation": "Inventory > Stock-take review: reason printed under a line that appears twice in the count.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.code.not_countable": {
+    "explanation": "Inventory > Stock-take review: reason printed under a line that cannot be counted at this location.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.code.target_invalid": {
+    "explanation": "Inventory > Stock-take review: reason printed under a line whose counted quantity is negative or not a number.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.code.target_too_large": {
+    "explanation": "Inventory > Stock-take review: reason printed under a line whose counted quantity is over one million.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.code.too_many_decimals": {
+    "explanation": "Inventory > Stock-take review: reason printed under a line whose counted quantity has more than three decimals.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.code.whole_number_required": {
+    "explanation": "Inventory > Stock-take review: reason printed under a line for an item that is not sold by weight but has a fractional count.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.forbidden": {
+    "explanation": "Inventory > Stock-take review: error box when the signed-in user lost the stock-management permission (for example after a PIN switch) and the count was refused.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.invalid_lines": {
+    "explanation": "Inventory > Stock-take review: heading of the error box when the till refused the count because some lines are invalid.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.location_invalid": {
+    "explanation": "Inventory > Stock-take: error when the chosen location was switched off or removed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.note_invalid": {
+    "explanation": "Inventory > Stock-take review: error when the optional note is over 200 characters or has line breaks or control characters.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.replica_use_main": {
+    "explanation": "Inventory > Stock-take: error when a stock-take is sent from an additional (replica) till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.save_failed": {
+    "explanation": "Inventory > Stock-take review: error box when saving failed for a reason on the till or the connection to it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.started_at_invalid": {
+    "explanation": "Inventory > Stock-take review: error when the stock-take was started more than 48 hours ago, so its counts are too old to apply.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.fix_rows": {
+    "explanation": "Inventory > Stock-take: message in the bottom bar while a Counted box holds an invalid value; Review stays off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.keep": {
+    "explanation": "Inventory > Stock-take: button on the discard or leave confirmation that returns to counting.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.leave": {
+    "explanation": "Inventory > Stock-take: button on the leave confirmation that goes to the other page and loses the counts.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.leave_confirm": {
+    "explanation": "Inventory > Stock-take: inline question shown in the bottom bar when the operator taps a link to another page while counts are typed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.load_failed": {
+    "explanation": "Inventory > Stock-take: inline error beside the Stock-take button when the count table could not be loaded; the table of stock levels stays in place.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.mode_chip": {
+    "explanation": "Inventory > Stock-take: small chip next to the heading saying the page is in count mode.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.no_change": {
+    "explanation": "Inventory > Stock-take review: shown in the Difference column when the counted quantity equals the quantity in stock.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.none_counted": {
+    "explanation": "Inventory > Stock-take: message in the bottom bar while no line has a count; Review stays off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.note": {
+    "explanation": "Inventory > Stock-take review: label of the optional note saved with the count (up to 200 characters).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.replica_hint": {
+    "explanation": "Inventory page on an additional (replica) till: replaces the Stock-take button, because counts must be made on the main till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.review": {
+    "explanation": "Inventory > Stock-take: bottom-bar button that opens the review of the counted lines.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.review_title": {
+    "explanation": "Inventory > Stock-take review: heading above the table of counted lines.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.start": {
+    "explanation": "Button in the Inventory page header (main till, manager): starts counting the stock of one location.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.title": {
+    "explanation": "Inventory > Stock-take: heading of the count screen.\n\nPlaceholders:\n- %s: name of the location being counted",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.too_many": {
+    "explanation": "Inventory > Stock-take: message in the bottom bar when more than 500 lines have a count; Review stays off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "inventory.type": {

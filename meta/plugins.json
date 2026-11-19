@@ -386,6 +386,14 @@
       "0.34"
     ]
   },
+  "plugin.view.page_failed": {
+    "explanation": "Notice above a plugin's panel on a till screen (Reports, item dialog, end-of-day, Settings) when tapping Next/Previous under the panel's table fails or takes too long. The panel keeps showing the page the operator was already on, so the text must not say nothing is shown. 'Page' means a page of rows in that table, not a web page.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugin.view.page_n": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -1452,6 +1460,46 @@
       "0.34"
     ]
   },
+  "plugins.manage.revoked": {
+    "explanation": "Chip on a Plugins-page card: the Plugin Store withdrew the installed version and this till turned the plugin off.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.revoked_hint_no_update": {
+    "explanation": "Hint under the withdrawal notice on a plugin card with no newer version yet: uninstall or wait; turning the withdrawn version back on lasts about 30 minutes.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.revoked_hint_update": {
+    "explanation": "Hint under the withdrawal notice on a plugin card that has a newer version: press Update; turning the withdrawn version back on lasts about 30 minutes.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.revoked_notice": {
+    "explanation": "Notice on the card of a plugin turned off because the Plugin Store withdrew its installed version, when no reason was given.\n\nPlaceholders:\n- %s: plugin version number",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.revoked_notice_reason": {
+    "explanation": "Same notice when the Plugin Store gave a reason; the reason is the store admin's own text, shown untranslated.\n\nPlaceholders:\n- %[1]s: plugin version number\n- %[2]s: reason text from the Plugin Store, in its own language",
+    "flags": "placeholders:\"%[1]s\":\"%[2]s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.manage.search": {
     "explanation": "",
     "flags": "",
@@ -1821,6 +1869,14 @@
       "0.34"
     ]
   },
+  "plugins.revoked.hint_unknown": {
+    "explanation": "Hint under the withdrawal notice on a plugin card when the till cannot tell whether a newer version exists (offline, or imported from a file): never claims there is no update.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.settings.ai.hosted_provider_notice": {
     "explanation": "",
     "flags": "",
@@ -1954,6 +2010,46 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.settings.options_empty": {
+    "explanation": "Hint under a plugin settings dropdown whose list the plugin supplies, when the plugin offered no choices (for example before an API key is saved). Not an error; Save still works.",
+    "flags": "max-length:180",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.options_failed": {
+    "explanation": "Note under a plugin settings dropdown whose list the plugin supplies, when asking the plugin failed (timeout, offline, error). Shown next to a Try again button; the stored value stays selectable.",
+    "flags": "max-length:160",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.options_loading": {
+    "explanation": "Short line beside a plugin settings dropdown whose list the plugin supplies, shown only if the plugin takes longer than a moment to answer.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.options_retry": {
+    "explanation": "Button under a plugin settings dropdown whose list the plugin supplies, shown after the list failed to load; asks the plugin for the choices again.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.options_saved_missing": {
+    "explanation": "Hint under a plugin settings dropdown whose list the plugin supplies, when the choice saved earlier is not among the choices the plugin now offers (for example a retired model). The saved value is kept.",
+    "flags": "max-length:160",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "plugins.settings.per_till": {

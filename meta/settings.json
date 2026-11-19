@@ -1666,6 +1666,14 @@
       "0.34"
     ]
   },
+  "page.title.card_readers": {
+    "explanation": "Browser tab title of the card readers page.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "page.title.categories": {
     "explanation": "",
     "flags": "",
@@ -1858,6 +1866,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "page.title.name_shop": {
+    "explanation": "Browser/page title of the page that asks a manager for the shop and/or till name before opening manager pages.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "page.title.notices": {
@@ -2350,7 +2366,7 @@
     ]
   },
   "registration.notice.prompt": {
-    "explanation": "Status-bar link on a till set up before the notice existed; opens Settings, Cloud record, where the notice is shown. Keep it short.",
+    "explanation": "Status-bar link on a till set up before the notice existed; opens Settings, Privacy, where the notice is shown. Keep it short.",
     "flags": "max-length:32",
     "labels": [],
     "lines": [
@@ -2388,7 +2404,7 @@
     ]
   },
   "registration.notice.title": {
-    "explanation": "Heading of the notice (setup wizard last screen, Settings Cloud record card) that says what the till sends to Universal Till. Owner-approved checkin-notice-v2 text; legal text, translate faithfully.",
+    "explanation": "Heading of the notice (setup wizard last screen, Settings Privacy card) that says what the till sends to Universal Till. Owner-approved checkin-notice-v2 text; legal text, translate faithfully.",
     "flags": "",
     "labels": [
       "legal"
@@ -6879,8 +6895,16 @@
       "main"
     ]
   },
+  "settings.privacy.title": {
+    "explanation": "Title of the Settings card (and its sidebar row) holding the usage-facts switch and the registration notice. Must match the card name quoted in registration.notice.stop_hint (checkin-notice-v2): Settings > Privacy.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.registration.last_checkin": {
-    "explanation": "Line on the Cloud record card: when the cloud last answered this till. The placeholder is a date and time already formatted for the language.\n\nPlaceholders:\n- %s: the date and time of the last check-in, already formatted",
+    "explanation": "Line in the Settings Privacy card: when the cloud last answered this till. The placeholder is a date and time already formatted for the language.\n\nPlaceholders:\n- %s: the date and time of the last check-in, already formatted",
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
@@ -6888,31 +6912,31 @@
     ]
   },
   "settings.registration.no_checkin": {
-    "explanation": "Line on the Cloud record card when the cloud has not answered this till yet.",
+    "explanation": "Line in the Settings Privacy card when the cloud has not answered this till yet.",
     "flags": "",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
-  "settings.registration.resume": {
-    "explanation": "Button on the Cloud record card that lets a stopped till send usage facts again.",
-    "flags": "max-length:24",
     "labels": [],
     "lines": [
       "main"
     ]
   },
   "settings.registration.resume_help": {
-    "explanation": "Help under the Resume sending button.",
+    "explanation": "Help under the Send usage facts switch while it is off.",
     "flags": "",
     "labels": [],
     "lines": [
       "main"
     ]
   },
+  "settings.registration.send_usage_facts": {
+    "explanation": "Visible label of the switch in Settings, Privacy that stops (off) or resumes (on) this shop sending usage facts to Universal Till. Must match the name quoted in registration.notice.stop_hint (checkin-notice-v2).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.registration.status.not_registered": {
-    "explanation": "Status line on the Cloud record card when the till has not registered yet; it registers itself when online, nothing to do.",
+    "explanation": "Status line in the Settings Privacy card when the till has not registered yet; it registers itself when online, nothing to do.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -6920,7 +6944,7 @@
     ]
   },
   "settings.registration.status.paused": {
-    "explanation": "Status line on the Cloud record card when the shop pressed Stop sending: the till sends no registration or change reports.",
+    "explanation": "Status line in the Settings Privacy card when the shop switched off Send usage facts: the till sends no registration or change reports.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -6928,23 +6952,15 @@
     ]
   },
   "settings.registration.status.registered": {
-    "explanation": "Status line on the Cloud record card when the till is registered. Always read with an icon, never colour alone.",
+    "explanation": "Status line in the Settings Privacy card when the till is registered. Always read with an icon, never colour alone.",
     "flags": "",
     "labels": [],
     "lines": [
       "main"
     ]
   },
-  "settings.registration.stop": {
-    "explanation": "Button on the Cloud record card that stops this till sending usage facts. Keep the name in step with registration.notice.stop_hint.",
-    "flags": "max-length:24",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
   "settings.registration.stop_help": {
-    "explanation": "Help under the Stop sending button: what stopping does and does not do.",
+    "explanation": "Help under the Send usage facts switch while it is on: what switching it off does and does not do.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -6952,7 +6968,7 @@
     ]
   },
   "settings.registration.title": {
-    "explanation": "Title of the Settings card showing whether this till is registered in the Universal Till cloud, with the notice and the Stop sending button.",
+    "explanation": "Sub-heading, inside the Settings Privacy card, of the block showing whether this till is registered in the Universal Till cloud, with the notice and the Send usage facts switch.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -8022,6 +8038,14 @@
       "main"
     ]
   },
+  "settings.update.android.busy": {
+    "explanation": "Android till: a manager tapped install while a sale, self-order or table order (possibly on another screen of this till) or a shift close is open; installing restarts the app and would lose it.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.update.android.confirm_version": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -8029,6 +8053,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.update.android.downloaded": {
+    "explanation": "Android till, status-bar chip and Settings → Software update: the update was downloaded overnight and checked; one tap opens Android's installer. Replaces the whole chip label, so keep 'Update'.\n\nPlaceholders:\n- %s: version number of the downloaded update, without a leading v",
+    "flags": "max-length:40, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.update.android.downloading": {
@@ -8056,6 +8088,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.update.android.install_now": {
+    "explanation": "Settings → Software update button label on an Android till once the update is already downloaded.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.update.android.installing": {

@@ -2,12 +2,12 @@
   "sale": {
     "name": "Sale",
     "description": "The sale screen: basket, scanning, payment, holds, refunds and the quick-button grid.",
-    "keys": 284
+    "keys": 339
   },
   "catalog": {
     "name": "Catalog",
     "description": "Items, categories, modifiers, stock, promotions, vouchers, imports and the menu designer.",
-    "keys": 947
+    "keys": 996
   },
   "orders": {
     "name": "Orders",
@@ -17,7 +17,7 @@
   "reports": {
     "name": "Reports",
     "description": "Reports, the journal, end of day and the audit trail.",
-    "keys": 325
+    "keys": 345
   },
   "staff": {
     "name": "Staff",
@@ -27,7 +27,7 @@
   "settings": {
     "name": "Settings",
     "description": "Settings, admin menus, locations, registers, country settings, translations and the subscription.",
-    "keys": 1056
+    "keys": 1061
   },
   "tills": {
     "name": "Tills",
@@ -37,7 +37,7 @@
   "setup": {
     "name": "Setup",
     "description": "First-run setup, the guided tour, demo data and onboarding notices.",
-    "keys": 167
+    "keys": 174
   },
   "selforder": {
     "name": "Self-order",
@@ -47,12 +47,12 @@
   "receipts-and-legal": {
     "name": "Receipts and legal",
     "description": "Receipts, invoices, fiscal devices and registers, tax codes and other legally relevant wording. Every key here needs a human approval (ADR-0160 §4).",
-    "keys": 204
+    "keys": 205
   },
   "plugins": {
     "name": "Plugins",
     "description": "The plugin marketplace, plugin pages and the assistant.",
-    "keys": 318
+    "keys": 330
   },
   "support": {
     "name": "Support",

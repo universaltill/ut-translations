@@ -546,6 +546,406 @@
       "0.34"
     ]
   },
+  "card_reader.announce.changed": {
+    "explanation": "Announced to screen readers when a card reader's state changes while the picker is open. First placeholder is the reader's name, second its new state (Ready, Busy, Offline).\n\nPlaceholders:\n- %s: name of the card reader\n- %s: new state of the reader",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.busy": {
+    "explanation": "Shown when the chosen card reader turned out to be in use; no payment was taken.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.invalid": {
+    "explanation": "Shown when the chosen card reader is no longer set up on this till; no payment was taken.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.kind.bluetooth": {
+    "explanation": "Kind label of a card reader connected by Bluetooth.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.kind.cloud": {
+    "explanation": "Kind label of a card terminal reached over the internet through its payment provider.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.kind.phone": {
+    "explanation": "Kind label of a phone or tablet paired as a card reader.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.kind.tap_to_pay": {
+    "explanation": "Kind label of the entry that takes contactless payments on this phone or tablet itself.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.kiosk_none": {
+    "explanation": "Shown to a customer on the self-order screen when no card reader is set up for self-service. Plain words, no technical terms.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.needs_plugin_update": {
+    "explanation": "Shown next to a card reader whose payment plugin is too old to work with several readers. The placeholder is the plugin's name.\n\nPlaceholders:\n- %s: name of the payment plugin",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.none_ready": {
+    "explanation": "Shown in the reader picker when every card reader is busy, offline or needs setup.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.pick.auto": {
+    "explanation": "Announced to screen readers when the only ready card reader is used without asking. The placeholder is the reader's name.\n\nPlaceholders:\n- %s: name of the card reader",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.pick.back": {
+    "explanation": "Button in the reader picker that goes back to the list of payment methods without paying.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.pick.checking": {
+    "explanation": "Shown with a spinner while the till asks the card readers whether they are ready; takes at most a few seconds.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.pick.confirm": {
+    "explanation": "Button that starts the card payment once a reader is chosen. First placeholder is the amount to pay with its currency symbol, second is the reader's name.\n\nPlaceholders:\n- %s: amount to pay, with currency symbol\n- %s: name of the chosen card reader",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.pick.default_tag": {
+    "explanation": "Small tag on the reader that took the previous card payment on this till; it is chosen by default.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.pinned": {
+    "explanation": "Shown in the reader picker when a card payment was started and its result is unknown: it can only be retried on the same reader.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.reason.unknown": {
+    "explanation": "One line under a card reader whose readiness could not be checked; it can still be chosen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.add": {
+    "explanation": "Button that adds a card reader to this till.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.count": {
+    "explanation": "Line on the card readers page showing how many readers are set up out of the most this till allows. Both placeholders are whole numbers.\n\nPlaceholders:\n- %d: readers set up\n- %d: most readers allowed",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.empty": {
+    "explanation": "Shown on the card readers page when the list is empty.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.err_in_use": {
+    "explanation": "Error on the card readers settings page when a manager tries to remove a reader while a card payment is running on it or is waiting to be retried on it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.err_name": {
+    "explanation": "Error when the reader name is empty, too long or already used.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.err_ref": {
+    "explanation": "Error when the reader ID has characters that are not allowed, the provider does not support it, or it is already added.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.help": {
+    "explanation": "Introduction on the card readers page for managers.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.limit_reached": {
+    "explanation": "Shown when the till already has the most card readers it allows. The placeholder is that number.\n\nPlaceholders:\n- %d: most readers allowed",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.move_down": {
+    "explanation": "Button that moves a card reader one place down in the list shown to cashiers.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.move_up": {
+    "explanation": "Button that moves a card reader one place up in the list shown to cashiers.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.name": {
+    "explanation": "Label of the field for the name staff see when choosing a card reader.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.name_help": {
+    "explanation": "Help text under the reader name field.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.no_providers": {
+    "explanation": "Shown instead of the add form when no installed payment plugin can work with several readers.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.provider": {
+    "explanation": "Label of the field for choosing which payment provider the card reader belongs to.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.reader_id": {
+    "explanation": "Label of the field for the card reader's identifier as the payment provider knows it.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.reader_id_help": {
+    "explanation": "Help text under the reader ID field. The characters listed are the only ones allowed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.remove": {
+    "explanation": "Button, and the confirm button of its question, that removes a card reader from this till.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.remove_confirm": {
+    "explanation": "Question before removing a card reader. The placeholder is the reader's name.\n\nPlaceholders:\n- %s: name of the card reader",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.remove_confirm_legacy": {
+    "explanation": "Question before removing a card reader that is also saved in its payment plugin's own settings. First placeholder is the reader's name, second the plugin's name.\n\nPlaceholders:\n- %s: name of the card reader\n- %s: name of the payment plugin",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.rename": {
+    "explanation": "Button that renames a card reader.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.saved": {
+    "explanation": "Confirmation after a card reader change was saved.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.source_migrated": {
+    "explanation": "Small tag on a card reader that was taken over automatically from the payment plugin's own reader setting.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.title": {
+    "explanation": "Title of the page where a manager sets up the card readers of this till, and the name of the link to it in Settings.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.unattended_default": {
+    "explanation": "Checkbox label: this card reader is the one the self-order kiosk uses. Only one reader can have it.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.unattended_tag": {
+    "explanation": "Small tag on the card reader that the self-order kiosk uses.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.split.choose": {
+    "explanation": "First option of the reader field in the split payment form, before a reader is chosen.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.split.label": {
+    "explanation": "Label of the field in the split payment form where the cashier picks which card reader takes this part of the payment.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.state.busy": {
+    "explanation": "State of a card reader that is in use by another payment.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.state.needs_setup": {
+    "explanation": "State of a card reader that is not set up yet.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.state.offline": {
+    "explanation": "State of a card reader the till cannot reach.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.state.ready": {
+    "explanation": "State of a card reader that can take a payment now.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.state.unchecked": {
+    "explanation": "State of a card reader whose readiness has not been checked yet.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.state.unknown": {
+    "explanation": "State of a card reader whose readiness could not be checked; it can still be tried.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "filter.category_active": {
     "explanation": "",
     "flags": "",
@@ -1970,6 +2370,38 @@
       "0.34"
     ]
   },
+  "tap.reader.pick": {
+    "explanation": "Heading of the panel where the cashier picks which card reader takes this payment, shown on the sale screen when the till has several readers.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.reason.reader_busy": {
+    "explanation": "One line under a card reader that cannot be chosen right now because another payment is running on it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.reason.reader_needs_setup": {
+    "explanation": "One line under a card reader that cannot be chosen because it is not set up yet; staff are told to ask a manager.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.reason.reader_unreachable": {
+    "explanation": "One line under a card reader that cannot be chosen because the till cannot reach it (switched off, offline, out of range).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tender.add_payment": {
     "explanation": "",
     "flags": "",
@@ -1995,6 +2427,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "tender.card_reader": {
+    "explanation": "Label of the sale screen payment button that opens the list of card readers, used only when the generic Card button is also shown, so the two read differently.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "tender.cash": {

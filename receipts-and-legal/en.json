@@ -141,6 +141,7 @@
   "receipt.fiscal.unsigned_signing": "TSE unreachable — this receipt was recorded without a TSE signature and will not be signed later.",
   "receipt.legal.plugin_label": "Legal notice (%s v%s)",
   "receipt.new_customer": "New Customer",
+  "receipt.order_no_label": "Order number",
   "receipt.paper.device.issued_at": "Fiscal device issued at: %s",
   "receipt.paper.device.receipt_no": "Fiscal device receipt no.: %s",
   "receipt.paper.device.serial": "Fiscal device serial: %s",
