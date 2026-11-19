@@ -299,6 +299,7 @@
   "plugins.tier.community": "Community",
   "plugins.tier.verified": "Verified",
   "plugins.trust.confirm": "This plugin is from an unverified publisher: %s. Do you trust this publisher and want to continue?",
+  "plugins.trust.confirm_ok": "Trust and continue",
   "plugins.trust.level_updated": "Trust level updated",
   "plugins.trust.official": "Universal Till",
   "plugins.trust.official_hint": "Built and maintained by Universal Till",

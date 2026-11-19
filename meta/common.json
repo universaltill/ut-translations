@@ -52,6 +52,14 @@
       "main"
     ]
   },
+  "common.discard": {
+    "explanation": "Confirm button on the discard-unsaved-changes question: throws away the edits.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "common.discard_confirm": {
     "explanation": "Confirmation question shown when the user leaves a form that has unsaved changes.",
     "flags": "",
@@ -137,6 +145,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "common.keep_editing": {
+    "explanation": "Dismiss button on the discard-unsaved-changes question: returns to the unsaved form.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "common.loading": {

@@ -546,6 +546,14 @@
       "0.34"
     ]
   },
+  "buttons.edit_mode.title_all_grid_compact": {
+    "explanation": "Phone-width (up to 480px) title of the edit-mode Done bar in the All-items-with-category-filters layout; short form of buttons.edit_mode.title_all_grid. Must fit two lines beside the Done button at 360px; translators: check it fits 2 lines beside your own Done label.",
+    "flags": "max-length:45",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "card_reader.announce.changed": {
     "explanation": "Announced to screen readers when a card reader's state changes while the picker is open. First placeholder is the reader's name, second its new state (Ready, Busy, Offline).\n\nPlaceholders:\n- %s: name of the card reader\n- %s: new state of the reader",
     "flags": "placeholders:\"%s\"",
@@ -1564,6 +1572,14 @@
       "0.34"
     ]
   },
+  "pfand.recorded": {
+    "explanation": "Menu page: brief confirmation shown after a deposit refund (Pfand) payout is recorded; the placeholder is the refunded amount as a formatted currency string.\n\nPlaceholders:\n- %s: refunded amount, formatted currency",
+    "flags": "max-length:60, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "pos.divider.label": {
     "explanation": "",
     "flags": "",
@@ -2179,6 +2195,30 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "refund.error.method_exhausted": {
+    "explanation": "Error shown on the refund screen when the sale's payments by the chosen method (e.g. card) have already been refunded so far that less is left than this return needs. Nothing is refunded or recorded; the cashier refunds the rest another way.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "refund.error.outcome_unknown": {
+    "explanation": "Error shown on the refund screen when the card provider could not confirm whether a refund was sent to the customer. Tells the cashier it may already have been sent, that nothing is recorded yet, to tap Refund again on the same screen, and not to use another method or reload.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "refund.error.partial": {
+    "explanation": "Error shown on the refund screen when a refund over several card payments was sent back on some of them but failed on the rest. Tells the cashier nothing is recorded yet, to tap Refund again on the same screen to finish, and not to use another method or reload.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "refund.error.provider_declined": {

@@ -1934,7 +1934,7 @@
     ]
   },
   "shifts.close_slip.failed": {
-    "explanation": "Error when the shift slip could not be prepared because of an unexpected fault; tells the operator to tap Print shift slip again.",
+    "explanation": "Error when the shift slip could not be prepared because of an unexpected fault; tells the operator to try again; names no button.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -1952,6 +1952,14 @@
   "shifts.close_slip.not_closed": {
     "explanation": "Error when a shift slip is requested for a shift that is unknown or still open (for example a stale page). Tells the operator to reload.",
     "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.paper.reprinted": {
+    "explanation": "Printed shift close slip, only when printed again from the History list on the Shifts page: line after the Generated line marking the slip as a reprint. %s is the date and time of the reprint.\n\nPlaceholders:\n- %s: date and time of the reprint",
+    "flags": "max-length:42, placeholders:\"%s\"",
     "labels": [],
     "lines": [
       "main"
@@ -1982,7 +1990,7 @@
     ]
   },
   "shifts.close_slip.print_failed": {
-    "explanation": "Shifts page, close result: error beside the Print shift slip button when the receipt printer is off, not set up or did not answer. Names the Receipt printer settings section and the Print shift slip button, so keep those names identical to their translations.",
+    "explanation": "Shifts page, close result: error beside the Print shift slip button (close result) or the Print slip button (History row) when the receipt printer is off, not set up or did not answer. Names the Receipt printer settings section, so keep that name identical to its translation; it names no button.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -1992,6 +2000,14 @@
   "shifts.close_slip.print_ok": {
     "explanation": "Shifts page, close result: confirmation beside the Print shift slip button once the receipt printer accepted the slip.",
     "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.print_row": {
+    "explanation": "Shifts page, History list: label of the button on each closed shift row that prints that shift's close slip again on the receipt printer.",
+    "flags": "max-length:20",
     "labels": [],
     "lines": [
       "main"

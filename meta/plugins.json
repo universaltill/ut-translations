@@ -2643,6 +2643,14 @@
       "0.34"
     ]
   },
+  "plugins.trust.confirm_ok": {
+    "explanation": "Confirm button on the unverified-publisher trust question: trusts the publisher and continues the download or install.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.trust.level_updated": {
     "explanation": "",
     "flags": "",
