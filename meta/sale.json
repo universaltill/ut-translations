@@ -502,6 +502,14 @@
       "0.34"
     ]
   },
+  "basket.tile_in_basket": {
+    "explanation": "Phone sale screen: screen-reader text added to an item tile's name when that item is in the current sale, e.g. \"Latte, 2 in basket\". Not shown visually (the tile shows only a number badge). The string starts with a comma and a space as a separator, because it is read right after the price (\"Latte £2.50, 2 in basket\"); keep a leading separator in translations. Write the number as %d exactly (the till replaces only a literal %d); the string has one form for every count.\n\nPlaceholders:\n- %d: how many of this item are in the current sale",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "basket.title": {
     "explanation": "",
     "flags": "",
