@@ -2527,7 +2527,7 @@
     ]
   },
   "pricing.f.multi.3": {
-    "explanation": "One bullet in the feature list of the Multi-location plan card on the Pricing page. Describes only what exists today. Plan names are product names; keep them as written.",
+    "explanation": "One bullet in the feature list of the Multi-location plan card on the Pricing page: up to 20 people besides the owner can manage the shop from a browser (my.universaltill.com); more than 20 means talking to us; till staff do not count. Describes only what exists today. Plan names are product names; keep them as written.",
     "flags": "",
     "labels": [
       "legal"
@@ -4440,8 +4440,8 @@
       "main"
     ]
   },
-  "wiz.r.members50": {
-    "explanation": "Reason bullet in 'Why this fits': more than 5 people besides the owner need the Multi-location plan even with one location (Shop 2, Pro 5, Multi-location up to 50; more than 50 means talking to us); till staff do not count. Plan names stay in English. Pricing-sensitive.",
+  "wiz.r.membersmore": {
+    "explanation": "Reason bullet in 'Why this fits': more than 5 people besides the owner need the Multi-location plan even with one location (Shop 2, Pro 5, Multi-location up to 20; more than 20 means talking to us); till staff do not count. Plan names stay in English. Pricing-sensitive.",
     "flags": "",
     "labels": [
       "legal"
