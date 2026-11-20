@@ -926,6 +926,14 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.fallback_hint": {
+    "explanation": "Tooltip and screen-reader hint appended to the built-in image tile that is saved underneath the item photo (its fallback); a short phrase, no full stop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.fish": {
     "explanation": "",
     "flags": "",
@@ -942,6 +950,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.generic_photo_kept": {
+    "explanation": "Info notice after picking the general (no-meaning) built-in image on an item that has a photo: nothing was saved, the photo still shows.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.gift": {
@@ -1313,6 +1329,14 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.photo_active": {
+    "explanation": "Info notice in the item editor Item image tab, shown while the selected item has an uploaded photo: the photo shows, and a built-in image picked in the grid is saved underneath it; choosing No image first shows the built-in image instead.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.pick_item_first": {
     "explanation": "",
     "flags": "",
@@ -1374,6 +1398,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.saved_fallback": {
+    "explanation": "Success notice after picking a built-in image on an item that has a photo: it was saved under the photo, the photo still shows, and how to show this image instead.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.scissors": {

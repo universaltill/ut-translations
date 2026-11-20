@@ -89,7 +89,7 @@
   "elevation.summary.enrol_now": "Attempt to register this till with the marketplace now.",
   "elevation.summary.enrol_pair": "Pair this till with a shop in the cloud, replacing its current cloud connection.",
   "elevation.summary.enrol_reconnect": "Reconnect this till to its shop in the cloud, proving its approval key.",
-  "elevation.summary.enrol_terms": "Accept the Universal Till cloud service terms for this shop.",
+  "elevation.summary.enrol_terms": "Accept the Universal Till Merchant Terms for this shop.",
   "elevation.summary.eod_day_x": "View the day-so-far X report (all sales since the last day close).",
   "elevation.summary.eod_day_x_print": "Print the day-so-far X report (all sales since the last day close).",
   "elevation.summary.eod_range_export": "Export a Z-report for %s – %s.",

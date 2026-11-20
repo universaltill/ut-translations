@@ -5438,7 +5438,7 @@
     ]
   },
   "settings.enrol.terms.accepted": {
-    "explanation": "Muted line in Settings and the setup wizard once the operator has accepted the current cloud service terms. 1st placeholder: the terms version (e.g. v0.1-draft, keep as is); 2nd: the date accepted (YYYY-MM-DD).\n\nPlaceholders:\n- %s: the terms version identifier, e.g. v0.1-draft\n- %s: the date the terms were accepted (YYYY-MM-DD)",
+    "explanation": "Muted line in Settings and the setup wizard once the operator has accepted the current Merchant Terms. 1st placeholder: the terms version (e.g. merchant-terms-v1.0, keep as is); 2nd: the date accepted (YYYY-MM-DD).\n\nPlaceholders:\n- %s: the terms version identifier, e.g. v0.1-draft\n- %s: the date the terms were accepted (YYYY-MM-DD)",
     "flags": "placeholders:\"%s\"",
     "labels": [
       "legal"
@@ -5449,7 +5449,7 @@
     ]
   },
   "settings.enrol.terms.label": {
-    "explanation": "Label of the checkbox the operator ticks to accept the Universal Till cloud service terms before the till registers with the cloud (consent wording: translate faithfully, do not soften or add claims).\n\nPlaceholders:\n- %s: the terms version identifier, e.g. v0.1-draft",
+    "explanation": "Label of the checkbox the operator ticks to accept the Universal Till Merchant Terms before the till registers with the cloud (consent wording: translate faithfully, do not soften or add claims).\n\nPlaceholders:\n- %s: the terms version identifier, e.g. v0.1-draft",
     "flags": "placeholders:\"%s\"",
     "labels": [
       "legal"
