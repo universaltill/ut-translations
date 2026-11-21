@@ -2879,8 +2879,8 @@
     ]
   },
   "reports.zpaper.late_included": {
-    "explanation": "Printed Z report, recorded-late section: second explanation line. The amounts listed are already inside the report's totals, not added on top. One printed line; a longer text is cut short. Must never read as an extra amount.",
-    "flags": "max-length:42",
+    "explanation": "Printed Z report, recorded-late section: second explanation line. The amounts listed are already inside the report's totals, not added on top. Wraps onto a second printed line if longer than 42 characters. Must never read as an extra amount.",
+    "flags": "max-length:84",
     "labels": [
       "legal"
     ],
@@ -2889,8 +2889,8 @@
     ]
   },
   "reports.zpaper.late_made_before": {
-    "explanation": "Printed Z report, recorded-late section: first explanation line under the heading. These rows were made on another till before the previous day-end close. One printed line; a longer text is cut short.",
-    "flags": "max-length:42",
+    "explanation": "Printed Z report, recorded-late section: first explanation line under the heading. These rows were made on another till before the previous day-end close. Wraps onto a second printed line if longer than 42 characters.",
+    "flags": "max-length:84",
     "labels": [
       "legal"
     ],
@@ -2929,8 +2929,8 @@
     ]
   },
   "reports.zpaper.late_title": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the section listing rows made on another till before the previous close and received by this till after it. They are already counted in this report's totals. A section heading, printed in capitals where the language has them.",
-    "flags": "max-length:42",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the section listing rows made on another till before the previous close and received by this till after it. They are already counted in this report's totals. A section heading, printed in capitals where the language has them. Wraps onto a second printed line if longer than 42 characters.",
+    "flags": "max-length:84",
     "labels": [
       "legal"
     ],
