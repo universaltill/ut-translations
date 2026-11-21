@@ -2458,6 +2458,30 @@
       "main"
     ]
   },
+  "tap.attention.gone": {
+    "explanation": "JSON API error when a manager tries to settle a card payment that is already settled or does not exist.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.attention.in_progress": {
+    "explanation": "JSON API error when a manager tries to settle a card payment that is still in progress on a till's own sale screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.attention.start_refused": {
+    "explanation": "Title of the panel shown when a tap payment is refused before it starts because an earlier tap payment on the same provider is unresolved (after a restart, New sale or park). Nothing was charged; never worded as declined.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tap.cancel": {
     "explanation": "Button on the card reader progress screen that stops the payment being taken on the phone.",
     "flags": "",
