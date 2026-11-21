@@ -2,7 +2,7 @@
   "sale": {
     "name": "Sale",
     "description": "The sale screen: basket, scanning, payment, holds, refunds and the quick-button grid.",
-    "keys": 424
+    "keys": 426
   },
   "catalog": {
     "name": "Catalog",
@@ -22,7 +22,7 @@
   "staff": {
     "name": "Staff",
     "description": "Users, permissions, sign-in, PIN elevation and shifts.",
-    "keys": 346
+    "keys": 350
   },
   "settings": {
     "name": "Settings",

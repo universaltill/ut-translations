@@ -421,6 +421,14 @@
       "0.34"
     ]
   },
+  "basket.sale_changed": {
+    "explanation": "Note under the basket when a manager-approved discount or New sale was refused because the sale changed while the approval was being entered; nothing was applied.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "basket.sheet.close": {
     "explanation": "",
     "flags": "",
@@ -1587,6 +1595,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "pos.error.discount_not_permitted": {
+    "explanation": "Error returned to an integration that sends a sale discount above the basket's own discount to the tender endpoint from a session that may not discount; the sale is not recorded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "pos.error.network": {
