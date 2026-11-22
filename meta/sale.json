@@ -586,14 +586,6 @@
       "main"
     ]
   },
-  "card_reader.kind.bluetooth": {
-    "explanation": "Kind label of a card reader connected by Bluetooth.",
-    "flags": "max-length:24",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
   "card_reader.kind.cloud": {
     "explanation": "Kind label of a card terminal reached over the internet through its payment provider.",
     "flags": "max-length:24",
@@ -602,8 +594,24 @@
       "main"
     ]
   },
+  "card_reader.kind.external": {
+    "explanation": "Kind label of the shop's own card terminal that is not connected to the till; the cashier confirms the result.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "card_reader.kind.phone": {
     "explanation": "Kind label of a phone or tablet paired as a card reader.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.kind.sdk": {
+    "explanation": "Kind label of a card reader driven by the payment provider's app on this phone or tablet, over Bluetooth or a cable.",
     "flags": "max-length:24",
     "labels": [],
     "lines": [
@@ -637,6 +645,22 @@
   "card_reader.none_ready": {
     "explanation": "Shown in the reader picker when every card reader is busy, offline or needs setup.",
     "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.offline.external": {
+    "explanation": "Note under the shop's own terminal in the reader list: a fixed fact about this kind of reader, not the current connection state. It can take a card payment while the till is offline. Never translate it as a promise.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.offline.needs_internet": {
+    "explanation": "Note under a card reader in the reader list: a fixed fact about this kind of reader, not the current connection state. This reader cannot take a card payment while the till is offline. Never translate it as a promise.",
+    "flags": "max-length:32",
     "labels": [],
     "lines": [
       "main"

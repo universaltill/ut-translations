@@ -2,7 +2,7 @@
   "sale": {
     "name": "Sale",
     "description": "The sale screen: basket, scanning, payment, holds, refunds and the quick-button grid.",
-    "keys": 426
+    "keys": 429
   },
   "catalog": {
     "name": "Catalog",
@@ -12,7 +12,7 @@
   "orders": {
     "name": "Orders",
     "description": "Orders, tables, kitchen stations and displays, and order tracking.",
-    "keys": 249
+    "keys": 252
   },
   "reports": {
     "name": "Reports",

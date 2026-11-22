@@ -254,6 +254,14 @@
       "0.34"
     ]
   },
+  "channel_orders.detail.col.discount": {
+    "explanation": "Column heading on an online order: the discount the customer got on this line, for all its units together (not per unit). Empty when the line had none.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "channel_orders.detail.col.item": {
     "explanation": "Column heading: product name as sold.",
     "flags": "",
@@ -333,6 +341,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "channel_orders.detail.items_subtotal": {
+    "explanation": "Label in an online order's totals: the lines' quantity x unit price added up, before any discount. Shown only when the order has a discount.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.detail.line_discounts": {
+    "explanation": "Label in an online order's totals: the sum of the discounts on its lines. Shown apart from \"Order discount\", which is a discount not tied to one line.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "channel_orders.detail.no_actions_note": {
