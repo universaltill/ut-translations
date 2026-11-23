@@ -1889,7 +1889,7 @@
     ]
   },
   "pos.tender.in_flight": {
-    "explanation": "Error (JSON and sale-screen notice) when a second Pay is sent while this till's payment is still running; nothing was charged by the second attempt.",
+    "explanation": "Error (JSON, sale-screen notice or open-orders page notice) when a second Pay, or a Clear, Hold or open-order, reaches the till while it is still taking or saving a payment; nothing was changed by the refused request.",
     "flags": "max-length:120",
     "labels": [],
     "lines": [

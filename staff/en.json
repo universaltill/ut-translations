@@ -26,6 +26,7 @@
   "auth.setup.hint": "First start: choose the administrator PIN for this till.",
   "auth.setup.pin": "PIN",
   "auth.setup.pin_confirm": "Confirm PIN",
+  "auth.setup.pin_rule": "Use 4 to 8 digits, numbers only.",
   "auth.setup.submit": "Save and sign in",
   "auth.setup.title": "Set up admin PIN",
   "auth.sign_in": "Sign in",

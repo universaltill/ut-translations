@@ -242,6 +242,14 @@
       "0.34"
     ]
   },
+  "auth.setup.pin_rule": {
+    "explanation": "One-line rule under the admin PIN heading of the first-run wizard (step 6), read before typing: the PIN is 4 to 8 digits, numbers only. Written with words ('4 to 8') because screen readers speak it; the error text uses the en dash form.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "auth.setup.submit": {
     "explanation": "",
     "flags": "",

@@ -4008,6 +4008,14 @@
       "0.34"
     ]
   },
+  "designer.error.shared_code": {
+    "explanation": "Alert shown when a reorder from the Designer or the sale screen is refused because two buttons use the same SKU or barcode at or before the last position moved: names the code, the order was not changed, and the fix is to give the items distinct SKUs or barcodes.\n\nPlaceholders:\n- %s: the shared SKU or barcode",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "designer.hidden.empty": {
     "explanation": "",
     "flags": "",

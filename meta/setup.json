@@ -134,6 +134,14 @@
       "0.34"
     ]
   },
+  "setup.busy_hint": {
+    "explanation": "Status line shown under the first-run wizard's final button while setup is saving; tells the owner not to close the window (registration can take up to about ten seconds).",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "setup.cloud.code_help": {
     "explanation": "Instruction above the pairing-code field when joining as the main till. Names the my.universaltill.com screens (Tills, Add a till); keep those names consistent with the my. site.",
     "flags": "",
@@ -689,6 +697,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "setup.finish_busy": {
+    "explanation": "Label of the first-run wizard's final button (normally 'Start selling') while the setup request is running; the button ignores further presses until the page changes.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "setup.join.discover_help": {
