@@ -154,6 +154,20 @@ def make_repo(root, till_sha, ai_accounts=None):
     r = os.path.join(root, "repo")
     os.makedirs(os.path.join(r, "config"))
     till = os.path.join(root, "till")
+    if not os.path.isdir(till):
+        till = os.path.join(root, "till-english")  # never clobbers a later make_till(root)
+        # callers that never build the guards' till (the review runner) still
+        # need the English the repo files are synced from
+        os.makedirs(till)
+        git(till, "init", "-q", "-b", "main")
+        en, meta, areas = till_english()
+        for rel, data in (("web/locales/en.json", en), ("web/i18n-meta/en.meta.json", meta),
+                          ("web/i18n-meta/areas.json", areas)):
+            write(os.path.join(till, rel), data)
+        git(till, "add", "web")
+        git(till, "commit", "-q", "-m", "english")
+        git(till, "tag", "v0.34.7")
+        publish_main(till)
     shutil.copyfile(os.path.join(REPO, "config", "bundles.json"), os.path.join(r, "config", "bundles.json"))
     write(f"{r}/config/ai-accounts.json", {"accounts": ai_accounts or {}})
     # Synced from the till, as the sync job writes them; source.json then
