@@ -125,6 +125,14 @@
       "0.34"
     ]
   },
+  "selforder.checkout.outcome_unknown": {
+    "explanation": "Message on the self-order kiosk when the customer's card payment could not be confirmed: sends them to the cashier and tells them not to pay again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "selforder.checkout.tax_unavailable": {
     "explanation": "",
     "flags": "",

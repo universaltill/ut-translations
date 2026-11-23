@@ -16,7 +16,8 @@
 # branch `sync/english`, opens (or updates) a PR and enables auto-merge, but
 # only after the PATH GATE: every changed path must be a regular-file
 # add/modify/delete of `<area>/en.json` of an area already on main, or
-# `meta/<name>.json`. Anything else (tools/, .github/, config/, scripts/, a
+# `meta/<name>.json`; an area is a till area (meta/areas.json) or a surface
+# component (config/surfaces.json), both read from main. Anything else (tools/, .github/, config/, scripts/, a
 # new area, a symlink, ...) fails the job. The gate and the sync code are the
 # ones on main; the PR branch only ever holds their output. The gate is run
 # again, server side, as the required `paths` check (test.yml), because a
@@ -45,7 +46,8 @@
 # write (open the PR, enable auto-merge), actions: write (the two dispatches;
 # it also lets the job cancel or re-run runs, accepted: it is scoped to this
 # repo and the job runs only code from main).
-# It reads universal-till over its public https clone URL with no credential.
+# It reads universal-till (and, for the website surface, ut-website; ADR-0177)
+# over public https clone URLs with no credential and has no way to write to them.
 # No secrets. GitHub-hosted runner (public repo).
 #
 # Repo settings this depends on (owner/IaC, not changed here): "Allow
@@ -91,45 +93,66 @@ jobs:
         id: sync
         run: python3 tools/sync_english.py
 
+      # Surfaces whose source repo already has its English file (ADR-0177).
+      # ut-cloud's surfaces join here when ut-cloud/i18n/en.json exists.
+      - name: Sync English from ut-website (surface website)
+        id: sync_website
+        continue-on-error: true   # one surface never blocks the till sync's push
+        run: python3 tools/sync_english.py --surface website
+
       # Fails the job (and so opens nothing) unless the sync touched only
       # the paths it owns. The known areas are read from main, not from the
       # changed tree. -z / NUL framing keeps odd file names one path each;
       # --raw adds the file modes, --no-renames lists every path.
       - name: Path gate
-        if: steps.sync.outputs.changed == 'true'
+        if: steps.sync.outputs.changed == 'true' || steps.sync_website.outputs.changed == 'true'
         run: |
           set -euo pipefail
           # Nothing the sync must not touch may differ at all, and the sync
-          # is exactly one commit on top of the checked-out main tip.
+          # is a linear run of commits (one per source that changed: the till,
+          # the website surface) directly on top of the checked-out main tip.
           git diff --quiet origin/main HEAD -- tools .github scripts config || {
             echo "::error::the sync changed code or config (tools, .github, scripts, config); refusing"
             exit 1
           }
-          [ "$(git rev-parse HEAD^)" = "$(git rev-parse origin/main)" ] || {
-            echo "::error::the sync commit is not directly on top of main"
+          git merge-base --is-ancestor origin/main HEAD || {
+            echo "::error::the sync commits are not on top of main"
+            exit 1
+          }
+          [ -z "$(git rev-list --merges origin/main..HEAD)" ] || {
+            echo "::error::the sync range holds a merge commit; refusing"
+            exit 1
+          }
+          [ "$(git rev-list --count origin/main..HEAD)" -le 2 ] || {
+            echo "::error::more sync commits than sources (till + website); refusing"
             exit 1
           }
           git show origin/main:meta/areas.json > "${RUNNER_TEMP}/areas.json"
-          if ! git diff --raw -z --no-renames HEAD^ HEAD \
-              | python3 tools/sync_english.py --check-paths --raw --areas-file "${RUNNER_TEMP}/areas.json"; then
+          git show origin/main:config/surfaces.json > "${RUNNER_TEMP}/surfaces.json"
+          if ! git diff --raw -z --no-renames origin/main HEAD \
+              | python3 tools/sync_english.py --check-paths --raw --areas-file "${RUNNER_TEMP}/areas.json" --surfaces-file "${RUNNER_TEMP}/surfaces.json" --main-ref origin/main; then
             echo "::error::the sync changed paths outside <area>/en.json and meta/*.json, or a non-regular file; refusing to open an auto-merge PR"
-            git diff --raw --no-renames HEAD^ HEAD
+            git diff --raw --no-renames origin/main HEAD
             exit 1
           fi
 
       - name: Open the PR and enable auto-merge
-        if: steps.sync.outputs.changed == 'true'
+        if: steps.sync.outputs.changed == 'true' || steps.sync_website.outputs.changed == 'true'
         run: |
           set -euo pipefail
           # The branch is rebuilt from main's tip every run, so a force-push
           # of the bot's own branch is safe. (No Weblate push to main exists
           # yet: there is no deploy key.)
           git push --force --quiet origin HEAD:refs/heads/sync/english
-          subject=$(git log -1 --format=%s)
+          if [ "$(git rev-list --count origin/main..HEAD)" = 1 ]; then
+            subject=$(git log -1 --format=%s)
+          else
+            subject="sync: English from universal-till and ut-website"
+          fi
           num=$(gh pr list --head sync/english --base main --state open --json number --jq '.[0].number // empty')
           if [ -z "${num}" ]; then
             gh pr create --base main --head sync/english --title "${subject}" \
-              --body "Automated English sync from universal-till (ut-docs#4367). Only <area>/en.json and meta/*.json changed (checked by tools/sync_english.py --check-paths and the required paths check). Auto-merges when the required checks pass."
+              --body "Automated English sync from universal-till and ut-website (ut-docs#4367). Only <area>/en.json and meta/*.json changed (checked by tools/sync_english.py --check-paths and the required paths check). Auto-merges when the required checks pass."
             num=$(gh pr list --head sync/english --base main --state open --json number --jq '.[0].number')
           else
             gh pr edit "${num}" --title "${subject}"

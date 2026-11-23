@@ -8,6 +8,22 @@
       "0.34"
     ]
   },
+  "agent.action.catalog_item_update": {
+    "explanation": "Title of the confirm card when the AI assistant proposes changing existing items' name, price, category or barcode.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "agent.action.settings_set": {
+    "explanation": "Title of the core-rendered confirm card when the AI assistant asks to change one or more shop settings. Nothing changes until the operator presses Confirm.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "agent.action.stock_adjust": {
     "explanation": "",
     "flags": "",
@@ -89,6 +105,22 @@
       "0.34"
     ]
   },
+  "agent.field.category": {
+    "explanation": "Row label on the AI confirm card for an item's category change.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "agent.field.name": {
+    "explanation": "Row label on the AI confirm card for an item's name change.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "agent.field.price": {
     "explanation": "",
     "flags": "",
@@ -98,6 +130,14 @@
       "0.34"
     ]
   },
+  "agent.field.setting": {
+    "explanation": "Column value on the assistant's confirm card for a settings change: names the row's change as a setting (the row's item is the setting's own label from the Settings screen).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "agent.field.stock": {
     "explanation": "",
     "flags": "",
@@ -105,6 +145,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "agent.items.no_photo": {
+    "explanation": "Screen-reader label for the empty thumbnail of an item that has no photo in the AI assistant's item list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "agent.items.open_catalog": {
+    "explanation": "Button under the AI assistant's item list that opens the catalog showing the same items.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "agent.notice.applied": {
@@ -159,6 +215,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "agent.value.off": {
+    "explanation": "Before/after value on the assistant's confirm card for an on/off setting that is switched off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "agent.value.on": {
+    "explanation": "Before/after value on the assistant's confirm card for an on/off setting that is switched on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "ext.error.unreachable": {
@@ -312,6 +384,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugin.view.page_failed": {
+    "explanation": "Notice above a plugin's panel on a till screen (Reports, item dialog, end-of-day, Settings) when tapping Next/Previous under the panel's table fails or takes too long. The panel keeps showing the page the operator was already on, so the text must not say nothing is shown. 'Page' means a page of rows in that table, not a web page.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "plugin.view.page_n": {
@@ -809,6 +889,14 @@
       "0.34"
     ]
   },
+  "plugins.install.error.code_refused_appstore": {
+    "explanation": "Message shown when a plugin install, import or update is refused because the App Store build of the app cannot download or import code (Apple guideline 2.5.2). Names the built-in card payment plugins as the alternative.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.install.error.configuration": {
     "explanation": "",
     "flags": "",
@@ -816,6 +904,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.install.error.device_live": {
+    "explanation": "Error shown when a plugin install cannot start because the cloud refused to register this till for now (it was in use recently); the date is on Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.install.error.download_failed": {
+    "explanation": "Error on a Plugin Store listing page when pressing Download failed for a reason with no more specific message; 'Download' is the button label on that page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "plugins.install.error.forbidden": {
@@ -855,11 +959,10 @@
     ]
   },
   "plugins.install.error.network": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -899,6 +1002,22 @@
       "0.34"
     ]
   },
+  "plugins.install.error.pair_again": {
+    "explanation": "Error shown when the marketplace rejects this till's credential (expired, replaced or mismatched): tells the owner to pair the till with the shop again. 'Pair with a shop' is the section label under Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.install.error.pair_required": {
+    "explanation": "Error shown when installing a paid plugin from a till that is not paired with its shop: tells the owner to pair the till first. 'Pair with a shop' is the section label under Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.install.error.payment_conflict": {
     "explanation": "",
     "flags": "",
@@ -906,6 +1025,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.install.error.register_new": {
+    "explanation": "Error shown when the cloud rejects this till's credential and its store has no owner yet: tells the owner to reconnect the till under Settings > Till registration > Reconnect this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "plugins.install.error.registered_required": {
@@ -935,6 +1062,54 @@
       "0.34"
     ]
   },
+  "plugins.install.error.revoked": {
+    "explanation": "Install-status message when installing or updating a plugin version the marketplace has withdrawn (revoked). Shown on the Plugins page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.install.error.service_unavailable": {
+    "explanation": "Error shown when the marketplace refuses plugin downloads for this shop because its country is not served.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.install.error.till_moved": {
+    "explanation": "Error shown when this till was moved to another shop so its old shop connection can no longer download plugins: tells the owner to connect it to its new shop under Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.install.error.till_removed": {
+    "explanation": "Error shown when the shop has removed, replaced or moved this till so it can no longer download plugins: tells the owner to pair it with the shop again. 'Pair with a shop' is the section label under Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.install.error.till_replaced": {
+    "explanation": "Error shown when another till in the shop replaced this one so it can no longer download plugins: tells the owner to install plugins on the till that replaced it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.install.error.unreachable": {
+    "explanation": "Error on a Plugin Store listing page, and on the store tile after a failed install, when the till could not connect to the plugin marketplace (offline, DNS or timeout).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.install.error.version_mismatch": {
     "explanation": "",
     "flags": "",
@@ -945,110 +1120,98 @@
     ]
   },
   "plugins.install.modal.cancel": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.close": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.description": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.done": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.complete": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.downloading": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.failed": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.fetching": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.initializing": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.installing": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.progress.verifying": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "plugins.install.modal.title": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -1142,6 +1305,14 @@
       "0.34"
     ]
   },
+  "plugins.manage.built_in_hint": {
+    "explanation": "Note under the Built in heading on the Plugins page: these plugins ship inside the app, update only with an app update and are switched on or off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.manage.confirm_rollback": {
     "explanation": "",
     "flags": "",
@@ -1196,6 +1367,30 @@
       "0.34"
     ]
   },
+  "plugins.manage.error.bundled_main_till_controls": {
+    "explanation": "Inline message on the Plugins page of a satellite till when someone tries to switch a built-in plugin on or off: the main till decides.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.error.bundled_no_uninstall": {
+    "explanation": "Inline message on the Plugins page when someone tries to uninstall a plugin that ships inside the app.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.error.bundled_trust_fixed": {
+    "explanation": "Error answer when someone tries to change the trust level of a plugin that ships inside the app.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.manage.error.replica_use_primary": {
     "explanation": "",
     "flags": "",
@@ -1203,6 +1398,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.manage.error.revoked": {
+    "explanation": "Inline message on the Plugins page when turning on, or rolling back to, a plugin version the marketplace has withdrawn (revoked).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.group.built_in": {
+    "explanation": "Heading above the plugins that ship inside the app (Stripe and SumUp card payments on the App Store build) on the Plugins page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "plugins.manage.import_btn": {
@@ -1232,6 +1443,14 @@
       "0.34"
     ]
   },
+  "plugins.manage.main_till_controls": {
+    "explanation": "Small tag on a built-in plugin card on a satellite till: its on/off state is set on the main till.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.manage.no_versions": {
     "explanation": "",
     "flags": "",
@@ -1239,6 +1458,46 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.manage.revoked": {
+    "explanation": "Chip on a Plugins-page card: the Plugin Store withdrew the installed version and this till turned the plugin off.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.revoked_hint_no_update": {
+    "explanation": "Hint under the withdrawal notice on a plugin card with no newer version yet: uninstall or wait; turning the withdrawn version back on lasts about 30 minutes.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.revoked_hint_update": {
+    "explanation": "Hint under the withdrawal notice on a plugin card that has a newer version: press Update; turning the withdrawn version back on lasts about 30 minutes.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.revoked_notice": {
+    "explanation": "Notice on the card of a plugin turned off because the Plugin Store withdrew its installed version, when no reason was given.\n\nPlaceholders:\n- %s: plugin version number",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.manage.revoked_notice_reason": {
+    "explanation": "Same notice when the Plugin Store gave a reason; the reason is the store admin's own text, shown untranslated.\n\nPlaceholders:\n- %[1]s: plugin version number\n- %[2]s: reason text from the Plugin Store, in its own language",
+    "flags": "placeholders:\"%[1]s\":\"%[2]s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "plugins.manage.search": {
@@ -1610,6 +1869,14 @@
       "0.34"
     ]
   },
+  "plugins.revoked.hint_unknown": {
+    "explanation": "Hint under the withdrawal notice on a plugin card when the till cannot tell whether a newer version exists (offline, or imported from a file): never claims there is no update.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.settings.ai.hosted_provider_notice": {
     "explanation": "",
     "flags": "",
@@ -1743,6 +2010,46 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.settings.options_empty": {
+    "explanation": "Hint under a plugin settings dropdown whose list the plugin supplies, when the plugin offered no choices (for example before an API key is saved). Not an error; Save still works.",
+    "flags": "max-length:180",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.options_failed": {
+    "explanation": "Note under a plugin settings dropdown whose list the plugin supplies, when asking the plugin failed (timeout, offline, error). Shown next to a Try again button; the stored value stays selectable.",
+    "flags": "max-length:160",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.options_loading": {
+    "explanation": "Short line beside a plugin settings dropdown whose list the plugin supplies, shown only if the plugin takes longer than a moment to answer.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.options_retry": {
+    "explanation": "Button under a plugin settings dropdown whose list the plugin supplies, shown after the list failed to load; asks the plugin for the choices again.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.options_saved_missing": {
+    "explanation": "Hint under a plugin settings dropdown whose list the plugin supplies, when the choice saved earlier is not among the choices the plugin now offers (for example a retired model). The saved value is kept.",
+    "flags": "max-length:160",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "plugins.settings.per_till": {
@@ -1896,6 +2203,38 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.settings.secret_unreadable": {
+    "explanation": "Note under a plugin's secret field (API key, password): a value is saved but cannot be read on this till, for example after a restore onto a new device, so the manager enters it again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.tab.errors": {
+    "explanation": "Accessible name (read by screen readers, shown as a tooltip) of the warning badge on a section of a plugin's settings page when the save was refused because fields in that section are invalid. The badge itself shows a warning sign and the number.\n\nPlaceholders:\n- %d: how many fields in the section are invalid (a number)",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.tab.general": {
+    "explanation": "Title of the section of a plugin's settings page that holds the settings the plugin did not put in a section of its own. It is shown first, before the plugin's own sections.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.settings.tab.list": {
+    "explanation": "Accessible name (read by screen readers, not shown) of the row of section tabs on a plugin's settings page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "plugins.settings.takeaway.deleted_code": {
@@ -2078,6 +2417,16 @@
       "0.34"
     ]
   },
+  "plugins.store.content_guidelines": {
+    "explanation": "Link at the foot of the Plugin Store pages to the marketplace content guidelines on the website. It names a legal document, so keep it as the document's title.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.store.empty": {
     "explanation": "",
     "flags": "",
@@ -2112,6 +2461,16 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.store.marketplace_terms": {
+    "explanation": "Link at the foot of the Plugin Store pages to the marketplace publisher terms on the website. It names a legal document, so keep it as the document's title.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
     ]
   },
   "plugins.store.no_matches": {
@@ -2175,6 +2534,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.store.report_listing": {
+    "explanation": "Link on a plugin's page in the Plugin Store. Opens the marketplace's report page in the browser so the person can report the listing (malware, deception, illegal content).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "plugins.store.search_ph": {
@@ -2274,6 +2641,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "plugins.trust.confirm_ok": {
+    "explanation": "Confirm button on the unverified-publisher trust question: trusts the publisher and continues the download or install.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "plugins.trust.level_updated": {

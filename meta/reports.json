@@ -206,6 +206,14 @@
       "0.34"
     ]
   },
+  "journal.col.order_no": {
+    "explanation": "Column heading in the sales journal list: the short order number the customer waits for (digits only), shown beside the receipt number, which stays the sale's identity.",
+    "flags": "max-length:12",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "journal.col.receipt": {
     "explanation": "",
     "flags": "",
@@ -458,6 +466,14 @@
       "0.34"
     ]
   },
+  "journal.filter.search": {
+    "explanation": "Label of the journal's search field: type a receipt number, or the short order number a customer holds, to find the sale.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "journal.filter.till": {
     "explanation": "",
     "flags": "",
@@ -483,6 +499,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "journal.reprint_no_slips": {
+    "explanation": "Button on a past sale's journal page, next to Print receipt: prints the receipt again but leaves out the separate gift voucher slips. Shown only when 'Print each gift voucher on its own slip' is on and the sale has a valid voucher.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "journal.reprinted": {
@@ -656,6 +680,14 @@
       "0.34"
     ]
   },
+  "reports.days.last_24h": {
+    "explanation": "Reports page, Custom range: the option in the 'number of days' dropdown that shows the rolling last 24 hours up to now (not the business day, which is the Today chip). Sits in a narrow select.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.dead_stock": {
     "explanation": "",
     "flags": "",
@@ -782,6 +814,134 @@
       "0.34"
     ]
   },
+  "reports.eod.day_x.as_of": {
+    "explanation": "Reports, End of day tab, day so far: label before the time the figures were read.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.empty": {
+    "explanation": "Reports, End of day tab, day so far: line shown when nothing was sold since the last day close.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.failed": {
+    "explanation": "Reports, End of day tab, day so far: error when the figures could not be loaded. Names the Show day so far button, so keep that name identical to its translation.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.hide": {
+    "explanation": "Reports, End of day tab: button that hides the loaded day-so-far figures.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.intro": {
+    "explanation": "Reports, End of day tab: one paragraph under the heading saying the day-so-far report uses the end-of-day layout but closes, stores and resets nothing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.invalid_request": {
+    "explanation": "Reports, End of day tab, day so far: error when the request could not be read (malformed or oversized form).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.paper.title": {
+    "explanation": "Printed day-so-far report on the receipt printer: title line at the top, above the end-of-day layout. A read of the day so far, never an end-of-day (Z) report. Printed in capitals where the language has them; plain ASCII hyphen so it prints on every charset.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.paper_label": {
+    "explanation": "Reports, End of day tab, day so far: accessible name of the preview block that shows the printed report as text.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.print": {
+    "explanation": "Reports, End of day tab, day so far: button that prints the report (figures as of the moment it is pressed) on the receipt printer. Not an end-of-day (Z) report.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.print_failed": {
+    "explanation": "Reports, End of day tab, day so far: error when the receipt printer is off, not set up or did not answer. Names the Receipt printer settings section and the Print day so far button, so keep those names identical to their translations.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.print_ok": {
+    "explanation": "Reports, End of day tab, day so far: confirmation beside the Print button once the receipt printer accepted the report.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.printing": {
+    "explanation": "Reports, End of day tab, day so far: short status beside the Print button while the print request runs (up to 15 seconds).",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.show": {
+    "explanation": "Reports, End of day tab: button that loads the day-so-far figures. Pressing it again reads fresh figures.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.since": {
+    "explanation": "Reports, End of day tab, day so far: line naming the last day close the figures start from.\n\nPlaceholders:\n- %s: date and time of the last day close",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.since_first": {
+    "explanation": "Reports, End of day tab, day so far: line shown instead of the date when this till has never closed a day.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.day_x.title": {
+    "explanation": "Reports, End of day tab: heading of the day-so-far section. A read of everything since the last day close, NOT an end-of-day (Z) report.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.eod.done": {
     "explanation": "",
     "flags": "",
@@ -855,12 +1015,19 @@
     ]
   },
   "reports.eod.fiscal_device.mismatch": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "placeholders:\"%d\"",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
+    ]
+  },
+  "reports.eod.fiscal_device.mismatch_count": {
+    "explanation": "Reports > End of day archive, Turkish fiscal device (ÖKC) check: shown when the device's receipt count differs from the till's tender count on it.\n\nPlaceholders:\n- %s: the device's receipt count (a number)\n- %s: the till's tender count on the device (a number)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "reports.eod.fiscal_device.none": {
@@ -935,6 +1102,96 @@
       "0.34"
     ]
   },
+  "reports.eod.late_cleared": {
+    "explanation": "Reports, End of day, recorded-late table: column header, the amount (or on older reports the number) of baskets cleared before payment, received late.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.late_earliest": {
+    "explanation": "Reports, End of day, recorded-late detail: line under the explanation on older reports that store one overall time.\n\nPlaceholders:\n- %s: date and time the oldest late row was made",
+    "flags": "placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.late_earliest_col": {
+    "explanation": "Reports, End of day, recorded-late table: column header, the date and time the oldest late row from that till was made.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.late_entries": {
+    "explanation": "Reports, End of day, recorded-late table: column header, the number of late rows from that till (all kinds together).",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.late_no_sale": {
+    "explanation": "Reports, End of day, recorded-late table: column header, the number of late no-sale drawer opens (no money moved).",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.late_note": {
+    "explanation": "Reports, End of day, archived report detail: explanation under the recorded-late heading. Must make clear the figures are inside the totals, not extra.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.late_other_till": {
+    "explanation": "Reports, End of day, recorded-late section, on screen and on the printed Z report: name shown for a till that is no longer in this till's list of tills, followed by a short id so two such tills stay apart.\n\nPlaceholders:\n- %s: short id of the till (first 8 characters)",
+    "flags": "max-length:30, placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.late_till": {
+    "explanation": "Reports, End of day, recorded-late table: column header, the till the rows came from.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.late_title": {
+    "explanation": "Reports, End of day, archived report detail: heading of the table of rows made on another till before the previous close and received after it. They are already included in this report's totals.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.eod.net": {
     "explanation": "",
     "flags": "",
@@ -942,6 +1199,30 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "reports.eod.no_sale_opens": {
+    "explanation": "Reports, End of day, no-sale table: column header, the number of drawer opens per cashier. Also used on the Shifts page's Current Shift card.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.no_sale_title": {
+    "explanation": "Reports, End of day, archived report detail: heading of the table of cash-drawer opens without a sale. Also used as the row label (with the count) on the Shifts page's Current Shift card.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.eod.no_sale_total": {
+    "explanation": "Reports, End of day, no-sale table: label of the total row.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "reports.eod.operator": {
@@ -1079,6 +1360,14 @@
       "0.34"
     ]
   },
+  "reports.eod.x_report_link": {
+    "explanation": "Reports, End of day tab: a link under the heading to the X report on the Shifts page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.margins": {
     "explanation": "",
     "flags": "",
@@ -1122,6 +1411,102 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "reports.online_channels.cancelled_unpaid_plural": {
+    "explanation": "Note under the Online channels table: how many orders in the period were cancelled before the customer paid and are therefore left out of all figures ({count} is the number; plural forms per language).",
+    "flags": "icu-message-format",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.col.currency": {
+    "explanation": "Column heading: the ISO currency code of the orders in that row (amounts are never added across currencies).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.col.gross": {
+    "explanation": "Column heading: sum of the order totals as the channel reported them (including shipping and any tax the channel added). Not 'gross of tax' in the accounting sense; avoid a word that means 'including VAT'.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.col.net": {
+    "explanation": "Column heading: order totals minus refunds. Means 'after refunds', not 'excluding tax'.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.col.orders": {
+    "explanation": "Column heading: number of online orders counted in that row.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.col.refunds": {
+    "explanation": "Column heading: amount refunded so far on those orders by the channel.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.currency_total": {
+    "explanation": "Row label: total of all channels for one currency (shown only when two or more channels use that currency).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.empty": {
+    "explanation": "Online channels report when no online order is left to count in the selected period.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.link": {
+    "explanation": "Link from the Online channels report to the Online orders list page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.notice": {
+    "explanation": "Line under the Online channels heading: these orders are not till sales and are not in the till's key figures, the cash drawer, the day-end (Z) report or the fiscal journal. Describe, do not claim compliance.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.refunds_note": {
+    "explanation": "Note under the Online channels table: refunds are counted in the period the order was placed, not the day the refund happened.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.online_channels.title": {
+    "explanation": "Heading of the Online channels report: totals of web-shop and marketplace orders for the selected period.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "reports.period.anchor": {
@@ -1428,6 +1813,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "reports.tab.online_channels": {
+    "explanation": "Reports tab button: totals of orders from the shop's web shop and marketplaces (sales channels), not till sales. Different from the 'Payments & channels' tab, which is about payment methods at the till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "reports.tab.payments": {
@@ -1791,11 +2184,10 @@
     ]
   },
   "reports.today": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -2277,7 +2669,7 @@
     ]
   },
   "reports.zpaper.cash.cash_sales": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash taken for sales. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash taken for sales. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper. Also printed on the X report (Shifts page).",
     "flags": "max-length:20",
     "labels": [],
     "lines": [
@@ -2295,7 +2687,7 @@
     ]
   },
   "reports.zpaper.cash.opening_float": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash in the drawer when the shift opened. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash in the drawer when the shift opened. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper. Also printed on the X report (Shifts page).",
     "flags": "max-length:20",
     "labels": [],
     "lines": [
@@ -2322,7 +2714,7 @@
     ]
   },
   "reports.zpaper.cash.tips_held_out": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash tips kept apart from the shop's takings. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: cash tips kept apart from the shop's takings. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper. Also the row label of the on-screen X report's cash breakdown on the Shifts page. Also printed on the X report (Shifts page).",
     "flags": "max-length:20",
     "labels": [],
     "lines": [
@@ -2340,7 +2732,7 @@
     ]
   },
   "reports.zpaper.cleared_baskets": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: shopping baskets the cashier cleared with New sale before taking payment (no sale happened, not in revenue). Printed as a row label in a 20-character column before the baskets' total amount; a longer label is cut short on paper.\n\nPlaceholders:\n- %d: the number of cleared baskets",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: shopping baskets the cashier cleared with New sale before taking payment (no sale happened, not in revenue). Printed as a row label in a 20-character column before the baskets' total amount; a longer label is cut short on paper. Also printed on the X report (Shifts page).\n\nPlaceholders:\n- %d: the number of cleared baskets",
     "flags": "max-length:20, placeholders:\"%d\"",
     "labels": [],
     "lines": [
@@ -2456,6 +2848,96 @@
       "0.34"
     ]
   },
+  "reports.zpaper.late_cleared": {
+    "explanation": "Printed Z report, recorded-late section: indented row label with the count of baskets cleared before payment on one till and received late; their amount follows (not on reports printed before this was recorded).\n\nPlaceholders:\n- %d: number of late cleared baskets from this till",
+    "flags": "max-length:20, placeholders:\"%d\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.late_earliest": {
+    "explanation": "Printed Z report, recorded-late section: row label before the date and time the oldest late row was made (per till, or overall on older reports). The date is printed after it on the same line.",
+    "flags": "max-length:24",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.late_entries": {
+    "explanation": "Printed Z report, recorded-late section: indented row label before the number of late rows from one till (sales, refunds, cleared baskets and drawer opens together).",
+    "flags": "max-length:30",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.late_included": {
+    "explanation": "Printed Z report, recorded-late section: second explanation line. The amounts listed are already inside the report's totals, not added on top. Wraps onto a second printed line if longer than 42 characters. Must never read as an extra amount.",
+    "flags": "max-length:84",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.late_made_before": {
+    "explanation": "Printed Z report, recorded-late section: first explanation line under the heading. These rows were made on another till before the previous day-end close. Wraps onto a second printed line if longer than 42 characters.",
+    "flags": "max-length:84",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.late_no_sale": {
+    "explanation": "Printed Z report, recorded-late section: indented row label before the number of late no-sale drawer opens from one till (no money moved).",
+    "flags": "max-length:30",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.late_refunds": {
+    "explanation": "Printed Z report, recorded-late section: indented row label with the count of late refunds from one till; the refunded amount is printed after it with a minus sign.\n\nPlaceholders:\n- %d: number of late refunds from this till",
+    "flags": "max-length:20, placeholders:\"%d\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.late_sales": {
+    "explanation": "Printed Z report, recorded-late section: indented row label with the count of late sales from one till; their amount is printed after it.\n\nPlaceholders:\n- %d: number of late sales from this till",
+    "flags": "max-length:20, placeholders:\"%d\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.late_title": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the section listing rows made on another till before the previous close and received by this till after it. They are already counted in this report's totals. A section heading, printed in capitals where the language has them. Wraps onto a second printed line if longer than 42 characters.",
+    "flags": "max-length:84",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.zpaper.net": {
     "explanation": "",
     "flags": "",
@@ -2465,8 +2947,24 @@
       "0.34"
     ]
   },
+  "reports.zpaper.no_sale_title": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: heading of the section counting cash-drawer opens with no sale (no money moved, not in revenue). A section heading, printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.no_sale_total": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: row label before the total number of no-sale drawer opens. A longer label is cut short on paper. Also printed on the X report (Shifts page).",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.zpaper.receipts_range": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: the first and last receipt numbers in this period.\n\nPlaceholders:\n- %s: the first receipt number\n- %s: the last receipt number",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: the first and last receipt numbers in this period. Also printed on the X report (Shifts page).\n\nPlaceholders:\n- %s: the first receipt number\n- %s: the last receipt number",
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
@@ -2481,6 +2979,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "reports.zpaper.restored_receipts": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer, first report after a backup restore: where receipt numbers continue, and the last receipt number the backup held (a dash when it held none).\n\nPlaceholders:\n- %s: the receipt number the till continues at\n- %s: the last receipt number in the restored backup",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.zpaper.restored_z": {
+    "explanation": "Printed end-of-day (Z) report on the receipt printer, first report after a backup restore: the Z number this report carries, and the last Z number the backup held.\n\nPlaceholders:\n- %d: the Z number this report continues at\n- %d: the last Z number in the restored backup",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "reports.zpaper.sales": {
@@ -2520,7 +3034,7 @@
     ]
   },
   "reports.zpaper.voided": {
-    "explanation": "Printed end-of-day (Z) report on the receipt printer: completed sales cancelled afterwards. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper.\n\nPlaceholders:\n- %d: the number of voided receipts",
+    "explanation": "Printed end-of-day (Z) report on the receipt printer: completed sales cancelled afterwards. Printed as a row label in a 20-character column before an amount; a longer label is cut short on paper. Also printed on the X report (Shifts page).\n\nPlaceholders:\n- %d: the number of voided receipts",
     "flags": "max-length:20, placeholders:\"%d\"",
     "labels": [],
     "lines": [

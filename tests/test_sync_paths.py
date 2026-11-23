@@ -121,6 +121,58 @@ class Cli(unittest.TestCase):
                 self.assertEqual(r.returncode, 1, body)
 
 
+class SurfaceComponents(unittest.TestCase):
+    """A surface component (config/surfaces.json) is a known area only once its
+    English file is already on main; a brand-new component needs a human."""
+
+    def setUp(self):
+        self.tmp = tempfile.TemporaryDirectory()
+        self.addCleanup(self.tmp.cleanup)
+        d = self.repo = self.tmp.name
+        g = lambda *a: subprocess.run(["git", "-C", d, *a], check=True, capture_output=True)
+        g("init", "-q", "-b", "main")
+        os.makedirs(os.path.join(d, "website"))
+        with open(os.path.join(d, "website", "en.json"), "w") as f:
+            f.write("{}")
+        g("add", "--", "website/en.json")
+        g("-c", "user.name=t", "-c", "user.email=t@example.invalid", "commit", "-q", "-m", "x")
+        self.areas = os.path.join(d, "areas.json")
+        self.surfaces = os.path.join(d, "surfaces.json")
+        with open(self.areas, "w") as f:
+            json.dump({"sale": {}}, f)
+        with open(self.surfaces, "w") as f:
+            json.dump({"surfaces": {"website": {"component": "website"},
+                                    "cloud-admin": {"component": "cloud-admin"}}}, f)
+
+    def run_check(self, data, *extra):
+        return subprocess.run([sys.executable, os.path.join(ROOT, "tools", "sync_english.py"),
+                               "--check-paths", "--areas-file", self.areas, *extra],
+                              input=data, capture_output=True, cwd=self.repo)
+
+    def test_existing_surface_component_passes(self):
+        r = self.run_check(b"website/en.json\0meta/website.json\0meta/source-website.json\0",
+                           "--surfaces-file", self.surfaces, "--main-ref", "HEAD")
+        self.assertEqual(r.returncode, 0, r.stderr)
+
+    def test_new_surface_component_refuses(self):
+        r = self.run_check(b"cloud-admin/en.json\0", "--surfaces-file", self.surfaces, "--main-ref", "HEAD")
+        self.assertEqual(r.returncode, 1)
+        self.assertIn(b"cloud-admin/en.json", r.stderr)
+
+    def test_surface_component_without_the_surfaces_file_refuses(self):
+        self.assertEqual(self.run_check(b"website/en.json\0").returncode, 1)
+
+    def test_surfaces_file_needs_main_ref(self):
+        r = self.run_check(b"website/en.json\0", "--surfaces-file", self.surfaces)
+        self.assertEqual(r.returncode, 1)
+
+    def test_bad_surfaces_file_refuses(self):
+        with open(self.surfaces, "w") as f:
+            f.write("[]")
+        r = self.run_check(b"website/en.json\0", "--surfaces-file", self.surfaces, "--main-ref", "HEAD")
+        self.assertEqual(r.returncode, 1)
+
+
 def raw(*entries):
     """git diff --raw -z --no-renames framing: ':<src> <dst> <sha> <sha> <S>' NUL path NUL."""
     out = b""

@@ -100,6 +100,7 @@ jobs:
           fi
           git fetch --quiet origin main:refs/remotes/origin/main
           git show origin/main:meta/areas.json > "${RUNNER_TEMP}/areas.json"
+          git show origin/main:config/surfaces.json > "${RUNNER_TEMP}/surfaces.json"
           base=$(git merge-base origin/main HEAD)
           git diff --raw -z --no-renames "${base}..HEAD" \
-            | python3 tools/sync_english.py --check-paths --raw --areas-file "${RUNNER_TEMP}/areas.json"
+            | python3 tools/sync_english.py --check-paths --raw --areas-file "${RUNNER_TEMP}/areas.json" --surfaces-file "${RUNNER_TEMP}/surfaces.json" --main-ref origin/main

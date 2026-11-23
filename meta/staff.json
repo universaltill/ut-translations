@@ -414,21 +414,91 @@
     ]
   },
   "elevation.summary.auto_register_off": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "elevation.summary.auto_register_on": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
+    ]
+  },
+  "elevation.summary.backup_cloud_key_choice_off": {
+    "explanation": "Sentence in the manager-PIN prompt when the cloud copy of the key is turned off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_key_choice_on": {
+    "explanation": "Sentence in the manager-PIN prompt when the cloud copy of the key is turned on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_key_enter": {
+    "explanation": "Sentence in the manager-PIN prompt before the saved key is used.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_key_new": {
+    "explanation": "Sentence in the manager-PIN prompt before a new backup key is started.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_key_print": {
+    "explanation": "Sentence in the manager-PIN prompt before the backup key is printed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_key_show": {
+    "explanation": "Sentence in the manager-PIN prompt before the backup key is shown.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_link": {
+    "explanation": "Sentence in the manager-PIN prompt before the till asks for the backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_now": {
+    "explanation": "Sentence in the manager-PIN prompt for Copy to the cloud now.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.backup_cloud_restore": {
+    "explanation": "Sentence in the manager-PIN prompt before a cloud restore starts.\n\nPlaceholders:\n- %s: date and time the cloud backup was made",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "elevation.summary.backup_now": {
@@ -486,11 +556,10 @@
     ]
   },
   "elevation.summary.buttons_delete_item": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -602,6 +671,14 @@
       "0.34"
     ]
   },
+  "elevation.summary.clear_sale": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier presses New sale on a basket that still holds priced items: it says how many lines and what total would be thrown away.\n\nPlaceholders:\n- %d: number of lines\n- %s: basket total",
+    "flags": "placeholders:\"%d\":\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.summary.data_archive_purge": {
     "explanation": "",
     "flags": "",
@@ -692,12 +769,19 @@
       "0.34"
     ]
   },
-  "elevation.summary.enrol_now": {
-    "explanation": "",
+  "elevation.summary.enrol_new_shop": {
+    "explanation": "Sentence in the manager-PIN prompt for Register as a new shop under Settings > Till registration.",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
+      "main"
+    ]
+  },
+  "elevation.summary.enrol_now": {
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
+    "flags": "",
+    "labels": [],
+    "lines": [
       "0.34"
     ]
   },
@@ -710,6 +794,14 @@
       "0.34"
     ]
   },
+  "elevation.summary.enrol_reconnect": {
+    "explanation": "Sentence in the manager-PIN prompt for Reconnect this till under Settings > Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.summary.enrol_terms": {
     "explanation": "Sentence in the manager-PIN prompt shown when a cashier presses Accept terms (or Send to the cloud) under Settings → Till registration for an already registered till: it names the action the approver is allowing.",
     "flags": "",
@@ -717,6 +809,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "elevation.summary.eod_day_x": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier opens the day-so-far X report on Reports, End of day: says the approver is allowing all sales since the last day close to be shown.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.eod_day_x_print": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier prints the day-so-far X report on Reports, End of day: says the approver is allowing all sales since the last day close to be printed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "elevation.summary.eod_range_export": {
@@ -836,6 +944,14 @@
       "0.34"
     ]
   },
+  "elevation.summary.line_discount": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier raises the discount on a priced basket line: it names the item and the old and new discount amounts the approver is allowing.\n\nPlaceholders:\n- %s: item name\n- %s: current discount amount\n- %s: new discount amount",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.summary.order_no_scheme": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -899,6 +1015,30 @@
       "0.34"
     ]
   },
+  "elevation.summary.reduce_line_qty": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier lowers a priced basket line's quantity (the minus button, the quantity box, or zero): it names the item, the old and new quantity and the void/comp/waste reason the approver is allowing.\n\nPlaceholders:\n- %s: item name\n- %s: current quantity\n- %s: new quantity\n- %s: reason (void, comp or waste)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.registration_resume": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier switches on Send usage facts in Settings, Privacy: names the action the approver is allowing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.registration_stop": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier switches off Send usage facts in Settings, Privacy: names the action the approver is allowing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.summary.remove_demo_data": {
     "explanation": "",
     "flags": "",
@@ -935,6 +1075,14 @@
       "0.34"
     ]
   },
+  "elevation.summary.sale_discount": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier raises the sale-level discount: it names the old and new discount amounts the approver is allowing.\n\nPlaceholders:\n- %s: current discount amount\n- %s: new discount amount",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.summary.setting_upsert": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -942,6 +1090,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "elevation.summary.shift_slip_print": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier prints the shift close slip after closing a shift: names the register whose shift the approver is allowing to be printed.\n\nPlaceholders:\n- %s: the register's name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "elevation.summary.shop_type": {
@@ -1106,6 +1262,22 @@
       "0.34"
     ]
   },
+  "elevation.summary.x_report": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier opens the X report on the Shifts page: names the register the approver is allowing the cashier to view.\n\nPlaceholders:\n- %s: the register's name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "elevation.summary.x_report_print": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier prints the X report on the Shifts page: names the register whose figures the approver is allowing to be printed.\n\nPlaceholders:\n- %s: the register's name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "permissions.action.audit": {
     "explanation": "",
     "flags": "",
@@ -1178,6 +1350,14 @@
       "0.34"
     ]
   },
+  "permissions.action.notices.view": {
+    "explanation": "Name of the permission that lets a role see the Notices bell and inbox, and mark notices read or acknowledged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "permissions.action.permission_management": {
     "explanation": "",
     "flags": "",
@@ -1206,8 +1386,8 @@
     ]
   },
   "permissions.action.price_override": {
-    "explanation": "",
-    "flags": "",
+    "explanation": "Permissions page, Sales group: name of the permission that lets a role raise a line or sale discount by hand without a manager PIN (promo codes never ask).",
+    "flags": "max-length:30",
     "labels": [],
     "lines": [
       "main",
@@ -1385,6 +1565,14 @@
       "0.34"
     ]
   },
+  "permissions.action_desc.notices.view": {
+    "explanation": "One-line description of the Notices permission on the Permissions page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "permissions.action_desc.permission_management": {
     "explanation": "",
     "flags": "",
@@ -1410,6 +1598,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "permissions.action_desc.price_override": {
+    "explanation": "Permissions page: one-line description under the Discounts permission, saying that without it raising a discount by hand asks for a manager PIN, and that promo codes never ask.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "permissions.action_desc.refund": {
@@ -1709,12 +1905,19 @@
       "0.34"
     ]
   },
+  "shifts.adjustment_confirmed": {
+    "explanation": "Shifts page: confirmation shown in the cash adjustment / payout form's result area after an adjustment or payout is recorded (also returned to the Pfand return dialog). Plain sentence, no identifiers.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "shifts.adjustment_success": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -1754,6 +1957,102 @@
       "0.34"
     ]
   },
+  "shifts.close_no_sale_opens": {
+    "explanation": "Shifts page, shift-close confirmation: a second line shown under the expected/actual/variance message only when the cash drawer was opened without a sale during the closed shift. Informational; it never changes the cash figures.\n\nPlaceholders:\n- %s: number of times the drawer was opened without a sale during the shift",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.failed": {
+    "explanation": "Error when the shift slip could not be prepared because of an unexpected fault; tells the operator to try again; names no button.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.invalid_request": {
+    "explanation": "Error when the shift slip print request could not be read (malformed or too large).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.not_closed": {
+    "explanation": "Error when a shift slip is requested for a shift that is unknown or still open (for example a stale page). Tells the operator to reload.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.paper.reprinted": {
+    "explanation": "Printed shift close slip, only when printed again from the History list on the Shifts page: line after the Generated line marking the slip as a reprint. %s is the date and time of the reprint.\n\nPlaceholders:\n- %s: date and time of the reprint",
+    "flags": "max-length:42, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.paper.section_close": {
+    "explanation": "Printed shift close slip: heading above the drawer count figures (expected, counted, variance, skim, new float).",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.paper.title": {
+    "explanation": "Printed shift close slip on the receipt printer: title line at the top. The close of one shift, never an end-of-day (Z) report. Printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.print": {
+    "explanation": "Shifts page, close result: label of the button that prints the shift close slip on the receipt printer after a shift has been closed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.print_failed": {
+    "explanation": "Shifts page, close result: error beside the Print shift slip button (close result) or the Print slip button (History row) when the receipt printer is off, not set up or did not answer. Names the Receipt printer settings section, so keep that name identical to its translation; it names no button.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.print_ok": {
+    "explanation": "Shifts page, close result: confirmation beside the Print shift slip button once the receipt printer accepted the slip.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.print_row": {
+    "explanation": "Shifts page, History list: label of the button on each closed shift row that prints that shift's close slip again on the receipt printer.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.close_slip.printing": {
+    "explanation": "Shifts page, close result: short status beside the Print shift slip button while the print request runs (up to 15 seconds).",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "shifts.close_success": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -1779,6 +2078,118 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "shifts.count_detail.denomination": {
+    "explanation": "Column header in the stored count: the value of one coin or note.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.failed": {
+    "explanation": "Error after an unexpected fault while loading the count; the button named is the key shifts.count_detail.show.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.hide": {
+    "explanation": "Button in the loaded denomination count panel on the Shifts page that empties the panel again.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.hint": {
+    "explanation": "Line under the panel heading on the Shifts page, shown before any count is loaded; says what the panel is for and how to fill it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.invalid_request": {
+    "explanation": "Error when the count request could not be read (shift id too long).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.mismatch": {
+    "explanation": "Neutral note when the counted-cash figure typed at close is not equal to the total of the coin-and-note count. Information only, not an error.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.none": {
+    "explanation": "Shown when a closed shift was closed without the optional coin-and-note count.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.not_closed": {
+    "explanation": "Error when the count is requested for an unknown or still-open shift (for example a stale page). Tells the operator to reload.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.partial": {
+    "explanation": "Note under a stored count when some entries were unreadable (damaged or invalid data) and left out.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.pieces": {
+    "explanation": "Column header in the stored count: how many of that coin or note were counted.",
+    "flags": "max-length:14",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.show": {
+    "explanation": "Button in a closed shift's row of the Shifts history table; loads that shift's stored coin-and-note count into the panel below the table.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.title": {
+    "explanation": "Heading of the panel under the Shifts history table that shows one closed shift's coin-and-note count.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.total": {
+    "explanation": "Row label in the stored count: the sum of all coin and note lines.",
+    "flags": "max-length:28",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.count_detail.unreadable": {
+    "explanation": "Shown instead of the table when the stored coin-and-note count is damaged and nothing in it can be read.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "shifts.count_protocol": {
@@ -1934,6 +2345,14 @@
       "0.34"
     ]
   },
+  "shifts.open_confirmed": {
+    "explanation": "Shifts page: confirmation shown in the open-shift form's result area after a shift is opened successfully. Plain sentence, no identifiers.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "shifts.open_new": {
     "explanation": "",
     "flags": "",
@@ -1953,11 +2372,10 @@
     ]
   },
   "shifts.open_success": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -2076,6 +2494,254 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "shifts.x_report.adjustments_total": {
+    "explanation": "Shifts page, X report: row label for the total of the shift's cash adjustments and payouts. Also printed on the X report (Shifts page).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.cash_sales": {
+    "explanation": "Shifts page, X report: row label for cash taken from sales after cash refunds and change given. Cash tips are shown on their own line.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.cleared": {
+    "explanation": "Shifts page, X report: row label for baskets the cashier cleared before taking payment (count and value). Not revenue, and not the No sale drawer count shown further down.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.count": {
+    "explanation": "Shifts page, X report: column header for the number of sales, returns and similar.",
+    "flags": "max-length:14",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.failed": {
+    "explanation": "Shifts page, X report: error when the figures could not be read; says what to do next.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.first_receipt": {
+    "explanation": "Shifts page, X report: row label for the first receipt number of the shift.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.generated_at": {
+    "explanation": "Shifts page, X report: label before the time the figures were read. A point-in-time read, not a period.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.hide": {
+    "explanation": "Shifts page, X report section: button in the loaded report that removes the figures from the screen again.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.invalid_register": {
+    "explanation": "Shifts page, X report: error for a register value that is malformed or too long.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.invalid_request": {
+    "explanation": "Shifts page, X report: error when the request could not be read.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.last_receipt": {
+    "explanation": "Shifts page, X report: row label for the last receipt number of the shift.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.method": {
+    "explanation": "Shifts page, X report: column header of the payment method name.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.no_open_shift": {
+    "explanation": "Shifts page, X report: error shown (and returned to API clients) when the chosen register has no open shift, usually because it was closed meanwhile.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.no_payments": {
+    "explanation": "Shifts page, X report: shown instead of the payments table when the shift has no payments.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.not_a_close": {
+    "explanation": "Shifts page, X report section: one line under the heading saying the report only reads figures and closes nothing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.paper.not_a_close": {
+    "explanation": "Printed X report on the receipt printer: line under the title saying the report only reads the figures and closes or resets nothing. Used by the shift X report and by the day-so-far X report. One 42-character line.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.paper.title": {
+    "explanation": "Printed X report on the receipt printer: title line at the top. A mid-shift read, never an end-of-day (Z) report. Printed in capitals where the language has them.",
+    "flags": "max-length:42",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.print": {
+    "explanation": "Shifts page, loaded X report: button that prints the X report (figures as of the moment it is pressed) on the receipt printer. Not an end-of-day (Z) report.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.print_failed": {
+    "explanation": "Shifts page, X report: error beside the Print button when the receipt printer is off, not set up or did not answer. Names the Receipt printer settings section and the Print X report button, so keep those two names identical to their translations.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.print_ok": {
+    "explanation": "Shifts page, X report: confirmation beside the Print button once the receipt printer accepted the X report.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.printing": {
+    "explanation": "Shifts page, X report: short status beside the Print button while the print request runs (up to 15 seconds).",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.received": {
+    "explanation": "Shifts page, X report: column header for the amount received by a payment method.",
+    "flags": "max-length:14",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.refunded": {
+    "explanation": "Shifts page, X report: column header for the amount refunded through a payment method.",
+    "flags": "max-length:14",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.returns": {
+    "explanation": "Shifts page, X report: row label for the returns of this shift (count and amount refunded).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.sales": {
+    "explanation": "Shifts page, X report: row label for the completed sales of this shift (count and gross amount).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.section_cash": {
+    "explanation": "Shifts page, X report: sub-heading of the cash breakdown (opening cash, cash sales, adjustments, expected). Also printed on the X report (Shifts page).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.section_tenders": {
+    "explanation": "Shifts page, X report: sub-heading of the table of payments per payment method.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.show": {
+    "explanation": "Shifts page, X report section: button that loads the report figures. Pressing it again reads fresh figures.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.tax": {
+    "explanation": "Shifts page, X report: row label for the tax on sales minus the tax on returns.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.title": {
+    "explanation": "Shifts page, Current Shift card: heading of the mid-shift report section. A read of the open shift so far, NOT an end-of-day (Z) report.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shifts.x_report.voids": {
+    "explanation": "Shifts page, X report: row label for sales voided during this shift (count and amount).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "users.activate": {

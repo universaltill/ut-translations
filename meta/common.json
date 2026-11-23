@@ -44,6 +44,22 @@
       "0.34"
     ]
   },
+  "common.confirm": {
+    "explanation": "Button in a confirmation dialog that carries out the action the dialog asks about (delete, revoke, deactivate). Cancel is beside it.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "common.discard": {
+    "explanation": "Confirm button on the discard-unsaved-changes question: throws away the edits.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "common.discard_confirm": {
     "explanation": "Confirmation question shown when the user leaves a form that has unsaved changes.",
     "flags": "",
@@ -89,6 +105,14 @@
       "0.34"
     ]
   },
+  "common.error.name_invalid_characters": {
+    "explanation": "Error shown when a name typed on an admin screen (item, variant, category, modifier, option set, tax code, register) or this till's own name (Settings, setup, pairing) contains a line break, tab or invisible formatting character. The name is not saved.",
+    "flags": "max-length:140",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "common.error.network": {
     "explanation": "Error shown when a request fails because the till can't reach the server or another till.",
     "flags": "",
@@ -98,6 +122,22 @@
       "0.34"
     ]
   },
+  "common.error.outcome_timeout": {
+    "explanation": "Error shown when the till itself did not answer an action within 30 seconds (it was slow, the connection was fine), so nobody knows if the action ran. Tells them to check before repeating it; there is no retry button. Sibling of common.error.outcome_unknown, which is for a dropped connection.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "common.error.outcome_unknown": {
+    "explanation": "Error shown when the connection drops after the operator confirmed an action (manager PIN or confirm prompt) but before the till answered, so nobody knows if the action ran. Tells them to check before repeating it; there is no retry button.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "common.error.server": {
     "explanation": "Generic error shown when an action fails for an unexpected reason.",
     "flags": "",
@@ -105,6 +145,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "common.keep_editing": {
+    "explanation": "Dismiss button on the discard-unsaved-changes question: returns to the unsaved form.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "common.loading": {
@@ -197,6 +245,22 @@
       "0.34"
     ]
   },
+  "confirm.delete": {
+    "explanation": "Confirm button of the till's in-page confirmation dialog when the action deletes something for good (a modifier group, unassigned groups, an option set).",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "confirm.keep_order": {
+    "explanation": "Cancel button of the confirmation dialog shown before cancelling an open/parked order: leaves the order as it is. Pairs with 'Cancel order'.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "confirm.make_satellite_body": {
     "explanation": "",
     "flags": "",
@@ -222,6 +286,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "confirm.remove": {
+    "explanation": "Confirm button of the till's in-page confirmation dialog when the action removes something (a barcode, a tile from the quick buttons, a modifier group from an item, an option value, sample data, a catalog item). Verb, imperative.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "error.page.forbidden_title": {

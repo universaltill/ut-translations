@@ -926,6 +926,14 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.fallback_hint": {
+    "explanation": "Tooltip and screen-reader hint appended to the built-in image tile that is saved underneath the item photo (its fallback); a short phrase, no full stop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.fish": {
     "explanation": "",
     "flags": "",
@@ -942,6 +950,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.generic_photo_kept": {
+    "explanation": "Info notice after picking the general (no-meaning) built-in image on an item that has a photo: nothing was saved, the photo still shows.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.gift": {
@@ -1313,6 +1329,14 @@
       "0.34"
     ]
   },
+  "catalog.builtin_icon.photo_active": {
+    "explanation": "Info notice in the item editor Item image tab, shown while the selected item has an uploaded photo: the photo shows, and a built-in image picked in the grid is saved underneath it; choosing No image first shows the built-in image instead.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.builtin_icon.pick_item_first": {
     "explanation": "",
     "flags": "",
@@ -1374,6 +1398,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.builtin_icon.saved_fallback": {
+    "explanation": "Success notice after picking a built-in image on an item that has a photo: it was saved under the photo, the photo still shows, and how to show this image instead.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.builtin_icon.scissors": {
@@ -1952,6 +1984,14 @@
       "0.34"
     ]
   },
+  "catalog.icon_match.head_last": {
+    "explanation": "Setting, never shown on screen. Type 1 if, in your language, the main noun of a compound word comes LAST (German: Milchkaffee is a coffee, Apfelsaft is a juice). Then the till can suggest the icon for compound item names. Otherwise type 0. Type only the digit, nothing else. Translators: leave 0 unless a maintainer has measured your language; only the ASCII digit 1 turns it on.",
+    "flags": "max-length:1",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "catalog.image.background": {
     "explanation": "",
     "flags": "",
@@ -2382,6 +2422,54 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "catalog.missing.barcode": {
+    "explanation": "Banner on the catalog when it is filtered to items without a barcode (opened from an AI assistant answer).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.missing.category": {
+    "explanation": "Banner on the catalog when it is filtered to items without a category.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.missing.clear": {
+    "explanation": "Link in the filter banner that returns to the full catalog list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.missing.image": {
+    "explanation": "Banner on the catalog when it is filtered to items without a photo.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.missing.price": {
+    "explanation": "Banner on the catalog when it is filtered to items with no price (zero).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "catalog.missing.several": {
+    "explanation": "Banner on the catalog when it is filtered to items missing any of barcode, photo, price or category.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "catalog.modifiers.add_group": {
@@ -3662,6 +3750,14 @@
       "0.34"
     ]
   },
+  "categories.item_count_plural": {
+    "explanation": "Count of active catalog items in a category, shown in the category list and the menu designer ({count} is the number; plural forms per language).",
+    "flags": "icu-message-format",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "categories.modifiers.help": {
     "explanation": "",
     "flags": "",
@@ -3840,6 +3936,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "designer.category.edit_image": {
+    "explanation": "Till Designer, expanded category row: label of the link that opens that category's dialog on Items → Categories, where its picture or icon is changed.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "designer.category.edit_image_for": {
+    "explanation": "Till Designer: accessible name of the Change picture or icon link on a category row; starts with the visible label and names the category.\n\nPlaceholders:\n- %s: category name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "designer.code": {
@@ -4227,6 +4339,30 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "designer.receipt.voucher_slip_text": {
+    "explanation": "Label of the receipt designer's multi-line field for the shop's own text printed at the bottom of gift voucher slips (not on receipts).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "designer.receipt.voucher_slip_text_hint": {
+    "explanation": "Help line under the receipt designer's gift voucher slip text field: where it prints (every gift voucher slip, never receipts), examples of what shops write, and the limits.\n\nPlaceholders:\n- %d: maximum number of lines\n- %d: maximum number of characters",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "designer.receipt.voucher_slip_text_too_long": {
+    "explanation": "Shown next to the Save button when the gift voucher slip text is over its line or character limit; nothing on the form was saved, so it says so and what to do.\n\nPlaceholders:\n- %d: maximum number of lines\n- %d: maximum number of characters",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "designer.reorder_hint": {
@@ -4688,6 +4824,14 @@
       "0.34"
     ]
   },
+  "import.issue.reorder_level_invalid": {
+    "explanation": "Import row warning: the item was imported, but its reorder level (the low-stock threshold) from the file was not used because it could not be read as a whole number in the allowed range; tells the user to write it without thousands separators.\n\nPlaceholders:\n- %s: the value from the file exactly as written, e.g. '2.5'\n- %s: the lowest allowed reorder level, in the locale's digits, e.g. '0'\n- %s: the highest allowed reorder level, in the locale's digits and deliberately without thousands separators, e.g. '1000000'",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "import.issue.row_not_object": {
     "explanation": "Import row detail: the importer sent something for this row that is not a product record.",
     "flags": "",
@@ -4803,6 +4947,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "import.problem_grid.name_invalid_characters": {
+    "explanation": "Row note when Import anyway was ticked but the typed corrected name holds a tab or invisible character; the row stays skipped. Sits in a narrow table cell / phone card.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "import.problem_grid.name_required": {
@@ -4994,6 +5146,14 @@
       "0.34"
     ]
   },
+  "import.status.category_invalid_characters": {
+    "explanation": "Import preview/result row reason: the row's category name holds a line break, tab or invisible formatting character, so the row is not imported and no category or item is created. Sits in a narrow table cell / phone card.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "import.status.created": {
     "explanation": "",
     "flags": "",
@@ -5019,6 +5179,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "import.status.department_invalid_characters": {
+    "explanation": "Import preview/result row reason: the row's department (top-level category) name holds a line break, tab or invisible formatting character, so the row is not imported and no department or item is created. Sits in a narrow table cell / phone card.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "import.status.duplicate_sku_in_file": {
@@ -5109,6 +5277,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "import.status.name_invalid_characters": {
+    "explanation": "Import preview/result row reason: the item name in the uploaded file holds a line break, tab or invisible formatting character, so the row is not imported. Sits in a narrow table cell / phone card.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "import.status.not_sellable": {
@@ -5875,7 +6051,7 @@
     ]
   },
   "inventory.empty": {
-    "explanation": "",
+    "explanation": "Empty row of the Inventory stock table, shown only when the shop has no active stock-tracked items at all (every tracked item is listed, even at 0). Says what to do next. 'Catalog' is the menu section and 'Not stock-tracked' is the checkbox label on an item there; use the same wording as those labels.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -6025,6 +6201,350 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "inventory.stocktake.applied": {
+    "explanation": "Inventory: confirmation line shown above the refreshed stock table after a stock-take was applied.\n\nPlaceholders:\n- %d: lines counted\n- %d: lines whose stock changed\n- %d: lines already matching the count",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.apply": {
+    "explanation": "Inventory > Stock-take review: primary button that saves all counted lines at once.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.applying": {
+    "explanation": "Inventory > Stock-take review: label of the Apply count button while the count is being saved.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.back": {
+    "explanation": "Inventory > Stock-take review: secondary button that returns to the count table with every count kept.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.bad_number": {
+    "explanation": "Inventory > Stock-take: message under a Counted box holding something that is not a quantity.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.begin": {
+    "explanation": "Inventory > Stock-take, location picker: primary button that opens the count table for the chosen location.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.blank_hint": {
+    "explanation": "Inventory > Stock-take: hint above the count table explaining that an empty box is not counted and 0 means none on the shelf.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.choose_location": {
+    "explanation": "Inventory > Stock-take, shown only when the shop has two or more locations: label of the location picker.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.col_counted": {
+    "explanation": "Inventory > Stock-take: column header of the box where the quantity found on the shelf is typed.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.col_difference": {
+    "explanation": "Inventory > Stock-take review: column header of counted minus in-stock, shown with a plus or minus sign.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.col_in_stock": {
+    "explanation": "Inventory > Stock-take: column header of the quantity the till currently shows for the item at that location (also in the review table).",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.counted_n": {
+    "explanation": "Inventory > Stock-take: badge in the bottom bar with the number of lines that have a count typed in.\n\nPlaceholders:\n- %d: number of lines with a count",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.discard": {
+    "explanation": "Inventory > Stock-take: button on the cancel confirmation that throws the typed counts away.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.discard_confirm": {
+    "explanation": "Inventory > Stock-take: inline question shown in the bottom bar when Cancel is pressed after counts were typed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.empty": {
+    "explanation": "Inventory > Stock-take: shown instead of the table when the chosen location has no item that tracks stock.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.code.duplicate": {
+    "explanation": "Inventory > Stock-take review: reason printed under a line that appears twice in the count.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.code.not_countable": {
+    "explanation": "Inventory > Stock-take review: reason printed under a line that cannot be counted at this location.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.code.target_invalid": {
+    "explanation": "Inventory > Stock-take review: reason printed under a line whose counted quantity is negative or not a number.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.code.target_too_large": {
+    "explanation": "Inventory > Stock-take review: reason printed under a line whose counted quantity is over one million.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.code.too_many_decimals": {
+    "explanation": "Inventory > Stock-take review: reason printed under a line whose counted quantity has more than three decimals.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.code.whole_number_required": {
+    "explanation": "Inventory > Stock-take review: reason printed under a line for an item that is not sold by weight but has a fractional count.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.forbidden": {
+    "explanation": "Inventory > Stock-take review: error box when the signed-in user lost the stock-management permission (for example after a PIN switch) and the count was refused.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.invalid_lines": {
+    "explanation": "Inventory > Stock-take review: heading of the error box when the till refused the count because some lines are invalid.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.location_invalid": {
+    "explanation": "Inventory > Stock-take: error when the chosen location was switched off or removed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.note_invalid": {
+    "explanation": "Inventory > Stock-take review: error when the optional note is over 200 characters or has line breaks or control characters.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.replica_use_main": {
+    "explanation": "Inventory > Stock-take: error when a stock-take is sent from an additional (replica) till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.save_failed": {
+    "explanation": "Inventory > Stock-take review: error box when saving failed for a reason on the till or the connection to it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.error.started_at_invalid": {
+    "explanation": "Inventory > Stock-take review: error when the stock-take was started more than 48 hours ago, so its counts are too old to apply.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.fix_rows": {
+    "explanation": "Inventory > Stock-take: message in the bottom bar while a Counted box holds an invalid value; Review stays off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.keep": {
+    "explanation": "Inventory > Stock-take: button on the discard or leave confirmation that returns to counting.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.leave": {
+    "explanation": "Inventory > Stock-take: button on the leave confirmation that goes to the other page and loses the counts.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.leave_confirm": {
+    "explanation": "Inventory > Stock-take: inline question shown in the bottom bar when the operator taps a link to another page while counts are typed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.load_failed": {
+    "explanation": "Inventory > Stock-take: inline error beside the Stock-take button when the count table could not be loaded; the table of stock levels stays in place.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.mode_chip": {
+    "explanation": "Inventory > Stock-take: small chip next to the heading saying the page is in count mode.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.no_change": {
+    "explanation": "Inventory > Stock-take review: shown in the Difference column when the counted quantity equals the quantity in stock.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.none_counted": {
+    "explanation": "Inventory > Stock-take: message in the bottom bar while no line has a count; Review stays off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.note": {
+    "explanation": "Inventory > Stock-take review: label of the optional note saved with the count (up to 200 characters).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.replica_hint": {
+    "explanation": "Inventory page on an additional (replica) till: replaces the Stock-take button, because counts must be made on the main till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.review": {
+    "explanation": "Inventory > Stock-take: bottom-bar button that opens the review of the counted lines.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.review_title": {
+    "explanation": "Inventory > Stock-take review: heading above the table of counted lines.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.start": {
+    "explanation": "Button in the Inventory page header (main till, manager): starts counting the stock of one location.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.title": {
+    "explanation": "Inventory > Stock-take: heading of the count screen.\n\nPlaceholders:\n- %s: name of the location being counted",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "inventory.stocktake.too_many": {
+    "explanation": "Inventory > Stock-take: message in the bottom bar when more than 500 lines have a count; Review stays off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "inventory.type": {
@@ -6639,6 +7159,358 @@
       "0.34"
     ]
   },
+  "photoimport.col.line": {
+    "explanation": "Table column: the line number in the CSV file.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.col.result": {
+    "explanation": "Table column: what happened to that row.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.col.sku": {
+    "explanation": "Table column: the item SKU.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.csv": {
+    "explanation": "Label of the file field for the CSV that lists SKU and image path or address.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.bad_csv": {
+    "explanation": "Error: the photo import CSV is unreadable.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.bad_zip": {
+    "explanation": "Error: the uploaded ZIP is unreadable or has too many files.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.busy": {
+    "explanation": "Error: another photo import is in progress.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.folder": {
+    "explanation": "Error: the folder typed in is not a full path, does not exist or is not a folder; tells the user to type the full path.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.interrupted": {
+    "explanation": "Error: the run was interrupted; running again skips what is done.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.main_till_only": {
+    "explanation": "Message on a joined till: photo import must be run on the main till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.no_input": {
+    "explanation": "Error: neither a CSV nor a ZIP was chosen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.no_sku_column": {
+    "explanation": "Error: the photo import CSV has no sku column.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.error.too_large": {
+    "explanation": "Error: the upload or number of rows exceeds the limit.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.failed_csv": {
+    "explanation": "Link that downloads a CSV listing the rows the photo import could not handle, with the reason.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.folder": {
+    "explanation": "Label of the text field for the folder on the till computer that holds the photos named in the CSV.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.folder_hint": {
+    "explanation": "Hint under the photos folder field: files outside the folder are refused; https addresses need internet.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.help": {
+    "explanation": "Explanation at the top of the photo import card: existing items only, matched by SKU, preview saves nothing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.import": {
+    "explanation": "Button that saves the photos shown in the preview.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.open": {
+    "explanation": "Link on the Import page that opens the bulk photo import (adds photos to existing items from a CSV or ZIP).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.preview": {
+    "explanation": "Button that checks the photo import and shows what would happen without saving.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.replace": {
+    "explanation": "Checkbox: also replace photos that items already have; off means only items without a photo get one.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.add": {
+    "explanation": "Row result: the item has no photo and gets one.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.ambiguous_sku": {
+    "explanation": "Row result: refused because the SKU is not unique.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.blocked_url": {
+    "explanation": "Row result: only public https addresses are allowed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.duplicate_sku": {
+    "explanation": "Row result: refused because the file lists this SKU more than once.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.fetch_failed": {
+    "explanation": "Row result: the web address could not be downloaded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.image_too_large": {
+    "explanation": "Row result: the image dimensions are too large.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.no_source": {
+    "explanation": "Row result: nothing to read the photo from.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.not_found": {
+    "explanation": "Row result: the file does not exist.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.not_image": {
+    "explanation": "Row result: the file could not be read as an image.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.not_regular": {
+    "explanation": "Row result: the path is a folder or special file.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.outside_folder": {
+    "explanation": "Row result: refused because the path leaves the chosen folder.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.replace": {
+    "explanation": "Row result: the item's photo is replaced.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.skipped_has_photo": {
+    "explanation": "Row result: item already has a photo and replacing is off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.store_failed": {
+    "explanation": "Row result: saving failed on this computer.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.too_big": {
+    "explanation": "Row result: the file is larger than the size limit.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.total_limit": {
+    "explanation": "Row result: the run's total size limit was reached; run again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.unknown_sku": {
+    "explanation": "Row result: no item has this SKU.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.status.variant_sku": {
+    "explanation": "Row result: refused because only items are supported, not variants.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.summary.done": {
+    "explanation": "Summary line after a photo import finished.\n\nPlaceholders:\n- %d: the number of photos saved",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.summary.preview": {
+    "explanation": "Summary line of the photo import preview.\n\nPlaceholders:\n- %d: the number of photos that would be saved",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.title": {
+    "explanation": "Heading of the Import page card that adds photos to existing items from a CSV or ZIP.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.truncated": {
+    "explanation": "Note under the result table when the list is cut off after a number of rows.\n\nPlaceholders:\n- %d: the number of rows shown",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "photoimport.zip": {
+    "explanation": "Label of the file field for an optional ZIP whose files are named after the item SKU.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "products.add": {
     "explanation": "",
     "flags": "",
@@ -6700,6 +7572,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "products.category_button_count_plural": {
+    "explanation": "Count of quick buttons on the sale screen for a category, shown in the category tile overflow and the menu designer ({count} is the number; plural forms per language).",
+    "flags": "icu-message-format",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "products.category_no_buttons": {
@@ -6828,6 +7708,14 @@
       "0.34"
     ]
   },
+  "promotions.col.dates": {
+    "explanation": "Column header on the Promotions list: the promotion's start and end dates, shown as two stacked lines in one column. An open side shows a dash.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "promotions.col.status": {
     "explanation": "",
     "flags": "",
@@ -6864,6 +7752,22 @@
       "0.34"
     ]
   },
+  "promotions.customer.clear": {
+    "explanation": "Aria-label and tooltip of the x button beside the promotion's customer field; after Save any customer can use the code.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "promotions.customer.deleted": {
+    "explanation": "Promotions list and dialog: the promotion is bound to a customer who no longer exists on this till (erased elsewhere). Shown instead of an id.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "promotions.customer.search_ph": {
     "explanation": "",
     "flags": "",
@@ -6871,6 +7775,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "promotions.customer.unpicked": {
+    "explanation": "Promotion dialog error when text was typed in the customer field but no search result was chosen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "promotions.deactivate": {
@@ -6882,13 +7794,36 @@
       "0.34"
     ]
   },
-  "promotions.edit": {
-    "explanation": "",
+  "promotions.deactivate_confirm": {
+    "explanation": "Confirmation shown before a promotion is deactivated from its edit dialog: says it stops working at checkout and can be reactivated.",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
+      "main"
+    ]
+  },
+  "promotions.edit": {
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
+    "flags": "",
+    "labels": [],
+    "lines": [
       "0.34"
+    ]
+  },
+  "promotions.edit_title": {
+    "explanation": "Title of the Promotions record dialog when an existing promotion is opened for editing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "promotions.empty": {
+    "explanation": "Empty state on the Promotions page when no promotion exists yet; points at the + button next to the search field.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "promotions.error.code_exists": {
@@ -6907,6 +7842,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "promotions.error.customer_unknown": {
+    "explanation": "Save refused in the promotion dialog: the chosen customer is not on this till (deleted or never existed).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "promotions.error.dates_invalid": {
@@ -6991,20 +7934,18 @@
     ]
   },
   "promotions.list_empty": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "promotions.new.submit": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -7015,6 +7956,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "promotions.search_placeholder": {
+    "explanation": "Label and placeholder of the search field above the Promotions list (filters rows by code, description or customer).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "promotions.title": {
@@ -7483,6 +8432,78 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "vouchers.print_slip.balance_unknown_note": {
+    "explanation": "Shown above Print voucher slip on an additional till when the main till could not be reached: the slip then prints only the original value, without the current balance. Says why and tells the owner to check the balance on the main till before handing the slip over.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "vouchers.print_slip.browser_hint": {
+    "explanation": "Shown above Print voucher slip on a gift voucher's page (manager) when this till has no receipt printer: pressing the button opens just the slip in the browser's print dialog. A link to Settings > Receipt printer follows it. Keep it to two short sentences.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "vouchers.print_slip.browser_opened": {
+    "explanation": "Inline status after Print voucher slip on a till with no receipt printer: the browser's print dialog opened with the slip. The till can't tell whether it was printed, saved or cancelled, so do not say 'printed' or 'sent'.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "vouchers.print_slip.button": {
+    "explanation": "Button on a gift voucher's page (manager): prints that voucher's gift slip again on this till's receipt printer, without a receipt.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "vouchers.print_slip.done": {
+    "explanation": "Inline confirmation after Print voucher slip on a gift voucher's page succeeded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "vouchers.print_slip.no_printer": {
+    "explanation": "Inline refusal after Print voucher slip on a kiosk till with no receipt printer set up and no print dialog (only from a page opened before that state).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "vouchers.print_slip.no_printer_hint": {
+    "explanation": "Shown instead of the Print voucher slip button on a gift voucher's page, on a kiosk till with no receipt printer set up and no print dialog. A link \"Set up a receipt printer\" follows.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "vouchers.print_slip.not_printable": {
+    "explanation": "Inline message when Print voucher slip is pressed for a voucher that was voided or used up since the page loaded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "vouchers.print_slip.printing": {
+    "explanation": "Shown next to Print voucher slip while the slip is being sent to the receipt printer.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "vouchers.replica_note": {

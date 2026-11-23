@@ -13,6 +13,7 @@
   "selforder.checkout.fiscal_device_no_receipt": "Payment couldn't be confirmed — please pay at the counter.",
   "selforder.checkout.invalid_method": "Please choose a payment method.",
   "selforder.checkout.no_methods": "No payment methods are available right now — please pay at the counter.",
+  "selforder.checkout.outcome_unknown": "We could not confirm your card payment. Please see the cashier at the counter. Do not pay again.",
   "selforder.checkout.tax_unavailable": "Some items can't be ordered here right now — please pay at the counter.",
   "selforder.checkout.title": "Choose a payment method",
   "selforder.confirm.counter_hint": "Thank you! Please pay at the counter — your order is on its way to the kitchen.",

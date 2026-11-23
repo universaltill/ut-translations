@@ -1,4 +1,96 @@
 {
+  "about.addresses_help": {
+    "explanation": "Note on the About screen where web links cannot be opened (kiosk): the addresses above are shown as text to type on another device.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "about.back_link": {
+    "explanation": "Link text at the top of the open-source licences page that returns to the About screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "about.delete_account_help": {
+    "explanation": "Short note under the About links saying account deletion happens on the Universal Till website.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "about.delete_account_link": {
+    "explanation": "Link text on the About screen that opens the page for deleting the shop owner's Universal Till ID account.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "about.installed_version": {
+    "explanation": "Label before the installed app version on the About screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "about.licences_link": {
+    "explanation": "Link text on the About screen that opens the list of open-source licences used by the app.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "about.more_link": {
+    "explanation": "Link text from Settings, About and the manual to the About screen with the legal links.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "about.privacy_link": {
+    "explanation": "Link text on the About screen that opens the Universal Till privacy notice on the website.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "about.terms_link": {
+    "explanation": "Link text on the About screen that opens the Universal Till terms on the website.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "about.title": {
+    "explanation": "Heading and page title of the About screen (version plus links to the privacy notice, terms, open-source licences and account deletion).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "admin.group.fiscal": {
     "explanation": "",
     "flags": "",
@@ -33,6 +125,816 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "backup.cloud.chip_failing": {
+    "explanation": "Status-bar chip for managers shown when the encrypted off-site copy has been failing for more than 2 days. Links to Settings > Backups.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.busy": {
+    "explanation": "Error: a second cloud restore was started.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.cloud_backup_not_in_plan": {
+    "explanation": "Reason line: the plan lacks the cloud backup feature.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.consumed": {
+    "explanation": "Error: the approval was already used once.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.corrupt": {
+    "explanation": "Error: the downloaded backup failed its integrity check.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.disk": {
+    "explanation": "Reason line: not enough free disk space for the off-site copy or the restore download.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.download": {
+    "explanation": "Error: a part of the backup could not be downloaded or failed its check.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.expired": {
+    "explanation": "Error: the restore request expired.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.network": {
+    "explanation": "Reason line: network problem during the off-site copy.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.newer": {
+    "explanation": "Error: the backup needs a newer app version.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.not_enabled": {
+    "explanation": "Reason line: the cloud service has this feature switched off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.not_found": {
+    "explanation": "Error: the chosen backup is not in the cloud list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.not_main_till": {
+    "explanation": "Reason line: this till is not the shop's designated main till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.other": {
+    "explanation": "Generic error for cloud backup and restore.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.other_shop": {
+    "explanation": "Error: the backup is of a different shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.rate_limited": {
+    "explanation": "Reason line: the cloud asked the till to slow down.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.server": {
+    "explanation": "Reason line: the cloud answered with a server error.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.subscription_inactive": {
+    "explanation": "Reason line: the subscription is not active.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.too_large": {
+    "explanation": "Reason line: the backup is above the cloud size limit.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.too_old": {
+    "explanation": "Error: the backup is too old.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.apply_failed": {
+    "explanation": "Shown when the cloud could not be reached while applying the key copy choice.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.ask_off_text": {
+    "explanation": "Trade-off of choosing No for the cloud copy of the key (legal wording).",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.ask_on_text": {
+    "explanation": "Trade-off of choosing Yes for the cloud copy of the key (legal wording).",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.ask_title": {
+    "explanation": "Question in the Cloud backups card: may the cloud keep a protected copy of the shop's backup key.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.blocked": {
+    "explanation": "Shown when the shop owner switched the cloud copy of the key off on my.universaltill.com.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.change_to_off": {
+    "explanation": "Button that stops the till keeping a copy of the key in the cloud (the owner deletes an existing copy on my.).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.change_to_on": {
+    "explanation": "Button that turns the cloud copy of the key on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.chip_ask": {
+    "explanation": "Status bar chip: the shop has not yet chosen whether a copy of its backup key is kept in the cloud.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.chip_hint": {
+    "explanation": "Tooltip of the backup key choice chip.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.choose_off": {
+    "explanation": "Button: no cloud copy of the backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.choose_on": {
+    "explanation": "Button: allow the cloud copy of the backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.download": {
+    "explanation": "Link: download the key as a text file.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.enter_action": {
+    "explanation": "Label of the field where the saved backup key is typed to link this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.enter_label": {
+    "explanation": "Label of the saved backup key field.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.enter_submit": {
+    "explanation": "Button that uses the typed or uploaded saved key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.entered": {
+    "explanation": "Shown after the saved key was accepted.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.err.bad": {
+    "explanation": "Error: the saved key text failed its checksum or is incomplete.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.err.not_stuck": {
+    "explanation": "Error: starting a new key is not possible now.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.err.owner_approval": {
+    "explanation": "Error: the cloud will not start a new backup key until the shop owner approves it on my.universaltill.com.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.err.wrong": {
+    "explanation": "Error: the saved key is valid but is another shop's key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.new_action": {
+    "explanation": "Button that makes a new backup key when the old one is lost.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.new_text": {
+    "explanation": "Warning shown next to Start a new backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.none": {
+    "explanation": "Shown when this till holds no backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.page_intro": {
+    "explanation": "Introduction on the backup key page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.print": {
+    "explanation": "Button: print the key page with the browser.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.print_failed": {
+    "explanation": "Shown when printing the key failed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.print_heading": {
+    "explanation": "Heading line on the printed backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.print_hint": {
+    "explanation": "Footer line on the printed backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.print_off": {
+    "explanation": "Shown when the receipt printer is not set up.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.print_ok": {
+    "explanation": "Shown after the key printed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.print_receipt": {
+    "explanation": "Button: print the key on the receipt printer.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.save_link": {
+    "explanation": "Link from the Cloud backups card to the page that shows, prints and saves the backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.show": {
+    "explanation": "Button that reveals the backup key after the manager PIN.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.shown_warning": {
+    "explanation": "Warning under the displayed backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.status_off": {
+    "explanation": "Status in the Cloud backups card when the cloud copy of the key is off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.status_on": {
+    "explanation": "Status in the Cloud backups card when the cloud copy of the key is on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.key.title": {
+    "explanation": "Heading of the backup key page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.link.action": {
+    "explanation": "Button in the Cloud backups card that asks the shop owner to give this till the shop's backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.link.approve_hint": {
+    "explanation": "Instruction while the till waits for the owner to approve giving it the backup key; the placeholder is the approval code.\n\nPlaceholders:\n- %s: approval code",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.link.denied": {
+    "explanation": "Shown when the owner refused to give the till the backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.link.done": {
+    "explanation": "Shown after the backup key was saved on this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.privacy": {
+    "explanation": "Short privacy note in the Cloud backups card: what the off-site copy is, that the cloud holds a wrapped copy of the key, and who can approve a restore (legal wording).",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.queued": {
+    "explanation": "Message after pressing Copy to the cloud now: the copy was queued and runs without blocking sales.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore": {
+    "explanation": "Link in the Cloud backups card to the page that restores a cloud backup onto this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.approve_hint": {
+    "explanation": "Instruction while waiting for the owner's approval; the placeholder is the 8-character approval code.\n\nPlaceholders:\n- %s: the approval code, for example K7QX29PM",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.approve_title": {
+    "explanation": "Heading while the till waits for the shop owner to approve a cloud restore.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.back": {
+    "explanation": "Link back to the cloud backup list after a restore stopped.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.back_settings": {
+    "explanation": "Link from the cloud restore page back to the Backups settings.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.cancel": {
+    "explanation": "Button that cancels a running cloud restore before anything is staged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.cancelled": {
+    "explanation": "Shown after the manager cancelled a cloud restore.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.checking": {
+    "explanation": "Progress while the downloaded backup is decrypted and checked.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.col_date": {
+    "explanation": "Column heading on the cloud restore page: when each cloud backup was made.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.cutoff": {
+    "explanation": "Under each cloud backup in the restore list: the time the backup was made; later sales are not in it.\n\nPlaceholders:\n- %s: date and time the backup was made",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.denied": {
+    "explanation": "Shown when the owner refused the restore on my.universaltill.com.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.downloading": {
+    "explanation": "Progress while a cloud backup downloads: part number and total number of parts.\n\nPlaceholders:\n- %d: parts downloaded so far\n- %d: total number of parts",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.expired": {
+    "explanation": "Shown when the approval code expired before the owner approved.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.has_sales": {
+    "explanation": "Warning on the cloud restore page shown only when this till already holds sales.\n\nPlaceholders:\n- %d: number of sales this till holds",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.intro": {
+    "explanation": "Introduction on the cloud restore page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.list_failed": {
+    "explanation": "Error on the cloud restore page when the list of backups could not be fetched.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.needkey_file": {
+    "explanation": "Label of the file chooser for the saved key file.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.needkey_hint": {
+    "explanation": "Instruction while a restore waits for the saved backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.needkey_title": {
+    "explanation": "Heading while a restore waits for the owner's saved backup key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.none": {
+    "explanation": "Empty state of the cloud restore page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.pick": {
+    "explanation": "Button on the cloud restore page: restore this cloud backup; asks for the manager PIN next.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.qr_alt": {
+    "explanation": "Alternative text of the QR code the owner scans to approve a cloud restore.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.ready": {
+    "explanation": "Shown when the cloud backup is staged and only a restart is left.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.replaces": {
+    "explanation": "Note under the cloud backup list: a restore replaces everything on this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.requesting": {
+    "explanation": "Progress text right after a cloud restore was started.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.restart_manually": {
+    "explanation": "Shown instead of the Restart button on a device where the till cannot restart itself.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.title": {
+    "explanation": "Heading of the page where a manager restores a cloud backup onto this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.unavailable": {
+    "explanation": "Message on the cloud restore page on a till that is not a connected main till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.restore.waiting": {
+    "explanation": "Reassurance under the approval code while waiting.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.state_failing": {
+    "explanation": "Status line in the Cloud backups card while the encrypted off-site copy is failing; the reason is on the next line.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.state_needs_link": {
+    "explanation": "Status line in the Cloud backups card when the cloud holds the shop's backup key and this till does not (or holds a different one); the Link button is next to it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.state_not_in_plan": {
+    "explanation": "Status line in the Cloud backups card on a till whose plan does not include cloud backups.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.state_ok": {
+    "explanation": "Status line in the Cloud backups card after a successful off-site copy; the placeholder is the date and time of the last copy.\n\nPlaceholders:\n- %s: date and time of the last successful cloud copy",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.state_refused": {
+    "explanation": "Status line in the Cloud backups card when the cloud refused the off-site copy (for example the plan does not include it); the reason is on the next line.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.state_waiting": {
+    "explanation": "Status line in the Cloud backups card before any off-site copy has been made.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.title": {
+    "explanation": "Heading of the Cloud backups card in Settings > Backups: the encrypted off-site copy of this till's data.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.upload_now": {
+    "explanation": "Button in the Cloud backups card that starts an off-site copy of the newest backup right away.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "countrysettings.col.country": {
@@ -764,6 +1666,14 @@
       "0.34"
     ]
   },
+  "page.title.card_readers": {
+    "explanation": "Browser tab title of the card readers page.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "page.title.categories": {
     "explanation": "",
     "flags": "",
@@ -789,6 +1699,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "page.title.cloud_key": {
+    "explanation": "Page title of the backup key page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "page.title.cloud_restore": {
+    "explanation": "Browser tab title of the page where a manager picks a cloud backup to restore onto this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "page.title.country_settings": {
@@ -917,6 +1843,22 @@
       "0.34"
     ]
   },
+  "page.title.move_till": {
+    "explanation": "Browser tab title of the page where a manager approves or declines moving this till into another shop.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "page.title.my_display": {
+    "explanation": "Browser tab and page heading of the My display page, where an operator picks their own theme and sale screen layout.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "page.title.my_reports": {
     "explanation": "",
     "flags": "",
@@ -924,6 +1866,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "page.title.name_shop": {
+    "explanation": "Browser/page title of the page that asks a manager for the shop and/or till name before opening manager pages.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "page.title.notices": {
+    "explanation": "Browser tab title of the Notices inbox page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "page.title.open_orders": {
@@ -1367,6 +2325,94 @@
       "0.34"
     ]
   },
+  "registration.notice.availability": {
+    "explanation": "Fifth paragraph: selling never waits for the cloud. checkin-notice-v2; legal text.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "registration.notice.body": {
+    "explanation": "First paragraph: what the till sends each start and on updates or plugin changes. checkin-notice-v2; legal text, translate faithfully, do not add or remove a data item.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "registration.notice.controller": {
+    "explanation": "Last paragraph: who is responsible for the data (company name and number stay as written). checkin-notice-v2; legal text.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "registration.notice.fields": {
+    "explanation": "Second paragraph: what is never sent. checkin-notice-v2; legal text.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "registration.notice.prompt": {
+    "explanation": "Status-bar link on a till set up before the notice existed; opens Settings, Privacy, where the notice is shown. Keep it short.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "registration.notice.purpose": {
+    "explanation": "Third paragraph: why we use it and the legitimate-interest basis. checkin-notice-v2; legal text.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "registration.notice.retention": {
+    "explanation": "Fourth paragraph: how long the data and the connecting address are kept. checkin-notice-v2; legal text.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "registration.notice.stop_hint": {
+    "explanation": "Sixth paragraph: how to stop, the person rights, the right to complain to the data protection authority, and the support email. checkin-notice-v2; legal text.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "registration.notice.title": {
+    "explanation": "Heading of the notice (setup wizard last screen, Settings Privacy card) that says what the till sends to Universal Till. Owner-approved checkin-notice-v2 text; legal text, translate faithfully.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.about.english_only": {
     "explanation": "",
     "flags": "",
@@ -1466,6 +2512,62 @@
       "0.34"
     ]
   },
+  "settings.backup.delete": {
+    "explanation": "Button on a row of the backups list that deletes that backup file.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.delete_confirm": {
+    "explanation": "Question asked before a backup file is deleted from the backups list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.delete_failed": {
+    "explanation": "Error when deleting a backup file failed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.delete_invalid": {
+    "explanation": "Error when the name sent to delete is not a backup file.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.delete_missing": {
+    "explanation": "Error when the backup to delete is already gone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.delete_newest": {
+    "explanation": "Error when someone tries to delete the newest backup, which is always kept.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.deleted": {
+    "explanation": "Confirmation shown after a backup file was deleted.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.backup.done": {
     "explanation": "",
     "flags": "",
@@ -1520,6 +2622,14 @@
       "0.34"
     ]
   },
+  "settings.backup.newest_kept": {
+    "explanation": "Label on the newest backup row, which has no Delete button because it is always kept.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.backup.none_yet": {
     "explanation": "",
     "flags": "",
@@ -1545,6 +2655,38 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.backup.picker_cancelled": {
+    "explanation": "Backups list message when the operator closed the Android file picker without choosing a place.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.picker_failed": {
+    "explanation": "Backups list message when writing the backup to the place chosen in the Android file picker failed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.picker_no_space": {
+    "explanation": "Backups list message when the place chosen in the Android file picker is full.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.picker_saved": {
+    "explanation": "Backups list message after the Android file picker saved the backup copy.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.backup.restart_now": {
@@ -1600,6 +2742,54 @@
       "main"
     ]
   },
+  "settings.backup.retention_days": {
+    "explanation": "Label of the number field: how many days of backups the till keeps.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.retention_failed": {
+    "explanation": "Error when the backup days setting could not be saved.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.retention_hint": {
+    "explanation": "Help under the backup days field: older backups are deleted automatically when the next one is made; the newest is always kept.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.retention_invalid": {
+    "explanation": "Error for a backup days value that is not a whole number in range.\n\nPlaceholders:\n- %d: the largest allowed number of days",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.retention_save": {
+    "explanation": "Button that saves the backup days setting.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.retention_saved": {
+    "explanation": "Confirmation shown after the backup days setting was saved.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.backup.safety_failed": {
     "explanation": "Error in Settings → Backups when the till could not snapshot the current data before a restore, so the restore was not staged.",
     "flags": "",
@@ -1615,6 +2805,38 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.backup.save_failed_permission": {
+    "explanation": "Backups list message when the till may not write to the destination folder.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.save_failed_picker_unavailable": {
+    "explanation": "Backups list message on Android when the app's file picker bridge is missing, so the backup could not be saved. Says what to do instead.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.save_failed_space": {
+    "explanation": "Backups list message when the copy could not be saved because the destination is full.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.backup.save_failed_unreachable": {
+    "explanation": "Backups list message when the destination folder (for example a USB drive) cannot be reached.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.backup.saved_to": {
@@ -2046,6 +3268,48 @@
       "0.34"
     ]
   },
+  "settings.cloud_staff.enable": {
+    "explanation": "Checkbox label that turns on sending per-staff sales figures to cloud reports for the whole shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.cloud_staff.help": {
+    "explanation": "Help text of the manager-only Settings card for per-staff sales in cloud reports: staff are identified by staff ID, never by name, and it is off by default.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.cloud_staff.title": {
+    "explanation": "Title of the manager-only Settings card that controls whether per-staff sales figures are sent to the shop's cloud reports.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.cloud_staff.window_note": {
+    "explanation": "Note above the Save button: changing the switch re-sends or clears per-staff figures for the last 14 days, while figures already sent for older days stay in the cloud reports.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.cloud_staff.works_council": {
+    "explanation": "Factual note under the checkbox: per-staff figures can show how individual staff work, and in Germany a works council may need to agree first. Keep the conditional wording (\"may need to agree\"); never turn it into \"must\" or claim the shop is compliant.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.currency.apply": {
     "explanation": "",
     "flags": "",
@@ -2080,6 +3344,46 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.currency_display.auto": {
+    "explanation": "Option in the currency display choice: the product picks symbol or code per currency.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.currency_display.code": {
+    "explanation": "Option in the currency display choice: always write the three-letter currency code (for example GBP).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.currency_display.help": {
+    "explanation": "Help line under the currency display choice; says what the three options do and that receipts fall back to the code when the printer cannot print the symbol.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.currency_display.symbol": {
+    "explanation": "Option in the currency display choice: always write the currency symbol (for example the pound sign).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.currency_display.title": {
+    "explanation": "Heading of the Settings card choice that sets how amounts write the shop currency (symbol, code or automatic).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.data.archive_date_col": {
@@ -3135,6 +4439,46 @@
       "0.34"
     ]
   },
+  "settings.display.awake": {
+    "explanation": "Label of the Android-only Settings > Display dropdown that sets how long the till keeps the tablet screen on without a touch.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.display.awake_help": {
+    "explanation": "Help line under the Android-only keep-screen-on dropdown.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.display.awake_hours": {
+    "explanation": "Option in the keep-screen-on dropdown: the screen may sleep after this many idle hours.\n\nPlaceholders:\n- %d: number of hours",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.display.awake_minutes": {
+    "explanation": "Option in the keep-screen-on dropdown: the screen may sleep after this many idle minutes.\n\nPlaceholders:\n- %d: number of minutes",
+    "flags": "placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.display.awake_never": {
+    "explanation": "Option in the keep-screen-on dropdown: the screen never sleeps while the till app is open.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.display.basket_panel_help": {
     "explanation": "",
     "flags": "",
@@ -3396,6 +4740,14 @@
       "0.34"
     ]
   },
+  "settings.display.f11_kiosk_locked": {
+    "explanation": "Status message shown in the alert strip when a manager presses F11 in the desktop app while the window is locked in kiosk mode; F11 never leaves kiosk, so it points to the Exit to OS window button in Settings.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.display.help": {
     "explanation": "",
     "flags": "",
@@ -3567,6 +4919,22 @@
       "0.34"
     ]
   },
+  "settings.display.window_mode_kiosk_help": {
+    "explanation": "Muted help line under the Window mode select in Settings → Display: says that in the desktop app Fullscreen and Kiosk work the same and that without the desktop app, or on macOS, the window stays normal, and that Kiosk is not the Self-order kiosk device profile.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.display.window_mode_kiosk_help_appliance": {
+    "explanation": "Muted help line under the Window mode select in Settings → Display, shown only on a screen-only Pi kiosk appliance: only Kiosk keeps the screen on, the other modes turn it off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.display.window_mode_label": {
     "explanation": "",
     "flags": "",
@@ -3622,20 +4990,18 @@
     ]
   },
   "settings.enrol.auto_register.help": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "settings.enrol.auto_register.label": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -3711,6 +5077,16 @@
       "0.34"
     ]
   },
+  "settings.enrol.claim_help_store": {
+    "explanation": "Help line above the Claim this store button on Google Play and App Store builds. Management wording only: no price, plan, buy or upgrade words.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.enrol.claim_open": {
     "explanation": "",
     "flags": "",
@@ -3729,6 +5105,26 @@
       "0.34"
     ]
   },
+  "settings.enrol.claim_store_code": {
+    "explanation": "Label before the claim code on Google Play and App Store builds, where the code is shown as plain text only (no link, no QR).",
+    "flags": "max-length:40",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.enrol.claim_store_how": {
+    "explanation": "Instruction under the claim code on Google Play and App Store builds: claim on another device. Management wording only: no price, plan, buy or upgrade words, no link.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.enrol.cloud_sync_off": {
     "explanation": "",
     "flags": "",
@@ -3738,6 +5134,16 @@
       "0.34"
     ]
   },
+  "settings.enrol.cloud_sync_off_store": {
+    "explanation": "Notice in Settings, Till registration on Google Play and App Store builds saying cloud sync is off. Status only: no plan, price or buy wording.",
+    "flags": "",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.enrol.device": {
     "explanation": "",
     "flags": "",
@@ -3745,6 +5151,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.enrol.device_live": {
+    "explanation": "Result of 'Register now' when the cloud refuses to register a till that was in use in the last 72 hours: it can reconnect from the date given.\n\nPlaceholders:\n- %s: date and time the till can reconnect",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.enrol.failed": {
@@ -3856,12 +5270,19 @@
     ]
   },
   "settings.enrol.pair_help": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
+    ]
+  },
+  "settings.enrol.pair_help_2": {
+    "explanation": "Explanation under the Pair with a shop heading in Settings → Till registration. The two quoted names are the exact button labels on my.universaltill.com (Pair a till / Pair again); translators should use the my. translations of those labels.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.enrol.pair_identity_pinned": {
@@ -3880,6 +5301,30 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.enrol.pair_replace_body": {
+    "explanation": "Body of that confirmation: what replacing the connection means and the risk of a wrong code; no compliance claims. 1st placeholder: the shop's name, or its store ID when no shop name is set; 2nd: the pairing code the operator typed, shown so a typo can be spotted. Keep both placeholders; the till wraps each in bidi isolates.\n\nPlaceholders:\n- %s: the shop's name, or its store ID when no shop name is set\n- %s: the pairing code the operator typed, shown so a typo can be spotted (keep as is)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.enrol.pair_replace_confirm": {
+    "explanation": "Primary (red) button of that confirmation; pairs this till with the code, replacing its current cloud connection (Cancel is common.cancel).",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.enrol.pair_replace_title": {
+    "explanation": "Heading of the confirmation shown after pressing Pair under Settings → Pair with a shop on a till that is already connected to a shop's cloud account.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.enrol.pair_replica_no_store": {
@@ -3918,6 +5363,14 @@
       "0.34"
     ]
   },
+  "settings.enrol.rate_limited": {
+    "explanation": "Result when the cloud rate-limits a registration or reconnect attempt (HTTP 429).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.enrol.registered": {
     "explanation": "",
     "flags": "",
@@ -3937,11 +5390,10 @@
     ]
   },
   "settings.enrol.retry": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -3986,7 +5438,7 @@
     ]
   },
   "settings.enrol.terms.accepted": {
-    "explanation": "Muted line in Settings and the setup wizard once the operator has accepted the current cloud service terms. 1st placeholder: the terms version (e.g. v0.1-draft, keep as is); 2nd: the date accepted (YYYY-MM-DD).\n\nPlaceholders:\n- %s: the terms version identifier, e.g. v0.1-draft\n- %s: the date the terms were accepted (YYYY-MM-DD)",
+    "explanation": "Muted line in Settings and the setup wizard once the operator has accepted the current Merchant Terms. 1st placeholder: the terms version (e.g. merchant-terms-v1.0, keep as is); 2nd: the date accepted (YYYY-MM-DD).\n\nPlaceholders:\n- %s: the terms version identifier, e.g. v0.1-draft\n- %s: the date the terms were accepted (YYYY-MM-DD)",
     "flags": "placeholders:\"%s\"",
     "labels": [
       "legal"
@@ -3997,7 +5449,7 @@
     ]
   },
   "settings.enrol.terms.label": {
-    "explanation": "Label of the checkbox the operator ticks to accept the Universal Till cloud service terms before the till registers with the cloud (consent wording: translate faithfully, do not soften or add claims).\n\nPlaceholders:\n- %s: the terms version identifier, e.g. v0.1-draft",
+    "explanation": "Label of the checkbox the operator ticks to accept the Universal Till Merchant Terms before the till registers with the cloud (consent wording: translate faithfully, do not soften or add claims).\n\nPlaceholders:\n- %s: the terms version identifier, e.g. v0.1-draft",
     "flags": "placeholders:\"%s\"",
     "labels": [
       "legal"
@@ -4067,6 +5519,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.enrol.update_needed": {
+    "explanation": "Result when the cloud asks for a key proof this build cannot make.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.error.change_on_main_till": {
@@ -4402,6 +5862,462 @@
       "0.34"
     ]
   },
+  "settings.move.approve": {
+    "explanation": "Primary button: approve moving this till into the other shop (asks for a PIN next).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.confirm_body": {
+    "explanation": "Body of that confirmation. Keep both placeholders; the till wraps each in bidi isolates.\n\nPlaceholders:\n- %s: the shop's name, or its store ID when no shop name is set\n- %s: the pairing code the operator typed, shown so a typo can be spotted (keep as is)",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.confirm_btn": {
+    "explanation": "Primary button of that confirmation: send the code and ask for the move.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.confirm_title": {
+    "explanation": "Heading of the confirmation after pressing Pair on a till that belongs to a shop, where pairing asks to move it.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.decline": {
+    "explanation": "Secondary button: decline the move (asks for a PIN next). Nothing moves.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.declined": {
+    "explanation": "After a declined move (or one already declined).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.done": {
+    "explanation": "Success after an approved move.\n\nPlaceholders:\n- %s: the name of the shop the till moved into",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.expires": {
+    "explanation": "Label before the date and time after which the move request expires and nothing moves.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.from": {
+    "explanation": "Label before the name of the shop this till belongs to now, on the move approval page.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.gone": {
+    "explanation": "Shown on the move page when the move is unknown or already ended.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.into": {
+    "explanation": "Label before the name of the shop the till would move into, on the move approval page.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.locked": {
+    "explanation": "After 3 wrong PINs on one move: it is declined automatically.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.name_mismatch": {
+    "explanation": "Error when the typed target shop name does not match; nothing was sent and no PIN was asked.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.notice_cancelled": {
+    "explanation": "Banner after the target owner cancelled a pending move.\n\nPlaceholders:\n- %s: the name of the shop the move was into",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.notice_expired": {
+    "explanation": "Banner after a pending move expired.\n\nPlaceholders:\n- %s: the name of the shop the move was into",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.notice_locked": {
+    "explanation": "Banner after a move was declined automatically for wrong PINs.\n\nPlaceholders:\n- %s: the name of the shop the move was into",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.notice_pending": {
+    "explanation": "Banner for managers/admins when a move waits for this till's approval.\n\nPlaceholders:\n- %s: the name of the shop asking to take the till\n- %s: the date and time the request expires",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.notice_review": {
+    "explanation": "Link in the move banner (and after pairing) that opens the approval page.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.offline": {
+    "explanation": "Shown when the cloud is out of reach: the decision cannot be sent; nothing is queued.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.pending_msg": {
+    "explanation": "After Pair: the cloud recorded the move; it waits for approval on this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused": {
+    "explanation": "Generic refusal of a move request (wrong code, server error...).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_currency": {
+    "explanation": "Move refused: currencies differ.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_declined_recently": {
+    "explanation": "Move refused: a recent decline blocks this requester for a day.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_fiscal_device": {
+    "explanation": "Move refused: the till's shop has a fiscal device (e.g. TSE). No compliance claims.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_needs_owner": {
+    "explanation": "Move refused: the code was made by a member, not the owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_other_owner": {
+    "explanation": "Move refused: the till's shop has a different owner.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_paid_licence": {
+    "explanation": "Move refused: the till's shop has a paid/granted plan.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_pending": {
+    "explanation": "Move refused: another move is already pending for this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_rate_limited": {
+    "explanation": "Move refused: rate limited.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_shop_has_tills": {
+    "explanation": "Move refused: the till's current shop has other tills.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_source_unavailable": {
+    "explanation": "Move refused: the till's current shop is unavailable (deleted or merging).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.refused_target_unavailable": {
+    "explanation": "Move refused: the target shop already has a main till, is merging, or is unavailable.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_cancelled": {
+    "explanation": "The target shop's owner cancelled the move on my.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_done": {
+    "explanation": "The cloud says the move already happened.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_error": {
+    "explanation": "Any other failure sending the decision.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_expired": {
+    "explanation": "The cloud says the move expired.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_failed": {
+    "explanation": "The cloud refused the move after approval (state changed) or moves are switched off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_invalid": {
+    "explanation": "Signature or credential refused by the cloud.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_key": {
+    "explanation": "Approval key conflict, missing or unusable on the till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.result_quarantined": {
+    "explanation": "The till's approval key was reported recently and is in its waiting period.\n\nPlaceholders:\n- %s: the date and time from which the till can approve",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.source_lost": {
+    "explanation": "Pair refused on the till: its old shop credential is dead and it has history; nothing changed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.summary_approve": {
+    "explanation": "What the PIN dialog says is being approved (approve a move).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.summary_decline": {
+    "explanation": "What the PIN dialog says is being approved (decline a move).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.title": {
+    "explanation": "Heading of the page where a manager or admin approves or declines moving this till (with its history) into another shop's cloud account.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.type_name": {
+    "explanation": "Label of the text field where the approver types the target shop's name (shown right after the label) before Approve works.",
+    "flags": "max-length:70",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.warning": {
+    "explanation": "Plain warning on the move approval page: what approving does (all history goes to the other account) and an anti-scam line. No compliance claims.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.move.who": {
+    "explanation": "Line under the warning: who decides (manager/admin PIN) and that selling continues meanwhile.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.error.invalid": {
+    "explanation": "Error shown after Save on My display when the submitted value is malformed or too long.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.error.replica_use_primary": {
+    "explanation": "Error shown after Save on My display when an additional till refuses the change.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.error.unknown_mode": {
+    "explanation": "Error shown after Save on My display when the chosen sale screen layout is not one of the offered layouts.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.error.unknown_theme": {
+    "explanation": "Error shown after Save on My display when the chosen theme is not installed on this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.intro": {
+    "explanation": "Intro paragraph on the My display page: a personal theme and layout apply to this operator only, on every till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.nav": {
+    "explanation": "Label of the session menu link to the My display page. Sits in a narrow top bar on phones, so keep it short.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.no_operator": {
+    "explanation": "Notice on My display when nobody is signed in, so there is no operator to save a choice for.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.replica_notice": {
+    "explanation": "Notice on My display on an additional till: the pickers are switched off because the choice is made on the main till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.theme_unavailable": {
+    "explanation": "Note under the theme picker on My display when the operator's saved theme has since been uninstalled.\n\nPlaceholders:\n- %s: key of the operator's saved theme",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.my_display.use_till_default": {
+    "explanation": "First option of the theme and layout pickers on My display: picking it clears the operator's own choice. The brackets show what the till currently uses.\n\nPlaceholders:\n- %s: name of the till's current theme or layout",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.nav.back": {
     "explanation": "",
     "flags": "",
@@ -4418,6 +6334,38 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.notices.enable": {
+    "explanation": "Checkbox label that switches Notices on for this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.notices.help": {
+    "explanation": "Help text of the Notices settings card: what it shows, that a notice never blocks a sale, off by default, and that turning it off removes held notices.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.notices.save": {
+    "explanation": "Save button of the Notices settings card.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.notices.title": {
+    "explanation": "Heading of the Settings card that switches Notices on or off for this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.order_no.help": {
@@ -4562,6 +6510,30 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.plugins.auto_installed_for": {
+    "explanation": "Small note on a plugin card in Settings > Plugins: the till installed this plugin by itself for the shop's country.\n\nPlaceholders:\n- %s: country name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.plugins.dismiss_tax_pending_confirm": {
+    "explanation": "Confirm dialog text when removing the automatically queued tax plugin before it has installed: says the install stops, each item's own tax rate applies to eat-in sales, and it is not queued again automatically.\n\nPlaceholders:\n- %s: plugin name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.plugins.uninstall_tax_confirm": {
+    "explanation": "Confirm dialog text when uninstalling the automatically installed tax plugin: says what changes (each item's own tax rate applies to eat-in sales) and that it is not reinstalled automatically.\n\nPlaceholders:\n- %s: plugin name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.printer.address": {
@@ -4879,6 +6851,14 @@
       "0.34"
     ]
   },
+  "settings.printer.system_unavailable": {
+    "explanation": "Warning under the Connection choice in Settings > Receipt printer, shown only while Regular printer (system) is picked on a till whose own device has no operating-system printer set up (e.g. a kiosk built from the till image). Says Regular printer cannot print there and to choose Network (IP) or USB device instead; ends with a help link. Advisory: saving is still allowed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.printer.test": {
     "explanation": "",
     "flags": "",
@@ -4913,6 +6893,102 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.printer.voucher_slip": {
+    "explanation": "Checkbox label in Settings > Receipt printer: when ticked, every gift voucher sold or topped up in a sale also prints on its own separate slip after the receipt.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.printer.voucher_slip_hint": {
+    "explanation": "Help line under the separate-gift-voucher-slip checkbox in Settings > Receipt printer: when it prints, what is on the slip (a top-up's slip adds the amount added and the new balance), and that voided vouchers and top-ups taken back get none.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.privacy.title": {
+    "explanation": "Title of the Settings card (and its sidebar row) holding the usage-facts switch and the registration notice. Must match the card name quoted in registration.notice.stop_hint (checkin-notice-v2): Settings > Privacy.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.registration.last_checkin": {
+    "explanation": "Line in the Settings Privacy card: when the cloud last answered this till. The placeholder is a date and time already formatted for the language.\n\nPlaceholders:\n- %s: the date and time of the last check-in, already formatted",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.registration.no_checkin": {
+    "explanation": "Line in the Settings Privacy card when the cloud has not answered this till yet.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.registration.resume_help": {
+    "explanation": "Help under the Send usage facts switch while it is off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.registration.send_usage_facts": {
+    "explanation": "Visible label of the switch in Settings, Privacy that stops (off) or resumes (on) this shop sending usage facts to Universal Till. Must match the name quoted in registration.notice.stop_hint (checkin-notice-v2).",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.registration.status.not_registered": {
+    "explanation": "Status line in the Settings Privacy card when the till has not registered yet; it registers itself when online, nothing to do.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.registration.status.paused": {
+    "explanation": "Status line in the Settings Privacy card when the shop switched off Send usage facts: the till sends no registration or change reports.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.registration.status.registered": {
+    "explanation": "Status line in the Settings Privacy card when the till is registered. Always read with an icon, never colour alone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.registration.stop_help": {
+    "explanation": "Help under the Send usage facts switch while it is on: what switching it off does and does not do.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.registration.title": {
+    "explanation": "Sub-heading, inside the Settings Privacy card, of the block showing whether this till is registered in the Universal Till cloud, with the notice and the Send usage facts switch.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.retention.capacity_advisory": {
@@ -5311,6 +7387,22 @@
       "0.34"
     ]
   },
+  "settings.staff_links.help": {
+    "explanation": "Muted line under the 'Users and permissions' card in Settings → Staff & security, introducing the links to the Users and Permissions pages.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.staff_links.title": {
+    "explanation": "Heading of the card in Settings → Staff & security that links to the Users page (staff accounts and PINs) and the Permissions page; also its entry in the settings sidebar.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.stock_tracking.hint": {
     "explanation": "",
     "flags": "",
@@ -5420,7 +7512,7 @@
     ]
   },
   "settings.telemetry.help": {
-    "explanation": "",
+    "explanation": "Help text of the Plugin telemetry settings card: what the periodic report contains (active plugins, versions, shop and device IDs), that no sales or customer data is sent, and that it is off by default.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -5471,6 +7563,182 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.till_registration.blocked_help": {
+    "explanation": "Second paragraph of the registration notice: how to reconnect sooner, by asking support, with the till's ID and key fingerprint shown below it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.blocked_soon": {
+    "explanation": "Notice on Settings > Till registration while the cloud refuses to register this till and no date is known.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.blocked_until": {
+    "explanation": "Notice on Settings > Till registration while the cloud refuses to register this till: when it can reconnect and that selling is unaffected.\n\nPlaceholders:\n- %s: date and time the till can reconnect",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.fingerprint": {
+    "explanation": "Label of this till's approval key fingerprint (32 characters in groups of four) on Settings > Till registration; support asks for it.",
+    "flags": "max-length:28",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.fingerprint_unavailable": {
+    "explanation": "Shown instead of the key fingerprint when this till's key cannot be read.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.key_refused": {
+    "explanation": "Result when the cloud refuses this till's key proof; support reads the device ID and fingerprint shown below this text.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.lockout_help": {
+    "explanation": "Help line under the lock-out notice: which of the two actions to try first.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.lockout_notice": {
+    "explanation": "Standing notice on Settings > Till registration when the cloud refuses this till's sign-in on an ownerless shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_btn": {
+    "explanation": "Quiet secondary button: leave the old shop and register this till as a new one (opens a confirmation).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_confirm": {
+    "explanation": "Body of the confirmation for Register as a new shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_hint": {
+    "explanation": "Line above the Register as a new shop button.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_key_later": {
+    "explanation": "Added to the new-shop success text when the plugin signing key fetch failed after registering.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_ok": {
+    "explanation": "Result after Register as a new shop succeeded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_pending": {
+    "explanation": "Result when the identity wipe of Register as a new shop ran but the registration failed; the till is in the ordinary not-registered state.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_title": {
+    "explanation": "Title of the confirmation for Register as a new shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.new_shop_yes": {
+    "explanation": "Confirm button of the Register as a new shop confirmation (danger styling).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.reconnect_btn": {
+    "explanation": "Button: re-register this till in its own shop, proving its approval key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.reconnect_failed": {
+    "explanation": "Result of Reconnect for a network or server failure.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.reconnect_ok": {
+    "explanation": "Result after a successful Reconnect this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.reconnect_unavailable": {
+    "explanation": "Result when Reconnect or Register as a new shop is refused because the till is a replica or has an environment-pinned identity.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.reconnecting": {
+    "explanation": "Shown next to the Reconnect button while the request runs.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.store_not_reusable": {
+    "explanation": "Result of Reconnect when the shop was claimed by an owner or removed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.tills.help": {
@@ -5698,6 +7966,102 @@
       "0.34"
     ]
   },
+  "settings.update.android.allow_body": {
+    "explanation": "Tells the manager what to do on Android's own 'install unknown apps' screen. The quoted switch names are Android's wording and may differ by device or language.",
+    "flags": "max-length:260",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.allow_granted": {
+    "explanation": "Shown after the manager came back from Android's settings with the install permission switched on.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.allow_later": {
+    "explanation": "Button that hides the install-permission panel; the update stays available.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.allow_open": {
+    "explanation": "Button that opens Android's 'install unknown apps' screen for this app.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.allow_still_denied": {
+    "explanation": "Shown after the manager came back from Android's settings and the install permission is still off.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.allow_title": {
+    "explanation": "Heading of the panel in Settings (Android till) shown when Android has not yet allowed this app to install its own updates.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.authorized": {
+    "explanation": "Short confirmation returned when a manager approves installing the Android update; the download starts next.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.banner_action": {
+    "explanation": "Button in the Android update banner on Settings that scrolls to the install controls.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.banner_body": {
+    "explanation": "Explains the Android update banner: current version, how long installing takes, and a warning to finish open sales first.\n\nPlaceholders:\n- %s: version number this till runs now, without a leading v",
+    "flags": "max-length:160, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.banner_title": {
+    "explanation": "Accessible name of the banner at the top of Settings on an Android till when a newer version can be installed.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.banner_version": {
+    "explanation": "Headline of the banner at the top of Settings on an Android till: a newer version exists.\n\nPlaceholders:\n- %s: version number of the update, without a leading v",
+    "flags": "max-length:40, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.busy": {
+    "explanation": "Android till: a manager tapped install while a sale, self-order or table order (possibly on another screen of this till) or a shift close is open; installing restarts the app and would lose it.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.update.android.confirm_version": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -5705,6 +8069,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.update.android.download_window": {
+    "explanation": "Muted line under the update time in Settings → Software update on a sideloaded Android main/standalone till with automatic updates on: the nightly window (the saved update time plus this till's own offset, 30 minutes long) in which the till downloads and verifies the new app version, only while the app is open on screen; it never installs by itself — a manager installs with a tap at any time no sale or order is open. Tells the manager: the window, that the app must be open on screen in it, and that installing is a manager's tap, never automatic.\n\nPlaceholders:\n- %s: start of this till's nightly download window, HH:MM, e.g. 03:07\n- %s: end of that window, HH:MM, e.g. 03:37",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.android.downloaded": {
+    "explanation": "Android till, status-bar chip and Settings → Software update: the update was downloaded overnight and checked; one tap opens Android's installer. Replaces the whole chip label, so keep 'Update'.\n\nPlaceholders:\n- %s: version number of the downloaded update, without a leading v",
+    "flags": "max-length:40, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.update.android.downloading": {
@@ -5732,6 +8112,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.update.android.install_now": {
+    "explanation": "Settings → Software update button label on an Android till once the update is already downloaded.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.update.android.installing": {
@@ -5833,6 +8221,62 @@
       "0.34"
     ]
   },
+  "settings.update.error.busy": {
+    "explanation": "Shown when Update now is pressed while another update is still being installed on this till.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.error.failed": {
+    "explanation": "Generic message when installing an update failed for any reason without a more specific message; the details go to the till's log.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.error.verify_failed": {
+    "explanation": "Shown when the downloaded update failed verification (its checksum did not match, or the release's signed checksum list did not verify), so nothing was installed.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.fleet_follow_hint": {
+    "explanation": "Muted line under the 'When additional tills update' dropdown: additional tills always install this (main) till's version and never run ahead of it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.fleet_follow_label": {
+    "explanation": "Label of the dropdown in Settings → Software update (main till only) that chooses when additional tills install the main till's version.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.fleet_follow_next_idle": {
+    "explanation": "Option in the 'When additional tills update' dropdown (the default): an additional till installs the main till's version as soon as it has no open sale.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.fleet_follow_nightly": {
+    "explanation": "Option in the 'When additional tills update' dropdown: an additional till installs the main till's version only at the main till's nightly update time.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.update.follows_main": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -5860,6 +8304,14 @@
       "0.34"
     ]
   },
+  "settings.update.follows_main_failed_nightly": {
+    "explanation": "Muted line on an additional till's Settings → Software update when its last automatic install of the main till's version failed and the shop updates additional tills at the nightly time, so it retries the next night.\n\nPlaceholders:\n- %s: the main till's version, e.g. v1.4.0\n- %s: start of this till's nightly install window, HH:MM\n- %s: end of that window, HH:MM",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.update.follows_main_manual": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -5867,6 +8319,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.update.follows_main_nightly_window": {
+    "explanation": "Second muted line on an additional till's Settings → Software update when the shop updates additional tills at the nightly time: the window in which THIS till starts its install (main till's update time plus this till's own offset, 30 minutes long). Follows the line saying this till follows the main till's version.\n\nPlaceholders:\n- %s: start of this till's nightly install window, HH:MM, e.g. 03:07\n- %s: end of that window, HH:MM, e.g. 03:37",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.update.follows_main_off": {
@@ -5968,6 +8428,14 @@
       "0.34"
     ]
   },
+  "subscription.banner.lapsed.fix_ios": {
+    "explanation": "iPhone/iPad app only, instead of subscription.banner.lapsed.fix: second line of the 'Paid features are paused' notice when the shop's subscription has ended. Says the till picks up an active subscription by itself and that Check now checks at once. Must not tell the reader to renew, pay or go anywhere to buy (App Store rules).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "subscription.banner.lapsed.fix_via_main": {
     "explanation": "",
     "flags": "",
@@ -5975,6 +8443,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "subscription.banner.lapsed.fix_via_main_ios": {
+    "explanation": "iPhone/iPad app only, instead of subscription.banner.lapsed.fix_via_main: the same notice on a till registered through its main till, so Check now is pressed on the main till. Must not tell the reader to renew, pay or go anywhere to buy (App Store rules).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "subscription.banner.lapsed.title": {
@@ -6136,6 +8612,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "subscription.check_result.still_lapsed_ios": {
+    "explanation": "iPhone/iPad app only, instead of subscription.check_result.still_lapsed: one-line result of Check now when the cloud answered that the subscription is still not active. Must not mention paying or renewing (App Store rules).",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "subscription.chip.lapsed": {

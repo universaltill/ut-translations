@@ -1,6 +1,7 @@
 """The sync workflow's security shape (ut-docs#4367, Option A): it opens a
 PR from a bot branch and enables auto-merge only after the path gate; it
-never pushes to main; its token is the narrowest that can do that."""
+never pushes to main; its token is the narrowest that can do that. It also
+syncs the website surface (ADR-0177; ut-docs#5405) through the same gate."""
 
 import os
 import re
@@ -60,11 +61,14 @@ class SyncWorkflow(unittest.TestCase):
 
     def test_gate_diff_base_is_the_checked_out_tip_not_a_refetch(self):
         gate = self.step("Path gate")
-        self.assertIn("HEAD^", gate)
         self.assertNotIn("git fetch", gate)
-        # the sync is exactly one commit on top of the checked-out main
-        self.assertIn('[ "$(git rev-parse HEAD^)" = "$(git rev-parse origin/main)" ]', gate)
-        self.assertIn('git diff --raw -z --no-renames HEAD^ HEAD', gate)
+        # the sync is a short linear run (till + website) on top of the
+        # checked-out main tip, no merge commits
+        self.assertIn("git merge-base --is-ancestor origin/main HEAD", gate)
+        self.assertIn("git rev-list --merges origin/main..HEAD", gate)
+        self.assertIn("git rev-list --count origin/main..HEAD", gate)
+        self.assertIn('git diff --raw -z --no-renames origin/main HEAD', gate)
+        self.assertNotIn("HEAD^", gate)
 
     def test_code_dirs_must_be_identical_to_main_before_the_gate(self):
         i = self.runs.index("git diff --quiet origin/main HEAD -- tools .github scripts config")
@@ -73,7 +77,10 @@ class SyncWorkflow(unittest.TestCase):
 
     def test_the_gate_cannot_be_bypassed(self):
         gate = self.step("Path gate")
-        self.assertNotIn("continue-on-error", self.text)
+        # continue-on-error only on the website surface step (one surface never
+        # blocks the till sync); the till sync, the gate and the PR step have none.
+        self.assertEqual(self.text.count("continue-on-error"), 1)
+        self.assertIn("continue-on-error", self.step("Sync English from ut-website"))
         self.assertNotRegex(self.text, r"(?m)^\s*if: always\(\)")
         self.assertNotRegex(self.text, r"(?m)^\s*if:[^\n]*(always|failure|cancelled)\(\)")
         # the refusal path exits non-zero and never 0
@@ -82,7 +89,9 @@ class SyncWorkflow(unittest.TestCase):
         self.assertIn("set -euo pipefail", gate)
         # the PR step runs only when the sync changed something, behind the gate
         pr = self.step("Open the PR")
-        self.assertEqual(self.text.count("if: steps.sync.outputs.changed == 'true'"), 2)
+        both = "if: steps.sync.outputs.changed == 'true' || steps.sync_website.outputs.changed == 'true'"
+        self.assertEqual(self.text.count(both), 2)
+        self.assertIn(both, self.step("Path gate"))
         self.assertNotIn("always()", pr)
 
     def test_auto_merge_and_ci_dispatch(self):
@@ -175,6 +184,30 @@ class PathsCheckAndBotAllowance(unittest.TestCase):
         guard = read(os.path.join(ROOT, "scripts", "ci", "guard-commit-attribution.sh"))
         self.assertIn('"${GITHUB_EVENT_NAME:-}" = "workflow_dispatch"', guard)
         self.assertIn('"${ALLOW_ACTIONS_BOT:-}" = "true"', guard)
+
+
+class SyncWorkflowSurfaces(unittest.TestCase):
+    def setUp(self):
+        self.text = read(os.path.join(WFDIR, "sync-english.yml"))
+
+    def test_website_surface_is_synced(self):
+        self.assertIn("tools/sync_english.py --surface website", self.text)
+
+    def test_gate_and_pr_run_when_either_sync_changed(self):
+        self.assertIn("steps.sync_website.outputs.changed == 'true'", self.text)
+        self.assertIn("steps.sync.outputs.changed == 'true'", self.text)
+
+    def test_gate_knows_surface_components_from_main(self):
+        self.assertIn("git show origin/main:config/surfaces.json", self.text)
+        self.assertIn("--surfaces-file", self.text)
+        self.assertIn("--main-ref origin/main", self.text)
+        paths = jobs(read(os.path.join(WFDIR, "test.yml")))["paths"]
+        self.assertIn("git show origin/main:config/surfaces.json", paths)
+        self.assertIn("--surfaces-file", paths)
+
+    def test_still_secret_free(self):
+        code = "\n".join(l for l in self.text.splitlines() if not l.lstrip().startswith("#"))
+        self.assertNotIn("secrets.", code)
 
 
 if __name__ == "__main__":

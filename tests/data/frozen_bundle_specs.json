@@ -1,0 +1,44 @@
+{
+ "en": {
+  "weblate": "en",
+  "name": "English",
+  "script": "Latn",
+  "human_spot_check": true,
+  "source": true
+ },
+ "de": {
+  "weblate": "de",
+  "name": "German (Deutsch)",
+  "script": "Latn",
+  "human_spot_check": true,
+  "min_coverage": 0.95
+ },
+ "tr": {
+  "weblate": "tr",
+  "name": "Turkish (Türkçe)",
+  "script": "Latn",
+  "human_spot_check": true
+ },
+ "es": {
+  "weblate": "es",
+  "name": "Spanish (Español)",
+  "script": "Latn",
+  "min_coverage": 0.95
+ },
+ "pt": {
+  "weblate": "pt",
+  "name": "Portuguese (Português)",
+  "script": "Latn",
+  "min_coverage": 0.95
+ },
+ "ar": {
+  "weblate": "ar",
+  "name": "Arabic (العربية)",
+  "script": "Arab"
+ },
+ "fa": {
+  "weblate": "fa",
+  "name": "Persian (فارسی)",
+  "script": "Arab"
+ }
+}

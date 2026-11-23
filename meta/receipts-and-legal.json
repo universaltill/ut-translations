@@ -1561,6 +1561,14 @@
       "0.34"
     ]
   },
+  "receipt.order_no_label": {
+    "explanation": "Small label above the large order number on the on-screen receipt and, on the thermal receipt, on its own line above the double-size number (80 mm paper: 42 columns). The number itself is printed separately; do not include it.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "receipt.paper.device.issued_at": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -1803,6 +1811,22 @@
       "0.34"
     ]
   },
+  "receipt.printer.ask_manager": {
+    "explanation": "Shown instead of the link \"Set up a receipt printer\" when the signed-in staff member can't open Settings (for example a cashier). Full sentence.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "receipt.printer.nothing_printed": {
+    "explanation": "Inline notice on a kiosk till whose screen can't open a print dialog, shown when a Print button didn't print. True whether no printer is set up or the set-up printer is off or unplugged. Don't say \"no printer\", and don't say the document was saved or sent. A link \"Set up a receipt printer\", or \"Ask a manager...\", follows.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "receipt.printer.retry": {
     "explanation": "",
     "flags": "",
@@ -1812,6 +1836,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "receipt.printer.set_up": {
+    "explanation": "Link label to Settings > Receipt printer: on the receipt warning, the print notice and the gift voucher page of a kiosk till that can't open a print dialog. Verb phrase on a button-sized link; keep it short.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "receipt.printer.unavailable": {
@@ -1880,6 +1912,16 @@
       "0.34"
     ]
   },
+  "receipt.vouchers.balance_on_label": {
+    "explanation": "Left part of the balance row on a gift-voucher slip printed again from the voucher's page, shown when the voucher's current balance differs from its original value; the amount is printed right-aligned on the same row by the printer layout, so do not include it. The placeholder is the date the balance was read (the day the slip is printed, about 10 characters) and may be reordered (%[1]s). Printed on 58/80 mm paper: the whole row is 42 columns wide, so keep the label short.\n\nPlaceholders:\n- %s: date the balance was read (the day the slip is printed)",
+    "flags": "max-length:22, placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "receipt.vouchers.issued": {
     "explanation": "",
     "flags": "",
@@ -1891,6 +1933,16 @@
       "0.34"
     ]
   },
+  "receipt.vouchers.issued_on": {
+    "explanation": "Printed on a gift voucher slip under the code: the date the voucher was sold. Printed on 58/80 mm paper.\n\nPlaceholders:\n- %s: date the voucher was issued",
+    "flags": "max-length:42, placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
+    ]
+  },
   "receipt.vouchers.new_balance": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -1900,6 +1952,16 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "receipt.vouchers.reprinted": {
+    "explanation": "Printed on a gift-voucher slip printed again from the voucher's page, so it can be told from the slip handed over at the sale. Printed on 58/80 mm paper.\n\nPlaceholders:\n- %s: date the slip was reprinted",
+    "flags": "max-length:42, placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
     ]
   },
   "receipt.vouchers.top_up": {
@@ -1922,6 +1984,16 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "receipt.vouchers.topped_up_on": {
+    "explanation": "Printed on a gift voucher top-up slip under the code: the date this amount was added to the voucher. Printed on 58/80 mm paper.\n\nPlaceholders:\n- %s: date of this top-up",
+    "flags": "max-length:42, placeholders:\"%s\"",
+    "labels": [
+      "legal"
+    ],
+    "lines": [
+      "main"
     ]
   },
   "receipt.vouchers.void": {

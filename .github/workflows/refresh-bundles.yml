@@ -1,0 +1,118 @@
+# Keep the published language bundles in step with Weblate (ADR-0160 §5;
+# ut-docs#5479).
+#
+# Daily (and by hand): `plan` compares each Weblate language's last change
+# with the version date of its published bundle (tools/bundle_refresh.py;
+# public reads only, no secret) and lists the stale ones in the job log.
+# Nothing is published unless the owner opts a language in: the repository
+# variable BUNDLE_AUTO_PUBLISH (comma separated Weblate codes, e.g.
+# "fa,ar,fr") names the languages this workflow may rebuild. For those only,
+# `dispatch` starts publish-bundle (publish ticked) on main. That workflow
+# is unchanged and holds every control: the review gate (approved strings
+# only, legal/money strings need a human approval, the rest falls back to
+# English), min_coverage, the compliance scans, and for en/de/tr the required
+# reviewer of the bundle-publish-human environment. This file never sees the
+# Weblate or marketplace tokens and cannot approve anything.
+#
+# Fan-out (ut-docs#5559): `dispatch` runs one language at a time and waits
+# DISPATCH_GAP seconds after each start, so the publish runs do not all read
+# our own Weblate server in the same second (it timed out under that load).
+# max-parallel alone is not enough: `gh workflow run` returns in about 1 s.
+# Weblate reads are retried too (tools/http_retry.py). The per-language
+# concurrency group in publish-bundle.yml is deliberately not shared.
+#
+# Pending runs (ut-docs#6114): GitHub keeps one pending run per concurrency
+# group, so dispatching a language whose publish run is still queued, running
+# or waiting for the bundle-publish-human approval would cancel the previous
+# day's pending run and pile up cancelled runs. `dispatch` first lists the
+# active publish-bundle runs and skips a language that has one, with a
+# ::notice:: naming that run (an approval is due). It matches the run title
+# "publish-bundle <locale> ..." (publish-bundle.yml run-name); runs started
+# before that run-name existed are titled "publish-bundle" and are not matched.
+#
+# Least privilege: no workflow-level permissions; `plan` reads nothing from
+# the repo but its own tools; `dispatch` gets actions: write (to list and
+# start publish runs; write includes read) and nothing else. GitHub-hosted runners (public repo).
+
+name: refresh-bundles
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: refresh-bundles
+  cancel-in-progress: false
+
+jobs:
+  plan:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    # Two or more public reads, each retried (tools/http_retry.py: up to
+    # 155 s per read), so 5 minutes was too tight.
+    timeout-minutes: 10
+    permissions:
+      contents: read
+    outputs:
+      dispatch: ${{ steps.plan.outputs.dispatch }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Which bundles are behind Weblate
+        id: plan
+        env:
+          WEBLATE_URL: ${{ vars.WEBLATE_URL }}
+          BUNDLE_AUTO_PUBLISH: ${{ vars.BUNDLE_AUTO_PUBLISH }}
+        run: |
+          set -euo pipefail
+          python3 tools/bundle_refresh.py >> "$GITHUB_OUTPUT"
+
+  dispatch:
+    needs: plan
+    if: needs.plan.outputs.dispatch != '[]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: write
+    env:
+      DISPATCH_GAP: "120"
+    strategy:
+      fail-fast: false
+      max-parallel: 1
+      matrix:
+        locale: ${{ fromJSON(needs.plan.outputs.dispatch) }}
+    steps:
+      - name: Start publish-bundle for ${{ matrix.locale }}
+        env:
+          GH_TOKEN: ${{ github.token }}
+          LOCALE: ${{ matrix.locale }}
+          REPO: ${{ github.repository }}
+        run: |
+          set -euo pipefail
+          [[ "$LOCALE" =~ ^[a-z]{2,3}(_[A-Za-z0-9]{2,8})?$ ]] || { echo "::error::not a Weblate language code"; exit 1; }
+          # A publish run for this language still queued, running or waiting
+          # for approval holds its concurrency group: dispatching again would
+          # only cancel the pending one (ut-docs#6114). Skip it, and say so.
+          # One list per active status: an unfiltered newest-first list would
+          # let a run that has waited for weeks scroll past the limit.
+          runs=$(for st in requested waiting pending queued in_progress; do
+            gh run list --repo "$REPO" --workflow publish-bundle.yml --status "$st" --limit 100 --json databaseId,status,displayTitle,url
+          done | jq -s 'add')
+          active=$(jq -r --arg t "publish-bundle $LOCALE" '
+            [.[] | select(.status as $s | ["requested","waiting","pending","queued","in_progress"] | index($s))
+                 | select(.displayTitle == $t or (.displayTitle | startswith($t + " ")))]
+            | first | .url // empty' <<<"$runs")
+          if [[ -n "$active" ]]; then
+            echo "::notice::publish-bundle for $LOCALE is still queued, running or waiting for approval: $active. Not dispatched again; approve or reject that run."
+            exit 0
+          fi
+          gh workflow run publish-bundle.yml --repo "$REPO" --ref main -f locale="$LOCALE" -f channel=stable -f publish=true
+          # `gh workflow run` returns in about a second, so max-parallel alone
+          # would still start every publish run at once. Space the dispatches
+          # a fixed ~2 min apart so the validates rarely overlap.
+          sleep "$DISPATCH_GAP"

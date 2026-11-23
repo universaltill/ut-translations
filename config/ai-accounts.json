@@ -1,4 +1,32 @@
 {
   "note": "Weblate service accounts that are AI translators or reviewers (ADR-0160 §1, §4, §10). Each account is tied to one named model. The bundle export uses this to enforce 'an AI-written string needs a reviewer on a different model, or a human': an approval where author and approver are both AI on the same model, or either is a Weblate bot account not listed here, is omitted. Nothing here grants access; Weblate does. Filled in by ut-docs#4366, under CODEOWNERS.",
-  "accounts": {}
+  "accounts": {
+    "bot-universal-till-ai-reviewer-codex": {
+      "model": "codex",
+      "role": "reviewer",
+      "note": "Weblate bot (user id 12). Reviews and approves; never approves legal keys (a human-reviewers member does). The model label is the family; a future translator account must name a different model (ut-docs#4366)."
+    },
+    "bot-universal-till-ai-reviewer-gemini": {
+      "model": "gemini",
+      "role": "reviewer",
+      "keychain": "weblate-gemini-reviewer",
+      "token_env": "WEBLATE_GEMINI_REVIEWER_TOKEN",
+      "note": "Weblate bot for the Gemini reviewer (ut-docs#5532, owner-approved 2026-11-04). A third family beside claude and codex. Reviews and approves strings written by another family; never approves legal, money, tax or receipt keys (a human does); can only escalate, never edits text. The Weblate user must be created before it is used; its token is Keychain weblate-gemini-reviewer."
+    },
+    "bot-universal-till-bootstrap-approver": {
+      "model": "owner-bootstrap",
+      "role": "reviewer",
+      "note": "Weblate bot. NOT an AI review: the owner directed (2026-10-29, ut-docs#4371) that the imported de/es/pt/tr strings are accepted as they are so the bundles can ship, to be re-reviewed later. Approves only strings whose author is a human or the import; never legal keys (a human-reviewers member other than the author does). Retire when the re-review is done."
+    },
+    "bot-universal-till-ai-translator-local": {
+      "model": "local-ollama",
+      "role": "translator",
+      "note": "Weblate bot that saves machine translations made by a local Ollama model through tools/bulk_locale.py (ut-docs#4371). Never approves. Its strings are approved by a different account (the codex reviewer, or the bootstrap approver while the re-review is pending)."
+    },
+    "bot-universal-till-ai-translator-claude": {
+      "model": "claude",
+      "role": "translator",
+      "note": "Weblate bot for translations drafted by Claude. Never approves; its strings are approved by a different model (the codex reviewer) or a human (ut-docs#4366). The Weblate user must be created before it is used."
+    }
+  }
 }

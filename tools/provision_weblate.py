@@ -15,6 +15,10 @@ nothing changed makes no write call.
             source string, from meta/<area>.json. Other labels people put on
             a string are kept.
 
+            Surfaces (config/surfaces.json, ADR-0177) get one component each
+            the same way, once their `<component>/en.json` has been synced;
+            before that they are skipped.
+
 A component Weblate hasn't finished importing yet has no units; it is listed
 as pending and the next run fills it in.
 
@@ -34,13 +38,16 @@ import argparse
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.parse
 import urllib.request
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+import http_retry  # noqa: E402
 import i18n_map  # noqa: E402
+import surfaces as surfaces_mod  # noqa: E402
 
 DEFAULT_PROJECT = "universal-till"
 DEFAULT_REPO_URL = "https://github.com/universaltill/ut-translations.git"
@@ -72,7 +79,8 @@ class _RefuseRedirects(urllib.request.HTTPRedirectHandler):
 
 
 class WeblateClient:
-    def __init__(self, base_url, token, timeout=30):
+    def __init__(self, base_url, token, timeout=30, sleep=time.sleep,
+                 read_tries=http_retry.MAX_TRIES):
         if not token:
             raise WeblateError("WEBLATE_TOKEN is empty")
         u = urllib.parse.urlparse(base_url)
@@ -82,6 +90,8 @@ class WeblateClient:
         self._origin = (u.scheme, u.netloc)
         self._token = token
         self.timeout = timeout
+        self.sleep = sleep
+        self.read_tries = read_tries  # callers with their own 429 loop pass 1
         self._opener = urllib.request.build_opener(_RefuseRedirects)
 
     def _url(self, path):
@@ -109,10 +119,17 @@ class WeblateClient:
         req.add_header("Accept", "application/json")
         if data is not None:
             req.add_header("Content-Type", "application/json")
-        try:
+        def attempt():
             with self._opener.open(req, timeout=self.timeout) as r:
                 raw = r.read()
                 return r.status, (json.loads(raw) if raw else None)
+
+        try:
+            # Only a GET is idempotent: a write is attempted exactly once.
+            # The log names the method and path only: no host, no query string.
+            what = f"{method} {urllib.parse.urlsplit(path).path}"
+            return http_retry.call(attempt, what=what, sleep=self.sleep,
+                                   max_tries=self.read_tries if method == "GET" else 1)
         except urllib.error.HTTPError as e:
             with e:
                 detail = e.read().decode(errors="replace")[:500]
@@ -331,6 +348,28 @@ class Provisioner:
                 self.write("PATCH", f"/api/units/{unit['id']}/", diff,
                            f"update {area}:{key}: {', '.join(sorted(diff))}")
 
+    def provision_surfaces(self, areas):
+        """One component per surface in config/surfaces.json (ADR-0177 §1),
+        built exactly like an area's. A surface whose source repo hasn't been
+        synced yet (`sync_english.py --surface`) has no template to import, so
+        it is skipped until it has one."""
+        try:
+            surfaces = surfaces_mod.load(self.repo)
+        except surfaces_mod.SurfaceError as e:
+            raise WeblateError(str(e)) from None
+        for name, sp in surfaces.items():
+            comp = sp["component"]
+            if comp in areas:
+                raise WeblateError(f"surface {name!r}: component {comp!r} is a till area")
+            if not (os.path.isfile(os.path.join(self.repo, comp, "en.json"))
+                    and os.path.isfile(os.path.join(self.repo, "meta", f"{comp}.json"))):
+                self.r.log(f"skip {comp}: surface {name!r} not synced yet "
+                           f"(run sync_english.py --surface {name})")
+                continue
+            created = self.ensure_component(comp, sp["name"])
+            self.ensure_addon(comp)
+            self.ensure_units(comp, created)
+
     def run(self):
         areas = self.load("meta/areas.json")
         for area in areas:
@@ -347,6 +386,7 @@ class Provisioner:
             created = self.ensure_component(area, areas[area]["name"])
             self.ensure_addon(area)
             self.ensure_units(area, created)
+        self.provision_surfaces(areas)
         self.r.log(f"done: {self.r.writes} write(s), {len(self.r.pending)} component(s) pending import")
         return self.r
 

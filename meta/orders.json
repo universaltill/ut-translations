@@ -1,4 +1,188 @@
 {
+  "channel_orders.action.accept": {
+    "explanation": "Button on an online order: accept the order for the shop.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.action.cancel": {
+    "explanation": "Button on an online order: open the form to cancel the order. The ellipsis means a form opens first.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.action.pack": {
+    "explanation": "Button on an online order: record that the order is packed.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.action.pick": {
+    "explanation": "Button on an online order: record that the items were picked from the shelves.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.action.ship": {
+    "explanation": "Button on an online order: open the form to ship the order with a carrier. The ellipsis means a form opens first.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.actions.heading": {
+    "explanation": "Heading of the block of buttons on an online order that accept, pack, ship or cancel it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.blocked.count": {
+    "explanation": "Label in front of the number of actions the cloud refused to take from this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.blocked.device_credential_required": {
+    "explanation": "Banner: the till has no credential of its own and must be paired again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.blocked.dismiss_all": {
+    "explanation": "Button that removes all the actions the cloud refused to take, on every order.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.blocked.generic": {
+    "explanation": "Banner for any other refusal that blocks the till's actions.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.blocked.main_till_required": {
+    "explanation": "Banner: the cloud refused because this till is not the main till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.blocked.store_mismatch": {
+    "explanation": "Banner: the cloud refused because the till is linked to another shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.cancel.keep": {
+    "explanation": "Button in the cancel form that closes it without cancelling. Deliberately not 'Cancel', which staff would misread.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.cancel.reason": {
+    "explanation": "Field label in the cancel form: why the order is cancelled.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.cancel.reason.choose": {
+    "explanation": "First, empty option of the cancel reason list. The reason is sent to the online shop, so there is no default.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.cancel.reason.customer_request": {
+    "explanation": "Cancel reason: the customer asked for it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.cancel.reason.fraud": {
+    "explanation": "Cancel reason: the order looks fraudulent.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.cancel.reason.other": {
+    "explanation": "Cancel reason: none of the others applies.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.cancel.reason.out_of_stock": {
+    "explanation": "Cancel reason: the shop cannot supply the items.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.cancel.restock": {
+    "explanation": "Checkbox in the cancel form (ticked by default): the order's items go back into this till's stock when the online shop confirms the cancel.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.cancel.restock_hint": {
+    "explanation": "Hint under the restock checkbox.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.cancel.submit": {
+    "explanation": "Confirm button of the cancel form (destructive).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.cancel.warning": {
+    "explanation": "Warning at the top of the cancel form.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "channel_orders.col.channel": {
     "explanation": "Column heading: the sales channel (web shop or marketplace) the order came from.",
     "flags": "",
@@ -54,11 +238,10 @@
     ]
   },
   "channel_orders.detail.actions_note": {
-    "explanation": "Note under an online order: where status actions are taken. my.universaltill.com is a web address; keep it.",
+    "explanation": "Note under an online order: where status actions are taken. my.universaltill.com is a web address; keep it.\n\nOnly used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -69,6 +252,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "channel_orders.detail.col.discount": {
+    "explanation": "Column heading on an online order: the discount the customer got on this line, for all its units together (not per unit). Empty when the line had none.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "channel_orders.detail.col.item": {
@@ -152,6 +343,38 @@
       "0.34"
     ]
   },
+  "channel_orders.detail.items_subtotal": {
+    "explanation": "Label in an online order's totals: the lines' quantity x unit price added up, before any discount. Shown only when the order has a discount.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.detail.line_discounts": {
+    "explanation": "Label in an online order's totals: the sum of the discounts on its lines. Shown apart from \"Order discount\", which is a discount not tied to one line.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.detail.no_actions_note": {
+    "explanation": "Muted note shown instead of the action buttons on an additional till, for staff without stock rights, or on a till not linked to the cloud.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.detail.offline_note": {
+    "explanation": "Muted note under the action buttons: they work offline.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "channel_orders.detail.payment": {
     "explanation": "Label: the payment state the channel reports.",
     "flags": "",
@@ -215,6 +438,14 @@
       "0.34"
     ]
   },
+  "channel_orders.dismiss": {
+    "explanation": "Button that removes a notice about an action's outcome.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "channel_orders.empty": {
     "explanation": "Empty state of the Online orders list.",
     "flags": "",
@@ -222,6 +453,38 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "channel_orders.error.action_not_allowed": {
+    "explanation": "Error above the buttons when the tapped step is no longer possible for the order.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.error.actions_not_here": {
+    "explanation": "Error when an action is attempted on a till that is not the main till, or is not linked to the cloud.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.error.carrier_invalid": {
+    "explanation": "Field error in the ship form: the carrier is too long or has control characters.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.error.carrier_required": {
+    "explanation": "Field error in the ship form: the carrier is empty.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "channel_orders.error.load_failed": {
@@ -242,13 +505,100 @@
       "0.34"
     ]
   },
-  "channel_orders.intro": {
-    "explanation": "Intro line above the Online orders list. Explains these are not till sales. my.universaltill.com is a web address; keep it.",
+  "channel_orders.error.reason_invalid": {
+    "explanation": "Field error in the cancel form: no reason chosen.",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
+      "main"
+    ]
+  },
+  "channel_orders.error.save_failed": {
+    "explanation": "Error above the buttons when saving an action on the till failed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.error.tracking_number_invalid": {
+    "explanation": "Field error in the ship form: the tracking number has characters the online shops do not take. The characters - . _ / are literal.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.error.tracking_url_invalid": {
+    "explanation": "Field error in the ship form: the tracking link is not an https:// web address. https:// is literal.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.intro": {
+    "explanation": "Intro line above the Online orders list. Explains these are not till sales. my.universaltill.com is a web address; keep it.\n\nOnly used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
+    "flags": "",
+    "labels": [],
+    "lines": [
       "0.34"
+    ]
+  },
+  "channel_orders.intro_actions": {
+    "explanation": "Intro line above the Online orders list. Explains these are not till sales and that the main till (or my.universaltill.com) can accept, ship or cancel them. my.universaltill.com is a web address; keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.note.writeback_skipped": {
+    "explanation": "Notice after a ship or cancel the cloud accepted but the channel cannot receive: staff must repeat it in the channel's own admin.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.outcome.accept": {
+    "explanation": "Names the action in the notice about its outcome and on its Dismiss button (screen readers). The same action as the button, without the ellipsis.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.outcome.cancel": {
+    "explanation": "Names the action in the notice about its outcome and on its Dismiss button (screen readers). The same action as the button, without the ellipsis.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.outcome.pack": {
+    "explanation": "Names the action in the notice about its outcome and on its Dismiss button (screen readers). The same action as the button, without the ellipsis.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.outcome.pick": {
+    "explanation": "Names the action in the notice about its outcome and on its Dismiss button (screen readers). The same action as the button, without the ellipsis.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.outcome.ship": {
+    "explanation": "Names the action in the notice about its outcome and on its Dismiss button (screen readers). The same action as the button, without the ellipsis.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "channel_orders.payment.authorized": {
@@ -303,6 +653,206 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "channel_orders.pending.hint": {
+    "explanation": "Muted line under the chips of actions waiting to be sent.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.pending_short.accept": {
+    "explanation": "Short status chip on an online order (list and detail): this action is saved on the till but the online shop has not been told yet. Sits in a chip that does not wrap, so keep it short.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.pending_short.cancel": {
+    "explanation": "Short status chip on an online order (list and detail): this action is saved on the till but the online shop has not been told yet. Sits in a chip that does not wrap, so keep it short.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.pending_short.pack": {
+    "explanation": "Short status chip on an online order (list and detail): this action is saved on the till but the online shop has not been told yet. Sits in a chip that does not wrap, so keep it short.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.pending_short.pick": {
+    "explanation": "Short status chip on an online order (list and detail): this action is saved on the till but the online shop has not been told yet. Sits in a chip that does not wrap, so keep it short.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.pending_short.ship": {
+    "explanation": "Short status chip on an online order (list and detail): this action is saved on the till but the online shop has not been told yet. Sits in a chip that does not wrap, so keep it short.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.queued.tracking_number": {
+    "explanation": "Label next to the tracking number of a queued ship action (read-only, no 'optional').",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.queued.tracking_url": {
+    "explanation": "Label next to the tracking link of a queued ship action (read-only, shown as text, no 'optional').",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.refused.already_shipped": {
+    "explanation": "Refusal reason: cancel or ship after the order shipped.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.refused.connection_revoked": {
+    "explanation": "Refusal reason: the channel connection was removed. my.universaltill.com is a web address; keep it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.refused.generic": {
+    "explanation": "Refusal reason for any reason code this till does not know.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.refused.invalid_action": {
+    "explanation": "Refusal reason: the shipment or cancel details broke a rule.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.refused.invalid_transition": {
+    "explanation": "Refusal reason: picking, packing or shipping before accepting.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.refused.order_cancelled": {
+    "explanation": "Refusal reason: the order is already cancelled.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.refused.order_changed": {
+    "explanation": "Refusal reason: the order's content changed before the cancel reached the shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.refused.order_refunded": {
+    "explanation": "Refusal reason: the order is already refunded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.refused.plan_required": {
+    "explanation": "Refusal reason: the subscription plan does not cover this sales channel.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.refused.stale": {
+    "explanation": "Refusal reason: the action was queued for more than 30 days.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.refused.title": {
+    "explanation": "Start of the notice about a refused action; followed by the action's name and the reason.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.refused.unknown_order": {
+    "explanation": "Refusal reason: the order id is unknown to the cloud.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.refused_short": {
+    "explanation": "Short chip in the Online orders list: the online shop refused an action on this order and the refusal has not been dismissed. Sits in a chip that does not wrap.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.ship.carrier": {
+    "explanation": "Field label in the ship form: the delivery company, typed by staff (for example a postal service).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.ship.submit": {
+    "explanation": "Confirm button of the ship form.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.ship.tracking_number": {
+    "explanation": "Field label in the ship form: the carrier's parcel tracking number. May be left empty.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.ship.tracking_url": {
+    "explanation": "Field label in the ship form: a web link (https://...) where the customer can follow the parcel. May be left empty.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "channel_orders.status.accepted": {
@@ -602,6 +1152,14 @@
       "0.34"
     ]
   },
+  "kitchenstations.deactivate_confirm": {
+    "explanation": "Confirmation shown before a station is deactivated from its dialog; says orders stop and station-only routes fall back to the default kitchen printer.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "kitchenstations.destination.both": {
     "explanation": "",
     "flags": "",
@@ -699,6 +1257,30 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "kitchenstations.discover.used": {
+    "explanation": "Confirmation shown under Find printers after the operator taps Use this address on a discovered printer; the address field is filled but not yet saved.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "kitchenstations.edit": {
+    "explanation": "Title of the Kitchen stations record dialog when an existing station is opened for editing.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "kitchenstations.empty": {
+    "explanation": "Empty state on the Kitchen stations page when no station exists yet; points at the + button and says where tickets go meanwhile.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "kitchenstations.error.address_required": {
@@ -845,12 +1427,27 @@
       "0.34"
     ]
   },
-  "kitchenstations.new.submit": {
-    "explanation": "",
+  "kitchenstations.joined.dialog_hint": {
+    "explanation": "Note at the top of the station dialog on a joined till, explaining the read-only Name and Destination.",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
+      "main"
+    ]
+  },
+  "kitchenstations.joined.hint": {
+    "explanation": "Page-level note shown under the Kitchen stations header on a joined till, explaining why New is disabled.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "kitchenstations.new.submit": {
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
+    "flags": "",
+    "labels": [],
+    "lines": [
       "0.34"
     ]
   },
@@ -864,11 +1461,10 @@
     ]
   },
   "kitchenstations.none": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -879,6 +1475,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "kitchenstations.search_placeholder": {
+    "explanation": "Label and placeholder of the search field above the Kitchen stations list (filters rows by name, destination or printer address).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "kitchenstations.title": {

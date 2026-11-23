@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "description": "Publish gate for published/locales.json (ADR-0177 section 2). Only overrides and the default live here. min_coverage = shipped strings / English keys per surface. max_broken_ratio = units omitted for a broken placeholder / ICU argument / HTML tag set, as a share of the surface's keys: above it the surface is withdrawn (systematically wrong). Style checks in Weblate never block (owner, 2026-11-04). human_reviewers is the list of Weblate accounts whose approval counts as a human review; empty today, so every locale carries the AI label and legal text stays English. Weblate's public API cannot list team membership, so this list is the record.",
+  "project": "universal-till",
+  "min_coverage": 0.90,
+  "max_broken_ratio": 0.10,
+  "human_reviewers": [],
+  "overrides": {},
+  "seed_withdrawn": []
+}

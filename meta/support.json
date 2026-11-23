@@ -160,6 +160,14 @@
       "0.34"
     ]
   },
+  "issuereport.discard_keep": {
+    "explanation": "Dismiss button on the discard-report question: keeps the bug report being written.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "issuereport.intro": {
     "explanation": "",
     "flags": "",
