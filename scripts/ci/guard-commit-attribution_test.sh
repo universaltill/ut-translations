@@ -107,8 +107,12 @@ GUARD_ENV="GITHUB_EVENT_NAME=workflow_dispatch"
 expect_fail "the bot address on workflow_dispatch without ALLOW_ACTIONS_BOT" "$BOT"
 GUARD_ENV="GITHUB_EVENT_NAME=workflow_dispatch ALLOW_ACTIONS_BOT=false"
 expect_fail "the bot address on workflow_dispatch with ALLOW_ACTIONS_BOT=false" "$BOT"
-GUARD_ENV="GITHUB_EVENT_NAME=workflow_dispatch ALLOW_ACTIONS_BOT=true"
-expect_pass "the GitHub Actions bot (sync PR commits) on workflow_dispatch" "$BOT"
+GUARD_ENV="GITHUB_EVENT_NAME=workflow_dispatch ALLOW_ACTIONS_BOT=true GITHUB_REF=refs/heads/feature/x GITHUB_ACTOR=github-actions[bot]"
+expect_fail "the bot address on a dispatch of another branch" "$BOT"
+GUARD_ENV="GITHUB_EVENT_NAME=workflow_dispatch ALLOW_ACTIONS_BOT=true GITHUB_REF=refs/heads/sync/english GITHUB_ACTOR=someuser"
+expect_fail "the bot address on a dispatch started by a human" "$BOT"
+GUARD_ENV="GITHUB_EVENT_NAME=workflow_dispatch ALLOW_ACTIONS_BOT=true GITHUB_REF=refs/heads/sync/english GITHUB_ACTOR=github-actions[bot]"
+expect_pass "the GitHub Actions bot (sync PR commits) on its own workflow_dispatch of sync/english" "$BOT"
 expect_fail "a human address mixed with a bad one on dispatch still fails" "$BOT" \
   'qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq|noreply@anthropic.com|Claude'
 expect_fail "a github-actions[bot] look-alike with another ID" \

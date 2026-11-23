@@ -29,6 +29,10 @@
 /scripts/ @farshidmirza
 /config/ @farshidmirza
 /tools/sync_english.py @farshidmirza
+# The path gate runs from the PR head and imports the rest of tools/, so every
+# file that can carry code is owned (review, ut-docs#4367).
+/tools/ @farshidmirza
+/tests/ @farshidmirza
 /.github/workflows/sync-english.yml @farshidmirza
 # Starts the publish workflow on a schedule (ut-docs#5479).
 /.github/workflows/refresh-bundles.yml @farshidmirza

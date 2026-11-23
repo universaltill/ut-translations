@@ -149,11 +149,11 @@ jobs:
           else
             subject="sync: English from universal-till and ut-website"
           fi
-          num=$(gh pr list --head sync/english --base main --state open --json number --jq '.[0].number // empty')
+          num=$(gh pr list --head sync/english --base main --state open --json number,isCrossRepository --jq '[.[] | select(.isCrossRepository | not)][0].number // empty')
           if [ -z "${num}" ]; then
             gh pr create --base main --head sync/english --title "${subject}" \
               --body "Automated English sync from universal-till and ut-website (ut-docs#4367). Only <area>/en.json and meta/*.json changed (checked by tools/sync_english.py --check-paths and the required paths check). Auto-merges when the required checks pass."
-            num=$(gh pr list --head sync/english --base main --state open --json number --jq '.[0].number')
+            num=$(gh pr list --head sync/english --base main --state open --json number,isCrossRepository --jq '[.[] | select(.isCrossRepository | not)][0].number')
           else
             gh pr edit "${num}" --title "${subject}"
           fi

@@ -142,7 +142,10 @@ is_allowed_plain_email() {
 # the address is just another unknown noreply ID and is rejected (review
 # MEDIUM-2, ut-docs#4367).
 bot_ok=0
-if [ "${ALLOW_ACTIONS_BOT:-}" = "true" ] && [ "${GITHUB_EVENT_NAME:-}" = "workflow_dispatch" ]; then
+# ...and only the sync bot's own dispatch on sync/english: any write user can
+# dispatch the workflow on a branch of their own (review, ut-docs#4367).
+if [ "${ALLOW_ACTIONS_BOT:-}" = "true" ] && [ "${GITHUB_EVENT_NAME:-}" = "workflow_dispatch" ] \
+  && [ "${GITHUB_REF:-}" = "refs/heads/sync/english" ] && [ "${GITHUB_ACTOR:-}" = "github-actions[bot]" ]; then
   bot_ok=1
 fi
 

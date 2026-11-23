@@ -155,7 +155,7 @@ class CodeownersVsSyncPaths(unittest.TestCase):
         self.assertNotIn("/*/en.json", rules)
         # ...while everything that can carry code stays owned.
         for p in ("/tools/sync_english.py", "/.github/workflows/sync-english.yml", "/config/",
-                  "/.github/CODEOWNERS", "/scripts/", "/.github/"):
+                  "/.github/CODEOWNERS", "/scripts/", "/.github/", "/tools/", "/tests/"):
             self.assertIn(p, rules)
 
 
@@ -184,6 +184,8 @@ class PathsCheckAndBotAllowance(unittest.TestCase):
         guard = read(os.path.join(ROOT, "scripts", "ci", "guard-commit-attribution.sh"))
         self.assertIn('"${GITHUB_EVENT_NAME:-}" = "workflow_dispatch"', guard)
         self.assertIn('"${ALLOW_ACTIONS_BOT:-}" = "true"', guard)
+        self.assertIn('"${GITHUB_REF:-}" = "refs/heads/sync/english"', guard)
+        self.assertIn('"${GITHUB_ACTOR:-}" = "github-actions[bot]"', guard)
 
 
 class SyncWorkflowSurfaces(unittest.TestCase):
