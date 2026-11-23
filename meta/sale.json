@@ -1880,6 +1880,30 @@
       "0.34"
     ]
   },
+  "pos.tender.busy": {
+    "explanation": "Non-modal sale-screen notice shown when the cashier scans, taps a tile or edits the basket while a payment is still running; the action was not applied.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pos.tender.in_flight": {
+    "explanation": "Error (JSON and sale-screen notice) when a second Pay is sent while this till's payment is still running; nothing was charged by the second attempt.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pos.tender.scan_refused": {
+    "explanation": "Sale-screen error notice when a scan reaches the till while a payment is running; the item was not added to the basket.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "pos.toast.customer_linked": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -2973,6 +2997,14 @@
   "tap.resolve.confirm_btn": {
     "explanation": "Button that confirms a manager override of a tap payment.",
     "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.resolve.in_progress": {
+    "explanation": "Error when a manager settles a tap payment while another check or settle of the same payment is still running.",
+    "flags": "max-length:100",
     "labels": [],
     "lines": [
       "main"
