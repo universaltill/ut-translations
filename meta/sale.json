@@ -1994,6 +1994,38 @@
       "0.34"
     ]
   },
+  "pos.toast.payment_declined_auth_failed": {
+    "explanation": "Shown at the top of the cashier till's payment panel when a card payment plugin refused because the card payment service rejected this till's connection. Nothing was charged; tells the cashier what to do next.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pos.toast.payment_declined_no_reader": {
+    "explanation": "Shown at the top of the cashier till's payment panel when a card payment plugin refused because this till has no card reader set up. Nothing was charged; tells the cashier what to do next.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pos.toast.payment_declined_reader_busy": {
+    "explanation": "Shown at the top of the cashier till's payment panel when a card payment plugin refused because the card reader is busy with another payment. Nothing was charged; tells the cashier what to do next.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pos.toast.payment_declined_reader_offline": {
+    "explanation": "Shown at the top of the cashier till's payment panel when a card payment plugin refused because the card reader is not connected. Nothing was charged; tells the cashier what to do next.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "pos.toast.payment_insufficient": {
     "explanation": "",
     "flags": "",
@@ -2001,6 +2033,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "pos.toast.payment_journal_unavailable": {
+    "explanation": "Toast on the cashier till when the till could not record a card payment before asking the card reader, so the payment was refused: nothing was charged and the basket is kept.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "pos.toast.payment_outcome_unknown": {
@@ -3130,9 +3170,41 @@
       "main"
     ]
   },
+  "tap.result.declined": {
+    "explanation": "Title of the cashier screen after the card was declined.",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.result.declined_hint": {
+    "explanation": "Hint on the declined card screen.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tap.result.other_method": {
     "explanation": "Button to choose another payment method after a tap payment was not charged or could not start.",
     "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.result.pin_fallback": {
+    "explanation": "Title when the card needs a PIN the phone cannot take.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.result.pin_fallback_hint": {
+    "explanation": "Hint on the PIN fallback screen.",
+    "flags": "max-length:60",
     "labels": [],
     "lines": [
       "main"
@@ -3146,9 +3218,425 @@
       "main"
     ]
   },
+  "tap.settings.apple_line": {
+    "explanation": "Line under the Apple terms and location step before Set up is pressed.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.btn.education": {
+    "explanation": "Button that opens Apple's guide to taking a tap.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.btn.grant": {
+    "explanation": "Button that lets the Stripe payment method start card taps; also the confirm verb.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.btn.setup": {
+    "explanation": "Button that starts the Tap to Pay set up (Apple's terms and location).",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.fee": {
+    "explanation": "Fee sentence on the Tap to Pay settings page.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.fee_store": {
+    "explanation": "Fee sentence on the Tap to Pay settings page in an app store build (no mention of our own pricing).",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.grant_confirm": {
+    "explanation": "Confirmation question before a manager allows card taps.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.lead_ready": {
+    "explanation": "Sentence under the Ready state of the Tap to Pay settings page.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.mode.test": {
+    "explanation": "Tag shown when the Stripe account answers in test mode.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.permission.granted": {
+    "explanation": "Tag: card taps are allowed for the payment method.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.permission.missing": {
+    "explanation": "Tag: card taps are not allowed yet for the payment method.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.permission_line": {
+    "explanation": "Explains what Allow card taps grants to the payment method.",
+    "flags": "max-length:140",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.generic": {
+    "explanation": "Reason: an unspecified set up problem.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.ios_too_old": {
+    "explanation": "Reason: the iPhone software is too old.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.ipad": {
+    "explanation": "Reason: the device is an iPad.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.location": {
+    "explanation": "Reason: location access is needed.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.not_foreground": {
+    "explanation": "Reason: the app must be in the foreground.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.not_main": {
+    "explanation": "Reason: this till is not the main till.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.not_onboarded": {
+    "explanation": "Reason: the Stripe account is not ready.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.offline": {
+    "explanation": "Reason: no internet for the set up.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.permission": {
+    "explanation": "Reason: the permission grant is missing.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.terms": {
+    "explanation": "Reason: Apple's terms are not accepted yet.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.timeout": {
+    "explanation": "Reason: the set up timed out.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.unsupported_device": {
+    "explanation": "Reason: the iPhone model is too old.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.setup_already": {
+    "explanation": "Message when Set up is pressed while a set up is already running.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.setup_done": {
+    "explanation": "Announcement after the Tap to Pay set up finished.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.setup_failed": {
+    "explanation": "Warning when the Tap to Pay set up ended without success.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.setup_running": {
+    "explanation": "Status while the Tap to Pay set up is running on the iPhone.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.source.address_incomplete": {
+    "explanation": "Line: the shop address is incomplete.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.source.connect": {
+    "explanation": "Line: the connected Stripe account is used.",
+    "flags": "max-length:70",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.source.country_unsupported": {
+    "explanation": "Line: the shop's country is not supported.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.source.needs_attention": {
+    "explanation": "Line: the Stripe key needs attention.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.source.not_configured": {
+    "explanation": "Line: the Stripe key is still to be added on the web.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.source.not_configured_store": {
+    "explanation": "Line: ask the owner to connect Stripe (app store build, no link).",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.source.own": {
+    "explanation": "Line: the shop's own Stripe account is used.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.source.unreachable": {
+    "explanation": "Line: the cloud could not be reached; never worded as not set up.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.state.needs_setup": {
+    "explanation": "State word and tag: a step is still to do.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.state.preparing": {
+    "explanation": "State word and tag: the set up is running.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.state.ready": {
+    "explanation": "State word and tag: Tap to Pay is ready to take taps.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.state.unavailable": {
+    "explanation": "State word and tag: Tap to Pay cannot be used on this device now.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.step.account": {
+    "explanation": "Name of the checklist step about the Stripe account.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.step.allow": {
+    "explanation": "Name of the checklist step where a manager allows card taps.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.step.apple": {
+    "explanation": "Name of the checklist step about Apple's terms and location access.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.step.device": {
+    "explanation": "Name of the checklist step about the device.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.step.device_ok": {
+    "explanation": "Line under the device step when it is fine.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.step.done": {
+    "explanation": "Tag: a checklist step is finished.",
+    "flags": "max-length:12",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.step.todo": {
+    "explanation": "Tag: a checklist step is still to do.",
+    "flags": "max-length:12",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.step.unknown": {
+    "explanation": "Tag: the state of a checklist step could not be read.",
+    "flags": "max-length:12",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.title": {
+    "explanation": "Title of the manager page where this iPhone is prepared for card taps (Apple's product name) and the name of the link to it in Settings.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.unavailable": {
+    "explanation": "Body of the Tap to Pay settings page on a device with no Tap to Pay support.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tap.start_failed": {
     "explanation": "Message when a tap payment could not be started: nothing was charged. Must never say declined.",
     "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.start_failed.not_ready": {
+    "explanation": "Title when the tap could not start because Tap to Pay is not set up on this till.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.start_failed.not_ready_hint": {
+    "explanation": "Hint telling the cashier a manager can finish the set up.",
+    "flags": "max-length:70",
     "labels": [],
     "lines": [
       "main"

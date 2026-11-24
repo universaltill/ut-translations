@@ -2073,6 +2073,14 @@
       "0.34"
     ]
   },
+  "page.title.tap_settings": {
+    "explanation": "Browser tab title of the Tap to Pay settings page.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "page.title.tax_codes": {
     "explanation": "",
     "flags": "",
@@ -5215,6 +5223,22 @@
       "0.34"
     ]
   },
+  "settings.enrol.linked": {
+    "explanation": "Status line on Settings → Till registration once the shop is claimed: the till's store is already linked to the owner's Universal Till ID, so there is no Claim button.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.enrol.linked_manage": {
+    "explanation": "Link under the linked-store line in Settings → Till registration; opens My stores on my.universaltill.com. 'My stores' is that page's name there.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.enrol.name_required": {
     "explanation": "",
     "flags": "",
@@ -5366,6 +5390,14 @@
   "settings.enrol.rate_limited": {
     "explanation": "Result when the cloud rate-limits a registration or reconnect attempt (HTTP 429).",
     "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.enrol.reconnect_title": {
+    "explanation": "Summary (the tap row that opens the Pair form) in Settings → Till registration for a shop that is already linked. Pair form re-connects this one till to a shop's cloud account.",
+    "flags": "max-length:40",
     "labels": [],
     "lines": [
       "main"
@@ -8354,6 +8386,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.update.managed_by_app_store": {
+    "explanation": "Settings → Software update on the App Store (iOS) build: one status line saying Apple's App Store updates the app, so the till has no update check or install button. Keep the store's official name.",
+    "flags": "max-length:70",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.update.managed_by_store": {
+    "explanation": "Settings → Software update on the Google Play build: one status line saying Google Play updates the app, so the till has no update check or install button. Keep the store's official name.",
+    "flags": "max-length:70",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.update.notes_loading": {

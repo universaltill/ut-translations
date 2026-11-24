@@ -44,6 +44,14 @@
       "0.34"
     ]
   },
+  "selforder.basket_locked_checkout": {
+    "explanation": "Toast in the self-order kiosk cart when a customer tries to change the basket while its checkout is still running (card payment at the kiosk, or placing a pay-at-counter / table order); the basket is left unchanged. Wording must fit both modes: no payment happens in counter mode.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "selforder.cart_empty": {
     "explanation": "",
     "flags": "",
@@ -127,6 +135,14 @@
   },
   "selforder.checkout.outcome_unknown": {
     "explanation": "Message on the self-order kiosk when the customer's card payment could not be confirmed: sends them to the cashier and tells them not to pay again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "selforder.checkout.payment_journal_unavailable": {
+    "explanation": "Message on the self-order kiosk when the till could not record the card payment before asking the card reader, so the payment was never started: nothing was charged; sends the customer to the cashier.",
     "flags": "",
     "labels": [],
     "lines": [
