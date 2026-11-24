@@ -22,7 +22,7 @@
   "staff": {
     "name": "Staff",
     "description": "Users, permissions, sign-in, PIN elevation and shifts.",
-    "keys": 351
+    "keys": 352
   },
   "settings": {
     "name": "Settings",
@@ -32,7 +32,7 @@
   "tills": {
     "name": "Tills",
     "description": "Tills and devices: sync, pairing, Bluetooth devices, status chips, diagnostics, recovery and uninstall.",
-    "keys": 397
+    "keys": 406
   },
   "setup": {
     "name": "Setup",

@@ -726,6 +726,78 @@
       "0.34"
     ]
   },
+  "status.cloud_sync.at": {
+    "explanation": "Status-bar chip: when this till last heard from the cloud, an hour or more ago. Short, one line.\n\nPlaceholders:\n- %s: a clock time for today (14:05), or a date and time for an older sync, already formatted",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_sync.hint": {
+    "explanation": "Tooltip of the status-bar cloud sync chip. 'my.' is the cloud portal's product name; keep it as is.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_sync.just_now": {
+    "explanation": "Status-bar chip: this till heard from the cloud less than a minute ago. Short, one line.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_sync.minutes_ago_plural": {
+    "explanation": "Status-bar chip: minutes since this till last heard from the cloud, 1 to 59 ({count} is the number of minutes; plural forms per language). Short, one line; an abbreviation for minutes is fine.",
+    "flags": "icu-message-format",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_sync.never": {
+    "explanation": "Status-bar chip: this registered till has not yet heard from the cloud. Short, one line.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_sync.stale_hint": {
+    "explanation": "Tooltip of the status-bar cloud sync chip when the last sync is 10 minutes old or more.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_sync.still_trying": {
+    "explanation": "Line in the status-bar cloud sync chip after Sync now when the cloud did not answer within a few seconds (offline or slow). The till keeps retrying; selling is not affected.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_sync.sync_now": {
+    "explanation": "Button in the status-bar cloud sync chip (managers): ask the cloud for this till's latest changes now. A verb; short.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_sync.syncing": {
+    "explanation": "Label of the Sync now button while the till waits (up to a few seconds) for the cloud's answer.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "status.disk_low.hint": {
     "explanation": "",
     "flags": "",

@@ -687,6 +687,14 @@
       "main"
     ]
   },
+  "elevation.summary.cloud_sync_now": {
+    "explanation": "Manager PIN prompt summary: what approving does — the till asks the cloud for changes right away.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.summary.data_archive_purge": {
     "explanation": "",
     "flags": "",

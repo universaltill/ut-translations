@@ -77,6 +77,7 @@
   "elevation.summary.catalog_pre_pack_unit_price_off": "Stop showing unit prices on pre-packed item labels.",
   "elevation.summary.catalog_pre_pack_unit_price_on": "Show unit prices on pre-packed item labels.",
   "elevation.summary.clear_sale": "Clear the current sale without payment (lines: %d, total: %s).",
+  "elevation.summary.cloud_sync_now": "Ask the cloud now for this till's latest changes.",
   "elevation.summary.data_archive_purge": "Permanently delete this archived batch. This cannot be undone and it can no longer be restored afterwards.",
   "elevation.summary.data_archive_restore": "Move this archived batch's sales, shifts and invoices back into the working till.",
   "elevation.summary.data_catalog_cleanup": "Permanently remove %d inactive product(s) that were never sold.",
