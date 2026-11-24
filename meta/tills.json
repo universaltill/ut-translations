@@ -443,6 +443,14 @@
       "0.34"
     ]
   },
+  "recovery.app_older_than_data": {
+    "explanation": "Recovery screen explanation when the till's database was written by a newer app version than the one now running (for example after installing an older or test build). Tells the owner to install the latest version. Must never suggest deleting or resetting data.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "recovery.db_open_failed": {
     "explanation": "",
     "flags": "",
@@ -2019,6 +2027,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "tills.join_error.cloud_code": {
+    "explanation": "Error under the Additional till / Satellite join form when the 8-character my.universaltill.com shop code is typed there. Names the screens: Settings, Tills, Show pairing code; keep consistent.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "tills.join_error.main_no_tls": {

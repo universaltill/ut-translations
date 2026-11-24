@@ -2962,6 +2962,14 @@
       "main"
     ]
   },
+  "tap.refund.main_only": {
+    "explanation": "Refusal when a card tap is refunded from an additional till; nothing is sent.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tap.remote.on_phone": {
     "explanation": "Shown on the till once the paired phone card reader has the payment on screen and is ready for the customer's card.",
     "flags": "",
@@ -3218,6 +3226,14 @@
       "main"
     ]
   },
+  "tap.reverse.main_only": {
+    "explanation": "Failed automatic reversal of a captured card tap on an additional till; points to the main till.",
+    "flags": "max-length:150",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tap.settings.apple_line": {
     "explanation": "Line under the Apple terms and location step before Set up is pressed.",
     "flags": "max-length:100",
@@ -3250,6 +3266,14 @@
       "main"
     ]
   },
+  "tap.settings.details": {
+    "explanation": "Label of the collapsed section holding the raw error code, under a failed Set up or the Stripe account line.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tap.settings.fee": {
     "explanation": "Fee sentence on the Tap to Pay settings page.",
     "flags": "max-length:100",
@@ -3274,6 +3298,38 @@
       "main"
     ]
   },
+  "tap.settings.hint.allow_first": {
+    "explanation": "Reason shown right under the disabled Set up button while card taps are not allowed yet.",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.hint.plugin_missing": {
+    "explanation": "Reason shown under the disabled Allow card taps button when the Stripe payment method is not installed or on; Plugins is the menu label (nav.plugins) and must match it.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.lead.allow": {
+    "explanation": "Status line under Needs setup while card taps are not allowed yet; the Allow card taps button sits right below it.",
+    "flags": "max-length:70",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.lead.apple": {
+    "explanation": "Status line under Needs setup once card taps are allowed and Apple's set up is next; Set up is a UI label (tap.settings.btn.setup) and must match it.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tap.settings.lead_ready": {
     "explanation": "Sentence under the Ready state of the Tap to Pay settings page.",
     "flags": "max-length:80",
@@ -3285,6 +3341,14 @@
   "tap.settings.mode.test": {
     "explanation": "Tag shown when the Stripe account answers in test mode.",
     "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.note.additional": {
+    "explanation": "Note on the panel of an additional till: it takes taps on its own iPhone, needs the internet, refunds on the main.",
+    "flags": "max-length:230",
     "labels": [],
     "lines": [
       "main"
@@ -3314,9 +3378,49 @@
       "main"
     ]
   },
+  "tap.settings.reason.apple_failed": {
+    "explanation": "Failed Set up reason when Apple or Stripe gave an error code; the code below is the Details for support section.",
+    "flags": "max-length:130",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.busy": {
+    "explanation": "Failed Set up reason: the iPhone is already collecting a payment or running another set up.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.cancelled": {
+    "explanation": "Failed Set up reason: the person cancelled Apple's sheet; Set up is a UI label (tap.settings.btn.setup) and must match it.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.entitlement_missing": {
+    "explanation": "Failed Set up reason: the installed app lacks Apple's Tap to Pay entitlement; App Store is Apple's store name.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tap.settings.reason.generic": {
     "explanation": "Reason: an unspecified set up problem.",
     "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.insecure_endpoint": {
+    "explanation": "Failed Set up reason or Stripe account line: the till's cloud address is not secure; the code below is the Details for support section.",
+    "flags": "max-length:120",
     "labels": [],
     "lines": [
       "main"
@@ -3346,6 +3450,30 @@
       "main"
     ]
   },
+  "tap.settings.reason.not_connected": {
+    "explanation": "Failed Set up reason or Stripe account line: no Stripe account is connected to the shop.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.not_enabled": {
+    "explanation": "Failed Set up reason or Stripe account line: card payments are not enabled for this shop.",
+    "flags": "max-length:110",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.not_enrolled": {
+    "explanation": "Failed Set up reason or Stripe account line: this till has no complete enrolment with the shop's online account.",
+    "flags": "max-length:130",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tap.settings.reason.not_foreground": {
     "explanation": "Reason: the app must be in the foreground.",
     "flags": "max-length:60",
@@ -3355,7 +3483,7 @@
     ]
   },
   "tap.settings.reason.not_main": {
-    "explanation": "Reason: this till is not the main till.",
+    "explanation": "Reason: this till (a satellite) cannot take Tap to Pay; only the main and additional tills can.",
     "flags": "max-length:90",
     "labels": [],
     "lines": [
@@ -3363,7 +3491,7 @@
     ]
   },
   "tap.settings.reason.not_onboarded": {
-    "explanation": "Reason: the Stripe account is not ready.",
+    "explanation": "Reason on a failed Set up or the Stripe account line: the Stripe account is not ready.",
     "flags": "max-length:60",
     "labels": [],
     "lines": [
@@ -3381,6 +3509,14 @@
   "tap.settings.reason.permission": {
     "explanation": "Reason: the permission grant is missing.",
     "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.reason.service_unavailable": {
+    "explanation": "Failed Set up reason or Stripe account line: the payment service answered with an error or not at all; never worded as not set up.",
+    "flags": "max-length:90",
     "labels": [],
     "lines": [
       "main"
@@ -3498,6 +3634,14 @@
       "main"
     ]
   },
+  "tap.settings.source.setup_again": {
+    "explanation": "Line: the cloud refused this till's credential until it is set up again; never worded as unreachable.",
+    "flags": "max-length:110",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tap.settings.source.unreachable": {
     "explanation": "Line: the cloud could not be reached; never worded as not set up.",
     "flags": "max-length:100",
@@ -3586,6 +3730,14 @@
       "main"
     ]
   },
+  "tap.settings.step.next": {
+    "explanation": "Tag on the checklist row whose button is shown in the status block above.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tap.settings.step.todo": {
     "explanation": "Tag: a checklist step is still to do.",
     "flags": "max-length:12",
@@ -3637,6 +3789,22 @@
   "tap.start_failed.not_ready_hint": {
     "explanation": "Hint telling the cashier a manager can finish the set up.",
     "flags": "max-length:70",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.start_failed.setup_again": {
+    "explanation": "Title when the cloud refused this till's credential as role-unrecorded: set the till up again.",
+    "flags": "max-length:110",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.start_failed.setup_again_hint": {
+    "explanation": "Hint under the set-up-again title.",
+    "flags": "max-length:80",
     "labels": [],
     "lines": [
       "main"

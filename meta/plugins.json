@@ -377,6 +377,134 @@
       "0.34"
     ]
   },
+  "plugin.secret.accepted": {
+    "explanation": "Shown right after the cloud accepted the one-time code.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.applied": {
+    "explanation": "Status when the key arrived from my.universaltill.com and was saved on this till. The key itself is never shown.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.bad_code": {
+    "explanation": "One message for every refused one-time code (wrong, expired, already used, other shop). It must not say which.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.cancel": {
+    "explanation": "Button that closes the camera view without scanning.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.code_label": {
+    "explanation": "Label of the field where the 26-character one-time code from my.universaltill.com is typed.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.get_from_my": {
+    "explanation": "Heading of the row on a plugin's settings page that fetches the plugin's key from my.universaltill.com with a one-time code instead of typing it. 'my.' is the owner's web page for their shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.key_set": {
+    "explanation": "Shown in place of a key's value on the settings page once a key is stored. Never the key itself.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.no_camera": {
+    "explanation": "Shown when the camera cannot be used (no camera, permission denied, busy); the typed code field opens instead.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.offline": {
+    "explanation": "Shown when the one-time code could not be sent because the till has no internet. The code is not kept.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.rate_limited": {
+    "explanation": "Shown when the cloud refuses more one-time code attempts for now.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.satellite": {
+    "explanation": "Replaces the code buttons on a satellite till: only the main till receives the key.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.scan": {
+    "explanation": "Button: open the camera to scan the one-time code shown on my.universaltill.com.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.scan_hint": {
+    "explanation": "Instruction over the camera view while scanning the one-time code.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.send_code": {
+    "explanation": "Button that sends the typed one-time code to the cloud.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.type": {
+    "explanation": "Button: type the one-time code shown on my.universaltill.com by hand.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugin.secret.waiting": {
+    "explanation": "Status while the till waits for the key to arrive from the cloud after the code was accepted.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugin.view.action_failed": {
     "explanation": "",
     "flags": "",

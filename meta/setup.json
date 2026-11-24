@@ -160,6 +160,22 @@
       "0.34"
     ]
   },
+  "setup.cloud.error.device_exists": {
+    "explanation": "Error when the cloud says this device already has a credential (409 device_exists).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.cloud.error.device_removed": {
+    "explanation": "Error when the cloud says this device was removed from the shop (409 device_revoked).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "setup.cloud.error.expired": {
     "explanation": "Wizard error when the held pairing is gone (30 minutes passed or the till restarted) at the final step.",
     "flags": "",
@@ -185,6 +201,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "setup.cloud.error.main_till_code": {
+    "explanation": "Error under the Main till join form when a main till's own 6-character code is typed there.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "setup.cloud.error.main_till_online": {

@@ -5822,6 +5822,54 @@
       "0.34"
     ]
   },
+  "settings.lan.help": {
+    "explanation": "Explanation under Settings → Allow other tills on this network: a desktop main till talks only to this computer until the shop lets other tills in; what Automatic, Always and Never mean; what other devices can reach even when open.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.lan.mode.auto": {
+    "explanation": "Button label: other tills are let in for 10 minutes after a pairing code is shown, and always while the shop has more than one till.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.lan.mode.off": {
+    "explanation": "Button label: no other device on the network may reach this till (this computer only).",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.lan.mode.on": {
+    "explanation": "Button label: other tills on the network may always reach this till.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.lan.saved": {
+    "explanation": "Status note after the network-access choice is stored.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.lan.title": {
+    "explanation": "Heading of the Settings control that decides whether other tills on the network may reach this desktop till.",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.language.apply": {
     "explanation": "",
     "flags": "",
@@ -8269,6 +8317,14 @@
       "main"
     ]
   },
+  "settings.update.error.newer_data": {
+    "explanation": "Shown when an in-app update is refused because the till runs a test (pre-release/nightly/hand-built) build and the release may be older than its database. Must never suggest deleting or resetting data.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.update.error.verify_failed": {
     "explanation": "Shown when the downloaded update failed verification (its checksum did not match, or the release's signed checksum list did not verify), so nothing was installed.",
     "flags": "max-length:120",
@@ -8377,6 +8433,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.update.held_back": {
+    "explanation": "Result of 'Check for updates' when a release exists but is not offered because this till runs a test (pre-release) build whose data may be newer than the release. Must never suggest deleting or resetting data.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.update.incoming_title": {

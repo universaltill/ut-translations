@@ -36,11 +36,10 @@
     ]
   },
   "backoffice.no_problems": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -60,6 +59,366 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "backoffice.problems.area.cloud_sync": {
+    "explanation": "Back office, Recent problems card: group heading for problems syncing with the cloud.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.area.database": {
+    "explanation": "Back office, Recent problems card: group heading for saving, backup and disk-space problems.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.area.network": {
+    "explanation": "Back office, Recent problems card: group heading for local network problems.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.area.other": {
+    "explanation": "Back office, Recent problems card: group heading for problems the till could not classify.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.area.payments": {
+    "explanation": "Back office, Recent problems card: group heading for card payment and terminal problems.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.area.plugins": {
+    "explanation": "Back office, Recent problems card: group heading for plugin problems.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.checksum_mismatch.next": {
+    "explanation": "Back office, Recent problems card: next step for a failed integrity check; the till retries by itself.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.checksum_mismatch.reason": {
+    "explanation": "Back office, Recent problems card: plain reason when a downloaded plugin or update failed its integrity check and was refused.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.copied": {
+    "explanation": "Back office, Recent problems card: the copy button's label for a moment after copying.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.copy": {
+    "explanation": "Back office, Recent problems card: button that copies a plain-text problem report for the support team to the clipboard.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.copy.none": {
+    "explanation": "Line in the support report when the till has no open problems.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.copy.raw": {
+    "explanation": "Heading in the support report above the verbatim log lines, one per problem occurrence.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.copy.summary": {
+    "explanation": "Heading in the support report above the readable, grouped problem lines.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.copy.till": {
+    "explanation": "Label in the support report before the till's startup summary line (version, mode); a colon is added in code.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.copy.title": {
+    "explanation": "Title line of the plain-text report the Copy for support button puts on the clipboard (pasted into a support message, not shown on screen).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.copy_show": {
+    "explanation": "Back office, Recent problems card: summary of the expandable section showing the text the copy button copies.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.count_plural": {
+    "explanation": "Back office, Recent problems card: how many times the same problem was logged, shown only when more than once ({count} is the number; plural forms per language).",
+    "flags": "icu-message-format",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.details": {
+    "explanation": "Back office, Recent problems card: summary of the expandable section holding the full raw log lines of a problem.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.generic.cloud_sync.next": {
+    "explanation": "Back office, Recent problems card: generic next step for a cloud sync problem; points to the Copy for support button.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.generic.cloud_sync.reason": {
+    "explanation": "Back office, Recent problems card: generic reason for an unrecognised cloud sync problem; reassures that selling continues offline.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.generic.database.next": {
+    "explanation": "Back office, Recent problems card: generic next step for a storage problem: free up disk space, copy for support.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.generic.database.reason": {
+    "explanation": "Back office, Recent problems card: generic reason for a data saving, backup or disk-space problem.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.generic.network.next": {
+    "explanation": "Back office, Recent problems card: generic next step for a network problem; reassures that selling continues offline.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.generic.network.reason": {
+    "explanation": "Back office, Recent problems card: generic reason for a local network problem.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.generic.other.next": {
+    "explanation": "Back office, Recent problems card: generic next step for an unclassified problem; points to the Copy for support button.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.generic.other.reason": {
+    "explanation": "Back office, Recent problems card: reason for a problem line the till could not classify into an area.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.generic.payments.next": {
+    "explanation": "Back office, Recent problems card: generic next step for a payment problem: check the terminal, offer another payment method, copy for support.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.generic.payments.reason": {
+    "explanation": "Back office, Recent problems card: generic reason for a card payment or payment terminal problem.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.generic.plugins.next": {
+    "explanation": "Back office, Recent problems card: generic next step for a plugin problem; names Settings, Plugins and the Copy for support button.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.generic.plugins.reason": {
+    "explanation": "Back office, Recent problems card: generic reason for an unrecognised plugin problem.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.last_seen": {
+    "explanation": "Back office, Recent problems card and the support copy text: when the problem was last logged; the placeholder is a time (or a date and time, or an ISO timestamp in the copy text).\n\nPlaceholders:\n- %s: when the problem was last logged",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.next_label": {
+    "explanation": "Back office, Recent problems card: label before the suggested next step of a problem, followed by the step sentence.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.no_catalog_snapshot.next": {
+    "explanation": "Back office, Recent problems card: next step for the missing plugin list; it downloads by itself once online.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.no_catalog_snapshot.reason": {
+    "explanation": "Back office, Recent problems card: plain reason when the till has not yet downloaded the marketplace plugin list.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.not_main_till.next": {
+    "explanation": "Back office, Recent problems card: next step for the not-the-main-till error; names the Tills page and the Replace this till action on the online account.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.not_main_till.reason": {
+    "explanation": "Back office, Recent problems card: plain reason when the cloud refused this till because it is not the registered main till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.plugin_exit.next": {
+    "explanation": "Back office, Recent problems card: next step for a plugin that stopped with an error; names the Settings, Plugins page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.plugin_exit.reason": {
+    "explanation": "Back office, Recent problems card: plain reason when a plugin exited with an error code while running.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.severity.attention": {
+    "explanation": "Back office, Recent problems card: tag word for a warning (and the heading status when the worst problem is a warning). Must be a word, not only a colour.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.severity.failed": {
+    "explanation": "Back office, Recent problems card: tag word for an error (and the heading status when the worst problem is an error).",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.severity.ok": {
+    "explanation": "Back office, Recent problems card: status tag next to the heading when there are no open problems.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.till_too_old.next": {
+    "explanation": "Back office, Recent problems card: next step for the too-old-version error.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems.till_too_old.reason": {
+    "explanation": "Back office, Recent problems card: plain reason when the cloud refused this till because its software version is too old.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems_intro": {
+    "explanation": "Back office, Recent problems card: one-line intro shown above the grouped problems, only when there are open problems.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backoffice.problems_ok": {
+    "explanation": "Back office, Recent problems card: empty state when the till has no open warnings or errors.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "backoffice.reorder_at": {
