@@ -1433,6 +1433,14 @@
       "0.34"
     ]
   },
+  "plugins.manage.broken_code_refused": {
+    "explanation": "Note on a broken plugin card (and its Broken chip tooltip) on the App Store build, which never downloads or runs plugin code: the plugin will not be reinstalled and can be removed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.manage.built_in_hint": {
     "explanation": "Note under the Built in heading on the Plugins page: these plugins ship inside the app, update only with an app update and are switched on or off.",
     "flags": "",

@@ -2070,6 +2070,46 @@
       "0.34"
     ]
   },
+  "tables.qr.needs_cloud": {
+    "explanation": "Table QR dialog: plan allows it but the till isn't registered with the cloud.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tables.qr.needs_plan": {
+    "explanation": "Table QR dialog: shown instead of the code when the shop's plan lacks table ordering by phone.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tables.qr.no_cloud_address": {
+    "explanation": "Table QR dialog: the configured cloud endpoint is empty or unusable.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tables.qr.reprint_hint": {
+    "explanation": "Table QR dialog, under the code: older printed table codes (LAN links) stop working; reprint.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tables.qr.table_disabled": {
+    "explanation": "Table QR dialog: the table is deactivated, so no code is shown.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tables.qr.title": {
     "explanation": "",
     "flags": "",

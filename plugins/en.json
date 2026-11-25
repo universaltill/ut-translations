@@ -164,6 +164,7 @@
   "plugins.manage.action.update": "Update",
   "plugins.manage.action.versions": "Versions",
   "plugins.manage.broken": "Broken",
+  "plugins.manage.broken_code_refused": "This version of the app can't run this plugin, so it won't be reinstalled. Uninstall it to clear this warning.",
   "plugins.manage.built_in_hint": "Included with the app. It updates with the app, and you turn it on or off here.",
   "plugins.manage.confirm_rollback": "Roll back",
   "plugins.manage.confirm_uninstall": "Uninstall",

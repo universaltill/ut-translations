@@ -330,29 +330,26 @@
     ]
   },
   "selforder.table_busy.hint": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "selforder.table_busy.retry": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "selforder.table_busy.title": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
@@ -366,20 +363,18 @@
     ]
   },
   "selforder.till_busy.hint": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },
   "selforder.till_busy.title": {
-    "explanation": "",
+    "explanation": "Only used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
     "labels": [],
     "lines": [
-      "main",
       "0.34"
     ]
   },

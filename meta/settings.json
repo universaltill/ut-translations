@@ -2117,6 +2117,358 @@
       "0.34"
     ]
   },
+  "pay.attention.attempt_settled": {
+    "explanation": "Refusal: the card tap was already settled elsewhere; the row can now only be marked as handled.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.audit_resolve": {
+    "explanation": "Text stored in the audit log when a manager marks a payment as handled. Not shown on screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.audit_retry": {
+    "explanation": "Text stored in the audit log with a manager's retry of a failed refund. Not shown on screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.check_first": {
+    "explanation": "Warning above the Try refund again button; trying again after a refund that already went through would refund twice.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.choose_outcome": {
+    "explanation": "Refusal: the manager tried to mark a card tap as handled without saying whether it was charged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.empty": {
+    "explanation": "Shown in the card after the last listed payment was dealt with.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.explain.reverse_failed": {
+    "explanation": "Sentence in a listed row: the refund failed and the customer may still be charged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.explain.tap": {
+    "explanation": "Explain line on a listed card tap left unsettled by a restart; says new taps are paused until a manager records the outcome.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.explain.warned": {
+    "explanation": "Sentence in a listed row: a restart left the payment unconfirmed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.forbidden": {
+    "explanation": "Error when a cashier tries to retry or mark a payment as handled.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.gone": {
+    "explanation": "Error when the payment a manager acted on is not in the list any more.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.help": {
+    "explanation": "Help line under the card heading; tells the manager to check the provider's dashboard first.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.in_progress": {
+    "explanation": "Error when another action on the same payment is still running.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.journal_failed": {
+    "explanation": "Warning: the outcome was saved but the list entry was not; the manager closes the row by hand.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.not_resolvable": {
+    "explanation": "Error when a manager marks a payment as handled that is no longer listed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.not_retryable": {
+    "explanation": "Error when a manager tries to send a refund again for a payment whose refund did not fail; Mark as handled is the button label (pay.attention.resolve) and must match it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.note": {
+    "explanation": "Label of the optional one-line note a manager can add when marking a payment as handled.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.note_invalid": {
+    "explanation": "Error when the optional note has a line break or is longer than 200 characters.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.reason.main_till_only": {
+    "explanation": "Reason line in a listed row: an additional till cannot send a card tap refund.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.reason.no_refund_plugin": {
+    "explanation": "Reason line in a listed row: no payment plugin was there to send the refund.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.reason.reversal_failed": {
+    "explanation": "Reason line in a listed row: the payment provider refused the refund or did not answer.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.reason.till_restarted": {
+    "explanation": "Reason line in a listed row: the till restarted while the payment was in progress.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.reference": {
+    "explanation": "Line in a listed row showing the last characters of the payment provider's reference so the manager can find the payment at the provider.\n\nPlaceholders:\n- %s: last four characters of the provider reference",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.resolve": {
+    "explanation": "Button that removes a payment from the list once the manager refunded or checked it at the provider; sends nothing; asks for a manager PIN.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.resolve_summary": {
+    "explanation": "Manager PIN dialog text before marking a payment as handled; the first placeholder is the amount, the second the payment method.\n\nPlaceholders:\n- %s: amount with currency\n- %s: payment method name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.resolved": {
+    "explanation": "Message after a manager marked a payment as handled.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.retry": {
+    "explanation": "Button that sends one more refund of a failed card payment; asks for a manager PIN.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.retry_done": {
+    "explanation": "Message after a manager's retry succeeded; the placeholder is the amount.\n\nPlaceholders:\n- %s: amount with currency",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.retry_failed": {
+    "explanation": "Message after a manager's retry failed; Mark as handled is the button label (pay.attention.resolve) and must match it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.retry_summary": {
+    "explanation": "Manager PIN dialog text before trying a failed refund again; the first placeholder is the amount, the second the payment method.\n\nPlaceholders:\n- %s: amount with currency\n- %s: payment method name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.state.reverse_failed": {
+    "explanation": "Status chip on a listed card payment whose automatic refund failed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.state.warned": {
+    "explanation": "Status chip on a listed card payment the till could not settle after a restart.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.tap_charged": {
+    "explanation": "Button on a listed card tap: record that the customer was charged with no sale; the manager refunds in the provider's dashboard.",
+    "flags": "max-length:48",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.tap_not_charged": {
+    "explanation": "Button on a listed card tap: record that the customer was not charged.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.tap_question": {
+    "explanation": "Short label above the two outcome buttons on a listed card tap.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.tap_reason_label": {
+    "explanation": "Legend of the optional reason choices on a listed card tap; a reason is required only when the payment service cannot confirm the payment.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.tap_reason_required": {
+    "explanation": "Refusal on the card: the payment service could not confirm the payment (unreachable or still processing), so a reason is required to record the outcome.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.tap_resolved.charged": {
+    "explanation": "Message after a manager recorded a card tap as charged; reminds them to refund at the provider; the placeholder is the amount.\n\nPlaceholders:\n- %s: amount with currency",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.tap_resolved.not_charged": {
+    "explanation": "Message after a manager recorded a card tap as not charged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.tap_says_not_paid": {
+    "explanation": "Refusal on the card: Charged was chosen but the payment service reports no payment.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.tap_says_paid": {
+    "explanation": "Refusal on the card: Not charged was chosen but the payment service reports the payment as paid.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.tap_summary.charged": {
+    "explanation": "Manager PIN dialog text before recording a card tap as charged with no sale; the first placeholder is the amount, the second the payment method.\n\nPlaceholders:\n- %s: amount with currency\n- %s: payment method name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.tap_summary.not_charged": {
+    "explanation": "Manager PIN dialog text before recording a card tap as not charged; the first placeholder is the amount, the second the payment method.\n\nPlaceholders:\n- %s: amount with currency\n- %s: payment method name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.title": {
+    "explanation": "Heading of the Settings card that lists card payments a manager must check: a refund that failed, or a payment left unsettled by a restart.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "registers.activate": {
     "explanation": "",
     "flags": "",
