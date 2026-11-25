@@ -2,7 +2,7 @@
   "sale": {
     "name": "Sale",
     "description": "The sale screen: basket, scanning, payment, holds, refunds and the quick-button grid.",
-    "keys": 518
+    "keys": 529
   },
   "catalog": {
     "name": "Catalog",
@@ -52,7 +52,7 @@
   "plugins": {
     "name": "Plugins",
     "description": "The plugin marketplace, plugin pages and the assistant.",
-    "keys": 348
+    "keys": 350
   },
   "support": {
     "name": "Support",

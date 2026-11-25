@@ -2814,6 +2814,22 @@
       "0.34"
     ]
   },
+  "plugins.trust.revoked": {
+    "explanation": "Tag on an installed plugin's card on the Plugins page: a manager marked this plugin as not trusted on this till.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.trust.revoked_hint": {
+    "explanation": "Tooltip on the Not trusted tag of an installed plugin's card: explains the plugin was marked as not trusted on this till.",
+    "flags": "max-length:48",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.trust.unverified": {
     "explanation": "",
     "flags": "",

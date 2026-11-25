@@ -2850,6 +2850,78 @@
       "main"
     ]
   },
+  "tap.reader.phone_pairing.hint": {
+    "explanation": "Help line under the phone card readers switch: says it is a test feature that only works for enabled shops and needs the network.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.reader.phone_pairing.now_off": {
+    "explanation": "Confirmation, announced to screen readers, after phone card readers were turned off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.reader.phone_pairing.now_on": {
+    "explanation": "Confirmation, announced to screen readers, after phone card readers were turned on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.reader.phone_pairing.off": {
+    "explanation": "State word of the phone card readers switch when it is off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.reader.phone_pairing.on": {
+    "explanation": "State word of the phone card readers switch when it is on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.reader.phone_pairing.switch": {
+    "explanation": "Label before the on/off state of the phone card readers switch on the Tills page.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.reader.phone_pairing.title": {
+    "explanation": "Heading of the manager's card on the Tills page where phone card readers are turned on or off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.reader.phone_pairing.turn_off": {
+    "explanation": "Button that turns phone card readers off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.reader.phone_pairing.turn_on": {
+    "explanation": "Button that turns phone card readers on.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tap.reader.pick": {
     "explanation": "Heading of the panel where the cashier picks which card reader takes this payment, shown on the sale screen when the till has several readers.",
     "flags": "",
@@ -2956,6 +3028,22 @@
   },
   "tap.reader.status.unavailable": {
     "explanation": "Status of a paired phone card reader that is connected but cannot take payments right now.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.reader.till_id.help": {
+    "explanation": "Help line under the main till's id: when to use it.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.reader.till_id.label": {
+    "explanation": "Label before the main till's id on the Tills page.",
     "flags": "",
     "labels": [],
     "lines": [
