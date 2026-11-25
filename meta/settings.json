@@ -2141,6 +2141,46 @@
       "main"
     ]
   },
+  "pay.attention.charged_no_sale.choose": {
+    "explanation": "Refusal when the charged-no-sale row was submitted without its single choice.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.charged_no_sale.journal_failed": {
+    "explanation": "Warning: the charged-no-sale outcome was saved but the list entry was not closed; the manager chooses the button again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.charged_no_sale.not_charged_refused": {
+    "explanation": "Refusal when a manager tries to record a confirmed charged tap as not charged.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.charged_no_sale.resolved": {
+    "explanation": "Confirmation after a manager recorded a charged tap with no sale; the placeholder is the amount with currency.\n\nPlaceholders:\n- %s: amount with currency",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.charged_no_sale.summary": {
+    "explanation": "Manager PIN dialog text before recording a charged tap with no sale as handled; the first placeholder is the amount, the second the payment method.\n\nPlaceholders:\n- %s: amount with currency\n- %s: payment method name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "pay.attention.check_first": {
     "explanation": "Warning above the Try refund again button; trying again after a refund that already went through would refund twice.",
     "flags": "",
@@ -2159,6 +2199,30 @@
   },
   "pay.attention.empty": {
     "explanation": "Shown in the card after the last listed payment was dealt with.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.explain.charged_no_sale": {
+    "explanation": "Explain line on a listed card tap that was charged with no sale; tells the manager to refund at the provider and that new taps are not paused.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.explain.refund_no_return": {
+    "explanation": "Explain line on a listed card refund that was sent to the customer with no return recorded; tells the manager not to refund again, to note it, then mark it as handled.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.explain.refund_unconfirmed": {
+    "explanation": "Explain line on a listed card refund the till restarted during, so it is not known whether the money went back; tells the manager to check the provider before refunding again.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -2261,6 +2325,14 @@
       "main"
     ]
   },
+  "pay.attention.original_receipt": {
+    "explanation": "Line in a listed refund row naming the receipt that was refunded; the placeholder is the original receipt number.\n\nPlaceholders:\n- %s: original receipt number",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "pay.attention.reason.main_till_only": {
     "explanation": "Reason line in a listed row: an additional till cannot send a card tap refund.",
     "flags": "",
@@ -2295,6 +2367,14 @@
   },
   "pay.attention.reference": {
     "explanation": "Line in a listed row showing the last characters of the payment provider's reference so the manager can find the payment at the provider.\n\nPlaceholders:\n- %s: last four characters of the provider reference",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.refund.summary": {
+    "explanation": "Manager PIN dialog text before marking a refund that was sent with no return recorded as handled; the first placeholder is the amount, the second the payment method.\n\nPlaceholders:\n- %s: amount with currency\n- %s: payment method name",
     "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
@@ -2352,6 +2432,22 @@
   "pay.attention.retry_summary": {
     "explanation": "Manager PIN dialog text before trying a failed refund again; the first placeholder is the amount, the second the payment method.\n\nPlaceholders:\n- %s: amount with currency\n- %s: payment method name",
     "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.state.charged_no_sale": {
+    "explanation": "Status chip on a listed card tap where the customer was charged but the till restarted before the sale was saved.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "pay.attention.state.refund_no_return": {
+    "explanation": "Status chip on a listed card refund that the provider sent back to the customer but whose return the till could not record.",
+    "flags": "max-length:32",
     "labels": [],
     "lines": [
       "main"

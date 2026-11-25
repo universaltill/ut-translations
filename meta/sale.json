@@ -2265,6 +2265,14 @@
       "0.34"
     ]
   },
+  "refund.error.already_sent": {
+    "explanation": "Error on the refund screen when the cashier sends the same refund again and the card provider already sent it back (it is still being recorded, or a manager has already handled it). Tells the cashier not to refund again and where to check.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "refund.error.fiscal_cannot_sign": {
     "explanation": "",
     "flags": "",
@@ -2301,6 +2309,14 @@
       "0.34"
     ]
   },
+  "refund.error.journal_unavailable": {
+    "explanation": "Error on the refund screen when the till could not write its safety record before asking the card provider, so the refund was not sent. Tells the cashier nothing was refunded and to try again or use another method.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "refund.error.method_exhausted": {
     "explanation": "Error shown on the refund screen when the sale's payments by the chosen method (e.g. card) have already been refunded so far that less is left than this return needs. Nothing is refunded or recorded; the cashier refunds the rest another way.",
     "flags": "",
@@ -2332,6 +2348,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "refund.error.refunded_not_recorded": {
+    "explanation": "Error on the refund screen when the card provider sent the money back to the customer but the till could not record the return. Tells the cashier not to refund again and that a manager must check Payments needing attention.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "refund.error.server": {
