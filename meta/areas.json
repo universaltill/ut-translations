@@ -17,7 +17,7 @@
   "reports": {
     "name": "Reports",
     "description": "Reports, the journal, end of day and the audit trail.",
-    "keys": 345
+    "keys": 352
   },
   "staff": {
     "name": "Staff",
@@ -27,7 +27,7 @@
   "settings": {
     "name": "Settings",
     "description": "Settings, admin menus, locations, registers, country settings, translations and the subscription.",
-    "keys": 1134
+    "keys": 1142
   },
   "tills": {
     "name": "Tills",

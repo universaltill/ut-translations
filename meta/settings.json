@@ -231,6 +231,14 @@
       "main"
     ]
   },
+  "backup.cloud.err.open_registration": {
+    "explanation": "Link after a Cloud backups reason line; opens Settings → Till registration.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "backup.cloud.err.other": {
     "explanation": "Generic error for cloud backup and restore.",
     "flags": "",
@@ -247,8 +255,24 @@
       "main"
     ]
   },
+  "backup.cloud.err.pair_again": {
+    "explanation": "Reason line in the Cloud backups card: the cloud rejects this till's device credential (401) on a store that has an owner; tells the manager to pair again.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "backup.cloud.err.rate_limited": {
     "explanation": "Reason line: the cloud asked the till to slow down.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.register_new": {
+    "explanation": "Reason line in the Cloud backups card: the cloud rejects this till's credential and the store has no owner yet; tells the manager to reconnect.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -263,8 +287,40 @@
       "main"
     ]
   },
+  "backup.cloud.err.service_unavailable": {
+    "explanation": "Reason line in the Cloud backups card: the cloud does not offer its service to this shop (for example its country).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "backup.cloud.err.subscription_inactive": {
     "explanation": "Reason line: the subscription is not active.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.till_moved": {
+    "explanation": "Reason line in the Cloud backups card: this till was moved to another shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.till_removed": {
+    "explanation": "Reason line in the Cloud backups card: this till was removed from the shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.till_replaced": {
+    "explanation": "Reason line in the Cloud backups card: the owner replaced this till as main till on my.universaltill.com, so it stops making cloud backups.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -281,6 +337,14 @@
   },
   "backup.cloud.err.too_old": {
     "explanation": "Error: the backup is too old.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.upload_other": {
+    "explanation": "Reason line in the Cloud backups card for an upload failure with no more specific reason; the till retries by itself.",
     "flags": "",
     "labels": [],
     "lines": [

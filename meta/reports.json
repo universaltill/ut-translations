@@ -483,6 +483,46 @@
       "0.34"
     ]
   },
+  "journal.refund_status.partly": {
+    "explanation": "Status chip in the sales journal on a sale of which only part has been refunded; the amounts follow beside it.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "journal.refund_status.pending": {
+    "explanation": "Warning chip in the sales journal: a card refund for this sale was sent but its outcome is not confirmed yet.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "journal.refund_status.pending_explain": {
+    "explanation": "Sale detail sentence under the Refund pending chip: tells the cashier not to start a new refund, to tap Refund again on the refund screen to settle it, and, if it still shows after a till restart, to ask a manager to check Payments needing attention in Settings. Keep the menu names identical to the Settings labels.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "journal.refund_status.refunded": {
+    "explanation": "Status chip in the sales journal on a sale whose whole total has been refunded. Not the same word as the Refund label on the refund itself.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "journal.refunded_amount": {
+    "explanation": "Journal line beside a refund chip: how much of the sale total has been refunded so far.\n\nPlaceholders:\n- %s: amount refunded so far, with currency\n- %s: the sale's total, with currency",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "journal.replica_no_cross_till": {
     "explanation": "",
     "flags": "",
@@ -570,6 +610,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "journal.type.refund": {
+    "explanation": "Label on a journal entry (sale detail page) that is a refund: a return paid back to the customer.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "journal.type.sale": {
+    "explanation": "Label on a journal entry (sale detail page) that is an ordinary sale.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "reports.avg_sale": {
