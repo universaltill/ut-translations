@@ -2317,6 +2317,14 @@
       "0.34"
     ]
   },
+  "tills.join_scan.clear": {
+    "explanation": "Button beside the scanned-code chip: empties the filled code so the person can scan again or type one.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tills.join_tabs.code": {
     "explanation": "",
     "flags": "",

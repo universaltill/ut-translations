@@ -6686,6 +6686,14 @@
       "main"
     ]
   },
+  "settings.move.refused_region": {
+    "explanation": "Move refused (at pairing or at approval): the two shops are in different data regions. Terminal.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.move.refused_shop_has_tills": {
     "explanation": "Move refused: the till's current shop has other tills.",
     "flags": "",
@@ -8198,7 +8206,15 @@
     ]
   },
   "settings.till_registration.key_refused": {
-    "explanation": "Result when the cloud refuses this till's key proof; support reads the device ID and fingerprint shown below this text.",
+    "explanation": "Result when the cloud refuses this till's key proof, for a registered till locked out of its shop; support reads the device ID and fingerprint shown below this text; ends by offering Register as a new shop.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.key_refused_unregistered": {
+    "explanation": "Settings notice on a till that is not registered when the cloud refused its key proof; support reads the device ID and fingerprint shown below. No new-shop option applies here.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -8294,7 +8310,15 @@
     ]
   },
   "settings.till_registration.reconnect_failed": {
-    "explanation": "Result of Reconnect for a network or server failure.",
+    "explanation": "Result of Reconnect or Register as a new shop when the cloud could not be reached (network failure).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.reconnect_not_locked_out": {
+    "explanation": "Result when Reconnect or Register as a new shop is refused because the till is not locked out of an ownerless shop (healthy, not registered, or the shop has an owner).",
     "flags": "",
     "labels": [],
     "lines": [
@@ -8303,6 +8327,22 @@
   },
   "settings.till_registration.reconnect_ok": {
     "explanation": "Result after a successful Reconnect this till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.reconnect_other_shop": {
+    "explanation": "Result of Reconnect when the cloud's answer named a different shop than the till's own; nothing was saved. Support reads the device ID and fingerprint shown below.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.reconnect_server_error": {
+    "explanation": "Result of Reconnect or Register as a new shop when the cloud answered with an error (server error or an unexpected refusal).",
     "flags": "",
     "labels": [],
     "lines": [

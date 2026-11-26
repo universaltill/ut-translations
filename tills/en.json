@@ -262,6 +262,7 @@
   "tills.join_role.additional_help": "Another till for a shop that already has a main till. Copies the shop from that main till; type the main till's code and address.",
   "tills.join_role.label": "Join as",
   "tills.join_role.satellite_help": "Kiosk, table-QR or order station. Needs the main till to work.",
+  "tills.join_scan.clear": "Clear scanned code",
   "tills.join_tabs.code": "Enter a pairing code",
   "tills.join_tabs.discover": "Find on this network",
   "tills.joined": "Joined",

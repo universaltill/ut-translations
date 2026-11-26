@@ -578,6 +578,78 @@
       "main"
     ]
   },
+  "card_reader.external.auth_code": {
+    "explanation": "Label of the optional approval-code field the cashier copies from their own terminal.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.external.declined": {
+    "explanation": "Button: the shop's own terminal declined the card; nothing is recorded.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.external.declined_notice": {
+    "explanation": "Status message after the cashier taps Declined on the own-terminal panel.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.external.err_auth_code": {
+    "explanation": "Error when the typed auth code has more than 12 characters or anything other than letters and numbers.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.external.err_last4": {
+    "explanation": "Error when the last 4 card digits field is not exactly four digits.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.external.invalid": {
+    "explanation": "Generic error when the typed auth code or last 4 digits are not accepted.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.external.last4": {
+    "explanation": "Label of the optional field for the last four digits of the card, copied from the cashier's own terminal.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.external.paid": {
+    "explanation": "Button: the cashier confirms the shop's own terminal approved the card payment.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.external.prompt": {
+    "explanation": "Instruction in the Which reader? panel when the shop's own terminal is chosen; the amount is shown in place of %s.\n\nPlaceholders:\n- %s: amount to key in, with currency",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "card_reader.invalid": {
     "explanation": "Shown when the chosen card reader is no longer set up on this till; no payment was taken.",
     "flags": "",
@@ -730,6 +802,14 @@
       "main"
     ]
   },
+  "card_reader.settings.add_external": {
+    "explanation": "Button under Settings, Payments, Card readers that adds the shop's own card terminal (not connected to the till).",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "card_reader.settings.count": {
     "explanation": "Line on the card readers page showing how many readers are set up out of the most this till allows. Both placeholders are whole numbers.\n\nPlaceholders:\n- %d: readers set up\n- %d: most readers allowed",
     "flags": "placeholders:\"%d\"",
@@ -764,6 +844,14 @@
   },
   "card_reader.settings.err_ref": {
     "explanation": "Error when the reader ID has characters that are not allowed, the provider does not support it, or it is already added.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "card_reader.settings.external_help": {
+    "explanation": "Help text above the add-your-own-terminal form in Card readers settings.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -1622,7 +1710,7 @@
     ]
   },
   "pos.error.discount_not_permitted": {
-    "explanation": "Error returned to an integration that sends a sale discount above the basket's own discount to the tender endpoint from a session that may not discount; the sale is not recorded.",
+    "explanation": "Error returned to an integration that sends a sale discount above the basket's own discount to the tender, sale-discount or line endpoint, from a session that may not discount; nothing is applied.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -1983,6 +2071,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "pos.toast.payment_cancelled": {
+    "explanation": "Toast on the cashier till when the cashier cancelled a card tap and the payment service confirmed nothing was charged: the sale stays open.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "pos.toast.payment_declined": {
@@ -2518,6 +2614,86 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "scan.pair.button": {
+    "explanation": "Button above the code field on both join screens (setup wizard, Tills page): opens the camera to scan the main till's pairing QR code.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "scan.pair.close": {
+    "explanation": "Cancel button of the pairing-scan camera overlay: closes it and releases the camera.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "scan.pair.no_camera": {
+    "explanation": "Camera overlay message when no camera can be used (none present, not a secure page, or the decoder failed to load). Leads with the action: type the code and the main till address.",
+    "flags": "max-length:160",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "scan.pair.not_ut_code": {
+    "explanation": "Camera overlay hint when the scanned QR is not a Universal Till pairing code; scanning continues.",
+    "flags": "max-length:160",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "scan.pair.permission_denied": {
+    "explanation": "Camera overlay message when the person (or the device) denied camera access; offers the typed code as the way out.",
+    "flags": "max-length:160",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "scan.pair.scanned_from": {
+    "explanation": "Chip shown after a successful scan. %s is the main till's address (host:port), which is shown left-to-right inside the sentence.\n\nPlaceholders:\n- %s: address of the main till (host and port)",
+    "flags": "max-length:60, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "scan.pair.scanned_next": {
+    "explanation": "Status line after a valid scan: the code field is filled but nothing is sent; the person adds a till name and presses Join.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "scan.pair.scanning": {
+    "explanation": "Camera overlay text while the camera starts and scans: where to point it.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "scan.pair.title": {
+    "explanation": "Heading of the pairing-scan camera overlay.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "scan.pair.type_instead": {
+    "explanation": "Button of the pairing-scan overlay that closes it and puts the cursor in the code field.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "suggest.add": {
@@ -3947,6 +4123,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "tender.card_external": {
+    "explanation": "Payment method name on the X and Z reports, receipts and refunds for a card paid on the shop's own terminal that is not connected to the till.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "tender.card_reader": {
