@@ -304,6 +304,14 @@
       "0.34"
     ]
   },
+  "elevation.error_approval_changed": {
+    "explanation": "Error line in the manager-PIN prompt shown when the request changed since the prompt was shown, was already approved once, or the approval timed out or was lost after a till restart; the prompt is shown again for the values now requested.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.error_insufficient_role": {
     "explanation": "",
     "flags": "",

@@ -2,7 +2,7 @@
   "sale": {
     "name": "Sale",
     "description": "The sale screen: basket, scanning, payment, holds, refunds and the quick-button grid.",
-    "keys": 552
+    "keys": 557
   },
   "catalog": {
     "name": "Catalog",
@@ -22,7 +22,7 @@
   "staff": {
     "name": "Staff",
     "description": "Users, permissions, sign-in, PIN elevation and shifts.",
-    "keys": 352
+    "keys": 353
   },
   "settings": {
     "name": "Settings",
@@ -32,7 +32,7 @@
   "tills": {
     "name": "Tills",
     "description": "Tills and devices: sync, pairing, Bluetooth devices, status chips, diagnostics, recovery and uninstall.",
-    "keys": 407
+    "keys": 513
   },
   "setup": {
     "name": "Setup",

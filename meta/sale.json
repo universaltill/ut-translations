@@ -2413,6 +2413,22 @@
       "main"
     ]
   },
+  "refund.error.leg_exhausted": {
+    "explanation": "Error on the refund screen when the payment the cashier picked has already been refunded so far that less is left than this return needs. Nothing is refunded or recorded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "refund.error.leg_unknown": {
+    "explanation": "Error on the refund screen when the submitted payment choice does not belong to this sale and method (e.g. a stale or edited form). Nothing is refunded.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "refund.error.method_exhausted": {
     "explanation": "Error shown on the refund screen when the sale's payments by the chosen method (e.g. card) have already been refunded so far that less is left than this return needs. Nothing is refunded or recorded; the cashier refunds the rest another way.",
     "flags": "",
@@ -2479,6 +2495,30 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "refund.leg.all": {
+    "explanation": "Refund screen, payment choice: option that spreads the refund over all of this method's payments, first payment first.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "refund.leg.left": {
+    "explanation": "Refund screen, payment choice: how much of one payment can still be refunded.\n\nPlaceholders:\n- %s: amount that can still be refunded to this payment",
+    "flags": "max-length:36, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "refund.leg.legend": {
+    "explanation": "Refund screen: heading over the list of the sale's payments by the chosen method (shown only when there are two or more, e.g. a bill split over two cards); the cashier picks which one the refund goes back to. Also the prompt shown when Refund is tapped with no pick.",
+    "flags": "max-length:48",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "refund.manager_pin": {

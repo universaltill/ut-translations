@@ -1617,6 +1617,198 @@
       "0.34"
     ]
   },
+  "tills.add.another.get_code": {
+    "explanation": "Button that makes a new one-time pairing code and picture.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.another.help": {
+    "explanation": "Instruction above the Get a new code button.",
+    "flags": "max-length:200",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.another.only_main": {
+    "explanation": "Shown instead of the pairing code on a joined till.\n\nPlaceholders:\n- %s: name of the main till",
+    "flags": "max-length:80, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.another.replaced": {
+    "explanation": "Shown instead of the pairing code on a replaced main till.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.another.title": {
+    "explanation": "Heading of the section that shows the pairing code.",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.chooser.another": {
+    "explanation": "Choice 1 on the Add a till tab.",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.chooser.another_help": {
+    "explanation": "Help under choice 1.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.chooser.join": {
+    "explanation": "Choice 2 on the Add a till tab.",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.chooser.join_help": {
+    "explanation": "Help under choice 2.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.chooser.replace": {
+    "explanation": "Choice 3 on the Add a till tab.",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.chooser.replace_help": {
+    "explanation": "Help under choice 3.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.chooser.title": {
+    "explanation": "Heading above the three choices on the Add a till tab.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.join.blocked": {
+    "explanation": "Shown instead of the join form on a main till that has other tills.",
+    "flags": "max-length:140",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.join.intro": {
+    "explanation": "Intro of the join section.",
+    "flags": "max-length:200",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.join.title": {
+    "explanation": "Heading of the join section.",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.replace.go": {
+    "explanation": "Button from the replace section to the Other tills tab.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.replace.help": {
+    "explanation": "Steps to replace a broken till.",
+    "flags": "max-length:160",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.replace.main": {
+    "explanation": "Note for replacing a broken main till.",
+    "flags": "max-length:140",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.replace.title": {
+    "explanation": "Heading of the replace section.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.replaced_join": {
+    "explanation": "Button in the replaced notice that opens the join section; the placeholder names the new main till.\n\nPlaceholders:\n- %s: name of the new main till",
+    "flags": "max-length:40, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.replaced_join_unnamed": {
+    "explanation": "Button in the replaced notice when the new main till has no name yet.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.replaced_notice": {
+    "explanation": "Notice on the Add a till tab of a replaced main till; the placeholder names the new main till.\n\nPlaceholders:\n- %s: name of the new main till",
+    "flags": "max-length:160, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.replaced_notice_unnamed": {
+    "explanation": "Notice on the Add a till tab of a replaced main till when the new main till has not reported its name.",
+    "flags": "max-length:140",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.add.waiting_title": {
+    "explanation": "Heading of the card listing pair requests that wait for a manager.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tills.add_help": {
     "explanation": "",
     "flags": "",
@@ -2022,6 +2214,14 @@
       "0.34"
     ]
   },
+  "tills.join.outcome.additional": {
+    "explanation": "One line under the join button saying what pressing it does.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tills.join.rejoin_note": {
     "explanation": "Note in a joined till's 'join an existing shop' section: joining another main till sends its unsent sales there first.\n\nPlaceholders:\n- %d: how many unsent sales this till has",
     "flags": "placeholders:\"%d\"",
@@ -2377,6 +2577,270 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "tills.list.account_unavailable": {
+    "explanation": "Other tills tab: shown when the account's list of tills cannot be read.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.ask_manager": {
+    "explanation": "Shown where a person cannot remove tills (a joined till).",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.col_source": {
+    "explanation": "Column heading: which list the till came from.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.col_status": {
+    "explanation": "Column heading of the other tills list.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.confirm_keep": {
+    "explanation": "Inline button that cancels removing a till.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.confirm_yes": {
+    "explanation": "Inline confirm button for removing a till.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.details_note": {
+    "explanation": "Note above the network detail table on the Other tills tab.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.disagree_body_one": {
+    "explanation": "Body of the disagreement banner, one till.",
+    "flags": "max-length:160",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.disagree_body_other": {
+    "explanation": "Body of the disagreement banner, several tills.\n\nPlaceholders:\n- %d: number of tills",
+    "flags": "max-length:170, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.disagree_title": {
+    "explanation": "Title of the banner shown when a till is on this network but not in the account.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.error.account_unavailable": {
+    "explanation": "Refusal when removing stale tills while the account list cannot be read.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.only_one": {
+    "explanation": "Empty state of the Other tills tab.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.open_my": {
+    "explanation": "Link to the shop's online account.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.remove": {
+    "explanation": "Button on a stale till row; opens an inline question.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.remove_confirm": {
+    "explanation": "Inline question before removing one till.\n\nPlaceholders:\n- %s: till name",
+    "flags": "max-length:100, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.remove_stale_all": {
+    "explanation": "Button that removes every till that is on this network but not in the account.\n\nPlaceholders:\n- %d: number of tills",
+    "flags": "max-length:60, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.remove_stale_all_confirm": {
+    "explanation": "Inline question before removing all stale tills; the names follow it.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.same_name_hint": {
+    "explanation": "Hint when two tills share a name but are different tills.\n\nPlaceholders:\n- %s: till name",
+    "flags": "max-length:100, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.show_it": {
+    "explanation": "Link in the disagreement banner to the first such row.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.source.account": {
+    "explanation": "Source label: the till is in the account only.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.source.both": {
+    "explanation": "Source label: the till is on the network and in the account.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.source.network": {
+    "explanation": "Source label: the till is enrolled on this shop network only.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.cloud_only": {
+    "explanation": "Status tag: in the account but never added on this network.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.cloud_only.hint": {
+    "explanation": "Hint under the cloud-only tag.\n\nPlaceholders:\n- %s: till name",
+    "flags": "max-length:120, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.local_only": {
+    "explanation": "Status tag: enrolled on this network but missing from the account.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.local_only.hint_old": {
+    "explanation": "Hint under the status tag for a stale till not seen for a day or more.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.local_only.hint_recent": {
+    "explanation": "Hint under the status tag for a stale till seen recently.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.ok": {
+    "explanation": "Status tag: the till is in both lists, or the account list is unavailable.",
+    "flags": "max-length:12",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.replaced": {
+    "explanation": "Status tag: this till was replaced.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.replaced.hint": {
+    "explanation": "Hint under the replaced tag.\n\nPlaceholders:\n- %s: name of the new main till",
+    "flags": "max-length:60, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.role_mismatch": {
+    "explanation": "Status tag: the account and this network give the till different roles.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.role_mismatch.hint": {
+    "explanation": "Hint under the roles differ tag; the placeholders are the role as the account and as the network name it.\n\nPlaceholders:\n- %s: role in the account\n- %s: role on this network",
+    "flags": "max-length:180, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.try_again": {
+    "explanation": "Button that reads the account's list of tills again.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "tills.main_unreachable_help": {
@@ -2834,6 +3298,62 @@
       "0.34"
     ]
   },
+  "tills.pending.already_enrolled": {
+    "explanation": "Tag on a waiting pair request on the main till's Add a till tab: a till with this name is already in the list, so approving replaces the old entry.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.pending.already_enrolled_hint": {
+    "explanation": "Hint under the Already enrolled here tag: approving replaces the old entry and no rename is needed. The placeholder is the 6-digit check code the joining till shows, which the manager compares.\n\nPlaceholders:\n- %s: the verification code, digits",
+    "flags": "max-length:160, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.pending.name_in_use": {
+    "explanation": "Tag on a waiting pair request when another till with this name is live on the network right now.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.pending.name_in_use_hint": {
+    "explanation": "Reason shown beside the disabled Approve button when the requested name belongs to a live till.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.phones.empty": {
+    "explanation": "Empty state of the phone readers block.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.phones.help": {
+    "explanation": "Help under the phone readers heading.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.phones.title": {
+    "explanation": "Heading of the phone readers block on the Other tills tab.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tills.promote_adopt_failed": {
     "explanation": "Promote result: some copied sales could not be added to this till's record (a receipt number or reference it refuses); they stay in the copy.\n\nPlaceholders:\n- %d: number of sales",
     "flags": "placeholders:\"%d\"",
@@ -2982,6 +3502,22 @@
       "0.34"
     ]
   },
+  "tills.readers.footer": {
+    "explanation": "Footer of the Card readers tab.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.readers.on_additional": {
+    "explanation": "Card readers tab on an additional till: pairing happens on the main till.\n\nPlaceholders:\n- %s: name of the main till",
+    "flags": "max-length:80, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tills.rejoin_needed_help": {
     "explanation": "Notice on a joined till's Tills page after its data was restored onto a new device: the steps to join the main till again, and a warning not to revoke the original till if it is still in use. 'Join an existing shop' is the label of that section on the same page.",
     "flags": "",
@@ -3033,6 +3569,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "tills.role.main": {
+    "explanation": "Role name in the till list: the main till.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "tills.role.replica": {
@@ -3237,6 +3781,70 @@
       "main"
     ]
   },
+  "tills.settings.kiosk_idle": {
+    "explanation": "Link to the kiosk idle reset setting.",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.settings.kiosk_payment": {
+    "explanation": "Link to the kiosk payment mode setting.",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.settings.more": {
+    "explanation": "Heading of the group of links to Settings on the Settings tab.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.settings.network": {
+    "explanation": "Heading on the Settings tab: other devices, network key, copy of every sale.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.settings.notices": {
+    "explanation": "Link to the notices setting.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.settings.quarantine": {
+    "explanation": "Heading of the quarantine card on the Settings tab.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.settings.registration": {
+    "explanation": "Link to the shop account card in Settings.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.settings.subscription": {
+    "explanation": "Link to the plan card in Settings.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tills.show_qr": {
     "explanation": "",
     "flags": "",
@@ -3246,6 +3854,62 @@
       "0.34"
     ]
   },
+  "tills.tab.add": {
+    "explanation": "Tab: add a till to the shop, join a shop, or replace a broken till.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.tab.count_look": {
+    "explanation": "Accessible name of the small count tag on the Other tills tab: how many tills disagree between this network and the account.\n\nPlaceholders:\n- %d: number of tills",
+    "flags": "max-length:40, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.tab.count_waiting": {
+    "explanation": "Accessible name of the small count tag on the Add a till tab: how many pair requests wait for a manager.\n\nPlaceholders:\n- %d: number of requests",
+    "flags": "max-length:40, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.tab.go": {
+    "explanation": "Button next to the section drop-down when scripts are off.",
+    "flags": "max-length:10",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.tab.others": {
+    "explanation": "Tab: the list of the shop's other tills, from this network and from the account.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.tab.readers": {
+    "explanation": "Tab: phones used as card readers.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.tab.select_label": {
+    "explanation": "Label of the section drop-down that replaces the tab bar on a phone.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tills.the_primary": {
     "explanation": "",
     "flags": "",
@@ -3253,6 +3917,190 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "tills.this.account_note": {
+    "explanation": "Reassurance under the shop account state.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.account_settings": {
+    "explanation": "Button from the This till tab to the account settings on the Settings tab.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.account_shop": {
+    "explanation": "Label before the shop name in the shop account card.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.account_state": {
+    "explanation": "Label before the connected / not connected tag in the shop account card.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.account_title": {
+    "explanation": "Heading of the card with the shop account state on the This till tab.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.connected": {
+    "explanation": "Tag: this till is registered with the shop account.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.name_help": {
+    "explanation": "Help text under the till name field.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.name_title": {
+    "explanation": "Heading of the card where the till name and register are set.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.not_connected": {
+    "explanation": "Tag: this till is not registered with a shop account.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.not_connected_hint": {
+    "explanation": "Shown when the till is not connected to a shop account.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.reconnect": {
+    "explanation": "Button in the 'join the main till again' notice that opens the join section of the Add a till tab.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.replaced_body": {
+    "explanation": "Warning body after the main till was replaced; the placeholder names the new main till.\n\nPlaceholders:\n- %s: name of the new main till",
+    "flags": "max-length:160, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.replaced_body_unnamed": {
+    "explanation": "Warning body after the main till was replaced when the new main till has not reported its name yet.",
+    "flags": "max-length:160",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.replaced_join": {
+    "explanation": "Link in the replaced warning that opens the join section of the Add a till tab.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.replaced_title": {
+    "explanation": "Bold first line of the warning on the This till tab after the main till was replaced.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.sentence.additional": {
+    "explanation": "Tills & devices, This till tab: the one sentence that opens the tab. This till is an additional till that sells on its own.\n\nPlaceholders:\n- %s: shop name",
+    "flags": "max-length:120, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.sentence.alone": {
+    "explanation": "Tills & devices, This till tab: the one sentence that opens the tab. Standalone till with no shop and no other tills.",
+    "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.sentence.main": {
+    "explanation": "Tills & devices, This till tab: the one sentence that opens the tab. This till is the main till.\n\nPlaceholders:\n- %s: shop name",
+    "flags": "max-length:120, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.sentence.replaced": {
+    "explanation": "Tills & devices, This till tab: the one sentence that opens the tab. The main till was replaced by another till.",
+    "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.sentence.satellite": {
+    "explanation": "Tills & devices, This till tab: the one sentence that opens the tab. This till is a satellite.\n\nPlaceholders:\n- %s: name of the main till",
+    "flags": "max-length:120, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.sentence.unreachable_additional": {
+    "explanation": "Tills & devices, This till tab: the one sentence that opens the tab. An additional till that cannot reach its main till.\n\nPlaceholders:\n- %s: name of the main till",
+    "flags": "max-length:120, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.sentence.unreachable_satellite": {
+    "explanation": "Tills & devices, This till tab: the one sentence that opens the tab. A satellite that cannot reach its main till.\n\nPlaceholders:\n- %s: name of the main till",
+    "flags": "max-length:160, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.shop_fallback": {
+    "explanation": "Used in the This till sentence when the shop has no name yet: 'This is the main till of your shop.'",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "tills.this_till": {
