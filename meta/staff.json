@@ -312,6 +312,14 @@
       "main"
     ]
   },
+  "elevation.error_approval_changed_api": {
+    "explanation": "Error message in the JSON response of an integration request (void a sale, open the drawer without a sale) when the approval token it sent was already used, expired, lost after a till restart, or was issued for different values; the response carries a fresh approval token to retry with. Not shown on the till screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.error_insufficient_role": {
     "explanation": "",
     "flags": "",
@@ -1010,6 +1018,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "elevation.summary.payments_tips": {
+    "explanation": "Manager PIN prompt summary: what approving does, it changes the tip settings used at checkout.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "elevation.summary.permission_grant": {

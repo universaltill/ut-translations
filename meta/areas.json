@@ -2,7 +2,7 @@
   "sale": {
     "name": "Sale",
     "description": "The sale screen: basket, scanning, payment, holds, refunds and the quick-button grid.",
-    "keys": 557
+    "keys": 571
   },
   "catalog": {
     "name": "Catalog",
@@ -22,12 +22,12 @@
   "staff": {
     "name": "Staff",
     "description": "Users, permissions, sign-in, PIN elevation and shifts.",
-    "keys": 354
+    "keys": 356
   },
   "settings": {
     "name": "Settings",
     "description": "Settings, admin menus, locations, registers, country settings, translations and the subscription.",
-    "keys": 1153
+    "keys": 1159
   },
   "tills": {
     "name": "Tills",

@@ -1851,6 +1851,14 @@
       "0.34"
     ]
   },
+  "pos.gift_voucher.in_store_only": {
+    "explanation": "One-line note under the card number field of the gift voucher popup: a voucher sold here can be spent in this shop only, never in a web shop or online. Keep it short and plain.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "pos.gift_voucher.number": {
     "explanation": "",
     "flags": "",
@@ -3593,6 +3601,46 @@
       "main"
     ]
   },
+  "tap.settings.connect.check": {
+    "explanation": "Secondary button: re-reads the Stripe account state after the owner finished in the browser.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.connect.continue": {
+    "explanation": "Same button once Stripe has the account but needs more: opens the online account to finish.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.connect.due": {
+    "explanation": "Account step line: Stripe asked for more information before card payments can start.",
+    "flags": "max-length:60",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.connect.hint": {
+    "explanation": "Line under the button: it opens the browser; come back afterwards and press Check status.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tap.settings.connect.open": {
+    "explanation": "Button on Settings > Tap to Pay, account step: opens the shop's online account (my.universaltill.com) in the browser to start Stripe set up.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tap.settings.details": {
     "explanation": "Label of the collapsed section holding the raw error code, under a failed Set up or the Stripe account line.",
     "flags": "max-length:30",
@@ -4495,6 +4543,14 @@
       "0.34"
     ]
   },
+  "tender.status.tip_exceeds": {
+    "explanation": "Split tab: error when the tip typed for a payment is more than the amount handed over less change.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "tender.status.voucher_balance": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
@@ -4538,6 +4594,62 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "tender.tip.amount_label": {
+    "explanation": "Label of a money field where the cashier types the tip amount, in the payment panel and on the Split tab.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tender.tip.custom": {
+    "explanation": "Payment panel, tip row: button that opens a field to type a tip amount instead of a percentage.",
+    "flags": "max-length:24",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tender.tip.label": {
+    "explanation": "Payment panel: heading of the tip row above the payment method buttons.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tender.tip.none": {
+    "explanation": "Payment panel, tip row: button for no tip. It is the pre-selected choice. Short, it sits on a touch button.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tender.tip.pill": {
+    "explanation": "Split tab: note on a pending payment line showing the part of it that is a tip.\n\nPlaceholders:\n- %s: tip amount, formatted as money",
+    "flags": "max-length:30, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tender.tip.too_large": {
+    "explanation": "Payment panel, tip row: shown when the typed tip is more than the whole bill. Nothing is charged until it is corrected.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tender.tip.total_with_tip": {
+    "explanation": "Payment panel, tip row: the bill plus the chosen tip, shown before the cashier taps a payment method.\n\nPlaceholders:\n- %s: bill total plus tip, formatted as money",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "tender.title": {

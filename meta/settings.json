@@ -7143,6 +7143,46 @@
       "0.34"
     ]
   },
+  "settings.payments.tip_presets": {
+    "explanation": "Settings, Payments card: label of the text field holding the tip percentages offered at checkout.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.payments.tip_presets_help": {
+    "explanation": "Settings, Payments card: hint under the tip percentages field. The example 10,15,20 and 12.5 are literal, keep the digits and commas.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.payments.tip_presets_invalid": {
+    "explanation": "Settings, Payments card: error when the tip percentages field has no usable percentage. The example is literal.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.payments.tips_enabled": {
+    "explanation": "Settings, Payments card: label of the checkbox that turns the tip row at checkout on or off.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.payments.tips_help": {
+    "explanation": "Settings, Payments card: short explanation above the tip checkbox. Says what the tip row does and which shops have it on by default.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.payments.title": {
     "explanation": "",
     "flags": "",
@@ -8527,6 +8567,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "settings.tse.credential_missing": {
+    "explanation": "Settings → Receipt signing (TSE) notice on a main till whose signing credential is missing (restored backup); the manager re-enters business details and presses Retry. No compliance claims.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "settings.tse.dismiss_blocked": {
