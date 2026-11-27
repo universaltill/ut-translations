@@ -143,6 +143,14 @@
       "main"
     ]
   },
+  "backup.cloud.err.cannot_prove": {
+    "explanation": "Reason line in the Cloud backups card when the till cannot prove who it is; followed by a link to Till registration.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "backup.cloud.err.cloud_backup_not_in_plan": {
     "explanation": "Reason line: the plan lacks the cloud backup feature.",
     "flags": "",
@@ -185,6 +193,14 @@
   },
   "backup.cloud.err.expired": {
     "explanation": "Error: the restore request expired.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.in_use_elsewhere": {
+    "explanation": "Reason line in the Cloud backups card when the same till data is in use on two devices; followed by a link to Till registration.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -271,6 +287,14 @@
       "main"
     ]
   },
+  "backup.cloud.err.reconnecting": {
+    "explanation": "Reason line in the Cloud backups card while the till reconnects to its shop by itself; no action needed.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "backup.cloud.err.register_new": {
     "explanation": "Reason line in the Cloud backups card: the cloud rejects this till's credential and the store has no owner yet; tells the manager to reconnect.",
     "flags": "",
@@ -289,6 +313,14 @@
   },
   "backup.cloud.err.service_unavailable": {
     "explanation": "Reason line in the Cloud backups card: the cloud does not offer its service to this shop (for example its country).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "backup.cloud.err.shop_deleted": {
+    "explanation": "Reason line in the Cloud backups card when the shop was deleted from its online account.",
     "flags": "",
     "labels": [],
     "lines": [
@@ -5645,6 +5677,14 @@
       "main"
     ]
   },
+  "settings.enrol.claim_unauthorized": {
+    "explanation": "Error line under the Claim this store button in Settings when the cloud refused this till's credential (HTTP 401): says the till is not connected right now and is reconnecting by itself; never blames the internet connection.",
+    "flags": "max-length:140",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "settings.enrol.cloud_sync_off": {
     "explanation": "",
     "flags": "",
@@ -8199,6 +8239,14 @@
   },
   "settings.till_registration.fingerprint_unavailable": {
     "explanation": "Shown instead of the key fingerprint when this till's key cannot be read.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "settings.till_registration.in_use_elsewhere": {
+    "explanation": "Settings notice on a not-registered till whose identity is in use on two machines (copied data folder): only one can connect; says what to do.",
     "flags": "",
     "labels": [],
     "lines": [

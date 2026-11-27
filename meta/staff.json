@@ -1047,6 +1047,14 @@
       "main"
     ]
   },
+  "elevation.summary.refund": {
+    "explanation": "Sentence in the manager-PIN prompt shown when a cashier without the Refunds permission presses Refund: it names the refund total, the original receipt number and the payment method the money goes back to, so the approver sees exactly what they allow. The payment method is its on-screen name (e.g. Cash, Card), not a code.\n\nPlaceholders:\n- %s: refund total\n- %s: receipt number\n- %s: payment method display name",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "elevation.summary.registration_resume": {
     "explanation": "Sentence in the manager-PIN prompt shown when a cashier switches on Send usage facts in Settings, Privacy: names the action the approver is allowing.",
     "flags": "",

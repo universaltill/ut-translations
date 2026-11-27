@@ -118,6 +118,7 @@
   "elevation.summary.permission_revoke": "Revoke the \"%s\" permission from the %s role.",
   "elevation.summary.printer_settings": "Change the printer settings.",
   "elevation.summary.reduce_line_qty": "Reduce %s from %s to %s as %s.",
+  "elevation.summary.refund": "Refund %s from receipt %s, paid back by %s.",
   "elevation.summary.registration_resume": "Let this till send usage facts to the cloud again.",
   "elevation.summary.registration_stop": "Stop this till sending usage facts to the cloud.",
   "elevation.summary.remove_demo_data": "Permanently remove all untouched sample data (catalogue items, customers and promo codes).",

@@ -644,6 +644,14 @@
       "0.34"
     ]
   },
+  "status.cloud_auth.in_use_elsewhere_hint": {
+    "explanation": "Tooltip of the status-bar chip for a manager when the till's identity is live on another machine (a copied data folder) and automatic retries stopped.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "status.cloud_auth.key_refused_hint": {
     "explanation": "Tooltip of the status-bar chip for a manager after the cloud refused this till's key proof.",
     "flags": "",
@@ -724,6 +732,262 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "status.cloud_heal.ask_manager": {
+    "explanation": "Added to the status-bar chip's tooltip for a signed-in person who may not open Settings.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.btn_code": {
+    "explanation": "Link in the status-bar chip that opens this till's page to connect with a pairing code.",
+    "flags": "max-length:28",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.btn_enter_code": {
+    "explanation": "Link in the status-bar chip that opens this till's page to enter a pairing code.",
+    "flags": "max-length:28",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.btn_join": {
+    "explanation": "Link in the status-bar chip that opens the page to join this till to the shop as an additional till.",
+    "flags": "max-length:28",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.btn_new_shop": {
+    "explanation": "Link in the status-bar chip that opens Settings to register this till as a new shop.",
+    "flags": "max-length:28",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.btn_open": {
+    "explanation": "Link in the status-bar chip that opens Settings, Till registration.",
+    "flags": "max-length:28",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.cannot_prove": {
+    "explanation": "Full sentence (chip tooltip, Tills banner, Settings notice)  on a till that cannot prove its identity to its shop's cloud account; the owner makes a pairing code.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.cannot_prove_no_account": {
+    "explanation": "Status-bar chip on a till that cannot prove its identity and whose shop has no owner account to make a code.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.cannot_prove_no_account_short": {
+    "explanation": "Short words in the status-bar chip when a till cannot reconnect by itself and its shop has no online account.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.cannot_prove_short": {
+    "explanation": "Short words in the status-bar chip when a till cannot reconnect by itself and the shop owner can make a code.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.in_use_elsewhere": {
+    "explanation": "Status-bar chip when the same till data seems to run on two devices, so reconnecting by itself is paused.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.in_use_elsewhere_short": {
+    "explanation": "Short words in the status-bar chip when the same till data is in use on two devices.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.moved": {
+    "explanation": "Status-bar chip on a till that was moved to another shop's account.\n\nPlaceholders:\n- %s: the name of the other shop",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.moved_full": {
+    "explanation": "Full sentence (chip tooltip, Tills banner, Settings notice)  on a till that was moved to another shop's account.\n\nPlaceholders:\n- %[1]s: the name of the other shop",
+    "flags": "placeholders:\"%[1]s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.moved_short": {
+    "explanation": "Short words in the status-bar chip on a till that now belongs to another shop.\n\nPlaceholders:\n- %s: the name of the other shop",
+    "flags": "max-length:32, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.reconnected": {
+    "explanation": "One-time notice after a till reconnected to its shop by itself.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.reconnecting": {
+    "explanation": "Full sentence (chip tooltip, Tills banner, Settings notice)  while a till reconnects by itself; no action needed and selling is unaffected.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.reconnecting_short": {
+    "explanation": "Short words in the status-bar chip while a till gets a new connection to its shop by itself; the full sentence is the chip's tooltip.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.removed": {
+    "explanation": "Full sentence (chip tooltip, Tills banner, Settings notice)  on a till the owner removed from the shop's cloud account on purpose; sales stay on the till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.removed_short": {
+    "explanation": "Short words in the status-bar chip on a till that was removed from its shop's account.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.replaced": {
+    "explanation": "Status-bar chip on a till the owner replaced as main till; it can still sell offline.\n\nPlaceholders:\n- %s: the name of the new main till",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.replaced_full": {
+    "explanation": "Full sentence (chip tooltip, Tills banner, Settings notice)  on a till the owner replaced as main till; it can still sell offline.\n\nPlaceholders:\n- %[1]s: the name of the new main till",
+    "flags": "placeholders:\"%[1]s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.replaced_short": {
+    "explanation": "Short words in the status-bar chip on a till that another till replaced as the main till.\n\nPlaceholders:\n- %s: the name of the new main till",
+    "flags": "max-length:32, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.replaced_unnamed": {
+    "explanation": "Sentence for a replaced till when the new main till's name is not known: chip tooltip, Tills page banner and Till registration notice.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.replaced_unnamed_short": {
+    "explanation": "Short words in the status-bar chip on a replaced till when the new main till's name is not known.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.role_conflict": {
+    "explanation": "Status-bar chip on a till that cannot reconnect with its old role because another till is the main till.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.role_conflict_short": {
+    "explanation": "Short words in the status-bar chip on a till that cannot reconnect as the main till because another till is the main till.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.shop_deleted": {
+    "explanation": "Status-bar chip on a till whose shop was deleted from its cloud account.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.shop_deleted_short": {
+    "explanation": "Short words in the status-bar chip on a till whose shop was deleted from its online account.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.unnamed_shop": {
+    "explanation": "Fallback name in the 'now belongs to' chip when the cloud did not give the other shop's name.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.waiting": {
+    "explanation": "Full sentence (chip tooltip, Tills banner, Settings notice)  when a till must wait for a date (a new key is not yet trusted, or a daily limit was reached) before it reconnects by itself.\n\nPlaceholders:\n- %s: the date and time it reconnects",
+    "flags": "placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "status.cloud_heal.waiting_short": {
+    "explanation": "Short words in the status-bar chip when a till will reconnect to its shop by itself at a later time.\n\nPlaceholders:\n- %s: the date and time it reconnects",
+    "flags": "max-length:32, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "status.cloud_sync.at": {
@@ -1683,7 +1947,7 @@
   },
   "tills.add.chooser.join_help": {
     "explanation": "Help under choice 2.",
-    "flags": "max-length:100",
+    "flags": "max-length:140",
     "labels": [],
     "lines": [
       "main"
@@ -2090,7 +2354,7 @@
   },
   "tills.discovery.ambient.has_sales_confirm": {
     "explanation": "Label of a required tick box in the 'found a main till on this network' notice and above the join tabs on the Tills page, shown only when this till already has sales. Ticking it confirms that linking (or joining with a pairing code) replaces this till's sales, products and settings with the main till's copy.",
-    "flags": "max-length:60",
+    "flags": "max-length:90",
     "labels": [],
     "lines": [
       "main",
@@ -2212,6 +2476,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "tills.join.needs_confirm": {
+    "explanation": "First line of the refusal when a join is blocked because this device already holds sales; the tick box below it is the next step.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "tills.join.outcome.additional": {
@@ -2798,6 +3070,22 @@
   "tills.list.state.ok": {
     "explanation": "Status tag: the till is in both lists, or the account list is unavailable.",
     "flags": "max-length:12",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.old_entry": {
+    "explanation": "Status tag on the Other tills list for a till on this network that the account has removed or that has not been seen for 30 days; a Remove button sits next to it.",
+    "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.old_entry.hint": {
+    "explanation": "Hint under the Old entry tag: says why it is listed and that removing keeps past sales.",
+    "flags": "",
     "labels": [],
     "lines": [
       "main"
@@ -3962,6 +4250,14 @@
   "tills.this.connected": {
     "explanation": "Tag: this till is registered with the shop account.",
     "flags": "max-length:20",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.this.last_reconnected": {
+    "explanation": "Small line on Tills > This till under the shop account card: when this till last reconnected to its shop without a code.\n\nPlaceholders:\n- %s: the date and time of the last reconnect",
+    "flags": "placeholders:\"%s\"",
     "labels": [],
     "lines": [
       "main"

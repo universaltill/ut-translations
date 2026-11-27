@@ -87,7 +87,7 @@
   "setup.join.discover_help": "Or find the main till automatically: make sure it is on and connected to this network, press “Find a main till on this network”, pick it from the list and give this till a name. Both screens then show the same 6-digit code — the main till's manager compares them and approves.",
   "setup.join.help": "Which code? Joining a shop that already has a main till (Additional till or Satellite): on that main till open Settings → Tills → Show pairing code, then type its short code (like K7P-4XQ) and the address it shows here, or scan its QR code. The first till of a shop (Main till) uses the code from my.universaltill.com instead (Tills, Add a till). This till copies the whole shop and restarts.",
   "setup.join.main_help": "First till of a shop you set up on my.universaltill.com, or the till that replaces a main till (on my.universaltill.com: Tills, Replace this till). A shop has one main till; if it already has one, you are told here and nothing changes.",
-  "setup.join.role_main": "Main till (first till of the shop)",
+  "setup.join.role_main": "Main till (only if the shop has no till yet, or this device takes over from the main till)",
   "setup.join.title": "Join an existing shop",
   "setup.language.detected_coming_soon": "We don't have %s yet — it's on the way. Choose one of these for now:",
   "setup.language.downloads_on_select": "More languages from the plugin catalog — these download and install when you pick them.",

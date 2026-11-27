@@ -288,7 +288,7 @@
   "refund.error.refunded_not_recorded": "The money was refunded to the customer, but the till could not record this return. Do not refund it again. A manager must check it under Settings → Payments → Payments needing attention.",
   "refund.error.server": "Something went wrong. Please try again.",
   "refund.fully_refunded": "fully refunded",
-  "refund.help": "Pick how much of each item to take back. Stock is returned to the shop, and the refund receipt references this sale. A manager PIN confirms the refund.",
+  "refund.help": "Pick how much of each item to take back. Stock is returned to the shop, and the refund receipt references this sale. Without the Refunds permission, a manager enters their PIN to approve it.",
   "refund.leg.all": "All payments, in the order they were paid",
   "refund.leg.left": "%s left to refund",
   "refund.leg.legend": "Which payment should get the refund?",
