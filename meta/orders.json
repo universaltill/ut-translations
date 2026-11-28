@@ -237,6 +237,14 @@
       "0.34"
     ]
   },
+  "channel_orders.detail.accept_by": {
+    "explanation": "Label on a delivery order: the time by which the platform wants it accepted or rejected.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "channel_orders.detail.actions_note": {
     "explanation": "Note under an online order: where status actions are taken. my.universaltill.com is a web address; keep it.\n\nOnly used by till line 0.34; kept while that line is supported (ADR-0160 §5).",
     "flags": "",
@@ -351,6 +359,14 @@
       "main"
     ]
   },
+  "channel_orders.detail.late_cancel": {
+    "explanation": "Warning on a delivery order the platform cancelled after the kitchen had started: the food may already be made.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "channel_orders.detail.line_discounts": {
     "explanation": "Label in an online order's totals: the sum of the discounts on its lines. Shown apart from \"Order discount\", which is a discount not tied to one line.",
     "flags": "",
@@ -391,6 +407,22 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "channel_orders.detail.reject_unmapped": {
+    "explanation": "Notice on a delivery order this till rejected itself because a line is not in the shop's catalogue (the unmapped-line policy).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.detail.service": {
+    "explanation": "Label on a delivery order: whether the order is delivered or collected.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "channel_orders.detail.shipping": {
@@ -436,6 +468,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "channel_orders.detail.withdrawn": {
+    "explanation": "Notice on a delivery order the till closed itself because the customer's data (and its note) was erased while the order was still open.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "channel_orders.dismiss": {
@@ -577,6 +617,14 @@
       "main"
     ]
   },
+  "channel_orders.outcome.collected": {
+    "explanation": "Names the 'mark as collected' action in the notice about its outcome on a delivery order.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "channel_orders.outcome.pack": {
     "explanation": "Names the action in the notice about its outcome and on its Dismiss button (screen readers). The same action as the button, without the ellipsis.",
     "flags": "max-length:40",
@@ -588,6 +636,38 @@
   "channel_orders.outcome.pick": {
     "explanation": "Names the action in the notice about its outcome and on its Dismiss button (screen readers). The same action as the button, without the ellipsis.",
     "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.outcome.prep_time": {
+    "explanation": "Names the prep-time change in the notice about its outcome on a delivery order.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.outcome.preparing": {
+    "explanation": "Names the 'mark as preparing' action in the notice about its outcome on a delivery order.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.outcome.ready": {
+    "explanation": "Names the 'mark as ready' action in the notice about its outcome on a delivery order.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.outcome.reject": {
+    "explanation": "Names the reject action in the notice about its outcome on a delivery order.",
+    "flags": "",
     "labels": [],
     "lines": [
       "main"
@@ -679,6 +759,14 @@
       "main"
     ]
   },
+  "channel_orders.pending_short.collected": {
+    "explanation": "Short status chip on a delivery order: 'collected' is saved on the till but the platform has not been told yet. Sits in a chip that does not wrap, so keep it short.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "channel_orders.pending_short.pack": {
     "explanation": "Short status chip on an online order (list and detail): this action is saved on the till but the online shop has not been told yet. Sits in a chip that does not wrap, so keep it short.",
     "flags": "max-length:32",
@@ -689,6 +777,38 @@
   },
   "channel_orders.pending_short.pick": {
     "explanation": "Short status chip on an online order (list and detail): this action is saved on the till but the online shop has not been told yet. Sits in a chip that does not wrap, so keep it short.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.pending_short.prep_time": {
+    "explanation": "Short status chip on a delivery order: a new prep time is saved on the till but the platform has not been told yet. Sits in a chip that does not wrap, so keep it short.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.pending_short.preparing": {
+    "explanation": "Short status chip on a delivery order: 'preparing' is saved on the till but the platform has not been told yet. Sits in a chip that does not wrap, so keep it short.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.pending_short.ready": {
+    "explanation": "Short status chip on a delivery order: 'ready' is saved on the till but the platform has not been told yet. Sits in a chip that does not wrap, so keep it short.",
+    "flags": "max-length:32",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.pending_short.reject": {
+    "explanation": "Short status chip on a delivery order: the reject is saved on the till but the platform has not been told yet. Sits in a chip that does not wrap, so keep it short.",
     "flags": "max-length:32",
     "labels": [],
     "lines": [
@@ -815,6 +935,14 @@
       "main"
     ]
   },
+  "channel_orders.refused.window_expired": {
+    "explanation": "Refusal reason on a delivery order: the platform's time to answer ran out (the order was already rejected or cancelled there), so the tap was not taken.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "channel_orders.refused_short": {
     "explanation": "Short chip in the Online orders list: the online shop refused an action on this order and the refusal has not been dismissed. Sits in a chip that does not wrap.",
     "flags": "max-length:32",
@@ -873,6 +1001,14 @@
       "0.34"
     ]
   },
+  "channel_orders.status.collected": {
+    "explanation": "Delivery order status: the courier or the customer has taken the order.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "channel_orders.status.new": {
     "explanation": "Order status: placed, not yet accepted.",
     "flags": "",
@@ -909,6 +1045,22 @@
       "0.34"
     ]
   },
+  "channel_orders.status.preparing": {
+    "explanation": "Delivery order status: the kitchen has started making the order.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "channel_orders.status.ready": {
+    "explanation": "Delivery order status: the order is made and waiting for the courier or the customer.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "channel_orders.status.refunded": {
     "explanation": "Order status: fully refunded.",
     "flags": "",
@@ -916,6 +1068,14 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "channel_orders.status.rejected": {
+    "explanation": "Delivery order status: the order was rejected (by staff, by this till or automatically) and will not be made.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "channel_orders.status.shipped": {
@@ -934,6 +1094,30 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "delivery.note_label": {
+    "explanation": "Heading of the customer's free-text note on a delivery order; tells staff to read it before accepting (it may be an allergy).",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "delivery.service.collection": {
+    "explanation": "Order service type: the customer collects the order at the shop.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "delivery.service.delivery": {
+    "explanation": "Order service type: the platform's courier delivers the order.",
+    "flags": "max-length:16",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "kitchen.print.done": {

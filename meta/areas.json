@@ -2,7 +2,7 @@
   "sale": {
     "name": "Sale",
     "description": "The sale screen: basket, scanning, payment, holds, refunds and the quick-button grid.",
-    "keys": 571
+    "keys": 572
   },
   "catalog": {
     "name": "Catalog",
@@ -12,12 +12,12 @@
   "orders": {
     "name": "Orders",
     "description": "Orders, tables, kitchen stations and displays, and order tracking.",
-    "keys": 257
+    "keys": 280
   },
   "reports": {
     "name": "Reports",
     "description": "Reports, the journal, end of day and the audit trail.",
-    "keys": 352
+    "keys": 358
   },
   "staff": {
     "name": "Staff",
@@ -27,12 +27,12 @@
   "settings": {
     "name": "Settings",
     "description": "Settings, admin menus, locations, registers, country settings, translations and the subscription.",
-    "keys": 1208
+    "keys": 1238
   },
   "tills": {
     "name": "Tills",
     "description": "Tills and devices: sync, pairing, Bluetooth devices, status chips, diagnostics, recovery and uninstall.",
-    "keys": 550
+    "keys": 576
   },
   "setup": {
     "name": "Setup",
@@ -52,7 +52,7 @@
   "plugins": {
     "name": "Plugins",
     "description": "The plugin marketplace, plugin pages and the assistant.",
-    "keys": 355
+    "keys": 361
   },
   "support": {
     "name": "Support",

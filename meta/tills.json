@@ -2852,24 +2852,24 @@
     ]
   },
   "tills.list.account_unavailable": {
-    "explanation": "Other tills tab: shown when the account's list of tills cannot be read.",
-    "flags": "max-length:120",
+    "explanation": "Notice on Other tills when the shop's list of tills could not be read (offline). Nothing is marked old while it is unknown.",
+    "flags": "max-length:160",
     "labels": [],
     "lines": [
       "main"
     ]
   },
   "tills.list.ask_manager": {
-    "explanation": "Shown where a person cannot remove tills (a joined till).",
-    "flags": "max-length:80",
+    "explanation": "Shown on a till that is not the main till, in place of the remove buttons.",
+    "flags": "max-length:90",
     "labels": [],
     "lines": [
       "main"
     ]
   },
-  "tills.list.col_source": {
-    "explanation": "Column heading: which list the till came from.",
-    "flags": "max-length:20",
+  "tills.list.cloud_only.wait": {
+    "explanation": "Hint for an entry only in the shop list when the till cannot remove it from there: it needs nothing.",
+    "flags": "max-length:60",
     "labels": [],
     "lines": [
       "main"
@@ -2907,33 +2907,105 @@
       "main"
     ]
   },
-  "tills.list.disagree_body_one": {
-    "explanation": "Body of the disagreement banner, one till.",
-    "flags": "max-length:160",
+  "tills.list.error.account_unavailable": {
+    "explanation": "Refusal when removing stale tills while the account list cannot be read.",
+    "flags": "max-length:100",
     "labels": [],
     "lines": [
       "main"
     ]
   },
-  "tills.list.disagree_body_other": {
-    "explanation": "Body of the disagreement banner, several tills.\n\nPlaceholders:\n- %d: number of tills",
-    "flags": "max-length:170, placeholders:\"%d\"",
+  "tills.list.error.cloud_remove_failed": {
+    "explanation": "Error when removing an entry from the shop's online list failed (offline, server error). Nothing was changed.",
+    "flags": "max-length:110",
     "labels": [],
     "lines": [
       "main"
     ]
   },
-  "tills.list.disagree_title": {
-    "explanation": "Title of the banner shown when a till is on this network but not in the account.",
+  "tills.list.error.cloud_remove_not_enabled": {
+    "explanation": "Error on Other tills when removing an entry from the shop list was refused because the online list does not allow removals yet. Nothing was changed.",
+    "flags": "max-length:130",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.error.not_listed": {
+    "explanation": "Error when a removal named an entry that is not in the freshly read shop list.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.error.pin_missing": {
+    "explanation": "Error under the manager PIN box on Other tills when a removal was tried with no PIN.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.error.pin_wrong": {
+    "explanation": "Error under the manager PIN box on Other tills when the PIN was wrong or locked out.",
     "flags": "max-length:60",
     "labels": [],
     "lines": [
       "main"
     ]
   },
-  "tills.list.error.account_unavailable": {
-    "explanation": "Refusal when removing stale tills while the account list cannot be read.",
+  "tills.list.error.remove_live": {
+    "explanation": "Error when removing an entry that was seen working a moment ago. The placeholder is its name.\n\nPlaceholders:\n- %s: till name",
+    "flags": "max-length:80, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.fix_all": {
+    "explanation": "Button in the banner on Other tills that removes every old entry shown. The placeholder is how many.\n\nPlaceholders:\n- %d: number of old entries",
+    "flags": "max-length:40, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.fix_all_confirm": {
+    "explanation": "Question asked before removing all old entries at once; the entry names follow it.",
     "flags": "max-length:100",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.fix_body_one": {
+    "explanation": "Banner text when exactly one old entry can be removed. Reassures: selling unaffected, nothing lost.",
+    "flags": "max-length:170",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.fix_body_other": {
+    "explanation": "Banner text when several old entries can be removed. The placeholder is how many.\n\nPlaceholders:\n- %d: number of old entries",
+    "flags": "max-length:180, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.fix_title": {
+    "explanation": "Banner title on Other tills when at least one entry can be removed right now (an old entry left over, for example from a phone that joined again).",
+    "flags": "max-length:50",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.not_paired": {
+    "explanation": "Other tills tab: shown when this till was never paired with a shop account, so there is no account list to read.",
+    "flags": "max-length:80",
     "labels": [],
     "lines": [
       "main"
@@ -2947,41 +3019,97 @@
       "main"
     ]
   },
-  "tills.list.open_my": {
-    "explanation": "Link to the shop's online account.",
-    "flags": "max-length:40",
+  "tills.list.pair_action": {
+    "explanation": "Button on the Other tills tab that opens Till registration to pair this till with a shop.",
+    "flags": "max-length:30",
     "labels": [],
     "lines": [
       "main"
     ]
   },
-  "tills.list.remove": {
-    "explanation": "Button on a stale till row; opens an inline question.",
-    "flags": "max-length:16",
+  "tills.list.pair_where": {
+    "explanation": "Hint under the pair button naming the settings path to Pair with a shop.",
+    "flags": "max-length:90",
     "labels": [],
     "lines": [
       "main"
     ]
   },
-  "tills.list.remove_confirm": {
-    "explanation": "Inline question before removing one till.\n\nPlaceholders:\n- %s: till name",
-    "flags": "max-length:100, placeholders:\"%s\"",
+  "tills.list.pin_label": {
+    "explanation": "Label above the one manager PIN box on Other tills, shown when the signed-in person is not a manager.",
+    "flags": "max-length:60",
     "labels": [],
     "lines": [
       "main"
     ]
   },
-  "tills.list.remove_stale_all": {
-    "explanation": "Button that removes every till that is on this network but not in the account.\n\nPlaceholders:\n- %d: number of tills",
-    "flags": "max-length:60, placeholders:\"%d\"",
+  "tills.list.remove_cloud": {
+    "explanation": "Button on an entry that is only in the shop's online list: removes it from there.",
+    "flags": "max-length:30",
     "labels": [],
     "lines": [
       "main"
     ]
   },
-  "tills.list.remove_stale_all_confirm": {
-    "explanation": "Inline question before removing all stale tills; the names follow it.",
-    "flags": "max-length:100",
+  "tills.list.remove_cloud_aria": {
+    "explanation": "Screen reader label of the Remove from the list button. The placeholder is the entry's name.\n\nPlaceholders:\n- %s: till name",
+    "flags": "max-length:60, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.remove_cloud_confirm": {
+    "explanation": "Question before removing an entry from the shop's online list. The placeholder is its name.\n\nPlaceholders:\n- %s: till name",
+    "flags": "max-length:120, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.remove_confirm_old": {
+    "explanation": "Question before removing one old entry. The placeholder is its name.\n\nPlaceholders:\n- %s: till name",
+    "flags": "max-length:90, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.remove_old": {
+    "explanation": "Button on an old entry row that removes it from this till's list.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.remove_old_aria": {
+    "explanation": "Screen reader label of the Remove this old entry button. The placeholder is the entry's name.\n\nPlaceholders:\n- %s: till name",
+    "flags": "max-length:60, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.removed_ok": {
+    "explanation": "Result line after one old entry was removed. The placeholder is its name.\n\nPlaceholders:\n- %s: till name",
+    "flags": "max-length:60, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.removed_ok_many": {
+    "explanation": "Result line after several old entries were removed. The placeholder is how many.\n\nPlaceholders:\n- %d: number of old entries",
+    "flags": "max-length:50, placeholders:\"%d\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.role_mismatch.nothing": {
+    "explanation": "Second line under Roles differ: no action is needed, and where to change a role.",
+    "flags": "max-length:90",
     "labels": [],
     "lines": [
       "main"
@@ -3003,32 +3131,8 @@
       "main"
     ]
   },
-  "tills.list.source.account": {
-    "explanation": "Source label: the till is in the account only.",
-    "flags": "max-length:24",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
-  "tills.list.source.both": {
-    "explanation": "Source label: the till is on the network and in the account.",
-    "flags": "max-length:30",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
-  "tills.list.source.network": {
-    "explanation": "Source label: the till is enrolled on this shop network only.",
-    "flags": "max-length:24",
-    "labels": [],
-    "lines": [
-      "main"
-    ]
-  },
   "tills.list.state.cloud_only": {
-    "explanation": "Status tag: in the account but never added on this network.",
+    "explanation": "Status tag: an entry is in the shop's online list but is not set up on this till.",
     "flags": "max-length:40",
     "labels": [],
     "lines": [
@@ -3036,32 +3140,40 @@
     ]
   },
   "tills.list.state.cloud_only.hint": {
-    "explanation": "Hint under the cloud-only tag.\n\nPlaceholders:\n- %s: till name",
-    "flags": "max-length:120, placeholders:\"%s\"",
+    "explanation": "Hint under the Only in your shop list tag when removing it from the list is possible. The placeholder is its name.\n\nPlaceholders:\n- %s: till name",
+    "flags": "max-length:150, placeholders:\"%s\"",
     "labels": [],
     "lines": [
       "main"
     ]
   },
   "tills.list.state.local_only": {
-    "explanation": "Status tag: enrolled on this network but missing from the account.",
-    "flags": "max-length:30",
+    "explanation": "Status tag: a till joined recently and is not in the shop's online list yet.",
+    "flags": "max-length:40",
     "labels": [],
     "lines": [
       "main"
     ]
   },
   "tills.list.state.local_only.hint_old": {
-    "explanation": "Hint under the status tag for a stale till not seen for a day or more.",
-    "flags": "max-length:100",
+    "explanation": "Hint under the tag for a till not in the shop list and not seen for a while; a Remove button sits beside it.",
+    "flags": "max-length:110",
     "labels": [],
     "lines": [
       "main"
     ]
   },
   "tills.list.state.local_only.hint_recent": {
-    "explanation": "Hint under the status tag for a stale till seen recently.",
-    "flags": "max-length:120",
+    "explanation": "Hint under the tag for a till that joined recently. No button: nothing to do.",
+    "flags": "max-length:110",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.local_only_old": {
+    "explanation": "Status tag: a till is not in the shop's online list and has not been seen for a while.",
+    "flags": "max-length:40",
     "labels": [],
     "lines": [
       "main"
@@ -3084,8 +3196,8 @@
     ]
   },
   "tills.list.state.old_entry.hint": {
-    "explanation": "Hint under the Old entry tag: says why it is listed and that removing keeps past sales.",
-    "flags": "",
+    "explanation": "Hint under the Old entry tag; the button Remove this old entry sits beside it.",
+    "flags": "max-length:150",
     "labels": [],
     "lines": [
       "main"
@@ -3116,8 +3228,24 @@
     ]
   },
   "tills.list.state.role_mismatch.hint": {
-    "explanation": "Hint under the roles differ tag; the placeholders are the role as the account and as the network name it.\n\nPlaceholders:\n- %s: role in the account\n- %s: role on this network",
-    "flags": "max-length:180, placeholders:\"%s\"",
+    "explanation": "Hint under Roles differ. Placeholders: the role in the shop list, the role on this till.\n\nPlaceholders:\n- %s: role in the shop list\n- %s: role on this till",
+    "flags": "max-length:90, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.same_device": {
+    "explanation": "Status tag: this entry is the same device as another, newer entry (a device that joined again under a new name). The placeholder is the newer name.\n\nPlaceholders:\n- %s: name of the newer entry",
+    "flags": "max-length:50, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.list.state.same_device.hint": {
+    "explanation": "Hint under the Replaced by tag. The placeholder is the newer entry's name.\n\nPlaceholders:\n- %s: name of the newer entry",
+    "flags": "max-length:140, placeholders:\"%s\"",
     "labels": [],
     "lines": [
       "main"
@@ -3613,6 +3741,86 @@
   "tills.pending.name_in_use_hint": {
     "explanation": "Reason shown beside the disabled Approve button when the requested name belongs to a live till.",
     "flags": "max-length:120",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.pending.replace_gone": {
+    "explanation": "Error when the chosen old entry no longer exists.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.pending.replace_live": {
+    "explanation": "Error when the chosen old entry was seen working a moment ago.",
+    "flags": "max-length:80",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.pending.replace_none": {
+    "explanation": "Default option of the replace select: do not replace anything.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.pending.replace_option": {
+    "explanation": "Option of the replace select: an old entry's name and when it was last seen.\n\nPlaceholders:\n- %s: old entry name\n- %s: date last seen",
+    "flags": "max-length:70, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.pending.replace_pick": {
+    "explanation": "Label of the select on a waiting request listing old entries the new device may replace.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.pending.replace_role": {
+    "explanation": "Error when the chosen old entry has another role than the joining device asked for.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.pending.same_phone": {
+    "explanation": "Question on a waiting pair request when a till already in the list has the same device id: the manager can replace that old entry. The placeholder is its name.\n\nPlaceholders:\n- %s: old entry name",
+    "flags": "max-length:80, placeholders:\"%s\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.pending.same_phone_hint": {
+    "explanation": "Hint under the same-device question: nothing is lost on replace.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.pending.same_phone_no": {
+    "explanation": "Secondary button next to the same-device button: approve as a new device.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "tills.pending.same_phone_yes": {
+    "explanation": "Primary button on a waiting request that matches an old entry: approve and replace it. The placeholder is the old entry's name.\n\nPlaceholders:\n- %s: old entry name",
+    "flags": "max-length:60, placeholders:\"%s\"",
     "labels": [],
     "lines": [
       "main"

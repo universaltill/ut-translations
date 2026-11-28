@@ -1380,6 +1380,14 @@
       "0.34"
     ]
   },
+  "reports.eod.stripe_fee": {
+    "explanation": "Reports, End of day tab, day-so-far screen: label of one row showing the card fees the payment provider charged for the day, taken from the cloud settlement data. A cost line next to an amount; the till never computes it.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "reports.eod.tips": {
     "explanation": "",
     "flags": "",
@@ -2201,6 +2209,46 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "reports.tips.suggest_btn": {
+    "explanation": "Button label on the Reports > Tips payout form: asks installed plugins (such as the staff logbook) to suggest per-person tip amounts for the selected period. Short label, one line.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.tips.suggest_none": {
+    "explanation": "Message in the suggestions panel when no installed plugin proposes any tip amounts for the selected period.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.tips.suggest_title": {
+    "explanation": "Heading of the suggestions panel shown after the suggest button is pressed: the amounts come from a plugin and the manager confirms each one.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.tips.suggest_unmapped": {
+    "explanation": "Note on a suggestion row whose person has no till login, so it cannot be filled in automatically; the manager records that payout by hand.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "reports.tips.suggest_use": {
+    "explanation": "Button on each suggestion row that copies the suggested amount into the payout form for that person. One short word.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "reports.tips.tip_received": {

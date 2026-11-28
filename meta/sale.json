@@ -2155,6 +2155,14 @@
       "main"
     ]
   },
+  "pos.toast.plugin_line_needs_choice": {
+    "explanation": "Sale screen error toast: a plugin panel over the sell screen tried to add an item that has sizes or options to choose from, so nothing was added. Tells the cashier to pick the item on the sell screen.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "pos.toast.promo_applied": {
     "explanation": "",
     "flags": "placeholders:\"%s\"",
