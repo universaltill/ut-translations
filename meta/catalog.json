@@ -7265,6 +7265,14 @@
       "0.34"
     ]
   },
+  "menulayout.source.shop_type": {
+    "explanation": "Entry in the Hidden by or Changed by column of Hidden menu tiles when the shop type template (not a plugin) hid or changed the tile; {type} is the shop type label (for example Retail shop).",
+    "flags": "placeholders:\"{type}\"",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "menulayout.state.hidden": {
     "explanation": "",
     "flags": "",

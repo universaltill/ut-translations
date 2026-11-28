@@ -1996,6 +1996,46 @@
       "0.34"
     ]
   },
+  "plugins.restored_secrets.body": {
+    "explanation": "Banner text introducing the list of plugin keys (plugin id and key name, no values) that must be entered again because secrets are never part of a backup.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.restored_secrets.dismiss": {
+    "explanation": "Button that hides the restored-secrets banner until the next restore.",
+    "flags": "max-length:25",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.restored_secrets.my_hint": {
+    "explanation": "Banner line offering re-delivery of a key the shop chose to keep a copy of in its my.universaltill.com account.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.restored_secrets.my_link": {
+    "explanation": "Link text in the restored-secrets banner that opens my.universaltill.com.",
+    "flags": "max-length:30",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "plugins.restored_secrets.title": {
+    "explanation": "Heading of the banner on the Plugins page after a backup restore or LAN join: secret plugin keys were not restored.",
+    "flags": "max-length:40",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "plugins.retry": {
     "explanation": "",
     "flags": "",

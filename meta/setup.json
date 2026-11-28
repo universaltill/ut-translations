@@ -958,6 +958,22 @@
       "0.34"
     ]
   },
+  "setup.shop_type.skip": {
+    "explanation": "Button that skips choosing a shop type in the setup wizard.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "setup.shop_type.skip_hint": {
+    "explanation": "Hint under the shop type step explaining what skipping does.",
+    "flags": "",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
   "setup.shop_type.title": {
     "explanation": "",
     "flags": "",
@@ -1282,6 +1298,54 @@
     "lines": [
       "main",
       "0.34"
+    ]
+  },
+  "shoptemplate.cafe.summary": {
+    "explanation": "One-line summary of the cafe or takeaway counter shop type, shown under its tile in the first-run wizard and the shop-type picker in Settings: what the menu and settings are tidied to. Says what is shown, in plain words; never names a template.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shoptemplate.hospitality.summary": {
+    "explanation": "One-line summary of the restaurant or bar shop type, shown under its tile in the first-run wizard and the shop-type picker in Settings: what the menu and settings are tidied to. Says what is shown, in plain words; never names a template.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shoptemplate.market_stall.summary": {
+    "explanation": "One-line summary of the market stall or pop-up shop type, shown under its tile in the first-run wizard and the shop-type picker in Settings: what the menu and settings are tidied to. Says what is shown, in plain words; never names a template.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shoptemplate.other.summary": {
+    "explanation": "One-line summary of the any other kind of shop shop type, shown under its tile in the first-run wizard and the shop-type picker in Settings: what the menu and settings are tidied to. Says what is shown, in plain words; never names a template.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shoptemplate.retail.summary": {
+    "explanation": "One-line summary of the retail shop shop type, shown under its tile in the first-run wizard and the shop-type picker in Settings: what the menu and settings are tidied to. Says what is shown, in plain words; never names a template.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
+    ]
+  },
+  "shoptemplate.service.summary": {
+    "explanation": "One-line summary of the barber, salon or service business shop type, shown under its tile in the first-run wizard and the shop-type picker in Settings: what the menu and settings are tidied to. Says what is shown, in plain words; never names a template.",
+    "flags": "max-length:90",
+    "labels": [],
+    "lines": [
+      "main"
     ]
   },
   "tour.back": {

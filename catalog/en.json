@@ -819,6 +819,7 @@
   "menulayout.rehide": "Hide again",
   "menulayout.restore": "Restore tile",
   "menulayout.settings_intro": "See which Menu tiles a layout plugin has hidden or changed, and bring any hidden one back.",
+  "menulayout.source.shop_type": "Shop type: {type}",
   "menulayout.state.hidden": "Hidden",
   "menulayout.state.restored": "Restored",
   "menulayout.title": "Hidden menu tiles",
